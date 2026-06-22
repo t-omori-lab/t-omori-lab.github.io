@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+.pnpm-store/
+*.tsbuildinfo
+.DS_Store
+*.log
+
+# Local design sources and QA work files are not published.
+design-qa-artifacts/
+design-qa.md
+notes.md
+task_plan.md
+*案/
+*案_決定/
+
+# Retired Hero experiments kept locally for comparison.
+public/images/projects/gen-ai/gen-ai-hero-cover.png
+public/images/projects/gen-ai/gen-ai-hero-wide-v2.png
