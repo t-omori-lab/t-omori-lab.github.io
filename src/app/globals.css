@@ -484,21 +484,42 @@ nextjs-portal {
 }
 
 .project-hero {
+  --hero-shadow-rgb: 7 6 11;
+  --hero-backdrop: #131722;
+  --hero-backdrop-accent: transparent;
   position: relative;
   min-height: 100svh;
   overflow: hidden;
   isolation: isolate;
   color: #fff;
-  background: #251d22;
+  background:
+    radial-gradient(ellipse 88% 115% at 70% 42%, var(--hero-backdrop-accent) 0%, transparent 66%),
+    var(--hero-backdrop);
 }
 
 .hero-image {
   z-index: -3;
-  object-fit: cover;
-  object-position: 50% center;
+  object-fit: contain;
+  object-position: center;
+}
+
+.hero-artwork {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-image-original {
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero-image-wide {
+  display: none;
+}
+
+.hero-image-backdrop {
   display: none;
 }
 
@@ -508,9 +529,8 @@ nextjs-portal {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 112% 46% at 26% 64%, rgb(7 6 11 / 42%) 0%, rgb(7 6 11 / 19%) 48%, transparent 76%),
-    linear-gradient(180deg, rgb(8 7 12 / 45%) 0%, rgb(8 7 12 / 15%) 18%, transparent 34%),
-    linear-gradient(180deg, transparent 43%, rgb(7 6 11 / 10%) 54%, rgb(7 6 11 / 62%) 77%, rgb(7 6 11 / 93%) 100%);
+    linear-gradient(180deg, rgb(var(--hero-shadow-rgb) / 42%) 0%, rgb(var(--hero-shadow-rgb) / 8%) 17%, transparent 30%),
+    linear-gradient(180deg, transparent 52%, rgb(var(--hero-shadow-rgb) / 12%) 64%, rgb(var(--hero-shadow-rgb) / 78%) 100%);
 }
 
 .hero-header {
@@ -525,9 +545,30 @@ nextjs-portal {
 
 .hero-title-wrap {
   position: absolute;
+  z-index: 0;
+  isolation: isolate;
   right: var(--page-margin-mobile);
   bottom: 11.4rem;
   left: var(--page-margin-mobile);
+}
+
+.hero-title-wrap::before {
+  position: absolute;
+  z-index: -1;
+  top: -18%;
+  right: -22%;
+  bottom: -22%;
+  left: -18%;
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 78% 72% at 30% 52%,
+    rgb(var(--hero-shadow-rgb) / 72%) 0%,
+    rgb(var(--hero-shadow-rgb) / 52%) 42%,
+    rgb(var(--hero-shadow-rgb) / 18%) 68%,
+    transparent 100%
+  );
+  filter: blur(14px);
 }
 
 .hero-kicker {
@@ -550,12 +591,22 @@ nextjs-portal {
   transform: scaleX(0.67);
   transform-origin: left top;
   text-shadow:
-    0 1px 3px rgb(0 0 0 / 72%),
-    0 3px 18px rgb(7 6 11 / 46%);
+    0 1px 2px rgb(0 0 0 / 86%),
+    0 3px 14px rgb(var(--hero-shadow-rgb) / 68%),
+    0 8px 32px rgb(var(--hero-shadow-rgb) / 42%);
 }
 
 .hero-title-wrap h2 span {
   display: block;
+}
+
+.hero-title-wrap--medium h2 {
+  font-size: clamp(4.35rem, 18vw, 6rem);
+}
+
+.hero-title-wrap--long h2 {
+  font-size: clamp(3.35rem, 14vw, 4.8rem);
+  line-height: 0.9;
 }
 
 .hero-kicker,
@@ -594,6 +645,27 @@ nextjs-portal {
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.06em;
+}
+
+.hero-scroll-label {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: var(--font-ui);
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.hero-scroll-label svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.hero-project-label {
+  display: inline-flex;
 }
 
 .hero-footer li:nth-child(even) {
@@ -803,6 +875,10 @@ nextjs-portal {
   height: 0.95rem;
 }
 
+.chapter-pause-label {
+  display: none;
+}
+
 .chapter-status {
   min-width: 4.7rem;
   font-size: 0.49rem;
@@ -1006,6 +1082,14 @@ nextjs-portal {
     bottom: 0.85rem;
   }
 
+  .hero-scroll-label span {
+    display: none;
+  }
+
+  .hero-scroll-label {
+    min-width: 1.5rem;
+  }
+
   .cover-grid {
     padding-top: 2rem;
   }
@@ -1098,23 +1182,38 @@ nextjs-portal {
     display: none;
   }
 
+  .hero-image.hero-image-backdrop {
+    display: block;
+    inset: 0 auto 0 0 !important;
+    width: 64% !important;
+    height: 100% !important;
+    max-width: none;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.56) saturate(0.82) blur(2px);
+    transform: scale(1.01);
+    transform-origin: left center;
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 56%, rgb(0 0 0 / 68%) 76%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0%, #000 56%, rgb(0 0 0 / 68%) 76%, transparent 100%);
+  }
+
   .hero-image.hero-image-wide {
     display: block;
-    inset: -30% 0 auto auto !important;
+    inset: -35% 18% auto auto !important;
     width: auto !important;
-    height: 160% !important;
+    height: 170% !important;
     max-width: none;
     object-fit: contain;
     object-position: center;
     transform: none;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 24%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 16%) 14%, rgb(0 0 0 / 62%) 32%, #000 48%, #000 82%, rgb(0 0 0 / 62%) 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 16%) 14%, rgb(0 0 0 / 62%) 32%, #000 48%, #000 82%, rgb(0 0 0 / 62%) 92%, transparent 100%);
   }
 
   .hero-wash {
     background:
-      linear-gradient(90deg, rgb(13 10 19 / 98%) 0%, rgb(13 10 19 / 92%) 25%, rgb(13 10 19 / 64%) 46%, transparent 72%),
-      linear-gradient(180deg, rgb(8 7 12 / 35%) 0%, transparent 34%, rgb(7 6 11 / 78%) 100%);
+      linear-gradient(90deg, rgb(var(--hero-shadow-rgb) / 62%) 0%, rgb(var(--hero-shadow-rgb) / 44%) 24%, rgb(var(--hero-shadow-rgb) / 18%) 47%, transparent 72%),
+      linear-gradient(180deg, rgb(var(--hero-shadow-rgb) / 56%) 0%, rgb(var(--hero-shadow-rgb) / 10%) 17%, transparent 29%, transparent 62%, rgb(var(--hero-shadow-rgb) / 72%) 100%);
   }
 
   .cover {
@@ -1175,12 +1274,34 @@ nextjs-portal {
 
   .hero-title-wrap {
     right: auto;
-    bottom: 7.5rem;
+    bottom: 10rem;
     width: min(52rem, 65vw);
   }
 
   .hero-title-wrap h2 {
-    font-size: clamp(6.5rem, 10vw, 11rem);
+    font-size: clamp(3.6rem, 4.4vw, 5.4rem);
+  }
+
+  .hero-title-wrap h2 span:nth-child(2),
+  .hero-title-wrap h2 span:nth-child(3) {
+    display: inline;
+  }
+
+  .hero-title-wrap--medium {
+    width: min(56rem, 72vw);
+  }
+
+  .hero-title-wrap--medium h2 {
+    font-size: clamp(3.2rem, 3.8vw, 5rem);
+  }
+
+  .hero-title-wrap--long {
+    width: min(64rem, 78vw);
+  }
+
+  .hero-title-wrap--long h2 {
+    font-size: clamp(2.7rem, 3.2vw, 4rem);
+    line-height: 0.92;
   }
 
   .hero-footer ul {
@@ -1486,13 +1607,47 @@ nextjs-portal {
   }
 }
 
-@media (orientation: landscape) and (max-height: 35rem) {
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
   .chapter-controls {
     right: 0.45rem;
     bottom: 0.35rem;
     min-height: 2.35rem;
     transform: scale(0.9);
     transform-origin: right bottom;
+  }
+
+  .chapter-controls.is-project {
+    right: 50%;
+    bottom: 0.22rem;
+    display: grid;
+    grid-template-columns: auto;
+    min-height: 1.15rem;
+    padding: 0.12rem 0.35rem 0.22rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    transform: translateX(50%);
+  }
+
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project > button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    right: 0.35rem;
+    bottom: 0.02rem;
+    left: 0.35rem;
   }
 
   .about-profile {
@@ -1550,8 +1705,8 @@ nextjs-portal {
 
   .hero-image.hero-image-wide {
     display: block;
-    inset: -60% 0 auto auto !important;
-    height: 220% !important;
+    inset: -48% 0 auto auto !important;
+    height: 196% !important;
   }
 
   .cover {
@@ -1856,5 +2011,1278 @@ nextjs-portal {
 
   .cover-index a {
     padding-block: 0.25rem;
+  }
+}
+
+/* Hero fidelity pass: preserve the source artwork as one uncropped image.
+   Background atmosphere, edge falloff, and title contrast are independent layers. */
+.project-hero {
+  background:
+    radial-gradient(ellipse 52% 100% at 72% 36%, var(--hero-backdrop-accent) 0%, transparent 70%),
+    radial-gradient(ellipse 68% 78% at 92% 72%, rgb(86 17 64 / 30%) 0%, transparent 64%),
+    linear-gradient(90deg, #050711 0%, #071224 44%, #070912 100%);
+}
+
+.project-hero::before,
+.project-hero::after {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.project-hero::before {
+  background:
+    linear-gradient(90deg,
+      rgb(var(--hero-shadow-rgb) / 96%) 0%,
+      rgb(var(--hero-shadow-rgb) / 92%) 22%,
+      rgb(var(--hero-shadow-rgb) / 74%) 39%,
+      rgb(var(--hero-shadow-rgb) / 34%) 58%,
+      transparent 78%),
+    radial-gradient(ellipse 44% 68% at 38% 47%,
+      rgb(14 31 68 / 58%) 0%,
+      rgb(var(--hero-shadow-rgb) / 44%) 54%,
+      transparent 100%);
+}
+
+.project-hero::after {
+  background:
+    linear-gradient(180deg,
+      rgb(var(--hero-shadow-rgb) / 74%) 0%,
+      rgb(var(--hero-shadow-rgb) / 14%) 17%,
+      transparent 38%,
+      transparent 60%,
+      rgb(var(--hero-shadow-rgb) / 28%) 74%,
+      rgb(var(--hero-shadow-rgb) / 88%) 100%);
+}
+
+.hero-artwork {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hero-artwork::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgb(var(--hero-shadow-rgb) / 100%) 0%,
+    rgb(var(--hero-shadow-rgb) / 96%) 18%,
+    rgb(var(--hero-shadow-rgb) / 58%) 46%,
+    rgb(var(--hero-shadow-rgb) / 16%) 72%,
+    transparent 100%);
+}
+
+.hero-image-original {
+  z-index: 0;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  transform: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.hero-wash {
+  z-index: -1;
+  background:
+    linear-gradient(90deg,
+      rgb(var(--hero-shadow-rgb) / 86%) 0%,
+      rgb(var(--hero-shadow-rgb) / 78%) 24%,
+      rgb(var(--hero-shadow-rgb) / 48%) 42%,
+      rgb(var(--hero-shadow-rgb) / 12%) 64%,
+      transparent 82%),
+    linear-gradient(180deg,
+      rgb(var(--hero-shadow-rgb) / 36%) 0%,
+      transparent 27%,
+      transparent 64%,
+      rgb(var(--hero-shadow-rgb) / 78%) 100%);
+}
+
+.hero-title-wrap::before {
+  top: -34%;
+  right: -28%;
+  bottom: -36%;
+  left: -24%;
+  background: radial-gradient(
+    ellipse 72% 70% at 34% 50%,
+    rgb(var(--hero-shadow-rgb) / 86%) 0%,
+    rgb(var(--hero-shadow-rgb) / 70%) 34%,
+    rgb(var(--hero-shadow-rgb) / 34%) 66%,
+    transparent 100%
+  );
+  filter: blur(16px);
+}
+
+@media (orientation: portrait) and (max-width: 56rem) {
+  .hero-artwork {
+    inset: 0;
+  }
+
+  .hero-image-original {
+    object-position: center;
+  }
+
+  .hero-wash {
+    background:
+      linear-gradient(90deg,
+        rgb(var(--hero-shadow-rgb) / 66%) 0%,
+        rgb(var(--hero-shadow-rgb) / 34%) 36%,
+        transparent 72%),
+      linear-gradient(180deg,
+        rgb(var(--hero-shadow-rgb) / 58%) 0%,
+        transparent 22%,
+        transparent 48%,
+        rgb(var(--hero-shadow-rgb) / 82%) 100%);
+  }
+}
+
+@media (min-width: 56.01rem) {
+  .hero-project-label {
+    display: inline-flex;
+  }
+
+  .hero-artwork {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(30rem, calc(100svh * 0.47));
+    min-width: min(32vw, 23rem);
+  }
+
+  .hero-image-original {
+    object-position: center;
+  }
+
+  .hero-wash {
+    background:
+      linear-gradient(90deg,
+        rgb(var(--hero-shadow-rgb) / 98%) 0%,
+        rgb(var(--hero-shadow-rgb) / 96%) 36%,
+        rgb(var(--hero-shadow-rgb) / 94%) 58%,
+        rgb(var(--hero-shadow-rgb) / 82%) 68%,
+        rgb(var(--hero-shadow-rgb) / 44%) 82%,
+        rgb(var(--hero-shadow-rgb) / 10%) 94%,
+        transparent 100%),
+      linear-gradient(180deg,
+        rgb(var(--hero-shadow-rgb) / 40%) 0%,
+        transparent 24%,
+        transparent 66%,
+        rgb(var(--hero-shadow-rgb) / 74%) 100%);
+  }
+
+  .hero-title-wrap {
+    top: 40%;
+    right: auto;
+    bottom: auto;
+    width: min(35rem, 42vw);
+    transform: translateY(-20%);
+  }
+
+  .hero-title-wrap h2,
+  .hero-title-wrap--medium h2,
+  .hero-title-wrap--long h2 {
+    font-size: clamp(3.25rem, 4.75vw, 4.85rem);
+    line-height: 0.84;
+    letter-spacing: -0.07em;
+    transform: scaleX(0.72);
+  }
+
+  .hero-title-wrap h2 span:nth-child(2),
+  .hero-title-wrap h2 span:nth-child(3) {
+    display: inline;
+  }
+
+  .hero-title-wrap .hero-kicker {
+    margin-top: 0.55rem;
+  }
+
+  .hero-ja {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
+  .hero-artwork {
+    top: 0;
+    right: 2.2rem;
+    bottom: 0;
+    left: auto;
+    width: min(19rem, calc(100svh * 0.47));
+    min-width: 15.5rem;
+  }
+
+  .hero-image-original {
+    object-position: center;
+  }
+
+  .hero-wash {
+    background:
+      linear-gradient(90deg,
+        rgb(var(--hero-shadow-rgb) / 96%) 0%,
+        rgb(var(--hero-shadow-rgb) / 92%) 38%,
+        rgb(var(--hero-shadow-rgb) / 72%) 56%,
+        rgb(var(--hero-shadow-rgb) / 34%) 76%,
+        transparent 100%),
+      linear-gradient(180deg,
+        rgb(var(--hero-shadow-rgb) / 42%) 0%,
+        transparent 24%,
+        transparent 66%,
+        rgb(var(--hero-shadow-rgb) / 72%) 100%);
+  }
+
+  .hero-title-wrap {
+    top: 39%;
+    bottom: auto;
+    width: min(24rem, 48vw);
+    transform: translateY(-18%);
+  }
+
+  .hero-title-wrap h2,
+  .hero-title-wrap--medium h2,
+  .hero-title-wrap--long h2 {
+    font-size: clamp(2.75rem, 7.6vw, 4.05rem);
+    line-height: 0.82;
+    transform: scaleX(0.72);
+  }
+}
+
+@media (min-width: 72rem) {
+  .chapter-controls.is-project {
+    inset: 0;
+    display: block;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+    backdrop-filter: none;
+  }
+
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-dots,
+  .chapter-controls.is-project .chapter-pause-toggle,
+  .chapter-controls.is-project .chapter-progress {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: fixed;
+    top: 50%;
+    z-index: 24;
+    display: grid;
+    width: 2.8rem;
+    height: 2.8rem;
+    place-items: center;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    opacity: 0.88;
+    pointer-events: auto;
+    text-shadow: 0 2px 12px rgb(0 0 0 / 74%);
+    transform: translateY(-50%);
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"] {
+    left: 0.35rem;
+  }
+
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    right: 0.35rem;
+  }
+
+  .chapter-controls.is-project > button:disabled {
+    opacity: 0.5;
+  }
+
+  .chapter-controls.is-project > button svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+}
+
+/* Poster-first Hero system.
+   The project artwork is treated as a complete poster, not as a cropable background.
+   Width is extended by environmental gradients outside/behind the poster, so this
+   also works for bright projects by changing the per-project color tokens. */
+.project-hero--poster {
+  --hero-text: #fff;
+  --hero-rule: rgb(255 255 255 / 72%);
+  color: var(--hero-text);
+  background:
+    radial-gradient(ellipse 58% 88% at 78% 50%, var(--hero-backdrop-accent) 0%, transparent 72%),
+    radial-gradient(ellipse 44% 62% at 18% 48%, rgb(var(--hero-shadow-rgb) / 54%) 0%, transparent 76%),
+    radial-gradient(ellipse 52% 76% at 96% 50%, rgb(var(--hero-shadow-rgb) / 36%) 0%, transparent 74%),
+    var(--hero-backdrop);
+}
+
+.project-hero--poster::before,
+.project-hero--poster::after,
+.project-hero--poster .hero-wash {
+  z-index: -4;
+}
+
+.project-hero--poster::before {
+  background:
+    radial-gradient(ellipse 36% 72% at 0% 50%, rgb(var(--hero-shadow-rgb) / 70%) 0%, transparent 76%),
+    radial-gradient(ellipse 42% 78% at 100% 48%, rgb(var(--hero-shadow-rgb) / 56%) 0%, transparent 78%);
+}
+
+.project-hero--poster::after {
+  background:
+    linear-gradient(180deg,
+      rgb(var(--hero-shadow-rgb) / 30%) 0%,
+      transparent 18%,
+      transparent 72%,
+      rgb(var(--hero-shadow-rgb) / 38%) 100%);
+}
+
+.project-hero--poster .hero-artwork {
+  z-index: -2;
+  overflow: visible;
+  box-shadow:
+    0 3.5rem 8rem rgb(0 0 0 / 34%),
+    0 0 9rem rgb(var(--hero-shadow-rgb) / 50%);
+}
+
+.project-hero--poster .hero-artwork::before {
+  z-index: -1;
+  inset: -22%;
+  background:
+    radial-gradient(ellipse 60% 82% at 50% 50%, rgb(var(--hero-shadow-rgb) / 56%) 0%, rgb(var(--hero-shadow-rgb) / 18%) 58%, transparent 100%);
+}
+
+.project-hero--poster .hero-image-original {
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  transform: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.project-hero--poster .hero-header {
+  color: var(--hero-text);
+  border-color: var(--hero-rule);
+  text-shadow: none;
+}
+
+.project-hero--poster .hero-title-wrap::before {
+  background: radial-gradient(
+    ellipse 78% 68% at 36% 50%,
+    rgb(var(--hero-shadow-rgb) / 40%) 0%,
+    rgb(var(--hero-shadow-rgb) / 20%) 46%,
+    transparent 100%
+  );
+  filter: blur(18px);
+}
+
+.project-hero--poster .hero-title-wrap h2,
+.project-hero--poster .hero-kicker,
+.project-hero--poster .hero-ja,
+.project-hero--poster .hero-footer {
+  color: var(--hero-text);
+  text-shadow: none;
+}
+
+.project-hero--poster .hero-title-wrap h2 {
+  text-shadow:
+    0 0.04em 0.12em rgb(0 0 0 / 20%),
+    0 0.16em 0.62em rgb(var(--hero-shadow-rgb) / 28%);
+}
+
+.project-hero--poster .hero-footer {
+  border-color: var(--hero-rule);
+}
+
+@media (min-width: 56.01rem) {
+  .project-hero--poster .hero-artwork {
+    top: clamp(3.9rem, 7vh, 5.4rem);
+    right: clamp(2.6rem, 7vw, 7.2rem);
+    bottom: clamp(4.4rem, 8vh, 6.3rem);
+    left: auto;
+    width: min(38rem, 39vw, calc((100svh - 9rem) * 0.707));
+    min-width: min(31vw, 27rem);
+  }
+
+  .project-hero--poster .hero-title-wrap {
+    top: 42%;
+    width: min(34rem, 40vw);
+    transform: translateY(-20%);
+  }
+}
+
+@media (orientation: portrait) and (max-width: 56rem) {
+  .project-hero--poster .hero-artwork {
+    top: 4.25rem;
+    right: auto;
+    bottom: 5.25rem;
+    left: 50%;
+    width: min(82vw, calc((100svh - 9.5rem) * 0.707));
+    transform: translateX(-50%);
+  }
+
+  .project-hero--poster .hero-title-wrap {
+    bottom: 10.6rem;
+  }
+
+  .project-hero--poster .hero-title-wrap h2 {
+    font-size: clamp(3.8rem, 18vw, 5.8rem);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
+  .project-hero--poster .hero-artwork {
+    top: 2.25rem;
+    right: clamp(2.2rem, 7vw, 4rem);
+    bottom: 2.55rem;
+    left: auto;
+    width: min(18.8rem, 31vw, calc((100svh - 5rem) * 0.707));
+    min-width: 13.5rem;
+    transform: none;
+  }
+
+  .project-hero--poster .hero-title-wrap {
+    top: 43%;
+    width: min(23rem, 47vw);
+  }
+}
+
+/* Approved board v2/v3 Hero layout.
+   PC and landscape: fixed 2-column Hero (left info 38-42%, right image 58-62%).
+   Image uses supplied real data only, full-bleed cover, no poster frame, contain, radius,
+   shadow, mask, generated fill, or outpainting. Only object-position is adjustable.
+   Mobile portrait: full-screen image with text overlay. */
+.project-hero--split {
+  --hero-info-w: 40%;
+  --hero-backdrop: #f7f5ef;
+  --hero-text: #11110f;
+  --hero-rule: rgb(20 78 219 / 70%);
+  color: var(--hero-text);
+  background: var(--hero-backdrop);
+}
+
+.project-hero--split::before,
+.project-hero--split::after,
+.project-hero--split .hero-wash,
+.project-hero--split .hero-title-wrap::before,
+.project-hero--split .hero-artwork::before {
+  display: none;
+}
+
+.project-hero--split .hero-artwork {
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: var(--hero-info-w);
+  width: auto;
+  min-width: 0;
+  overflow: hidden;
+  box-shadow: none;
+  border-radius: 0;
+  transform: none;
+}
+
+.project-hero--split::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: var(--hero-info-w);
+  content: "";
+  background: var(--hero-backdrop);
+}
+
+.project-hero--split .hero-image-original {
+  object-fit: cover;
+  object-position: var(--hero-image-position);
+  filter: none;
+  transform: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.project-hero--split .hero-header {
+  top: clamp(1.6rem, 3.4vh, 2.35rem);
+  right: auto;
+  left: var(--page-margin-desktop);
+  width: min(18rem, calc(var(--hero-info-w) - var(--page-margin-desktop) - 2rem));
+  color: var(--hero-text);
+  border-color: var(--hero-rule);
+  text-shadow: none;
+}
+
+.project-hero--split .hero-header > span:last-child {
+  display: none;
+}
+
+.project-hero--split .hero-title-wrap {
+  top: 47.5%;
+  right: auto;
+  bottom: auto;
+  left: var(--page-margin-desktop);
+  width: calc(var(--hero-info-w) - var(--page-margin-desktop) - 2rem);
+  color: var(--hero-text);
+  transform: translateY(-48%);
+}
+
+.project-hero--split .hero-title-wrap h2 {
+  width: 148%;
+  color: var(--hero-text);
+  font-size: clamp(3.55rem, 4.85vw, 4.95rem);
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+  text-shadow: none;
+  transform: scaleX(0.67);
+  transform-origin: left top;
+}
+
+.project-hero--split .hero-title-wrap h2 span {
+  display: block;
+}
+
+.project-hero--split .hero-kicker {
+  margin-top: 0.9rem;
+  color: #e0007e;
+  text-shadow: none;
+}
+
+.project-hero--split .hero-ja {
+  margin-top: 0.85rem;
+  color: var(--hero-text);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  text-shadow: none;
+}
+
+.hero-meta {
+  display: grid;
+  gap: 0.95rem;
+  margin: 1.85rem 0 0;
+  font-family: var(--font-ui);
+}
+
+.hero-meta div {
+  display: grid;
+  gap: 0.24rem;
+}
+
+.hero-meta dt {
+  color: #1a4ed8;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.hero-meta dd {
+  margin: 0;
+  color: var(--hero-text);
+  font-size: 0.68rem;
+  line-height: 1.36;
+  max-width: 15rem;
+}
+
+.project-hero--split .hero-footer {
+  right: calc(100% - var(--hero-info-w) + 2rem);
+  bottom: clamp(1.8rem, 4vh, 2.5rem);
+  left: var(--page-margin-desktop);
+  grid-template-columns: 1fr auto;
+  color: var(--hero-text);
+  border-top: 0;
+  text-shadow: none;
+}
+
+.project-hero--split .hero-footer ul {
+  display: none;
+}
+
+.project-hero--split .hero-scroll-label {
+  justify-self: start;
+  color: var(--hero-text);
+}
+
+.project-hero--split .hero-scroll-label::after {
+  display: block;
+  width: 3.1rem;
+  height: 1px;
+  margin-left: 1rem;
+  content: "";
+  background: currentColor;
+}
+
+@media (min-width: 56.01rem) and (max-width: 71.99rem) {
+  .project-hero--split {
+    --hero-info-w: 38%;
+  }
+
+  .project-hero--split .hero-header {
+    left: 1.6rem;
+    width: min(13.5rem, calc(var(--hero-info-w) - 2.85rem));
+  }
+
+  .project-hero--split .hero-title-wrap {
+    top: 48%;
+    left: 1.6rem;
+    width: calc(var(--hero-info-w) - 2.75rem);
+  }
+
+  .project-hero--split .hero-title-wrap h2 {
+    font-size: clamp(2.45rem, 5.4vw, 3.65rem);
+  }
+
+  .project-hero--split .hero-meta {
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .project-hero--split .hero-footer {
+    right: calc(100% - var(--hero-info-w) + 1.25rem);
+    left: 1.6rem;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
+  .project-hero--split {
+    /* Landscape phones follow the same approved two-column rule as desktop:
+       left info 38-42%, right image 58-62%. Do not collapse to overlay. */
+    --hero-info-w: 40%;
+  }
+
+  .project-hero--split .hero-artwork {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: var(--hero-info-w);
+    width: auto;
+    min-width: 0;
+  }
+
+  .project-hero--split .hero-header {
+    top: 0.85rem;
+    left: 1rem;
+    width: min(11rem, calc(var(--hero-info-w) - 1.9rem));
+  }
+
+  .project-hero--split .hero-title-wrap {
+    top: 45%;
+    left: 1rem;
+    width: calc(var(--hero-info-w) - 1.9rem);
+    transform: translateY(-48%);
+  }
+
+  .project-hero--split .hero-title-wrap h2 {
+    font-size: clamp(1.95rem, 5.65vw, 2.72rem);
+    line-height: 0.83;
+  }
+
+  .project-hero--split .hero-kicker {
+    margin-top: 0.52rem;
+    font-size: 0.5rem;
+  }
+
+  .project-hero--split .hero-ja {
+    margin-top: 0.48rem;
+    font-size: 0.52rem;
+    line-height: 1.35;
+  }
+
+  .project-hero--split .hero-meta {
+    gap: 0.36rem;
+    margin-top: 0.62rem;
+  }
+
+  .project-hero--split .hero-meta dt {
+    font-size: 0.46rem;
+  }
+
+  .project-hero--split .hero-meta dd {
+    font-size: 0.48rem;
+    line-height: 1.26;
+  }
+
+  .project-hero--split .hero-footer {
+    right: calc(100% - var(--hero-info-w) + 0.9rem);
+    bottom: 0.68rem;
+    left: 1rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 56rem) {
+  .project-hero--split {
+    color: #fff;
+    background: #050711;
+  }
+
+  .project-hero--split .hero-artwork {
+    inset: 0;
+    width: auto;
+    min-width: 0;
+  }
+
+  .project-hero--split::before {
+    display: none;
+  }
+
+  .project-hero--split .hero-image-original {
+    object-fit: cover;
+    object-position: var(--hero-mobile-image-position);
+  }
+
+  .project-hero--split .hero-wash {
+    display: block;
+    z-index: -1;
+    background:
+      linear-gradient(180deg, rgb(0 0 0 / 26%) 0%, transparent 30%, transparent 52%, rgb(0 0 0 / 72%) 100%),
+      linear-gradient(90deg, rgb(0 0 0 / 28%) 0%, transparent 55%);
+  }
+
+  .project-hero--split .hero-header {
+    top: 1.15rem;
+    right: var(--page-margin-mobile);
+    left: var(--page-margin-mobile);
+    width: auto;
+    color: #fff;
+    border-color: rgb(255 255 255 / 72%);
+  }
+
+  .project-hero--split .hero-header > span:last-child {
+    display: inline-flex;
+  }
+
+  .project-hero--split .hero-title-wrap {
+    right: var(--page-margin-mobile);
+    bottom: 7.15rem;
+    left: var(--page-margin-mobile);
+    width: auto;
+    color: #fff;
+    transform: none;
+  }
+
+  .project-hero--split .hero-title-wrap h2 {
+    width: 148%;
+    color: #fff;
+    font-size: clamp(3.8rem, 18vw, 5.7rem);
+    line-height: 0.82;
+    text-shadow: 0 0.08em 0.32em rgb(0 0 0 / 44%);
+  }
+
+  .project-hero--split .hero-kicker {
+    color: #e0007e;
+  }
+
+  .project-hero--split .hero-ja {
+    color: #fff;
+  }
+
+  .project-hero--split .hero-meta {
+    display: none;
+  }
+
+  .project-hero--split .hero-footer {
+    right: var(--page-margin-mobile);
+    bottom: 3.15rem;
+    left: var(--page-margin-mobile);
+    color: #fff;
+    border-color: rgb(255 255 255 / 58%);
+  }
+}
+
+@media (min-width: 56.01rem) {
+  .chapter-controls.is-project {
+    top: clamp(1.45rem, 3.1vh, 2.25rem);
+    right: var(--page-margin-desktop);
+    bottom: auto;
+    left: auto;
+    display: flex;
+    width: min(26rem, 37vw);
+    min-height: 1.6rem;
+    padding: 0;
+    gap: 1.15rem;
+    align-items: center;
+    justify-content: flex-end;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    pointer-events: auto;
+    backdrop-filter: none;
+    text-shadow: 0 1px 7px rgb(0 0 0 / 38%);
+  }
+
+  .chapter-controls.is-project .chapter-status {
+    display: inline-flex;
+    min-width: auto;
+    color: #fff;
+    font-size: 0.62rem;
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle {
+    display: inline-flex;
+    gap: 0.32rem;
+    align-items: center;
+    min-width: auto;
+    min-height: auto;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 800;
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle span {
+    width: 0.48rem;
+    height: 0.48rem;
+    border: 1.5px solid currentColor;
+    border-radius: 999px;
+  }
+
+  .chapter-controls.is-project .chapter-dots {
+    display: none;
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .chapter-controls.is-project .chapter-pause-toggle {
+    position: static;
+    display: inline-flex;
+    gap: 0.32rem;
+    width: auto;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 800;
+  }
+
+  .chapter-controls.is-project .chapter-pause-toggle svg {
+    width: 0.76rem;
+    height: 0.76rem;
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    position: static;
+    display: block;
+    width: 4.7rem;
+    height: 2px;
+    margin: 0;
+    background: rgb(255 255 255 / 42%);
+  }
+
+  .chapter-controls.is-project .chapter-progress span {
+    background: #fff;
+  }
+}
+
+/* Final approved-board navigation override:
+   Project Heroes use the top-right INDEX / count / PAUSE / progress treatment
+   on desktop and landscape screens. */
+@media (min-width: 48rem) {
+  .chapter-controls.is-project {
+    inset: auto var(--page-margin-desktop) auto auto;
+    top: clamp(1.45rem, 3.1vh, 2.25rem);
+    display: flex;
+    width: min(27rem, 39vw);
+    min-height: 1.6rem;
+    padding: 0;
+    gap: 1.05rem;
+    align-items: center;
+    justify-content: flex-end;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    background: transparent;
+    box-shadow: none;
+    pointer-events: auto;
+    backdrop-filter: none;
+    text-shadow: 0 1px 7px rgb(0 0 0 / 38%);
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-pause-toggle,
+  .chapter-controls.is-project .chapter-progress {
+    position: static;
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+    border: 0;
+    color: #fff;
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-pause-toggle {
+    gap: 0.34rem;
+    align-items: center;
+    border-radius: 0;
+    background: transparent;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle span {
+    display: inline-block;
+    width: 0.54rem;
+    height: 0.54rem;
+    border: 1.4px solid currentColor;
+    border-radius: 999px;
+  }
+
+  .chapter-controls.is-project .chapter-status {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .chapter-controls.is-project .chapter-dots,
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .chapter-controls.is-project .chapter-pause-toggle svg {
+    width: 0.78rem;
+    height: 0.78rem;
+  }
+
+  .chapter-controls.is-project .chapter-pause-label {
+    display: inline;
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    display: block;
+    width: 4.7rem;
+    height: 2px;
+    background: rgb(255 255 255 / 42%);
+  }
+
+  .chapter-controls.is-project .chapter-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform-origin: left center;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
+  .chapter-controls.is-project {
+    top: 0.85rem;
+    right: 1rem;
+    width: min(22rem, 52vw);
+    gap: 0.72rem;
+    transform: none;
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-pause-toggle {
+    font-size: 0.5rem;
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    width: 3.9rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 47.99rem) {
+  .chapter-controls.is-project {
+    top: 1.15rem !important;
+    right: calc(var(--page-margin-mobile) + 6rem) !important;
+    bottom: auto !important;
+    left: auto !important;
+    display: flex !important;
+    width: 8.2rem;
+    min-height: 1rem;
+    padding: 0;
+    gap: 0.62rem;
+    align-items: center;
+    justify-content: flex-end;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    transform: none !important;
+    backdrop-filter: none;
+    color: #fff;
+    text-shadow: 0 1px 7px rgb(0 0 0 / 38%);
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-pause-toggle {
+    position: static;
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    gap: 0.28rem;
+    align-items: center;
+    overflow: visible;
+    clip: auto;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .chapter-controls.is-project .chapter-pause-label {
+    display: inline;
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle span {
+    display: inline-block;
+    width: 0.48rem;
+    height: 0.48rem;
+    border: 1.3px solid currentColor;
+    border-radius: 999px;
+  }
+
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-dots,
+  .chapter-controls.is-project .chapter-progress,
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* Story board correction:
+   The approved board uses a repeated card template after Hero, not a sparse
+   full-height ruled spreadsheet. Keep one shared structure across projects. */
+@media (min-width: 72rem) {
+  .project-story {
+    display: grid;
+    grid-template-columns: 1.22fr 0.72fr 0.98fr 0.98fr 0.98fr 0.98fr;
+    gap: 2rem;
+    max-width: none;
+    min-height: 100svh;
+    padding: 3.75rem var(--page-margin-desktop) 3.9rem;
+    overflow: hidden;
+  }
+
+  .project-story .story-header {
+    display: none;
+  }
+
+  .project-story .story-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-column: auto;
+    grid-row: auto;
+    min-height: calc(100svh - 8rem);
+    padding: 1.3rem 1.15rem 1rem;
+    overflow: hidden;
+    border: 1px solid rgb(17 17 15 / 28%);
+    background: color-mix(in srgb, var(--color-paper) 96%, white);
+  }
+
+  .project-story .story-row:nth-of-type(1),
+  .project-story .story-row:nth-of-type(2),
+  .project-story .story-row:nth-of-type(3),
+  .project-story .story-row:nth-of-type(4),
+  .project-story .story-row:nth-of-type(5),
+  .project-story .story-row:nth-of-type(6) {
+    display: grid;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .project-story .story-row:nth-of-type(1) .story-copy,
+  .project-story .story-row:nth-of-type(1) figure {
+    grid-column: auto;
+    grid-row: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .project-story .story-row:not(:has(figure)) {
+    grid-template-columns: 1fr;
+  }
+
+  .project-story .story-copy h3 {
+    gap: 0.56rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.58rem;
+    font-weight: 800;
+  }
+
+  .project-story .story-copy p {
+    max-width: 100%;
+    font-size: clamp(0.72rem, 0.85vw, 0.86rem);
+    line-height: 1.42;
+  }
+
+  .project-story .story-row figure {
+    align-self: end;
+    margin-top: 1.1rem;
+  }
+
+  .project-story .story-row figure img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .project-story .story-row:nth-of-type(1) figure img {
+    height: auto;
+    aspect-ratio: 1.08 / 1;
+  }
+
+  .project-story .next-project {
+    position: absolute;
+    right: var(--page-margin-desktop);
+    bottom: 1.25rem;
+    left: var(--page-margin-desktop);
+    min-height: 1.8rem;
+    border-bottom: 1px solid rgb(17 17 15 / 78%);
+  }
+
+  .chapter-controls.is-project.is-story {
+    display: none;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
+  .project-story {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(11.5rem, 1fr));
+    gap: 0.75rem;
+    min-height: 100svh;
+    padding: 2.2rem 1rem 2.7rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+
+  .project-story .story-header {
+    display: none;
+  }
+
+  .project-story .story-row,
+  .project-story .story-row:nth-of-type(1),
+  .project-story .story-row:nth-of-type(2),
+  .project-story .story-row:nth-of-type(3),
+  .project-story .story-row:nth-of-type(4),
+  .project-story .story-row:nth-of-type(5),
+  .project-story .story-row:nth-of-type(6) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-column: auto;
+    grid-row: auto;
+    min-height: calc(100svh - 5.4rem);
+    padding: 0.72rem;
+    border: 1px solid rgb(17 17 15 / 28%);
+    background: color-mix(in srgb, var(--color-paper) 96%, white);
+    scroll-snap-align: start;
+  }
+
+  .project-story .story-row:nth-of-type(1) .story-copy,
+  .project-story .story-row:nth-of-type(1) figure {
+    grid-column: auto;
+    grid-row: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .project-story .story-row:nth-of-type(1) figure img,
+  .project-story .story-row figure img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .project-story .story-copy h3 {
+    margin-bottom: 0.4rem;
+    font-size: 0.5rem;
+  }
+
+  .project-story .story-copy p {
+    font-size: 0.52rem;
+    line-height: 1.34;
+  }
+
+  .project-story .landscape-story-nav {
+    display: none;
+  }
+
+  .project-story .next-project {
+    position: fixed;
+    right: 1rem;
+    bottom: 0.5rem;
+    left: 1rem;
+    min-height: 1.35rem;
+    border-bottom: 1px solid rgb(17 17 15 / 78%);
+    background: var(--color-paper);
+  }
+
+  .chapter-controls.is-project.is-story {
+    display: none;
   }
 }

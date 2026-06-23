@@ -17,8 +17,14 @@ export type Project = {
   approach: string;
   output: string;
   result: string;
-  hero: ProjectImage;
-  heroWide?: ProjectImage;
+  hero: ProjectImage & {
+    backgroundColor?: string;
+    textColor?: string;
+    ruleColor?: string;
+    imagePosition?: string;
+    mobileImagePosition?: string;
+    mediaMode?: "split" | "poster" | "full";
+  };
   story: ProjectImage[];
 };
 
@@ -49,14 +55,13 @@ export const projects: Project[] = [
     title: "GEN-AI\nVISUAL\nBOOK",
     shortTitle: "GEN-AI VISUAL BOOK",
     year: "2025",
-    categories: ["RESEARCH", "EDITING", "IDEATING", "DESIGN"],
+    categories: ["AI", "ZINE", "EDITORIAL"],
     roles: [
-      "Creative Direction",
-      "Editorial Design",
-      "Art Direction",
-      "Writing",
-      "AI Image Direction",
-      "Education Design",
+      "Editor",
+      "Art Director",
+      "Designer",
+      "Researcher",
+      "Prompt Designer",
     ],
     summary:
       "Exploring how AI expands visual thinking and creative expression. A visual zine that records experiments, insights, and the possibilities of co-creation.",
@@ -67,12 +72,14 @@ export const projects: Project[] = [
     output: "18-page visual zine, presentation assets, and process documentation.",
     result: "Shared as teaching material and as a record of creative practice. Detailed outcomes will be added after confirmation.",
     hero: {
-      src: "/images/projects/gen-ai/gen-ai-hero-portrait-clean-v2.png",
-      alt: "GEN-AI portrait artwork featuring a colorful illustrated face",
-    },
-    heroWide: {
-      src: "/images/projects/gen-ai/gen-ai-hero-portrait-clean-v2.png",
-      alt: "GEN-AI portrait artwork retained at its original portrait composition for wide layouts",
+      src: "/images/projects/gen-ai/20251022_GEN-AI.png",
+      alt: "GEN-AI VISUAL BOOK key visual portrait artwork",
+      backgroundColor: "#f7f5ef",
+      textColor: "#111111",
+      ruleColor: "rgb(20 78 219 / 70%)",
+      imagePosition: "center 46%",
+      mobileImagePosition: "50% top",
+      mediaMode: "split",
     },
     story: [
       {

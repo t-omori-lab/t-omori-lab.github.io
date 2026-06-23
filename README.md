@@ -26,7 +26,7 @@ pnpm build
 - 画像：`public/images/projects/{project-id}/`
 - 表示順：`projects` 配列の順序
 - 縦長HERO画像：各作品の `hero.src`
-- 横長HERO画像：各作品の任意項目 `heroWide.src`（スマホ横・タブレット・PCで使用）
+- 横長画面のHERO：追加の横長画像は使わず、`hero.src`を右カラムで`object-fit: cover`表示
 - STORY画像：各作品の `story` 配列
 - 自動送り時間：`src/components/PortfolioExperience.tsx` の `AUTO_ADVANCE_DURATION`
 - ABOUT仮原稿：`src/content/about.ts`（`contentStatus: "provisional"`）
@@ -50,8 +50,9 @@ pnpm build
 
 ## 現在の素材上の制約
 
-- HEROは文字なしの縦長素材のみを使用し、横長画面では右固定＋局所シャドウで幅を構成します。生成した横長拡張画像は表示に使用していません。最終的には正式なクリーン原画への差し替えが望まれます。
+- HEROは提供された実画像のみを使います。PC・タブレット・スマホ横は左38〜42%を情報カラム、右58〜62%を画像カラムとし、右画像はフルブリードの`object-fit: cover`で表示します。生成した横長拡張画像・アウトペイント・枠・角丸・影は使用しません。
+- 作品ごとのHERO調整は`src/content/projects.ts`の`backgroundColor`、`textColor`、`ruleColor`、`imagePosition`で行います。画像の構図調整は`object-position`だけに限定します。スマホ縦のみ全面画像＋文字オーバーレイです。
 - STORY後半の画像は構造確認用の暫定配置です。整理済みの正式画像へ差し替えます。
 - ABOUTの文章と項目名は基本構造を確認するための仮案です。`04 / 06 / 08` は配列・予定カテゴリの件数で、実績値ではありません。
 - PC版COVERのプロフィール写真は正式素材が未発見のため未配置です。本人画像を生成せず、正式素材の追加後に配置します。
-- レスポンシブ基準は `デザイン案_決定/全ページ.png` と、同フォルダの縦スマホ、`スマホ横.PNG`、`TABLET.PNG`、`PC.PNG` です。
+- レスポンシブ基準は `デザイン案_決定/全ページ3.png` と、同フォルダの縦スマホ、`スマホ横.PNG`、`TABLET.PNG`、`PC.PNG` です。

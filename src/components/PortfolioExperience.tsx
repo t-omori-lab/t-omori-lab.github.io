@@ -9,7 +9,7 @@ import {
   Pause,
   Play,
 } from "@phosphor-icons/react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { aboutContent } from "@/content/about";
 import { coverProjectIndex, projectIndex, projects, type Project } from "@/content/projects";
 
@@ -174,34 +174,40 @@ function AboutProfile() {
 }
 
 function ProjectHero({ project }: { project: Project }) {
+  const titleLength = project.title.replace(/\s/g, "").length;
+  const titleDensity = titleLength > 28 ? "long" : titleLength > 18 ? "medium" : "short";
 
   return (
-    <section className="project-hero" id={project.id} aria-labelledby={`${project.id}-title`}>
-      <Image
-        className="hero-image hero-image-portrait"
-        src={project.hero.src}
-        alt={project.hero.alt}
-        fill
-        priority
-        sizes="100vw"
-      />
-      {project.heroWide && (
+    <section
+      className={`project-hero project-hero--${project.hero.mediaMode ?? "split"}`}
+      id={project.id}
+      aria-labelledby={`${project.id}-title`}
+      style={{
+        "--hero-backdrop": project.hero.backgroundColor ?? "#131722",
+        "--hero-text": project.hero.textColor ?? "#ffffff",
+        "--hero-rule": project.hero.ruleColor ?? "rgb(255 255 255 / 72%)",
+        "--hero-image-position": project.hero.imagePosition ?? "center center",
+        "--hero-mobile-image-position": project.hero.mobileImagePosition ?? project.hero.imagePosition ?? "center center",
+      } as CSSProperties}
+    >
+      <div className="hero-artwork">
         <Image
-          className="hero-image hero-image-wide"
-          src={project.heroWide.src}
-          alt={project.heroWide.alt}
+          className="hero-image hero-image-original"
+          src={project.hero.src}
+          alt={project.hero.alt}
           fill
-          sizes="100vw"
+          priority
+          sizes="(min-width: 900px) 58vw, 100vw"
         />
-      )}
+      </div>
       <div className="hero-wash" aria-hidden="true" />
       <header className="hero-header">
-        <span className="hero-project-label">PROJECT</span>
-        <a className="hero-brand" href="#cover">TAKASHI OMORI</a>
-        <WideSiteNav />
-        <span>{project.number} / {String(projectIndex.length).padStart(2, "0")}</span>
+        <span className="hero-project-label">
+          PROJECT {project.number} / {String(projectIndex.length).padStart(2, "0")}
+        </span>
+        <span>{project.year}</span>
       </header>
-      <div className="hero-title-wrap">
+      <div className={`hero-title-wrap hero-title-wrap--${titleDensity}`}>
         <h2 id={`${project.id}-title`}>
           {project.title.split("\n").map((line, index, lines) => (
             <span key={line}>{line}{index < lines.length - 1 ? " " : ""}</span>
@@ -209,12 +215,27 @@ function ProjectHero({ project }: { project: Project }) {
         </h2>
         <p className="hero-kicker">AI VISUAL ZINE PROJECT</p>
         <p className="hero-ja">AIとつくる時代の、ビジュアル思考と表現の探求</p>
+        <dl className="hero-meta">
+          <div>
+            <dt>YEAR</dt>
+            <dd>{project.year}</dd>
+          </div>
+          <div>
+            <dt>ROLE</dt>
+            <dd>{project.roles.join(", ")}</dd>
+          </div>
+          <div>
+            <dt>CATEGORY</dt>
+            <dd>{project.categories.join(" / ")}</dd>
+          </div>
+        </dl>
       </div>
       <div className="hero-footer">
         <ul aria-label="Project categories">
           {project.categories.map((category) => <li key={category}>{category}</li>)}
         </ul>
-        <div className="circle-link scroll-affordance" aria-hidden="true">
+        <div className="hero-scroll-label scroll-affordance" aria-hidden="true">
+          <span>SCROLL TO EXPLORE</span>
           <ArrowDown />
         </div>
       </div>
@@ -283,6 +304,8 @@ function ChapterControls({
   activeChapter,
   progress,
   paused,
+  inStory,
+  onOpenIndex,
   onPrevious,
   onNext,
   onSelect,
@@ -291,18 +314,27 @@ function ChapterControls({
   activeChapter: number;
   progress: number;
   paused: boolean;
+  inStory: boolean;
+  onOpenIndex: () => void;
   onPrevious: () => void;
   onNext: () => void;
   onSelect: (index: number) => void;
   onTogglePause: () => void;
 }) {
   const implementedProjectCount = projects.length;
+  const totalProjectCount = String(projectIndex.length).padStart(2, "0");
+  const activeProjectNumber = projects[activeChapter - 1]?.number ?? "--";
   const status = activeChapter === 0
     ? "COVER"
-    : `PROJECT ${projects[activeChapter - 1]?.number ?? "--"} / ${String(projectIndex.length).padStart(2, "0")}`;
+    : `${activeProjectNumber} / ${totalProjectCount}`;
 
   return (
-    <nav className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"}`} aria-label="Portfolio chapters">
+    <nav className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}`} aria-label="Portfolio chapters">
+      {activeChapter !== 0 && (
+        <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
+          INDEX <span aria-hidden="true" />
+        </button>
+      )}
       <span className="chapter-status" aria-live="polite">{status}</span>
       <button type="button" onClick={onPrevious} disabled={activeChapter === 0} aria-label="Previous chapter">
         <ArrowLeft aria-hidden="true" weight="regular" />
@@ -335,6 +367,7 @@ function ChapterControls({
         <ArrowRight aria-hidden="true" weight="regular" />
       </button>
       <button className="chapter-pause-toggle" type="button" onClick={onTogglePause} aria-label={paused ? "Resume automatic slide" : "Pause automatic slide"}>
+        <span className="chapter-pause-label">{paused ? "RESUME" : "PAUSE"}</span>
         {paused ? <Play aria-hidden="true" weight="fill" /> : <Pause aria-hidden="true" weight="fill" />}
       </button>
       <span className="chapter-progress" aria-hidden="true">
@@ -414,6 +447,7 @@ export function PortfolioExperience() {
   const [indexOpen, setIndexOpen] = useState(false);
   const [autoPaused, setAutoPaused] = useState(false);
   const [activeChapter, setActiveChapter] = useState(0);
+  const [activeVerticalSection, setActiveVerticalSection] = useState<"hero" | "story">("hero");
   const [chapterProgress, setChapterProgress] = useState(0);
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const activeChapterRef = useRef(0);
@@ -446,6 +480,7 @@ export function PortfolioExperience() {
 
     activeChapterRef.current = clampedIndex;
     setActiveChapter(clampedIndex);
+    setActiveVerticalSection(hash.includes("-story") || hash === `#${projects[clampedIndex - 1]?.id}-story` ? "story" : "hero");
     setChapterProgress(0);
 
     if (!isChangingChapter) window.requestAnimationFrame(() => {
@@ -471,6 +506,27 @@ export function PortfolioExperience() {
   }, [pauseForInteraction]);
 
   useEffect(() => {
+    const slide = slideRefs.current[activeChapter];
+    if (!slide || activeChapter === 0) {
+      setActiveVerticalSection("hero");
+      return;
+    }
+    const onScroll = () => {
+      setActiveVerticalSection(slide.scrollTop > window.innerHeight * 0.58 ? "story" : "hero");
+    };
+    onScroll();
+    slide.addEventListener("scroll", onScroll, { passive: true });
+    return () => slide.removeEventListener("scroll", onScroll);
+  }, [activeChapter]);
+
+  const inStory = activeChapter !== 0 && activeVerticalSection === "story";
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setChapterProgress(0);
+      return;
+    }
+
     if (autoPaused || indexOpen || activeChapter >= chapterCount - 1) {
       setChapterProgress(0);
       return;
@@ -539,9 +595,11 @@ export function PortfolioExperience() {
         activeChapter={activeChapter}
         progress={chapterProgress}
         paused={autoPaused}
+        inStory={inStory}
         onPrevious={() => goToChapter(activeChapter - 1)}
         onNext={() => goToChapter(activeChapter + 1)}
         onSelect={goToChapter}
+        onOpenIndex={() => setIndexOpen(true)}
         onTogglePause={() => setAutoPaused((value) => !value)}
       />
       <button className="floating-index" type="button" onClick={() => setIndexOpen(true)}>INDEX</button>
