@@ -3208,6 +3208,707 @@ nextjs-portal {
   }
 }
 
+/* 2026-06-24 shared responsive UI system.
+   Source of truth: 0624_スマホFV2.png and 0624_デザインボード.png. */
+.cover-tagline,
+.cover-description,
+.cover-practice-list,
+.section-label--practice {
+  display: none;
+}
+
+.project-hero .hero-header {
+  display: none;
+}
+
+.chapter-controls {
+  position: fixed;
+  z-index: 24;
+  top: 1.05rem;
+  right: var(--page-margin-mobile);
+  bottom: auto;
+  left: var(--page-margin-mobile);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
+  min-height: 7.8rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--color-ink);
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+  backdrop-filter: none;
+  font-family: var(--font-ui);
+  text-shadow: none;
+  transform: none;
+}
+
+.chapter-name,
+.chapter-status,
+.chapter-index-toggle {
+  position: relative;
+  z-index: 2;
+  min-height: 1.2rem;
+  color: inherit;
+  font-size: 0.58rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.chapter-name {
+  justify-self: start;
+}
+
+.chapter-status {
+  justify-self: center;
+  min-width: 4.8rem;
+  text-align: center;
+}
+
+.chapter-index-toggle {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  min-width: auto;
+  min-height: auto;
+  padding: 0;
+  align-items: start;
+  justify-content: end;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  justify-self: end;
+  pointer-events: auto;
+}
+
+.chapter-index-toggle span {
+  display: none !important;
+}
+
+.chapter-progress {
+  position: absolute;
+  z-index: 1;
+  top: 1.78rem;
+  right: 0;
+  left: 0;
+  display: block;
+  height: 1px;
+  overflow: hidden;
+  background: rgb(17 17 15 / 22%);
+}
+
+.chapter-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--color-blue);
+  transform-origin: left center;
+}
+
+.chapter-dots {
+  display: none;
+}
+
+.folio-number {
+  position: absolute;
+  z-index: 2;
+  top: 2.38rem;
+  right: -0.12rem;
+  display: block;
+  width: 5.75rem;
+  height: 4.95rem;
+  color: currentColor;
+  font-family: var(--font-display);
+  pointer-events: none;
+}
+
+.folio-current {
+  position: absolute;
+  top: -0.28rem;
+  right: 2.25rem;
+  font-size: 4.72rem;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.folio-slash {
+  position: absolute;
+  top: 2.44rem;
+  right: 1.32rem;
+  width: 3.42rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.48;
+  transform: rotate(-47deg);
+  transform-origin: center;
+}
+
+.folio-total-wrap {
+  position: absolute;
+  right: 0;
+  bottom: 0.18rem;
+  width: 2.65rem;
+  height: 2.62rem;
+  overflow: hidden;
+}
+
+.folio-total {
+  position: absolute;
+  right: 0.16rem;
+  bottom: -0.08rem;
+  font-size: 2.85rem;
+  line-height: 0.86;
+  letter-spacing: -0.08em;
+}
+
+.chapter-controls > button[aria-label="Previous chapter"],
+.chapter-controls > button[aria-label="Next chapter"] {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  width: 4.5rem;
+  height: 2.5rem;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  pointer-events: auto;
+  filter: drop-shadow(0 1px 6px rgb(0 0 0 / 22%));
+}
+
+.chapter-controls > button[aria-label="Previous chapter"]:disabled,
+.chapter-controls > button[aria-label="Next chapter"]:disabled {
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.chapter-controls > button[aria-label="Previous chapter"] {
+  top: 45svh;
+  left: -0.2rem;
+}
+
+.chapter-controls > button[aria-label="Next chapter"] {
+  top: 45svh;
+  right: -0.2rem;
+}
+
+.chapter-arrow {
+  position: relative;
+  display: block;
+  width: 3.85rem;
+  height: 1.1rem;
+}
+
+.chapter-arrow::before,
+.chapter-arrow::after {
+  position: absolute;
+  content: "";
+  background: currentColor;
+}
+
+.chapter-arrow::before {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.chapter-arrow::after {
+  top: 50%;
+  width: 0.84rem;
+  height: 0.84rem;
+  border-top: 1px solid currentColor;
+  background: transparent;
+}
+
+.chapter-arrow--next::after {
+  right: 0;
+  border-right: 1px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.chapter-arrow--prev::after {
+  left: 0;
+  border-left: 1px solid currentColor;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+@media (orientation: portrait) and (max-width: 47.99rem) {
+  .cover {
+    padding: 3.95rem var(--page-margin-mobile) 2.2rem;
+    overflow-y: auto;
+  }
+
+  .cover-header {
+    display: none;
+  }
+
+  .cover-grid {
+    display: block;
+    min-height: auto;
+    padding-top: clamp(5.45rem, 14.6svh, 7.85rem);
+  }
+
+  .cover h1 {
+    width: 138%;
+    font-size: clamp(4.15rem, 17.25vw, 5.38rem);
+    line-height: 0.83;
+    letter-spacing: -0.064em;
+  }
+
+  .role-line {
+    margin-top: 1.05rem;
+    font-family: var(--font-body);
+    font-size: clamp(1.75rem, 7.45vw, 2.32rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.22em;
+  }
+
+  .role-ja {
+    margin-top: 1.12rem;
+    color: var(--color-ink);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.72;
+    letter-spacing: 0.02em;
+  }
+
+  .cover-tagline {
+    display: block;
+    max-width: 26rem;
+    margin: 2.45rem 0 0;
+    font-family: var(--font-body);
+    font-size: clamp(1.55rem, 6.15vw, 2.05rem);
+    font-weight: 400;
+    line-height: 1.54;
+    letter-spacing: 0.055em;
+  }
+
+  .cover-description {
+    display: block;
+    max-width: 20.5rem;
+    margin: 1rem 0 0;
+    font-family: var(--font-ui);
+    font-size: 0.64rem;
+    font-weight: 700;
+    line-height: 2.03;
+    letter-spacing: 0.01em;
+  }
+
+  .statement,
+  .cover-profile-summary,
+  .section-label--projects,
+  .cover-featured-list,
+  .cover-complete-list,
+  .cover-keywords,
+  .scroll-cue {
+    display: none !important;
+  }
+
+  .cover-index {
+    width: 100%;
+    padding: 1.9rem 0 0;
+  }
+
+  .section-label--practice {
+    display: block;
+    margin: 0;
+    transform: none !important;
+  }
+
+  .cover-practice-list {
+    display: block;
+    padding: 0;
+    margin: 1.1rem 0 0;
+    list-style: none;
+    border-top: 1px solid rgb(17 17 15 / 18%);
+  }
+
+  .cover-practice-list li {
+    padding: 0.78rem 0 0.64rem;
+    border-bottom: 1px solid rgb(17 17 15 / 18%);
+    font-family: var(--font-ui);
+  }
+
+  .cover-practice-list strong,
+  .cover-practice-list small {
+    display: block;
+  }
+
+  .cover-practice-list strong {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.015em;
+  }
+
+  .cover-practice-list small {
+    margin-top: 0.22rem;
+    color: var(--color-ink);
+    font-size: 0.61rem;
+    line-height: 1.28;
+  }
+
+  .chapter-controls.is-cover,
+  .chapter-controls.is-project {
+    top: 2rem !important;
+    right: var(--page-margin-mobile) !important;
+    bottom: auto !important;
+    left: var(--page-margin-mobile) !important;
+    display: grid !important;
+    width: auto;
+    min-height: 7.7rem;
+    padding: 0;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0;
+    color: var(--color-ink);
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    transform: none !important;
+  }
+
+  .chapter-controls.is-project {
+    color: #fff;
+  }
+
+  .chapter-controls.is-cover .chapter-name,
+  .chapter-controls.is-cover .chapter-status,
+  .chapter-controls.is-cover .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-name,
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-index-toggle {
+    position: relative;
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    align-items: flex-start;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .chapter-controls.is-cover .chapter-status,
+  .chapter-controls.is-project .chapter-status {
+    justify-self: center;
+  }
+
+  .chapter-controls.is-cover .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-index-toggle {
+    justify-self: end;
+  }
+
+  .chapter-controls.is-cover .chapter-name,
+  .chapter-controls.is-project .chapter-name {
+    position: fixed;
+    top: 2rem;
+    left: var(--page-margin-mobile);
+  }
+
+  .chapter-controls.is-cover .chapter-status,
+  .chapter-controls.is-project .chapter-status {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .chapter-controls.is-cover .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-index-toggle {
+    position: fixed;
+    top: 2rem;
+    right: auto;
+    left: calc(100vw - 4.15rem);
+    display: inline-flex !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: nowrap !important;
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .chapter-controls.is-cover .chapter-progress,
+  .chapter-controls.is-project .chapter-progress {
+    position: fixed;
+    top: 3.48rem;
+    right: var(--page-margin-mobile);
+    bottom: auto;
+    left: var(--page-margin-mobile);
+    width: auto;
+    height: 1px;
+    background: rgb(17 17 15 / 24%);
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    background: rgb(255 255 255 / 36%);
+  }
+
+  .chapter-controls.is-project .chapter-progress span {
+    background: #fff;
+  }
+
+  .chapter-controls.is-cover .chapter-dots,
+  .chapter-controls.is-project .chapter-dots {
+    display: none;
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-cover > button[aria-label="Next chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: absolute;
+    display: grid;
+    width: 4.3rem;
+    height: 2.5rem;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    border: 0;
+    color: inherit;
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    filter: drop-shadow(0 1px 7px rgb(0 0 0 / 56%));
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Previous chapter"] {
+    position: fixed;
+    top: 45svh;
+    left: var(--page-margin-mobile);
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Next chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: fixed;
+    top: 45svh;
+    right: var(--page-margin-mobile);
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Previous chapter"]:disabled {
+    display: none;
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Next chapter"]::before {
+    position: absolute;
+    right: 0.1rem;
+    bottom: -0.38rem;
+    content: "NEXT";
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .chapter-controls.is-cover .folio-number,
+  .chapter-controls.is-project .folio-number {
+    position: fixed;
+    top: 2.46rem;
+    right: calc(var(--page-margin-mobile) - 0.1rem);
+    width: 7.2rem;
+    height: 5.6rem;
+    display: block !important;
+    overflow: visible;
+  }
+
+  .chapter-controls.is-cover .folio-current,
+  .chapter-controls.is-project .folio-current {
+    position: absolute;
+    top: -0.34rem;
+    right: 2.7rem;
+    font-size: 4.42rem;
+  }
+
+  .chapter-controls.is-cover .folio-slash,
+  .chapter-controls.is-project .folio-slash {
+    position: absolute;
+    top: 2.56rem;
+    right: 1.36rem;
+    width: 3.4rem;
+  }
+
+  .chapter-controls.is-cover .folio-total-wrap,
+  .chapter-controls.is-project .folio-total-wrap {
+    position: absolute;
+    top: 2.84rem;
+    right: 0.04rem;
+    width: 2.5rem;
+    height: 2.58rem;
+  }
+
+  .chapter-controls.is-cover .folio-total,
+  .chapter-controls.is-project .folio-total {
+    right: 0.08rem;
+    bottom: 0;
+    font-size: 2.72rem;
+  }
+
+  .chapter-controls.is-cover .folio-number {
+    inset: 0;
+    width: auto;
+    height: auto;
+    font-size: 0;
+  }
+
+  .chapter-controls.is-cover .folio-current,
+  .chapter-controls.is-cover .folio-total-wrap {
+    display: none;
+  }
+
+  .chapter-controls.is-cover .folio-number::before {
+    position: fixed;
+    top: 1.48rem;
+    left: calc(100vw - 7.95rem);
+    content: "01";
+    font-family: var(--font-display);
+    font-size: 4.58rem;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+  }
+
+  .chapter-controls.is-cover .folio-number::after {
+    position: fixed;
+    top: 4.73rem;
+    left: calc(100vw - 4.72rem);
+    width: 2.36rem;
+    overflow: hidden;
+    clip-path: inset(0 0 0.22rem 0);
+    content: "08";
+    font-family: var(--font-display);
+    font-size: 2.72rem;
+    font-weight: 400;
+    line-height: 0.86;
+    letter-spacing: -0.08em;
+  }
+
+  .chapter-controls.is-cover .folio-slash {
+    position: fixed;
+    top: 4.45rem;
+    left: calc(100vw - 5.92rem);
+    display: block;
+    width: 3.35rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.48;
+    transform: rotate(-47deg);
+  }
+}
+
+@media (min-width: 48rem) {
+  .project-hero--split .hero-footer {
+    display: none;
+  }
+
+  .chapter-controls.is-project {
+    top: clamp(1.45rem, 3vh, 2.2rem) !important;
+    right: var(--page-margin-desktop) !important;
+    left: var(--page-margin-desktop) !important;
+    display: grid;
+    width: auto;
+    grid-template-columns: minmax(12rem, 1fr) auto minmax(12rem, 1fr);
+    color: #fff;
+  }
+
+  .chapter-controls.is-project .chapter-name,
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-index-toggle {
+    color: inherit;
+    text-shadow: 0 1px 8px rgb(0 0 0 / 28%);
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle span {
+    display: none !important;
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: rgb(255 255 255 / 32%);
+  }
+
+  .chapter-controls.is-project .chapter-progress span {
+    background: #fff;
+  }
+
+  .chapter-controls.is-project .folio-number {
+    top: 0.7rem;
+    right: 0;
+    transform: scale(1.08);
+    transform-origin: top right;
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: fixed;
+    top: 50%;
+    display: grid;
+    width: 5rem;
+    height: 3rem;
+    overflow: visible;
+    clip: auto;
+    color: #fff;
+    transform: translateY(-50%);
+    text-shadow: 0 1px 8px rgb(0 0 0 / 28%);
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"] {
+    left: calc(var(--hero-info-w, 40%) + 1.4rem);
+  }
+
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    right: 1.4rem;
+  }
+
+  .chapter-controls.is-project.is-story {
+    color: var(--color-ink);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
+  .chapter-controls.is-project,
+  .chapter-controls.is-project.is-story {
+    top: 0.72rem !important;
+    right: 1rem !important;
+    left: 1rem !important;
+    display: grid !important;
+    width: auto;
+    min-height: 4.6rem;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    color: #fff;
+  }
+
+  .chapter-controls.is-project .folio-number {
+    top: 0.55rem;
+    right: 0.1rem;
+    transform: scale(0.74);
+    transform-origin: top right;
+  }
+}
+
 @media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
   .project-story {
     display: grid;
@@ -3283,6 +3984,163 @@ nextjs-portal {
   }
 
   .chapter-controls.is-project.is-story {
+    display: grid !important;
+  }
+}
+
+/* 2026-06-24 pass 2: keep the shared chrome independent from the legacy hero rules. */
+@media (orientation: portrait) and (max-width: 47.99rem) {
+  .project-hero--split .hero-title-wrap {
+    right: calc(var(--page-margin-mobile) + 3.4rem);
+    bottom: 10.1rem;
+    left: var(--page-margin-mobile);
+  }
+
+  .project-hero--split .hero-title-wrap h2 {
+    width: 132%;
+    font-size: clamp(3.05rem, 12.8vw, 3.82rem);
+    line-height: 0.84;
+    letter-spacing: -0.055em;
+    transform: scaleX(0.82);
+    transform-origin: left top;
+  }
+
+  .project-hero--split .hero-kicker {
+    margin-top: 0.72rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.065em;
+  }
+
+  .project-hero--split .hero-ja {
+    margin-top: 0.82rem;
+    max-width: 18.5rem;
+    font-size: 0.69rem;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .project-hero--split .hero-footer {
     display: none;
+  }
+}
+
+@media (min-width: 48rem) {
+  .chapter-controls.is-project {
+    top: clamp(1.4rem, 3.2vh, 2.15rem) !important;
+    right: var(--page-margin-desktop) !important;
+    bottom: auto !important;
+    left: var(--page-margin-desktop) !important;
+    display: block !important;
+    width: auto !important;
+    min-height: 6.3rem;
+    color: var(--color-ink);
+    pointer-events: none;
+  }
+
+  .chapter-controls.is-project .chapter-name,
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-index-toggle {
+    position: fixed;
+    top: clamp(1.4rem, 3.2vh, 2.15rem);
+    z-index: 3;
+    display: inline-flex !important;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    align-items: flex-start;
+    border: 0;
+    background: transparent;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-shadow: none;
+    white-space: nowrap;
+    transform: none;
+  }
+
+  .chapter-controls.is-project .chapter-name {
+    left: var(--page-margin-desktop);
+    color: var(--color-ink);
+  }
+
+  .chapter-controls.is-project .chapter-status {
+    left: calc(var(--hero-info-w, 40%) * 0.5);
+    color: var(--color-ink);
+    transform: translateX(-50%);
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle {
+    right: var(--page-margin-desktop);
+    left: auto;
+    color: #fff;
+    pointer-events: auto;
+    text-shadow: 0 1px 8px rgb(0 0 0 / 28%);
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    position: fixed;
+    top: clamp(2rem, 4.1vh, 2.85rem);
+    right: calc(100% - var(--hero-info-w, 40%) + 0.2rem);
+    left: var(--page-margin-desktop);
+    width: auto;
+    height: 1px;
+    background: rgb(17 17 15 / 20%);
+  }
+
+  .chapter-controls.is-project .chapter-progress span {
+    background: var(--color-blue);
+  }
+
+  .chapter-controls.is-project .folio-number {
+    position: fixed;
+    top: clamp(1.7rem, 3.4vh, 2.35rem);
+    right: calc(var(--page-margin-desktop) + 0.2rem);
+    color: #fff;
+    transform: scale(1.08);
+    transform-origin: top right;
+    text-shadow: 0 1px 12px rgb(0 0 0 / 26%);
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    position: fixed;
+    top: 50%;
+    z-index: 3;
+    display: grid !important;
+    width: 5rem;
+    height: 3rem;
+    padding: 0;
+    overflow: visible;
+    clip: auto;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    pointer-events: auto;
+    text-shadow: 0 1px 8px rgb(0 0 0 / 30%);
+    transform: translateY(-50%);
+  }
+
+  .chapter-controls.is-project > button[aria-label="Previous chapter"] {
+    left: calc(var(--hero-info-w, 40%) + 1.4rem);
+  }
+
+  .chapter-controls.is-project > button[aria-label="Next chapter"] {
+    right: 1.4rem;
+  }
+
+  .chapter-controls.is-project.is-story .chapter-name,
+  .chapter-controls.is-project.is-story .chapter-status,
+  .chapter-controls.is-project.is-story .chapter-index-toggle,
+  .chapter-controls.is-project.is-story .folio-number,
+  .chapter-controls.is-project.is-story > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project.is-story > button[aria-label="Next chapter"] {
+    color: var(--color-ink);
+    text-shadow: none;
   }
 }

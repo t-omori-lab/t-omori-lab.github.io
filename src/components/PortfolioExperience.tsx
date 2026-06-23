@@ -6,14 +6,31 @@ import {
   ArrowLeft,
   ArrowRight,
   List as ListIcon,
-  Pause,
-  Play,
 } from "@phosphor-icons/react";
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { aboutContent } from "@/content/about";
 import { coverProjectIndex, projectIndex, projects, type Project } from "@/content/projects";
 
-const AUTO_ADVANCE_DURATION = 8000;
+const AUTO_ADVANCE_DURATION = 6000;
+
+const practiceAreas = [
+  {
+    title: "DESIGN & DIRECTION",
+    subtitle: "Strategy / Visual System / Branding / Communication",
+  },
+  {
+    title: "EDUCATION & CURRICULUM",
+    subtitle: "Teaching / Curriculum Design / Creative Learning",
+  },
+  {
+    title: "AI & CREATIVE RESEARCH",
+    subtitle: "AI / Design Research / Zine / Writing",
+  },
+  {
+    title: "DX & ADVISORY",
+    subtitle: "AI Advisory / DX Strategy / Workshop / Consulting",
+  },
+] as const;
 
 function ArrowDown() {
   return <ArrowDownIcon aria-hidden="true" className="arrow-down" weight="thin" />;
@@ -45,7 +62,12 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
         <div className="cover-main">
           <h1 id="cover-title">TAKASHI<br />OMORI</h1>
           <p className="role-line">大森 隆</p>
-          <p className="role-ja">デザイナー / ディレクター / 教育者<br />AI・DXアドバイザー</p>
+          <p className="role-ja">大学講師 / デザインディレクター /<br />AI・DXアドバイザー</p>
+          <p className="cover-tagline">複雑な構想を、<br />動き出せるかたちへ。</p>
+          <p className="cover-description">
+            AIとデザインを軸に、教育・研究・事業の構想を
+            構造化し、実践へとつなげています。
+          </p>
           <p className="statement">
             Designing systems, stories, and experiences that connect people, knowledge, and technology.
             From education to practice, research to strategy—with clarity, structure, and intention.
@@ -57,7 +79,16 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
         </div>
 
         <div className="cover-index" aria-label="Project index">
-          <p className="section-label">PROJECTS</p>
+          <p className="section-label section-label--projects">PROJECTS</p>
+          <p className="section-label section-label--practice">PRACTICE AREAS</p>
+          <ol className="cover-practice-list">
+            {practiceAreas.map((item) => (
+              <li key={item.title}>
+                <strong>{item.title}</strong>
+                <small>{item.subtitle}</small>
+              </li>
+            ))}
+          </ol>
           <ol className="cover-featured-list">
             {coverProjectIndex.map((item) => {
               const content = (
@@ -117,7 +148,6 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
         <span>SCROLL TO EXPLORE</span>
         <ArrowDown />
       </div>
-      <p className="cover-folio" aria-hidden="true">PORTFOLIO&nbsp;&nbsp;01 / 08</p>
     </section>
   );
 }
@@ -309,7 +339,6 @@ function ChapterControls({
   onPrevious,
   onNext,
   onSelect,
-  onTogglePause,
 }: {
   activeChapter: number;
   progress: number;
@@ -319,25 +348,25 @@ function ChapterControls({
   onPrevious: () => void;
   onNext: () => void;
   onSelect: (index: number) => void;
-  onTogglePause: () => void;
 }) {
   const implementedProjectCount = projects.length;
   const totalProjectCount = String(projectIndex.length).padStart(2, "0");
   const activeProjectNumber = projects[activeChapter - 1]?.number ?? "--";
-  const status = activeChapter === 0
-    ? "COVER"
-    : `${activeProjectNumber} / ${totalProjectCount}`;
+  const chapterName = activeChapter === 0 ? "PORTFOLIO" : inStory ? "STORY" : "PROJECT";
+  const currentNumber = activeChapter === 0 ? "01" : activeProjectNumber;
+  const remainingSeconds = Math.max(0, Math.ceil((1 - progress) * (AUTO_ADVANCE_DURATION / 1000)));
+  const status = paused ? "PAUSE" : `AUTO ${String(remainingSeconds).padStart(2, "0")}s`;
 
   return (
     <nav className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}`} aria-label="Portfolio chapters">
-      {activeChapter !== 0 && (
-        <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
-          INDEX <span aria-hidden="true" />
-        </button>
-      )}
+      <span className="chapter-name">{chapterName}</span>
       <span className="chapter-status" aria-live="polite">{status}</span>
+      <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
+        INDEX <span aria-hidden="true" />
+      </button>
+      <FolioNumber current={currentNumber} total={totalProjectCount} />
       <button type="button" onClick={onPrevious} disabled={activeChapter === 0} aria-label="Previous chapter">
-        <ArrowLeft aria-hidden="true" weight="regular" />
+        <span className="chapter-arrow chapter-arrow--prev" aria-hidden="true" />
       </button>
       <div className="chapter-dots" aria-label="Chapter indicator">
         <button
@@ -363,17 +392,25 @@ function ChapterControls({
           );
         })}
       </div>
-      <button type="button" onClick={onNext} disabled={activeChapter >= implementedProjectCount} aria-label="Next chapter">
-        <ArrowRight aria-hidden="true" weight="regular" />
-      </button>
-      <button className="chapter-pause-toggle" type="button" onClick={onTogglePause} aria-label={paused ? "Resume automatic slide" : "Pause automatic slide"}>
-        <span className="chapter-pause-label">{paused ? "RESUME" : "PAUSE"}</span>
-        {paused ? <Play aria-hidden="true" weight="fill" /> : <Pause aria-hidden="true" weight="fill" />}
+      <button type="button" onClick={onNext} disabled={activeChapter >= projectIndex.length} aria-label="Next chapter">
+        <span className="chapter-arrow chapter-arrow--next" aria-hidden="true" />
       </button>
       <span className="chapter-progress" aria-hidden="true">
         <span style={{ transform: `scaleX(${progress})` }} />
       </span>
     </nav>
+  );
+}
+
+function FolioNumber({ current, total }: { current: string; total: string }) {
+  return (
+    <span className="folio-number" aria-label={`${current} / ${total}`}>
+      <span className="folio-current">{current}</span>
+      <span className="folio-slash" aria-hidden="true" />
+      <span className="folio-total-wrap">
+        <span className="folio-total">{total}</span>
+      </span>
+    </span>
   );
 }
 
@@ -454,9 +491,7 @@ export function PortfolioExperience() {
   const pointerStartX = useRef<number | null>(null);
   const chapterCount = projects.length + 1;
 
-  const pauseForInteraction = useCallback((event: Event) => {
-    const target = event.target as HTMLElement | null;
-    if (target?.closest(".chapter-pause-toggle")) return;
+  const pauseForInteraction = useCallback(() => {
     setAutoPaused(true);
   }, []);
 
@@ -525,12 +560,12 @@ export function PortfolioExperience() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setAutoPaused(true);
       setChapterProgress(0);
       return;
     }
 
     if (autoPaused || indexOpen || activeChapter >= chapterCount - 1) {
-      setChapterProgress(0);
       return;
     }
 
@@ -573,6 +608,14 @@ export function PortfolioExperience() {
     goToChapter(activeChapter + (distance < 0 ? 1 : -1));
   };
 
+  const goToNextChapter = useCallback(() => {
+    if (activeChapter >= projects.length) {
+      setIndexOpen(true);
+      return;
+    }
+    goToChapter(activeChapter + 1);
+  }, [activeChapter, goToChapter]);
+
   return (
     <main className="portfolio-stage" onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
       <div className="portfolio-track" style={{ transform: `translate3d(-${activeChapter * 100}%, 0, 0)` }}>
@@ -599,10 +642,9 @@ export function PortfolioExperience() {
         paused={autoPaused}
         inStory={inStory}
         onPrevious={() => goToChapter(activeChapter - 1)}
-        onNext={() => goToChapter(activeChapter + 1)}
+        onNext={goToNextChapter}
         onSelect={goToChapter}
         onOpenIndex={() => setIndexOpen(true)}
-        onTogglePause={() => setAutoPaused((value) => !value)}
       />
       <button className="floating-index" type="button" onClick={() => setIndexOpen(true)}>INDEX</button>
       <ProjectIndex open={indexOpen} onClose={() => setIndexOpen(false)} />
