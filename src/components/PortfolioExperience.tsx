@@ -549,7 +549,9 @@ export function PortfolioExperience() {
       return;
     }
     const onScroll = () => {
-      setActiveVerticalSection(slide.scrollTop > window.innerHeight * 0.58 ? "story" : "hero");
+      const nextSection = slide.scrollTop > window.innerHeight * 0.58 ? "story" : "hero";
+      setActiveVerticalSection(nextSection);
+      if (nextSection === "story") setAutoPaused(true);
     };
     onScroll();
     slide.addEventListener("scroll", onScroll, { passive: true });

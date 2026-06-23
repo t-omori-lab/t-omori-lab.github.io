@@ -3990,6 +3990,31 @@ nextjs-portal {
 
 /* 2026-06-24 pass 2: keep the shared chrome independent from the legacy hero rules. */
 @media (orientation: portrait) and (max-width: 47.99rem) {
+  .project-story {
+    padding-top: 8.45rem;
+  }
+
+  .project-story .story-header {
+    display: none;
+  }
+
+  .chapter-controls.is-project.is-story {
+    color: var(--color-ink) !important;
+  }
+
+  .chapter-controls.is-project.is-story .chapter-progress {
+    background: rgb(17 17 15 / 24%);
+  }
+
+  .chapter-controls.is-project.is-story .chapter-progress span {
+    background: var(--color-blue);
+  }
+
+  .chapter-controls.is-project.is-story > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project.is-story > button[aria-label="Next chapter"] {
+    display: none !important;
+  }
+
   .project-hero--split .hero-title-wrap {
     right: calc(var(--page-margin-mobile) + 3.4rem);
     bottom: 10.1rem;
@@ -4025,6 +4050,10 @@ nextjs-portal {
 }
 
 @media (min-width: 48rem) {
+  .project-story {
+    padding-top: clamp(6.7rem, 12vh, 7.7rem);
+  }
+
   .chapter-controls.is-project {
     top: clamp(1.4rem, 3.2vh, 2.15rem) !important;
     right: var(--page-margin-desktop) !important;
