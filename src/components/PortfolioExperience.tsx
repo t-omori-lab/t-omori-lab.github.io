@@ -34,7 +34,7 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
   return (
     <section className="cover" id="cover" aria-labelledby="cover-title">
       <header className="cover-header">
-        <a href="#cover" className="wordmark">DESIGN / RESEARCH / EDUCATION</a>
+        <a href="#cover" className="wordmark">PORTFOLIO / SELECTED WORKS</a>
         <WideSiteNav />
         <button className="text-button menu-button" type="button" onClick={onOpenIndex}>
           MENU <ListIcon aria-hidden="true" weight="regular" />
@@ -44,7 +44,7 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
       <div className="cover-grid">
         <div className="cover-main">
           <h1 id="cover-title">TAKASHI<br />OMORI</h1>
-          <p className="role-line">DESIGNER / DIRECTOR / EDUCATOR<br />AI &amp; DX ADVISOR</p>
+          <p className="role-line">大森 隆</p>
           <p className="role-ja">デザイナー / ディレクター / 教育者<br />AI・DXアドバイザー</p>
           <p className="statement">
             Designing systems, stories, and experiences that connect people, knowledge, and technology.
@@ -494,7 +494,9 @@ export function PortfolioExperience() {
       const projectIndexForHash = projects.findIndex((project) => hash.startsWith(`#${project.id}`));
       goToChapter(projectIndexForHash >= 0 ? projectIndexForHash + 1 : 0, hash);
     };
-    syncHash();
+    if (window.location.hash !== "#cover") {
+      window.history.replaceState(null, "", "#cover");
+    }
     window.addEventListener("hashchange", syncHash);
     return () => window.removeEventListener("hashchange", syncHash);
   }, [goToChapter]);
