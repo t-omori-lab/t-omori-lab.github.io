@@ -4224,3 +4224,117 @@ nextjs-portal {
     right: 0.95rem;
   }
 }
+
+/* 2026-06-24 pass 4: refine the mobile cover first view against 0624_スマホFV2. */
+@media (orientation: portrait) and (max-width: 47.99rem) {
+  .cover {
+    padding-top: 3.9rem;
+  }
+
+  .cover-grid {
+    padding-top: clamp(5.95rem, 15.35svh, 7.95rem);
+  }
+
+  .cover h1 {
+    width: 164%;
+    font-size: clamp(5.35rem, 23.15vw, 6.75rem);
+    line-height: 0.79;
+    letter-spacing: -0.078em;
+  }
+
+  .role-line {
+    margin-top: 0.28rem;
+    font-size: clamp(2rem, 8.6vw, 2.65rem);
+    line-height: 1.03;
+    letter-spacing: 0.25em;
+  }
+
+  .role-ja {
+    margin-top: 1.18rem;
+    font-size: clamp(0.75rem, 2.85vw, 0.92rem);
+    line-height: 1.78;
+  }
+
+  .cover-tagline {
+    max-width: 27.5rem;
+    margin-top: clamp(2.1rem, 4.8svh, 2.55rem);
+    font-size: clamp(1.66rem, 6.75vw, 2.2rem);
+    line-height: 1.48;
+    letter-spacing: 0.06em;
+  }
+
+  .cover-description {
+    max-width: 21.6rem;
+    margin-top: 1.12rem;
+    font-size: clamp(0.66rem, 2.45vw, 0.8rem);
+    line-height: 2.08;
+  }
+
+  .cover-index {
+    padding-top: clamp(2.45rem, 5.8svh, 3.15rem);
+  }
+
+  .chapter-controls.is-cover .chapter-name,
+  .chapter-controls.is-cover .chapter-status,
+  .chapter-controls.is-cover .chapter-index-toggle {
+    top: 1.78rem;
+    font-size: clamp(0.62rem, 2.55vw, 0.82rem);
+    font-weight: 500;
+    letter-spacing: 0.09em;
+  }
+
+  .chapter-controls.is-cover .chapter-name {
+    left: clamp(1.5rem, 6.2vw, 2.45rem);
+  }
+
+  .chapter-controls.is-cover .chapter-status {
+    left: 50%;
+  }
+
+  .chapter-controls.is-cover .chapter-index-toggle {
+    left: auto;
+    right: clamp(1.55rem, 6.3vw, 2.55rem);
+  }
+
+  .chapter-controls.is-cover .chapter-progress {
+    top: 3.2rem;
+    left: clamp(1.5rem, 6.2vw, 2.45rem);
+    right: clamp(1.5rem, 6.2vw, 2.45rem);
+    background: rgb(17 17 15 / 22%);
+  }
+
+  .chapter-controls.is-cover .chapter-progress span {
+    background: var(--color-blue);
+  }
+
+  .chapter-controls.is-cover .folio-number::before {
+    top: 4.45rem;
+    left: calc(100vw - 6.65rem);
+    font-size: clamp(4.95rem, 21vw, 6.15rem);
+    line-height: 0.86;
+    letter-spacing: -0.095em;
+  }
+
+  .chapter-controls.is-cover .folio-number::after {
+    top: 7.05rem;
+    left: calc(100vw - 4.08rem);
+    width: 3.02rem;
+    font-size: clamp(2.95rem, 12.45vw, 3.65rem);
+    line-height: 0.84;
+    letter-spacing: -0.09em;
+    clip-path: inset(0 0 0.18rem 0);
+  }
+
+  .chapter-controls.is-cover .folio-slash {
+    top: 6.98rem;
+    left: calc(100vw - 5.08rem);
+    width: 3.35rem;
+    opacity: 0.45;
+    transform: rotate(-47deg);
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Next chapter"] {
+    top: 55.6svh;
+    right: clamp(1.55rem, 6.2vw, 2.6rem);
+  }
+}
