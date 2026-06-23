@@ -4173,3 +4173,54 @@ nextjs-portal {
     text-shadow: none;
   }
 }
+
+/* 2026-06-24 pass 3: Story uses the shared chrome only; Project overlay chrome stays readable on portrait tablet. */
+.project-story .story-header {
+  display: none;
+}
+
+.chapter-controls.is-project.is-story {
+  color: var(--color-ink) !important;
+}
+
+.chapter-controls.is-project.is-story > button[aria-label="Previous chapter"],
+.chapter-controls.is-project.is-story > button[aria-label="Next chapter"] {
+  display: none !important;
+}
+
+@media (orientation: portrait) and (min-width: 48rem) and (max-width: 56rem) {
+  .chapter-controls.is-project:not(.is-story) {
+    color: #fff !important;
+  }
+
+  .chapter-controls.is-project:not(.is-story) .chapter-name,
+  .chapter-controls.is-project:not(.is-story) .chapter-status,
+  .chapter-controls.is-project:not(.is-story) .chapter-index-toggle,
+  .chapter-controls.is-project:not(.is-story) .folio-number,
+  .chapter-controls.is-project:not(.is-story) > button[aria-label="Previous chapter"],
+  .chapter-controls.is-project:not(.is-story) > button[aria-label="Next chapter"] {
+    color: #fff !important;
+    text-shadow: 0 1px 9px rgb(0 0 0 / 34%);
+  }
+
+  .chapter-controls.is-project:not(.is-story) .chapter-progress {
+    background: rgb(255 255 255 / 35%);
+  }
+
+  .chapter-controls.is-project:not(.is-story) .chapter-progress span {
+    background: #fff;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 56rem) and (max-height: 35rem) {
+  .chapter-controls.is-project .folio-number {
+    top: 0.36rem;
+    right: 0.95rem;
+    transform: scale(0.78);
+    transform-origin: top right;
+  }
+
+  .chapter-controls.is-project .chapter-index-toggle {
+    right: 0.95rem;
+  }
+}
