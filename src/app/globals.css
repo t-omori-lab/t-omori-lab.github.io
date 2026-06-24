@@ -3367,6 +3367,43 @@ nextjs-portal {
   letter-spacing: -0.08em;
 }
 
+.folio-svg-number {
+  font-size: 0;
+}
+
+.folio-mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  color: currentColor;
+}
+
+.folio-mark-current,
+.folio-mark-total {
+  fill: currentColor;
+  font-family: var(--font-display);
+  font-weight: 400;
+  dominant-baseline: alphabetic;
+}
+
+.folio-mark-current {
+  font-size: 74px;
+  letter-spacing: -6.4px;
+}
+
+.folio-mark-total {
+  font-size: 44px;
+  letter-spacing: -4px;
+}
+
+.folio-mark-cut-line {
+  stroke: currentColor;
+  stroke-width: 1;
+  opacity: 0.48;
+  vector-effect: non-scaling-stroke;
+}
+
 .chapter-controls > button[aria-label="Previous chapter"],
 .chapter-controls > button[aria-label="Next chapter"] {
   position: absolute;

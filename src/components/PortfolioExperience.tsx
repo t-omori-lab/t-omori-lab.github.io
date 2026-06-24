@@ -7,7 +7,7 @@ import {
   ArrowRight,
   List as ListIcon,
 } from "@phosphor-icons/react";
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } from "react";
 import { aboutContent } from "@/content/about";
 import { coverProjectIndex, projectIndex, projects, type Project } from "@/content/projects";
 
@@ -407,26 +407,38 @@ function ChapterControls({
 }
 
 function FolioNumber({ current, total }: { current: string; total: string }) {
+  const maskId = `folio-total-cut-${useId().replace(/:/g, "")}`;
+
   return (
-    <span className="folio-number" aria-label={`${current} / ${total}`}>
-      <span className="folio-current">{current}</span>
-      <span className="folio-slash" aria-hidden="true" />
-      <span className="folio-total-wrap">
-        <span className="folio-total">{total}</span>
-      </span>
+    <span className="folio-number folio-svg-number" aria-label={`${current} / ${total}`}>
+      <FolioMarkSvg current={current} total={total} maskId={maskId} />
     </span>
   );
 }
 
 function CoverFolioNumber({ current, total }: { current: string; total: string }) {
+  const maskId = `cover-folio-total-cut-${useId().replace(/:/g, "")}`;
+
   return (
-    <span className="folio-number cover-folio-number" aria-label={`${current} / ${total}`}>
-      <span className="cover-folio-current">{current}</span>
-      <span className="cover-folio-slash" aria-hidden="true" />
-      <span className="cover-folio-total-mask" aria-hidden="true">
-        <span className="cover-folio-total">{total}</span>
-      </span>
+    <span className="folio-number cover-folio-number folio-svg-number" aria-label={`${current} / ${total}`}>
+      <FolioMarkSvg current={current} total={total} maskId={maskId} />
     </span>
+  );
+}
+
+function FolioMarkSvg({ current, total, maskId }: { current: string; total: string; maskId: string }) {
+  return (
+    <svg className="folio-mark" viewBox="0 0 120 92" aria-hidden="true" focusable="false">
+      <defs>
+        <mask id={maskId} maskUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="120" height="92" fill="white" />
+          <polygon className="folio-mark-cutout" points="56,31 91,31 56,66" fill="black" />
+        </mask>
+      </defs>
+      <text className="folio-mark-current" x="0" y="58">{current}</text>
+      <text className="folio-mark-total" x="62" y="81" mask={`url(#${maskId})`}>{total}</text>
+      <line className="folio-mark-cut-line" x1="56" y1="66" x2="91" y2="31" />
+    </svg>
   );
 }
 
