@@ -4450,7 +4450,7 @@ nextjs-portal {
     position: fixed;
     top: 29px;
     font-size: 9.2px;
-    font-weight: 500;
+    font-weight: 650;
     line-height: 8px;
     letter-spacing: 0.08em;
     color: #fff;
@@ -4516,7 +4516,7 @@ nextjs-portal {
     overflow: visible !important;
     clip: auto !important;
     white-space: normal !important;
-    height: 0.5px !important;
+    height: 1px !important;
   }
 
   .chapter-controls.is-cover .chapter-progress {
@@ -4536,14 +4536,14 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .chapter-progress::after {
-    width: 3.5px;
-    height: 3.5px;
+    width: 4.5px;
+    height: 4.5px;
     background: #fff;
   }
 
   .chapter-controls.is-project .chapter-progress::after {
-    width: 3.5px;
-    height: 3.5px;
+    width: 4.5px;
+    height: 4.5px;
     background: #fff;
   }
 
