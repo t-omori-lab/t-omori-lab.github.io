@@ -3398,7 +3398,9 @@ nextjs-portal {
   fill: currentColor;
   font-family: var(--font-display);
   font-weight: 400;
+  font-synthesis: none;
   dominant-baseline: alphabetic;
+  text-rendering: geometricPrecision;
 }
 
 .folio-mark-current {
@@ -4374,23 +4376,41 @@ nextjs-portal {
 
   .chapter-controls.is-cover .chapter-name,
   .chapter-controls.is-cover .chapter-status,
-  .chapter-controls.is-cover .chapter-index-toggle {
+  .chapter-controls.is-cover .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-name,
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-index-toggle {
     position: fixed;
     top: 29px;
-    color: rgb(17 17 15 / 92%);
     font-size: 9.2px;
     font-weight: 400;
     line-height: 8px;
     letter-spacing: 0.08em;
+    text-shadow: none;
   }
 
-  .chapter-controls.is-cover .chapter-name {
+  .chapter-controls.is-cover .chapter-name,
+  .chapter-controls.is-cover .chapter-status,
+  .chapter-controls.is-cover .chapter-index-toggle {
+    color: rgb(17 17 15 / 92%);
+  }
+
+  .chapter-controls.is-project .chapter-name,
+  .chapter-controls.is-project .chapter-status,
+  .chapter-controls.is-project .chapter-index-toggle {
+    color: #fff;
+    text-shadow: 0 1px 8px rgb(0 0 0 / 34%);
+  }
+
+  .chapter-controls.is-cover .chapter-name,
+  .chapter-controls.is-project .chapter-name {
     left: 25px;
     transform: scaleX(0.8);
     transform-origin: left top;
   }
 
-  .chapter-controls.is-cover .chapter-status {
+  .chapter-controls.is-cover .chapter-status,
+  .chapter-controls.is-project .chapter-status {
     left: 190px;
     transform: scaleX(0.83);
     transform-origin: left top;
@@ -4408,28 +4428,52 @@ nextjs-portal {
     filter: blur(5px);
   }
 
-  .chapter-controls.is-cover .chapter-index-toggle {
+  .chapter-controls.is-cover .chapter-index-toggle,
+  .chapter-controls.is-project .chapter-index-toggle {
     left: auto;
     right: 25px;
     transform: scaleX(0.92);
     transform-origin: right top;
   }
 
+  .chapter-controls.is-cover .chapter-progress,
+  .chapter-controls.is-project .chapter-progress {
+    top: 52px !important;
+    right: clamp(1.5rem, 6.2vw, 2.45rem) !important;
+    left: clamp(1.5rem, 6.2vw, 2.45rem) !important;
+    width: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+
   .chapter-controls.is-cover .chapter-progress {
-    top: 52px;
-    left: clamp(1.5rem, 6.2vw, 2.45rem);
-    right: clamp(1.5rem, 6.2vw, 2.45rem);
     background: rgb(17 17 15 / 22%);
+  }
+
+  .chapter-controls.is-project .chapter-progress {
+    background: rgb(255 255 255 / 36%);
   }
 
   .chapter-controls.is-cover .chapter-progress span {
     background: var(--color-blue);
   }
 
+  .chapter-controls.is-project .chapter-progress span {
+    background: #fff;
+  }
+
   .chapter-controls.is-cover .chapter-progress::after {
     width: 4px;
     height: 4px;
     background: var(--color-blue);
+  }
+
+  .chapter-controls.is-project .chapter-progress::after {
+    width: 4px;
+    height: 4px;
+    background: #fff;
   }
 
   .chapter-controls.is-cover .folio-number::before {
@@ -4459,11 +4503,12 @@ nextjs-portal {
     color: var(--color-ink);
     opacity: 1;
     transform: none !important;
-    text-shadow: none !important;
+    text-shadow: 0 0 0.22px rgb(17 17 15 / 26%) !important;
   }
 
   .chapter-controls.is-project .folio-number {
     color: #fff;
+    text-shadow: none !important;
     filter: drop-shadow(0 1px 8px rgb(0 0 0 / 32%));
   }
 
