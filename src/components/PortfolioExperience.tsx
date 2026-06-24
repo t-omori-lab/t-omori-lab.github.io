@@ -13,6 +13,8 @@ import { coverProjectIndex, projectIndex, projects, type Project } from "@/conte
 
 const AUTO_ADVANCE_DURATION = 6000;
 const CHAPTER_TRANSITION_DURATION = 820;
+const CHROME_TONE_SETTLE_DURATION = 280;
+const FOLIO_COUNT_DURATION = 860;
 
 const practiceAreas = [
   {
@@ -332,7 +334,8 @@ function ProjectStory({ project }: { project: Project }) {
 
 function ChapterControls({
   activeChapter,
-  previousChapter,
+  folioChapter,
+  previousFolioChapter,
   progress,
   paused,
   inStory,
@@ -343,7 +346,8 @@ function ChapterControls({
   onSelect,
 }: {
   activeChapter: number;
-  previousChapter: number | null;
+  folioChapter: number;
+  previousFolioChapter: number | null;
   progress: number;
   paused: boolean;
   inStory: boolean;
@@ -356,8 +360,8 @@ function ChapterControls({
   const implementedProjectCount = projects.length;
   const totalProjectCount = String(projectIndex.length).padStart(2, "0");
   const chapterName = activeChapter === 0 ? "PORTFOLIO" : inStory ? "STORY" : "PROJECT";
-  const currentNumber = String(activeChapter + 1).padStart(2, "0");
-  const previousNumber = previousChapter === null ? null : String(previousChapter + 1).padStart(2, "0");
+  const currentNumber = String(folioChapter + 1).padStart(2, "0");
+  const previousNumber = previousFolioChapter === null ? null : String(previousFolioChapter + 1).padStart(2, "0");
   const remainingSeconds = Math.max(0, Math.ceil((1 - progress) * (AUTO_ADVANCE_DURATION / 1000)));
   const status = paused ? "PAUSE" : `AUTO ${String(remainingSeconds).padStart(2, "0")}s`;
   const countingClass = countingDirection ? ` is-counting is-count-${countingDirection}` : "";
@@ -558,7 +562,8 @@ export function PortfolioExperience() {
   const [autoPaused, setAutoPaused] = useState(false);
   const [activeChapter, setActiveChapter] = useState(0);
   const [chromeChapter, setChromeChapter] = useState(0);
-  const [previousChromeChapter, setPreviousChromeChapter] = useState<number | null>(null);
+  const [folioChapter, setFolioChapter] = useState(0);
+  const [previousFolioChapter, setPreviousFolioChapter] = useState<number | null>(null);
   const [countingDirection, setCountingDirection] = useState<"next" | "prev" | null>(null);
   const [isChapterTransitioning, setIsChapterTransitioning] = useState(false);
   const [activeVerticalSection, setActiveVerticalSection] = useState<"hero" | "story">("hero");
@@ -568,8 +573,10 @@ export function PortfolioExperience() {
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const activeChapterRef = useRef(0);
   const chromeChapterRef = useRef(0);
+  const folioChapterRef = useRef(0);
   const isTransitioningRef = useRef(false);
   const transitionTimerRef = useRef<number | null>(null);
+  const folioCountDelayTimerRef = useRef<number | null>(null);
   const countAnimationTimerRef = useRef<number | null>(null);
   const autoFrameRef = useRef<number | null>(null);
   const chapterProgressRef = useRef(0);
@@ -583,10 +590,8 @@ export function PortfolioExperience() {
   }, []);
 
   const finishChromeTransition = useCallback((nextIndex: number, nextVerticalSection: "hero" | "story", immediate = false) => {
-    const previousIndex = chromeChapterRef.current;
+    const previousFolioIndex = folioChapterRef.current;
     chromeChapterRef.current = nextIndex;
-    setPreviousChromeChapter(previousIndex === nextIndex || immediate ? null : previousIndex);
-    setCountingDirection(previousIndex === nextIndex || immediate ? null : nextIndex > previousIndex ? "next" : "prev");
     setChromeChapter(nextIndex);
     setChromeVerticalSection(nextVerticalSection);
     chapterProgressRef.current = 0;
@@ -596,14 +601,33 @@ export function PortfolioExperience() {
     isTransitioningRef.current = false;
     setIsChapterTransitioning(false);
 
+    if (folioCountDelayTimerRef.current !== null) window.clearTimeout(folioCountDelayTimerRef.current);
     if (countAnimationTimerRef.current !== null) window.clearTimeout(countAnimationTimerRef.current);
-    if (previousIndex !== nextIndex && !immediate) {
+
+    if (previousFolioIndex === nextIndex || immediate) {
+      folioChapterRef.current = nextIndex;
+      setFolioChapter(nextIndex);
+      setPreviousFolioChapter(null);
+      setCountingDirection(null);
+      return;
+    }
+
+    setPreviousFolioChapter(null);
+    setCountingDirection(null);
+
+    folioCountDelayTimerRef.current = window.setTimeout(() => {
+      folioChapterRef.current = nextIndex;
+      setPreviousFolioChapter(previousFolioIndex);
+      setCountingDirection(nextIndex > previousFolioIndex ? "next" : "prev");
+      setFolioChapter(nextIndex);
+      folioCountDelayTimerRef.current = null;
+
       countAnimationTimerRef.current = window.setTimeout(() => {
-        setPreviousChromeChapter(null);
+        setPreviousFolioChapter(null);
         setCountingDirection(null);
         countAnimationTimerRef.current = null;
-      }, 860);
-    }
+      }, FOLIO_COUNT_DURATION);
+    }, CHROME_TONE_SETTLE_DURATION);
   }, []);
 
   const goToChapter = useCallback((nextIndex: number, requestedHash?: string, options?: { immediate?: boolean }) => {
@@ -672,6 +696,7 @@ export function PortfolioExperience() {
 
   useEffect(() => () => {
     if (transitionTimerRef.current !== null) window.clearTimeout(transitionTimerRef.current);
+    if (folioCountDelayTimerRef.current !== null) window.clearTimeout(folioCountDelayTimerRef.current);
     if (countAnimationTimerRef.current !== null) window.clearTimeout(countAnimationTimerRef.current);
     if (autoFrameRef.current !== null) window.cancelAnimationFrame(autoFrameRef.current);
   }, []);
@@ -792,7 +817,8 @@ export function PortfolioExperience() {
       </div>
       <ChapterControls
         activeChapter={chromeChapter}
-        previousChapter={previousChromeChapter}
+        folioChapter={folioChapter}
+        previousFolioChapter={previousFolioChapter}
         progress={displayedChapterProgress}
         paused={autoPaused}
         inStory={inStory}
