@@ -3299,7 +3299,7 @@ nextjs-portal {
   left: 0;
   display: block;
   height: 1px;
-  overflow: hidden;
+  overflow: visible;
   background: rgb(17 17 15 / 22%);
 }
 
@@ -3309,6 +3309,20 @@ nextjs-portal {
   height: 100%;
   background: var(--color-blue);
   transform-origin: left center;
+  will-change: transform;
+}
+
+.chapter-progress::after {
+  position: absolute;
+  top: 50%;
+  left: var(--chapter-progress-percent, 0%);
+  width: 0.34rem;
+  height: 0.34rem;
+  content: "";
+  border-radius: 999px;
+  background: var(--color-blue);
+  transform: translate(-50%, -50%);
+  will-change: left;
 }
 
 .chapter-dots {
@@ -4412,6 +4426,12 @@ nextjs-portal {
     background: var(--color-blue);
   }
 
+  .chapter-controls.is-cover .chapter-progress::after {
+    width: 4px;
+    height: 4px;
+    background: var(--color-blue);
+  }
+
   .chapter-controls.is-cover .folio-number::before {
     content: none !important;
   }
@@ -4459,14 +4479,12 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"] {
-    opacity: 0;
-  }
-
-  .chapter-controls.is-cover > button[aria-label="Next chapter"] {
     top: 56.8svh;
     right: 1.05rem;
     width: 2rem;
-    color: rgb(17 17 15 / 66%);
+    color: var(--color-blue);
+    opacity: 1;
+    filter: none;
   }
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"]::before {
@@ -4480,7 +4498,7 @@ nextjs-portal {
 
   .chapter-controls.is-cover .chapter-arrow {
     width: 2rem;
-    transform: translateY(-0.46rem);
+    transform: translateY(-1.28rem);
   }
 
   .chapter-controls.is-cover .chapter-arrow::after {

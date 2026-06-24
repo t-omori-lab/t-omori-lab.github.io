@@ -360,7 +360,14 @@ function ChapterControls({
   const status = paused ? "PAUSE" : `AUTO ${String(remainingSeconds).padStart(2, "0")}s`;
 
   return (
-    <nav className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}`} aria-label="Portfolio chapters">
+    <nav
+      className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}`}
+      aria-label="Portfolio chapters"
+      style={{
+        "--chapter-progress": progress,
+        "--chapter-progress-percent": `${progress * 100}%`,
+      } as CSSProperties}
+    >
       <span className="chapter-name">{chapterName}</span>
       <span className="chapter-status" aria-live="polite">{status}</span>
       <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
@@ -604,18 +611,19 @@ export function PortfolioExperience() {
       return;
     }
 
-    const startedAt = Date.now();
+    const startedAt = performance.now();
+    let frameId = 0;
     const tick = () => {
-      const nextProgress = Math.min(1, (Date.now() - startedAt) / AUTO_ADVANCE_DURATION);
+      const nextProgress = Math.min(1, (performance.now() - startedAt) / AUTO_ADVANCE_DURATION);
       setChapterProgress(nextProgress);
       if (nextProgress >= 1) {
         goToChapter(activeChapter + 1);
-        window.clearInterval(timer);
+        return;
       }
+      frameId = window.requestAnimationFrame(tick);
     };
-    const timer = window.setInterval(tick, 100);
-    tick();
-    return () => window.clearInterval(timer);
+    frameId = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(frameId);
   }, [activeChapter, autoPaused, chapterCount, goToChapter, indexOpen]);
 
   useEffect(() => {
