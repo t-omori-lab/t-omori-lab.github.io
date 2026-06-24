@@ -3324,10 +3324,6 @@ nextjs-portal {
   will-change: left;
 }
 
-.chapter-progress-guard {
-  display: none;
-}
-
 .chapter-dots {
   display: none;
 }
@@ -4521,42 +4517,6 @@ nextjs-portal {
     clip: auto !important;
     white-space: normal !important;
     height: 1px !important;
-  }
-
-  .chapter-progress-guard {
-    position: fixed;
-    z-index: 23;
-    top: 52px;
-    right: clamp(1.5rem, 6.2vw, 2.45rem);
-    left: clamp(1.5rem, 6.2vw, 2.45rem);
-    display: block;
-    height: 1px;
-    pointer-events: none;
-    background: rgb(17 17 15 / 26%);
-    box-shadow:
-      0 -0.5px 0 rgb(255 255 255 / 30%),
-      0 0.5px 0 rgb(17 17 15 / 16%);
-  }
-
-  .chapter-progress-guard span {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: rgb(17 17 15 / 34%);
-    transform-origin: left center;
-  }
-
-  .chapter-progress-guard::after {
-    position: absolute;
-    top: 50%;
-    left: var(--chapter-progress-percent, 0%);
-    width: 4.5px;
-    height: 4.5px;
-    content: "";
-    border-radius: 999px;
-    background: rgb(17 17 15 / 42%);
-    box-shadow: 0 0 0 1px rgb(255 255 255 / 35%);
-    transform: translate(-50%, -50%);
   }
 
   .chapter-controls.is-cover .chapter-progress {
