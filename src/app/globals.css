@@ -4228,7 +4228,10 @@ nextjs-portal {
 /* 2026-06-24 pass 4: refine the mobile cover first view against 0624_スマホFV2. */
 @media (orientation: portrait) and (max-width: 47.99rem) {
   .cover {
+    background: #fffefa;
     padding-top: 3.9rem;
+    padding-right: clamp(1.5rem, 6.2vw, 2.45rem);
+    padding-left: clamp(1.5rem, 6.2vw, 2.45rem);
   }
 
   .cover-grid {
@@ -4236,15 +4239,16 @@ nextjs-portal {
   }
 
   .cover h1 {
-    width: 164%;
-    font-size: clamp(5.35rem, 23.15vw, 6.75rem);
-    line-height: 0.79;
+    width: 100%;
+    font-size: clamp(4.05rem, 17vw, 5.1rem);
+    line-height: 0.84;
     letter-spacing: -0.078em;
+    transform: none;
   }
 
   .role-line {
-    margin-top: 0.28rem;
-    font-size: clamp(2rem, 8.6vw, 2.65rem);
+    margin-top: 1.45rem;
+    font-size: clamp(1.75rem, 7.35vw, 2.26rem);
     line-height: 1.03;
     letter-spacing: 0.25em;
   }
@@ -4257,21 +4261,21 @@ nextjs-portal {
 
   .cover-tagline {
     max-width: 27.5rem;
-    margin-top: clamp(2.1rem, 4.8svh, 2.55rem);
-    font-size: clamp(1.66rem, 6.75vw, 2.2rem);
-    line-height: 1.48;
+    margin-top: clamp(1.42rem, 3.25svh, 1.92rem);
+    font-size: clamp(1.32rem, 5.42vw, 1.78rem);
+    line-height: 1.45;
     letter-spacing: 0.06em;
   }
 
   .cover-description {
     max-width: 21.6rem;
-    margin-top: 1.12rem;
+    margin-top: 1.04rem;
     font-size: clamp(0.66rem, 2.45vw, 0.8rem);
     line-height: 2.08;
   }
 
   .cover-index {
-    padding-top: clamp(2.45rem, 5.8svh, 3.15rem);
+    padding-top: clamp(2.28rem, 5.2svh, 2.85rem);
   }
 
   .chapter-controls.is-cover .chapter-name,
@@ -4317,8 +4321,8 @@ nextjs-portal {
 
   .chapter-controls.is-cover .folio-number::after {
     top: 7.05rem;
-    left: calc(100vw - 4.08rem);
-    width: 3.02rem;
+    left: calc(100vw - 4.22rem);
+    width: 2.55rem;
     font-size: clamp(2.95rem, 12.45vw, 3.65rem);
     line-height: 0.84;
     letter-spacing: -0.09em;
@@ -4326,15 +4330,16 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .folio-slash {
-    top: 6.98rem;
-    left: calc(100vw - 5.08rem);
-    width: 3.35rem;
+    top: 6.42rem;
+    left: calc(100vw - 4.65rem);
+    width: 2.9rem;
     opacity: 0.45;
     transform: rotate(-47deg);
   }
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"] {
-    top: 55.6svh;
+    top: 56.8svh;
     right: clamp(1.55rem, 6.2vw, 2.6rem);
+    width: 2.55rem;
   }
 }

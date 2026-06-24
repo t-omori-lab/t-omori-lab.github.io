@@ -65,7 +65,7 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
           <p className="role-ja">大学講師 / デザインディレクター /<br />AI・DXアドバイザー</p>
           <p className="cover-tagline">複雑な構想を、<br />動き出せるかたちへ。</p>
           <p className="cover-description">
-            AIとデザインを軸に、教育・研究・事業の構想を
+            AIとデザインを軸に、教育・研究・事業の構想を<br />
             構造化し、実践へとつなげています。
           </p>
           <p className="statement">
