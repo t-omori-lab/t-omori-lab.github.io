@@ -4275,7 +4275,7 @@ nextjs-portal {
   }
 
   .cover-index {
-    padding-top: clamp(2.28rem, 5.2svh, 2.85rem);
+    padding-top: clamp(2.42rem, 5.55svh, 3.05rem);
   }
 
   .chapter-controls.is-cover .chapter-name,
@@ -4320,9 +4320,9 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .folio-number::after {
-    top: 7.05rem;
-    left: calc(100vw - 4.22rem);
-    width: 2.55rem;
+    top: 7.02rem;
+    left: calc(100vw - 4.1rem);
+    width: 2.72rem;
     font-size: clamp(2.95rem, 12.45vw, 3.65rem);
     line-height: 0.84;
     letter-spacing: -0.09em;
@@ -4330,9 +4330,9 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .folio-slash {
-    top: 6.42rem;
-    left: calc(100vw - 4.65rem);
-    width: 2.9rem;
+    top: 6.36rem;
+    left: calc(100vw - 4.42rem);
+    width: 2.74rem;
     opacity: 0.45;
     transform: rotate(-47deg);
   }
@@ -4341,5 +4341,24 @@ nextjs-portal {
     top: 56.8svh;
     right: clamp(1.55rem, 6.2vw, 2.6rem);
     width: 2.55rem;
+    color: rgb(17 17 15 / 72%);
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Next chapter"]::before {
+    right: -0.02rem;
+    bottom: -0.32rem;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+  }
+
+  .chapter-controls.is-cover .chapter-arrow {
+    width: 2.55rem;
+  }
+
+  .chapter-controls.is-cover .chapter-arrow::after {
+    width: 0.62rem;
+    height: 0.62rem;
   }
 }
