@@ -14,7 +14,10 @@ import { coverProjectIndex, projectIndex, projects, type Project } from "@/conte
 const AUTO_ADVANCE_DURATION = 6000;
 const CHAPTER_TRANSITION_DURATION = 820;
 const CHROME_TONE_SETTLE_DURATION = 0;
-const FOLIO_COUNT_DURATION = 860;
+const FOLIO_COUNT_DURATION = 620;
+const SCRAMBLE_START_DELAY = 110;
+const SCRAMBLE_NOISE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/_.:-";
+const DIGIT_NOISE_CHARS = "0123456789";
 
 const practiceAreas = [
   {
@@ -39,6 +42,200 @@ function ArrowDown() {
   return <ArrowDownIcon aria-hidden="true" className="arrow-down" weight="thin" />;
 }
 
+function isShuffleableAscii(character: string) {
+  const code = character.charCodeAt(0);
+  return code >= 33 && code <= 126;
+}
+
+function getScrambleNoiseChar() {
+  return SCRAMBLE_NOISE_CHARS[Math.floor(Math.random() * SCRAMBLE_NOISE_CHARS.length)] ?? "X";
+}
+
+function getDigitNoiseChar() {
+  return DIGIT_NOISE_CHARS[Math.floor(Math.random() * DIGIT_NOISE_CHARS.length)] ?? "0";
+}
+
+function useTextShuffle(text: string, active: boolean, delay = 0) {
+  const [displayText, setDisplayText] = useState(text);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!active) {
+      setDisplayText(text);
+      setVisible(false);
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayText(text);
+      setVisible(true);
+      return;
+    }
+
+    const characters = Array.from(text);
+    const isLongLine = characters.length > 24;
+    const offsetUnit = isLongLine ? 2 : 1;
+    const revealStep = isLongLine ? Math.max(1.25, characters.length / 26) : 1.05;
+    const offsets = characters.map((character) => {
+      if (character.trim() === "") return 0;
+      const direction = Math.random() < 0.5 ? -1 : 1;
+      const offsetAmount = isLongLine ? 14 + Math.round(Math.random() * 8) : 30 + Math.round(Math.random() * 12);
+      return offsetAmount * direction;
+    });
+    let revealEdge = 0;
+    let delayTimer = 0;
+    let intervalId = 0;
+
+    const noiseText = characters
+      .map((character) => (character.trim() === "" ? character : getScrambleNoiseChar()))
+      .join("");
+
+    const tick = () => {
+      let allSettled = true;
+      const nextText = characters
+        .map((character, index) => {
+          if (character.trim() === "") return character;
+
+          if (index > revealEdge) {
+            allSettled = false;
+            return getScrambleNoiseChar();
+          }
+
+          const offset = offsets[index] ?? 0;
+          if (offset === 0) return character;
+
+          allSettled = false;
+          if (Math.abs(offset) <= offsetUnit) {
+            offsets[index] = 0;
+          } else {
+            offsets[index] = offset > 0 ? offset - offsetUnit : offset + offsetUnit;
+          }
+
+          if (!isShuffleableAscii(character) || Math.abs(offset) > 25) {
+            return getScrambleNoiseChar();
+          }
+
+          const nextCode = Math.min(Math.max(character.charCodeAt(0) + offset, 33), 126);
+          return String.fromCharCode(nextCode);
+        })
+        .join("");
+
+      setDisplayText(nextText);
+      revealEdge += revealStep;
+
+      if (allSettled && revealEdge >= characters.length) {
+        window.clearInterval(intervalId);
+        setDisplayText(text);
+      }
+    };
+
+    setVisible(false);
+    setDisplayText(text);
+    delayTimer = window.setTimeout(() => {
+      setDisplayText(noiseText);
+      setVisible(true);
+      tick();
+      intervalId = window.setInterval(tick, 1000 / 60);
+    }, delay);
+
+    return () => {
+      window.clearTimeout(delayTimer);
+      window.clearInterval(intervalId);
+    };
+  }, [active, delay, text]);
+
+  return { displayText, visible };
+}
+
+function useDigitShuffle(text: string, active: boolean, delay = 0) {
+  const [displayText, setDisplayText] = useState(text);
+  const [visible, setVisible] = useState(!active);
+
+  useEffect(() => {
+    if (!active) {
+      setDisplayText(text);
+      setVisible(true);
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayText(text);
+      setVisible(true);
+      return;
+    }
+
+    const characters = Array.from(text);
+    let frame = 0;
+    let delayTimer = 0;
+    let intervalId = 0;
+    const maxFrames = 64;
+
+    const tick = () => {
+      frame += 1;
+      const revealEdge = Math.floor((frame / maxFrames) * (characters.length + 1));
+      const nextText = characters
+        .map((character, index) => {
+          if (!/\d/.test(character)) return character;
+          return index < revealEdge ? character : getDigitNoiseChar();
+        })
+        .join("");
+
+      setDisplayText(nextText);
+
+      if (frame >= maxFrames) {
+        window.clearInterval(intervalId);
+        setDisplayText(text);
+      }
+    };
+
+    setVisible(false);
+    setDisplayText(text);
+    delayTimer = window.setTimeout(() => {
+      setDisplayText(characters.map((character) => (/\d/.test(character) ? getDigitNoiseChar() : character)).join(""));
+      setVisible(true);
+      tick();
+      intervalId = window.setInterval(tick, 26);
+    }, delay);
+
+    return () => {
+      window.clearTimeout(delayTimer);
+      window.clearInterval(intervalId);
+    };
+  }, [active, delay, text]);
+
+  return { displayText, visible };
+}
+
+function ShuffleLine({ active, delay = 0, text }: { active: boolean; delay?: number; text: string }) {
+  const { displayText, visible } = useTextShuffle(text, active, delay);
+
+  return (
+    <span className={`shuffle-line ${visible ? "is-visible" : ""}`} aria-hidden="true" data-text={text}>
+      {displayText}
+    </span>
+  );
+}
+
+function ShuffleText({
+  active,
+  delayBase = SCRAMBLE_START_DELAY,
+  lineDelay = 90,
+  lines,
+}: {
+  active: boolean;
+  delayBase?: number;
+  lineDelay?: number;
+  lines: string[];
+}) {
+  return (
+    <>
+      {lines.map((line, index) => (
+        <ShuffleLine active={active} delay={delayBase + index * lineDelay} key={`${line}-${index}`} text={line} />
+      ))}
+    </>
+  );
+}
+
 function WideSiteNav() {
   return (
     <nav className="wide-site-nav" aria-label="Portfolio navigation">
@@ -50,7 +247,22 @@ function WideSiteNav() {
   );
 }
 
-function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
+function Cover({ active, onOpenIndex }: { active: boolean; onOpenIndex: () => void }) {
+  const projectsLabel = "PROJECTS";
+  const practiceLabel = "PRACTICE AREAS";
+  const roleJaLines = ["大学講師 / デザインディレクター /", "AI・DXアドバイザー"];
+  const taglineLines = ["複雑な構想を、", "動き出せるかたちへ。"];
+  const descriptionLines = [
+    "AIとデザインを軸に、教育・研究・事業の構想を",
+    "構造化し、実践へとつなげています。",
+  ];
+  const statementLines = [
+    "Designing systems, stories, and experiences that connect people, knowledge, and technology.",
+    "From education to practice, research to strategy—with clarity, structure, and intention.",
+  ];
+  const profileSummaryLine =
+    "Designer, Director, Educator, and AI & DX Advisor working across visual communication, learning, research, and strategic innovation.";
+
   return (
     <section className="cover" id="cover" aria-labelledby="cover-title">
       <header className="cover-header">
@@ -62,32 +274,48 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
       </header>
       <div className="cover-grid">
         <div className="cover-main">
-          <h1 id="cover-title" aria-label="TAKASHI OMORI">TAKASHI<br />OMORI</h1>
-          <p className="role-line">大森 隆</p>
-          <p className="role-ja">大学講師 / デザインディレクター /<br />AI・DXアドバイザー</p>
-          <p className="cover-tagline">複雑な構想を、<br />動き出せるかたちへ。</p>
-          <p className="cover-description">
-            AIとデザインを軸に、教育・研究・事業の構想を<br />
-            構造化し、実践へとつなげています。
+          <h1 id="cover-title" aria-label="TAKASHI OMORI">
+            <ShuffleText active={active} lines={["TAKASHI", "OMORI"]} />
+          </h1>
+          <p className="role-line" aria-label="大森 隆">
+            <ShuffleText active={active} delayBase={300} lines={["大森 隆"]} />
           </p>
-          <p className="statement">
-            Designing systems, stories, and experiences that connect people, knowledge, and technology.
-            From education to practice, research to strategy—with clarity, structure, and intention.
+          <p className="role-ja" aria-label={roleJaLines.join(" ")}>
+            <ShuffleText active={active} delayBase={430} lines={roleJaLines} />
+          </p>
+          <p className="cover-tagline" aria-label={taglineLines.join(" ")}>
+            <ShuffleText active={active} delayBase={590} lineDelay={75} lines={taglineLines} />
+          </p>
+          <p className="cover-description" aria-label={descriptionLines.join(" ")}>
+            <ShuffleText active={active} delayBase={780} lineDelay={70} lines={descriptionLines} />
+          </p>
+          <p className="statement" aria-label={statementLines.join(" ")}>
+            <ShuffleText active={active} delayBase={970} lineDelay={80} lines={statementLines} />
           </p>
           <div className="cover-profile-summary">
             <p className="section-label">TAKASHI OMORI</p>
-            <p>Designer, Director, Educator, and AI &amp; DX Advisor working across visual communication, learning, research, and strategic innovation.</p>
+            <p aria-label={profileSummaryLine}>
+              <ShuffleText active={active} delayBase={1120} lines={[profileSummaryLine]} />
+            </p>
           </div>
         </div>
 
         <div className="cover-index" aria-label="Project index">
-          <p className="section-label section-label--projects">PROJECTS</p>
-          <p className="section-label section-label--practice">PRACTICE AREAS</p>
+          <p className="section-label section-label--projects" aria-label={projectsLabel}>
+            <ShuffleText active={active} delayBase={1020} lines={[projectsLabel]} />
+          </p>
+          <p className="section-label section-label--practice" aria-label={practiceLabel}>
+            <ShuffleText active={active} delayBase={1020} lines={[practiceLabel]} />
+          </p>
           <ol className="cover-practice-list">
-            {practiceAreas.map((item) => (
+            {practiceAreas.map((item, index) => (
               <li key={item.title}>
-                <strong>{item.title}</strong>
-                <small>{item.subtitle}</small>
+                <strong aria-label={item.title}>
+                  <ShuffleText active={active} delayBase={1040 + index * 45} lines={[item.title]} />
+                </strong>
+                <small aria-label={item.subtitle}>
+                  <ShuffleText active={active} delayBase={1070 + index * 45} lines={[item.subtitle]} />
+                </small>
               </li>
             ))}
           </ol>
@@ -205,9 +433,14 @@ function AboutProfile() {
   );
 }
 
-function ProjectHero({ project }: { project: Project }) {
+function ProjectHero({ active, project }: { active: boolean; project: Project }) {
   const titleLength = project.title.replace(/\s/g, "").length;
   const titleDensity = titleLength > 28 ? "long" : titleLength > 18 ? "medium" : "short";
+  const titleLines = project.title.split("\n");
+  const heroKicker = "AI VISUAL ZINE PROJECT";
+  const heroJa = "AIとつくる時代の、ビジュアル思考と表現の探求";
+  const roleText = project.roles.join(", ");
+  const categoryText = project.categories.join(" / ");
 
   return (
     <section
@@ -240,31 +473,37 @@ function ProjectHero({ project }: { project: Project }) {
         <span>{project.year}</span>
       </header>
       <div className={`hero-title-wrap hero-title-wrap--${titleDensity}`}>
-        <h2 id={`${project.id}-title`}>
-          {project.title.split("\n").map((line, index, lines) => (
-            <span key={line}>{line}{index < lines.length - 1 ? " " : ""}</span>
-          ))}
+        <h2 id={`${project.id}-title`} aria-label={project.title.replace(/\n/g, " ")}>
+          <ShuffleText active={active} lines={titleLines} />
         </h2>
-        <p className="hero-kicker">AI VISUAL ZINE PROJECT</p>
-        <p className="hero-ja">AIとつくる時代の、ビジュアル思考と表現の探求</p>
+        <p className="hero-kicker" aria-label={heroKicker}>
+          <ShuffleText active={active} delayBase={520} lines={[heroKicker]} />
+        </p>
+        <p className="hero-ja" aria-label={heroJa}>
+          <ShuffleText active={active} delayBase={700} lines={[heroJa]} />
+        </p>
         <dl className="hero-meta">
           <div>
-            <dt>YEAR</dt>
-            <dd>{project.year}</dd>
+            <dt aria-label="YEAR"><ShuffleText active={active} delayBase={900} lines={["YEAR"]} /></dt>
+            <dd aria-label={project.year}><ShuffleText active={active} delayBase={960} lines={[project.year]} /></dd>
           </div>
           <div>
-            <dt>ROLE</dt>
-            <dd>{project.roles.join(", ")}</dd>
+            <dt aria-label="ROLE"><ShuffleText active={active} delayBase={1060} lines={["ROLE"]} /></dt>
+            <dd aria-label={roleText}><ShuffleText active={active} delayBase={1120} lines={[roleText]} /></dd>
           </div>
           <div>
-            <dt>CATEGORY</dt>
-            <dd>{project.categories.join(" / ")}</dd>
+            <dt aria-label="CATEGORY"><ShuffleText active={active} delayBase={1220} lines={["CATEGORY"]} /></dt>
+            <dd aria-label={categoryText}><ShuffleText active={active} delayBase={1280} lines={[categoryText]} /></dd>
           </div>
         </dl>
       </div>
       <div className="hero-footer">
         <ul aria-label="Project categories">
-          {project.categories.map((category) => <li key={category}>{category}</li>)}
+          {project.categories.map((category, index) => (
+            <li key={category} aria-label={category}>
+              <ShuffleText active={active} delayBase={1440 + index * 90} lines={[category]} />
+            </li>
+          ))}
         </ul>
         <div className="hero-scroll-label scroll-affordance" aria-hidden="true">
           <span>SCROLL TO EXPLORE</span>
@@ -339,6 +578,8 @@ function ChapterControls({
   progress,
   paused,
   inStory,
+  introAnimating,
+  folioIntroAnimating,
   countingDirection,
   onTogglePause,
   onOpenIndex,
@@ -352,6 +593,8 @@ function ChapterControls({
   progress: number;
   paused: boolean;
   inStory: boolean;
+  introAnimating: boolean;
+  folioIntroAnimating: boolean;
   countingDirection: "next" | "prev" | null;
   onTogglePause: () => void;
   onOpenIndex: () => void;
@@ -370,14 +613,18 @@ function ChapterControls({
 
   return (
     <nav
-      className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}${countingClass}`}
+      className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}${introAnimating ? " is-chrome-intro" : ""}${folioIntroAnimating ? " is-folio-intro" : ""}${countingClass}`}
       aria-label="Portfolio chapters"
       style={{
         "--chapter-progress": progress,
         "--chapter-progress-percent": `${progress * 100}%`,
       } as CSSProperties}
     >
-      <span className="chapter-name"><span key={chapterName}>{chapterName}</span></span>
+      <span className="chapter-name" aria-label={chapterName}>
+        <span key={chapterName}>
+          {introAnimating ? <ShuffleText active lines={[chapterName]} delayBase={40} /> : chapterName}
+        </span>
+      </span>
       <button
         className="chapter-status"
         type="button"
@@ -387,22 +634,28 @@ function ChapterControls({
         aria-label={paused ? "Resume auto advance" : "Pause auto advance"}
       >
         {paused ? (
-          <span className="status-pause" key="pause">PAUSE</span>
+          <span className="status-pause" key="pause" aria-label="PAUSE">
+            {introAnimating ? <ShuffleText active lines={["PAUSE"]} delayBase={55} /> : "PAUSE"}
+          </span>
         ) : (
           <span className="status-auto" key="auto">
-            <span>AUTO</span>
+            <span aria-label="AUTO">{introAnimating ? <ShuffleText active lines={["AUTO"]} delayBase={55} /> : "AUTO"}</span>
             <span className="status-seconds" key={remainingSecondsText}>{remainingSecondsText}</span>
             <span>s</span>
           </span>
         )}
       </button>
-      <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
-        INDEX <span aria-hidden="true" />
+      <button className="chapter-index-toggle" type="button" onClick={onOpenIndex} aria-label="Open index">
+        <span className="chapter-index-label" aria-label="INDEX">
+          {introAnimating ? <ShuffleText active lines={["INDEX"]} delayBase={70} /> : "INDEX"}
+        </span>
+        <span className="chapter-index-glyph" aria-hidden="true" />
       </button>
       <FolioNumber
         current={currentNumber}
         previousCurrent={previousNumber}
         total={totalProjectCount}
+        introAnimating={folioIntroAnimating}
         className={activeChapter === 0 ? "cover-folio-number" : undefined}
       />
       <button type="button" onClick={onPrevious} disabled={activeChapter === 0} aria-label="Previous chapter">
@@ -446,31 +699,49 @@ function FolioNumber({
   current,
   previousCurrent,
   total,
+  introAnimating,
   className,
 }: {
   current: string;
   previousCurrent?: string | null;
   total: string;
+  introAnimating: boolean;
   className?: string;
 }) {
   const maskId = `folio-total-cut-${useId().replace(/:/g, "")}`;
+  const shuffleActive = introAnimating && previousCurrent === null;
+  const shuffledCurrent = useDigitShuffle(current, shuffleActive, 120);
+  const shuffledTotal = useDigitShuffle(total, shuffleActive, 260);
+  const displayCurrent = shuffleActive ? shuffledCurrent.displayText : current;
+  const displayTotal = shuffleActive ? shuffledTotal.displayText : total;
 
   return (
-    <span className={`folio-number folio-svg-number${className ? ` ${className}` : ""}`} aria-label={`${current} / ${total}`}>
-      <FolioMarkSvg current={current} previousCurrent={previousCurrent} total={total} maskId={maskId} />
+    <span className={`folio-number folio-svg-number${introAnimating ? " is-folio-intro" : ""}${className ? ` ${className}` : ""}`} aria-label={`${current} / ${total}`}>
+      <FolioMarkSvg
+        current={displayCurrent}
+        currentVisible={!shuffleActive || shuffledCurrent.visible}
+        previousCurrent={previousCurrent}
+        total={displayTotal}
+        totalVisible={!shuffleActive || shuffledTotal.visible}
+        maskId={maskId}
+      />
     </span>
   );
 }
 
 function FolioMarkSvg({
   current,
+  currentVisible,
   previousCurrent,
   total,
+  totalVisible,
   maskId,
 }: {
   current: string;
+  currentVisible: boolean;
   previousCurrent?: string | null;
   total: string;
+  totalVisible: boolean;
   maskId: string;
 }) {
   const [currentTens = "0", currentOnes = "1"] = current;
@@ -480,7 +751,7 @@ function FolioMarkSvg({
     const isChanged = previousCurrent && previousCurrent !== current && previousDigit !== currentDigit;
 
     if (!isChanged) {
-      return <text key={key} className={`folio-mark-current folio-mark-current-${key}`} x={x} y="55">{currentDigit}</text>;
+      return <text key={key} className={`folio-mark-current${currentVisible ? "" : " is-digit-hidden"} folio-mark-current-${key}`} x={x} y="55">{currentDigit}</text>;
     }
 
     return (
@@ -501,7 +772,7 @@ function FolioMarkSvg({
       </defs>
       {renderAnimatedDigit("tens", previousTens, currentTens, 0)}
       {renderAnimatedDigit("ones", previousOnes, currentOnes, 37)}
-      <g mask={`url(#${maskId})`}>
+      <g className={`folio-mark-total-group${totalVisible ? "" : " is-digit-hidden"}`} mask={`url(#${maskId})`}>
         <text className="folio-mark-total folio-mark-total-tens" x="59" y="84">{totalTens}</text>
         <text className="folio-mark-total folio-mark-total-ones" x="84" y="84">{totalOnes}</text>
       </g>
@@ -579,6 +850,8 @@ function ProjectIndex({ open, onClose }: { open: boolean; onClose: () => void })
 export function PortfolioExperience() {
   const [indexOpen, setIndexOpen] = useState(false);
   const [autoPaused, setAutoPaused] = useState(false);
+  const [chromeIntroAnimating, setChromeIntroAnimating] = useState(true);
+  const [folioIntroAnimating, setFolioIntroAnimating] = useState(true);
   const [activeChapter, setActiveChapter] = useState(0);
   const [chromeChapter, setChromeChapter] = useState(0);
   const [folioChapter, setFolioChapter] = useState(0);
@@ -616,6 +889,15 @@ export function PortfolioExperience() {
   useEffect(() => {
     autoPausedRef.current = autoPaused;
   }, [autoPaused]);
+
+  useEffect(() => {
+    const chromeTimer = window.setTimeout(() => setChromeIntroAnimating(false), 1400);
+    const folioTimer = window.setTimeout(() => setFolioIntroAnimating(false), 3650);
+    return () => {
+      window.clearTimeout(chromeTimer);
+      window.clearTimeout(folioTimer);
+    };
+  }, []);
 
   const finishChromeTransition = useCallback((nextIndex: number, nextVerticalSection: "hero" | "story", immediate = false) => {
     const previousFolioIndex = folioChapterRef.current;
@@ -792,8 +1074,7 @@ export function PortfolioExperience() {
       setChapterProgress(nextProgress);
       if (nextProgress >= 1) {
         if (chromeChapter >= projects.length) {
-          setAutoPaused(true);
-          setIndexOpen(true);
+          goToChapter(0, "#cover", { pauseAfter: true });
           return;
         }
         goToChapter(chromeChapter + 1);
@@ -837,7 +1118,7 @@ export function PortfolioExperience() {
 
   const goToNextChapter = useCallback(() => {
     if (chromeChapter >= projects.length) {
-      setIndexOpen(true);
+      goToChapter(0, "#cover", { pauseAfter: true });
       return;
     }
     goToChapter(chromeChapter + 1, undefined, { pauseAfter: true });
@@ -849,7 +1130,7 @@ export function PortfolioExperience() {
     <main className="portfolio-stage" onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
       <div className="portfolio-track" style={{ transform: `translate3d(-${activeChapter * 100}%, 0, 0)` }}>
         <div className="portfolio-slide" ref={(node) => { slideRefs.current[0] = node; }} aria-hidden={activeChapter !== 0} inert={activeChapter !== 0}>
-          <Cover onOpenIndex={() => setIndexOpen(true)} />
+          <Cover active={chromeChapter === 0} onOpenIndex={() => setIndexOpen(true)} />
           <AboutProfile />
         </div>
         {projects.map((project, index) => (
@@ -860,7 +1141,7 @@ export function PortfolioExperience() {
             aria-hidden={activeChapter !== index + 1}
             inert={activeChapter !== index + 1}
           >
-            <ProjectHero project={project} />
+            <ProjectHero active={chromeChapter === index + 1} project={project} />
             <ProjectStory project={project} />
           </div>
         ))}
@@ -872,6 +1153,8 @@ export function PortfolioExperience() {
         progress={displayedChapterProgress}
         paused={autoPaused}
         inStory={inStory}
+        introAnimating={chromeIntroAnimating}
+        folioIntroAnimating={folioIntroAnimating}
         countingDirection={countingDirection}
         onTogglePause={() => {
           chapterActivatedAt.current = Date.now();

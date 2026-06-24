@@ -217,6 +217,38 @@ img {
   transform-origin: left top;
 }
 
+.shuffle-line {
+  display: block;
+  white-space: pre;
+  visibility: hidden;
+  opacity: 0;
+  font-variant-ligatures: none;
+  text-rendering: geometricprecision;
+  transition: opacity 90ms linear;
+}
+
+.shuffle-line.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cover-description .shuffle-line,
+.statement .shuffle-line,
+.cover-profile-summary .shuffle-line,
+.cover-practice-list .shuffle-line,
+.section-label .shuffle-line,
+.hero-meta .shuffle-line,
+.hero-footer .shuffle-line {
+  white-space: normal;
+}
+
+.chapter-name .shuffle-line,
+.chapter-status .shuffle-line,
+.chapter-index-toggle .shuffle-line {
+  display: inline-block;
+  white-space: pre;
+}
+
 .role-line {
   margin: 1.35rem 0 0;
   font-family: var(--font-ui);
@@ -596,7 +628,7 @@ nextjs-portal {
     0 8px 32px rgb(var(--hero-shadow-rgb) / 42%);
 }
 
-.hero-title-wrap h2 span {
+.hero-title-wrap h2 > .shuffle-line {
   display: block;
 }
 
@@ -1282,8 +1314,8 @@ nextjs-portal {
     font-size: clamp(3.6rem, 4.4vw, 5.4rem);
   }
 
-  .hero-title-wrap h2 span:nth-child(2),
-  .hero-title-wrap h2 span:nth-child(3) {
+  .hero-title-wrap h2 > .shuffle-line:nth-child(2),
+  .hero-title-wrap h2 > .shuffle-line:nth-child(3) {
     display: inline;
   }
 
@@ -1578,8 +1610,8 @@ nextjs-portal {
     line-height: 0.82;
   }
 
-  .hero-title-wrap h2 span:nth-child(2),
-  .hero-title-wrap h2 span:nth-child(3) {
+  .hero-title-wrap h2 > .shuffle-line:nth-child(2),
+  .hero-title-wrap h2 > .shuffle-line:nth-child(3) {
     display: inline;
   }
 }
@@ -1847,8 +1879,8 @@ nextjs-portal {
     line-height: 0.8;
   }
 
-  .hero-title-wrap h2 span:nth-child(2),
-  .hero-title-wrap h2 span:nth-child(3) {
+  .hero-title-wrap h2 > .shuffle-line:nth-child(2),
+  .hero-title-wrap h2 > .shuffle-line:nth-child(3) {
     display: inline;
   }
 
@@ -2194,8 +2226,8 @@ nextjs-portal {
     transform: scaleX(0.72);
   }
 
-  .hero-title-wrap h2 span:nth-child(2),
-  .hero-title-wrap h2 span:nth-child(3) {
+  .hero-title-wrap h2 > .shuffle-line:nth-child(2),
+  .hero-title-wrap h2 > .shuffle-line:nth-child(3) {
     display: inline;
   }
 
@@ -2559,7 +2591,7 @@ nextjs-portal {
   transform-origin: left top;
 }
 
-.project-hero--split .hero-title-wrap h2 span {
+.project-hero--split .hero-title-wrap h2 > .shuffle-line {
   display: block;
 }
 
@@ -3365,6 +3397,22 @@ nextjs-portal {
   display: none !important;
 }
 
+.chapter-controls .chapter-index-toggle .chapter-index-label {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.chapter-controls .chapter-index-toggle .chapter-index-label .shuffle-line {
+  display: inline-block !important;
+}
+
+.chapter-controls .chapter-index-toggle .chapter-index-glyph {
+  display: none !important;
+}
+
 .chapter-progress {
   position: absolute;
   z-index: 1;
@@ -3377,6 +3425,31 @@ nextjs-portal {
   background: rgb(17 17 15 / 22%);
 }
 
+.chapter-progress::before {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background: #fff;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.chapter-controls.is-folio-intro .chapter-progress::before {
+  opacity: 0;
+}
+
+.chapter-controls.is-folio-intro .chapter-progress {
+  animation: intro-progress-reveal 980ms cubic-bezier(0.76, 0, 0.24, 1) 80ms both;
+  clip-path: inset(-0.34rem 0 -0.34rem 0);
+}
+
 .chapter-progress span {
   display: block;
   width: 100%;
@@ -3384,6 +3457,11 @@ nextjs-portal {
   background: var(--color-blue);
   transform-origin: left center;
   will-change: transform;
+}
+
+.chapter-controls.is-folio-intro .chapter-progress span {
+  opacity: 0;
+  animation: intro-progress-live-in 420ms cubic-bezier(0.76, 0, 0.24, 1) 1120ms both;
 }
 
 .chapter-progress::after {
@@ -3397,6 +3475,10 @@ nextjs-portal {
   background: var(--color-blue);
   transform: translate(-50%, -50%);
   will-change: left;
+}
+
+.chapter-controls.is-folio-intro .chapter-progress::after {
+  opacity: 1;
 }
 
 .chapter-dots {
@@ -3492,36 +3574,49 @@ nextjs-portal {
   stroke: currentColor;
   stroke-width: 1;
   opacity: 0.48;
+  stroke-dasharray: 82;
+  stroke-dashoffset: 0;
   vector-effect: non-scaling-stroke;
 }
 
+.folio-number.is-folio-intro .folio-mark-cut-line {
+  opacity: 0;
+  stroke-dashoffset: 82;
+  animation: folio-slash-draw 920ms cubic-bezier(0.76, 0, 0.24, 1) 1580ms both;
+}
+
 .folio-mark-current-group,
-.folio-mark-previous-group {
+.folio-mark-previous-group,
+.folio-mark-total-group {
   transform-box: fill-box;
   transform-origin: center;
   will-change: transform, opacity;
 }
 
+.folio-number.is-folio-intro .is-digit-hidden {
+  opacity: 0;
+}
+
 .chapter-controls.is-count-next .folio-mark-current-group {
-  animation: folio-count-in-next 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: folio-count-in-next 620ms cubic-bezier(0.76, 0, 0.24, 1) both;
 }
 
 .chapter-controls.is-count-next .folio-mark-previous-group {
-  animation: folio-count-out-next 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: folio-count-out-next 620ms cubic-bezier(0.76, 0, 0.24, 1) both;
 }
 
 .chapter-controls.is-count-prev .folio-mark-current-group {
-  animation: folio-count-in-prev 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: folio-count-in-prev 620ms cubic-bezier(0.76, 0, 0.24, 1) both;
 }
 
 .chapter-controls.is-count-prev .folio-mark-previous-group {
-  animation: folio-count-out-prev 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: folio-count-out-prev 620ms cubic-bezier(0.76, 0, 0.24, 1) both;
 }
 
 @keyframes folio-count-in-next {
   from {
-    opacity: 0.42;
-    transform: translateY(14px);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -3529,21 +3624,74 @@ nextjs-portal {
   }
 }
 
+@keyframes intro-progress-sweep {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  12% {
+    opacity: 1;
+  }
+  86% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes intro-progress-reveal {
+  from {
+    clip-path: inset(-0.34rem 100% -0.34rem 0);
+  }
+  to {
+    clip-path: inset(-0.34rem 0 -0.34rem 0);
+  }
+}
+
+@keyframes intro-progress-live-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes folio-slash-draw {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 82;
+  }
+  18% {
+    opacity: 0.28;
+  }
+  62% {
+    opacity: 0.52;
+  }
+  100% {
+    opacity: 0.48;
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes folio-count-out-next {
   from {
-    opacity: 0.82;
+    opacity: 0.58;
     transform: translateY(0);
   }
   to {
     opacity: 0;
-    transform: translateY(-18px);
+    transform: translateY(-12px);
   }
 }
 
 @keyframes folio-count-in-prev {
   from {
-    opacity: 0.42;
-    transform: translateY(-14px);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
@@ -3553,12 +3701,12 @@ nextjs-portal {
 
 @keyframes folio-count-out-prev {
   from {
-    opacity: 0.82;
+    opacity: 0.58;
     transform: translateY(0);
   }
   to {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(12px);
   }
 }
 
@@ -4646,6 +4794,23 @@ nextjs-portal {
   .chapter-controls.is-project.is-story .chapter-progress span,
   .chapter-controls.is-project.is-story .chapter-progress::after {
     background: #fff !important;
+  }
+
+  .chapter-controls.is-folio-intro .chapter-progress {
+    background: #fff !important;
+  }
+
+  .chapter-controls.is-folio-intro .chapter-progress span {
+    opacity: 0;
+    animation: intro-progress-live-in 420ms cubic-bezier(0.76, 0, 0.24, 1) 1120ms both;
+  }
+
+  .chapter-controls.is-folio-intro .chapter-progress::after {
+    opacity: 1;
+  }
+
+  .chapter-controls.is-folio-intro .chapter-progress::before {
+    opacity: 0;
   }
 
   .chapter-controls.is-cover .folio-number::before {
