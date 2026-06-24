@@ -365,7 +365,7 @@ function ChapterControls({
   const currentNumber = String(folioChapter + 1).padStart(2, "0");
   const previousNumber = previousFolioChapter === null ? null : String(previousFolioChapter + 1).padStart(2, "0");
   const remainingSeconds = Math.max(0, Math.ceil((1 - progress) * (AUTO_ADVANCE_DURATION / 1000)));
-  const status = paused ? "PAUSE" : `AUTO ${String(remainingSeconds).padStart(2, "0")}s`;
+  const remainingSecondsText = String(remainingSeconds).padStart(2, "0");
   const countingClass = countingDirection ? ` is-counting is-count-${countingDirection}` : "";
 
   return (
@@ -377,7 +377,7 @@ function ChapterControls({
         "--chapter-progress-percent": `${progress * 100}%`,
       } as CSSProperties}
     >
-      <span className="chapter-name">{chapterName}</span>
+      <span className="chapter-name"><span key={chapterName}>{chapterName}</span></span>
       <button
         className="chapter-status"
         type="button"
@@ -386,7 +386,15 @@ function ChapterControls({
         aria-pressed={paused}
         aria-label={paused ? "Resume auto advance" : "Pause auto advance"}
       >
-        {status}
+        {paused ? (
+          <span className="status-pause" key="pause">PAUSE</span>
+        ) : (
+          <span className="status-auto" key="auto">
+            <span>AUTO</span>
+            <span className="status-seconds" key={remainingSecondsText}>{remainingSecondsText}</span>
+            <span>s</span>
+          </span>
+        )}
       </button>
       <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
         INDEX <span aria-hidden="true" />
@@ -587,9 +595,11 @@ export function PortfolioExperience() {
   const folioChapterRef = useRef(0);
   const isTransitioningRef = useRef(false);
   const transitionTimerRef = useRef<number | null>(null);
+  const pauseAfterTransitionRef = useRef(false);
   const folioCountDelayTimerRef = useRef<number | null>(null);
   const countAnimationTimerRef = useRef<number | null>(null);
   const autoFrameRef = useRef<number | null>(null);
+  const autoPausedRef = useRef(false);
   const chapterProgressRef = useRef(0);
   const pointerStartX = useRef<number | null>(null);
   const chapterActivatedAt = useRef(Date.now());
@@ -603,6 +613,10 @@ export function PortfolioExperience() {
     setAutoPaused(true);
   }, []);
 
+  useEffect(() => {
+    autoPausedRef.current = autoPaused;
+  }, [autoPaused]);
+
   const finishChromeTransition = useCallback((nextIndex: number, nextVerticalSection: "hero" | "story", immediate = false) => {
     const previousFolioIndex = folioChapterRef.current;
     chromeChapterRef.current = nextIndex;
@@ -614,6 +628,11 @@ export function PortfolioExperience() {
     chapterActivatedAt.current = Date.now();
     isTransitioningRef.current = false;
     setIsChapterTransitioning(false);
+    if (pauseAfterTransitionRef.current) {
+      pauseAfterTransitionRef.current = false;
+      autoPausedRef.current = true;
+      setAutoPaused(true);
+    }
 
     if (folioCountDelayTimerRef.current !== null) window.clearTimeout(folioCountDelayTimerRef.current);
     if (countAnimationTimerRef.current !== null) window.clearTimeout(countAnimationTimerRef.current);
@@ -644,7 +663,7 @@ export function PortfolioExperience() {
     }, CHROME_TONE_SETTLE_DURATION);
   }, []);
 
-  const goToChapter = useCallback((nextIndex: number, requestedHash?: string, options?: { immediate?: boolean }) => {
+  const goToChapter = useCallback((nextIndex: number, requestedHash?: string, options?: { immediate?: boolean; pauseAfter?: boolean }) => {
     if (isTransitioningRef.current && !options?.immediate) return;
     const clampedIndex = Math.max(0, Math.min(nextIndex, chapterCount - 1));
     const hash = requestedHash ?? (clampedIndex === 0 ? "#cover" : `#${projects[clampedIndex - 1].id}`);
@@ -655,6 +674,17 @@ export function PortfolioExperience() {
     const nextVerticalSection: "hero" | "story" = hash.includes("-story") || hash === `#${projects[clampedIndex - 1]?.id}-story` ? "story" : "hero";
 
     if (window.location.hash !== hash) window.history.replaceState(null, "", hash);
+    pauseAfterTransitionRef.current = Boolean(options?.pauseAfter && isChangingChapter && !options?.immediate);
+    if (options?.pauseAfter && !options?.immediate) {
+      if (autoFrameRef.current !== null) {
+        window.cancelAnimationFrame(autoFrameRef.current);
+        autoFrameRef.current = null;
+      }
+      chapterProgressRef.current = 0;
+      setChapterProgress(0);
+      autoPausedRef.current = true;
+      setAutoPaused(true);
+    }
 
     if (slide && isChangingChapter) {
       const previousScrollBehavior = slide.style.scrollBehavior;
@@ -756,6 +786,7 @@ export function PortfolioExperience() {
     const startedAt = performance.now() - chapterProgressRef.current * AUTO_ADVANCE_DURATION;
     let frameId = 0;
     const tick = () => {
+      if (autoPausedRef.current || isTransitioningRef.current) return;
       const nextProgress = Math.min(1, (performance.now() - startedAt) / AUTO_ADVANCE_DURATION);
       chapterProgressRef.current = nextProgress;
       setChapterProgress(nextProgress);
@@ -784,8 +815,8 @@ export function PortfolioExperience() {
       if (indexOpen || event.defaultPrevented) return;
       const target = event.target as HTMLElement | null;
       if (target?.matches("input, textarea, select, [contenteditable='true']")) return;
-      if (event.key === "ArrowRight") goToChapter(chromeChapter + 1);
-      if (event.key === "ArrowLeft") goToChapter(chromeChapter - 1);
+      if (event.key === "ArrowRight") goToChapter(chromeChapter + 1, undefined, { pauseAfter: true });
+      if (event.key === "ArrowLeft") goToChapter(chromeChapter - 1, undefined, { pauseAfter: true });
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
@@ -801,7 +832,7 @@ export function PortfolioExperience() {
     const distance = event.clientX - pointerStartX.current;
     pointerStartX.current = null;
     if (Math.abs(distance) < 56) return;
-    goToChapter(chromeChapter + (distance < 0 ? 1 : -1));
+    goToChapter(chromeChapter + (distance < 0 ? 1 : -1), undefined, { pauseAfter: true });
   };
 
   const goToNextChapter = useCallback(() => {
@@ -809,10 +840,10 @@ export function PortfolioExperience() {
       setIndexOpen(true);
       return;
     }
-    goToChapter(chromeChapter + 1);
+    goToChapter(chromeChapter + 1, undefined, { pauseAfter: true });
   }, [chromeChapter, goToChapter]);
 
-  const displayedChapterProgress = frozenTransitionProgress ?? chapterProgress;
+  const displayedChapterProgress = isChapterTransitioning ? frozenTransitionProgress ?? chapterProgress : chapterProgress;
 
   return (
     <main className="portfolio-stage" onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
@@ -844,11 +875,14 @@ export function PortfolioExperience() {
         countingDirection={countingDirection}
         onTogglePause={() => {
           chapterActivatedAt.current = Date.now();
-          setAutoPaused((current) => !current);
+          setAutoPaused((current) => {
+            autoPausedRef.current = !current;
+            return !current;
+          });
         }}
-        onPrevious={() => goToChapter(chromeChapter - 1)}
+        onPrevious={() => goToChapter(chromeChapter - 1, undefined, { pauseAfter: true })}
         onNext={goToNextChapter}
-        onSelect={goToChapter}
+        onSelect={(index) => goToChapter(index, undefined, { pauseAfter: true })}
         onOpenIndex={() => setIndexOpen(true)}
       />
       <button className="floating-index" type="button" onClick={() => setIndexOpen(true)}>INDEX</button>

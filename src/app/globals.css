@@ -3264,6 +3264,11 @@ nextjs-portal {
   justify-self: start;
 }
 
+.chapter-name > span {
+  display: inline-block;
+  animation: chrome-word-enter 320ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
 .chapter-status {
   display: inline-flex;
   width: auto;
@@ -3281,6 +3286,63 @@ nextjs-portal {
   font: inherit;
   pointer-events: auto;
   text-align: center;
+}
+
+.chapter-status,
+.chapter-index-toggle,
+.about-next,
+.next-project,
+.cover-featured-list a,
+.cover-featured-list button,
+.cover-complete-list a,
+.cover-complete-list button,
+.project-index a {
+  transition:
+    letter-spacing 220ms cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 220ms cubic-bezier(0.76, 0, 0.24, 1),
+    transform 220ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.chapter-status:hover,
+.chapter-status:focus-visible,
+.chapter-index-toggle:hover,
+.chapter-index-toggle:focus-visible,
+.about-next:hover,
+.about-next:focus-visible,
+.next-project:hover,
+.next-project:focus-visible,
+.cover-featured-list a:hover,
+.cover-featured-list a:focus-visible,
+.cover-featured-list button:hover,
+.cover-featured-list button:focus-visible,
+.cover-complete-list a:hover,
+.cover-complete-list a:focus-visible,
+.cover-complete-list button:hover,
+.cover-complete-list button:focus-visible,
+.project-index a:hover,
+.project-index a:focus-visible {
+  letter-spacing: 0.11em;
+  transform: translateY(-0.04em);
+}
+
+.status-auto,
+.status-pause {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 0.24em;
+  align-items: baseline;
+}
+
+.status-pause {
+  animation: chrome-word-enter 300ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.status-seconds {
+  display: inline-block;
+  min-width: 1.34em;
+  text-align: right;
+  animation: status-second-enter 340ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  font-variant-numeric: tabular-nums;
 }
 
 .chapter-index-toggle {
@@ -3497,6 +3559,28 @@ nextjs-portal {
   to {
     opacity: 0;
     transform: translateY(18px);
+  }
+}
+
+@keyframes chrome-word-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.72em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes status-second-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.9em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
