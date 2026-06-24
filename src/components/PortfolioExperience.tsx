@@ -364,7 +364,11 @@ function ChapterControls({
       <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
         INDEX <span aria-hidden="true" />
       </button>
-      <FolioNumber current={currentNumber} total={totalProjectCount} />
+      {activeChapter === 0 ? (
+        <CoverFolioNumber current={currentNumber} total={totalProjectCount} />
+      ) : (
+        <FolioNumber current={currentNumber} total={totalProjectCount} />
+      )}
       <button type="button" onClick={onPrevious} disabled={activeChapter === 0} aria-label="Previous chapter">
         <span className="chapter-arrow chapter-arrow--prev" aria-hidden="true" />
       </button>
@@ -409,6 +413,18 @@ function FolioNumber({ current, total }: { current: string; total: string }) {
       <span className="folio-slash" aria-hidden="true" />
       <span className="folio-total-wrap">
         <span className="folio-total">{total}</span>
+      </span>
+    </span>
+  );
+}
+
+function CoverFolioNumber({ current, total }: { current: string; total: string }) {
+  return (
+    <span className="folio-number cover-folio-number" aria-label={`${current} / ${total}`}>
+      <span className="cover-folio-current">{current}</span>
+      <span className="cover-folio-slash" aria-hidden="true" />
+      <span className="cover-folio-total-mask" aria-hidden="true">
+        <span className="cover-folio-total">{total}</span>
       </span>
     </span>
   );
