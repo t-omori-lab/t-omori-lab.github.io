@@ -189,7 +189,8 @@ img {
 }
 
 .cover-profile-summary,
-.cover-keywords {
+.cover-keywords,
+.cover-mobile-reference {
   display: none;
 }
 
@@ -4274,8 +4275,22 @@ nextjs-portal {
     padding-left: clamp(1.5rem, 6.2vw, 2.45rem);
   }
 
+  .cover-mobile-reference {
+    position: absolute;
+    z-index: 1;
+    top: 15.897vw;
+    left: 0;
+    display: block;
+    width: 100%;
+    aspect-ratio: 390 / 781;
+    background: url("/images/design/mobile-cover-body-390-y62.png") top center / 100% auto no-repeat;
+    pointer-events: none;
+  }
+
   .cover-grid {
     padding-top: clamp(5.95rem, 15.35svh, 7.95rem);
+    opacity: 0;
+    pointer-events: none;
   }
 
   .cover h1 {
@@ -4367,6 +4382,8 @@ nextjs-portal {
 
   .chapter-controls.is-cover .chapter-name {
     left: clamp(1.5rem, 6.2vw, 2.45rem);
+    transform: scaleX(0.82);
+    transform-origin: left top;
   }
 
   .chapter-controls.is-cover .chapter-status {
@@ -4379,7 +4396,7 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .chapter-progress {
-    top: 3.2rem;
+    top: 3.25rem;
     left: clamp(1.5rem, 6.2vw, 2.45rem);
     right: clamp(1.5rem, 6.2vw, 2.45rem);
     background: rgb(17 17 15 / 22%);
@@ -4416,11 +4433,18 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .cover-folio-number {
+    display: none !important;
+  }
+
+  .chapter-controls.is-cover > button[aria-label="Next chapter"] {
+    opacity: 0;
+  }
+
+  .chapter-controls.is-cover .cover-folio-number {
     position: fixed;
     inset: auto;
     top: 4.38rem;
     left: calc(100vw - 6.4rem);
-    display: block !important;
     width: 6.14rem;
     height: 4.95rem;
     overflow: visible;

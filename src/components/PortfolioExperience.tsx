@@ -58,6 +58,8 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
         </button>
       </header>
 
+      <div className="cover-mobile-reference" aria-hidden="true" />
+
       <div className="cover-grid">
         <div className="cover-main">
           <h1 id="cover-title">TAKASHI<br />OMORI</h1>
