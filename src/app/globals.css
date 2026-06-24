@@ -4265,7 +4265,10 @@ nextjs-portal {
 /* 2026-06-24 pass 4: refine the mobile cover first view against 0624_スマホFV2. */
 @media (orientation: portrait) and (max-width: 47.99rem) {
   .cover {
-    background: #fffefa;
+    background:
+      radial-gradient(circle at 86% 12%, rgb(246 244 242 / 92%) 0 9rem, transparent 18rem),
+      radial-gradient(circle at 44% 62%, rgb(250 248 246 / 96%) 0 14rem, transparent 25rem),
+      #f9f7f5;
     padding-top: 3.9rem;
     padding-right: clamp(1.5rem, 6.2vw, 2.45rem);
     padding-left: clamp(1.5rem, 6.2vw, 2.45rem);
@@ -4276,6 +4279,8 @@ nextjs-portal {
   }
 
   .cover h1 {
+    color: rgb(31 30 27);
+    opacity: 0.9;
     width: 100%;
     font-size: clamp(3.84rem, 16.18vw, 4.88rem);
     line-height: 0.84;
@@ -4284,6 +4289,7 @@ nextjs-portal {
   }
 
   .role-line {
+    color: rgb(31 30 27);
     margin-top: 1.5rem;
     font-size: clamp(1.78rem, 7.5vw, 2.32rem);
     line-height: 1.03;
@@ -4293,11 +4299,13 @@ nextjs-portal {
   .role-ja {
     margin-top: 1.34rem;
     font-size: clamp(0.66rem, 2.55vw, 0.8rem);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.78;
+    color: rgb(17 17 15 / 94%);
   }
 
   .cover-tagline {
+    color: rgb(31 30 27);
     max-width: 27.5rem;
     margin-top: clamp(1.46rem, 3.3svh, 1.98rem);
     font-size: clamp(1.38rem, 5.75vw, 1.84rem);
@@ -4307,10 +4315,11 @@ nextjs-portal {
 
   .cover-description {
     max-width: 21.6rem;
-    margin-top: 0.62rem;
+    margin-top: 0.37rem;
     font-size: clamp(0.6rem, 2.25vw, 0.72rem);
     font-weight: 600;
     line-height: 2.05;
+    color: rgb(17 17 15 / 78%);
   }
 
   .cover-index {
@@ -4318,24 +4327,31 @@ nextjs-portal {
   }
 
   .section-label--practice {
-    color: var(--color-ink);
-    transform: translateY(-1.05rem) !important;
+    color: rgb(17 17 15 / 76%);
+    font-size: 0.45rem;
+    transform: translateY(-0.8rem) !important;
+  }
+
+  .cover-index .cover-practice-list {
+    margin-top: 0 !important;
+    border-top: 0 !important;
   }
 
   .cover-practice-list li {
-    padding: 0.5rem 0 0.42rem;
+    padding: 0.38rem 0 0.86rem;
   }
 
   .cover-practice-list strong {
-    font-size: 0.82rem;
+    color: rgb(17 17 15 / 86%);
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.005em;
   }
 
   .cover-practice-list small {
     margin-top: 0.16rem;
-    color: rgb(17 17 15 / 82%);
-    font-size: 0.58rem;
+    color: rgb(17 17 15 / 64%);
+    font-size: 0.48rem;
     line-height: 1.18;
   }
 
@@ -4343,8 +4359,9 @@ nextjs-portal {
   .chapter-controls.is-cover .chapter-status,
   .chapter-controls.is-cover .chapter-index-toggle {
     top: 1.9rem;
+    color: rgb(17 17 15 / 86%);
     font-size: clamp(0.62rem, 2.55vw, 0.82rem);
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.09em;
   }
 
@@ -4408,12 +4425,8 @@ nextjs-portal {
     height: 4.95rem;
     overflow: visible;
     font-size: 0;
-    color: currentColor;
-  }
-
-  .chapter-controls.is-cover > button[aria-label="Next chapter"] {
-    top: calc(45svh - 0.62rem);
-    right: -2.7rem;
+    color: var(--color-ink);
+    opacity: 0.9;
   }
 
   .chapter-controls.is-cover .cover-folio-number::before,
@@ -4486,22 +4499,23 @@ nextjs-portal {
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"] {
     top: 56.8svh;
-    right: clamp(1.55rem, 6.2vw, 2.6rem);
-    width: 2.55rem;
-    color: rgb(17 17 15 / 72%);
+    right: 1.05rem;
+    width: 2rem;
+    color: rgb(17 17 15 / 66%);
   }
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"]::before {
     right: -0.02rem;
-    bottom: -0.32rem;
+    bottom: 0.18rem;
     font-family: var(--font-ui);
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size: 0.64rem;
+    font-weight: 600;
     letter-spacing: 0.035em;
   }
 
   .chapter-controls.is-cover .chapter-arrow {
-    width: 2.55rem;
+    width: 2rem;
+    transform: translateY(-0.46rem);
   }
 
   .chapter-controls.is-cover .chapter-arrow::after {
