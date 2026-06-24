@@ -79,8 +79,8 @@ img {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
   scrollbar-width: none;
 }
 
@@ -96,7 +96,7 @@ img {
 .portfolio-slide > .about-profile,
 .portfolio-slide > .project-hero,
 .portfolio-slide > .project-story {
-  scroll-snap-align: start;
+  scroll-snap-align: none;
 }
 
 .sr-only {
@@ -4515,14 +4515,15 @@ nextjs-portal {
     overflow: visible !important;
     clip: auto !important;
     white-space: normal !important;
+    height: 0.5px !important;
   }
 
   .chapter-controls.is-cover .chapter-progress {
-    background: rgb(255 255 255 / 78%);
+    background: rgb(255 255 255 / 42%);
   }
 
   .chapter-controls.is-project .chapter-progress {
-    background: rgb(255 255 255 / 78%);
+    background: rgb(255 255 255 / 42%);
   }
 
   .chapter-controls.is-cover .chapter-progress span {
@@ -4534,14 +4535,14 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .chapter-progress::after {
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     background: #fff;
   }
 
   .chapter-controls.is-project .chapter-progress::after {
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     background: #fff;
   }
 
