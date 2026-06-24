@@ -57,12 +57,9 @@ function Cover({ onOpenIndex }: { onOpenIndex: () => void }) {
           MENU <ListIcon aria-hidden="true" weight="regular" />
         </button>
       </header>
-
-      <div className="cover-mobile-reference" aria-hidden="true" />
-
       <div className="cover-grid">
         <div className="cover-main">
-          <h1 id="cover-title">TAKASHI<br />OMORI</h1>
+          <h1 id="cover-title" aria-label="TAKASHI OMORI">TAKASHI<br />OMORI</h1>
           <p className="role-line">大森 隆</p>
           <p className="role-ja">大学講師 / デザインディレクター /<br />AI・DXアドバイザー</p>
           <p className="cover-tagline">複雑な構想を、<br />動き出せるかたちへ。</p>

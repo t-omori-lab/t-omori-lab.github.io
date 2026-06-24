@@ -189,8 +189,7 @@ img {
 }
 
 .cover-profile-summary,
-.cover-keywords,
-.cover-mobile-reference {
+.cover-keywords {
   display: none;
 }
 
@@ -4289,22 +4288,10 @@ nextjs-portal {
     padding-left: clamp(1.5rem, 6.2vw, 2.45rem);
   }
 
-  .cover-mobile-reference {
-    position: absolute;
-    z-index: 1;
-    top: 15.897vw;
-    left: 0;
-    display: block;
-    width: 100%;
-    aspect-ratio: 390 / 781;
-    background: url("/images/design/mobile-cover-body-390-y62-no-folio.png") top center / 100% auto no-repeat;
-    pointer-events: none;
-  }
-
   .cover-grid {
     padding-top: clamp(5.95rem, 15.35svh, 7.95rem);
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .cover h1 {
