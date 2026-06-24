@@ -4431,11 +4431,13 @@ nextjs-portal {
     display: none !important;
   }
 
-  .chapter-controls.is-cover .cover-folio-number {
+  .chapter-controls.is-cover .folio-number,
+  .chapter-controls.is-project .folio-number {
     position: fixed !important;
     inset: auto !important;
-    top: 65px !important;
-    left: calc(100vw - 110px) !important;
+    top: 67px !important;
+    right: 3px !important;
+    left: auto !important;
     display: block !important;
     width: 100px !important;
     height: 85px !important;
@@ -4443,33 +4445,43 @@ nextjs-portal {
     font-size: 0;
     color: var(--color-ink);
     opacity: 1;
+    transform: none !important;
+    text-shadow: none !important;
   }
 
-  .chapter-controls.is-cover .cover-folio-number::before {
-    position: absolute;
-    inset: 0;
-    display: block;
-    content: "" !important;
-    background: currentColor;
-    -webkit-mask: url("/images/design/folio-01-08-mask-100x85.png") 0 0 / 100% 100% no-repeat;
-    mask: url("/images/design/folio-01-08-mask-100x85.png") 0 0 / 100% 100% no-repeat;
+  .chapter-controls.is-project .folio-number {
+    color: #fff;
+    filter: drop-shadow(0 1px 8px rgb(0 0 0 / 32%));
   }
 
-  .chapter-controls.is-cover .cover-folio-number::after {
-    content: none !important;
+  .chapter-controls.is-cover .folio-mark,
+  .chapter-controls.is-project .folio-mark {
+    width: 100%;
+    height: 100%;
   }
 
-  .chapter-controls.is-cover .cover-folio-current,
-  .chapter-controls.is-cover .cover-folio-total,
-  .chapter-controls.is-cover .cover-folio-cut-line {
-    display: none;
+  .chapter-controls.is-cover .folio-mark-current,
+  .chapter-controls.is-project .folio-mark-current {
+    font-size: 76px;
+    letter-spacing: -6.6px;
+  }
+
+  .chapter-controls.is-cover .folio-mark-total,
+  .chapter-controls.is-project .folio-mark-total {
+    font-size: 45px;
+    letter-spacing: -4.2px;
+  }
+
+  .chapter-controls.is-cover .folio-mark-cut-line,
+  .chapter-controls.is-project .folio-mark-cut-line {
+    opacity: 0.48;
   }
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"] {
     top: 56.8svh;
     right: 1.05rem;
     width: 2rem;
-    color: var(--color-blue);
+    color: rgb(17 17 15 / 66%);
     opacity: 1;
     filter: none;
   }

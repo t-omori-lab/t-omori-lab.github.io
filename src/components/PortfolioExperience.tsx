@@ -350,9 +350,8 @@ function ChapterControls({
 }) {
   const implementedProjectCount = projects.length;
   const totalProjectCount = String(projectIndex.length).padStart(2, "0");
-  const activeProjectNumber = projects[activeChapter - 1]?.number ?? "--";
   const chapterName = activeChapter === 0 ? "PORTFOLIO" : inStory ? "STORY" : "PROJECT";
-  const currentNumber = activeChapter === 0 ? "01" : activeProjectNumber;
+  const currentNumber = String(activeChapter + 1).padStart(2, "0");
   const remainingSeconds = Math.max(0, Math.ceil((1 - progress) * (AUTO_ADVANCE_DURATION / 1000)));
   const status = paused ? "PAUSE" : `AUTO ${String(remainingSeconds).padStart(2, "0")}s`;
 
@@ -370,11 +369,7 @@ function ChapterControls({
       <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
         INDEX <span aria-hidden="true" />
       </button>
-      {activeChapter === 0 ? (
-        <CoverFolioNumber current={currentNumber} total={totalProjectCount} />
-      ) : (
-        <FolioNumber current={currentNumber} total={totalProjectCount} />
-      )}
+      <FolioNumber current={currentNumber} total={totalProjectCount} className={activeChapter === 0 ? "cover-folio-number" : undefined} />
       <button type="button" onClick={onPrevious} disabled={activeChapter === 0} aria-label="Previous chapter">
         <span className="chapter-arrow chapter-arrow--prev" aria-hidden="true" />
       </button>
@@ -412,22 +407,12 @@ function ChapterControls({
   );
 }
 
-function FolioNumber({ current, total }: { current: string; total: string }) {
+function FolioNumber({ current, total, className }: { current: string; total: string; className?: string }) {
   const maskId = `folio-total-cut-${useId().replace(/:/g, "")}`;
 
   return (
-    <span className="folio-number folio-svg-number" aria-label={`${current} / ${total}`}>
+    <span className={`folio-number folio-svg-number${className ? ` ${className}` : ""}`} aria-label={`${current} / ${total}`}>
       <FolioMarkSvg current={current} total={total} maskId={maskId} />
-    </span>
-  );
-}
-
-function CoverFolioNumber({ current, total }: { current: string; total: string }) {
-  return (
-    <span className="folio-number cover-folio-number" aria-label={`${current} / ${total}`}>
-      <span className="cover-folio-current" aria-hidden="true">{current}</span>
-      <span className="cover-folio-cut-line" aria-hidden="true" />
-      <span className="cover-folio-total" aria-hidden="true">{total}</span>
     </span>
   );
 }
@@ -566,9 +551,10 @@ export function PortfolioExperience() {
       const projectIndexForHash = projects.findIndex((project) => hash.startsWith(`#${project.id}`));
       goToChapter(projectIndexForHash >= 0 ? projectIndexForHash + 1 : 0, hash);
     };
-    if (window.location.hash !== "#cover") {
+    if (!window.location.hash) {
       window.history.replaceState(null, "", "#cover");
     }
+    syncHash();
     window.addEventListener("hashchange", syncHash);
     return () => window.removeEventListener("hashchange", syncHash);
   }, [goToChapter]);
