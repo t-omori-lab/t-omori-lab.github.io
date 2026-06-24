@@ -3329,7 +3329,7 @@ nextjs-portal {
 .status-pause {
   display: inline-grid;
   grid-auto-flow: column;
-  gap: 0.24em;
+  gap: 0.16em;
   align-items: baseline;
 }
 
@@ -3339,9 +3339,9 @@ nextjs-portal {
 
 .status-seconds {
   display: inline-block;
-  min-width: 1.34em;
+  min-width: 1.22em;
   text-align: right;
-  animation: status-second-enter 340ms cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: status-second-enter 260ms cubic-bezier(0.45, 0, 0.18, 1) both;
   font-variant-numeric: tabular-nums;
 }
 
@@ -3575,12 +3575,10 @@ nextjs-portal {
 
 @keyframes status-second-enter {
   from {
-    opacity: 0;
-    transform: translateY(0.9em);
+    opacity: 0.28;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
