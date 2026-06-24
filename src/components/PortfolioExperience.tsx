@@ -418,17 +418,24 @@ function FolioNumber({ current, total, className }: { current: string; total: st
 }
 
 function FolioMarkSvg({ current, total, maskId }: { current: string; total: string; maskId: string }) {
+  const [currentTens = "0", currentOnes = "1"] = current;
+  const [totalTens = "0", totalOnes = "8"] = total;
+
   return (
     <svg className="folio-mark" viewBox="0 0 120 92" aria-hidden="true" focusable="false">
       <defs>
         <mask id={maskId} maskUnits="userSpaceOnUse">
           <rect x="0" y="0" width="120" height="92" fill="white" />
-          <polygon className="folio-mark-cutout" points="45,32 95,32 45,82" fill="black" />
+          <polygon className="folio-mark-cutout" points="45,33 103,33 45,91" fill="black" />
         </mask>
       </defs>
-      <text className="folio-mark-current" x="0" y="58">{current}</text>
-      <text className="folio-mark-total" x="57" y="82" mask={`url(#${maskId})`}>{total}</text>
-      <line className="folio-mark-cut-line" x1="45" y1="82" x2="95" y2="32" />
+      <text className="folio-mark-current folio-mark-current-tens" x="0" y="55">{currentTens}</text>
+      <text className="folio-mark-current folio-mark-current-ones" x="37" y="55">{currentOnes}</text>
+      <g mask={`url(#${maskId})`}>
+        <text className="folio-mark-total folio-mark-total-tens" x="59" y="84">{totalTens}</text>
+        <text className="folio-mark-total folio-mark-total-ones" x="84" y="84">{totalOnes}</text>
+      </g>
+      <line className="folio-mark-cut-line" x1="45" y1="91" x2="103" y2="33" />
     </svg>
   );
 }

@@ -4289,18 +4289,19 @@ nextjs-portal {
   }
 
   .cover-grid {
-    padding-top: clamp(5.95rem, 15.35svh, 7.95rem);
+    padding-top: clamp(6.2rem, 15.8svh, 8.2rem);
     opacity: 1;
     pointer-events: auto;
   }
 
   .cover h1 {
     color: rgb(31 30 27);
-    opacity: 0.9;
+    opacity: 0.92;
     width: 100%;
     font-size: clamp(3.84rem, 16.18vw, 4.88rem);
-    line-height: 0.84;
+    line-height: 0.89;
     letter-spacing: -0.078em;
+    text-shadow: 0 0 0.22px rgb(17 17 15 / 26%);
     transform: translateY(0.32rem);
   }
 
@@ -4309,7 +4310,7 @@ nextjs-portal {
     margin-top: 1.5rem;
     font-size: clamp(1.78rem, 7.5vw, 2.32rem);
     line-height: 1.03;
-    letter-spacing: 0.31em;
+    letter-spacing: 0.24em;
   }
 
   .role-ja {
@@ -4325,13 +4326,13 @@ nextjs-portal {
     max-width: 27.5rem;
     margin-top: clamp(1.46rem, 3.3svh, 1.98rem);
     font-size: clamp(1.38rem, 5.75vw, 1.84rem);
-    line-height: 1.55;
+    line-height: 1.27;
     letter-spacing: 0.045em;
   }
 
   .cover-description {
     max-width: 21.6rem;
-    margin-top: 0.37rem;
+    margin-top: 0.94rem;
     font-size: clamp(0.6rem, 2.25vw, 0.72rem);
     font-weight: 600;
     line-height: 2.05;
@@ -4339,7 +4340,7 @@ nextjs-portal {
   }
 
   .cover-index {
-    padding-top: clamp(3.46rem, 7.35svh, 4.25rem);
+    padding-top: clamp(3.28rem, 7.05svh, 4.1rem);
   }
 
   .section-label--practice {
@@ -4395,6 +4396,18 @@ nextjs-portal {
     transform-origin: left top;
   }
 
+  .chapter-controls.is-cover .chapter-status::before {
+    position: absolute;
+    z-index: -1;
+    top: -0.55rem;
+    right: -0.9rem;
+    bottom: -0.5rem;
+    left: -0.9rem;
+    content: "";
+    background: rgb(255 255 255 / 42%);
+    filter: blur(5px);
+  }
+
   .chapter-controls.is-cover .chapter-index-toggle {
     left: auto;
     right: 25px;
@@ -4435,8 +4448,8 @@ nextjs-portal {
   .chapter-controls.is-project .folio-number {
     position: fixed !important;
     inset: auto !important;
-    top: 67px !important;
-    right: 3px !important;
+    top: 69px !important;
+    right: 6px !important;
     left: auto !important;
     display: block !important;
     width: 100px !important;
@@ -4462,14 +4475,14 @@ nextjs-portal {
 
   .chapter-controls.is-cover .folio-mark-current,
   .chapter-controls.is-project .folio-mark-current {
-    font-size: 76px;
-    letter-spacing: -6.6px;
+    font-size: 68px;
+    letter-spacing: 0;
   }
 
   .chapter-controls.is-cover .folio-mark-total,
   .chapter-controls.is-project .folio-mark-total {
-    font-size: 45px;
-    letter-spacing: -4.2px;
+    font-size: 43px;
+    letter-spacing: 0;
   }
 
   .chapter-controls.is-cover .folio-mark-cut-line,
@@ -4488,7 +4501,7 @@ nextjs-portal {
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"]::before {
     right: -0.02rem;
-    bottom: 0.18rem;
+    bottom: 0.82rem;
     font-family: var(--font-ui);
     font-size: 0.64rem;
     font-weight: 600;
@@ -4501,7 +4514,7 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .chapter-arrow::after {
-    width: 0.62rem;
-    height: 0.62rem;
+    width: 0.76rem;
+    height: 0.76rem;
   }
 }
