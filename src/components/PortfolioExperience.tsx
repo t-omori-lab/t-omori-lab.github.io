@@ -13,7 +13,7 @@ import { coverProjectIndex, projectIndex, projects, type Project } from "@/conte
 
 const AUTO_ADVANCE_DURATION = 6000;
 const CHAPTER_TRANSITION_DURATION = 820;
-const CHROME_TONE_SETTLE_DURATION = 280;
+const CHROME_TONE_SETTLE_DURATION = 0;
 const FOLIO_COUNT_DURATION = 860;
 
 const practiceAreas = [
