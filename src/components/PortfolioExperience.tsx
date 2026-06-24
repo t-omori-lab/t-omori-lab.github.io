@@ -828,6 +828,16 @@ export function PortfolioExperience() {
         onSelect={goToChapter}
         onOpenIndex={() => setIndexOpen(true)}
       />
+      <span
+        className="chapter-progress-guard"
+        aria-hidden="true"
+        style={{
+          "--chapter-progress": displayedChapterProgress,
+          "--chapter-progress-percent": `${displayedChapterProgress * 100}%`,
+        } as CSSProperties}
+      >
+        <span style={{ transform: `scaleX(${displayedChapterProgress})` }} />
+      </span>
       <button className="floating-index" type="button" onClick={() => setIndexOpen(true)}>INDEX</button>
       <ProjectIndex open={indexOpen} onClose={() => setIndexOpen(false)} />
     </main>
