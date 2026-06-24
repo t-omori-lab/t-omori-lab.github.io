@@ -12,6 +12,7 @@ import { aboutContent } from "@/content/about";
 import { coverProjectIndex, projectIndex, projects, type Project } from "@/content/projects";
 
 const AUTO_ADVANCE_DURATION = 6000;
+const CHAPTER_TRANSITION_DURATION = 820;
 
 const practiceAreas = [
   {
@@ -331,18 +332,22 @@ function ProjectStory({ project }: { project: Project }) {
 
 function ChapterControls({
   activeChapter,
+  previousChapter,
   progress,
   paused,
   inStory,
+  countingDirection,
   onOpenIndex,
   onPrevious,
   onNext,
   onSelect,
 }: {
   activeChapter: number;
+  previousChapter: number | null;
   progress: number;
   paused: boolean;
   inStory: boolean;
+  countingDirection: "next" | "prev" | null;
   onOpenIndex: () => void;
   onPrevious: () => void;
   onNext: () => void;
@@ -352,12 +357,14 @@ function ChapterControls({
   const totalProjectCount = String(projectIndex.length).padStart(2, "0");
   const chapterName = activeChapter === 0 ? "PORTFOLIO" : inStory ? "STORY" : "PROJECT";
   const currentNumber = String(activeChapter + 1).padStart(2, "0");
+  const previousNumber = previousChapter === null ? null : String(previousChapter + 1).padStart(2, "0");
   const remainingSeconds = Math.max(0, Math.ceil((1 - progress) * (AUTO_ADVANCE_DURATION / 1000)));
   const status = paused ? "PAUSE" : `AUTO ${String(remainingSeconds).padStart(2, "0")}s`;
+  const countingClass = countingDirection ? ` is-counting is-count-${countingDirection}` : "";
 
   return (
     <nav
-      className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}`}
+      className={`chapter-controls ${activeChapter === 0 ? "is-cover" : "is-project"} ${inStory ? "is-story" : ""}${countingClass}`}
       aria-label="Portfolio chapters"
       style={{
         "--chapter-progress": progress,
@@ -369,7 +376,12 @@ function ChapterControls({
       <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
         INDEX <span aria-hidden="true" />
       </button>
-      <FolioNumber current={currentNumber} total={totalProjectCount} className={activeChapter === 0 ? "cover-folio-number" : undefined} />
+      <FolioNumber
+        current={currentNumber}
+        previousCurrent={previousNumber}
+        total={totalProjectCount}
+        className={activeChapter === 0 ? "cover-folio-number" : undefined}
+      />
       <button type="button" onClick={onPrevious} disabled={activeChapter === 0} aria-label="Previous chapter">
         <span className="chapter-arrow chapter-arrow--prev" aria-hidden="true" />
       </button>
@@ -407,19 +419,54 @@ function ChapterControls({
   );
 }
 
-function FolioNumber({ current, total, className }: { current: string; total: string; className?: string }) {
+function FolioNumber({
+  current,
+  previousCurrent,
+  total,
+  className,
+}: {
+  current: string;
+  previousCurrent?: string | null;
+  total: string;
+  className?: string;
+}) {
   const maskId = `folio-total-cut-${useId().replace(/:/g, "")}`;
 
   return (
     <span className={`folio-number folio-svg-number${className ? ` ${className}` : ""}`} aria-label={`${current} / ${total}`}>
-      <FolioMarkSvg current={current} total={total} maskId={maskId} />
+      <FolioMarkSvg current={current} previousCurrent={previousCurrent} total={total} maskId={maskId} />
     </span>
   );
 }
 
-function FolioMarkSvg({ current, total, maskId }: { current: string; total: string; maskId: string }) {
+function FolioMarkSvg({
+  current,
+  previousCurrent,
+  total,
+  maskId,
+}: {
+  current: string;
+  previousCurrent?: string | null;
+  total: string;
+  maskId: string;
+}) {
   const [currentTens = "0", currentOnes = "1"] = current;
+  const [previousTens = "0", previousOnes = "1"] = previousCurrent ?? current;
   const [totalTens = "0", totalOnes = "8"] = total;
+  const renderAnimatedDigit = (key: string, previousDigit: string, currentDigit: string, x: number) => {
+    const isChanged = previousCurrent && previousCurrent !== current && previousDigit !== currentDigit;
+
+    if (!isChanged) {
+      return <text key={key} className={`folio-mark-current folio-mark-current-${key}`} x={x} y="55">{currentDigit}</text>;
+    }
+
+    return (
+      <g key={key}>
+        <text className={`folio-mark-current folio-mark-previous-group folio-mark-current-${key}`} x={x} y="55">{previousDigit}</text>
+        <text className={`folio-mark-current folio-mark-current-group folio-mark-current-${key}`} x={x} y="55">{currentDigit}</text>
+      </g>
+    );
+  };
 
   return (
     <svg className="folio-mark" viewBox="0 0 120 92" aria-hidden="true" focusable="false">
@@ -429,8 +476,8 @@ function FolioMarkSvg({ current, total, maskId }: { current: string; total: stri
           <polygon className="folio-mark-cutout" points="45,33 103,33 45,91" fill="black" />
         </mask>
       </defs>
-      <text className="folio-mark-current folio-mark-current-tens" x="0" y="55">{currentTens}</text>
-      <text className="folio-mark-current folio-mark-current-ones" x="37" y="55">{currentOnes}</text>
+      {renderAnimatedDigit("tens", previousTens, currentTens, 0)}
+      {renderAnimatedDigit("ones", previousOnes, currentOnes, 37)}
       <g mask={`url(#${maskId})`}>
         <text className="folio-mark-total folio-mark-total-tens" x="59" y="84">{totalTens}</text>
         <text className="folio-mark-total folio-mark-total-ones" x="84" y="84">{totalOnes}</text>
@@ -510,10 +557,22 @@ export function PortfolioExperience() {
   const [indexOpen, setIndexOpen] = useState(false);
   const [autoPaused, setAutoPaused] = useState(false);
   const [activeChapter, setActiveChapter] = useState(0);
+  const [chromeChapter, setChromeChapter] = useState(0);
+  const [previousChromeChapter, setPreviousChromeChapter] = useState<number | null>(null);
+  const [countingDirection, setCountingDirection] = useState<"next" | "prev" | null>(null);
+  const [isChapterTransitioning, setIsChapterTransitioning] = useState(false);
   const [activeVerticalSection, setActiveVerticalSection] = useState<"hero" | "story">("hero");
+  const [chromeVerticalSection, setChromeVerticalSection] = useState<"hero" | "story">("hero");
   const [chapterProgress, setChapterProgress] = useState(0);
+  const [frozenTransitionProgress, setFrozenTransitionProgress] = useState<number | null>(null);
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const activeChapterRef = useRef(0);
+  const chromeChapterRef = useRef(0);
+  const isTransitioningRef = useRef(false);
+  const transitionTimerRef = useRef<number | null>(null);
+  const countAnimationTimerRef = useRef<number | null>(null);
+  const autoFrameRef = useRef<number | null>(null);
+  const chapterProgressRef = useRef(0);
   const pointerStartX = useRef<number | null>(null);
   const chapterActivatedAt = useRef(Date.now());
   const chapterCount = projects.length + 1;
@@ -523,13 +582,39 @@ export function PortfolioExperience() {
     setAutoPaused(true);
   }, []);
 
-  const goToChapter = useCallback((nextIndex: number, requestedHash?: string) => {
+  const finishChromeTransition = useCallback((nextIndex: number, nextVerticalSection: "hero" | "story", immediate = false) => {
+    const previousIndex = chromeChapterRef.current;
+    chromeChapterRef.current = nextIndex;
+    setPreviousChromeChapter(previousIndex === nextIndex || immediate ? null : previousIndex);
+    setCountingDirection(previousIndex === nextIndex || immediate ? null : nextIndex > previousIndex ? "next" : "prev");
+    setChromeChapter(nextIndex);
+    setChromeVerticalSection(nextVerticalSection);
+    chapterProgressRef.current = 0;
+    setChapterProgress(0);
+    setFrozenTransitionProgress(null);
+    chapterActivatedAt.current = Date.now();
+    isTransitioningRef.current = false;
+    setIsChapterTransitioning(false);
+
+    if (countAnimationTimerRef.current !== null) window.clearTimeout(countAnimationTimerRef.current);
+    if (previousIndex !== nextIndex && !immediate) {
+      countAnimationTimerRef.current = window.setTimeout(() => {
+        setPreviousChromeChapter(null);
+        setCountingDirection(null);
+        countAnimationTimerRef.current = null;
+      }, 860);
+    }
+  }, []);
+
+  const goToChapter = useCallback((nextIndex: number, requestedHash?: string, options?: { immediate?: boolean }) => {
+    if (isTransitioningRef.current && !options?.immediate) return;
     const clampedIndex = Math.max(0, Math.min(nextIndex, chapterCount - 1));
     const hash = requestedHash ?? (clampedIndex === 0 ? "#cover" : `#${projects[clampedIndex - 1].id}`);
     const slide = slideRefs.current[clampedIndex];
     const target = document.getElementById(hash.slice(1));
     const top = target && slide?.contains(target) ? target.offsetTop : 0;
     const isChangingChapter = activeChapterRef.current !== clampedIndex;
+    const nextVerticalSection: "hero" | "story" = hash.includes("-story") || hash === `#${projects[clampedIndex - 1]?.id}-story` ? "story" : "hero";
 
     if (window.location.hash !== hash) window.history.replaceState(null, "", hash);
 
@@ -542,21 +627,40 @@ export function PortfolioExperience() {
     }
 
     activeChapterRef.current = clampedIndex;
-    chapterActivatedAt.current = Date.now();
     setActiveChapter(clampedIndex);
-    setActiveVerticalSection(hash.includes("-story") || hash === `#${projects[clampedIndex - 1]?.id}-story` ? "story" : "hero");
-    setChapterProgress(0);
+    setActiveVerticalSection(nextVerticalSection);
+
+    if (transitionTimerRef.current !== null) {
+      window.clearTimeout(transitionTimerRef.current);
+      transitionTimerRef.current = null;
+    }
+
+    if (isChangingChapter && !options?.immediate) {
+      if (autoFrameRef.current !== null) {
+        window.cancelAnimationFrame(autoFrameRef.current);
+        autoFrameRef.current = null;
+      }
+      isTransitioningRef.current = true;
+      setFrozenTransitionProgress(chapterProgressRef.current);
+      setIsChapterTransitioning(true);
+      transitionTimerRef.current = window.setTimeout(() => {
+        finishChromeTransition(clampedIndex, nextVerticalSection);
+        transitionTimerRef.current = null;
+      }, CHAPTER_TRANSITION_DURATION);
+    } else {
+      finishChromeTransition(clampedIndex, nextVerticalSection, true);
+    }
 
     if (!isChangingChapter) window.requestAnimationFrame(() => {
       slide?.scrollTo({ top, behavior: "smooth" });
     });
-  }, [chapterCount]);
+  }, [chapterCount, finishChromeTransition]);
 
   useEffect(() => {
     const syncHash = () => {
       const hash = window.location.hash || "#cover";
       const projectIndexForHash = projects.findIndex((project) => hash.startsWith(`#${project.id}`));
-      goToChapter(projectIndexForHash >= 0 ? projectIndexForHash + 1 : 0, hash);
+      goToChapter(projectIndexForHash >= 0 ? projectIndexForHash + 1 : 0, hash, { immediate: true });
     };
     if (!window.location.hash) {
       window.history.replaceState(null, "", "#cover");
@@ -565,6 +669,12 @@ export function PortfolioExperience() {
     window.addEventListener("hashchange", syncHash);
     return () => window.removeEventListener("hashchange", syncHash);
   }, [goToChapter]);
+
+  useEffect(() => () => {
+    if (transitionTimerRef.current !== null) window.clearTimeout(transitionTimerRef.current);
+    if (countAnimationTimerRef.current !== null) window.clearTimeout(countAnimationTimerRef.current);
+    if (autoFrameRef.current !== null) window.cancelAnimationFrame(autoFrameRef.current);
+  }, []);
 
   useEffect(() => {
     const events: (keyof WindowEventMap)[] = ["wheel", "touchstart", "pointerdown", "keydown"];
@@ -581,6 +691,9 @@ export function PortfolioExperience() {
     const onScroll = () => {
       const nextSection = slide.scrollTop > window.innerHeight * 0.58 ? "story" : "hero";
       setActiveVerticalSection(nextSection);
+      if (!isTransitioningRef.current && chromeChapterRef.current === activeChapterRef.current) {
+        setChromeVerticalSection(nextSection);
+      }
       if (nextSection === "story") setAutoPaused(true);
     };
     onScroll();
@@ -588,7 +701,7 @@ export function PortfolioExperience() {
     return () => slide.removeEventListener("scroll", onScroll);
   }, [activeChapter]);
 
-  const inStory = activeChapter !== 0 && activeVerticalSection === "story";
+  const inStory = chromeChapter !== 0 && chromeVerticalSection === "story";
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -597,7 +710,7 @@ export function PortfolioExperience() {
       return;
     }
 
-    if (autoPaused || indexOpen || activeChapter >= chapterCount - 1) {
+    if (autoPaused || indexOpen || isChapterTransitioning || chromeChapter >= chapterCount - 1) {
       return;
     }
 
@@ -605,28 +718,34 @@ export function PortfolioExperience() {
     let frameId = 0;
     const tick = () => {
       const nextProgress = Math.min(1, (performance.now() - startedAt) / AUTO_ADVANCE_DURATION);
+      chapterProgressRef.current = nextProgress;
       setChapterProgress(nextProgress);
       if (nextProgress >= 1) {
-        goToChapter(activeChapter + 1);
+        goToChapter(chromeChapter + 1);
         return;
       }
       frameId = window.requestAnimationFrame(tick);
+      autoFrameRef.current = frameId;
     };
     frameId = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(frameId);
-  }, [activeChapter, autoPaused, chapterCount, goToChapter, indexOpen]);
+    autoFrameRef.current = frameId;
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      if (autoFrameRef.current === frameId) autoFrameRef.current = null;
+    };
+  }, [autoPaused, chapterCount, chromeChapter, goToChapter, indexOpen, isChapterTransitioning]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (indexOpen || event.defaultPrevented) return;
       const target = event.target as HTMLElement | null;
       if (target?.matches("input, textarea, select, [contenteditable='true']")) return;
-      if (event.key === "ArrowRight") goToChapter(activeChapter + 1);
-      if (event.key === "ArrowLeft") goToChapter(activeChapter - 1);
+      if (event.key === "ArrowRight") goToChapter(chromeChapter + 1);
+      if (event.key === "ArrowLeft") goToChapter(chromeChapter - 1);
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [activeChapter, goToChapter, indexOpen]);
+  }, [chromeChapter, goToChapter, indexOpen]);
 
   const onPointerDown = (event: React.PointerEvent<HTMLElement>) => {
     if ((event.target as HTMLElement).closest("a, button")) return;
@@ -638,16 +757,18 @@ export function PortfolioExperience() {
     const distance = event.clientX - pointerStartX.current;
     pointerStartX.current = null;
     if (Math.abs(distance) < 56) return;
-    goToChapter(activeChapter + (distance < 0 ? 1 : -1));
+    goToChapter(chromeChapter + (distance < 0 ? 1 : -1));
   };
 
   const goToNextChapter = useCallback(() => {
-    if (activeChapter >= projects.length) {
+    if (chromeChapter >= projects.length) {
       setIndexOpen(true);
       return;
     }
-    goToChapter(activeChapter + 1);
-  }, [activeChapter, goToChapter]);
+    goToChapter(chromeChapter + 1);
+  }, [chromeChapter, goToChapter]);
+
+  const displayedChapterProgress = frozenTransitionProgress ?? chapterProgress;
 
   return (
     <main className="portfolio-stage" onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
@@ -670,11 +791,13 @@ export function PortfolioExperience() {
         ))}
       </div>
       <ChapterControls
-        activeChapter={activeChapter}
-        progress={chapterProgress}
+        activeChapter={chromeChapter}
+        previousChapter={previousChromeChapter}
+        progress={displayedChapterProgress}
         paused={autoPaused}
         inStory={inStory}
-        onPrevious={() => goToChapter(activeChapter - 1)}
+        countingDirection={countingDirection}
+        onPrevious={() => goToChapter(chromeChapter - 1)}
         onNext={goToNextChapter}
         onSelect={goToChapter}
         onOpenIndex={() => setIndexOpen(true)}

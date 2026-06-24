@@ -3420,6 +3420,73 @@ nextjs-portal {
   vector-effect: non-scaling-stroke;
 }
 
+.folio-mark-current-group,
+.folio-mark-previous-group {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.chapter-controls.is-count-next .folio-mark-current-group {
+  animation: folio-count-in-next 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.chapter-controls.is-count-next .folio-mark-previous-group {
+  animation: folio-count-out-next 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.chapter-controls.is-count-prev .folio-mark-current-group {
+  animation: folio-count-in-prev 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.chapter-controls.is-count-prev .folio-mark-previous-group {
+  animation: folio-count-out-prev 860ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+@keyframes folio-count-in-next {
+  from {
+    opacity: 0.42;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes folio-count-out-next {
+  from {
+    opacity: 0.82;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes folio-count-in-prev {
+  from {
+    opacity: 0.42;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes folio-count-out-prev {
+  from {
+    opacity: 0.82;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
 .chapter-controls > button[aria-label="Previous chapter"],
 .chapter-controls > button[aria-label="Next chapter"] {
   position: absolute;
