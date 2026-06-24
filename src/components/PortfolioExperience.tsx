@@ -432,12 +432,12 @@ function FolioMarkSvg({ current, total, maskId }: { current: string; total: stri
       <defs>
         <mask id={maskId} maskUnits="userSpaceOnUse">
           <rect x="0" y="0" width="120" height="92" fill="white" />
-          <polygon className="folio-mark-cutout" points="56,31 91,31 56,66" fill="black" />
+          <polygon className="folio-mark-cutout" points="54,29 94,29 54,69" fill="black" />
         </mask>
       </defs>
       <text className="folio-mark-current" x="0" y="58">{current}</text>
-      <text className="folio-mark-total" x="62" y="81" mask={`url(#${maskId})`}>{total}</text>
-      <line className="folio-mark-cut-line" x1="56" y1="66" x2="91" y2="31" />
+      <text className="folio-mark-total" x="58" y="79" mask={`url(#${maskId})`}>{total}</text>
+      <line className="folio-mark-cut-line" x1="54" y1="69" x2="94" y2="29" />
     </svg>
   );
 }
