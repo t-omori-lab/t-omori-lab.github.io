@@ -3265,8 +3265,21 @@ nextjs-portal {
 }
 
 .chapter-status {
+  display: inline-flex;
+  width: auto;
+  height: auto;
   justify-self: center;
   min-width: 4.8rem;
+  min-height: auto;
+  padding: 0;
+  align-items: flex-start;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  appearance: none;
+  background: transparent;
+  font: inherit;
+  pointer-events: auto;
   text-align: center;
 }
 

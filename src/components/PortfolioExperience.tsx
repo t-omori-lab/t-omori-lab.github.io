@@ -340,6 +340,7 @@ function ChapterControls({
   paused,
   inStory,
   countingDirection,
+  onTogglePause,
   onOpenIndex,
   onPrevious,
   onNext,
@@ -352,6 +353,7 @@ function ChapterControls({
   paused: boolean;
   inStory: boolean;
   countingDirection: "next" | "prev" | null;
+  onTogglePause: () => void;
   onOpenIndex: () => void;
   onPrevious: () => void;
   onNext: () => void;
@@ -376,7 +378,16 @@ function ChapterControls({
       } as CSSProperties}
     >
       <span className="chapter-name">{chapterName}</span>
-      <span className="chapter-status" aria-live="polite">{status}</span>
+      <button
+        className="chapter-status"
+        type="button"
+        onClick={onTogglePause}
+        aria-live="polite"
+        aria-pressed={paused}
+        aria-label={paused ? "Resume auto advance" : "Pause auto advance"}
+      >
+        {status}
+      </button>
       <button className="chapter-index-toggle" type="button" onClick={onOpenIndex}>
         INDEX <span aria-hidden="true" />
       </button>
@@ -584,8 +595,11 @@ export function PortfolioExperience() {
   const chapterActivatedAt = useRef(Date.now());
   const chapterCount = projects.length + 1;
 
-  const pauseForInteraction = useCallback(() => {
+  const pauseForInteraction = useCallback((event: Event) => {
     if (Date.now() - chapterActivatedAt.current < 700) return;
+    if (event instanceof KeyboardEvent && (event.key === "ArrowLeft" || event.key === "ArrowRight")) return;
+    const target = event.target;
+    if (target instanceof Element && target.closest(".chapter-controls, .floating-index, .project-index")) return;
     setAutoPaused(true);
   }, []);
 
@@ -739,7 +753,7 @@ export function PortfolioExperience() {
       return;
     }
 
-    const startedAt = performance.now();
+    const startedAt = performance.now() - chapterProgressRef.current * AUTO_ADVANCE_DURATION;
     let frameId = 0;
     const tick = () => {
       const nextProgress = Math.min(1, (performance.now() - startedAt) / AUTO_ADVANCE_DURATION);
@@ -828,6 +842,10 @@ export function PortfolioExperience() {
         paused={autoPaused}
         inStory={inStory}
         countingDirection={countingDirection}
+        onTogglePause={() => {
+          chapterActivatedAt.current = Date.now();
+          setAutoPaused((current) => !current);
+        }}
         onPrevious={() => goToChapter(chromeChapter - 1)}
         onNext={goToNextChapter}
         onSelect={goToChapter}
