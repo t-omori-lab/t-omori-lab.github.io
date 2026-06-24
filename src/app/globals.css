@@ -4283,7 +4283,7 @@ nextjs-portal {
     display: block;
     width: 100%;
     aspect-ratio: 390 / 781;
-    background: url("/images/design/mobile-cover-body-390-y62.png") top center / 100% auto no-repeat;
+    background: url("/images/design/mobile-cover-body-390-y62-no-folio.png") top center / 100% auto no-repeat;
     pointer-events: none;
   }
 
@@ -4373,30 +4373,36 @@ nextjs-portal {
   .chapter-controls.is-cover .chapter-name,
   .chapter-controls.is-cover .chapter-status,
   .chapter-controls.is-cover .chapter-index-toggle {
-    top: 1.9rem;
-    color: rgb(17 17 15 / 86%);
-    font-size: clamp(0.62rem, 2.55vw, 0.82rem);
+    position: fixed;
+    top: 29px;
+    color: rgb(17 17 15 / 92%);
+    font-size: 9.2px;
     font-weight: 400;
-    letter-spacing: 0.09em;
+    line-height: 8px;
+    letter-spacing: 0.08em;
   }
 
   .chapter-controls.is-cover .chapter-name {
-    left: clamp(1.5rem, 6.2vw, 2.45rem);
-    transform: scaleX(0.82);
+    left: 25px;
+    transform: scaleX(0.8);
     transform-origin: left top;
   }
 
   .chapter-controls.is-cover .chapter-status {
-    left: 50%;
+    left: 190px;
+    transform: scaleX(0.83);
+    transform-origin: left top;
   }
 
   .chapter-controls.is-cover .chapter-index-toggle {
     left: auto;
-    right: clamp(1.55rem, 6.3vw, 2.55rem);
+    right: 25px;
+    transform: scaleX(0.92);
+    transform-origin: right top;
   }
 
   .chapter-controls.is-cover .chapter-progress {
-    top: 3.25rem;
+    top: 52px;
     left: clamp(1.5rem, 6.2vw, 2.45rem);
     right: clamp(1.5rem, 6.2vw, 2.45rem);
     background: rgb(17 17 15 / 22%);
@@ -4407,118 +4413,53 @@ nextjs-portal {
   }
 
   .chapter-controls.is-cover .folio-number::before {
-    top: 4.45rem;
-    left: calc(100vw - 6.65rem);
-    font-size: clamp(4.95rem, 21vw, 6.15rem);
-    line-height: 0.86;
-    letter-spacing: -0.095em;
+    content: none !important;
   }
 
   .chapter-controls.is-cover .folio-number::after {
-    top: 7.02rem;
-    left: calc(100vw - 4.1rem);
-    width: 2.72rem;
-    font-size: clamp(2.95rem, 12.45vw, 3.65rem);
-    line-height: 0.84;
-    letter-spacing: -0.09em;
-    clip-path: inset(0 0 0.18rem 0);
+    content: none !important;
   }
 
   .chapter-controls.is-cover .folio-slash {
-    top: 6.36rem;
-    left: calc(100vw - 4.42rem);
-    width: 2.74rem;
-    opacity: 0.45;
-    transform: rotate(-47deg);
+    display: none !important;
   }
 
   .chapter-controls.is-cover .cover-folio-number {
-    display: none !important;
+    position: fixed !important;
+    inset: auto !important;
+    top: 65px !important;
+    left: calc(100vw - 110px) !important;
+    display: block !important;
+    width: 100px !important;
+    height: 85px !important;
+    overflow: visible;
+    font-size: 0;
+    color: var(--color-ink);
+    opacity: 1;
+  }
+
+  .chapter-controls.is-cover .cover-folio-number::before {
+    position: absolute;
+    inset: 0;
+    display: block;
+    content: "" !important;
+    background: currentColor;
+    -webkit-mask: url("/images/design/folio-01-08-mask-100x85.png") 0 0 / 100% 100% no-repeat;
+    mask: url("/images/design/folio-01-08-mask-100x85.png") 0 0 / 100% 100% no-repeat;
+  }
+
+  .chapter-controls.is-cover .cover-folio-number::after {
+    content: none !important;
+  }
+
+  .chapter-controls.is-cover .cover-folio-current,
+  .chapter-controls.is-cover .cover-folio-total,
+  .chapter-controls.is-cover .cover-folio-cut-line {
+    display: none;
   }
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"] {
     opacity: 0;
-  }
-
-  .chapter-controls.is-cover .cover-folio-number {
-    position: fixed;
-    inset: auto;
-    top: 4.38rem;
-    left: calc(100vw - 6.4rem);
-    width: 6.14rem;
-    height: 4.95rem;
-    overflow: visible;
-    font-size: 0;
-    color: var(--color-ink);
-    opacity: 0.9;
-  }
-
-  .chapter-controls.is-cover .cover-folio-number::before,
-  .chapter-controls.is-cover .cover-folio-number::after {
-    content: none;
-  }
-
-  .chapter-controls.is-cover .cover-folio-current {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    font-family: var(--font-display);
-    font-size: clamp(4.95rem, 21vw, 6.15rem);
-    font-weight: 400;
-    line-height: 0.86;
-    letter-spacing: -0.095em;
-  }
-
-  .chapter-controls.is-cover .cover-folio-slash {
-    position: absolute;
-    z-index: 3;
-    top: 1.46rem;
-    left: 2.68rem;
-    display: block;
-    width: 3.35rem;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.45;
-    transform: rotate(-47deg);
-    transform-origin: center;
-  }
-
-  .chapter-controls.is-cover .cover-folio-total-mask {
-    position: absolute;
-    z-index: 2;
-    top: 1.78rem;
-    left: 3rem;
-    display: block;
-    width: 2.78rem;
-    height: 2.94rem;
-    overflow: hidden;
-  }
-
-  .chapter-controls.is-cover .cover-folio-total-mask::before {
-    position: absolute;
-    z-index: 2;
-    top: 0.28rem;
-    left: -0.54rem;
-    width: 3.1rem;
-    height: 0.2rem;
-    content: "";
-    background: #fffefa;
-    transform: rotate(-47deg);
-    transform-origin: center;
-  }
-
-  .chapter-controls.is-cover .cover-folio-total {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    bottom: 0.08rem;
-    display: block;
-    font-family: var(--font-display);
-    font-size: clamp(2.95rem, 12.45vw, 3.65rem);
-    font-weight: 400;
-    line-height: 0.84;
-    letter-spacing: -0.09em;
   }
 
   .chapter-controls.is-cover > button[aria-label="Next chapter"] {

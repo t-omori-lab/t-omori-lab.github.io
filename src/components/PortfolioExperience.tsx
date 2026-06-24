@@ -419,11 +419,11 @@ function FolioNumber({ current, total }: { current: string; total: string }) {
 }
 
 function CoverFolioNumber({ current, total }: { current: string; total: string }) {
-  const maskId = `cover-folio-total-cut-${useId().replace(/:/g, "")}`;
-
   return (
-    <span className="folio-number cover-folio-number folio-svg-number" aria-label={`${current} / ${total}`}>
-      <FolioMarkSvg current={current} total={total} maskId={maskId} />
+    <span className="folio-number cover-folio-number" aria-label={`${current} / ${total}`}>
+      <span className="cover-folio-current" aria-hidden="true">{current}</span>
+      <span className="cover-folio-cut-line" aria-hidden="true" />
+      <span className="cover-folio-total" aria-hidden="true">{total}</span>
     </span>
   );
 }
@@ -519,9 +519,11 @@ export function PortfolioExperience() {
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const activeChapterRef = useRef(0);
   const pointerStartX = useRef<number | null>(null);
+  const chapterActivatedAt = useRef(Date.now());
   const chapterCount = projects.length + 1;
 
   const pauseForInteraction = useCallback(() => {
+    if (Date.now() - chapterActivatedAt.current < 700) return;
     setAutoPaused(true);
   }, []);
 
@@ -544,6 +546,7 @@ export function PortfolioExperience() {
     }
 
     activeChapterRef.current = clampedIndex;
+    chapterActivatedAt.current = Date.now();
     setActiveChapter(clampedIndex);
     setActiveVerticalSection(hash.includes("-story") || hash === `#${projects[clampedIndex - 1]?.id}-story` ? "story" : "hero");
     setChapterProgress(0);
