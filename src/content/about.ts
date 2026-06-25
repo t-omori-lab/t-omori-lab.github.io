@@ -1,30 +1,30 @@
 export const aboutContent = {
   contentStatus: "provisional",
-  title: "Designing connections between people, knowledge, and technology.",
+  title: "Designing connections between education, research, and practice.",
   lead:
-    "I work across design, direction, education, research, and AI / DX advisory. My practice turns complex ideas into structures, stories, and experiences that people can understand, discuss, and use.",
+    "AIとデザインを軸に、教育・研究・事業の構想を構造化し、実践へとつなげています。",
   profile:
-    "Takashi Omori is a designer, director, educator, and advisor whose work moves between visual communication, learning design, creative practice, and organizational change. Rather than separating research from making, he treats both as parts of the same iterative process.",
+    "倉敷芸術科学大学芸術学部芸術学科講師。約20年、デザイナー、ディレクター、PMとして、広告・メディア制作からWeb、システム、アプリ開発まで幅広く携わってきた。",
   approach:
-    "The starting point is often an unclear situation: knowledge is scattered, priorities compete, or technology arrives before a shared language exists. Through observation, editing, prototyping, and dialogue, the work builds a visible framework that supports action.",
+    "曖昧な構想、散在した情報、未整理の課題を、観察・編集・試作・対話を通して、判断しやすく使い続けられる形へ整理する。",
   practiceFields: [
-    "AI & Creative Practice",
-    "Design Systems & Direction",
-    "Education & Curriculum",
-    "DX & Organizational Learning",
+    "AI & Creative Education Research",
+    "Design Strategy & Direction",
+    "Digital Product & UX",
+    "Brand / Editorial / Culture",
   ],
   workingModes: [
-    "Creative Direction",
-    "Editorial Design",
-    "Education Design",
-    "Research",
-    "Workshop Design",
-    "Advisory",
+    "生成AI時代の創作教育",
+    "AIクリエイティブリテラシー",
+    "教材設計",
+    "地域実践",
+    "デザインディレクション",
+    "教育DX",
   ],
   principles: [
-    "Structure before decoration",
-    "Make complexity visible",
-    "Connect research and practice",
-    "Design for continued use",
+    "researchmap",
+    "JSET 2026 paper / presentation",
+    "GEN-AI VISUAL BOOK",
+    "Selected works and achievement archive",
   ],
 } as const;

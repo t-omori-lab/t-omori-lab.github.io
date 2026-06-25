@@ -17,24 +17,25 @@ const CHROME_TONE_SETTLE_DURATION = 0;
 const FOLIO_COUNT_DURATION = 620;
 const SCRAMBLE_START_DELAY = 110;
 const SCRAMBLE_NOISE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/_.:-";
+const JAPANESE_NOISE_CHARS = "大森隆生成構想教育研究デザイン実践構造編集知識事業表現";
 const DIGIT_NOISE_CHARS = "0123456789";
 
 const practiceAreas = [
   {
-    title: "DESIGN & DIRECTION",
-    subtitle: "Strategy / Visual System / Branding / Communication",
+    title: "AI & CREATIVE EDUCATION RESEARCH",
+    subtitle: "生成AI / 創作教育 / ZINE / 教材設計",
   },
   {
-    title: "EDUCATION & CURRICULUM",
-    subtitle: "Teaching / Curriculum Design / Creative Learning",
+    title: "DESIGN STRATEGY & DIRECTION",
+    subtitle: "構想整理 / コンセプト / VI / ガイドライン",
   },
   {
-    title: "AI & CREATIVE RESEARCH",
-    subtitle: "AI / Design Research / Zine / Writing",
+    title: "DIGITAL PRODUCT & UX",
+    subtitle: "教育DX / 業務システム / Web / UI-UX",
   },
   {
-    title: "DX & ADVISORY",
-    subtitle: "AI Advisory / DX Strategy / Workshop / Consulting",
+    title: "BRAND / EDITORIAL / CULTURE",
+    subtitle: "ブランド体験 / 編集 / 広告 / 地域文化",
   },
 ] as const;
 
@@ -47,15 +48,36 @@ function isShuffleableAscii(character: string) {
   return code >= 33 && code <= 126;
 }
 
+function isJapaneseLikeCharacter(character: string) {
+  const code = character.charCodeAt(0);
+  return (
+    (code >= 0x3040 && code <= 0x30ff) ||
+    (code >= 0x3400 && code <= 0x9fff) ||
+    (code >= 0xff00 && code <= 0xffef) ||
+    character === "々" ||
+    character === "・" ||
+    character === "、" ||
+    character === "。"
+  );
+}
+
 function getScrambleNoiseChar() {
   return SCRAMBLE_NOISE_CHARS[Math.floor(Math.random() * SCRAMBLE_NOISE_CHARS.length)] ?? "X";
+}
+
+function getJapaneseNoiseChar() {
+  return JAPANESE_NOISE_CHARS[Math.floor(Math.random() * JAPANESE_NOISE_CHARS.length)] ?? "大";
+}
+
+function getNoiseCharForTarget(character: string) {
+  return isJapaneseLikeCharacter(character) ? getJapaneseNoiseChar() : getScrambleNoiseChar();
 }
 
 function getDigitNoiseChar() {
   return DIGIT_NOISE_CHARS[Math.floor(Math.random() * DIGIT_NOISE_CHARS.length)] ?? "0";
 }
 
-function useTextShuffle(text: string, active: boolean, delay = 0) {
+function useTextShuffle(text: string, active: boolean, delay = 0, pace = 1) {
   const [displayText, setDisplayText] = useState(text);
   const [visible, setVisible] = useState(false);
 
@@ -74,12 +96,13 @@ function useTextShuffle(text: string, active: boolean, delay = 0) {
 
     const characters = Array.from(text);
     const isLongLine = characters.length > 24;
-    const offsetUnit = isLongLine ? 2 : 1;
-    const revealStep = isLongLine ? Math.max(1.25, characters.length / 26) : 1.05;
+    const boundedPace = Math.max(0.5, pace);
+    const offsetUnit = (isLongLine ? 3 : 2) / boundedPace;
+    const revealStep = (isLongLine ? Math.max(1.8, characters.length / 17) : 1.45) / boundedPace;
     const offsets = characters.map((character) => {
       if (character.trim() === "") return 0;
       const direction = Math.random() < 0.5 ? -1 : 1;
-      const offsetAmount = isLongLine ? 14 + Math.round(Math.random() * 8) : 30 + Math.round(Math.random() * 12);
+      const offsetAmount = isLongLine ? 10 + Math.round(Math.random() * 6) : 18 + Math.round(Math.random() * 8);
       return offsetAmount * direction;
     });
     let revealEdge = 0;
@@ -87,7 +110,7 @@ function useTextShuffle(text: string, active: boolean, delay = 0) {
     let intervalId = 0;
 
     const noiseText = characters
-      .map((character) => (character.trim() === "" ? character : getScrambleNoiseChar()))
+      .map((character) => (character.trim() === "" ? character : getNoiseCharForTarget(character)))
       .join("");
 
     const tick = () => {
@@ -98,7 +121,7 @@ function useTextShuffle(text: string, active: boolean, delay = 0) {
 
           if (index > revealEdge) {
             allSettled = false;
-            return getScrambleNoiseChar();
+            return getNoiseCharForTarget(character);
           }
 
           const offset = offsets[index] ?? 0;
@@ -111,8 +134,8 @@ function useTextShuffle(text: string, active: boolean, delay = 0) {
             offsets[index] = offset > 0 ? offset - offsetUnit : offset + offsetUnit;
           }
 
-          if (!isShuffleableAscii(character) || Math.abs(offset) > 25) {
-            return getScrambleNoiseChar();
+          if (!isShuffleableAscii(character) || Math.abs(offset) > 17) {
+            return getNoiseCharForTarget(character);
           }
 
           const nextCode = Math.min(Math.max(character.charCodeAt(0) + offset, 33), 126);
@@ -142,13 +165,17 @@ function useTextShuffle(text: string, active: boolean, delay = 0) {
       window.clearTimeout(delayTimer);
       window.clearInterval(intervalId);
     };
-  }, [active, delay, text]);
+  }, [active, delay, pace, text]);
 
   return { displayText, visible };
 }
 
-function useDigitShuffle(text: string, active: boolean, delay = 0) {
-  const [displayText, setDisplayText] = useState(text);
+function makeDigitNoiseText(text: string) {
+  return Array.from(text).map((character) => (/\d/.test(character) ? getDigitNoiseChar() : character)).join("");
+}
+
+function useDigitShuffle(text: string, active: boolean, delay = 0, duration = 1664, settleStart = 0.78) {
+  const [displayText, setDisplayText] = useState(() => (active ? makeDigitNoiseText(text) : text));
   const [visible, setVisible] = useState(!active);
 
   useEffect(() => {
@@ -168,11 +195,17 @@ function useDigitShuffle(text: string, active: boolean, delay = 0) {
     let frame = 0;
     let delayTimer = 0;
     let intervalId = 0;
-    const maxFrames = 64;
+    const intervalMs = 26;
+    const maxFrames = Math.max(1, Math.round(duration / intervalMs));
+    const boundedSettleStart = Math.min(0.96, Math.max(0, settleStart));
 
     const tick = () => {
       frame += 1;
-      const revealEdge = Math.floor((frame / maxFrames) * (characters.length + 1));
+      const progress = Math.min(1, frame / maxFrames);
+      const settleProgress =
+        progress <= boundedSettleStart ? 0 : Math.min(1, (progress - boundedSettleStart) / (1 - boundedSettleStart));
+      const easedSettle = 1 - (1 - settleProgress) ** 3;
+      const revealEdge = Math.floor(easedSettle * (characters.length + 1));
       const nextText = characters
         .map((character, index) => {
           if (!/\d/.test(character)) return character;
@@ -189,25 +222,49 @@ function useDigitShuffle(text: string, active: boolean, delay = 0) {
     };
 
     setVisible(false);
-    setDisplayText(text);
+    setDisplayText(makeDigitNoiseText(text));
     delayTimer = window.setTimeout(() => {
-      setDisplayText(characters.map((character) => (/\d/.test(character) ? getDigitNoiseChar() : character)).join(""));
+      setDisplayText(makeDigitNoiseText(text));
       setVisible(true);
       tick();
-      intervalId = window.setInterval(tick, 26);
+      intervalId = window.setInterval(tick, intervalMs);
     }, delay);
 
     return () => {
       window.clearTimeout(delayTimer);
       window.clearInterval(intervalId);
     };
-  }, [active, delay, text]);
+  }, [active, delay, duration, settleStart, text]);
 
   return { displayText, visible };
 }
 
-function ShuffleLine({ active, delay = 0, text }: { active: boolean; delay?: number; text: string }) {
-  const { displayText, visible } = useTextShuffle(text, active, delay);
+function ShuffleDigits({
+  active,
+  className,
+  delay = 0,
+  duration = 560,
+  settleStart = 0.58,
+  text,
+}: {
+  active: boolean;
+  className?: string;
+  delay?: number;
+  duration?: number;
+  settleStart?: number;
+  text: string;
+}) {
+  const { displayText, visible } = useDigitShuffle(text, active, delay, duration, settleStart);
+
+  return (
+    <span className={`${className ? `${className} ` : ""}shuffle-digits ${visible ? "is-visible" : ""}`} aria-hidden="true">
+      {displayText}
+    </span>
+  );
+}
+
+function ShuffleLine({ active, delay = 0, pace = 1, text }: { active: boolean; delay?: number; pace?: number; text: string }) {
+  const { displayText, visible } = useTextShuffle(text, active, delay, pace);
 
   return (
     <span className={`shuffle-line ${visible ? "is-visible" : ""}`} aria-hidden="true" data-text={text}>
@@ -221,16 +278,18 @@ function ShuffleText({
   delayBase = SCRAMBLE_START_DELAY,
   lineDelay = 90,
   lines,
+  pace = 1,
 }: {
   active: boolean;
   delayBase?: number;
   lineDelay?: number;
   lines: string[];
+  pace?: number;
 }) {
   return (
     <>
       {lines.map((line, index) => (
-        <ShuffleLine active={active} delay={delayBase + index * lineDelay} key={`${line}-${index}`} text={line} />
+        <ShuffleLine active={active} delay={delayBase + index * lineDelay} key={`${line}-${index}`} pace={pace} text={line} />
       ))}
     </>
   );
@@ -275,46 +334,46 @@ function Cover({ active, onOpenIndex }: { active: boolean; onOpenIndex: () => vo
       <div className="cover-grid">
         <div className="cover-main">
           <h1 id="cover-title" aria-label="TAKASHI OMORI">
-            <ShuffleText active={active} lines={["TAKASHI", "OMORI"]} />
+            <ShuffleText active={active} delayBase={560} lineDelay={210} lines={["TAKASHI", "OMORI"]} pace={3.0} />
           </h1>
           <p className="role-line" aria-label="大森 隆">
-            <ShuffleText active={active} delayBase={300} lines={["大森 隆"]} />
+            <ShuffleText active={active} delayBase={1300} lines={["大森 隆"]} />
           </p>
           <p className="role-ja" aria-label={roleJaLines.join(" ")}>
-            <ShuffleText active={active} delayBase={430} lines={roleJaLines} />
+            <ShuffleText active={active} delayBase={1520} lines={roleJaLines} />
           </p>
           <p className="cover-tagline" aria-label={taglineLines.join(" ")}>
-            <ShuffleText active={active} delayBase={590} lineDelay={75} lines={taglineLines} />
+            <ShuffleText active={active} delayBase={1840} lineDelay={80} lines={taglineLines} />
           </p>
           <p className="cover-description" aria-label={descriptionLines.join(" ")}>
-            <ShuffleText active={active} delayBase={780} lineDelay={70} lines={descriptionLines} />
+            <ShuffleText active={active} delayBase={2180} lineDelay={70} lines={descriptionLines} />
           </p>
           <p className="statement" aria-label={statementLines.join(" ")}>
-            <ShuffleText active={active} delayBase={970} lineDelay={80} lines={statementLines} />
+            <ShuffleText active={active} delayBase={2480} lineDelay={80} lines={statementLines} />
           </p>
           <div className="cover-profile-summary">
             <p className="section-label">TAKASHI OMORI</p>
             <p aria-label={profileSummaryLine}>
-              <ShuffleText active={active} delayBase={1120} lines={[profileSummaryLine]} />
+              <ShuffleText active={active} delayBase={2760} lines={[profileSummaryLine]} />
             </p>
           </div>
         </div>
 
         <div className="cover-index" aria-label="Project index">
           <p className="section-label section-label--projects" aria-label={projectsLabel}>
-            <ShuffleText active={active} delayBase={1020} lines={[projectsLabel]} />
+            <ShuffleText active={active} delayBase={2420} lines={[projectsLabel]} />
           </p>
           <p className="section-label section-label--practice" aria-label={practiceLabel}>
-            <ShuffleText active={active} delayBase={1020} lines={[practiceLabel]} />
+            <ShuffleText active={active} delayBase={2420} lines={[practiceLabel]} />
           </p>
           <ol className="cover-practice-list">
             {practiceAreas.map((item, index) => (
               <li key={item.title}>
                 <strong aria-label={item.title}>
-                  <ShuffleText active={active} delayBase={1040 + index * 45} lines={[item.title]} />
+                  <ShuffleText active={active} delayBase={2500 + index * 70} lines={[item.title]} />
                 </strong>
                 <small aria-label={item.subtitle}>
-                  <ShuffleText active={active} delayBase={1070 + index * 45} lines={[item.subtitle]} />
+                  <ShuffleText active={active} delayBase={2560 + index * 70} lines={[item.subtitle]} />
                 </small>
               </li>
             ))}
@@ -410,11 +469,11 @@ function AboutProfile() {
           <ol>{aboutContent.practiceFields.map((item) => <li key={item}>{item}</li>)}</ol>
         </section>
         <section>
-          <h3><span>04</span>WORKING MODES</h3>
+          <h3><span>04</span>SELECTED FOCUS</h3>
           <ol>{aboutContent.workingModes.map((item) => <li key={item}>{item}</li>)}</ol>
         </section>
         <section className="about-principles">
-          <h3><span>05</span>PRINCIPLES</h3>
+          <h3><span>05</span>CREDENTIALS</h3>
           <ol>{aboutContent.principles.map((item) => <li key={item}>{item}</li>)}</ol>
         </section>
       </div>
@@ -422,7 +481,7 @@ function AboutProfile() {
       <div className="about-counts" aria-label="Portfolio structure counts">
         <p><strong>04</strong><span>PRACTICE FIELDS</span></p>
         <p><strong>06</strong><span>WORKING MODES</span></p>
-        <p><strong>08</strong><span>PROJECT CATEGORIES</span></p>
+        <p><strong>18</strong><span>PROJECT / ARCHIVE ENTRIES</span></p>
       </div>
 
       <a className="about-next" href="#gen-ai-visual-book">
@@ -437,8 +496,8 @@ function ProjectHero({ active, project }: { active: boolean; project: Project })
   const titleLength = project.title.replace(/\s/g, "").length;
   const titleDensity = titleLength > 28 ? "long" : titleLength > 18 ? "medium" : "short";
   const titleLines = project.title.split("\n");
-  const heroKicker = "AI VISUAL ZINE PROJECT";
-  const heroJa = "AIとつくる時代の、ビジュアル思考と表現の探求";
+  const heroKicker = project.heroKicker;
+  const heroJa = project.heroJa;
   const roleText = project.roles.join(", ");
   const categoryText = project.categories.join(" / ");
 
@@ -622,7 +681,7 @@ function ChapterControls({
     >
       <span className="chapter-name" aria-label={chapterName}>
         <span key={chapterName}>
-          {introAnimating ? <ShuffleText active lines={[chapterName]} delayBase={40} /> : chapterName}
+          {introAnimating ? <ShuffleText active lines={[chapterName]} delayBase={0} /> : chapterName}
         </span>
       </span>
       <button
@@ -635,19 +694,21 @@ function ChapterControls({
       >
         {paused ? (
           <span className="status-pause" key="pause" aria-label="PAUSE">
-            {introAnimating ? <ShuffleText active lines={["PAUSE"]} delayBase={55} /> : "PAUSE"}
+            {introAnimating ? <ShuffleText active lines={["PAUSE"]} delayBase={300} /> : "PAUSE"}
           </span>
         ) : (
           <span className="status-auto" key="auto">
-            <span aria-label="AUTO">{introAnimating ? <ShuffleText active lines={["AUTO"]} delayBase={55} /> : "AUTO"}</span>
-            <span className="status-seconds" key={remainingSecondsText}>{remainingSecondsText}</span>
-            <span>s</span>
+            <span aria-label="AUTO">{introAnimating ? <ShuffleText active lines={["AUTO"]} delayBase={300} /> : "AUTO"}</span>
+            <span className={`status-seconds${introAnimating ? " is-intro-hidden" : ""}`}>{remainingSecondsText}</span>
+            <span className="status-unit" aria-label="seconds">
+              {introAnimating ? <ShuffleText active lines={["s"]} delayBase={520} /> : "s"}
+            </span>
           </span>
         )}
       </button>
       <button className="chapter-index-toggle" type="button" onClick={onOpenIndex} aria-label="Open index">
         <span className="chapter-index-label" aria-label="INDEX">
-          {introAnimating ? <ShuffleText active lines={["INDEX"]} delayBase={70} /> : "INDEX"}
+          {introAnimating ? <ShuffleText active lines={["INDEX"]} delayBase={700} /> : "INDEX"}
         </span>
         <span className="chapter-index-glyph" aria-hidden="true" />
       </button>
@@ -685,7 +746,7 @@ function ChapterControls({
           );
         })}
       </div>
-      <button type="button" onClick={onNext} disabled={activeChapter >= projectIndex.length} aria-label="Next chapter">
+      <button type="button" onClick={onNext} disabled={activeChapter >= implementedProjectCount} aria-label="Next chapter">
         <span className="chapter-arrow chapter-arrow--next" aria-hidden="true" />
       </button>
       <span className="chapter-progress" aria-hidden="true">
@@ -710,19 +771,34 @@ function FolioNumber({
 }) {
   const maskId = `folio-total-cut-${useId().replace(/:/g, "")}`;
   const shuffleActive = introAnimating && previousCurrent === null;
-  const shuffledCurrent = useDigitShuffle(current, shuffleActive, 120);
-  const shuffledTotal = useDigitShuffle(total, shuffleActive, 260);
-  const displayCurrent = shuffleActive ? shuffledCurrent.displayText : current;
-  const displayTotal = shuffleActive ? shuffledTotal.displayText : total;
+  const [introCountStarted, setIntroCountStarted] = useState(false);
+  const shuffledCurrent = useDigitShuffle("00", shuffleActive, 260, 1240, 0.72);
+  const shuffledTotal = useDigitShuffle(total, shuffleActive, 360, 1160, 0.72);
+  const displayCurrent = shuffleActive && !introCountStarted ? shuffledCurrent.displayText : current;
+  const displayTotal = shuffleActive && !introCountStarted ? shuffledTotal.displayText : total;
+  const displayPreviousCurrent = shuffleActive && introCountStarted ? "00" : previousCurrent;
+  const displayCurrentVisible = !shuffleActive || introCountStarted || shuffledCurrent.visible;
+  const displayTotalVisible = !shuffleActive || introCountStarted || shuffledTotal.visible;
+
+  useEffect(() => {
+    if (!shuffleActive) {
+      setIntroCountStarted(false);
+      return;
+    }
+
+    setIntroCountStarted(false);
+    const timer = window.setTimeout(() => setIntroCountStarted(true), 1580);
+    return () => window.clearTimeout(timer);
+  }, [shuffleActive, current]);
 
   return (
-    <span className={`folio-number folio-svg-number${introAnimating ? " is-folio-intro" : ""}${className ? ` ${className}` : ""}`} aria-label={`${current} / ${total}`}>
+    <span className={`folio-number folio-svg-number${introAnimating ? " is-folio-intro" : ""}${shuffleActive && introCountStarted ? " is-intro-count-next" : ""}${className ? ` ${className}` : ""}`} aria-label={`${current} / ${total}`}>
       <FolioMarkSvg
         current={displayCurrent}
-        currentVisible={!shuffleActive || shuffledCurrent.visible}
-        previousCurrent={previousCurrent}
+        currentVisible={displayCurrentVisible}
+        previousCurrent={displayPreviousCurrent}
         total={displayTotal}
-        totalVisible={!shuffleActive || shuffledTotal.visible}
+        totalVisible={displayTotalVisible}
         maskId={maskId}
       />
     </span>
@@ -831,17 +907,20 @@ function ProjectIndex({ open, onClose }: { open: boolean; onClose: () => void })
         <a href="#gen-ai-visual-book" onClick={onClose}><span>03</span><strong>SELECTED WORK</strong></a>
         <a href="#gen-ai-visual-book-story" onClick={onClose}><span>04</span><strong>PROJECT STORY</strong></a>
       </nav>
-      <p className="index-projects-label">PROJECT INDEX / 08</p>
+      <p className="index-projects-label">PROJECT INDEX / {String(projectIndex.length).padStart(2, "0")}</p>
       <ol className="index-projects">
-        {projectIndex.map((item) => (
-          <li key={item.number}>
-            <a href={item.number === "01" ? "#gen-ai-visual-book" : "#cover"} onClick={onClose}>
+        {projectIndex.map((item, index) => {
+          const implemented = projects[index];
+          return (
+          <li key={item.number} aria-disabled={!implemented}>
+            <a href={implemented ? `#${implemented.id}` : "#cover"} onClick={onClose}>
               <span>{item.number}</span>
               <strong>{item.title}</strong>
               <small>{item.subtitle}</small>
             </a>
           </li>
-        ))}
+          );
+        })}
       </ol>
     </div>
   );
@@ -892,7 +971,7 @@ export function PortfolioExperience() {
 
   useEffect(() => {
     const chromeTimer = window.setTimeout(() => setChromeIntroAnimating(false), 1400);
-    const folioTimer = window.setTimeout(() => setFolioIntroAnimating(false), 3650);
+    const folioTimer = window.setTimeout(() => setFolioIntroAnimating(false), 3000);
     return () => {
       window.clearTimeout(chromeTimer);
       window.clearTimeout(folioTimer);
