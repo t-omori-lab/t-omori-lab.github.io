@@ -1,0 +1,565 @@
+{
+  "assets": [
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/20251022_GEN-AI.png",
+      "output": "public/images/projects/gen-ai/hero-portrait.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 425385,
+      "project": "gen-ai",
+      "role": "hero",
+      "filename": "hero-portrait.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/image.png",
+      "output": "public/images/projects/gen-ai/book-display-workspace.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 212026,
+      "project": "gen-ai",
+      "role": "story",
+      "filename": "book-display-workspace.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/image1.png",
+      "output": "public/images/projects/gen-ai/book-display-screen.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 250997,
+      "project": "gen-ai",
+      "role": "story",
+      "filename": "book-display-screen.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/01.png",
+      "output": "public/images/projects/gen-ai/zine-page-01.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 438599,
+      "project": "gen-ai",
+      "role": "story",
+      "filename": "zine-page-01.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/02.png",
+      "output": "public/images/projects/gen-ai/zine-page-02.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 229377,
+      "project": "gen-ai",
+      "role": "story",
+      "filename": "zine-page-02.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/08.png",
+      "output": "public/images/projects/gen-ai/zine-page-08.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 484469,
+      "project": "gen-ai",
+      "role": "story",
+      "filename": "zine-page-08.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/15.png",
+      "output": "public/images/projects/gen-ai/zine-page-15.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 238736,
+      "project": "gen-ai",
+      "role": "story",
+      "filename": "zine-page-15.jpg"
+    },
+    {
+      "source": "/tmp/portfolio-pdf-thumbnails/JSET_生成AI時代の創作教育における認識形成とZINEの役割_大森 隆_20260501.pdf.png",
+      "output": "public/images/projects/jset/paper-cover.jpg",
+      "original_size": [
+        1272,
+        1800
+      ],
+      "web_size": [
+        1272,
+        1800
+      ],
+      "bytes": 348878,
+      "project": "jset",
+      "role": "hero",
+      "filename": "paper-cover.jpg"
+    },
+    {
+      "source": "/tmp/portfolio-pdf-thumbnails/20260523_日本教育工学会研究会　発表資料 (1).pdf.png",
+      "output": "public/images/projects/jset/presentation-cover.jpg",
+      "original_size": [
+        1800,
+        1012
+      ],
+      "web_size": [
+        1800,
+        1012
+      ],
+      "bytes": 234571,
+      "project": "jset",
+      "role": "story",
+      "filename": "presentation-cover.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/02.png",
+      "output": "public/images/projects/jset/zine-question-page.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 229377,
+      "project": "jset",
+      "role": "story",
+      "filename": "zine-question-page.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/06.png",
+      "output": "public/images/projects/jset/zine-seminar-page.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 292303,
+      "project": "jset",
+      "role": "story",
+      "filename": "zine-seminar-page.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/GEN-AI VISUAL BOOK/15.png",
+      "output": "public/images/projects/jset/zine-ethics-page.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 238736,
+      "project": "jset",
+      "role": "story",
+      "filename": "zine-ethics-page.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ANA/ANA_空港サイン.png",
+      "output": "public/images/projects/ana/hero-airport-sign.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 216240,
+      "project": "ana",
+      "role": "hero",
+      "filename": "hero-airport-sign.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ANA/ANA_搭乗ゲート表示_A2案_運用場面_01.png",
+      "output": "public/images/projects/ana/boarding-gate-sign.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 180240,
+      "project": "ana",
+      "role": "story",
+      "filename": "boarding-gate-sign.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ANA/ANA_アメニティモック1.png",
+      "output": "public/images/projects/ana/amenity-mockup-01.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 180232,
+      "project": "ana",
+      "role": "story",
+      "filename": "amenity-mockup-01.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ANA/ANA_アメニティモック2.png",
+      "output": "public/images/projects/ana/amenity-mockup-02.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 158738,
+      "project": "ana",
+      "role": "story",
+      "filename": "amenity-mockup-02.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ANA/ANA_白カップ_機内食使用場面_01.png",
+      "output": "public/images/projects/ana/white-cup-inflight.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 175785,
+      "project": "ana",
+      "role": "story",
+      "filename": "white-cup-inflight.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ANA/ANA_水引ストラップ_商品使用場面_01.png",
+      "output": "public/images/projects/ana/mizuhiki-strap.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 180871,
+      "project": "ana",
+      "role": "story",
+      "filename": "mizuhiki-strap.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ANA/100730_意思表示カード.jpg",
+      "output": "public/images/projects/ana/intention-card.jpg",
+      "original_size": [
+        1291,
+        841
+      ],
+      "web_size": [
+        1291,
+        841
+      ],
+      "bytes": 123300,
+      "project": "ana",
+      "role": "story",
+      "filename": "intention-card.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ジュニアロースクール岡山/02_A4チラシ_高校教室机上_表裏モックアップ-v2.png",
+      "output": "public/images/projects/junior-law-school/hero-desk-mockup.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 385765,
+      "project": "junior-law-school",
+      "role": "hero",
+      "filename": "hero-desk-mockup.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ジュニアロースクール岡山/A4両面チラシ_表裏モックアップ2.png",
+      "output": "public/images/projects/junior-law-school/flyer-front-back.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 405098,
+      "project": "junior-law-school",
+      "role": "story",
+      "filename": "flyer-front-back.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ジュニアロースクール岡山/03_A4チラシ_高校掲示板_断ち落とし印刷-v2.png",
+      "output": "public/images/projects/junior-law-school/bulletin-board.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 300795,
+      "project": "junior-law-school",
+      "role": "story",
+      "filename": "bulletin-board.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ジュニアロースクール岡山/240913_Lawschool_A4_omote.png",
+      "output": "public/images/projects/junior-law-school/flyer-front.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 650934,
+      "project": "junior-law-school",
+      "role": "story",
+      "filename": "flyer-front.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/ジュニアロースクール岡山/240913_Lawschool_A4_ura_ol.png",
+      "output": "public/images/projects/junior-law-school/flyer-back.jpg",
+      "original_size": [
+        1241,
+        1754
+      ],
+      "web_size": [
+        1241,
+        1754
+      ],
+      "bytes": 465438,
+      "project": "junior-law-school",
+      "role": "story",
+      "filename": "flyer-back.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/BEMAC/BEMAC船舶航行IoTシステム_3シーン採用版.png",
+      "output": "public/images/projects/bemac/hero-three-scenes.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 263673,
+      "project": "bemac",
+      "role": "hero",
+      "filename": "hero-three-scenes.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/BEMAC/BEMAC船舶航行IoTシステム_夜間艦橋エンジンモニター.png",
+      "output": "public/images/projects/bemac/night-bridge-engine-monitor.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 165270,
+      "project": "bemac",
+      "role": "story",
+      "filename": "night-bridge-engine-monitor.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/BEMAC/BEMAC船舶航行IoTシステム_夜間艦橋アラームモニター.png",
+      "output": "public/images/projects/bemac/night-bridge-alarm-monitor.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 154067,
+      "project": "bemac",
+      "role": "story",
+      "filename": "night-bridge-alarm-monitor.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/BEMAC/BEMAC船舶航行IoTシステム_エンジンモニター実機モックアップ.png",
+      "output": "public/images/projects/bemac/engine-monitor-mockup.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 199106,
+      "project": "bemac",
+      "role": "story",
+      "filename": "engine-monitor-mockup.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/BEMAC/BEMAC船舶航行IoTシステム_UIデザインガイドライン.PNG",
+      "output": "public/images/projects/bemac/ui-design-guideline.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 245131,
+      "project": "bemac",
+      "role": "story",
+      "filename": "ui-design-guideline.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/森の芸術祭/森の芸術祭_鑑賞ガイド.png",
+      "output": "public/images/projects/mori-geijutsusai/hero-viewing-guide.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 353263,
+      "project": "mori-geijutsusai",
+      "role": "hero",
+      "filename": "hero-viewing-guide.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/森の芸術祭/鑑賞ガイド_トンボ無_ページ_1.jpg",
+      "output": "public/images/projects/mori-geijutsusai/guide-page-01.jpg",
+      "original_size": [
+        3039,
+        4291
+      ],
+      "web_size": [
+        1558,
+        2200
+      ],
+      "bytes": 557692,
+      "project": "mori-geijutsusai",
+      "role": "story",
+      "filename": "guide-page-01.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/森の芸術祭/鑑賞ガイド_トンボ無_ページ_2.jpg",
+      "output": "public/images/projects/mori-geijutsusai/guide-page-02.jpg",
+      "original_size": [
+        4314,
+        3036
+      ],
+      "web_size": [
+        2200,
+        1548
+      ],
+      "bytes": 643738,
+      "project": "mori-geijutsusai",
+      "role": "story",
+      "filename": "guide-page-02.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/森の芸術祭/鑑賞ガイド_トンボ無_ページ_3.jpg",
+      "output": "public/images/projects/mori-geijutsusai/guide-page-03.jpg",
+      "original_size": [
+        2867,
+        2024
+      ],
+      "web_size": [
+        2200,
+        1553
+      ],
+      "bytes": 991298,
+      "project": "mori-geijutsusai",
+      "role": "story",
+      "filename": "guide-page-03.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/森の芸術祭/鑑賞ガイド_トンボ無_ページ_4.jpg",
+      "output": "public/images/projects/mori-geijutsusai/guide-page-04.jpg",
+      "original_size": [
+        3683,
+        2601
+      ],
+      "web_size": [
+        2200,
+        1554
+      ],
+      "bytes": 772322,
+      "project": "mori-geijutsusai",
+      "role": "story",
+      "filename": "guide-page-04.jpg"
+    },
+    {
+      "source": "/tmp/portfolio-pdf-thumbnails/3_3 A&S FD研修会 森の芸術祭.pdf.png",
+      "output": "public/images/projects/mori-geijutsusai/fd-workshop-cover.jpg",
+      "original_size": [
+        1800,
+        1012
+      ],
+      "web_size": [
+        1800,
+        1012
+      ],
+      "bytes": 300786,
+      "project": "mori-geijutsusai",
+      "role": "story",
+      "filename": "fd-workshop-cover.jpg"
+    }
+  ],
+  "missing": []
+}
