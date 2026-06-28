@@ -1,0 +1,389 @@
+{
+  "assets": [
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/LMS/LMX_DXプロジェクト.png",
+      "output": "public/images/projects/lms/hero-project-overview.jpg",
+      "original_size": [
+        1535,
+        1024
+      ],
+      "web_size": [
+        1535,
+        1024
+      ],
+      "bytes": 238556,
+      "project": "lms",
+      "role": "hero",
+      "filename": "hero-project-overview.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/LMS/SS/FireShot Capture 007 - HUMAN　ヒューマンアカデミー - dx300-mypage-student.pricerkk.com.png",
+      "output": "public/images/projects/lms/student-home.jpg",
+      "original_size": [
+        1628,
+        4392
+      ],
+      "web_size": [
+        815,
+        2200
+      ],
+      "bytes": 228999,
+      "project": "lms",
+      "role": "story",
+      "filename": "student-home.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/LMS/SS/FireShot Capture 008 - カレンダー - HUMAN　ヒューマンアカデミー - dx300-mypage-student.pricerkk.com.png",
+      "output": "public/images/projects/lms/calendar.jpg",
+      "original_size": [
+        1628,
+        2093
+      ],
+      "web_size": [
+        1628,
+        2093
+      ],
+      "bytes": 220458,
+      "project": "lms",
+      "role": "story",
+      "filename": "calendar.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/LMS/SS/FireShot Capture 009 - 成績管理 - HUMAN　ヒューマンアカデミー - dx300-mypage-student.pricerkk.com.png",
+      "output": "public/images/projects/lms/grade-management.jpg",
+      "original_size": [
+        1628,
+        2072
+      ],
+      "web_size": [
+        1628,
+        2072
+      ],
+      "bytes": 212454,
+      "project": "lms",
+      "role": "story",
+      "filename": "grade-management.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/LMS/SS/FireShot Capture 010 - プロフィール - HUMAN　ヒューマンアカデミー - dx300-mypage-student.pricerkk.com.png",
+      "output": "public/images/projects/lms/profile.jpg",
+      "original_size": [
+        1628,
+        9224
+      ],
+      "web_size": [
+        388,
+        2200
+      ],
+      "bytes": 74079,
+      "project": "lms",
+      "role": "story",
+      "filename": "profile.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/EIZO/EIZO_デザインロードマップ.png",
+      "output": "public/images/projects/eizo/hero-design-roadmap.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 306232,
+      "project": "eizo",
+      "role": "hero",
+      "filename": "hero-design-roadmap.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/EIZO/01_A4.pdf",
+      "output": "public/images/projects/eizo/design-roadmap-a4-01.jpg",
+      "original_size": [
+        1192,
+        1685
+      ],
+      "web_size": [
+        1192,
+        1685
+      ],
+      "bytes": 77580,
+      "project": "eizo",
+      "role": "story",
+      "filename": "design-roadmap-a4-01.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/EIZO/02_A3.pdf",
+      "output": "public/images/projects/eizo/design-roadmap-a3.jpg",
+      "original_size": [
+        2383,
+        1685
+      ],
+      "web_size": [
+        2200,
+        1556
+      ],
+      "bytes": 68060,
+      "project": "eizo",
+      "role": "story",
+      "filename": "design-roadmap-a3.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/EIZO/03_A4.pdf",
+      "output": "public/images/projects/eizo/design-roadmap-a4-03.jpg",
+      "original_size": [
+        1192,
+        1685
+      ],
+      "web_size": [
+        1192,
+        1685
+      ],
+      "bytes": 46601,
+      "project": "eizo",
+      "role": "story",
+      "filename": "design-roadmap-a4-03.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/大崎デザインマネジメント/製品デザインルール_開発レビューシーン.png",
+      "output": "public/images/projects/osaki/hero-review-scene.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 194967,
+      "project": "osaki",
+      "role": "hero",
+      "filename": "hero-review-scene.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/大崎デザインマネジメント/03_製品デザインルール_デザイン開発デスク.png",
+      "output": "public/images/projects/osaki/design-development-desk.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 202759,
+      "project": "osaki",
+      "role": "story",
+      "filename": "design-development-desk.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/大崎デザインマネジメント/製品デザインルール_会議シーン.png",
+      "output": "public/images/projects/osaki/meeting-scene.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 248065,
+      "project": "osaki",
+      "role": "story",
+      "filename": "meeting-scene.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/大崎デザインマネジメント/OSAKI_A4.pdf",
+      "output": "public/images/projects/osaki/guideline-cover.jpg",
+      "original_size": [
+        1192,
+        1685
+      ],
+      "web_size": [
+        1192,
+        1685
+      ],
+      "bytes": 109684,
+      "project": "osaki",
+      "role": "story",
+      "filename": "guideline-cover.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/くろだ病院/くろだ病院.png",
+      "output": "public/images/projects/kuroda/hero-site-overview.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 203234,
+      "project": "kuroda",
+      "role": "hero",
+      "filename": "hero-site-overview.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/くろだ病院/Web キャプチャ_9-8-2023_113423_www.kuroda.or.jp.jpeg",
+      "output": "public/images/projects/kuroda/site-capture-01.jpg",
+      "original_size": [
+        1353,
+        3475
+      ],
+      "web_size": [
+        857,
+        2200
+      ],
+      "bytes": 234780,
+      "project": "kuroda",
+      "role": "story",
+      "filename": "site-capture-01.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/くろだ病院/Web キャプチャ_9-8-2023_113516_www.kuroda.or.jp.jpeg",
+      "output": "public/images/projects/kuroda/site-capture-02.jpg",
+      "original_size": [
+        1353,
+        4360
+      ],
+      "web_size": [
+        683,
+        2200
+      ],
+      "bytes": 152740,
+      "project": "kuroda",
+      "role": "story",
+      "filename": "site-capture-02.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/くろだ病院/Web キャプチャ_9-8-2023_11352_www.kuroda.or.jp.jpeg",
+      "output": "public/images/projects/kuroda/site-capture-03.jpg",
+      "original_size": [
+        1353,
+        3475
+      ],
+      "web_size": [
+        857,
+        2200
+      ],
+      "bytes": 224466,
+      "project": "kuroda",
+      "role": "story",
+      "filename": "site-capture-03.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/くろだ病院/Web キャプチャ_9-8-2023_113532_www.kuroda.or.jp.jpeg",
+      "output": "public/images/projects/kuroda/site-capture-04.jpg",
+      "original_size": [
+        1353,
+        3352
+      ],
+      "web_size": [
+        888,
+        2200
+      ],
+      "bytes": 233503,
+      "project": "kuroda",
+      "role": "story",
+      "filename": "site-capture-04.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/サイプレス・スナダヤ/サイプレス・スナダヤ.png",
+      "output": "public/images/projects/cypress-sunadaya/hero-site-overview.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 268562,
+      "project": "cypress-sunadaya",
+      "role": "hero",
+      "filename": "hero-site-overview.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/サイプレス・スナダヤ/FireShot Capture 040 - 株式会社サイプレス・スナダヤ - www.sunadaya.co.jp.jpg",
+      "output": "public/images/projects/cypress-sunadaya/site-top.jpg",
+      "original_size": [
+        1484,
+        851
+      ],
+      "web_size": [
+        1484,
+        851
+      ],
+      "bytes": 232494,
+      "project": "cypress-sunadaya",
+      "role": "story",
+      "filename": "site-top.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/サイプレス・スナダヤ/FireShot Capture 041 - 株式会社サイプレス・スナダヤ - www.sunadaya.co.jp.jpg",
+      "output": "public/images/projects/cypress-sunadaya/site-company.jpg",
+      "original_size": [
+        1484,
+        4326
+      ],
+      "web_size": [
+        755,
+        2200
+      ],
+      "bytes": 240887,
+      "project": "cypress-sunadaya",
+      "role": "story",
+      "filename": "site-company.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/サイプレス・スナダヤ/FireShot Capture 042 - 大規模・高度生産設備 - 株式会社サイプレス・スナダヤ - www.sunadaya.co.jp.jpg",
+      "output": "public/images/projects/cypress-sunadaya/site-equipment.jpg",
+      "original_size": [
+        1484,
+        6568
+      ],
+      "web_size": [
+        497,
+        2200
+      ],
+      "bytes": 195732,
+      "project": "cypress-sunadaya",
+      "role": "story",
+      "filename": "site-equipment.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/サイプレス・スナダヤ/FireShot Capture 043 - CLT - 株式会社サイプレス・スナダヤ - www.sunadaya.co.jp.jpg",
+      "output": "public/images/projects/cypress-sunadaya/site-clt.jpg",
+      "original_size": [
+        1484,
+        9189
+      ],
+      "web_size": [
+        355,
+        2200
+      ],
+      "bytes": 128597,
+      "project": "cypress-sunadaya",
+      "role": "story",
+      "filename": "site-clt.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/サイプレス・スナダヤ/FireShot Capture 044 - 木材と環境 - 株式会社サイプレス・スナダヤ - www.sunadaya.co.jp.jpg",
+      "output": "public/images/projects/cypress-sunadaya/site-environment.jpg",
+      "original_size": [
+        1484,
+        6417
+      ],
+      "web_size": [
+        509,
+        2200
+      ],
+      "bytes": 177782,
+      "project": "cypress-sunadaya",
+      "role": "story",
+      "filename": "site-environment.jpg"
+    }
+  ],
+  "missing": []
+}

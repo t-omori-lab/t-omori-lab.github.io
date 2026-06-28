@@ -4,6 +4,7 @@ This file will become the final handoff summary after inventory, workbook creati
 
 ## Planned Outputs
 - Excel content workbook. Created at `/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/ポートフォリオWeb/outputs/portfolio-content-planning-20260625/portfolio_content_master.xlsx`.
+- User-review digest workbook. Created at `/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/ポートフォリオWeb/outputs/portfolio-content-planning-20260625/portfolio_content_review.xlsx`.
 - Final project order.
 - Practice area definitions.
 - Per-project display type.
@@ -17,23 +18,64 @@ This file will become the final handoff summary after inventory, workbook creati
   - Contains all organized text currently drafted for web reflection.
   - Contains asset references by source folder, count, candidate usage, missing/weakness notes, and web asset path candidates.
   - Contains a `Design Checkpoint` sheet for the next cover/detail/scroll design decision step.
+- `portfolio_content_review.xlsx`
+  - Short confirmation workbook for the user.
+  - Contains the user-facing review sheets: progress and remaining tasks, confirmation points, Selected Projects, Practice Archive, text confirmation, asset/publication confirmation, research/education achievement Archive, Top/About confirmation, About structure, Project Detail design, all-project copy, Project Detail page draft, Archive Detail page draft, writing quality check, pre-implementation gap check, and open considerations.
+  - Use this instead of reading the full master workbook when making approval decisions.
+  - Current polish pass tightened Selected Project headings, leads, body-copy candidates, Japanese approval wording, Archive visibility, Top/About/Profile visibility, and Project Detail implementation visibility.
+  - The latest correction makes About and Project Detail visible enough for design/coding handoff review, instead of leaving those details only in the master workbook.
+  - The JSET / ZINE consolidation is now reflected: GEN-AI VISUAL BOOK / ZINE is no longer treated as an independent Selected Project, and is handled inside the JSET detail as visual material, research object, and link target.
+  - Selected Projects is now locked to five entries. No sixth replacement project will be added.
+  - The former Projects Index section is now renamed `Practice Archive`, because it bundles work, research, education, and regional practice as achievements. `Index` remains only as a navigation/menu function.
+  - The top-right fraction is locked to top-page sections only: Cover 01/05, Selected Projects 02/05, Practice Archive 03/05, About 04/05, Contact 05/05. Lower pages use category labels only.
+  - `Display Field Rules` / `13_表示項目ルール` separates the shared ledger fields from what appears on each surface. The top page shows only the minimum fields needed for scanning; detail pages carry context, proof, links, and caveats.
+  - `Top Display Copy` / `14_トップ表示文言` turns those rules into concrete top-page copy for the five top sections and the five Selected cards.
+  - Latest user approvals are reflected: five Selected Projects fixed, publication scope approved, JSET detail links approved, and Junior Law School year set to 2024.
+  - Latest copy polish is reflected: Selected five detail copy now uses publication-candidate wording, and About/Profile/Approach copy is aligned with `自己紹介の整理.md` and researchmap.
+  - `15_Project詳細ページ` adds page-level Project Detail drafts so detail pages are not only fragmented across structure/copy sheets.
+  - `16_Archive詳細ページ` now prepares detail drafts for every Archive record. It does not assume that only selected rows deserve copy.
+  - Archive rows are now displayed newest-first, and Archive review sheets include `一覧掲載チェック`, `詳細ページ化チェック`, and `最終判断` columns for user decisions.
+  - `17_文章品質チェック` makes the current writing quality visible: the workbook is A+ as a pre-implementation ledger, while final public copy still needs layout-based trimming after design/coding.
+  - `18_承認待ちのみ` isolates the remaining user decisions. All non-approval ledger tasks are treated as automatically completed.
+  - `19_文体ルール` and `20_抽象語チェック` add the latest writing correction: avoid education-flavored abstraction when a concrete object, production action, role, or use case can be written instead.
+- `reporting_rules.md`
+  - Fixes the rule that future reports must include conclusion, task status, updated content, unresolved decisions, and the workbook link.
 - `design_decision.md`
   - Fixes the cover hierarchy, project detail density rules, Archive treatment, language recommendation, and implementation notes before coding.
-- Priority web assets for the first 6 editorial projects
+- Priority web assets for the initial P0 editorial candidates
   - 35 JPEG assets generated under `public/images/projects/`.
   - Manifest: `portfolio-content-planning/priority_asset_manifest.json`
   - Contact sheet: `portfolio-content-planning/priority_assets_contact_sheet.jpg`
+- P1 web assets for the next 5 professional-practice projects
+  - 24 JPEG assets generated under `public/images/projects/`.
+  - Manifest: `portfolio-content-planning/p1_asset_manifest.json`
+  - Contact sheet: `portfolio-content-planning/p1_assets_contact_sheet.jpg`
+  - EIZO PDF-derived thumbnails are recorded as auxiliary because the first extraction has orientation/white-space issues.
+- P2 web assets for 6 Compact cases
+  - 19 JPEG assets generated under `public/images/projects/`.
+  - Manifest: `portfolio-content-planning/p2_asset_manifest.json`
+  - Contact sheet: `portfolio-content-planning/p2_assets_contact_sheet.jpg`
+  - KUSA is recorded as limited-assets because it currently has one usable hero image.
 - Current-Web-based content structure
   - Generated design boards are discarded as design references.
   - The new text-first specification is `portfolio-content-planning/content_structure_spec.md`.
   - It defines what to write for Cover FV, Cover scroll detail/About, Practice Areas, Index, Project FV, Project Detail, JSET, and Archive without adding unnecessary page complexity.
 - Implementation-ready workbook update
-  - Added implementation-facing sheets: `Implementation Scope`, `Implementation Lock`, `Pre Implementation Checklist`, `Portfolio Content Assessment`, `Audience Value Map`, `Project Proof Role`, `Project Hero Copy`, `Project Detail Spec`, `Detail Rules`, `External Links`, `Copy Claim Audit`, `Asset Use Decision`, `Publishing Check`, `Self Check`.
+  - Added implementation-facing sheets: `Implementation Scope`, `Implementation Lock`, `Pre Implementation Checklist`, `Portfolio Content Assessment`, `Audience Value Map`, `Project Proof Role`, `Reference Structure Notes`, `Chapter Structure`, `Chapter Project Map`, `Index Navigation Plan`, `Selected Projects`, `Selected Project Editorial`, `Selected Image Sequence`, `Selected Project Final Copy`, `Practice Archive`, `Top Page Sections`, `Top Display Copy`, `Project Hero Copy`, `Detail Rules`, `Display Field Rules`, `Project Detail Spec`, `Project Detail Page Draft`, `Archive Detail Page Draft`, `Writing Quality Audit`, `External Links`, `Copy Claim Audit`, `Asset Use Decision`, `Asset Production Plan`, `P0 Asset QA`, `P1 Asset QA`, `P2 Asset QA`, `Publishing Check`, `User Approval Queue`, `Self Check`.
   - These sheets connect the organized content to the current coded website structure without starting web implementation.
   - `Pre Implementation Checklist` marks the P0 web-implementation prerequisites as complete.
-  - `Implementation Lock` records the locked decisions: current coded Cover FV, explanatory Practice Areas, editorial project order, shared detail structure, dense Archive, and English labels with Japanese body copy.
+  - `Implementation Lock` records the locked decisions: current coded Cover FV, current five-entry Selected Projects path after JSET/ZINE consolidation, LMS exclusion from Selected Projects, Practice Archive as the trust layer, shared detail structure, and English labels with Japanese body copy.
   - `Portfolio Content Assessment`, `Audience Value Map`, and `Project Proof Role` evaluate the content as a portfolio, identify visitor value, and clarify what each project proves.
-  - `Project Detail Spec`, `Asset Use Decision`, and `Copy Claim Audit` allow coding to proceed without reopening the design-board discussion.
+  - `Reference Structure Notes`, `Chapter Structure`, `Chapter Project Map`, `Index Navigation Plan`, `Selected Projects`, `Selected Project Editorial`, `Selected Image Sequence`, `Practice Archive`, and `Top Page Sections` adapt the KEI / ozgur reference lessons into Omori-specific content and draft copy without adding unnecessary standalone chapters.
+  - `Selected Project Final Copy` drafts implementation-ready Japanese copy for the current five Selected Projects.
+  - `User Approval Queue` now separates resolved approvals from remaining final checks: final crop/mask, slide file placement, Mori activity-photo handling, and final tone.
+  - `Asset Production Plan` defines how to move from original source folders to web-ready `public/images/projects/...` assets after chapter and display-density decisions are stable.
+  - `P0 Asset QA` confirms that the initial P0 candidate set has 35 generated web-ready assets with no missing files; after the JSET/ZINE consolidation, GEN-AI / ZINE assets are used inside the JSET detail rather than as a separate Selected Project.
+  - `P1 Asset QA` confirms that LMS, EIZO, Osaki, Kuroda Hospital, and Cypress Sunadaya have 24 generated web-ready assets with no missing files.
+  - `P2 Asset QA` confirms that airnote, OG Giken, Kawasaki, TEPCO, KUSA, and Kyushu University have 19 generated web-ready assets with no missing files.
+  - `Project Detail Spec`, `Detail Rules`, `Asset Use Decision`, and `Copy Claim Audit` define Project Detail as a modular shared structure: not a rigid identical template, not text-heavy, and not dependent on a major increase in image assets.
+  - `Archive Detail Page Draft` prevents Archive from becoming either too thin or too heavy: every record has prepared copy, and the user can separately decide list display and detail-page creation.
+  - `Copy Style Guide` and `Abstract Language Audit` define the public-copy rule: editorial headings are acceptable, but lead and body copy must return to concrete work.
 - Web implementation handoff
   - `portfolio-content-planning/web_implementation_handoff.md`
   - Summarizes the workbook reading order, implementation rules, first implementation slice, per-project detail handling, asset-use caveats, and public-release confirmations.

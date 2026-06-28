@@ -1,0 +1,309 @@
+{
+  "assets": [
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/住友化学_airnote/airnoteパンフレット_平置き表裏モック_01.png",
+      "output": "public/images/projects/airnote/hero-brochure-spread.jpg",
+      "original_size": [
+        3840,
+        2160
+      ],
+      "web_size": [
+        2200,
+        1238
+      ],
+      "bytes": 315699,
+      "project": "airnote",
+      "role": "hero",
+      "filename": "hero-brochure-spread.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/住友化学_airnote/airnote1.jpg",
+      "output": "public/images/projects/airnote/product-detail-01.jpg",
+      "original_size": [
+        1191,
+        842
+      ],
+      "web_size": [
+        1191,
+        842
+      ],
+      "bytes": 192622,
+      "project": "airnote",
+      "role": "story",
+      "filename": "product-detail-01.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/住友化学_airnote/airnote2.jpg",
+      "output": "public/images/projects/airnote/product-detail-02.jpg",
+      "original_size": [
+        1191,
+        842
+      ],
+      "web_size": [
+        1191,
+        842
+      ],
+      "bytes": 234024,
+      "project": "airnote",
+      "role": "story",
+      "filename": "product-detail-02.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/住友化学_airnote/2DE267BF-2FC9-4C52-B5C8-6D82EB93E01C.PNG",
+      "output": "public/images/projects/airnote/brochure-page.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 315243,
+      "project": "airnote",
+      "role": "story",
+      "filename": "brochure-page.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/OG/OG技研_Pulsecure観音開きパンフレット_平置き表裏モック_03.png",
+      "output": "public/images/projects/og-giken/hero-brochure-spread.jpg",
+      "original_size": [
+        3840,
+        2160
+      ],
+      "web_size": [
+        2200,
+        1238
+      ],
+      "bytes": 235024,
+      "project": "og-giken",
+      "role": "hero",
+      "filename": "hero-brochure-spread.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/OG/1.png",
+      "output": "public/images/projects/og-giken/brochure-page-01.jpg",
+      "original_size": [
+        1500,
+        701
+      ],
+      "web_size": [
+        1500,
+        701
+      ],
+      "bytes": 136018,
+      "project": "og-giken",
+      "role": "story",
+      "filename": "brochure-page-01.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/OG/2.png",
+      "output": "public/images/projects/og-giken/brochure-page-02.jpg",
+      "original_size": [
+        3581,
+        1731
+      ],
+      "web_size": [
+        2200,
+        1063
+      ],
+      "bytes": 390143,
+      "project": "og-giken",
+      "role": "story",
+      "filename": "brochure-page-02.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/川崎医療短大/第一看護科_大学案内見開きモックアップ.png",
+      "output": "public/images/projects/kawasaki-medical-college/hero-guide-spread.jpg",
+      "original_size": [
+        1672,
+        941
+      ],
+      "web_size": [
+        1672,
+        941
+      ],
+      "bytes": 303729,
+      "project": "kawasaki-medical-college",
+      "role": "hero",
+      "filename": "hero-guide-spread.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/川崎医療短大/2.png",
+      "output": "public/images/projects/kawasaki-medical-college/guide-page-02.jpg",
+      "original_size": [
+        1000,
+        705
+      ],
+      "web_size": [
+        1000,
+        705
+      ],
+      "bytes": 145121,
+      "project": "kawasaki-medical-college",
+      "role": "story",
+      "filename": "guide-page-02.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/川崎医療短大/3.png",
+      "output": "public/images/projects/kawasaki-medical-college/guide-page-03.jpg",
+      "original_size": [
+        503,
+        660
+      ],
+      "web_size": [
+        503,
+        660
+      ],
+      "bytes": 123105,
+      "project": "kawasaki-medical-college",
+      "role": "story",
+      "filename": "guide-page-03.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/川崎医療短大/4.png",
+      "output": "public/images/projects/kawasaki-medical-college/guide-page-04.jpg",
+      "original_size": [
+        365,
+        391
+      ],
+      "web_size": [
+        365,
+        391
+      ],
+      "bytes": 29029,
+      "project": "kawasaki-medical-college",
+      "role": "story",
+      "filename": "guide-page-04.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/東京電力_新聞広告/東京電力_新聞広告.png",
+      "output": "public/images/projects/tepco/hero-newspaper-ad.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 377953,
+      "project": "tepco",
+      "role": "hero",
+      "filename": "hero-newspaper-ad.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/東京電力_新聞広告/ぐらっと_tri.jpg",
+      "output": "public/images/projects/tepco/ad-illustration.jpg",
+      "original_size": [
+        694,
+        489
+      ],
+      "web_size": [
+        694,
+        489
+      ],
+      "bytes": 86493,
+      "project": "tepco",
+      "role": "story",
+      "filename": "ad-illustration.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/倉敷芸科大/倉敷芸科大.png",
+      "output": "public/images/projects/kusa/hero-web-overview.jpg",
+      "original_size": [
+        1402,
+        1122
+      ],
+      "web_size": [
+        1402,
+        1122
+      ],
+      "bytes": 101503,
+      "project": "kusa",
+      "role": "hero",
+      "filename": "hero-web-overview.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/九州大学_芸術工学/九州大学_芸術工学_リーフレット1.PNG",
+      "output": "public/images/projects/kyushu-university/hero-leaflet-front.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 238307,
+      "project": "kyushu-university",
+      "role": "hero",
+      "filename": "hero-leaflet-front.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/九州大学_芸術工学/九州大学_芸術工学_リーフレット2.PNG",
+      "output": "public/images/projects/kyushu-university/leaflet-back.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 349293,
+      "project": "kyushu-university",
+      "role": "story",
+      "filename": "leaflet-back.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/九州大学_芸術工学/リーフ表_1.png",
+      "output": "public/images/projects/kyushu-university/leaflet-front-flat.jpg",
+      "original_size": [
+        1754,
+        1240
+      ],
+      "web_size": [
+        1754,
+        1240
+      ],
+      "bytes": 255030,
+      "project": "kyushu-university",
+      "role": "story",
+      "filename": "leaflet-front-flat.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/九州大学_芸術工学/リーフ裏_1.png",
+      "output": "public/images/projects/kyushu-university/leaflet-back-flat.jpg",
+      "original_size": [
+        1754,
+        1240
+      ],
+      "web_size": [
+        1754,
+        1240
+      ],
+      "bytes": 402948,
+      "project": "kyushu-university",
+      "role": "story",
+      "filename": "leaflet-back-flat.jpg"
+    },
+    {
+      "source": "/Users/omoritakashi/Desktop/CodexWorkspace/10_projects/教員動画作成/教員動画生成_採用/九州大学_芸術工学/B297B85A-B68F-420C-BCD3-8AA8EE7E8685.PNG",
+      "output": "public/images/projects/kyushu-university/leaflet-detail.jpg",
+      "original_size": [
+        1448,
+        1086
+      ],
+      "web_size": [
+        1448,
+        1086
+      ],
+      "bytes": 250399,
+      "project": "kyushu-university",
+      "role": "story",
+      "filename": "leaflet-detail.jpg"
+    }
+  ],
+  "missing": []
+}
