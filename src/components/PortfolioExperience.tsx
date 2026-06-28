@@ -23,19 +23,19 @@ const DIGIT_NOISE_CHARS = "0123456789";
 const practiceAreas = [
   {
     title: "AI & CREATIVE EDUCATION RESEARCH",
-    subtitle: "生成AI / 創作教育 / ZINE / 教材設計",
+    subtitle: "生成AI・創作教育・教材設計・研究",
   },
   {
     title: "DESIGN STRATEGY & DIRECTION",
-    subtitle: "構想整理 / コンセプト / VI / ガイドライン",
+    subtitle: "デザイン戦略・ディレクション",
   },
   {
     title: "DIGITAL PRODUCT & UX",
-    subtitle: "教育DX / 業務システム / Web / UI-UX",
+    subtitle: "デジタルプロダクト・UX・教育DX",
   },
   {
     title: "BRAND / EDITORIAL / CULTURE",
-    subtitle: "ブランド体験 / 編集 / 広告 / 地域文化",
+    subtitle: "ブランド・編集・文化実践",
   },
 ] as const;
 
@@ -309,18 +309,9 @@ function WideSiteNav() {
 function Cover({ active, onOpenIndex }: { active: boolean; onOpenIndex: () => void }) {
   const projectsLabel = "PROJECTS";
   const practiceLabel = "PRACTICE AREAS";
-  const roleJaLines = ["大学講師 / デザインディレクター /", "AI・DXアドバイザー"];
-  const taglineLines = ["複雑な構想を、", "動き出せるかたちへ。"];
-  const descriptionLines = [
-    "AIとデザインを軸に、教育・研究・事業の構想を",
-    "構造化し、実践へとつなげています。",
-  ];
-  const statementLines = [
-    "Designing systems, stories, and experiences that connect people, knowledge, and technology.",
-    "From education to practice, research to strategy—with clarity, structure, and intention.",
-  ];
-  const profileSummaryLine =
-    "Designer, Director, Educator, and AI & DX Advisor working across visual communication, learning, research, and strategic innovation.";
+  const roleJaLines = ["大学教員 / デザインディレクター /", "AI・DXアドバイザー"];
+  const taglineLines = ["深く考え、削り、", "短く伝える。"];
+  const descriptionLines = ["AIとデザインで、", "次の判断を形にする。"];
 
   return (
     <section className="cover" id="cover" aria-labelledby="cover-title">
@@ -348,15 +339,6 @@ function Cover({ active, onOpenIndex }: { active: boolean; onOpenIndex: () => vo
           <p className="cover-description" aria-label={descriptionLines.join(" ")}>
             <ShuffleText active={active} delayBase={2180} lineDelay={70} lines={descriptionLines} />
           </p>
-          <p className="statement" aria-label={statementLines.join(" ")}>
-            <ShuffleText active={active} delayBase={2480} lineDelay={80} lines={statementLines} />
-          </p>
-          <div className="cover-profile-summary">
-            <p className="section-label">TAKASHI OMORI</p>
-            <p aria-label={profileSummaryLine}>
-              <ShuffleText active={active} delayBase={2760} lines={[profileSummaryLine]} />
-            </p>
-          </div>
         </div>
 
         <div className="cover-index" aria-label="Project index">
