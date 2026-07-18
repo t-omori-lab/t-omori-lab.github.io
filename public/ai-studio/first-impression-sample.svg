@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title description">
+  <title id="title">0.2秒第一印象テスト用の作例</title>
+  <desc id="description">青い背景に黄色い円と、つくる？という大きな問いを配置したAIデザインゼミの架空告知</desc>
+  <rect width="1200" height="800" fill="#1748c6"/>
+  <circle cx="960" cy="150" r="245" fill="#f4e538"/>
+  <path d="M0 610L720 800H0Z" fill="#161613"/>
+  <text x="72" y="78" fill="#fffdf8" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="5">AI × DESIGN LAB / SAMPLE</text>
+  <text x="65" y="395" fill="#fffdf8" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="190" font-weight="600" letter-spacing="-10">つくる？</text>
+  <text x="79" y="488" fill="#f4e538" font-family="Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif" font-size="39" font-weight="700">考える → 選ぶ → つくる → 確かめる</text>
+  <text x="78" y="694" fill="#fffdf8" font-family="Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif" font-size="31" font-weight="700">コードが書けなくても、デザインは始められる。</text>
+  <text x="955" y="163" fill="#161613" font-family="Didot, serif" font-size="96" text-anchor="middle">0.2</text>
+  <text x="955" y="213" fill="#161613" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" text-anchor="middle">SECONDS</text>
+</svg>

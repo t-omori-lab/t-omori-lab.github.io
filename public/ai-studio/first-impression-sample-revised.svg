@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title description">
+  <title id="title">一点だけ主役を変えた修正版作例</title>
+  <desc id="description">元の青と黄色を残し、AIとデザインを試す行動を大きな主役へ変えた架空告知</desc>
+  <rect width="1200" height="800" fill="#1748c6"/>
+  <circle cx="1010" cy="120" r="255" fill="#f4e538"/>
+  <path d="M0 630L720 800H0Z" fill="#161613"/>
+  <text x="72" y="78" fill="#fffdf8" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="5">AI × DESIGN LAB / REVISION SAMPLE</text>
+  <text x="66" y="286" fill="#f4e538" font-family="Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif" font-size="48" font-weight="700">高校生のための、90分体験。</text>
+  <text x="61" y="450" fill="#fffdf8" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="150" font-weight="600" letter-spacing="-9">試してみる。</text>
+  <g transform="translate(70 510)">
+    <rect width="610" height="82" rx="41" fill="#f4e538"/>
+    <text x="34" y="53" fill="#161613" font-family="Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif" font-size="30" font-weight="700">考える → 選ぶ → AIでつくる</text>
+  </g>
+  <text x="78" y="704" fill="#fffdf8" font-family="Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif" font-size="29" font-weight="700">コードが書けなくても、最初の一案から始められる。</text>
+  <text x="1002" y="126" fill="#161613" font-family="Didot, serif" font-size="82" text-anchor="middle">TRY</text>
+  <text x="1002" y="178" fill="#161613" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4" text-anchor="middle">ONE CHANGE</text>
+  <rect x="878" y="716" width="286" height="48" rx="24" fill="#161613"/>
+  <text x="1021" y="747" fill="#fffdf8" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1" text-anchor="middle">REVISION SAMPLE / 修正版作例</text>
+</svg>
