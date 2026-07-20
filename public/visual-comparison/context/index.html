@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Signal Index — Synthetic context</title>
+  <style>
+    :root { color-scheme: dark; --ink:#020403; --paper:#f0eee7; --acid:#dfff38; --blue:#315cff; --line:rgba(240,238,231,.18); }
+    * { box-sizing:border-box; }
+    html,body { margin:0; min-height:100%; background:var(--ink); color:var(--paper); font-family:"Avenir Next","Helvetica Neue",sans-serif; }
+    body { min-width:280px; overflow-x:hidden; background:radial-gradient(circle at 88% 16%,rgba(49,92,255,.18),transparent 30%),var(--ink); }
+    header { height:76px; display:flex; align-items:center; justify-content:flex-end; padding:0 30px; border-bottom:1px solid var(--line); }
+    .reserved { position:absolute; left:20px; top:12px; width:210px; height:54px; }
+    nav { display:flex; gap:22px; font:700 9px/1 ui-monospace,monospace; letter-spacing:.13em; text-transform:uppercase; }
+    nav span:last-child { color:var(--acid); }
+    main { min-height:calc(100vh - 76px); display:grid; grid-template-columns:minmax(0,1.5fr) minmax(260px,.5fr); }
+    .hero { min-height:calc(100vh - 76px); padding:clamp(54px,9vw,130px) clamp(24px,6vw,90px) 70px; display:flex; flex-direction:column; justify-content:space-between; border-right:1px solid var(--line); }
+    .eyebrow { display:flex; align-items:center; gap:12px; color:#aaa; font:700 9px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:9px; height:9px; background:var(--acid); }
+    h1 { max-width:920px; margin:36px 0 50px; font-family:"Iowan Old Style","Times New Roman",serif; font-size:clamp(60px,10.5vw,166px); font-weight:400; line-height:.78; letter-spacing:-.075em; }
+    h1 em { display:block; margin-left:.46em; color:transparent; -webkit-text-stroke:1px rgba(240,238,231,.68); font-style:normal; }
+    .hero-foot { display:flex; justify-content:space-between; gap:32px; align-items:flex-end; }
+    .hero-foot p { max-width:470px; margin:0; color:#b8b8b1; font-size:13px; line-height:1.65; }
+    .index { color:var(--acid); font:700 10px/1 ui-monospace,monospace; letter-spacing:.12em; }
+    aside { display:grid; grid-template-rows:1fr 1fr; }
+    .module { min-height:290px; padding:30px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; }
+    .module:last-child { border:0; }
+    .module small { color:#8e8f89; font:700 8px/1 ui-monospace,monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .module strong { max-width:240px; font-size:28px; line-height:1.05; font-weight:520; letter-spacing:-.045em; }
+    .field { position:relative; height:120px; overflow:hidden; }
+    .field i { position:absolute; top:50%; height:1px; background:rgba(240,238,231,.48); transform-origin:right center; }
+    .field i:nth-child(1){left:0;width:94%;transform:rotate(-16deg)} .field i:nth-child(2){left:7%;width:87%;transform:rotate(-9deg)} .field i:nth-child(3){left:12%;width:82%;transform:rotate(-3deg)} .field i:nth-child(4){left:10%;width:84%;transform:rotate(5deg)} .field i:nth-child(5){left:2%;width:92%;transform:rotate(13deg)}
+    .field::after { content:""; position:absolute; right:1px; top:calc(50% - 6px); width:12px; height:12px; border-radius:50%; background:var(--acid); }
+    .bars { display:flex; gap:7px; align-items:flex-end; height:120px; }
+    .bars i { flex:1; background:var(--paper); }
+    .bars i:nth-child(1){height:34%}.bars i:nth-child(2){height:55%}.bars i:nth-child(3){height:78%;background:var(--blue)}.bars i:nth-child(4){height:100%}.bars i:nth-child(5){height:66%}.bars i:nth-child(6){height:42%}
+    @media (max-width:760px){
+      header{height:72px;padding:0 18px}nav{gap:14px;font-size:7px}.reserved{width:170px}.hero{min-height:calc(100vh - 72px);border:0;padding:70px 24px 36px}main{display:block}.eyebrow{font-size:8px}h1{font-size:clamp(66px,23vw,104px);margin-top:46px}.hero-foot{display:block}.index{display:block;margin-top:24px}aside{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="reserved" aria-hidden="true"></span>
+    <nav><span>Archive</span><span>Method</span><span>Field 024</span></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Synthetic product context / identity test</div>
+        <h1>Find the<em>signal.</em></h1>
+      </div>
+      <div class="hero-foot">
+        <p>A neutral context page for testing whether an identity remains readable, proportionate, and distinct before a final design is selected.</p>
+        <span class="index">INDEX — 024 / 2026</span>
+      </div>
+    </section>
+    <aside>
+      <section class="module"><small>01 / Convergence</small><div class="field"><i></i><i></i><i></i><i></i><i></i></div><strong>Many inputs. One usable direction.</strong></section>
+      <section class="module"><small>02 / Relative intensity</small><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><strong>Compare at the size people will actually see.</strong></section>
+    </aside>
+  </main>
+</body>
+</html>
