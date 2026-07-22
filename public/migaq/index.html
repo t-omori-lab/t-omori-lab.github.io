@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f1e9" />
+    <meta name="description" content="MIGAQは、企画・文章・デザインの途中案から、良いところと次に試すことを整理する公開試作版です。" />
+    <link rel="preload" href="./assets/migaq-logotype.png" as="image" type="image/png" />
+    <link rel="icon" href="./assets/migaq-icon.png" type="image/png" />
+    <title>MIGAQ｜AIと、アイデアを磨く。</title>
+    <script>
+      (() => {
+        try {
+          sessionStorage.setItem("migaq-intro-seen", "1");
+        } catch {
+          // The animation still runs when storage is unavailable.
+        }
+        window.__MIGAQ_INITIAL_INTRO__ = true;
+        document.documentElement.dataset.migaqIntro = "first";
+      })();
+    </script>
+    <style>
+      html, body { margin: 0; min-height: 100%; background: #020308; }
+      #migaq-boot {
+        position: fixed;
+        z-index: 2147483647;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: #020308;
+        opacity: 1;
+        transition: opacity 240ms ease;
+      }
+      #migaq-boot::before {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 28% 78%, rgba(0, 168, 255, 0.16), transparent 38%),
+          radial-gradient(circle at 72% 70%, rgba(144, 38, 255, 0.15), transparent 40%);
+        content: "";
+        opacity: 0;
+      }
+      [data-migaq-intro="first"] #migaq-boot::before {
+        animation: migaq-boot-field 720ms ease 1400ms 1 both;
+      }
+      #migaq-boot.is-leaving { opacity: 0; pointer-events: none; }
+      .migaq-boot-brand {
+        position: relative;
+        width: min(280px, 52vw);
+        aspect-ratio: 566 / 130;
+      }
+      .migaq-boot-drawing {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      .migaq-boot-white-logo {
+        filter: grayscale(1) brightness(3.4);
+      }
+      .migaq-boot-final-logo,
+      .migaq-boot-q-accent,
+      .migaq-boot-q-halo {
+        opacity: 0;
+      }
+      .migaq-boot-stroke {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 25;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+      }
+      [data-migaq-intro="first"] .migaq-boot-m { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 180ms 1 forwards; }
+      [data-migaq-intro="first"] .migaq-boot-i { animation: migaq-boot-draw 180ms linear 540ms 1 forwards; }
+      [data-migaq-intro="first"] .migaq-boot-g-ring { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 680ms 1 forwards; }
+      [data-migaq-intro="first"] .migaq-boot-g-bar { animation: migaq-boot-draw 140ms linear 1020ms 1 forwards; }
+      [data-migaq-intro="first"] .migaq-boot-a { animation: migaq-boot-draw 280ms cubic-bezier(0.45, 0, 0.3, 1) 1100ms 1 forwards; }
+      [data-migaq-intro="first"] .migaq-boot-q-ring { animation: migaq-boot-draw 410ms cubic-bezier(0.45, 0, 0.3, 1) 1320ms 1 forwards; }
+      [data-migaq-intro="first"] .migaq-boot-q-tail { animation: migaq-boot-draw 170ms linear 1680ms 1 forwards; }
+      [data-migaq-intro="first"] .migaq-boot-q-accent {
+        animation: migaq-boot-accent 360ms cubic-bezier(0.16, 1, 0.3, 1) 1760ms 1 forwards;
+      }
+      [data-migaq-intro="first"] .migaq-boot-q-halo {
+        animation: migaq-boot-q-pulse 620ms cubic-bezier(0.2, 0.75, 0.25, 1) 1720ms 1 both;
+      }
+      [data-migaq-intro="first"] .migaq-boot-final-logo {
+        animation: migaq-boot-final 180ms ease 2020ms 1 forwards;
+      }
+      [data-migaq-intro="return"] .migaq-boot-white-logo { display: none; }
+      [data-migaq-intro="return"] .migaq-boot-final-logo {
+        animation: migaq-boot-return 240ms ease 20ms 1 forwards;
+      }
+      @keyframes migaq-boot-draw { to { stroke-dashoffset: 0; } }
+      @keyframes migaq-boot-accent { to { opacity: 1; } }
+      @keyframes migaq-boot-final { to { opacity: 1; } }
+      @keyframes migaq-boot-return {
+        from { opacity: 0; transform: scale(0.985); transform-origin: center; }
+        to { opacity: 1; transform: scale(1); transform-origin: center; }
+      }
+      @keyframes migaq-boot-q-pulse {
+        0% { opacity: 0; transform: scale(0.52); transform-origin: 530px 98px; }
+        28% { opacity: 1; transform: scale(1.24); transform-origin: 530px 98px; }
+        70% { opacity: 0.82; transform: scale(1.08); transform-origin: 530px 98px; }
+        100% { opacity: 0.14; transform: scale(0.96); transform-origin: 530px 98px; }
+      }
+      @keyframes migaq-boot-field { to { opacity: 1; } }
+      @media (max-width: 760px) {
+        .migaq-boot-brand { width: min(216px, 56vw); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #migaq-boot { transition-duration: 1ms; }
+        #migaq-boot::before, .migaq-boot-stroke, .migaq-boot-q-accent, .migaq-boot-q-halo, .migaq-boot-final-logo { animation: none !important; }
+        .migaq-boot-white-logo, .migaq-boot-q-accent, .migaq-boot-q-halo { display: none; }
+        .migaq-boot-final-logo { opacity: 1; }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-CD7dfiHE.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-lEGJyvtB.css">
+  </head>
+  <body>
+    <div id="migaq-boot" role="status" aria-label="MIGAQを読み込んでいます">
+      <div class="migaq-boot-brand">
+        <svg class="migaq-boot-drawing" viewBox="0 0 566 130" aria-hidden="true">
+          <defs>
+            <mask id="migaq-boot-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="566" height="130">
+              <rect width="566" height="130" fill="#000" />
+              <path class="migaq-boot-stroke migaq-boot-m" pathLength="1" d="M24 107 L24 24 L66 72 L109 24 L109 107" />
+              <path class="migaq-boot-stroke migaq-boot-i" pathLength="1" d="M166 23 L166 107" />
+              <path class="migaq-boot-stroke migaq-boot-g-ring" pathLength="1" d="M296 35 C279 18 251 18 233 35 C211 55 216 88 235 104 C254 120 286 113 299 94 C306 84 307 74 305 67" />
+              <path class="migaq-boot-stroke migaq-boot-g-bar" pathLength="1" d="M304 67 L266 67" />
+              <path class="migaq-boot-stroke migaq-boot-a" pathLength="1" d="M342 107 L384 23 L427 107" />
+              <path class="migaq-boot-stroke migaq-boot-q-ring" pathLength="1" d="M539 88 C547 58 531 25 503 22 C476 19 459 39 462 68 C464 94 483 110 509 107 C522 106 532 100 539 88" />
+              <path class="migaq-boot-stroke migaq-boot-q-tail" pathLength="1" d="M513 88 L548 108" />
+            </mask>
+            <clipPath id="migaq-boot-accent-clip">
+              <rect x="506" y="82" width="47" height="31" />
+            </clipPath>
+            <radialGradient id="migaq-boot-halo-gradient">
+              <stop offset="0" stop-color="#8f61ff" stop-opacity="0.95" />
+              <stop offset="0.42" stop-color="#35c7ff" stop-opacity="0.5" />
+              <stop offset="1" stop-color="#35c7ff" stop-opacity="0" />
+            </radialGradient>
+            <filter id="migaq-boot-halo-blur" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="8" />
+            </filter>
+          </defs>
+          <ellipse class="migaq-boot-q-halo" cx="530" cy="98" rx="40" ry="32" fill="url(#migaq-boot-halo-gradient)" filter="url(#migaq-boot-halo-blur)" />
+          <image class="migaq-boot-white-logo" href="./assets/migaq-logotype.png" width="566" height="130" mask="url(#migaq-boot-reveal)" />
+          <image class="migaq-boot-q-accent" href="./assets/migaq-logotype.png" width="566" height="130" clip-path="url(#migaq-boot-accent-clip)" />
+          <image class="migaq-boot-final-logo" href="./assets/migaq-logotype.png" width="566" height="130" />
+        </svg>
+      </div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>
