@@ -3,7 +3,7 @@
   width: min(100%, 120rem);
   min-height: 100svh;
   margin: 0 auto;
-  grid-template-columns: minmax(24rem, 2fr) minmax(36rem, 3fr);
+  grid-template-columns: minmax(29rem, 0.96fr) minmax(36rem, 1.04fr);
   background: var(--paper);
 }
 
@@ -12,15 +12,10 @@
   min-height: 100svh;
   padding: clamp(2.25rem, 4.2vw, 4.5rem);
   flex-direction: column;
+  justify-content: space-between;
   border-right: 1px solid var(--rule);
 }
 
-.identityHeader {
-  display: grid;
-  gap: 1.1rem;
-}
-
-.identityLabel,
 .indexHeader h2,
 .category {
   margin: 0;
@@ -33,13 +28,13 @@
 }
 
 .name {
-  max-width: 7.8ch;
+  max-width: 8ch;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(5.5rem, 6.6vw, 6.5rem);
+  font-size: clamp(6.5rem, 8.8vw, 9.5rem);
   font-weight: 400;
-  line-height: 0.82;
-  letter-spacing: -0.078em;
+  line-height: 0.77;
+  letter-spacing: -0.085em;
 }
 
 .name span {
@@ -47,44 +42,27 @@
 }
 
 .profile {
-  max-width: 34rem;
-  margin-top: clamp(3.75rem, 8vh, 6rem);
-}
-
-.proposition {
-  max-width: 22em;
-  margin: 0;
-  font-family: var(--serif-ja);
-  font-size: clamp(1.18rem, 1.45vw, 1.48rem);
-  font-weight: 600;
-  letter-spacing: 0.015em;
-  line-height: 1.72;
-  text-wrap: pretty;
-}
-
-.profileDetails {
-  margin-top: clamp(2.25rem, 4.5vh, 3.25rem);
-  padding-top: 1.4rem;
-  border-top: 1px solid var(--rule);
+  max-width: 31rem;
 }
 
 .profile h2 {
-  margin: 0 0 0.85rem;
+  margin: 0 0 1rem;
   font-family: var(--serif-ja);
-  font-size: clamp(1.2rem, 1.4vw, 1.45rem);
+  font-size: clamp(1.35rem, 1.6vw, 1.65rem);
   font-weight: 700;
   letter-spacing: 0.08em;
 }
 
 .role {
   display: flex;
+  max-width: 31rem;
   margin: 0;
   flex-wrap: wrap;
   color: var(--blue);
-  font-size: clamp(0.84rem, 0.9vw, 0.92rem);
+  font-size: clamp(0.84rem, 0.92vw, 0.94rem);
   font-weight: 700;
   letter-spacing: 0.015em;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .role span {
@@ -93,7 +71,7 @@
 
 .bio {
   max-width: 32rem;
-  margin: 1.15rem 0 0;
+  margin: 1.3rem 0 0;
   color: var(--ink);
   font-family: var(--serif-ja);
   font-size: clamp(0.94rem, 0.98vw, 1rem);
@@ -216,11 +194,11 @@
 .title {
   display: block;
   margin-top: 0.45rem;
-  font-family: var(--sans);
-  font-size: clamp(1.58rem, 1.85vw, 2.1rem);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.045em;
+  font-family: var(--display-mixed);
+  font-size: clamp(1.78rem, 2.15vw, 2.45rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
   text-wrap: balance;
   transition: color 180ms ease;
 }
@@ -324,7 +302,7 @@
 
 @media (max-width: 68rem) {
   .page {
-    grid-template-columns: minmax(20rem, 0.78fr) minmax(29rem, 1.22fr);
+    grid-template-columns: minmax(20rem, 0.82fr) minmax(29rem, 1.18fr);
   }
 
   .identity,
@@ -333,15 +311,7 @@
   }
 
   .name {
-    font-size: clamp(4.25rem, 7.2vw, 4.8rem);
-  }
-
-  .profile {
-    margin-top: clamp(3.25rem, 7vh, 4.5rem);
-  }
-
-  .proposition {
-    font-size: 1.16rem;
+    font-size: clamp(4.4rem, 7.2vw, 5.1rem);
   }
 
   .indexHeader {
@@ -359,59 +329,41 @@
   }
 
   .title {
-    font-size: clamp(1.5rem, 2.65vw, 1.75rem);
+    font-size: clamp(1.62rem, 2.9vw, 1.95rem);
   }
 }
 
-@media (max-width: 52rem) {
+@media (max-width: 60rem) {
   .page {
     display: block;
   }
 
   .identity {
     min-height: auto;
-    padding: 1.5rem 1.35rem 3rem;
+    padding: 1.5rem 1.35rem 3.25rem;
+    justify-content: flex-start;
     border-right: 0;
     border-bottom: 1px solid var(--rule);
   }
 
-  .identityHeader {
-    gap: 0.8rem;
-  }
-
   .name {
-    max-width: none;
-    font-size: clamp(2rem, 10vw, 3.65rem);
-    line-height: 0.92;
-    letter-spacing: -0.065em;
-    white-space: nowrap;
+    max-width: 8ch;
+    font-size: clamp(3.75rem, 19vw, 7.8rem);
+    line-height: 0.78;
+    letter-spacing: -0.08em;
   }
 
   .name span {
-    display: inline;
-  }
-
-  .name span + span {
-    margin-left: 0.18em;
+    display: block;
   }
 
   .profile {
-    max-width: 40rem;
-    margin-top: clamp(3rem, 9vh, 4.5rem);
-  }
-
-  .proposition {
-    max-width: 26em;
-    font-size: clamp(1.1rem, 4.8vw, 1.3rem);
-    line-height: 1.75;
-  }
-
-  .profileDetails {
-    margin-top: 2rem;
+    max-width: 38rem;
+    margin-top: clamp(3rem, 11vw, 5rem);
   }
 
   .profile h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .role {
@@ -456,7 +408,7 @@
   }
 
   .title {
-    font-size: clamp(1.45rem, 6.8vw, 1.9rem);
+    font-size: clamp(1.62rem, 7.2vw, 2.15rem);
   }
 
   .description {
@@ -510,7 +462,7 @@
   }
 
   .title {
-    font-size: clamp(1.35rem, 6.7vw, 1.7rem);
+    font-size: clamp(1.48rem, 7vw, 1.9rem);
   }
 
   .researchmap {

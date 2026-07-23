@@ -5,6 +5,8 @@
   --blue: #2055b5;
   --rule: rgb(17 17 15 / 21%);
   --display: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  --display-mixed: Didot, "Bodoni 72", "Bodoni MT", "Iowan Old Style",
+    "Noto Serif JP", "Yu Mincho", YuMincho, "Times New Roman", serif;
   --serif-ja: "Iowan Old Style", "Noto Serif JP", "Yu Mincho", YuMincho, serif;
   --sans: "Avenir Next", Avenir, "Helvetica Neue", "Noto Sans JP", sans-serif;
 }

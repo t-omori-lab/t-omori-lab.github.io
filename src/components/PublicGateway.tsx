@@ -50,41 +50,32 @@ export function PublicGateway() {
     <>
       <main className={styles.page} id="top">
         <section className={styles.identity} aria-labelledby="profile-name">
-          <div className={styles.identityHeader}>
-            <span className={styles.identityLabel}>PROFILE</span>
-            <h1 className={styles.name} id="profile-name" aria-label="Takashi Omori">
-              <span>TAKASHI</span>
-              <span>OMORI</span>
-            </h1>
-          </div>
+          <h1 className={styles.name} id="profile-name" aria-label="Takashi Omori">
+            <span>TAKASHI</span>
+            <span>OMORI</span>
+          </h1>
 
           <div className={styles.profile}>
-            <p className={styles.proposition}>
-              デザイン実務と教育研究を往復し、生成AI時代の創作と学びの環境を設計しています。
+            <h2>大森 隆</h2>
+            <p className={styles.role}>
+              <span>大学教員／</span>
+              <span>デザインディレクター／</span>
+              <span>AI・DXアドバイザー</span>
             </p>
-
-            <div className={styles.profileDetails}>
-              <h2>大森 隆</h2>
-              <p className={styles.role}>
-                <span>大学教員／</span>
-                <span>デザインディレクター／</span>
-                <span>AI・DXアドバイザー</span>
-              </p>
-              <p className={styles.bio}>
-                倉敷芸術科学大学芸術学部芸術学科講師。デザイン、情報・体験設計、創作教育の実践と研究に取り組んでいます。
-              </p>
-              <a
-                className={styles.researchmap}
-                href="https://researchmap.jp/t-omori?lang=ja"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="研究プロフィール・業績をresearchmapで新しいタブに開く"
-              >
-                <span>研究プロフィール・業績</span>
-                <span className={styles.researchmapService}>researchmap</span>
-                <ExternalIcon />
-              </a>
-            </div>
+            <p className={styles.bio}>
+              倉敷芸術科学大学芸術学部芸術学科講師。デザイン実務を背景に、生成AI時代の創作教育と情報・体験設計に取り組んでいます。
+            </p>
+            <a
+              className={styles.researchmap}
+              href="https://researchmap.jp/t-omori?lang=ja"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="研究プロフィール・業績をresearchmapで新しいタブに開く"
+            >
+              <span>研究プロフィール・業績</span>
+              <span className={styles.researchmapService}>researchmap</span>
+              <ExternalIcon />
+            </a>
           </div>
         </section>
 
