@@ -65,6 +65,7 @@
       .migaq-boot-q-accent,
       .migaq-boot-q-halo {
         opacity: 0;
+        visibility: hidden;
       }
       .migaq-boot-stroke {
         fill: none;
@@ -84,13 +85,13 @@
       [data-migaq-intro="first"] .migaq-boot-q-ring { animation: migaq-boot-draw 410ms cubic-bezier(0.45, 0, 0.3, 1) 1320ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-q-tail { animation: migaq-boot-draw 170ms linear 1680ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-q-accent {
-        animation: migaq-boot-accent 360ms cubic-bezier(0.16, 1, 0.3, 1) 1760ms 1 forwards;
+        animation: migaq-boot-accent 260ms cubic-bezier(0.16, 1, 0.3, 1) 1900ms 1 forwards;
       }
       [data-migaq-intro="first"] .migaq-boot-q-halo {
-        animation: migaq-boot-q-pulse 620ms cubic-bezier(0.2, 0.75, 0.25, 1) 1720ms 1 both;
+        animation: migaq-boot-q-pulse 620ms cubic-bezier(0.2, 0.75, 0.25, 1) 1880ms 1 both;
       }
       [data-migaq-intro="first"] .migaq-boot-final-logo {
-        animation: migaq-boot-final 180ms ease 2020ms 1 forwards;
+        animation: migaq-boot-final 180ms ease 2160ms 1 forwards;
       }
       [data-migaq-intro="return"] .migaq-boot-white-logo { display: none; }
       [data-migaq-intro="return"] .migaq-boot-final-logo {
@@ -100,17 +101,26 @@
         from { opacity: 1; stroke-dashoffset: 1; }
         to { opacity: 1; stroke-dashoffset: 0; }
       }
-      @keyframes migaq-boot-accent { to { opacity: 1; } }
-      @keyframes migaq-boot-final { to { opacity: 1; } }
+      @keyframes migaq-boot-accent {
+        0% { opacity: 0; visibility: hidden; }
+        1% { opacity: 0; visibility: visible; }
+        100% { opacity: 1; visibility: visible; }
+      }
+      @keyframes migaq-boot-final {
+        0% { opacity: 0; visibility: hidden; }
+        1% { opacity: 0; visibility: visible; }
+        100% { opacity: 1; visibility: visible; }
+      }
       @keyframes migaq-boot-return {
-        from { opacity: 0; transform: scale(0.985); transform-origin: center; }
-        to { opacity: 1; transform: scale(1); transform-origin: center; }
+        from { opacity: 0; visibility: visible; transform: scale(0.985); transform-origin: center; }
+        to { opacity: 1; visibility: visible; transform: scale(1); transform-origin: center; }
       }
       @keyframes migaq-boot-q-pulse {
-        0% { opacity: 0; transform: scale(0.52); transform-origin: 530px 98px; }
-        28% { opacity: 1; transform: scale(1.24); transform-origin: 530px 98px; }
+        0% { opacity: 0; visibility: hidden; transform: scale(0.52); transform-origin: 530px 98px; }
+        1% { opacity: 0; visibility: visible; transform: scale(0.52); transform-origin: 530px 98px; }
+        28% { opacity: 1; visibility: visible; transform: scale(1.24); transform-origin: 530px 98px; }
         70% { opacity: 0.82; transform: scale(1.08); transform-origin: 530px 98px; }
-        100% { opacity: 0.14; transform: scale(0.96); transform-origin: 530px 98px; }
+        100% { opacity: 0.14; visibility: visible; transform: scale(0.96); transform-origin: 530px 98px; }
       }
       @keyframes migaq-boot-field { to { opacity: 1; } }
       @media (max-width: 760px) {
@@ -120,10 +130,10 @@
         #migaq-boot { transition-duration: 1ms; }
         #migaq-boot::before, .migaq-boot-stroke, .migaq-boot-q-accent, .migaq-boot-q-halo, .migaq-boot-final-logo { animation: none !important; }
         .migaq-boot-white-logo, .migaq-boot-q-accent, .migaq-boot-q-halo { display: none; }
-        .migaq-boot-final-logo { opacity: 1; }
+        .migaq-boot-final-logo { opacity: 1; visibility: visible; }
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-CD7dfiHE.js"></script>
+    <script type="module" crossorigin src="./assets/index-C7JbYvwy.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-lEGJyvtB.css">
   </head>
   <body>
