@@ -3,31 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Poster Design Technique Atlas</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23071b2c'/%3E%3Ctext x='4' y='24' font-size='20' font-family='Arial' font-weight='900' fill='%23f4efe4'%3EAI%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#f6f1e8">
+    <title>Poster Technique Atlas</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307192a'/%3E%3Ctext x='4' y='23' font-size='18' font-family='Arial' font-weight='900' fill='%23f6f1e8'%3EPT%3C/text%3E%3C/svg%3E">
     <style>
 :root {
-  --ink: #071b2c;
-  --navy: #0b2b44;
-  --blue: #3d6f96;
-  --cyan: #9ecad2;
-  --paper: #f4efe4;
-  --line: #c5d0d3;
-  --muted: #5e707a;
-  --warn: #b14b32;
+  --ink: #07192a;
+  --ink-soft: #21394a;
+  --blue: #2e6da0;
+  --blue-soft: #dceaf0;
+  --paper: #f6f1e8;
+  --paper-bright: #fffdf7;
+  --paper-deep: #eee7dc;
+  --line: #aeb8ba;
+  --line-soft: #d8d6cf;
+  --muted: #68767d;
+  --accent: #efc64b;
+  --warn: #9d3b2d;
+  --success: #286445;
   color-scheme: light;
+  font-synthesis: none;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  min-width: 320px;
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  padding-bottom: 126px;
   background: var(--paper);
   color: var(--ink);
-  padding-bottom: 154px;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+  line-height: 1.5;
 }
 
 button,
@@ -37,706 +50,1164 @@ textarea {
   font: inherit;
 }
 
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: grid;
-  grid-template-columns: minmax(190px, 0.85fr) minmax(280px, 1.4fr) auto;
-  gap: 12px;
-  align-items: end;
-  padding: 12px 18px 10px;
-  border-bottom: 1px solid rgba(7, 27, 44, 0.18);
-  background: #fbf7ef;
-  box-shadow: 0 8px 28px rgba(7, 27, 44, 0.08);
+button,
+select,
+input,
+textarea {
+  border-radius: 2px;
 }
 
-.brand-block {
-  min-width: 0;
+button {
+  cursor: pointer;
 }
 
-.eyebrow {
-  margin: 0 0 4px;
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+a {
+  color: inherit;
 }
 
 h1,
 h2,
+h3,
 p {
   margin-top: 0;
 }
 
-h1 {
-  margin-bottom: 0;
-  font-size: 22px;
-  line-height: 1.1;
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 200;
+  transform: translateY(-160%);
+  background: var(--ink);
+  color: white;
+  padding: 10px 14px;
 }
 
-.header-controls {
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 58px;
+  border-bottom: 1px solid rgba(7, 25, 42, 0.38);
+  background: rgba(246, 241, 232, 0.96);
+  padding: 0 38px;
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  color: var(--ink);
+  font-family: "Avenir Next Condensed", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header-link,
+.text-action,
+.quiet-button {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-weight: 800;
+  padding: 10px 4px;
+  text-decoration: underline;
+  text-decoration-color: rgba(7, 25, 42, 0.42);
+  text-underline-offset: 5px;
+}
+
+.header-link:hover,
+.text-action:hover,
+.quiet-button:hover {
+  color: var(--blue);
+  text-decoration-color: currentColor;
+}
+
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 38px 54px;
+}
+
+.intro {
+  padding: 17px 0 18px;
+}
+
+.intro-copy {
+  max-width: 980px;
+}
+
+.intro-copy > .eyebrow {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.eyebrow {
+  margin-bottom: 5px;
+  color: var(--blue);
+  font-family: "Avenir Next Condensed", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 1100px;
+  margin-bottom: 8px;
+  font-size: clamp(36px, 3.6vw, 52px);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 1.06;
+}
+
+.lead {
+  margin-bottom: 16px;
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+
+.choice-bar {
   display: grid;
-  grid-template-columns: minmax(120px, 1.35fr) minmax(96px, 0.8fr) minmax(96px, 0.8fr);
-  gap: 8px;
+  grid-template-columns: minmax(0, 790px) minmax(140px, 1fr);
+  gap: 28px;
   align-items: end;
 }
 
-.header-controls input,
-.header-controls select {
-  min-height: 36px;
-  padding: 8px 9px;
+.purpose-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 247, 0.56);
+}
+
+.purpose-tabs button {
+  min-height: 48px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-weight: 800;
+  padding: 10px 15px;
+}
+
+.purpose-tabs button:last-child {
+  border-right: 0;
+}
+
+.purpose-tabs button:hover {
+  background: var(--paper-deep);
+}
+
+.purpose-tabs button.is-active,
+.purpose-tabs button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper-bright);
+}
+
+.tone-field {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.tone-field span,
+.atlas-controls label > span,
+.search-field > span,
+.field > span,
+.prompt-result > label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tone-field select {
+  width: 132px;
+  min-height: 44px;
+}
+
+select,
+input,
+textarea {
+  border: 1px solid var(--line);
+  background: var(--paper-bright);
+  color: var(--ink);
+  padding: 10px 12px;
+}
+
+.recipes {
+  padding-top: 0;
+}
+
+.section-heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.section-heading p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: right;
+}
+
+.recipe-list {
+  border-top: 1px solid var(--ink);
+}
+
+.loading-state,
+.empty-state,
+.error-state {
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 46px 18px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.error-state {
+  color: var(--warn);
+}
+
+.recipe-row {
+  display: grid;
+  grid-template-columns: minmax(380px, 46%) minmax(0, 1fr);
+  min-height: 168px;
+  height: 170px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+  text-align: left;
+  transition: background 150ms ease;
+}
+
+.recipe-row:hover {
+  background: rgba(255, 253, 247, 0.66);
+}
+
+.recipe-row.is-selected {
+  background: var(--paper-bright);
+  box-shadow: inset 4px 0 0 var(--blue);
+}
+
+.recipe-media {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 0;
+  height: 170px;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: var(--ink);
+}
+
+.recipe-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  height: 170px;
+  border-right: 1px solid rgba(246, 241, 232, 0.28);
+  background: var(--ink);
+  object-fit: cover;
+}
+
+.recipe-media img:last-child {
+  border-right: 0;
+}
+
+.recipe-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px 24px;
+  align-items: center;
+  padding: 22px 26px 20px 42px;
+}
+
+.recipe-copy {
+  min-width: 0;
+}
+
+.recommend-label {
+  display: inline-block;
+  margin-bottom: 6px;
+  background: var(--accent);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 900;
+  padding: 2px 8px;
+}
+
+.recipe-copy h2,
+.recipe-copy h3 {
+  margin-bottom: 4px;
+  font-size: clamp(22px, 2vw, 31px);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.recipe-copy > p {
+  max-width: 720px;
+  margin-bottom: 13px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.recipe-content > .technique-chips {
+  grid-column: 1;
+}
+
+.recipe-content > .recipe-select {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.technique-chips,
+.selected-techniques,
+#promptTechniqueList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.technique-chip,
+.selected-techniques span,
+#promptTechniqueList span {
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 247, 0.72);
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 9px;
+}
+
+.recipe-select,
+.primary-action {
+  min-height: 46px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper-bright);
+  font-weight: 900;
+  padding: 11px 20px;
+}
+
+.recipe-select:hover,
+.primary-action:hover {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.recipe-row.is-selected .recipe-select {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.selection-tray {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 112px minmax(220px, 1fr) minmax(360px, 1.25fr) auto;
+  gap: 22px;
+  align-items: center;
+  min-height: 108px;
+  border-top: 1px solid var(--ink);
+  background: rgba(255, 253, 247, 0.98);
+  box-shadow: 0 -12px 34px rgba(7, 25, 42, 0.08);
+  padding: 12px 38px;
+  backdrop-filter: blur(16px);
+}
+
+.tray-preview {
+  height: 82px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ink);
+}
+
+.tray-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tray-summary,
+.tray-techniques {
+  min-width: 0;
+}
+
+.tray-summary {
+  border-right: 1px solid var(--line);
+  padding-right: 18px;
+}
+
+.tray-summary strong,
+.tray-summary span {
+  display: block;
+}
+
+.tray-summary strong {
+  overflow: hidden;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tray-summary span {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tray-actions {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.app-dialog {
+  width: min(1400px, calc(100vw - 30px));
+  max-width: none;
+  max-height: calc(100vh - 30px);
+  margin: auto;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0;
+  box-shadow: 0 30px 100px rgba(7, 25, 42, 0.36);
+}
+
+.app-dialog::backdrop {
+  background: rgba(7, 25, 42, 0.66);
+  backdrop-filter: blur(2px);
+}
+
+.dialog-shell {
+  min-height: min(900px, calc(100vh - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+}
+
+.dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--ink);
+  background: rgba(246, 241, 232, 0.98);
+  padding: 22px 28px 18px;
+  backdrop-filter: blur(14px);
+}
+
+.dialog-header h2 {
+  margin-bottom: 2px;
+  font-size: 31px;
+  letter-spacing: -0.04em;
+}
+
+.dialog-header p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
   font-size: 13px;
 }
 
-.status {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: end;
-}
-
-.status span,
-.warning,
-.status-action {
-  border: 1px solid rgba(7, 27, 44, 0.2);
-  padding: 7px 10px;
-  font-size: 12px;
-  font-weight: 800;
-  background: #fffaf1;
-}
-
-.status-action {
-  color: var(--ink);
-}
-
-.workspace {
-  display: grid;
-  grid-template-columns: minmax(420px, 1fr) 390px;
-  min-height: calc(100vh - 70px);
-}
-
-.composer {
-  padding: 18px;
-  border-right: 1px solid rgba(7, 27, 44, 0.16);
-}
-
-.composer {
-  border-right: 0;
-  border-left: 1px solid rgba(7, 27, 44, 0.16);
-  background: #fbf7ef;
-}
-
-.composer-inner {
+.atlas-controls {
   position: sticky;
-  top: 16px;
-  max-height: calc(100vh - 32px);
-  overflow: auto;
-  padding-right: 4px;
-}
-
-.field {
+  top: 112px;
+  z-index: 3;
   display: grid;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-
-.field span {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 800;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  border: 1px solid rgba(7, 27, 44, 0.24);
-  border-radius: 4px;
-  background: #fffdf8;
-  color: var(--ink);
-  padding: 10px;
-}
-
-textarea {
-  resize: vertical;
-  line-height: 1.45;
-  min-height: 300px;
-}
-
-summary {
-  cursor: pointer;
-  font-weight: 900;
-}
-
-.option-panel {
-  border: 1px solid rgba(7, 27, 44, 0.18);
-  border-radius: 6px;
-  background: #fffaf1;
-  margin-bottom: 14px;
-  padding: 10px;
-}
-
-.option-panel[open] summary {
-  margin-bottom: 12px;
-}
-
-.actions,
-.mode-group {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 12px 0;
-}
-
-.section-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  grid-template-columns: minmax(260px, 1fr) 220px 220px auto;
   gap: 10px;
-  margin-top: 14px;
-  border-top: 1px solid rgba(7, 27, 44, 0.18);
-  padding-top: 12px;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  background: rgba(246, 241, 232, 0.98);
+  padding: 14px 28px;
 }
 
-.section-head span {
+.atlas-controls label {
+  display: grid;
+  gap: 5px;
+}
+
+.atlas-controls input,
+.atlas-controls select {
+  width: 100%;
+  min-height: 44px;
+}
+
+.atlas-status {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 12px;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+  white-space: nowrap;
+}
+
+.atlas-status span {
   color: var(--muted);
   font-size: 12px;
-  font-weight: 900;
 }
 
-.compact {
-  padding: 6px 9px;
-  font-size: 12px;
-}
-
-button {
-  border: 1px solid var(--ink);
-  border-radius: 4px;
-  background: var(--ink);
-  color: #fffaf1;
-  cursor: pointer;
-  font-weight: 800;
-  padding: 9px 12px;
-}
-
-button:hover {
-  background: var(--blue);
-}
-
-.mode {
-  flex: 1 1 72px;
-  background: transparent;
-  color: var(--ink);
-}
-
-.mode.is-active {
-  background: var(--blue);
-  color: #fff;
+.atlas-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  min-height: 46px;
+  padding: 4px 28px;
 }
 
 .warning {
   color: var(--warn);
-  border-color: rgba(177, 75, 50, 0.45);
-  background: #fff4eb;
-}
-
-.selected-panel {
-  min-width: 0;
-}
-
-.selected-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.selected-stack button,
-.selected-stack span {
-  width: auto;
-  border: 1px solid rgba(7, 27, 44, 0.22);
-  border-radius: 4px;
-  background: #fffdf8;
-  color: var(--ink);
-  padding: 6px 8px;
-  text-align: left;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
-}
-
-.library {
-  padding: 18px;
-  overflow: auto;
-}
-
-.library-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 12;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 10px;
-  align-items: start;
-  margin: -18px -18px 14px;
-  border-bottom: 1px solid rgba(7, 27, 44, 0.14);
-  background: rgba(244, 239, 228, 0.96);
-  padding: 8px 18px;
-  box-shadow: 0 12px 24px rgba(7, 27, 44, 0.07);
-  backdrop-filter: blur(8px);
-}
-
-.library-toolbar .actions {
-  margin: 0;
-  justify-content: end;
 }
 
 .technique-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border-top: 1px solid var(--line);
+  background: var(--line);
 }
 
 .tech-card {
   display: grid;
-  grid-template-rows: 150px auto;
-  min-height: 360px;
-  border: 1px solid rgba(7, 27, 44, 0.18);
-  border-radius: 6px;
-  background: #fffaf1;
-  overflow: hidden;
-  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
+  grid-template-columns: 42% minmax(0, 1fr);
+  min-height: 210px;
+  background: var(--paper-bright);
+  transition: background 150ms ease;
 }
 
 .tech-card.is-selected {
-  border-color: var(--ink);
-  background: #eef5f7;
-  box-shadow: inset 0 0 0 4px var(--blue), 0 10px 24px rgba(7, 27, 44, 0.16);
-  transform: translateY(-1px);
+  background: var(--blue-soft);
+  box-shadow: inset 0 0 0 2px var(--blue);
 }
 
-.tech-card.is-selected img {
-  background: #06111d;
-}
-
-.tech-card img {
+.tech-card > img {
   width: 100%;
-  height: 150px;
-  object-fit: contain;
-  background: var(--navy);
-  border-bottom: 1px solid rgba(7, 27, 44, 0.14);
-  padding: 6px;
+  height: 100%;
+  min-height: 210px;
+  background: var(--ink);
+  object-fit: cover;
 }
 
 .tech-body {
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 8px;
-  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px;
 }
 
-.tech-body h2 {
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.15;
+.tech-body h3 {
+  margin-bottom: 7px;
+  font-size: 17px;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 }
 
-.tech-body p {
-  color: #314552;
-  font-size: 13px;
-  line-height: 1.45;
+.tech-body h3 span {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.tech-definition {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-bottom: 12px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
+  margin-bottom: 12px;
 }
 
 .tags span {
-  border: 1px solid rgba(7, 27, 44, 0.18);
-  padding: 3px 6px;
+  border: 1px solid var(--line-soft);
   color: var(--muted);
-  font-size: 11px;
-}
-
-.tags .example-tag {
-  border-color: rgba(20, 87, 217, 0.38);
-  background: rgba(158, 202, 210, 0.25);
-  color: var(--ink);
-  font-weight: 900;
+  font-size: 10px;
+  padding: 2px 5px;
 }
 
 .tags .example-tag.is-named {
   border-color: var(--ink);
   background: var(--ink);
-  color: #fffaf1;
-}
-
-.example-kind {
-  display: inline-block;
-  margin: 0 7px 5px 0;
-  border: 1px solid rgba(7, 27, 44, 0.24);
-  padding: 2px 5px;
-  color: var(--blue);
-  font-size: 10px;
+  color: var(--paper-bright);
   font-weight: 900;
 }
 
-#detailExamples em {
-  color: var(--muted);
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 800;
-}
-
-.card-actions {
+.tech-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: 8px;
+  align-items: center;
+  margin-top: auto;
 }
 
-.card-actions button {
-  padding: 8px 9px;
+.tech-select {
+  min-height: 40px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper-bright);
+  font-weight: 900;
 }
 
-.tech-card.is-selected [data-action="select"] {
+.tech-select:hover {
+  background: var(--blue);
+}
+
+.tech-card.is-selected .tech-select {
   border-color: var(--blue);
   background: var(--blue);
-  color: #fff;
 }
 
-.secondary {
+.tech-detail {
+  border: 0;
   background: transparent;
   color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.dialog-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+  min-height: 72px;
+  border-top: 1px solid var(--ink);
+  background: rgba(255, 253, 247, 0.98);
+  padding: 10px 28px;
+  backdrop-filter: blur(14px);
+}
+
+.dialog-footer span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.prompt-layout {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  min-height: calc(100vh - 146px);
+}
+
+.prompt-options {
+  border-right: 1px solid var(--line);
+  padding: 26px 28px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+}
+
+.prompt-selection {
+  margin: 24px 0 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.prompt-result {
+  min-width: 0;
+  padding: 26px 30px 38px;
+}
+
+.prompt-result > label {
+  display: block;
+  margin-bottom: 7px;
+}
+
+#promptOutput {
+  width: 100%;
+  min-height: 500px;
+  resize: vertical;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.copy-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.copy-state {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.copy-state.is-success {
+  color: var(--success);
+  font-weight: 900;
+}
+
+.source-details {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.source-details summary {
+  cursor: pointer;
+  font-weight: 900;
 }
 
 .sources {
-  max-height: 210px;
-  overflow: auto;
-  margin-top: 10px;
-  border-top: 1px solid rgba(7, 27, 44, 0.18);
-  padding-top: 10px;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.sources a {
-  color: var(--blue);
-  font-weight: 800;
-}
-
-.direction-list {
   display: grid;
-  gap: 8px;
-  margin-top: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin-top: 14px;
+  font-size: 12px;
 }
 
-.direction-card {
-  border: 1px solid rgba(7, 27, 44, 0.18);
-  border-radius: 6px;
-  background: #fffdf8;
-  padding: 10px;
+.sources p {
+  border-top: 1px solid var(--line-soft);
+  padding-top: 8px;
 }
 
-.direction-card.is-active {
-  border-color: var(--blue);
-  background: #eef5f7;
-  box-shadow: inset 0 0 0 2px rgba(61, 111, 150, 0.22);
+.source-group {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
 }
 
-.direction-card h3 {
-  margin: 0 0 5px;
-  font-size: 14px;
-  line-height: 1.2;
+.source-group h3 {
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
-.direction-card p {
+.source-group h4 {
+  margin: 10px 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.source-group ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.source-group li {
   margin-bottom: 8px;
-  color: #314552;
-  font-size: 12px;
-  line-height: 1.4;
 }
 
-.direction-card button {
-  width: 100%;
-  padding: 7px 9px;
-  font-size: 12px;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  min-height: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-  padding: 0;
-}
-
-.prompt-dock {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  left: 18px;
-  z-index: 30;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 14px;
-  align-items: center;
-  border: 0;
-  border-radius: 8px;
-  background: rgba(7, 27, 44, 0.97);
-  color: #fffaf1;
-  box-shadow: 0 22px 72px rgba(7, 27, 44, 0.52);
-  padding: 12px 14px;
-  backdrop-filter: blur(10px);
-  transition: grid-template-columns 160ms ease, padding 160ms ease, max-height 160ms ease;
-}
-
-.prompt-dock.is-updated {
-  animation: dockPulse 700ms ease;
-}
-
-.prompt-dock .eyebrow,
-.prompt-dock p {
-  margin-bottom: 0;
-}
-
-.prompt-dock .eyebrow {
-  color: var(--cyan);
-}
-
-.prompt-dock strong {
+.source-group li span {
   display: block;
-  margin: 2px 0 4px;
-  font-size: 14px;
+  color: var(--muted);
 }
 
-#dockPromptPreview {
-  color: #dbe9ef;
-  font-size: 12px;
-  line-height: 1.35;
+.technique-grid > .empty-state,
+.technique-grid > .loading-state,
+.technique-grid > .error-state {
+  grid-column: 1 / -1;
+  background: var(--paper-bright);
 }
 
-#dockPromptOutput {
-  display: none;
-  min-height: 0;
-  max-height: 100%;
-  resize: none;
-  overflow: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  line-height: 1.45;
-  background: #fffdf8;
-  color: var(--ink);
+.sources a,
+.detail a {
+  color: var(--blue);
+  overflow-wrap: anywhere;
 }
 
-.prompt-dock[data-size="standard"] {
-  grid-template-columns: minmax(240px, 0.72fr) minmax(360px, 1fr) auto;
-  align-items: stretch;
-  max-height: 42vh;
-}
-
-.prompt-dock[data-size="expanded"] {
-  grid-template-columns: 260px minmax(420px, 1fr) auto;
-  align-items: stretch;
-  max-height: 72vh;
-}
-
-.prompt-dock[data-size="standard"] #dockPromptOutput,
-.prompt-dock[data-size="expanded"] #dockPromptOutput {
-  display: block;
-}
-
-.prompt-dock[data-size="standard"] #dockPromptOutput {
-  height: 180px;
-}
-
-.prompt-dock[data-size="expanded"] #dockPromptOutput {
-  height: 52vh;
-}
-
-.dock-actions {
-  display: grid;
-  gap: 8px;
-}
-
-.dock-actions button {
-  border-color: #fffaf1;
-  background: #fffaf1;
-  color: var(--ink);
-}
-
-.dock-actions .secondary {
-  border-color: rgba(255, 250, 241, 0.78);
-  background: transparent;
-  color: #fffaf1;
-}
-
-@keyframes promptPulse {
-  0% {
-    color: var(--warn);
-  }
-  100% {
-    color: var(--ink);
-  }
-}
-
-@keyframes dockPulse {
-  0% {
-    box-shadow: 0 28px 86px rgba(7, 27, 44, 0.64);
-    transform: translateY(-1px);
-  }
-  100% {
-    box-shadow: 0 22px 72px rgba(7, 27, 44, 0.52);
-    transform: translateY(0);
-  }
-}
-
-dialog {
-  max-width: 860px;
-  border: 0;
-  border-radius: 8px;
-  padding: 0;
-  background: #fffaf1;
-  color: var(--ink);
-  box-shadow: 0 24px 80px rgba(7, 27, 44, 0.32);
-}
-
-dialog::backdrop {
-  background: rgba(7, 27, 44, 0.45);
+.detail-dialog {
+  width: min(980px, calc(100vw - 30px));
 }
 
 .detail {
   position: relative;
   display: grid;
-  grid-template-columns: 330px 1fr;
-  gap: 22px;
-  padding: 24px;
+  grid-template-columns: minmax(280px, 42%) minmax(0, 1fr);
+  gap: 28px;
+  min-height: 620px;
+  padding: 28px;
 }
 
-.detail img {
+.detail > img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  min-height: 520px;
+  background: var(--ink);
   object-fit: contain;
-  background: var(--navy);
 }
 
-.detail a {
-  color: var(--blue);
-  font-weight: 800;
+.detail-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
 }
 
-.detail small,
-.detail span {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.35;
-}
-
-.detail dd p {
-  margin-bottom: 10px;
+.detail h2 {
+  max-width: calc(100% - 70px);
+  font-size: 30px;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
 }
 
 .detail dl {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .detail dt {
   color: var(--blue);
+  font-size: 12px;
   font-weight: 900;
 }
 
 .detail dd {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  font-size: 13px;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 34px;
-  height: 34px;
-  padding: 0;
+.detail dd p {
+  margin-bottom: 12px;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 8px;
 }
 
-@media (max-width: 1080px) {
-  .workspace {
-    grid-template-columns: 1fr;
-  }
-
-  .composer {
-    grid-column: 1 / -1;
-    border-left: 0;
-    border-top: 1px solid rgba(7, 27, 44, 0.16);
-  }
-
-  .composer-inner {
-    position: static;
-  }
+.example-kind {
+  display: inline-block;
+  margin-right: 7px;
+  background: var(--ink);
+  color: var(--paper-bright);
+  font-size: 10px;
+  font-weight: 900;
+  padding: 2px 5px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1100px) {
   body {
-    padding-bottom: 168px;
+    padding-bottom: 150px;
   }
 
-  .workspace,
-  .detail {
-    display: block;
+  .recipe-row {
+    grid-template-columns: minmax(310px, 44%) minmax(0, 1fr);
   }
 
-  .status {
-    margin-top: 12px;
+  .selection-tray {
+    grid-template-columns: 88px minmax(180px, 0.7fr) minmax(260px, 1fr);
   }
 
-  .topbar {
+  .tray-actions {
+    grid-column: 2 / -1;
+    justify-content: end;
+  }
+
+  .technique-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  body {
+    padding-bottom: 150px;
+  }
+
+  .site-header {
+    min-height: 54px;
+    padding: 0 18px;
+  }
+
+  main {
+    padding: 0 18px 42px;
+  }
+
+  .intro {
+    padding-top: 24px;
+  }
+
+  h1 {
+    font-size: clamp(34px, 9vw, 52px);
+  }
+
+  .choice-bar {
     grid-template-columns: 1fr;
-    align-items: stretch;
-    gap: 8px;
+    gap: 12px;
+  }
+
+  .tone-field {
+    justify-content: flex-start;
+  }
+
+  .section-heading {
+    display: block;
+    padding-top: 20px;
+  }
+
+  .section-heading p {
+    margin-top: 4px;
+    text-align: left;
+  }
+
+  .recipe-row {
+    display: block;
+    height: auto;
+  }
+
+  .recipe-media {
+    min-height: 190px;
+    height: 190px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .recipe-media img {
+    min-height: 190px;
+    height: 190px;
+  }
+
+  .recipe-content {
+    padding: 18px;
+  }
+
+  .selection-tray {
+    grid-template-columns: 62px minmax(0, 1fr) auto;
+    gap: 10px;
+    min-height: 98px;
     padding: 10px 14px;
   }
 
-  .header-controls {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 6px;
+  .tray-preview {
+    height: 62px;
   }
 
-  .header-controls input,
-  .header-controls select {
-    min-height: 32px;
-    padding: 7px;
+  .tray-summary {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .tray-summary strong {
+    font-size: 16px;
+  }
+
+  .tray-techniques {
+    display: none;
+  }
+
+  .tray-actions {
+    display: block;
+    grid-column: auto;
+  }
+
+  .tray-actions .text-action {
+    display: none;
+  }
+
+  .primary-action {
+    padding: 10px 14px;
+  }
+
+  .dialog-header {
+    padding: 18px;
+  }
+
+  .dialog-header h2 {
+    font-size: 25px;
+  }
+
+  .atlas-controls {
+    position: static;
+    grid-template-columns: 1fr 1fr;
+    padding: 14px 18px;
+  }
+
+  .search-field {
+    grid-column: 1 / -1;
+  }
+
+  .atlas-status {
+    grid-column: 1 / -1;
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .atlas-toolbar {
+    padding: 6px 18px;
+  }
+
+  .prompt-layout {
+    display: block;
+  }
+
+  .prompt-options {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 20px 18px;
+  }
+
+  .prompt-result {
+    padding: 20px 18px 90px;
+  }
+
+  #promptOutput {
+    min-height: 430px;
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    padding-bottom: 94px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .header-link {
     font-size: 12px;
   }
 
   h1 {
-    font-size: 18px;
+    font-size: 38px;
   }
 
-  .composer,
-  .library {
-    border: 0;
-    padding: 14px;
+  .lead {
+    font-size: 14px;
   }
 
-  .library-toolbar {
-    top: 0;
+  .purpose-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .purpose-tabs button:nth-child(2) {
+    border-right: 0;
+  }
+
+  .purpose-tabs button:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .recipe-media {
+    min-height: 148px;
+    height: 148px;
+  }
+
+  .recipe-media img {
+    min-height: 148px;
+    height: 148px;
+  }
+
+  .recipe-content {
     display: block;
-    margin: -14px -14px 12px;
-    padding: 8px 14px;
   }
 
-  .library-toolbar .actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 7px;
+  .recipe-copy h3 {
+    font-size: 24px;
   }
 
-  .status {
-    margin-top: 0;
+  .recipe-select {
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .selection-tray {
+    min-height: 84px;
+  }
+
+  .tray-preview {
+    display: none;
+  }
+
+  .selection-tray {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .tray-summary .eyebrow,
+  .tray-summary span {
+    display: none;
+  }
+
+  .app-dialog {
+    width: 100vw;
+    max-height: 100dvh;
+    border: 0;
+  }
+
+  .dialog-shell {
+    min-height: 100dvh;
+    max-height: 100dvh;
+  }
+
+  .dialog-header {
+    align-items: center;
+  }
+
+  .dialog-header p:last-child {
+    display: none;
   }
 
   .technique-grid {
@@ -744,92 +1215,187 @@ dialog::backdrop {
   }
 
   .tech-card {
-    min-height: 0;
+    min-height: 188px;
   }
 
-  dialog {
-    width: calc(100vw - 24px);
+  .tech-card > img {
+    min-height: 188px;
   }
 
-  .prompt-dock {
-    display: block;
+  .dialog-footer {
+    min-height: 66px;
+    padding: 8px 14px;
   }
 
-  .dock-actions {
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 10px;
+  .dialog-footer span {
+    display: none;
   }
 
-  .prompt-dock {
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    padding: 10px;
+  .copy-row {
+    align-items: stretch;
+    flex-direction: column;
   }
 
-  .prompt-dock[data-size="standard"],
-  .prompt-dock[data-size="expanded"] {
-    display: grid;
+  .copy-row .primary-action {
+    width: 100%;
+  }
+
+  .sources {
     grid-template-columns: 1fr;
-    max-height: 74vh;
   }
 
-  .prompt-dock[data-size="standard"] #dockPromptOutput {
-    height: 28vh;
+  .detail {
+    display: block;
+    padding: 18px;
   }
 
-  .prompt-dock[data-size="expanded"] #dockPromptOutput {
-    height: 48vh;
+  .detail > img {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 20px;
   }
+}
 
-  #dockPromptPreview {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 
 </style>
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand-block">
-        <p class="eyebrow">Poster Design Technique Atlas</p>
-        <h1>古典的デザイン技法からポスター構成する</h1>
-      </div>
-      <div class="header-controls" aria-label="検索・選択">
-        <input id="searchInput" type="search" placeholder="検索">
-        <select id="categorySelect" aria-label="分類"></select>
-        <select id="intentSelect" aria-label="意図"></select>
-      </div>
-      <div class="status">
-        <span id="countLabel">Loading</span>
-        <span id="selectedLabel">0 selected</span>
-        <button id="headerClearButton" class="status-action" type="button">全解除</button>
-      </div>
+    <a class="skip-link" href="#recipeList">構成案へ移動</a>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Poster Technique Atlas ホーム">Poster Technique Atlas</a>
+      <button id="atlasOpenButton" class="header-link" type="button">
+        全60技法を見る
+      </button>
     </header>
 
-    <main class="workspace">
-      <section class="library" aria-label="technique library">
-        <div class="library-toolbar">
-          <div class="selected-panel" aria-label="selected techniques">
-            <p class="eyebrow">Selected Stack</p>
-            <div id="selectedStack" class="selected-stack"></div>
-          </div>
-          <div class="actions">
-            <button id="recommendButton" type="button">おすすめ選択</button>
-            <button id="clearButton" class="secondary" type="button">解除</button>
-          </div>
+    <main>
+      <section class="intro" aria-labelledby="pageTitle">
+        <div class="intro-copy">
+          <p class="eyebrow">Poster composition recipes</p>
+          <h1 id="pageTitle">つくりたい印象から、構成を選ぶ</h1>
+          <p class="lead">用途に合う組み合わせを選ぶと、プロンプトの土台ができます。</p>
         </div>
-        <div id="warningBox" class="warning" hidden></div>
-        <div id="techniqueGrid" class="technique-grid"></div>
+
+        <div class="choice-bar">
+          <div id="purposeTabs" class="purpose-tabs" role="group" aria-label="用途">
+            <button type="button" data-purpose-value="看板・扉">看板・扉</button>
+            <button class="is-active" type="button" data-purpose-value="研究展示" aria-pressed="true">研究展示</button>
+            <button type="button" data-purpose-value="ゼミ募集">ゼミ募集</button>
+            <button type="button" data-purpose-value="スライド">スライド</button>
+          </div>
+          <label class="tone-field">
+            <span>印象</span>
+            <select id="toneSelect">
+              <option value="知的">知的</option>
+              <option value="強い">強い</option>
+              <option value="高密度">高密度</option>
+              <option value="余白">余白</option>
+              <option value="実験的">実験的</option>
+              <option value="写真">写真</option>
+              <option value="図解">図解</option>
+            </select>
+          </label>
+        </div>
       </section>
 
-      <aside class="composer" aria-label="prompt composer">
-        <div class="composer-inner">
-          <details id="optionPanel" class="option-panel" open>
-            <summary>出力条件</summary>
+      <section class="recipes" aria-labelledby="recipeHeading">
+        <div class="section-heading">
+          <h2 id="recipeHeading">おすすめの構成</h2>
+          <p>画像・文字・構成の異なる層から、相性のよい技法を3つ組み合わせています。</p>
+        </div>
+        <div id="recipeList" class="recipe-list" aria-live="polite" aria-busy="true">
+          <p class="loading-state">構成を読み込んでいます。</p>
+        </div>
+      </section>
+    </main>
+
+    <aside id="selectionTray" class="selection-tray" aria-label="選択中の構成">
+      <div class="tray-preview">
+        <img id="selectedRecipeImage" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDc2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJNb2R1bGFyIEdyaWQgc3BlY2ltZW4iPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTQwIDBIMFY0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzE1ZjhmIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9Ii40NSIvPjwvcGF0dGVybj4KICAgIDxwYXR0ZXJuIGlkPSJkb3RzIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxjaXJjbGUgY3g9IjQiIGN5PSI0IiByPSIzLjIiIGZpbGw9IiMxMDE4MjAiLz48L3BhdHRlcm4+CiAgICA8cGF0dGVybiBpZD0ibGluZXMiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMkgxNCIgc3Ryb2tlPSIjZjJlZWU0IiBzdHJva2Utd2lkdGg9IjQiLz48L3BhdHRlcm4+CiAgICA8ZmlsdGVyIGlkPSJwYXBlciI+PGZlVHVyYnVsZW5jZSBiYXNlRnJlcXVlbmN5PSIuNTUiIG51bU9jdGF2ZXM9IjIiIHNlZWQ9IjExIiB0eXBlPSJmcmFjdGFsTm9pc2UiIHJlc3VsdD0ibiIvPjxmZUNvbG9yTWF0cml4IGluPSJuIiB0eXBlPSJzYXR1cmF0ZSIgdmFsdWVzPSIwIi8+PGZlQ29tcG9uZW50VHJhbnNmZXI+PGZlRnVuY0EgdHlwZT0idGFibGUiIHRhYmxlVmFsdWVzPSIwIC4xIi8+PC9mZUNvbXBvbmVudFRyYW5zZmVyPjwvZmlsdGVyPgogICAgCiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9Ijc2MCIgZmlsbD0iI2YyZWVlNCIvPgogIAogICAgICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI3NjAiIGZpbGw9IiMwNzFmMzUiLz4KICAgICAgPHJlY3QgeD0iNDUiIHk9IjQ1IiB3aWR0aD0iMTExMCIgaGVpZ2h0PSI2NzAiIGZpbGw9InVybCgjZ3JpZCkiLz4KICAgICAgPHJlY3QgeD0iNjUiIHk9IjY1IiB3aWR0aD0iNTEwIiBoZWlnaHQ9IjMxMCIgZmlsbD0iI2YyZWVlNCIvPgogICAgICA8cmVjdCB4PSI1OTUiIHk9IjY1IiB3aWR0aD0iMjY1IiBoZWlnaHQ9IjE1MCIgZmlsbD0iIzMxNWY4ZiIvPgogICAgICA8cmVjdCB4PSI4ODAiIHk9IjY1IiB3aWR0aD0iMjU1IiBoZWlnaHQ9IjMxMCIgZmlsbD0iI2YwYzg0YiIvPgogICAgICA8cmVjdCB4PSI1OTUiIHk9IjIzNSIgd2lkdGg9IjI2NSIgaGVpZ2h0PSIxNDAiIGZpbGw9InVybCgjZG90cykiLz4KICAgICAgPHJlY3QgeD0iNjUiIHk9IjM5NSIgd2lkdGg9IjIyNSIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMzMTVmOGYiLz4KICAgICAgPHJlY3QgeD0iMzEwIiB5PSIzOTUiIHdpZHRoPSI1NTAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZjJlZWU0Ii8+CiAgICAgIDxyZWN0IHg9Ijg4MCIgeT0iMzk1IiB3aWR0aD0iMjU1IiBoZWlnaHQ9IjE0MCIgZmlsbD0iIzc5YjljOCIvPgogICAgICA8cmVjdCB4PSI4ODAiIHk9IjU1NSIgd2lkdGg9IjI1NSIgaGVpZ2h0PSIxNDAiIGZpbGw9IiNmMmVlZTQiLz4KICAgICAgPHRleHQgeD0iMTAyIiB5PSIyNDYiIGZpbGw9IiMxMDE4MjAiIGZvbnQtZmFtaWx5PSJBcmlhbCBOYXJyb3csIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyOCIgZm9udC13ZWlnaHQ9IjkwMCI+R1JJRDwvdGV4dD4KICAgICAgPHRleHQgeD0iMzQ1IiB5PSI2MTciIGZpbGw9IiMxMDE4MjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1MCIgZm9udC13ZWlnaHQ9IjcwMCI+U1BBTiAvIEFMSUdOIC8gUkVQRUFUPC90ZXh0PgogICAgCiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNzYwIiBmaWx0ZXI9InVybCgjcGFwZXIpIiBvcGFjaXR5PSIuMjgiLz4KPC9zdmc+" alt="">
+      </div>
+      <div class="tray-summary">
+        <p class="eyebrow">選択中の構成</p>
+        <strong id="selectedRecipeTitle">構成を選んでください</strong>
+        <span id="selectedRecipeMeta">用途に合う構成を選択すると、ここに反映されます。</span>
+      </div>
+      <div class="tray-techniques">
+        <p class="eyebrow">使用する3つの技法</p>
+        <div id="selectedTechniques" class="selected-techniques"></div>
+      </div>
+      <div class="tray-actions">
+        <button id="promptOpenButton" class="primary-action" type="button" disabled>プロンプトを開く</button>
+        <button id="adjustTechniquesButton" class="text-action" type="button">技法を調整</button>
+      </div>
+    </aside>
+
+    <dialog id="atlasDialog" class="app-dialog atlas-dialog">
+      <section class="dialog-shell" aria-labelledby="atlasTitle">
+        <header class="dialog-header">
+          <div>
+            <p class="eyebrow">Technique library</p>
+            <h2 id="atlasTitle">技法を調整する</h2>
+            <p>最大3件。構成・文字・画像・表面から異なる役割を選ぶと、まとまりやすくなります。</p>
+          </div>
+          <button id="atlasCloseButton" class="quiet-button" type="button">閉じる</button>
+        </header>
+
+        <div class="atlas-controls">
+          <label class="search-field">
+            <span>検索</span>
+            <input id="searchInput" type="search" placeholder="技法名・印象・用途">
+          </label>
+          <label>
+            <span>分類</span>
+            <select id="categorySelect" aria-label="分類"></select>
+          </label>
+          <label>
+            <span>意図</span>
+            <select id="intentSelect" aria-label="意図"></select>
+          </label>
+          <div class="atlas-status" aria-live="polite">
+            <span id="techniqueCount">0件</span>
+            <strong id="selectedCount">0 / 3件選択</strong>
+          </div>
+        </div>
+
+        <div class="atlas-toolbar">
+          <div id="warningBox" class="warning" role="status" hidden></div>
+          <button id="clearSelectionButton" class="text-action" type="button">選択を解除</button>
+        </div>
+
+        <div id="techniqueGrid" class="technique-grid"></div>
+
+        <footer class="dialog-footer">
+          <span id="atlasFooterState">最大3件まで選べます。</span>
+          <button id="atlasDoneButton" class="primary-action" type="button">この3件で構成する</button>
+        </footer>
+      </section>
+    </dialog>
+
+    <dialog id="promptDialog" class="app-dialog prompt-dialog">
+      <section class="dialog-shell" aria-labelledby="promptTitle">
+        <header class="dialog-header">
+          <div>
+            <p class="eyebrow">Prompt review</p>
+            <h2 id="promptTitle">プロンプトを確認する</h2>
+            <p>条件と技法を確認し、必要なら文面を編集してコピーできます。</p>
+          </div>
+          <button id="promptCloseButton" class="quiet-button" type="button">閉じる</button>
+        </header>
+
+        <div class="prompt-layout">
+          <form class="prompt-options" onsubmit="return false;">
             <label class="field">
               <span>タイトル</span>
               <input id="titleInput" value="AI and Design Lab">
@@ -845,8 +1411,8 @@ dialog::backdrop {
             <label class="field">
               <span>視認距離</span>
               <select id="distanceSelect">
-                <option value="must read instantly from 5 to 10 meters, sign-first hierarchy">5-10m 看板</option>
-                <option value="must read clearly from 3 to 5 meters, event corner signage">3-5m 展示</option>
+                <option value="must read instantly from 5 to 10 meters, sign-first hierarchy">5–10m 看板</option>
+                <option value="must read clearly from 3 to 5 meters, event corner signage">3–5m 展示</option>
                 <option value="reward close reading at 1 meter while preserving title clarity">1m ポスター</option>
               </select>
             </label>
@@ -854,42 +1420,37 @@ dialog::backdrop {
               <span>用途</span>
               <select id="purposeSelect">
                 <option value="open campus corner sign and seminar-room door sign">看板・扉</option>
+                <option value="research exhibition poster" selected>研究展示</option>
                 <option value="seminar recruitment poster">ゼミ募集</option>
-                <option value="research exhibition poster">研究展示</option>
                 <option value="slide title visual">スライド</option>
               </select>
             </label>
-            <div class="mode-group" role="group" aria-label="tone">
-              <button class="mode is-active" data-tone="知的" type="button">知的</button>
-              <button class="mode" data-tone="強い" type="button">強い</button>
-              <button class="mode" data-tone="高密度" type="button">高密度</button>
-              <button class="mode" data-tone="余白" type="button">余白</button>
+            <div class="prompt-selection">
+              <p class="eyebrow">選択中の技法</p>
+              <div id="promptTechniqueList"></div>
             </div>
-          </details>
-          <textarea id="promptOutput" class="visually-hidden" rows="1" spellcheck="false" aria-hidden="true" tabindex="-1"></textarea>
-          <div id="sourcePanel" class="sources" hidden></div>
+            <button id="promptAdjustButton" class="text-action" type="button">技法を調整する</button>
+          </form>
+
+          <div class="prompt-result">
+            <label for="promptOutput">生成用プロンプト</label>
+            <textarea id="promptOutput" rows="18" spellcheck="false"></textarea>
+            <div class="copy-row">
+              <p id="copyState" class="copy-state" aria-live="polite">選択内容を反映しています。</p>
+              <button id="copyButton" class="primary-action" type="button" disabled>プロンプトをコピー</button>
+            </div>
+            <details class="source-details">
+              <summary>出典と参考資料</summary>
+              <div id="sourcePanel" class="sources"></div>
+            </details>
+          </div>
         </div>
-      </aside>
-    </main>
+      </section>
+    </dialog>
 
-    <section id="promptDock" class="prompt-dock" aria-label="prompt preview" data-size="compact">
-      <div class="dock-summary">
-        <p class="eyebrow">Prompt Preview</p>
-        <strong id="dockSelectedLabel">0 selected</strong>
-        <p id="dockPromptPreview">技法を選択してください。</p>
-      </div>
-      <textarea id="dockPromptOutput" spellcheck="false" aria-label="generated prompt"></textarea>
-      <div class="dock-actions">
-        <button id="dockShrinkButton" type="button">小</button>
-        <button id="dockExpandButton" type="button">拡大</button>
-        <button id="dockCopyButton" type="button">コピー</button>
-        <button id="sourcesButton" class="secondary" type="button">出典</button>
-      </div>
-    </section>
-
-    <dialog id="detailDialog">
+    <dialog id="detailDialog" class="app-dialog detail-dialog">
       <article class="detail">
-        <button id="closeDialog" class="close" type="button" aria-label="close">×</button>
+        <button id="closeDialog" class="quiet-button detail-close" type="button">閉じる</button>
         <img id="detailImage" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDc2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJOZXcgVHlwb2dyYXBoeSBzcGVjaW1lbiI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNNDAgMEgwVjQwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzMTVmOGYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iLjQ1Ii8+PC9wYXR0ZXJuPgogICAgPHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iNCIgY3k9IjQiIHI9IjMuMiIgZmlsbD0iIzEwMTgyMCIvPjwvcGF0dGVybj4KICAgIDxwYXR0ZXJuIGlkPSJsaW5lcyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNMCAySDE0IiBzdHJva2U9IiNmMmVlZTQiIHN0cm9rZS13aWR0aD0iNCIvPjwvcGF0dGVybj4KICAgIDxmaWx0ZXIgaWQ9InBhcGVyIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii41NSIgbnVtT2N0YXZlcz0iMiIgc2VlZD0iMTEiIHR5cGU9ImZyYWN0YWxOb2lzZSIgcmVzdWx0PSJuIi8+PGZlQ29sb3JNYXRyaXggaW49Im4iIHR5cGU9InNhdHVyYXRlIiB2YWx1ZXM9IjAiLz48ZmVDb21wb25lbnRUcmFuc2Zlcj48ZmVGdW5jQSB0eXBlPSJ0YWJsZSIgdGFibGVWYWx1ZXM9IjAgLjEiLz48L2ZlQ29tcG9uZW50VHJhbnNmZXI+PC9maWx0ZXI+CiAgICAKICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNzYwIiBmaWxsPSIjZjJlZWU0Ii8+CiAgCiAgICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIzMzAiIGhlaWdodD0iNzYwIiBmaWxsPSIjMDcxZjM1Ii8+CiAgICAgIDx0ZXh0IHg9IjYyIiB5PSIxMTQiIGZpbGw9IiNmMmVlZTQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCI+MDEgLyBTWVNURU08L3RleHQ+CiAgICAgIDx0ZXh0IHg9IjMwMiIgeT0iNDg2IiBmaWxsPSIjMTAxODIwIiBmb250LWZhbWlseT0iQXJpYWwgTmFycm93LCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNDIiIGZvbnQtd2VpZ2h0PSI4MDAiIHRyYW5zZm9ybT0icm90YXRlKC05MCAzMDIgNDg2KSI+VFlQRTwvdGV4dD4KICAgICAgPHBhdGggZD0iTTM4NSA5MEgxMTEwTTM4NSAyNDRIOTIwTTM4NSA1ODRIMTExMCIgc3Ryb2tlPSIjMzE1ZjhmIiBzdHJva2Utd2lkdGg9IjMiLz4KICAgICAgPHRleHQgeD0iMzk0IiB5PSIyMjIiIGZpbGw9IiMxMDE4MjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMTIiIGZvbnQtd2VpZ2h0PSI4MDAiPkFTWU1NRVRSWTwvdGV4dD4KICAgICAgPHRleHQgeD0iMzk4IiB5PSIzMDAiIGZpbGw9IiMzMTVmOGYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMiI+RlVOQ1RJT04gLyBPUkRFUiAvIFBIT1RPR1JBUEhZPC90ZXh0PgogICAgICA8cmVjdCB4PSI2NjUiIHk9IjM0MCIgd2lkdGg9IjQ0NSIgaGVpZ2h0PSIyMDYiIGZpbGw9IiNmMGM4NGIiLz4KICAgICAgPGNpcmNsZSBjeD0iNjA0IiBjeT0iNjE1IiByPSI4OCIgZmlsbD0idXJsKCNkb3RzKSIvPgogICAgICA8dGV4dCB4PSI3MTgiIHk9IjQzOCIgZmlsbD0iIzA3MWYzNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMxIj5JTkZPUk1BVElPTiBCRUNPTUVTPC90ZXh0PgogICAgICA8dGV4dCB4PSI3MTgiIHk9IjQ4MCIgZmlsbD0iIzA3MWYzNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMxIj5WSVNJQkxFIFNUUlVDVFVSRS48L3RleHQ+CiAgICAKICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI3NjAiIGZpbHRlcj0idXJsKCNwYXBlcikiIG9wYWNpdHk9Ii4yOCIvPgo8L3N2Zz4=" alt="New Typography">
         <div>
           <p id="detailCategory" class="eyebrow"></p>
@@ -5360,404 +5921,1070 @@ window.__ATLAS_BUNDLED__ = { techniques: {
  };
 </script>
 <script>
+const MAX_SELECTION = 3;
+
 const state = {
   data: null,
   recipes: null,
   examples: null,
   selected: [],
-  tone: "知的"
+  purpose: "",
+  tone: "知的",
+  activeRecipeId: null,
+  topRecipes: [],
+  loading: true,
+  error: null,
+  selectionNotice: "",
+  promptSignature: "",
+  promptDirty: false,
+  controlsInitialized: false
 };
 
 const els = {
-  count: document.querySelector("#countLabel"),
-  selected: document.querySelector("#selectedLabel"),
-  grid: document.querySelector("#techniqueGrid"),
+  purposeTabs: document.querySelector("#purposeTabs"),
+  tone: document.querySelector("#toneSelect"),
+  recipes: document.querySelector("#recipeList"),
+  selectionTray: document.querySelector("#selectionTray"),
+  selectedRecipeImage: document.querySelector("#selectedRecipeImage"),
+  selectedRecipeTitle: document.querySelector("#selectedRecipeTitle"),
+  selectedRecipeMeta: document.querySelector("#selectedRecipeMeta"),
+  selectedTechniques: document.querySelector("#selectedTechniques"),
+  promptOpen: document.querySelector("#promptOpenButton"),
+  atlasOpen: document.querySelector("#atlasOpenButton"),
+  adjustTechniques: document.querySelector("#adjustTechniquesButton"),
+  atlasDialog: document.querySelector("#atlasDialog"),
+  atlasClose: document.querySelector("#atlasCloseButton"),
   search: document.querySelector("#searchInput"),
   category: document.querySelector("#categorySelect"),
   intent: document.querySelector("#intentSelect"),
-  selectedStack: document.querySelector("#selectedStack"),
+  techniqueCount: document.querySelector("#techniqueCount"),
+  selectedCount: document.querySelector("#selectedCount"),
+  grid: document.querySelector("#techniqueGrid"),
+  clearSelection: document.querySelector("#clearSelectionButton"),
+  atlasDone: document.querySelector("#atlasDoneButton"),
   warning: document.querySelector("#warningBox"),
+  promptDialog: document.querySelector("#promptDialog"),
+  promptClose: document.querySelector("#promptCloseButton"),
   title: document.querySelector("#titleInput"),
   format: document.querySelector("#formatSelect"),
   distance: document.querySelector("#distanceSelect"),
   purpose: document.querySelector("#purposeSelect"),
   prompt: document.querySelector("#promptOutput"),
-  promptState: document.querySelector("#promptStateLabel"),
-  optionPanel: document.querySelector("#optionPanel"),
-  promptDock: document.querySelector("#promptDock"),
-  dockSelected: document.querySelector("#dockSelectedLabel"),
-  dockPreview: document.querySelector("#dockPromptPreview"),
-  dockPrompt: document.querySelector("#dockPromptOutput"),
+  promptTechniqueList: document.querySelector("#promptTechniqueList"),
+  copy: document.querySelector("#copyButton"),
+  copyState: document.querySelector("#copyState"),
   sourcePanel: document.querySelector("#sourcePanel"),
-  directions: document.querySelector("#directionList"),
-  dialog: document.querySelector("#detailDialog")
+  detailDialog: document.querySelector("#detailDialog"),
+  detailClose: document.querySelector("#closeDialog"),
+  detailImage: document.querySelector("#detailImage"),
+  detailCategory: document.querySelector("#detailCategory"),
+  detailTitle: document.querySelector("#detailTitle"),
+  detailDefinition: document.querySelector("#detailDefinition"),
+  detailAction: document.querySelector("#detailAction"),
+  detailBest: document.querySelector("#detailBest"),
+  detailAvoid: document.querySelector("#detailAvoid"),
+  detailSources: document.querySelector("#detailSources"),
+  detailExamples: document.querySelector("#detailExamples"),
+
+  // build_standalone_atlas.py keeps this optional legacy reference in its injected init().
+  optionPanel: document.querySelector("#optionPanel")
 };
 
-const byId = id => state.data.techniques.find(t => t.id === id);
+const LAYER_LABELS = {
+  history: "歴史言語",
+  composition: "構成",
+  typography: "文字",
+  image: "画像",
+  print: "印刷",
+  illustration: "図解",
+  surface: "表面",
+  digital: "デジタル"
+};
 
-function clearSelection() {
-  state.selected = [];
-  renderCards();
-  buildPrompt();
+const TONE_DIRECTIONS = {
+  "知的": "Use disciplined hierarchy, precise alignment, evidence-like details, and calm contrast.",
+  "強い": "Use an immediate focal point, decisive scale contrast, and a bold reading order that survives at a distance.",
+  "高密度": "Build a deliberately edited field of information with one clear anchor and many rewarding close-reading details.",
+  "余白": "Use generous negative space, a restrained number of elements, and quiet but exact alignment.",
+  "写真": "Let photographic material carry the main evidence while typography frames, crops, and interprets it.",
+  "編集的": "Treat image, type, caption, and sequence as one edited narrative rather than separate cards.",
+  "プロセス": "Make stages, annotations, comparisons, and material changes visible as part of the composition.",
+  "明快": "Prioritize instant comprehension, a short reading path, and unambiguous hierarchy.",
+  "実験的": "Create one controlled structural surprise while preserving the exact title and the intended reading order.",
+  "イラスト": "Use explanatory illustration as a structural device, supported by clear labels and hierarchy.",
+  "図解": "Use diagrams, numbering, and visual relationships to explain the subject without becoming a generic infographic."
+};
+
+const escapeHTML = value => String(value ?? "")
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("'", "&#039;");
+
+const uniq = values => [...new Set(values.filter(Boolean))]
+  .sort((a, b) => String(a).localeCompare(String(b), "ja"));
+
+const byId = id => state.data?.techniques?.find(technique => technique.id === id);
+
+function safeUrl(value) {
+  try {
+    const url = new URL(value, window.location.href);
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "#";
+  } catch {
+    return "#";
+  }
 }
 
-function uniq(values) {
-  return [...new Set(values)].sort((a, b) => a.localeCompare(b, "ja"));
+function specimenSrc(technique) {
+  const specimen = technique?.specimen || "";
+  if (/^(?:data:|blob:|https?:\/\/)/i.test(specimen) || specimen.startsWith("../")) {
+    return specimen;
+  }
+  return `../${specimen}`;
 }
 
-function matches(tech) {
-  const q = els.search.value.trim().toLowerCase();
-  const category = els.category.value;
-  const intent = els.intent.value;
-  const haystack = [
-    tech.id,
-    tech.nameJa,
-    tech.nameEn,
-    tech.definition,
-    tech.designAction,
-    tech.visualCues.join(" "),
-    tech.intentTags.join(" ")
-  ].join(" ").toLowerCase();
-  return (!q || haystack.includes(q)) &&
-    (!category || tech.category === category) &&
-    (!intent || tech.intentTags.includes(intent));
+function getPurposeButtons() {
+  if (!els.purposeTabs) return [];
+  const buttons = Array.from(els.purposeTabs.querySelectorAll("[data-purpose-value]"));
+  if (els.purposeTabs.matches("[data-purpose-value]")) buttons.unshift(els.purposeTabs);
+  return buttons;
 }
 
-function renderFilters() {
-  const categories = state.data.categories;
-  els.category.innerHTML = `<option value="">すべて</option>` +
-    Object.entries(categories).map(([id, label]) => `<option value="${id}">${label}</option>`).join("");
-  const intents = uniq(state.data.techniques.flatMap(t => t.intentTags));
-  els.intent.innerHTML = `<option value="">すべて</option>` +
-    intents.map(tag => `<option value="${tag}">${tag}</option>`).join("");
+function selectedOptionLabel(select) {
+  return select?.selectedOptions?.[0]?.textContent?.trim() || "";
 }
 
-function renderCards() {
-  const visible = state.data.techniques.filter(matches);
-  els.count.textContent = `${visible.length} / ${state.data.techniques.length} techniques`;
-  els.selected.textContent = `${state.selected.length} selected`;
-  els.grid.innerHTML = visible.map(tech => {
-    const selected = state.selected.includes(tech.id);
-    const examples = (state.examples?.examples || []).filter(example => example.techniqueId === tech.id);
-    const namedCount = examples.filter(example => example.exampleType === "named-work").length;
-    const exampleLabel = namedCount ? `作例 ${namedCount}` : `参考 ${examples.length}`;
+function setControlText(element, value) {
+  if (!element) return;
+  if ("value" in element) element.value = value;
+  else element.textContent = value;
+}
+
+function getControlText(element) {
+  if (!element) return "";
+  return "value" in element ? element.value : element.textContent;
+}
+
+function initializeControls() {
+  if (state.controlsInitialized) return;
+  const purposeButtons = getPurposeButtons();
+  const currentPurpose = purposeButtons.find(button =>
+    button.getAttribute("aria-selected") === "true" ||
+    button.classList.contains("is-active") ||
+    button.dataset.selected === "true"
+  ) || purposeButtons[0];
+
+  state.purpose = currentPurpose?.dataset.purposeValue ||
+    selectedOptionLabel(els.purpose) ||
+    els.purpose?.value ||
+    "研究展示";
+  state.tone = els.tone?.value || state.tone;
+  state.controlsInitialized = true;
+  updatePurposeTabs();
+}
+
+function updatePurposeTabs() {
+  getPurposeButtons().forEach(button => {
+    const isActive = button.dataset.purposeValue === state.purpose;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-selected", String(isActive));
+    button.setAttribute("aria-pressed", String(isActive));
+    if (button.getAttribute("role") === "tab") {
+      button.tabIndex = isActive ? 0 : -1;
+    }
+  });
+}
+
+function syncPurposeSelect() {
+  if (!els.purpose) return;
+  const options = Array.from(els.purpose.options || []);
+  const normalizedPurpose = state.purpose.trim();
+  const match = options.find(option =>
+    option.value === normalizedPurpose ||
+    option.textContent.trim() === normalizedPurpose ||
+    option.textContent.includes(normalizedPurpose) ||
+    normalizedPurpose.includes(option.textContent.trim())
+  );
+  if (match) els.purpose.value = match.value;
+}
+
+function purposeTerms(value) {
+  const terms = [value];
+  const aliases = {
+    "看板・扉": ["看板", "扉", "オープンキャンパス"],
+    "研究展示": ["展示", "研究", "授業展示"],
+    "ゼミ募集": ["ゼミ", "募集", "イベント"],
+    "スライド": ["講演", "教材"],
+    "オープンキャンパス": ["看板・扉", "展示"],
+    "教材": ["スライド", "授業展示"],
+    "キービジュアル": ["展示", "イベント"]
+  };
+  return uniq([...terms, ...(aliases[value] || [])]);
+}
+
+function recipeScore(recipe, index) {
+  const normalized = value => String(value || "").trim().toLowerCase();
+  const selectedPurpose = normalized(state.purpose);
+  const terms = purposeTerms(state.purpose).map(normalized);
+  let purposeScore = 0;
+
+  for (const recipePurpose of recipe.purpose || []) {
+    const candidate = normalized(recipePurpose);
+    if (candidate === selectedPurpose) {
+      purposeScore = Math.max(purposeScore, 16);
+    } else if (terms.includes(candidate)) {
+      purposeScore = Math.max(purposeScore, 9);
+    } else if (terms.some(term => term && (candidate.includes(term) || term.includes(candidate)))) {
+      purposeScore = Math.max(purposeScore, 5);
+    }
+  }
+
+  const selectedTone = normalized(state.tone);
+  let toneScore = 0;
+  for (const recipeTone of recipe.tone || []) {
+    const candidate = normalized(recipeTone);
+    if (candidate === selectedTone) {
+      toneScore = Math.max(toneScore, 10);
+    } else if (selectedTone && (candidate.includes(selectedTone) || selectedTone.includes(candidate))) {
+      toneScore = Math.max(toneScore, 5);
+    }
+  }
+
+  return {
+    recipe,
+    score: purposeScore + toneScore,
+    purposeScore,
+    toneScore,
+    index
+  };
+}
+
+function scoredRecipes(limit = 4) {
+  if (!state.recipes?.recipes) return [];
+  return state.recipes.recipes
+    .map(recipeScore)
+    .sort((a, b) =>
+      b.score - a.score ||
+      b.purposeScore - a.purposeScore ||
+      b.toneScore - a.toneScore ||
+      a.index - b.index
+    )
+    .slice(0, limit)
+    .map(item => item.recipe);
+}
+
+function selectionMatchesRecipe(recipe) {
+  const recipeIds = (recipe?.techniqueIds || []).slice(0, MAX_SELECTION);
+  return recipeIds.length === state.selected.length &&
+    recipeIds.every(id => state.selected.includes(id));
+}
+
+function currentRecipe() {
+  return state.recipes?.recipes?.find(recipe => recipe.id === state.activeRecipeId) || null;
+}
+
+function renderRecipeList() {
+  state.topRecipes = scoredRecipes(4);
+  if (!els.recipes) return;
+
+  if (!state.topRecipes.length) {
+    els.recipes.innerHTML = `
+      <div class="empty-state" role="status">
+        <strong>表示できる構成がありません</strong>
+        <span>用途かトーンを変更してください。</span>
+      </div>
+    `;
+    return;
+  }
+
+  els.recipes.innerHTML = state.topRecipes.map((recipe, index) => {
+    const active = state.activeRecipeId === recipe.id && selectionMatchesRecipe(recipe);
+    const techniqueNames = (recipe.techniqueIds || [])
+      .slice(0, MAX_SELECTION)
+      .map(id => byId(id))
+      .filter(Boolean);
+
     return `
-      <article class="tech-card ${selected ? "is-selected" : ""}" data-id="${tech.id}">
-        <img src="${tech.specimen}" alt="${tech.nameEn}">
-        <div class="tech-body">
-          <p class="eyebrow">${state.data.categories[tech.category]} / ${tech.layer}</p>
-          <h2>${tech.nameJa}<br>${tech.nameEn}</h2>
-          <p>${tech.definition}</p>
-          <div class="tags">
-            <span class="example-tag ${namedCount ? "is-named" : ""}">${exampleLabel}</span>
-            ${tech.intentTags.map(tag => `<span>${tag}</span>`).join("")}
+      <article class="recipe-row ${active ? "is-selected" : ""}" data-recipe-id="${escapeHTML(recipe.id)}">
+        <div class="recipe-media" aria-label="${escapeHTML(recipe.nameJa)}の3技法">
+          ${techniqueNames.map((technique, techniqueIndex) => `
+            <img
+              src="${escapeHTML(specimenSrc(technique))}"
+              alt="${escapeHTML(technique.nameJa)}の構成見本"
+              loading="${index === 0 && techniqueIndex === 0 ? "eager" : "lazy"}"
+            >
+          `).join("")}
+        </div>
+        <div class="recipe-content">
+          <div class="recipe-copy">
+            ${index === 0 ? `<span class="recommend-label">おすすめ</span>` : ""}
+            <h2>${escapeHTML(recipe.nameJa)}</h2>
+            <p>${escapeHTML(recipe.direction)}</p>
           </div>
-          <div class="card-actions">
-            <button type="button" data-action="select" aria-pressed="${selected}">${selected ? "選択中 - 解除" : "選択"}</button>
-            <button class="secondary" type="button" data-action="detail">詳細</button>
+          <div class="technique-chips" aria-label="使用する技法">
+            ${techniqueNames.map(technique => `<span class="technique-chip">${escapeHTML(technique.nameJa)}</span>`).join("")}
           </div>
+          <button
+            class="recipe-select"
+            type="button"
+            data-action="select-recipe"
+            data-recipe-id="${escapeHTML(recipe.id)}"
+            aria-pressed="${active}"
+          >${active ? "選択中" : "この構成でつくる"}</button>
         </div>
       </article>
     `;
   }).join("");
-  renderSelectedStack();
 }
 
-function renderSelectedStack() {
-  if (!els.selectedStack) return;
-  const selectedTechs = state.selected.map(byId).filter(Boolean);
-  els.selectedStack.innerHTML = selectedTechs.length
-    ? selectedTechs.map(tech => `<button type="button" data-action="remove-selected" data-id="${tech.id}">${tech.nameJa}</button>`).join("")
-    : `<span>未選択</span>`;
-}
-
-function syncPromptDock() {
-  const selectedTechs = state.selected.map(byId).filter(Boolean);
-  const label = `${selectedTechs.length} selected`;
-  els.selected.textContent = label;
-  if (els.dockSelected) {
-    els.dockSelected.textContent = selectedTechs.length
-      ? selectedTechs.map(tech => tech.nameJa).join(" + ")
-      : "0 selected";
+function renderSelectionTray() {
+  if (!els.selectionTray) {
+    updateActionStates();
+    return;
   }
-  if (els.dockPreview) {
-    const prompt = els.prompt.value.trim();
-    els.dockPreview.textContent = prompt
-      ? prompt.replace(/\s+/g, " ").slice(0, 170)
-      : "技法を選択してください。";
-  }
-  if (els.dockPrompt) {
-    els.dockPrompt.value = els.prompt.value;
-  }
-}
 
-function markPromptUpdated() {
-  if (!els.promptState && !els.promptDock) return;
-  const selectedTechs = state.selected.map(byId).filter(Boolean);
-  if (els.promptState) {
-    els.promptState.textContent = selectedTechs.length
-      ? `${selectedTechs.length}件の技法を反映済み`
-      : "技法未選択";
-    els.promptState.classList.remove("is-updated");
-    window.requestAnimationFrame(() => els.promptState.classList.add("is-updated"));
-  }
-  els.promptDock?.classList.remove("is-updated");
-  window.requestAnimationFrame(() => els.promptDock?.classList.add("is-updated"));
-}
+  const selectedTechniques = state.selected.map(byId).filter(Boolean);
+  const recipe = currentRecipe();
+  const adjusted = recipe && !selectionMatchesRecipe(recipe);
+  const imageTechnique = (recipe?.techniqueIds || []).map(byId).find(Boolean) || selectedTechniques[0];
+  const isEmpty = selectedTechniques.length === 0;
 
-function buildPrompt() {
-  const selectedTechs = state.selected.map(byId).filter(Boolean);
-  const title = els.title.value.trim() || "AI and Design Lab";
-  const modules = selectedTechs.map(t => `- ${t.nameEn}: ${t.promptModule}`).join("\n");
-  const negatives = uniq(selectedTechs.flatMap(t => [t.negativeModule, ...t.avoid])).join("; ");
-  const cueLines = selectedTechs.map(t => `${t.nameEn}: ${t.visualCues.join(", ")}`).join("\n");
-  const selectedNames = selectedTechs.map(t => t.nameEn).join(" + ") || "select 2 to 3 techniques";
+  els.selectionTray.classList.toggle("is-empty", isEmpty);
+  els.selectionTray.classList.toggle("is-adjusted", Boolean(adjusted));
+  els.selectionTray.dataset.count = String(selectedTechniques.length);
 
-  els.prompt.value = `Create a ${els.format.value} for "${title}". Purpose: ${els.purpose.value}. Reading condition: ${els.distance.value}.
-
-Primary title hierarchy:
-Make "${title}" the dominant readable message. Use real typographic hierarchy, not decorative labels. Keep the exact title phrase legible and central.
-
-Technique stack:
-${modules || "- Select techniques from the atlas before generation."}
-
-Visual direction:
-Use an intellectual poster language with strong contrast between large condensed typography, precise alignment, controlled negative space, dense small technical objects, crop marks, grids, proof panels, small source/reference fragments, and process notations. The composition should feel designed, edited, and structurally inevitable. Current stack: ${selectedNames}.
-
-Visual cues to preserve:
-${cueLines || "- No cues selected."}
-
-Color and surface:
-Use navy, deep ink, ivory paper, muted blue and one restrained accent if needed. Avoid an ominous red-black punk mood unless explicitly requested. Use tactile print texture only as surface evidence; keep edges crisp.
-
-Negative prompt:
-${negatives || "no generic poster, no vague AI imagery, no low-contrast composition, no misspelled title, no decorative clutter, no stock corporate look"}.`;
-
-  renderWarnings(selectedTechs);
-  renderSources(selectedTechs);
-  renderDirections();
-  markPromptUpdated();
-  syncPromptDock();
-}
-
-function renderWarnings(techs) {
-  const layers = techs.map(t => t.layer);
-  const repeated = layers.find((layer, index) => layers.indexOf(layer) !== index);
-  if (state.selected.length > 3) {
-    els.warning.hidden = false;
-    els.warning.textContent = "技法は最大3件まで。層を増やしすぎると、プロンプトが散ります。";
-  } else if (repeated) {
-    els.warning.hidden = false;
-    els.warning.textContent = `同じ層「${repeated}」が重複しています。構成、文字、画像、表面から分けると強くなります。`;
-  } else {
-    els.warning.hidden = true;
-    els.warning.textContent = "";
-  }
-}
-
-function renderSources(techs) {
-  const sourceIds = uniq(techs.flatMap(t => t.sourceIds));
-  const sources = sourceIds.map(id => state.data.sources.find(s => s.id === id)).filter(Boolean);
-  els.sourcePanel.innerHTML = sources.map(s => `<p><strong>${s.title}</strong><br>${s.creator || ""} ${s.year || ""}<br><a href="${s.url}" target="_blank" rel="noreferrer">${s.url}</a></p>`).join("");
-}
-
-function toggleSelect(id) {
-  if (state.selected.includes(id)) {
-    state.selected = state.selected.filter(item => item !== id);
-  } else if (state.selected.length < 3) {
-    state.selected = [...state.selected, id];
-  } else {
-    els.warning.hidden = false;
-    els.warning.textContent = "技法は最大3件までです。ひとつ解除してから追加してください。";
-  }
-  renderCards();
-  buildPrompt();
-}
-
-function showDetail(id) {
-  const tech = byId(id);
-  const sources = tech.sourceIds
-    .map(sourceId => state.data.sources.find(s => s.id === sourceId))
-    .filter(Boolean);
-  const examples = (state.examples?.examples || []).filter(example => example.techniqueId === id);
-  document.querySelector("#detailImage").src = `${tech.specimen}`;
-  document.querySelector("#detailImage").alt = tech.nameEn;
-  document.querySelector("#detailCategory").textContent = `${state.data.categories[tech.category]} / ${tech.period}`;
-  document.querySelector("#detailTitle").textContent = `${tech.nameJa} / ${tech.nameEn}`;
-  document.querySelector("#detailDefinition").textContent = tech.definition;
-  document.querySelector("#detailAction").textContent = tech.designAction;
-  document.querySelector("#detailBest").textContent = tech.bestFor.join("、");
-  document.querySelector("#detailAvoid").textContent = tech.avoid.join(" / ");
-  document.querySelector("#detailSources").innerHTML = sources
-    .map(source => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.title}</a>`)
-    .join("<br>");
-  const sortedExamples = [...examples].sort((a, b) => {
-    const rank = value => value.exampleType === "named-work" ? 0 : 1;
-    return rank(a) - rank(b) || a.title.localeCompare(b.title, "ja");
-  });
-  document.querySelector("#detailExamples").innerHTML = sortedExamples.length
-    ? sortedExamples.map(example => {
-      const typeLabel = example.exampleType === "named-work" ? "具体作例" : "参照入口";
-      const meta = [example.creator, example.year].filter(Boolean).join(" / ");
-      return `<p><span class="example-kind">${typeLabel}</span><a href="${example.url}" target="_blank" rel="noreferrer">${example.title}</a><br><em>${meta}</em><br><span>${example.why}</span><br><small>${example.rightsNote}</small></p>`;
-    }).join("")
-    : "未登録";
-  els.dialog.showModal();
-}
-
-function recommend() {
-  const visible = state.data.techniques.filter(matches);
-  const priorities = [state.tone, "知的", "強い", "緻密", "高密度"];
-  const picked = [];
-  for (const tag of priorities) {
-    for (const tech of visible) {
-      if (picked.length >= 3) break;
-      if (tech.intentTags.includes(tag) && !picked.some(t => t.layer === tech.layer)) picked.push(tech);
+  if (els.selectedRecipeImage) {
+    if (imageTechnique) {
+      els.selectedRecipeImage.src = specimenSrc(imageTechnique);
+      els.selectedRecipeImage.alt = `${imageTechnique.nameJa}の構成見本`;
+    } else {
+      els.selectedRecipeImage.removeAttribute("src");
+      els.selectedRecipeImage.alt = "";
     }
   }
-  for (const tech of visible) {
-    if (picked.length >= 3) break;
-    if (!picked.includes(tech) && !picked.some(t => t.layer === tech.layer)) picked.push(tech);
+
+  if (els.selectedRecipeTitle) {
+    els.selectedRecipeTitle.textContent = isEmpty
+      ? "構成を選んでください"
+      : recipe
+        ? `${recipe.nameJa}${adjusted ? "（調整済み）" : ""}`
+        : "カスタム構成";
   }
-  state.selected = picked.slice(0, 3).map(t => t.id);
-  renderCards();
-  buildPrompt();
+
+  if (els.selectedRecipeMeta) {
+    els.selectedRecipeMeta.textContent = isEmpty
+      ? "上の候補、または全60技法から選べます。"
+      : [state.purpose, state.tone, `${selectedTechniques.length}技法`].filter(Boolean).join(" / ");
+  }
+
+  if (els.selectedTechniques) {
+    els.selectedTechniques.innerHTML = selectedTechniques.length
+      ? selectedTechniques
+        .map(technique => `<span class="technique-chip">${escapeHTML(technique.nameJa)}</span>`)
+        .join("")
+      : `<span class="empty-selection">技法未選択</span>`;
+  }
+
+  updateActionStates();
 }
 
-function purposeLabel() {
-  return els.purpose.selectedOptions[0]?.textContent.trim() || "";
+function matches(technique) {
+  const query = (els.search?.value || "").trim().toLowerCase();
+  const category = els.category?.value || "";
+  const intent = els.intent?.value || "";
+  const haystack = [
+    technique.id,
+    technique.nameJa,
+    technique.nameEn,
+    technique.definition,
+    technique.designAction,
+    ...(technique.visualCues || []),
+    ...(technique.intentTags || [])
+  ].join(" ").toLowerCase();
+
+  return (!query || haystack.includes(query)) &&
+    (!category || technique.category === category) &&
+    (!intent || (technique.intentTags || []).includes(intent));
 }
 
-function scoredRecipes() {
-  if (!state.recipes) return [];
-  const currentPurpose = purposeLabel();
-  return state.recipes.recipes
-    .map(recipe => {
-      let score = 0;
-      if (recipe.purpose.some(p => currentPurpose.includes(p) || p.includes(currentPurpose))) score += 4;
-      if (recipe.tone.includes(state.tone)) score += 3;
-      for (const techId of state.selected) {
-        if (recipe.techniqueIds.includes(techId)) score += 1;
-      }
-      return { recipe, score };
-    })
-    .sort((a, b) => b.score - a.score || a.recipe.nameJa.localeCompare(b.recipe.nameJa, "ja"))
-    .slice(0, 3)
-    .map(item => item.recipe);
+function renderFilters() {
+  if (!state.data) return;
+  state.loading = false;
+  state.error = null;
+  document.documentElement.dataset.atlasState = "ready";
+  initializeControls();
+
+  if (els.category) {
+    const current = els.category.value;
+    els.category.innerHTML = `<option value="">すべての分類</option>` +
+      Object.entries(state.data.categories || {})
+        .map(([id, label]) => `<option value="${escapeHTML(id)}">${escapeHTML(label)}</option>`)
+        .join("");
+    if (Array.from(els.category.options).some(option => option.value === current)) {
+      els.category.value = current;
+    }
+  }
+
+  if (els.intent) {
+    const current = els.intent.value;
+    const intents = uniq((state.data.techniques || []).flatMap(technique => technique.intentTags || []));
+    els.intent.innerHTML = `<option value="">すべての意図</option>` +
+      intents.map(tag => `<option value="${escapeHTML(tag)}">${escapeHTML(tag)}</option>`).join("");
+    if (Array.from(els.intent.options).some(option => option.value === current)) {
+      els.intent.value = current;
+    }
+  }
+
+  updateActionStates();
 }
 
-function renderDirections() {
-  const recipes = scoredRecipes();
-  if (!els.directions || recipes.length === 0) return;
-  els.directions.innerHTML = recipes.map((recipe, index) => {
-    const active = recipe.techniqueIds.slice(0, 3).every(id => state.selected.includes(id));
-    const names = recipe.techniqueIds.map(id => byId(id)?.nameEn || id).join(" + ");
+function renderCards() {
+  if (!state.data) return;
+  const techniques = state.data.techniques || [];
+  const visible = techniques.filter(matches);
+
+  if (els.techniqueCount) {
+    els.techniqueCount.textContent = `${visible.length} / ${techniques.length} 技法`;
+  }
+  if (els.selectedCount) {
+    els.selectedCount.textContent = `${state.selected.length} / ${MAX_SELECTION} 選択`;
+  }
+  if (els.atlasDone) {
+    els.atlasDone.textContent = state.selected.length
+      ? `${state.selected.length}件を反映して閉じる`
+      : "選択せず閉じる";
+  }
+
+  if (els.grid) {
+    if (!visible.length) {
+      els.grid.innerHTML = `
+        <div class="empty-state" role="status">
+          <strong>該当する技法がありません</strong>
+          <span>検索語を短くするか、分類・意図を「すべて」に戻してください。</span>
+        </div>
+      `;
+    } else {
+      els.grid.innerHTML = visible.map(technique => {
+        const selected = state.selected.includes(technique.id);
+        const examples = (state.examples?.examples || [])
+          .filter(example => example.techniqueId === technique.id);
+        const namedCount = examples.filter(example => example.exampleType === "named-work").length;
+        const exampleLabel = namedCount ? `具体作例 ${namedCount}` : `参考例 ${examples.length}`;
+
+        return `
+          <article class="tech-card technique-card ${selected ? "is-selected" : ""}" data-id="${escapeHTML(technique.id)}">
+            <img src="${escapeHTML(specimenSrc(technique))}" alt="${escapeHTML(technique.nameJa)}の構成見本" loading="lazy">
+            <div class="tech-body">
+              <p class="eyebrow">${escapeHTML(state.data.categories?.[technique.category] || technique.category)} / ${escapeHTML(LAYER_LABELS[technique.layer] || technique.layer)}</p>
+              <h3>${escapeHTML(technique.nameJa)}<span>${escapeHTML(technique.nameEn)}</span></h3>
+              <p class="tech-definition">${escapeHTML(technique.definition)}</p>
+              <div class="tags">
+                <span class="example-tag ${namedCount ? "is-named" : ""}">${escapeHTML(exampleLabel)}</span>
+                ${(technique.intentTags || []).map(tag => `<span>${escapeHTML(tag)}</span>`).join("")}
+              </div>
+              <div class="tech-actions">
+                <button
+                  class="tech-select"
+                  type="button"
+                  data-action="toggle-technique"
+                  data-technique-id="${escapeHTML(technique.id)}"
+                  aria-pressed="${selected}"
+                >${selected ? "選択中・外す" : "この技法を選ぶ"}</button>
+                <button
+                  class="tech-detail secondary"
+                  type="button"
+                  data-action="show-detail"
+                  data-technique-id="${escapeHTML(technique.id)}"
+                >詳細</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+  }
+
+  renderWarnings();
+  updateActionStates();
+}
+
+function renderWarnings() {
+  if (!els.warning || !state.data) return;
+  const selectedTechniques = state.selected.map(byId).filter(Boolean);
+  const layerCounts = selectedTechniques.reduce((counts, technique) => {
+    counts[technique.layer] = (counts[technique.layer] || 0) + 1;
+    return counts;
+  }, {});
+  const repeatedLayers = Object.entries(layerCounts)
+    .filter(([, count]) => count > 1)
+    .map(([layer]) => LAYER_LABELS[layer] || layer);
+
+  let message = state.selectionNotice;
+  if (!message && repeatedLayers.length) {
+    message = `同じ層「${repeatedLayers.join("・")}」が重複しています。意図した重なりか確認してください。`;
+  }
+
+  els.warning.hidden = !message;
+  els.warning.textContent = message;
+  els.warning.setAttribute("role", state.selectionNotice ? "alert" : "status");
+  els.warning.setAttribute("aria-live", state.selectionNotice ? "assertive" : "polite");
+}
+
+function renderSources(techniques) {
+  if (!els.sourcePanel || !state.data) return;
+  if (!techniques.length) {
+    els.sourcePanel.innerHTML = `<p class="empty-state">技法を選ぶと、出典と参考例が表示されます。</p>`;
+    return;
+  }
+
+  els.sourcePanel.innerHTML = techniques.map(technique => {
+    const sources = (technique.sourceIds || [])
+      .map(sourceId => state.data.sources?.find(source => source.id === sourceId))
+      .filter(Boolean);
+    const examples = (state.examples?.examples || [])
+      .filter(example => example.techniqueId === technique.id)
+      .sort((a, b) => {
+        const rank = value => value.exampleType === "named-work" ? 0 : 1;
+        return rank(a) - rank(b) || String(a.title).localeCompare(String(b.title), "ja");
+      });
+
     return `
-      <article class="direction-card ${active ? "is-active" : ""}">
-        <h3>${String.fromCharCode(65 + index)}. ${recipe.nameJa}</h3>
-        <p>${recipe.direction}</p>
-        <p>${names}</p>
-        <button type="button" data-action="apply-direction" data-recipe="${recipe.id}">${active ? "適用中" : "この方向で組む"}</button>
-      </article>
+      <section class="source-group">
+        <h3>${escapeHTML(technique.nameJa)} / ${escapeHTML(technique.nameEn)}</h3>
+        <div class="source-links">
+          <h4>出典</h4>
+          ${sources.length
+            ? `<ul>${sources.map(source => `
+              <li>
+                <a href="${escapeHTML(safeUrl(source.url))}" target="_blank" rel="noreferrer">${escapeHTML(source.title)}</a>
+                <span>${escapeHTML([source.creator, source.year].filter(Boolean).join(" / "))}</span>
+              </li>
+            `).join("")}</ul>`
+            : `<p>未登録</p>`}
+        </div>
+        <div class="example-links">
+          <h4>参考例</h4>
+          ${examples.length
+            ? `<ul>${examples.map(example => `
+              <li>
+                <a href="${escapeHTML(safeUrl(example.url))}" target="_blank" rel="noreferrer">${escapeHTML(example.title)}</a>
+                <span>${escapeHTML([example.creator, example.year].filter(Boolean).join(" / "))}</span>
+              </li>
+            `).join("")}</ul>`
+            : `<p>未登録</p>`}
+        </div>
+      </section>
     `;
   }).join("");
 }
 
-function applyDirection(recipeId) {
-  const recipe = state.recipes.recipes.find(item => item.id === recipeId);
-  if (!recipe) return;
-  state.selected = recipe.techniqueIds.slice(0, 3);
+function promptSignature() {
+  return JSON.stringify({
+    selected: state.selected,
+    tone: state.tone,
+    title: getControlText(els.title).trim(),
+    format: getControlText(els.format),
+    distance: getControlText(els.distance),
+    purpose: getControlText(els.purpose)
+  });
+}
+
+function toneDirection() {
+  return TONE_DIRECTIONS[state.tone] ||
+    `Translate the selected Japanese tone "${state.tone}" into hierarchy, density, spacing, image treatment, and surface choices.`;
+}
+
+function generatedPrompt(techniques) {
+  const title = getControlText(els.title).trim() || "AI and Design Lab";
+  const format = getControlText(els.format) || "A3 portrait poster";
+  const distance = getControlText(els.distance) || "readable from 3 to 5 meters";
+  const purpose = getControlText(els.purpose) || state.purpose || "poster";
+  const modules = techniques.map(technique =>
+    `- ${technique.nameEn} (${technique.nameJa}): ${technique.designAction} ${technique.promptModule}`
+  ).join("\n");
+  const cues = techniques.map(technique =>
+    `- ${technique.nameEn}: ${(technique.visualCues || []).join(", ")}`
+  ).join("\n");
+  const negatives = uniq(techniques.flatMap(technique =>
+    [technique.negativeModule, ...(technique.avoid || [])]
+  )).join("; ");
+
+  return `Create a ${format} for "${title}".
+Purpose: ${purpose}.
+Viewing condition: ${distance}.
+
+Exact title and reading order:
+Keep the exact phrase "${title}" fully legible. Make it the dominant message, then lead the eye through supporting information in one deliberate sequence.
+
+Selected tone:
+${state.tone}. ${toneDirection()}
+
+Technique operations:
+${modules}
+
+Visual cues to preserve:
+${cues}
+
+Composition standard:
+Translate each named technique into hierarchy, alignment, crop, image handling, spacing, and surface decisions. Make the result feel edited and structurally intentional. Use two or three clearly differentiated layers instead of decorative style labels. Preserve enough contrast for the stated viewing condition.
+
+Negative prompt:
+${negatives || "no generic poster, no vague AI imagery, no misspelled title, no decorative clutter, no stock corporate look"}.`;
+}
+
+function renderPromptTechniqueList(techniques) {
+  if (!els.promptTechniqueList) return;
+  els.promptTechniqueList.innerHTML = techniques.length
+    ? techniques
+      .map(technique => `<span class="technique-chip">${escapeHTML(technique.nameJa)}</span>`)
+      .join("")
+    : `<span class="empty-selection">技法未選択</span>`;
+}
+
+function buildPrompt({ force = false } = {}) {
+  const techniques = state.selected.map(byId).filter(Boolean);
+  renderPromptTechniqueList(techniques);
+  renderSources(techniques);
+
+  if (!techniques.length) {
+    setControlText(els.prompt, "");
+    state.promptSignature = "";
+    state.promptDirty = false;
+    if (els.copyState) {
+      els.copyState.textContent = "";
+      els.copyState.classList.remove("is-success");
+    }
+    updateActionStates();
+    return;
+  }
+
+  const signature = promptSignature();
+  if (force || !state.promptDirty || signature !== state.promptSignature) {
+    setControlText(els.prompt, generatedPrompt(techniques));
+    state.promptSignature = signature;
+    state.promptDirty = false;
+    if (els.copyState) {
+      els.copyState.textContent = "";
+      els.copyState.classList.remove("is-success");
+    }
+  }
+  updateActionStates();
+}
+
+function renderAll() {
+  renderRecipeList();
+  renderSelectionTray();
   renderCards();
   buildPrompt();
-  els.prompt.value = `Direction: ${recipe.nameJa} / ${recipe.nameEn}
-${recipe.direction}
+}
 
-${els.prompt.value}
+function applyRecipe(recipeId) {
+  const recipe = state.recipes?.recipes?.find(item => item.id === recipeId);
+  if (!recipe) return;
+  state.activeRecipeId = recipe.id;
+  state.selected = (recipe.techniqueIds || []).slice(0, MAX_SELECTION);
+  state.selectionNotice = "";
+  renderAll();
+}
 
-Registration hint:
-python3 scripts/register_direction.py --title "${els.title.value.trim() || "AI and Design Lab"}" --route "${recipe.id}" --techniques "${recipe.techniqueIds.join(",")}" --purpose "${purposeLabel()}" --notes "selected from atlas UI"`;
-  syncPromptDock();
+function recommend() {
+  const topRecipe = scoredRecipes(4)[0];
+  if (topRecipe) {
+    applyRecipe(topRecipe.id);
+  } else {
+    state.activeRecipeId = null;
+    state.selected = [];
+    renderAll();
+  }
+}
+
+function toggleTechnique(id) {
+  if (!byId(id)) return;
+  if (state.selected.includes(id)) {
+    state.selected = state.selected.filter(item => item !== id);
+    state.selectionNotice = "";
+    if (!state.selected.length) state.activeRecipeId = null;
+    renderAll();
+    return;
+  }
+
+  if (state.selected.length >= MAX_SELECTION) {
+    state.selectionNotice = "技法は最大3件までです。ひとつ外してから追加してください。";
+    renderWarnings();
+    return;
+  }
+
+  state.selected = [...state.selected, id];
+  state.selectionNotice = "";
+  renderAll();
+}
+
+function clearSelection() {
+  state.selected = [];
+  state.activeRecipeId = null;
+  state.selectionNotice = "";
+  renderAll();
+}
+
+function showDetail(id) {
+  const technique = byId(id);
+  if (!technique || !els.detailDialog) return;
+  const sources = (technique.sourceIds || [])
+    .map(sourceId => state.data.sources?.find(source => source.id === sourceId))
+    .filter(Boolean);
+  const examples = (state.examples?.examples || [])
+    .filter(example => example.techniqueId === id)
+    .sort((a, b) => {
+      const rank = value => value.exampleType === "named-work" ? 0 : 1;
+      return rank(a) - rank(b) || String(a.title).localeCompare(String(b.title), "ja");
+    });
+
+  if (els.detailImage) {
+    els.detailImage.src = specimenSrc(technique);
+    els.detailImage.alt = `${technique.nameJa}の構成見本`;
+  }
+  if (els.detailCategory) {
+    els.detailCategory.textContent = `${state.data.categories?.[technique.category] || technique.category} / ${technique.period}`;
+  }
+  if (els.detailTitle) els.detailTitle.textContent = `${technique.nameJa} / ${technique.nameEn}`;
+  if (els.detailDefinition) els.detailDefinition.textContent = technique.definition;
+  if (els.detailAction) els.detailAction.textContent = technique.designAction;
+  if (els.detailBest) els.detailBest.textContent = (technique.bestFor || []).join("、");
+  if (els.detailAvoid) els.detailAvoid.textContent = (technique.avoid || []).join(" / ");
+  if (els.detailSources) {
+    els.detailSources.innerHTML = sources.length
+      ? sources.map(source => `
+        <p>
+          <a href="${escapeHTML(safeUrl(source.url))}" target="_blank" rel="noreferrer">${escapeHTML(source.title)}</a>
+          <span>${escapeHTML([source.creator, source.year].filter(Boolean).join(" / "))}</span>
+        </p>
+      `).join("")
+      : "未登録";
+  }
+  if (els.detailExamples) {
+    els.detailExamples.innerHTML = examples.length
+      ? examples.map(example => {
+        const typeLabel = example.exampleType === "named-work" ? "具体作例" : "参照入口";
+        const meta = [example.creator, example.year].filter(Boolean).join(" / ");
+        return `
+          <p>
+            <span class="example-kind">${typeLabel}</span>
+            <a href="${escapeHTML(safeUrl(example.url))}" target="_blank" rel="noreferrer">${escapeHTML(example.title)}</a><br>
+            <em>${escapeHTML(meta)}</em><br>
+            <span>${escapeHTML(example.why)}</span><br>
+            <small>${escapeHTML(example.rightsNote)}</small>
+          </p>
+        `;
+      }).join("")
+      : "未登録";
+  }
+
+  openDialog(els.detailDialog);
+}
+
+let lastAtlasTrigger = null;
+let lastPromptTrigger = null;
+
+function openDialog(dialog, trigger = null) {
+  if (!dialog || dialog.open) return;
+  if (typeof dialog.showModal === "function") dialog.showModal();
+  else dialog.setAttribute("open", "");
+  window.requestAnimationFrame(() => {
+    const focusTarget = dialog.querySelector(
+      "input:not([disabled]), select:not([disabled]), button:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])"
+    );
+    focusTarget?.focus({ preventScroll: true });
+  });
+  if (dialog === els.atlasDialog) lastAtlasTrigger = trigger;
+  if (dialog === els.promptDialog) lastPromptTrigger = trigger;
+}
+
+function closeDialog(dialog) {
+  if (!dialog?.open) return;
+  if (typeof dialog.close === "function") dialog.close();
+  else dialog.removeAttribute("open");
+}
+
+function openAtlas(trigger) {
+  if (state.loading || state.error) return;
+  renderCards();
+  openDialog(els.atlasDialog, trigger);
+}
+
+function openPrompt(trigger) {
+  if (!state.selected.length || state.loading || state.error) return;
+  buildPrompt();
+  openDialog(els.promptDialog, trigger);
+}
+
+async function writeClipboard(text) {
+  if (navigator.clipboard?.writeText && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const temporary = document.createElement("textarea");
+  temporary.value = text;
+  temporary.setAttribute("readonly", "");
+  temporary.style.position = "fixed";
+  temporary.style.opacity = "0";
+  document.body.append(temporary);
+  temporary.select();
+  const copied = document.execCommand("copy");
+  temporary.remove();
+  if (!copied) throw new Error("copy command failed");
+}
+
+async function copyPrompt() {
+  if (!state.selected.length || !els.prompt) return;
+  const text = getControlText(els.prompt);
+  try {
+    await writeClipboard(text);
+    if (els.copyState) {
+      els.copyState.textContent = "プロンプトをコピーしました。";
+      els.copyState.classList.add("is-success");
+    }
+  } catch {
+    if (els.copyState) {
+      els.copyState.textContent = "コピーできませんでした。本文を選択してコピーしてください。";
+      els.copyState.classList.remove("is-success");
+    }
+  }
+}
+
+function updateActionStates() {
+  const unavailable = state.loading || Boolean(state.error) || !state.data;
+  const hasSelection = state.selected.length > 0;
+
+  [els.atlasOpen, els.adjustTechniques].forEach(button => {
+    if (button) button.disabled = unavailable;
+  });
+  if (els.promptOpen) els.promptOpen.disabled = unavailable || !hasSelection;
+  if (els.copy) els.copy.disabled = unavailable || !hasSelection;
+  if (els.clearSelection) els.clearSelection.disabled = unavailable || !hasSelection;
+  if (els.atlasDone) els.atlasDone.disabled = unavailable;
+  [els.search, els.category, els.intent, els.tone].forEach(control => {
+    if (control) control.disabled = unavailable;
+  });
+  getPurposeButtons().forEach(button => {
+    button.disabled = unavailable;
+  });
+
+  if (els.copyState) {
+    els.copyState.setAttribute("aria-live", "polite");
+    els.copyState.setAttribute("role", "status");
+  }
+}
+
+function setLoadingState() {
+  state.loading = true;
+  state.error = null;
+  state.selected = [];
+  state.activeRecipeId = null;
+  state.selectionNotice = "";
+  document.documentElement.dataset.atlasState = "loading";
+
+  if (els.recipes) {
+    els.recipes.innerHTML = `<div class="loading-state" role="status">構成レシピを読み込んでいます…</div>`;
+    els.recipes.setAttribute("aria-busy", "true");
+  }
+  if (els.grid) {
+    els.grid.innerHTML = `<div class="loading-state" role="status">60技法を読み込んでいます…</div>`;
+    els.grid.setAttribute("aria-busy", "true");
+  }
+  if (els.techniqueCount) els.techniqueCount.textContent = "読込中";
+  if (els.selectedCount) els.selectedCount.textContent = `0 / ${MAX_SELECTION} 選択`;
+  if (els.selectedRecipeTitle) els.selectedRecipeTitle.textContent = "読み込んでいます…";
+  if (els.selectedRecipeMeta) els.selectedRecipeMeta.textContent = "";
+  setControlText(els.prompt, "");
+  updateActionStates();
+}
+
+function renderLoadError(error) {
+  state.loading = false;
+  state.error = error;
+  state.data = null;
+  state.recipes = null;
+  state.examples = null;
+  document.documentElement.dataset.atlasState = "error";
+  const message = `
+    <div class="error-state" role="alert">
+      <strong>データを読み込めませんでした</strong>
+      <span>通信状態を確認して、もう一度お試しください。</span>
+      <button type="button" data-action="retry-load">再読み込み</button>
+    </div>
+  `;
+
+  if (els.recipes) {
+    els.recipes.innerHTML = message;
+    els.recipes.removeAttribute("aria-busy");
+  }
+  if (els.grid) {
+    els.grid.innerHTML = message;
+    els.grid.removeAttribute("aria-busy");
+  }
+  if (els.techniqueCount) els.techniqueCount.textContent = "読込失敗";
+  if (els.selectedRecipeTitle) els.selectedRecipeTitle.textContent = "構成を読み込めませんでした";
+  if (els.selectedRecipeMeta) els.selectedRecipeMeta.textContent = "再読み込みしてください。";
+  if (els.warning) {
+    els.warning.hidden = false;
+    els.warning.textContent = "技法データの読み込みに失敗しました。";
+    els.warning.setAttribute("role", "alert");
+  }
+  updateActionStates();
+}
+
+function validateLoadedData(bundle) {
+  if (!bundle?.techniques?.techniques || !Array.isArray(bundle.techniques.techniques)) {
+    throw new Error("techniques data is invalid");
+  }
+  if (!bundle?.recipes?.recipes || !Array.isArray(bundle.recipes.recipes)) {
+    throw new Error("recipes data is invalid");
+  }
+  if (!bundle?.examples?.examples || !Array.isArray(bundle.examples.examples)) {
+    throw new Error("reference examples data is invalid");
+  }
+}
+
+async function fetchJson(path) {
+  const response = await fetch(path);
+  if (!response.ok) throw new Error(`${path}: ${response.status}`);
+  return response.json();
 }
 
 async function init() {
-  if (window.__ATLAS_BUNDLED__) {
-    state.data = window.__ATLAS_BUNDLED__.techniques;
-    state.recipes = window.__ATLAS_BUNDLED__.recipes;
-    state.examples = window.__ATLAS_BUNDLED__.examples;
-  } else {
-    const [techRes, recipeRes, exampleRes] = await Promise.all([
-      fetch("../data/techniques.json"),
-      fetch("../data/recipes.json"),
-      fetch("../data/reference-examples.json")
-    ]);
-    state.data = await techRes.json();
-    state.recipes = await recipeRes.json();
-    state.examples = await exampleRes.json();
-  }
-  renderFilters();
-  renderCards();
-  recommend();
-  if (window.matchMedia("(max-width: 720px)").matches) {
-    els.optionPanel?.removeAttribute("open");
+  setLoadingState();
+  try {
+    let bundle;
+    if (window.__ATLAS_BUNDLED__) {
+      bundle = window.__ATLAS_BUNDLED__;
+    } else {
+      const [techniques, recipes, examples] = await Promise.all([
+        fetchJson("../data/techniques.json"),
+        fetchJson("../data/recipes.json"),
+        fetchJson("../data/reference-examples.json")
+      ]);
+      bundle = { techniques, recipes, examples };
+    }
+
+    validateLoadedData(bundle);
+    state.data = bundle.techniques;
+    state.recipes = bundle.recipes;
+    state.examples = bundle.examples;
+    renderFilters();
+    renderCards();
+    recommend();
+    els.recipes?.removeAttribute("aria-busy");
+    els.grid?.removeAttribute("aria-busy");
+  } catch (error) {
+    renderLoadError(error);
   }
 }
 
-function copyPrompt() {
-  navigator.clipboard.writeText(els.dockPrompt?.value || els.prompt.value);
-  if (els.promptState) {
-    els.promptState.textContent = "コピー済み";
-    els.promptState.classList.add("is-updated");
-  }
-  if (els.dockPreview) {
-    els.dockPreview.textContent = "コピー済み";
-  }
+function activatePurpose(button) {
+  const purpose = button?.dataset.purposeValue;
+  if (!purpose || purpose === state.purpose) return;
+  state.purpose = purpose;
+  state.activeRecipeId = null;
+  updatePurposeTabs();
+  syncPurposeSelect();
+  if (state.data) recommend();
 }
 
-function setDockSize(size) {
-  const current = els.promptDock?.dataset.size || "compact";
-  const sizes = ["compact", "standard", "expanded"];
-  if (size === "next") {
-    const next = sizes[Math.min(sizes.indexOf(current) + 1, sizes.length - 1)];
-    els.promptDock.dataset.size = next;
-  } else {
-    els.promptDock.dataset.size = size;
-  }
-  if (els.dockPrompt && els.promptDock.dataset.size !== "compact") {
-    els.dockPrompt.focus({ preventScroll: true });
-  }
+function handlePurposeKeydown(event) {
+  const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+  if (!keys.includes(event.key)) return;
+  const buttons = getPurposeButtons().filter(button => !button.disabled);
+  const currentIndex = buttons.indexOf(event.target.closest("[data-purpose-value]"));
+  if (currentIndex < 0 || !buttons.length) return;
+  event.preventDefault();
+
+  let nextIndex = currentIndex;
+  if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+  if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % buttons.length;
+  if (event.key === "Home") nextIndex = 0;
+  if (event.key === "End") nextIndex = buttons.length - 1;
+  buttons[nextIndex].focus();
+  activatePurpose(buttons[nextIndex]);
 }
 
 document.addEventListener("click", event => {
-  const card = event.target.closest(".tech-card");
-  const action = event.target.dataset.action;
-  if (card && action === "select") toggleSelect(card.dataset.id);
-  if (card && action === "detail") showDetail(card.dataset.id);
-  if (event.target.dataset.action === "remove-selected") toggleSelect(event.target.dataset.id);
-  if (event.target.id === "recommendButton") recommend();
-  if (event.target.id === "clearButton" || event.target.id === "headerClearButton") clearSelection();
-  if (event.target.id === "copyButton" || event.target.id === "dockCopyButton") copyPrompt();
-  if (event.target.id === "dockExpandButton") setDockSize("next");
-  if (event.target.id === "dockShrinkButton") setDockSize("compact");
-  if (event.target.id === "sourcesButton") els.sourcePanel.hidden = !els.sourcePanel.hidden;
-  if (event.target.id === "directionsButton") renderDirections();
-  if (event.target.dataset.action === "apply-direction") applyDirection(event.target.dataset.recipe);
-  if (event.target.id === "closeDialog") els.dialog.close();
-  if (event.target.classList.contains("mode")) {
-    document.querySelectorAll(".mode").forEach(button => button.classList.remove("is-active"));
-    event.target.classList.add("is-active");
-    state.tone = event.target.dataset.tone;
-    buildPrompt();
+  const target = event.target.closest("button, [data-action]");
+  if (!target) return;
+
+  const purposeButton = target.closest("[data-purpose-value]");
+  if (purposeButton && els.purposeTabs?.contains(purposeButton)) {
+    activatePurpose(purposeButton);
+    return;
+  }
+
+  const action = target.dataset.action;
+  if (action === "select-recipe") applyRecipe(target.dataset.recipeId);
+  if (action === "toggle-technique" || action === "select") {
+    toggleTechnique(target.dataset.techniqueId || target.closest("[data-id]")?.dataset.id);
+  }
+  if (action === "remove-technique" || action === "remove-selected") {
+    toggleTechnique(target.dataset.techniqueId || target.dataset.id);
+  }
+  if (action === "show-detail" || action === "detail") {
+    showDetail(target.dataset.techniqueId || target.closest("[data-id]")?.dataset.id);
+  }
+  if (action === "retry-load") init();
+
+  if (target.id === "atlasOpenButton" || target.id === "adjustTechniquesButton") {
+    openAtlas(target);
+  }
+  if (target.id === "atlasCloseButton" || target.id === "atlasDoneButton") {
+    closeDialog(els.atlasDialog);
+  }
+  if (target.id === "promptOpenButton") openPrompt(target);
+  if (target.id === "promptAdjustButton") {
+    closeDialog(els.promptDialog);
+    openAtlas(target);
+  }
+  if (target.id === "promptCloseButton") closeDialog(els.promptDialog);
+  if (target.id === "closeDialog") closeDialog(els.detailDialog);
+  if (target.id === "clearSelectionButton") clearSelection();
+  if (target.id === "copyButton") copyPrompt();
+});
+
+els.purposeTabs?.addEventListener("keydown", handlePurposeKeydown);
+
+els.tone?.addEventListener("change", () => {
+  state.tone = els.tone.value || "知的";
+  state.activeRecipeId = null;
+  if (state.data) recommend();
+});
+
+[els.search, els.category, els.intent].forEach(control => {
+  control?.addEventListener("input", () => {
+    state.selectionNotice = "";
+    renderCards();
+  });
+});
+
+[els.title, els.format, els.distance, els.purpose].forEach(control => {
+  control?.addEventListener("input", () => buildPrompt());
+  control?.addEventListener("change", () => buildPrompt());
+});
+
+els.prompt?.addEventListener("input", () => {
+  state.promptDirty = true;
+  if (els.copyState) {
+    els.copyState.textContent = "";
+    els.copyState.classList.remove("is-success");
   }
 });
 
-[els.search, els.category, els.intent].forEach(el => el.addEventListener("input", () => {
-  renderCards();
-  buildPrompt();
-}));
-[els.title, els.format, els.distance, els.purpose].forEach(el => el.addEventListener("input", buildPrompt));
-els.dockPrompt?.addEventListener("input", () => {
-  els.prompt.value = els.dockPrompt.value;
-  syncPromptDock();
+els.atlasDialog?.addEventListener("close", () => {
+  lastAtlasTrigger?.focus({ preventScroll: true });
+  lastAtlasTrigger = null;
+});
+
+els.promptDialog?.addEventListener("close", () => {
+  lastPromptTrigger?.focus({ preventScroll: true });
+  lastPromptTrigger = null;
 });
 
 init();
