@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUp, ArrowUpRight } from "@phosphor-icons/react";
 import styles from "./PublicGateway.module.css";
 
 const destinations = [
@@ -42,56 +42,74 @@ function ExternalIcon() {
 
 export function PublicGateway() {
   return (
-    <main className={styles.page}>
-      <section className={styles.identity} aria-labelledby="profile-name">
-        <h1 className={styles.name} id="profile-name" aria-label="Takashi Omori">
-          <span>TAKASHI</span>
-          <span>OMORI</span>
-        </h1>
+    <>
+      <main className={styles.page} id="top">
+        <section className={styles.identity} aria-labelledby="profile-name">
+          <h1 className={styles.name} id="profile-name" aria-label="Takashi Omori">
+            <span>TAKASHI</span>
+            <span>OMORI</span>
+          </h1>
 
-        <div className={styles.profile}>
-          <h2>大森 隆</h2>
-          <p className={styles.role}>大学教員／デザインディレクター／AI・DXアドバイザー</p>
-          <p className={styles.bio}>
-            倉敷芸術科学大学芸術学部芸術学科講師。デザイン実務を背景に、生成AI時代の創作教育と情報・体験設計に取り組んでいます。
-          </p>
-          <a
-            className={styles.researchmap}
-            href="https://researchmap.jp/t-omori?lang=ja"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="researchmapを新しいタブで開く"
-          >
-            <span>researchmap</span>
-            <ExternalIcon />
-          </a>
+          <div className={styles.profile}>
+            <h2>大森 隆</h2>
+            <p className={styles.role}>大学教員／デザインディレクター／AI・DXアドバイザー</p>
+            <p className={styles.bio}>
+              倉敷芸術科学大学芸術学部芸術学科講師。デザイン実務を背景に、生成AI時代の創作教育と情報・体験設計に取り組んでいます。
+            </p>
+            <a
+              className={styles.researchmap}
+              href="https://researchmap.jp/t-omori?lang=ja"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="researchmapを新しいタブで開く"
+            >
+              <span>researchmap</span>
+              <ExternalIcon />
+            </a>
+          </div>
+        </section>
+
+        <nav className={styles.index} aria-label="公開コンテンツ">
+          <ol className={styles.list}>
+            {destinations.map((destination) => (
+              <li className={styles.item} key={destination.number}>
+                <a
+                  className={styles.destination}
+                  href={destination.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${destination.title}を新しいタブで開く`}
+                >
+                  <span className={styles.number} aria-hidden="true">
+                    {destination.number}
+                  </span>
+                  <span className={styles.copy}>
+                    <span className={styles.title}>{destination.title}</span>
+                    <span className={styles.description}>{destination.description}</span>
+                  </span>
+                  <ArrowUpRight aria-hidden="true" className={styles.linkIcon} weight="thin" />
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </main>
+
+      <footer className={styles.footer}>
+        <div className={styles.footerInner}>
+          <div className={styles.footerBrand}>
+            <span className={styles.footerName}>TAKASHI OMORI</span>
+            <span className={styles.footerField}>DESIGN · EDUCATION · RESEARCH</span>
+          </div>
+          <div className={styles.footerMeta}>
+            <span>© 2026</span>
+            <a className={styles.pageTop} href="#top">
+              <span>PAGE TOP</span>
+              <ArrowUp aria-hidden="true" weight="thin" />
+            </a>
+          </div>
         </div>
-      </section>
-
-      <nav className={styles.index} aria-label="公開コンテンツ">
-        <ol className={styles.list}>
-          {destinations.map((destination) => (
-            <li className={styles.item} key={destination.number}>
-              <a
-                className={styles.destination}
-                href={destination.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${destination.title}を新しいタブで開く`}
-              >
-                <span className={styles.number} aria-hidden="true">
-                  {destination.number}
-                </span>
-                <span className={styles.copy}>
-                  <span className={styles.title}>{destination.title}</span>
-                  <span className={styles.description}>{destination.description}</span>
-                </span>
-                <ArrowUpRight aria-hidden="true" className={styles.linkIcon} weight="thin" />
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
-    </main>
+      </footer>
+    </>
   );
 }

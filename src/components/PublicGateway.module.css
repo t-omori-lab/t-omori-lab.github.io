@@ -177,6 +177,78 @@
   outline-offset: 0.45rem;
 }
 
+.footer {
+  background: var(--blue);
+  color: var(--paper);
+}
+
+.footerInner {
+  display: flex;
+  width: min(100%, 120rem);
+  min-height: 7.5rem;
+  margin: 0 auto;
+  padding: 2rem clamp(2rem, 4.2vw, 4.8rem);
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.footerBrand {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1.5rem, 3.5vw, 4rem);
+}
+
+.footerName {
+  font-family: var(--display);
+  font-size: clamp(2rem, 3.2vw, 3.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.footerField,
+.footerMeta {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.footerField {
+  opacity: 0.72;
+}
+
+.footerMeta {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  white-space: nowrap;
+}
+
+.pageTop {
+  display: inline-flex;
+  padding: 0.35rem 0;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgb(243 239 229 / 55%);
+  text-decoration: none;
+}
+
+.pageTop svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  transition: transform 180ms ease;
+}
+
+.pageTop:hover svg,
+.pageTop:focus-visible svg {
+  transform: translateY(-0.18rem);
+}
+
+.pageTop:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 0.35rem;
+}
+
 @media (max-width: 68rem) {
   .page {
     grid-template-columns: minmax(21rem, 0.78fr) minmax(31rem, 1.22fr);
@@ -209,12 +281,24 @@
   }
 
   .name {
-    font-size: clamp(4.8rem, 22.5vw, 8rem);
+    max-width: none;
+    font-size: clamp(2.1rem, 11vw, 4rem);
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+    white-space: nowrap;
+  }
+
+  .name span {
+    display: inline;
+  }
+
+  .name span + span {
+    margin-left: 0.18em;
   }
 
   .profile {
     max-width: 38rem;
-    padding-top: clamp(4rem, 13vh, 7rem);
+    padding-top: clamp(4rem, 11vh, 5.5rem);
   }
 
   .index {
@@ -234,6 +318,34 @@
 
   .title {
     font-size: clamp(1.72rem, 8vw, 2.4rem);
+  }
+
+  .footerInner {
+    min-height: 12rem;
+    padding: 2.2rem 1.35rem 2rem;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.75rem;
+  }
+
+  .footerBrand {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .footerName {
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+  }
+
+  .footerField {
+    font-size: 0.58rem;
+  }
+
+  .footerMeta {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
@@ -265,7 +377,8 @@
 @media (prefers-reduced-motion: reduce) {
   .researchmap,
   .researchmap svg,
-  .linkIcon {
+  .linkIcon,
+  .pageTop svg {
     transition: none;
   }
 }
