@@ -260,7 +260,7 @@
   }
 
   .name {
-    font-size: clamp(5.4rem, 10vw, 7.2rem);
+    font-size: clamp(4rem, 7.75vw, 5.5rem);
   }
 
   .destination {
