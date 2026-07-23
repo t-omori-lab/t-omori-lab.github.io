@@ -1,5 +1,5 @@
-import { PortfolioExperience } from "@/components/PortfolioExperience";
+import { PublicGateway } from "@/components/PublicGateway";
 
 export default function Home() {
-  return <PortfolioExperience />;
+  return <PublicGateway />;
 }

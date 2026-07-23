@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Takashi Omori — Designer, Director, Educator, AI & DX Advisor",
+  title: "Takashi Omori — Design, Education & Research",
   description:
-    "The portfolio of Takashi Omori: design, direction, education, research, and AI & DX advisory work.",
+    "大森隆のプロフィールと、デザイン・教育・研究・AIに関する公開プロジェクトへの入口。",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
