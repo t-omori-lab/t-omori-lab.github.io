@@ -62,10 +62,13 @@
         filter: grayscale(1) brightness(3.4);
       }
       .migaq-boot-final-logo,
-      .migaq-boot-q-accent,
       .migaq-boot-q-halo {
         opacity: 0;
         visibility: hidden;
+      }
+      .migaq-boot-q-accent {
+        opacity: 1;
+        visibility: visible;
       }
       .migaq-boot-stroke {
         fill: none;
@@ -78,18 +81,27 @@
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
       }
+      .migaq-boot-q-accent-stroke {
+        fill: none;
+        opacity: 0;
+        visibility: hidden;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-width: 27;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+      }
       [data-migaq-intro="first"] .migaq-boot-m { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 180ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-i { animation: migaq-boot-draw 180ms linear 540ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-g-ring { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 680ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-g-bar { animation: migaq-boot-draw 140ms linear 1020ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-a { animation: migaq-boot-draw 280ms cubic-bezier(0.45, 0, 0.3, 1) 1100ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-q-ring { animation: migaq-boot-draw 410ms cubic-bezier(0.45, 0, 0.3, 1) 1320ms 1 forwards; }
-      [data-migaq-intro="first"] .migaq-boot-q-tail { animation: migaq-boot-draw 170ms linear 1680ms 1 forwards; }
-      [data-migaq-intro="first"] .migaq-boot-q-accent {
-        animation: migaq-boot-accent 260ms cubic-bezier(0.16, 1, 0.3, 1) 1900ms 1 forwards;
+      [data-migaq-intro="first"] .migaq-boot-q-accent-stroke {
+        animation: migaq-boot-draw 260ms cubic-bezier(0.45, 0, 0.3, 1) 1780ms 1 forwards;
       }
       [data-migaq-intro="first"] .migaq-boot-q-halo {
-        animation: migaq-boot-q-pulse 620ms cubic-bezier(0.2, 0.75, 0.25, 1) 1880ms 1 both;
+        animation: migaq-boot-q-pulse 620ms cubic-bezier(0.2, 0.75, 0.25, 1) 1980ms 1 both;
       }
       [data-migaq-intro="first"] .migaq-boot-final-logo {
         animation: migaq-boot-final 180ms ease 2160ms 1 forwards;
@@ -101,11 +113,6 @@
       @keyframes migaq-boot-draw {
         from { opacity: 1; visibility: visible; stroke-dashoffset: 1; }
         to { opacity: 1; visibility: visible; stroke-dashoffset: 0; }
-      }
-      @keyframes migaq-boot-accent {
-        0% { opacity: 0; visibility: hidden; }
-        1% { opacity: 0; visibility: visible; }
-        100% { opacity: 1; visibility: visible; }
       }
       @keyframes migaq-boot-final {
         0% { opacity: 0; visibility: hidden; }
@@ -129,7 +136,7 @@
       }
       @media (prefers-reduced-motion: reduce) {
         #migaq-boot { transition-duration: 1ms; }
-        #migaq-boot::before, .migaq-boot-stroke, .migaq-boot-q-accent, .migaq-boot-q-halo, .migaq-boot-final-logo { animation: none !important; }
+        #migaq-boot::before, .migaq-boot-stroke, .migaq-boot-q-accent-stroke, .migaq-boot-q-accent, .migaq-boot-q-halo, .migaq-boot-final-logo { animation: none !important; }
         .migaq-boot-white-logo, .migaq-boot-q-accent, .migaq-boot-q-halo { display: none; }
         .migaq-boot-final-logo { opacity: 1; visibility: visible; }
       }
@@ -150,11 +157,13 @@
               <path class="migaq-boot-stroke migaq-boot-g-bar" pathLength="1" d="M304 67 L266 67" />
               <path class="migaq-boot-stroke migaq-boot-a" pathLength="1" d="M342 107 L384 23 L427 107" />
               <path class="migaq-boot-stroke migaq-boot-q-ring" pathLength="1" d="M503 22 C476 19 459 39 462 68 C464 94 483 110 509 107 C522 106 532 100 539 88 C547 58 531 25 503 22" />
-              <path class="migaq-boot-stroke migaq-boot-q-tail" pathLength="1" d="M513 88 L548 108" />
             </mask>
             <clipPath id="migaq-boot-accent-clip">
               <rect x="506" y="82" width="47" height="31" />
             </clipPath>
+            <mask id="migaq-boot-accent-reveal" maskUnits="userSpaceOnUse" x="490" y="72" width="76" height="58">
+              <path class="migaq-boot-q-accent-stroke" pathLength="1" d="M513 88 L548 108" />
+            </mask>
             <radialGradient id="migaq-boot-halo-gradient">
               <stop offset="0" stop-color="#8f61ff" stop-opacity="0.95" />
               <stop offset="0.42" stop-color="#35c7ff" stop-opacity="0.5" />
@@ -166,7 +175,7 @@
           </defs>
           <ellipse class="migaq-boot-q-halo" cx="530" cy="98" rx="40" ry="32" fill="url(#migaq-boot-halo-gradient)" filter="url(#migaq-boot-halo-blur)" />
           <image class="migaq-boot-white-logo" href="./assets/migaq-logotype.png" width="566" height="130" mask="url(#migaq-boot-reveal)" />
-          <image class="migaq-boot-q-accent" href="./assets/migaq-logotype.png" width="566" height="130" clip-path="url(#migaq-boot-accent-clip)" />
+          <image class="migaq-boot-q-accent" href="./assets/migaq-logotype.png" width="566" height="130" clip-path="url(#migaq-boot-accent-clip)" mask="url(#migaq-boot-accent-reveal)" />
           <image class="migaq-boot-final-logo" href="./assets/migaq-logotype.png" width="566" height="130" />
         </svg>
       </div>
