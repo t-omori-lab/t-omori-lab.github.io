@@ -599,6 +599,61 @@ textarea {
   font-size: 12px;
 }
 
+.atlas-selection-panel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  padding: 10px 28px;
+}
+
+.atlas-selection-heading {
+  min-width: 92px;
+}
+
+.atlas-selection-heading p {
+  margin: 0;
+}
+
+.atlas-selection-heading span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.atlas-selected-techniques {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+  min-height: 38px;
+}
+
+.atlas-selected-chip {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--blue);
+  background: var(--blue-soft);
+  color: var(--ink);
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.atlas-selected-chip span:last-child {
+  color: var(--blue);
+  font-size: 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.atlas-selected-chip:hover {
+  background: var(--paper-bright);
+}
+
 .atlas-toolbar {
   display: flex;
   justify-content: space-between;
@@ -1059,12 +1114,18 @@ textarea {
   }
 
   .tray-actions {
-    display: block;
+    display: flex;
     grid-column: auto;
+    gap: 8px;
+    align-items: center;
   }
 
   .tray-actions .text-action {
-    display: none;
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    padding: 8px 4px;
+    font-size: 12px;
   }
 
   .primary-action {
@@ -1186,6 +1247,14 @@ textarea {
     grid-template-columns: minmax(0, 1fr) auto;
   }
 
+  .tray-actions {
+    gap: 6px;
+  }
+
+  .tray-actions .primary-action {
+    padding: 10px 12px;
+  }
+
   .tray-summary .eyebrow,
   .tray-summary span {
     display: none;
@@ -1208,6 +1277,26 @@ textarea {
 
   .dialog-header p:last-child {
     display: none;
+  }
+
+  .atlas-selection-panel {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 10px 18px;
+  }
+
+  .atlas-selection-heading {
+    display: flex;
+    justify-content: space-between;
+    min-width: 0;
+  }
+
+  .atlas-selected-techniques {
+    min-height: 0;
+  }
+
+  .atlas-selected-chip {
+    min-height: 36px;
   }
 
   .technique-grid {
@@ -1312,7 +1401,7 @@ textarea {
       <section class="recipes" aria-labelledby="recipeHeading">
         <div class="section-heading">
           <h2 id="recipeHeading">おすすめの構成</h2>
-          <p>画像・文字・構成の異なる層から、相性のよい技法を3つ組み合わせています。</p>
+          <p>おすすめは3技法の構成です。必要に応じて1技法から使えます。</p>
         </div>
         <div id="recipeList" class="recipe-list" aria-live="polite" aria-busy="true">
           <p class="loading-state">構成を読み込んでいます。</p>
@@ -1330,7 +1419,7 @@ textarea {
         <span id="selectedRecipeMeta">用途に合う構成を選択すると、ここに反映されます。</span>
       </div>
       <div class="tray-techniques">
-        <p class="eyebrow">使用する3つの技法</p>
+        <p class="eyebrow">使用する技法（1〜3件）</p>
         <div id="selectedTechniques" class="selected-techniques"></div>
       </div>
       <div class="tray-actions">
@@ -1345,7 +1434,7 @@ textarea {
           <div>
             <p class="eyebrow">Technique library</p>
             <h2 id="atlasTitle">技法を調整する</h2>
-            <p>最大3件。構成・文字・画像・表面から異なる役割を選ぶと、まとまりやすくなります。</p>
+            <p>1〜3件を選択できます。1技法に集中するか、異なる役割を組み合わせてください。</p>
           </div>
           <button id="atlasCloseButton" class="quiet-button" type="button">閉じる</button>
         </header>
@@ -1365,9 +1454,19 @@ textarea {
           </label>
           <div class="atlas-status" aria-live="polite">
             <span id="techniqueCount">0件</span>
-            <strong id="selectedCount">0 / 3件選択</strong>
+            <strong id="selectedCount">0件選択（最大3件）</strong>
           </div>
         </div>
+
+        <section class="atlas-selection-panel" aria-labelledby="atlasSelectionHeading">
+          <div class="atlas-selection-heading">
+            <p id="atlasSelectionHeading" class="eyebrow">選択中の技法</p>
+            <span>1〜3件</span>
+          </div>
+          <div id="atlasSelectedTechniques" class="atlas-selected-techniques" aria-live="polite">
+            <span class="empty-selection">技法を選択してください。</span>
+          </div>
+        </section>
 
         <div class="atlas-toolbar">
           <div id="warningBox" class="warning" role="status" hidden></div>
@@ -1377,8 +1476,8 @@ textarea {
         <div id="techniqueGrid" class="technique-grid"></div>
 
         <footer class="dialog-footer">
-          <span id="atlasFooterState">最大3件まで選べます。</span>
-          <button id="atlasDoneButton" class="primary-action" type="button">この3件で構成する</button>
+          <span id="atlasFooterState">1技法から使えます。</span>
+          <button id="atlasDoneButton" class="primary-action" type="button">選択を反映して閉じる</button>
         </footer>
       </section>
     </dialog>
@@ -5959,9 +6058,11 @@ const els = {
   intent: document.querySelector("#intentSelect"),
   techniqueCount: document.querySelector("#techniqueCount"),
   selectedCount: document.querySelector("#selectedCount"),
+  atlasSelectedTechniques: document.querySelector("#atlasSelectedTechniques"),
   grid: document.querySelector("#techniqueGrid"),
   clearSelection: document.querySelector("#clearSelectionButton"),
   atlasDone: document.querySelector("#atlasDoneButton"),
+  atlasFooterState: document.querySelector("#atlasFooterState"),
   warning: document.querySelector("#warningBox"),
   promptDialog: document.querySelector("#promptDialog"),
   promptClose: document.querySelector("#promptCloseButton"),
@@ -6247,7 +6348,7 @@ function renderSelectionTray() {
   const selectedTechniques = state.selected.map(byId).filter(Boolean);
   const recipe = currentRecipe();
   const adjusted = recipe && !selectionMatchesRecipe(recipe);
-  const imageTechnique = (recipe?.techniqueIds || []).map(byId).find(Boolean) || selectedTechniques[0];
+  const imageTechnique = selectedTechniques[0] || (recipe?.techniqueIds || []).map(byId).find(Boolean);
   const isEmpty = selectedTechniques.length === 0;
 
   els.selectionTray.classList.toggle("is-empty", isEmpty);
@@ -6343,17 +6444,41 @@ function renderCards() {
   if (!state.data) return;
   const techniques = state.data.techniques || [];
   const visible = techniques.filter(matches);
+  const selectedTechniques = state.selected.map(byId).filter(Boolean);
 
   if (els.techniqueCount) {
     els.techniqueCount.textContent = `${visible.length} / ${techniques.length} 技法`;
   }
   if (els.selectedCount) {
-    els.selectedCount.textContent = `${state.selected.length} / ${MAX_SELECTION} 選択`;
+    els.selectedCount.textContent = state.selected.length
+      ? `${state.selected.length}件選択中（最大${MAX_SELECTION}件）`
+      : `0件選択（最大${MAX_SELECTION}件）`;
+  }
+  if (els.atlasSelectedTechniques) {
+    els.atlasSelectedTechniques.innerHTML = selectedTechniques.length
+      ? selectedTechniques.map(technique => `
+          <button
+            class="atlas-selected-chip"
+            type="button"
+            data-action="remove-selected"
+            data-technique-id="${escapeHTML(technique.id)}"
+            aria-label="${escapeHTML(technique.nameJa)}を外す"
+          >
+            <span>${escapeHTML(technique.nameJa)}</span>
+            <span aria-hidden="true">外す</span>
+          </button>
+        `).join("")
+      : `<span class="empty-selection">1〜3技法を選択してください。</span>`;
   }
   if (els.atlasDone) {
     els.atlasDone.textContent = state.selected.length
       ? `${state.selected.length}件を反映して閉じる`
       : "選択せず閉じる";
+  }
+  if (els.atlasFooterState) {
+    els.atlasFooterState.textContent = state.selected.length
+      ? `${state.selected.length}技法でプロンプトを作成できます。`
+      : "1技法から使えます。";
   }
 
   if (els.grid) {
@@ -6509,6 +6634,13 @@ function generatedPrompt(techniques) {
   const negatives = uniq(techniques.flatMap(technique =>
     [technique.negativeModule, ...(technique.avoid || [])]
   )).join("; ");
+  const singleTechnique = techniques.length === 1;
+  const operationHeading = singleTechnique
+    ? "Primary technique operation"
+    : "Technique operations";
+  const compositionStandard = singleTechnique
+    ? "Treat the selected technique as the primary design system for hierarchy, alignment, crop, image handling, spacing, and surface decisions. Build supporting information layers through scale and content roles without adding unrelated named styles. Preserve the technique's structural character and enough contrast for the stated viewing condition."
+    : "Translate each named technique into hierarchy, alignment, crop, image handling, spacing, and surface decisions. Give every technique a distinct role so the stack feels edited rather than mixed. Use clearly differentiated information layers instead of decorative style labels. Preserve enough contrast for the stated viewing condition.";
 
   return `Create a ${format} for "${title}".
 Purpose: ${purpose}.
@@ -6520,14 +6652,14 @@ Keep the exact phrase "${title}" fully legible. Make it the dominant message, th
 Selected tone:
 ${state.tone}. ${toneDirection()}
 
-Technique operations:
+${operationHeading}:
 ${modules}
 
 Visual cues to preserve:
 ${cues}
 
 Composition standard:
-Translate each named technique into hierarchy, alignment, crop, image handling, spacing, and surface decisions. Make the result feel edited and structurally intentional. Use two or three clearly differentiated layers instead of decorative style labels. Preserve enough contrast for the stated viewing condition.
+${compositionStandard}
 
 Negative prompt:
 ${negatives || "no generic poster, no vague AI imagery, no misspelled title, no decorative clutter, no stock corporate look"}.`;
@@ -6794,7 +6926,11 @@ function setLoadingState() {
     els.grid.setAttribute("aria-busy", "true");
   }
   if (els.techniqueCount) els.techniqueCount.textContent = "読込中";
-  if (els.selectedCount) els.selectedCount.textContent = `0 / ${MAX_SELECTION} 選択`;
+  if (els.selectedCount) els.selectedCount.textContent = `0件選択（最大${MAX_SELECTION}件）`;
+  if (els.atlasSelectedTechniques) {
+    els.atlasSelectedTechniques.innerHTML = `<span class="empty-selection">技法を読み込んでいます…</span>`;
+  }
+  if (els.atlasFooterState) els.atlasFooterState.textContent = "1技法から使えます。";
   if (els.selectedRecipeTitle) els.selectedRecipeTitle.textContent = "読み込んでいます…";
   if (els.selectedRecipeMeta) els.selectedRecipeMeta.textContent = "";
   setControlText(els.prompt, "");
