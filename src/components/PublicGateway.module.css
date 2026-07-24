@@ -235,19 +235,33 @@
 }
 
 .footer {
+  position: relative;
+  isolation: isolate;
   display: grid;
   min-height: 176px;
-  margin-inline: calc(-1 * var(--shell-gutter));
-  padding: 34px var(--shell-gutter) 30px;
+  margin-inline: 0;
+  padding: 34px 0 30px;
   grid-template-columns: minmax(180px, 1fr) minmax(320px, 0.72fr);
   align-content: center;
   gap: 32px clamp(48px, 7vw, 112px);
-  background: var(--gateway-ink);
+  background: transparent;
   color: var(--gateway-paper);
   font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.1em;
+}
+
+.footer::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--gateway-ink);
+  content: "";
 }
 
 .footerIdentity {

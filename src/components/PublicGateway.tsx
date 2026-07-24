@@ -8,11 +8,32 @@ const CONTACT_ADDRESS = ["t-omori", "kusa.ac.jp"].join("@");
 
 const destinations = [
   {
-    group: "START HERE",
+    group: "OVERVIEW",
     title: "PORTFOLIO SLIDES",
     description: "デザイン、教育、研究のプロジェクトと実績をまとめたスライド。",
     action: "VIEW SLIDES",
     href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/edit?usp=sharing",
+  },
+  {
+    group: "AI APP",
+    title: "MIGAQ",
+    description: "AIとの対話を通して、問いとアイデアを磨く思考支援ツール。",
+    action: "TRY MIGAQ",
+    href: "https://t-omori-lab.github.io/migaq/",
+  },
+  {
+    group: "DESIGN METHODS",
+    title: "POSTER METHODS",
+    description: "60の技法から1〜3つを選び、ポスター生成用プロンプトを組み立てる方法集。",
+    action: "EXPLORE METHODS",
+    href: "/poster-methods/",
+  },
+  {
+    group: "PUBLICATION",
+    title: "GEN-AI VISUAL BOOK",
+    description: "生成AIとの制作プロセスと問いを編んだビジュアルブック。",
+    action: "READ BOOK",
+    href: "https://drive.google.com/file/d/1RDhkIP67uziVJaAvVMrbocpFxY6_TM34/view?usp=sharing",
   },
   {
     group: "RESEARCH",
@@ -20,27 +41,6 @@ const destinations = [
     description: "「生成AI時代の創作教育における認識形成とZINEの役割」",
     action: "READ PAPER",
     href: "https://www.jstage.jst.go.jp/article/jsetstudy/2026/1/2026_JSET2026-1-B1/_article/-char/ja/",
-  },
-  {
-    group: "TOOLS",
-    title: "MIGAQ",
-    description: "AIとの対話を通して、問いとアイデアを磨く思考支援ツール。",
-    action: "TRY MIGAQ",
-    href: "https://t-omori-lab.github.io/migaq/",
-  },
-  {
-    group: "PRACTICE",
-    title: "GEN-AI VISUAL BOOK",
-    description: "生成AIとの制作プロセスと問いを編んだビジュアルブック。",
-    action: "READ BOOK",
-    href: "https://drive.google.com/file/d/1RDhkIP67uziVJaAvVMrbocpFxY6_TM34/view?usp=sharing",
-  },
-  {
-    group: null,
-    title: "POSTER METHODS",
-    description: "60の技法から1〜3つを選び、ポスター生成用プロンプトを組み立てる方法集。",
-    action: "EXPLORE METHODS",
-    href: "/poster-methods/",
   },
 ] as const;
 
