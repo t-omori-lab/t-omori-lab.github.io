@@ -10,35 +10,39 @@ const destinations = [
   {
     group: "OVERVIEW",
     title: "PORTFOLIO SLIDES",
-    description: "デザイン、教育、研究のプロジェクトと実績をまとめたスライド。",
+    description: "デザイン実務、教育、研究にまたがるプロジェクトと成果をまとめたポートフォリオ。",
     action: "VIEW SLIDES",
     href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/edit?usp=sharing",
   },
   {
     group: "AI APP",
     title: "MIGAQ",
-    description: "AIとの対話を通して、問いとアイデアを磨く思考支援ツール。",
+    description:
+      "大森隆のデザイン判断をモデル化し、AIとの対話と利用者自身の選択を通して、デザイン企画書の作成・更新を支援するアプリ。",
     action: "TRY MIGAQ",
     href: "https://t-omori-lab.github.io/migaq/",
   },
   {
     group: "DESIGN METHODS",
     title: "POSTER METHODS",
-    description: "60の技法から1〜3つを選び、ポスター生成用プロンプトを組み立てる方法集。",
+    description:
+      "60のデザイン技法を選び、組み合わせながら、ポスターの構成と生成AIへの指示を設計する方法集。",
     action: "EXPLORE METHODS",
     href: "/poster-methods/",
   },
   {
     group: "PUBLICATION",
     title: "GEN-AI VISUAL BOOK",
-    description: "生成AIとの制作プロセスと問いを編んだビジュアルブック。",
+    description:
+      "生成結果、制作過程、問い、編集判断を誌面上で関係づけ、AIを用いた創作が作品となる条件を考える、作品・教材としてのZINE。",
     action: "READ BOOK",
     href: "https://drive.google.com/file/d/1RDhkIP67uziVJaAvVMrbocpFxY6_TM34/view?usp=sharing",
   },
   {
     group: "RESEARCH",
-    title: "JSET研究発表／論文",
-    description: "「生成AI時代の創作教育における認識形成とZINEの役割」",
+    title: "日本教育工学会研究会 発表／論文",
+    description:
+      "GEN-AI VISUAL BOOKを媒介とする授業・地域実践から、生成AIをめぐる認識形成と、創作の意味や人間の寄与を考えるZINEの役割を検討した研究報告。",
     action: "READ PAPER",
     href: "https://www.jstage.jst.go.jp/article/jsetstudy/2026/1/2026_JSET2026-1-B1/_article/-char/ja/",
   },
