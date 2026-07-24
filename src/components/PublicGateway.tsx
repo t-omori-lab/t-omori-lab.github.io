@@ -12,7 +12,7 @@ const destinations = [
     title: "PORTFOLIO SLIDES",
     description: "デザイン実務、教育、研究にまたがるプロジェクトと成果をまとめたポートフォリオ。",
     action: "VIEW SLIDES",
-    href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/preview",
+    href: "https://docs.google.com/presentation/d/1IBqJGwzWgwmRxnaLpec1N2yb7wtOXMV6LqDEKn4Kc4I/preview",
   },
   {
     group: "AI APP",
