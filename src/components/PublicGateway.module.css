@@ -160,7 +160,6 @@
 .indexCopy {
   min-width: 0;
   padding: 17px 20px 16px 8px;
-  transition: transform 170ms ease;
 }
 
 .indexTitle,
@@ -216,10 +215,6 @@
   color: var(--gateway-accent);
 }
 
-.indexLink:focus-visible .indexCopy {
-  transform: translateX(6px);
-}
-
 @media (hover: hover) {
   .indexLink:hover {
     background: var(--gateway-accent-soft);
@@ -229,9 +224,6 @@
     color: var(--gateway-accent);
   }
 
-  .indexLink:hover .indexCopy {
-    transform: translateX(6px);
-  }
 }
 
 .footer {
@@ -264,13 +256,15 @@
   content: "";
 }
 
-.footerIdentity {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.footerPanel {
+  grid-column: 2;
 }
 
-.footerIdentity span:first-child {
+.footerCopyright {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  margin: 0;
   color: var(--gateway-footer-secondary);
 }
 
@@ -462,6 +456,12 @@
     font-size: 9px;
   }
 
+  .footerPanel,
+  .footerCopyright {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .footerLinks a,
   .footerLinks button {
     min-height: 42px;
@@ -479,7 +479,6 @@
 @media (prefers-reduced-motion: reduce) {
   .indexAction svg,
   .indexLink,
-  .indexCopy,
   .indexTitle,
   .footerLinks a,
   .footerLinks button,

@@ -12,7 +12,7 @@ const destinations = [
     title: "PORTFOLIO SLIDES",
     description: "デザイン実務、教育、研究にまたがるプロジェクトと成果をまとめたポートフォリオ。",
     action: "VIEW SLIDES",
-    href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/edit?usp=sharing",
+    href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/preview",
   },
   {
     group: "AI APP",
@@ -122,11 +122,7 @@ export function PublicGateway() {
       </main>
 
       <footer className={styles.footer}>
-        <div className={styles.footerIdentity}>
-          <span>PROFILE / CONTACT</span>
-          <span>© 2026 TAKASHI OMORI</span>
-        </div>
-        <div>
+        <div className={styles.footerPanel}>
           <nav className={styles.footerLinks} aria-label="プロフィールと連絡先">
             <a
               href="https://researchmap.jp/t-omori?lang=ja"
@@ -153,6 +149,7 @@ export function PublicGateway() {
                 : "CONTACTを押すとメールアドレスをコピーできます。"}
           </p>
         </div>
+        <p className={styles.footerCopyright}>© 2026 TAKASHI OMORI</p>
       </footer>
     </div>
   );
