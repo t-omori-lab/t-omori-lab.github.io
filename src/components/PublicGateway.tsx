@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import styles from "./PublicGateway.module.css";
+
+const CONTACT_ADDRESS = ["t-omori", "kusa.ac.jp"].join("@");
 
 const destinations = [
   {
@@ -46,10 +49,22 @@ function ExternalIcon() {
 }
 
 export function PublicGateway() {
+  const [contactStatus, setContactStatus] = useState<"idle" | "copied" | "error">("idle");
+
+  async function copyContactAddress() {
+    try {
+      await navigator.clipboard.writeText(CONTACT_ADDRESS);
+      setContactStatus("copied");
+      window.setTimeout(() => setContactStatus("idle"), 1800);
+    } catch {
+      setContactStatus("error");
+    }
+  }
+
   return (
     <div className={styles.shell} id="top">
       <header className={styles.runningHead} aria-label="サイト情報">
-        <span>TAKASHI OMORI</span>
+        <span>KURASHIKI, JAPAN</span>
         <span>WORK / RESEARCH INDEX</span>
       </header>
 
@@ -63,28 +78,15 @@ export function PublicGateway() {
             <p className={styles.role}>大学教員／デザインディレクター／AI・DXアドバイザー</p>
           </div>
 
-          <div className={styles.statementBlock}>
-            <h2>
-              <span className={styles.statementLine}>生成AI時代の、</span>
-              <span className={`${styles.statementLine} ${styles.statementLineSecond}`}>
-                <span className={styles.statementAccent}>創造と学び</span>
-                <span>の環境を設計する。</span>
-              </span>
-            </h2>
-            <p className={styles.profileCopy}>
-              倉敷芸術科学大学芸術学部芸術学科講師。デザイン実務を背景に、
-              <br className={styles.desktopBreak} />
-              生成AI時代の創作教育、思考支援、情報・体験設計に取り組む。
-            </p>
-            <a
-              className={styles.researchProfileLink}
-              href="https://researchmap.jp/t-omori?lang=ja"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>研究プロフィール・業績を見る</span>
-              <ArrowUpRight aria-hidden="true" size={18} weight="regular" />
-            </a>
+          <div className={styles.profileBlock}>
+            <div className={styles.profileCopy}>
+              <p>
+                2003年、倉敷芸術科学大学芸術学部美術学科卒業。以後約20年間、広告・編集・Web・UI・システム開発の領域で、デザイナー、ディレクター、プロジェクトマネージャーとして従事。
+              </p>
+              <p>
+                九州大学大学院芸術工学府デザインストラテジー専攻を修了し、2024年より倉敷芸術科学大学芸術学部芸術学科講師。現在は実務経験を基盤に、創作教育、思考支援、情報・体験設計に取り組む。
+              </p>
+            </div>
           </div>
         </section>
 
@@ -116,8 +118,37 @@ export function PublicGateway() {
       </main>
 
       <footer className={styles.footer}>
-        <span>TAKASHI OMORI — DESIGN / EDUCATION / RESEARCH</span>
-        <span>KURASHIKI, JAPAN</span>
+        <div className={styles.footerIdentity}>
+          <span>PROFILE / CONTACT</span>
+          <span>© 2026 TAKASHI OMORI</span>
+        </div>
+        <div>
+          <nav className={styles.footerLinks} aria-label="プロフィールと連絡先">
+            <a
+              href="https://researchmap.jp/t-omori?lang=ja"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>RESEARCHMAP</span>
+              <ArrowUpRight aria-hidden="true" size={16} weight="regular" />
+            </a>
+            <button
+              type="button"
+              onClick={copyContactAddress}
+              aria-describedby="contact-copy-note"
+            >
+              <span>CONTACT</span>
+              <span>{contactStatus === "copied" ? "COPIED" : "COPY EMAIL"}</span>
+            </button>
+          </nav>
+          <p className={styles.footerNote} id="contact-copy-note" aria-live="polite">
+            {contactStatus === "copied"
+              ? "メールアドレスをコピーしました。"
+              : contactStatus === "error"
+                ? "メールアドレスをコピーできませんでした。"
+                : "CONTACTを押すとメールアドレスをコピーできます。"}
+          </p>
+        </div>
       </footer>
     </div>
   );

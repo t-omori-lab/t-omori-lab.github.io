@@ -47,19 +47,15 @@
   color: var(--gateway-accent);
 }
 
-.researchProfileLink svg,
 .indexAction svg {
   transition: transform 170ms ease;
 }
 
-.researchProfileLink:hover svg,
-.researchProfileLink:focus-visible svg,
 .indexLink:hover .indexAction svg,
 .indexLink:focus-visible .indexAction svg {
   transform: translate(3px, -3px);
 }
 
-.researchProfileLink:focus-visible,
 .indexLink:focus-visible {
   outline: 2px solid var(--gateway-accent);
   outline-offset: 5px;
@@ -96,52 +92,29 @@
   line-height: 1.8;
 }
 
-.statementBlock {
-  margin-top: clamp(42px, 4.5vw, 64px);
-}
-
-.statementBlock h2 {
-  max-width: 1060px;
-  margin: 0;
-  font-size: clamp(38px, 4.3vw, 58px);
-  font-weight: 650;
-  letter-spacing: -0.015em;
-  line-height: 1.28;
-}
-
-.statementLine {
-  display: block;
-}
-
-.statementAccent {
-  color: var(--gateway-accent);
+.profileBlock {
+  margin-top: clamp(36px, 3.8vw, 52px);
 }
 
 .profileCopy {
-  max-width: 800px;
-  margin: clamp(20px, 2vw, 28px) 0 0;
+  max-width: 900px;
+  margin: 0;
   color: var(--gateway-muted);
   font-size: clamp(14px, 1.15vw, 16px);
   letter-spacing: 0.035em;
   line-height: 1.9;
 }
 
-.researchProfileLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 4px;
-  margin-top: clamp(18px, 1.7vw, 24px);
-  border-bottom: 1px solid var(--gateway-accent);
-  color: var(--gateway-accent);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.055em;
-  line-height: 1.6;
-  text-decoration: none;
+.profileCopy p {
+  margin: 0;
+}
+
+.profileCopy p + p {
+  margin-top: 0.55em;
 }
 
 .workIndex {
+  margin-bottom: clamp(40px, 4vw, 56px);
   scroll-margin-top: 20px;
 }
 
@@ -196,6 +169,7 @@
 }
 
 .indexTitle {
+  color: var(--gateway-accent);
   font-size: clamp(22px, 1.9vw, 28px);
   font-weight: 650;
   letter-spacing: 0.035em;
@@ -261,13 +235,13 @@
 }
 
 .footer {
-  display: flex;
-  min-height: 136px;
+  display: grid;
+  min-height: 176px;
   margin-inline: calc(-1 * var(--shell-gutter));
-  padding-inline: var(--shell-gutter);
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  padding: 34px var(--shell-gutter) 30px;
+  grid-template-columns: minmax(180px, 1fr) minmax(320px, 0.72fr);
+  align-content: center;
+  gap: 32px clamp(48px, 7vw, 112px);
   background: var(--gateway-ink);
   color: var(--gateway-paper);
   font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
@@ -276,8 +250,86 @@
   letter-spacing: 0.1em;
 }
 
-.footer span:last-child {
+.footerIdentity {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footerIdentity span:first-child {
   color: var(--gateway-footer-secondary);
+}
+
+.footerLinks {
+  border-top: 1px solid rgb(242 240 234 / 28%);
+}
+
+.footerLinks a,
+.footerLinks button {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 0;
+  border-bottom: 1px solid rgb(242 240 234 / 28%);
+  background: transparent;
+  color: var(--gateway-paper);
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.footerLinks a,
+.footerLinks button,
+.footerLinks svg {
+  transition:
+    color 170ms ease,
+    transform 170ms ease;
+}
+
+.footerLinks a:hover,
+.footerLinks button:hover,
+.footerLinks a:focus-visible,
+.footerLinks button:focus-visible {
+  color: var(--gateway-footer-secondary);
+}
+
+.footerLinks a:hover svg,
+.footerLinks a:focus-visible svg {
+  transform: translate(3px, -3px);
+}
+
+.footerLinks a:focus-visible,
+.footerLinks button:focus-visible {
+  outline: 2px solid var(--gateway-paper);
+  outline-offset: 4px;
+}
+
+.footerLinks button span:last-child {
+  color: var(--gateway-footer-secondary);
+}
+
+.footerNote {
+  margin: 10px 0 0;
+  color: var(--gateway-footer-secondary);
+  font-family:
+    "Helvetica Neue",
+    "Hiragino Sans",
+    "Yu Gothic",
+    "YuGothic",
+    "Noto Sans JP",
+    Arial,
+    sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
 }
 
 @media (max-width: 900px) {
@@ -287,10 +339,6 @@
 
   .identityName {
     font-size: clamp(52px, 7.2vw, 68px);
-  }
-
-  .statementBlock h2 {
-    font-size: clamp(38px, 5.4vw, 50px);
   }
 
   .indexLink {
@@ -335,33 +383,14 @@
     line-height: 1.65;
   }
 
-  .statementBlock {
-    margin-top: 36px;
-  }
-
-  .statementBlock h2 {
-    font-size: clamp(31px, 8.4vw, 36px);
-    letter-spacing: -0.01em;
-    line-height: 1.38;
-  }
-
-  .statementLineSecond > span {
-    display: block;
-  }
-
   .profileCopy {
     margin-top: 18px;
     font-size: 13.5px;
     line-height: 1.8;
   }
 
-  .researchProfileLink {
-    margin-top: 18px;
-    font-size: 12px;
-  }
-
-  .desktopBreak {
-    display: none;
+  .profileBlock {
+    margin-top: 32px;
   }
 
   .groupLabel {
@@ -407,14 +436,21 @@
     font-size: 9.5px;
   }
 
+  .workIndex {
+    margin-bottom: 36px;
+  }
+
   .footer {
-    min-height: 118px;
-    padding-block: 28px;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 28px;
+    min-height: 0;
+    padding-block: 30px 32px;
+    grid-template-columns: 1fr;
+    gap: 26px;
     font-size: 9px;
+  }
+
+  .footerLinks a,
+  .footerLinks button {
+    min-height: 42px;
   }
 }
 
@@ -427,11 +463,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .researchProfileLink svg,
   .indexAction svg,
   .indexLink,
   .indexCopy,
-  .indexTitle {
+  .indexTitle,
+  .footerLinks a,
+  .footerLinks button,
+  .footerLinks svg {
     transition: none;
   }
 }
