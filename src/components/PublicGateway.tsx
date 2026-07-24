@@ -1,109 +1,113 @@
 "use client";
 
-import { ArrowUp, ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight } from "@phosphor-icons/react";
 import styles from "./PublicGateway.module.css";
 
 const destinations = [
   {
-    number: "01",
-    category: "START HERE · PORTFOLIO",
+    group: "START HERE",
     title: "PORTFOLIO SLIDES",
     description: "デザイン、教育、研究のプロジェクトと実績をまとめたスライド。",
+    action: "VIEW SLIDES",
     href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/edit?usp=sharing",
   },
   {
-    number: "02",
-    category: "THINKING TOOL · WEB",
-    title: "MIGAQ",
-    description: "AIとの対話を通して、問いとアイデアを磨く思考支援ツール。",
-    href: "https://t-omori-lab.github.io/migaq/",
-  },
-  {
-    number: "03",
-    category: "CREATIVE PROCESS · VISUAL BOOK",
-    title: "GEN-AI VISUAL BOOK",
-    description: "生成AIとの制作プロセスと問いを編んだビジュアルブック。",
-    href: "https://drive.google.com/file/d/1RDhkIP67uziVJaAvVMrbocpFxY6_TM34/view?usp=sharing",
-  },
-  {
-    number: "04",
-    category: "CREATIVE EDUCATION · RESEARCH",
+    group: "RESEARCH",
     title: "JSET研究発表／論文",
     description: "「生成AI時代の創作教育における認識形成とZINEの役割」",
+    action: "READ PAPER",
     href: "https://www.jstage.jst.go.jp/article/jsetstudy/2026/1/2026_JSET2026-1-B1/_article/-char/ja/",
   },
   {
-    number: "05",
-    category: "DESIGN PRACTICE · METHODS",
+    group: "TOOLS",
+    title: "MIGAQ",
+    description: "AIとの対話を通して、問いとアイデアを磨く思考支援ツール。",
+    action: "TRY MIGAQ",
+    href: "https://t-omori-lab.github.io/migaq/",
+  },
+  {
+    group: "PRACTICE",
+    title: "GEN-AI VISUAL BOOK",
+    description: "生成AIとの制作プロセスと問いを編んだビジュアルブック。",
+    action: "READ BOOK",
+    href: "https://drive.google.com/file/d/1RDhkIP67uziVJaAvVMrbocpFxY6_TM34/view?usp=sharing",
+  },
+  {
+    group: null,
     title: "POSTER METHODS",
     description: "60の技法から1〜3つを選び、ポスター生成用プロンプトを組み立てる方法集。",
+    action: "EXPLORE METHODS",
     href: "/poster-methods/",
   },
 ] as const;
 
 function ExternalIcon() {
-  return <ArrowUpRight aria-hidden="true" weight="thin" />;
+  return <ArrowUpRight aria-hidden="true" size={24} weight="regular" />;
 }
 
 export function PublicGateway() {
   return (
-    <>
-      <main className={styles.page} id="top">
-        <section className={styles.identity} aria-labelledby="profile-name">
-          <h1 className={styles.name} id="profile-name" aria-label="Takashi Omori">
-            <span>TAKASHI</span>
-            <span>OMORI</span>
-          </h1>
+    <div className={styles.shell} id="top">
+      <header className={styles.runningHead} aria-label="サイト情報">
+        <span>TAKASHI OMORI</span>
+        <span>WORK / RESEARCH INDEX</span>
+      </header>
 
-          <div className={styles.profile}>
-            <h2>大森 隆</h2>
-            <p className={styles.role}>
-              <span>大学教員／</span>
-              <span>デザインディレクター／</span>
-              <span>AI・DXアドバイザー</span>
-            </p>
-            <p className={styles.bio}>
-              倉敷芸術科学大学芸術学部芸術学科講師。デザイン実務を背景に、生成AI時代の創作教育と情報・体験設計に取り組んでいます。
+      <main>
+        <section className={styles.intro} id="profile" aria-labelledby="identity-title">
+          <div>
+            <h1 className={styles.identityName} id="identity-title">
+              TAKASHI OMORI
+            </h1>
+            <p className={styles.identityNameJa}>大森 隆</p>
+            <p className={styles.role}>大学教員／デザインディレクター／AI・DXアドバイザー</p>
+          </div>
+
+          <div className={styles.statementBlock}>
+            <h2>
+              <span className={styles.statementLine}>生成AI時代の、</span>
+              <span className={`${styles.statementLine} ${styles.statementLineSecond}`}>
+                <span className={styles.statementAccent}>創造と学び</span>
+                <span>の環境を設計する。</span>
+              </span>
+            </h2>
+            <p className={styles.profileCopy}>
+              倉敷芸術科学大学芸術学部芸術学科講師。デザイン実務を背景に、
+              <br className={styles.desktopBreak} />
+              生成AI時代の創作教育、思考支援、情報・体験設計に取り組む。
             </p>
             <a
-              className={styles.researchmap}
+              className={styles.researchProfileLink}
               href="https://researchmap.jp/t-omori?lang=ja"
               target="_blank"
               rel="noreferrer"
-              aria-label="研究プロフィール・業績をresearchmapで新しいタブに開く"
             >
-              <span>研究プロフィール・業績</span>
-              <span className={styles.researchmapService}>researchmap</span>
-              <ExternalIcon />
+              <span>研究プロフィール・業績を見る</span>
+              <ArrowUpRight aria-hidden="true" size={18} weight="regular" />
             </a>
           </div>
         </section>
 
-        <nav className={styles.index} aria-labelledby="public-work-heading">
-          <header className={styles.indexHeader}>
-            <h2 id="public-work-heading">SELECTED PUBLIC WORK</h2>
-            <p>全体像からツール、制作記録、研究、方法集へ。</p>
-          </header>
-
+        <nav className={styles.workIndex} id="work" aria-label="公開コンテンツ">
           <ol className={styles.list}>
             {destinations.map((destination) => (
-              <li className={styles.item} key={destination.number}>
+              <li className={styles.indexRow} key={destination.title}>
                 <a
-                  className={styles.destination}
+                  className={styles.indexLink}
                   href={destination.href}
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`${destination.title}を新しいタブで開く`}
                 >
-                  <span className={styles.number} aria-hidden="true">
-                    {destination.number}
+                  <span className={styles.groupLabel}>{destination.group ?? ""}</span>
+                  <span className={styles.indexCopy}>
+                    <span className={styles.indexTitle}>{destination.title}</span>
+                    <span className={styles.indexDescription}>{destination.description}</span>
                   </span>
-                  <span className={styles.copy}>
-                    <span className={styles.category}>{destination.category}</span>
-                    <span className={styles.title}>{destination.title}</span>
-                    <span className={styles.description}>{destination.description}</span>
+                  <span className={styles.indexAction}>
+                    <span>{destination.action}</span>
+                    <ExternalIcon />
                   </span>
-                  <ArrowUpRight aria-hidden="true" className={styles.linkIcon} weight="thin" />
                 </a>
               </li>
             ))}
@@ -112,20 +116,9 @@ export function PublicGateway() {
       </main>
 
       <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <div className={styles.footerBrand}>
-            <span className={styles.footerName}>TAKASHI OMORI</span>
-            <span className={styles.footerField}>DESIGN PRACTICE · CREATIVE EDUCATION · AI</span>
-          </div>
-          <div className={styles.footerMeta}>
-            <span>© 2026</span>
-            <a className={styles.pageTop} href="#top">
-              <span>PAGE TOP</span>
-              <ArrowUp aria-hidden="true" weight="thin" />
-            </a>
-          </div>
-        </div>
+        <span>TAKASHI OMORI — DESIGN / EDUCATION / RESEARCH</span>
+        <span>KURASHIKI, JAPAN</span>
       </footer>
-    </>
+    </div>
   );
 }
