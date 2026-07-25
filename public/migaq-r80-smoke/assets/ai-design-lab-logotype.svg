@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 96" role="img" aria-labelledby="title desc">
+  <title id="title">AI Design Lab</title>
+  <desc id="desc">Aと創造の光、つながるノードを組み合わせたロゴ</desc>
+  <defs>
+    <linearGradient id="node" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4ee7ff"/>
+      <stop offset="0.52" stop-color="#5868ff"/>
+      <stop offset="1" stop-color="#a63cff"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(2 5)">
+    <path d="M5 75 37 12h18L23 75Z" fill="#fff"/>
+    <path d="M52 18 75 48M17 76h46" fill="none" stroke="url(#node)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="52" cy="18" r="10" fill="url(#node)"/>
+    <circle cx="75" cy="48" r="10" fill="url(#node)"/>
+    <rect x="7" y="66" width="19" height="19" rx="1" fill="url(#node)"/>
+    <circle cx="63" cy="76" r="10" fill="url(#node)"/>
+    <path d="m42 33 3.2 8.8L54 45l-8.8 3.2L42 57l-3.2-8.8L30 45l8.8-3.2Z" fill="#efff63"/>
+  </g>
+
+  <text x="104" y="62" fill="#fff" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="47" letter-spacing="-2.4">
+    <tspan font-weight="750">AI Design</tspan><tspan font-weight="400"> Lab</tspan>
+  </text>
+</svg>
