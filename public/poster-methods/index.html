@@ -104,8 +104,10 @@ p {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 40;
   display: flex;
   justify-content: space-between;
@@ -149,7 +151,7 @@ p {
 main {
   max-width: 1520px;
   margin: 0 auto;
-  padding: 0 38px 90px;
+  padding: 58px 38px 90px;
 }
 
 .eyebrow {
@@ -286,9 +288,17 @@ main {
   font-weight: 900;
 }
 
-.library-section,
+.library-section {
+  padding-top: 20px;
+}
+
 .combination-section {
   padding-top: 78px;
+}
+
+.library-section .section-heading {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .section-heading {
@@ -300,6 +310,7 @@ main {
   padding: 18px 0 22px;
 }
 
+.section-heading h1,
 .section-heading h2 {
   margin-bottom: 4px;
   font-size: clamp(34px, 3.5vw, 54px);
@@ -1296,7 +1307,7 @@ textarea {
   }
 
   main {
-    padding: 0 18px 70px;
+    padding: 54px 18px 70px;
   }
 
   .intro {
@@ -1333,7 +1344,10 @@ textarea {
     grid-column: auto;
   }
 
-  .library-section,
+  .library-section {
+    padding-top: 16px;
+  }
+
   .combination-section {
     padding-top: 36px;
   }
@@ -1620,38 +1634,11 @@ textarea {
     </header>
 
     <main>
-      <section class="intro" aria-labelledby="pageTitle">
-        <div class="intro-index" aria-hidden="true">
-          <strong>60</strong>
-          <span>METHODS</span>
-        </div>
-        <div class="intro-copy">
-          <p class="eyebrow">POSTER DESIGN METHOD INDEX</p>
-          <h1 id="pageTitle">
-            <span>技法を選ぶ。</span>
-            <span>構成をつくる。</span>
-          </h1>
-          <p class="lead">60の技法から、まずひとつ。必要なら最大3つまで組み合わせて、生成用プロンプトをつくります。</p>
-          <div class="intro-actions">
-            <a class="primary-link" href="#techniques">60技法を見る</a>
-            <a class="secondary-link" href="#combinations">印象から組み合わせる</a>
-          </div>
-        </div>
-        <aside class="intro-guide" aria-label="使い方">
-          <p class="eyebrow">HOW TO USE</p>
-          <ol>
-            <li><span>01</span>技法を1つ選ぶ</li>
-            <li><span>02</span>必要なら技法を追加</li>
-            <li><span>03</span>プロンプトをコピー</li>
-          </ol>
-        </aside>
-      </section>
-
       <section id="techniques" class="library-section" aria-labelledby="techniqueHeading">
         <header class="section-heading">
           <div>
             <p class="eyebrow">METHOD LIBRARY / 01</p>
-            <h2 id="techniqueHeading">技法から選ぶ</h2>
+            <h1 id="techniqueHeading">技法から選ぶ</h1>
             <p>カードを開いて内容を確認し、使う技法を選択してください。1技法だけでもプロンプトを作成できます。</p>
           </div>
           <div class="section-status" aria-live="polite">
