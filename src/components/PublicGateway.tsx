@@ -18,7 +18,7 @@ const destinations = [
     group: "AI APP",
     title: "MIGAQ",
     description:
-      "大森隆のデザイン判断をモデル化し、AIとの対話と利用者自身の選択を通して、デザイン企画書の作成・更新を支援するアプリ。",
+      "大森隆のデザイン実務・教育研究に基づく判断モデルを参照し、AIの提案を利用者が採用・修正・棄却しながら、企画書と判断の記録を更新するデザイン探究支援システム。",
     action: "TRY MIGAQ",
     href: "https://t-omori-lab.github.io/migaq/",
   },
