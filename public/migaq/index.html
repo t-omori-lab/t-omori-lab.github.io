@@ -6,20 +6,22 @@
     <meta name="theme-color" content="#020308" />
     <meta name="color-scheme" content="dark" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'sha256-RZy61wTMMK0/SXmlSqgPweL0DqcBJb487DG4gatDtDo=' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'sha256-2LSgMLgN4h+KAIS+47eJMcCHgVHB7+3E4NpqFavaMIk='; style-src-attr 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://ai-design-lab-gateway.t-omori-lab.workers.dev; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; upgrade-insecure-requests" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'sha256-MjZitPDsWxxpB+YnK8QrA5aRVKlc9mRshxdLDqbU9O4=' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'sha256-2LSgMLgN4h+KAIS+47eJMcCHgVHB7+3E4NpqFavaMIk='; style-src-attr 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://ai-design-lab-gateway.t-omori-lab.workers.dev; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; upgrade-insecure-requests" />
     <meta name="description" content="MIGAQは、メモや途中のアイデアを仮の企画書に整理し、AIの提案を自分で選びながら、次の講評や制作へ進める公開試作版です。" />
     <link rel="preload" href="./assets/migaq-logotype.png" as="image" type="image/png" />
     <link rel="icon" href="./assets/migaq-icon.png" type="image/png" />
     <title>MIGAQ｜AIと、企画を磨く。</title>
     <script>
       (() => {
+        let firstVisit = true;
         try {
+          firstVisit = sessionStorage.getItem("migaq-intro-seen") !== "1";
           sessionStorage.setItem("migaq-intro-seen", "1");
         } catch {
           // The animation still runs when storage is unavailable.
         }
-        window.__MIGAQ_INITIAL_INTRO__ = true;
-        document.documentElement.dataset.migaqIntro = "first";
+        window.__MIGAQ_INITIAL_INTRO__ = firstVisit;
+        document.documentElement.dataset.migaqIntro = firstVisit ? "first" : "return";
       })();
     </script>
     <style>
@@ -131,12 +133,12 @@
         .migaq-boot-final-logo { opacity: 1; visibility: visible; }
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-DM5lyOmj.js"></script>
+    <script type="module" crossorigin src="./assets/index-DUFjASyy.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/react-runtime-IsLpfBRF.js">
     <link rel="modulepreload" crossorigin href="./assets/interface-icons-C01ZgO9a.js">
     <link rel="modulepreload" crossorigin href="./assets/migaq-planning-core-CqaX6fl8.js">
     <link rel="modulepreload" crossorigin href="./assets/migaq-critique-core-DicQ-5ex.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-kNNXwNA7.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-CUzEKLOf.css">
   </head>
   <body>
     <div id="migaq-boot" role="status" aria-label="MIGAQを読み込んでいます">
