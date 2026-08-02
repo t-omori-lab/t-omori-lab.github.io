@@ -191,6 +191,10 @@
   object-position: center top;
 }
 
+.previewGame > img {
+  object-position: center;
+}
+
 .previewPoster > img {
   object-position: center;
 }

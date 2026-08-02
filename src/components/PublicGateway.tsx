@@ -11,7 +11,7 @@ type SinglePreview = {
   src: string;
   width: number;
   height: number;
-  variant: "slides" | "migaq" | "poster" | "zine" | "paper";
+  variant: "slides" | "migaq" | "game" | "poster" | "zine" | "paper";
 };
 
 type Destination = {
@@ -39,8 +39,8 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "AI APP / BETA · IN DEVELOPMENT",
-    title: "MIGAQ — BETA",
+    group: "AI APP / IN DEVELOPMENT · SINCE 2026.07",
+    title: "MIGAQ",
     description:
       "大森隆のデザイン実務・教育研究に基づく判断モデルを参照し、AIの提案を利用者が採用・修正・棄却しながら、企画書と判断の記録を更新するデザイン探究支援システム。",
     action: "TRY MIGAQ",
@@ -54,7 +54,22 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "DESIGN METHODS / 2026.07",
+    group: "AI-NATIVE GAME / IN DEVELOPMENT · SINCE 2026.08",
+    title: "F.R.A.M.",
+    description:
+      "自然に侵食された都市を放浪し、遺物と世界の記憶を持ち帰るRPG。ゲーム本体と、世界・人物・物語を共通の法則から生成する仕組みを並行して開発するプロジェクト。",
+    action: "PLAY / EXPLORE",
+    href: "https://t-omori-lab.github.io/game/",
+    preview: {
+      kind: "single",
+      src: "/index-previews/fram-r06.jpg",
+      width: 720,
+      height: 405,
+      variant: "game",
+    },
+  },
+  {
+    group: "DESIGN METHODS / RELEASED 2026.07",
     title: "POSTER METHODS",
     description:
       "60のデザイン技法を選び、組み合わせながら、ポスターの構成と生成AIへの指示を設計する方法集。",
@@ -114,6 +129,7 @@ function DestinationPreview({
   const variantClass = {
     slides: styles.previewSlides,
     migaq: styles.previewMigaq,
+    game: styles.previewGame,
     poster: styles.previewPoster,
     zine: styles.previewZine,
     paper: styles.previewPaper,
