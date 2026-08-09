@@ -148,6 +148,32 @@ p {
   color: var(--blue);
 }
 
+.gateway-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--ink);
+  padding: 26px 38px 30px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.gateway-footer a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.gateway-footer a:hover {
+  color: var(--accent);
+}
+
 main {
   max-width: 1520px;
   margin: 0 auto;
@@ -1451,6 +1477,13 @@ textarea {
     font-size: 11px;
   }
 
+  .gateway-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+    padding: 22px 18px 26px;
+  }
+
   .intro h1 {
     font-size: clamp(42px, 13vw, 61px);
   }
@@ -1701,6 +1734,11 @@ textarea {
         </div>
       </section>
     </main>
+
+    <footer class="gateway-footer" aria-label="関連リンク">
+      <a href="https://t-omori-lab.github.io/">TAKASHI OMORI / WORK &amp; RESEARCH INDEX <span aria-hidden="true">↗</span></a>
+      <a href="https://t-omori-lab.github.io/migaq/">RELATED / MIGAQ <span aria-hidden="true">↗</span></a>
+    </footer>
 
     <aside id="selectionTray" class="selection-tray is-empty" aria-label="選択中の技法">
       <div class="tray-summary">

@@ -9,6 +9,7 @@ const CONTACT_ADDRESS = ["t-omori", "kusa.ac.jp"].join("@");
 type SinglePreview = {
   kind: "single";
   src: string;
+  srcSet?: string;
   width: number;
   height: number;
   variant: "slides" | "migaq" | "game" | "poster" | "zine" | "paper";
@@ -17,15 +18,61 @@ type SinglePreview = {
 type Destination = {
   group: string;
   title: string;
+  titleTail?: string;
+  definition?: string;
   description: string;
+  role?: string;
+  design?: string;
   action: string;
   href: string;
   preview: SinglePreview;
+  related?: {
+    label: string;
+    href: string;
+  };
 };
 
 const destinations: readonly Destination[] = [
   {
-    group: "OVERVIEW / UPDATED 2026.07",
+    group: "CURRENT PRACTICE / PUBLIC BETA · SINCE 2026.07",
+    title: "MIGAQ",
+    definition: "人が判断し、AIと企画書を更新するデザイン支援アプリ",
+    description:
+      "AIがメモや途中案を仮の企画書に整理し、利用者は提案を採用・修正・棄却・保留しながら、判断理由とともに版を更新する。デザイン実務と教育で用いてきた判断基準をモデル化し、実際に制作した結果や、人に見せて得た反応も次の版へ引き継ぐ。",
+    role: "企画・プロダクトデザイン・研究設計・AIエージェント開発",
+    design: "判断モデル・企画プロセス・UX・システムアーキテクチャ",
+    action: "TRY MIGAQ",
+    href: "https://t-omori-lab.github.io/migaq/",
+    preview: {
+      kind: "single",
+      src: "/index-previews/migaq.webp",
+      srcSet:
+        "/index-previews/migaq-960.webp 960w, /index-previews/migaq.webp 1440w",
+      width: 1440,
+      height: 810,
+      variant: "migaq",
+    },
+  },
+  {
+    group: "CURRENT PRACTICE / PLAYABLE PROTOTYPE · SINCE 2026.08",
+    title: "F.R.A.M.",
+    definition: "言葉で構想し、AIエージェントと開発する世界記憶型・放浪RPG",
+    description:
+      "自然に侵食された現代都市を放浪し、回収した遺物と旅の結果が次の遠征に残る、世界記憶型のRPG。ゲーム本体と、世界・人物・遺物を共通のルールから組み立てる仕組みを、言葉で設計し、AIエージェントによる実装と人の試遊・採否を繰り返しながら開発している。",
+    role: "企画・ゲームデザイン・アートディレクション・AIエージェント開発",
+    design: "世界設定・ゲームシステム・生成工程・開発アーキテクチャ",
+    action: "PLAY / EXPLORE",
+    href: "https://t-omori-lab.github.io/game/",
+    preview: {
+      kind: "single",
+      src: "/index-previews/fram-r09.jpg",
+      width: 720,
+      height: 405,
+      variant: "game",
+    },
+  },
+  {
+    group: "EXPERIENCE / OVERVIEW · UPDATED 2026.07",
     title: "PORTFOLIO SLIDES",
     description: "デザイン実務、教育、研究にまたがるプロジェクトと成果をまとめたポートフォリオ。",
     action: "VIEW SLIDES",
@@ -33,43 +80,15 @@ const destinations: readonly Destination[] = [
     preview: {
       kind: "single",
       src: "/index-previews/portfolio-slides.webp",
+      srcSet:
+        "/index-previews/portfolio-slides-960.webp 960w, /index-previews/portfolio-slides.webp 1600w",
       width: 1600,
       height: 900,
       variant: "slides",
     },
   },
   {
-    group: "AI APP / IN DEVELOPMENT · SINCE 2026.07",
-    title: "MIGAQ",
-    description:
-      "大森隆のデザイン実務・教育研究に基づく判断モデルを参照し、AIの提案を利用者が採用・修正・棄却しながら、企画書と判断の記録を更新するデザイン探究支援システム。",
-    action: "TRY MIGAQ",
-    href: "https://t-omori-lab.github.io/migaq/",
-    preview: {
-      kind: "single",
-      src: "/index-previews/migaq.webp",
-      width: 1440,
-      height: 900,
-      variant: "migaq",
-    },
-  },
-  {
-    group: "AI-NATIVE GAME / IN DEVELOPMENT · SINCE 2026.08",
-    title: "F.R.A.M.",
-    description:
-      "自然に侵食された都市を放浪し、遺物と世界の記憶を持ち帰るRPG。ゲーム本体と、世界・人物・物語を共通の法則から生成する仕組みを並行して開発するプロジェクト。",
-    action: "PLAY / EXPLORE",
-    href: "https://t-omori-lab.github.io/game/",
-    preview: {
-      kind: "single",
-      src: "/index-previews/fram-r06.jpg",
-      width: 720,
-      height: 405,
-      variant: "game",
-    },
-  },
-  {
-    group: "DESIGN METHODS / RELEASED 2026.07",
+    group: "METHODS / PUBLIC TOOL · RELEASED 2026.07",
     title: "POSTER METHODS",
     description:
       "60のデザイン技法を選び、組み合わせながら、ポスターの構成と生成AIへの指示を設計する方法集。",
@@ -78,7 +97,9 @@ const destinations: readonly Destination[] = [
     preview: {
       kind: "single",
       src: "/index-previews/poster-methods.webp",
-      width: 1440,
+      srcSet:
+        "/index-previews/poster-methods-960.webp 960w, /index-previews/poster-methods.webp 1600w",
+      width: 1600,
       height: 900,
       variant: "poster",
     },
@@ -93,14 +114,21 @@ const destinations: readonly Destination[] = [
     preview: {
       kind: "single",
       src: "/index-previews/zine.webp",
+      srcSet:
+        "/index-previews/zine-960.webp 960w, /index-previews/zine.webp 1600w",
       width: 1600,
       height: 900,
       variant: "zine",
     },
+    related: {
+      label: "日本教育工学会研究会 発表／論文",
+      href: "https://www.jstage.jst.go.jp/article/jsetstudy/2026/1/2026_JSET2026-1-B1/_article/-char/ja/",
+    },
   },
   {
     group: "RESEARCH / PAPER · 2026.05",
-    title: "日本教育工学会研究会 発表／論文",
+    title: "日本教育工学会研究会",
+    titleTail: "発表／論文",
     description:
       "GEN-AI VISUAL BOOKを媒介とする授業・地域実践から、生成AIをめぐる認識形成と、創作の意味や人間の寄与を考えるZINEの役割を検討した研究報告。",
     action: "READ PAPER",
@@ -108,9 +136,15 @@ const destinations: readonly Destination[] = [
     preview: {
       kind: "single",
       src: "/index-previews/jset-paper.webp",
+      srcSet:
+        "/index-previews/jset-paper-960.webp 960w, /index-previews/jset-paper.webp 1000w",
       width: 1000,
       height: 1415,
       variant: "paper",
+    },
+    related: {
+      label: "GEN-AI VISUAL BOOK",
+      href: "https://drive.google.com/file/d/1RDhkIP67uziVJaAvVMrbocpFxY6_TM34/view?usp=sharing",
     },
   },
 ] as const;
@@ -139,6 +173,8 @@ function DestinationPreview({
     <span className={`${styles.indexPreview} ${variantClass}`} aria-hidden="true">
       <img
         src={preview.src}
+        srcSet={preview.srcSet}
+        sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 980px) calc(100vw - 64px), 430px"
         alt=""
         width={preview.width}
         height={preview.height}
@@ -166,26 +202,23 @@ export function PublicGateway() {
     <div className={styles.shell} id="top">
       <header className={styles.runningHead} aria-label="サイト情報">
         <span>KURASHIKI, JAPAN</span>
-        <span>WORK / RESEARCH INDEX</span>
+        <a href="#work">WORK / RESEARCH INDEX</a>
       </header>
 
       <main>
-        <section className={styles.intro} id="profile" aria-labelledby="identity-title">
+        <section className={styles.intro} aria-labelledby="identity-title">
           <div>
             <h1 className={styles.identityName} id="identity-title">
               TAKASHI OMORI
             </h1>
             <p className={styles.identityNameJa}>大森 隆</p>
-            <p className={styles.role}>大学教員／デザインディレクター／AI・DXアドバイザー</p>
-          </div>
-
-          <div className={styles.profileBlock}>
-            <div className={styles.profileCopy}>
+            <p className={styles.role}>大学教員／デザインディレクター／AIプロダクト開発</p>
+            <div className={styles.positioningStatement}>
               <p>
-                2003年、倉敷芸術科学大学芸術学部美術学科卒業。以後約20年間、広告・編集・Web・UI・システム開発の領域で、デザイナー、ディレクター、プロジェクトマネージャーとして従事。
+                デザイン実務と教育を背景に、AIエージェントによるアプリ・ゲーム開発と、生成AIによる作品・教材制作に取り組んでいます。
               </p>
               <p>
-                九州大学大学院芸術工学府デザインストラテジー専攻を修了し、2024年より倉敷芸術科学大学芸術学部芸術学科講師。現在は実務経験を基盤に、創作教育、思考支援、情報・体験設計に取り組む。
+                実際につくり、使い、教えながら、AIに何を任せ、人が何を選び、どう判断するのかを研究しています。
               </p>
             </div>
           </div>
@@ -203,21 +236,74 @@ export function PublicGateway() {
                 >
                   <span className={styles.mobileGroupLabel}>{destination.group}</span>
                   <DestinationPreview preview={destination.preview} priority={index === 0} />
-                  <span className={styles.indexCopy}>
+                  <div className={styles.indexCopy}>
                     <span className={styles.groupLabel}>{destination.group}</span>
-                    <span className={styles.indexTitle}>{destination.title}</span>
-                    <span className={styles.indexDescription}>{destination.description}</span>
-                  </span>
+                    <h2 className={styles.indexTitle}>
+                      {destination.title}
+                      {destination.titleTail ? (
+                        <>
+                          {" "}
+                          <span className={styles.titleTail}>{destination.titleTail}</span>
+                        </>
+                      ) : null}
+                    </h2>
+                    {destination.definition ? (
+                      <p className={styles.projectDefinition}>{destination.definition}</p>
+                    ) : null}
+                    <p className={styles.indexDescription}>{destination.description}</p>
+                    {destination.role || destination.design ? (
+                      <div className={styles.projectMeta}>
+                        {destination.role ? (
+                          <p className={styles.projectRole}>
+                            <span>ROLE</span>
+                            {destination.role}
+                          </p>
+                        ) : null}
+                        {destination.design ? (
+                          <p className={styles.projectRole}>
+                            <span>DESIGN</span>
+                            {destination.design}
+                          </p>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </div>
                   <span className={styles.indexAction}>
                     <span>{destination.action}</span>
                     <ExternalIcon />
                   </span>
                   <span className={styles.srOnly}>（新しいタブで開く）</span>
                 </a>
+                {destination.related ? (
+                  <a
+                    className={styles.relatedLink}
+                    href={destination.related.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span>RELATED / {destination.related.label}</span>
+                    <ExternalIcon />
+                    <span className={styles.srOnly}>（新しいタブで開く）</span>
+                  </a>
+                ) : null}
               </li>
             ))}
           </ol>
         </nav>
+
+        <section className={styles.profileBlock} id="profile" aria-labelledby="profile-title">
+          <h2 className={styles.profileLabel} id="profile-title">
+            PROFILE / BIOGRAPHY
+          </h2>
+          <div className={styles.profileCopy}>
+            <p>
+              2003年、倉敷芸術科学大学芸術学部美術学科卒業。以後約20年間、広告・編集・Web・UI・システム開発の領域で、デザイナー、ディレクター、プロジェクトマネージャーとして従事。
+            </p>
+            <p>
+              九州大学大学院芸術工学府デザインストラテジー専攻を修了し、2024年より倉敷芸術科学大学芸術学部芸術学科講師。現在は実務経験を基盤に、創作教育、思考支援、情報・体験設計に取り組む。
+            </p>
+          </div>
+        </section>
       </main>
 
       <footer className={styles.footer}>
