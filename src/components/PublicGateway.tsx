@@ -54,7 +54,7 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "CURRENT PRACTICE / PLAYABLE PROTOTYPE · SINCE 2026.08",
+    group: "CURRENT PRACTICE / PLAYABLE PROTOTYPE · R10 · SINCE 2026.08",
     title: "F.R.A.M.",
     definition: "言葉で構想し、AIエージェントと開発する世界記憶型・放浪RPG",
     description:
@@ -65,7 +65,7 @@ const destinations: readonly Destination[] = [
     href: "https://t-omori-lab.github.io/game/",
     preview: {
       kind: "single",
-      src: "/index-previews/fram-r09.jpg",
+      src: "/index-previews/fram-r10.jpg",
       width: 720,
       height: 405,
       variant: "game",
