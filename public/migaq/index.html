@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#020308" />
     <meta name="color-scheme" content="dark" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'sha256-14c62oaHtkqh8oqWWOTRwko9s7tsEgIqIO9s03YIFSs=' 'sha256-MjZitPDsWxxpB+YnK8QrA5aRVKlc9mRshxdLDqbU9O4=' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'sha256-2LSgMLgN4h+KAIS+47eJMcCHgVHB7+3E4NpqFavaMIk='; style-src-attr 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://ai-design-lab-gateway.t-omori-lab.workers.dev; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; upgrade-insecure-requests" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'sha256-14c62oaHtkqh8oqWWOTRwko9s7tsEgIqIO9s03YIFSs=' 'sha256-MjZitPDsWxxpB+YnK8QrA5aRVKlc9mRshxdLDqbU9O4=' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'sha256-6GcPPEF2qcNRX727yGRSiqKoZVNnyACmz2mo8jU/rrE='; style-src-attr 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://ai-design-lab-gateway.t-omori-lab.workers.dev; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; upgrade-insecure-requests" />
     <meta name="migaq-release-channel" content="production" /><meta name="migaq-release" content="R115" /><meta name="migaq-release-id" content="r115-production-227eb041e170-dcc47d5db20b" /><meta name="migaq-service-status" content="enabled" /><meta name="migaq-source-sha" content="0f3229d188c60aa14dcf2f52b23fd278d72deb7f" /><meta name="migaq-product-source-sha" content="227eb041e1701057f104d0e5e29c5f68b73cb1b9" /><meta name="migaq-candidate-id" content="R115-227eb041e1701057-dcc47d5db20b0df1" /><meta name="migaq-gateway-version" content="840cb5a3-eab9-4164-9f02-d5199a81452b" /><meta name="migaq-product-manifest-sha256" content="5fc86818fa8264cb05b83f122f224eacb1d3f66086ebe2d5e219d80d81a580f0" /><meta name="migaq-evidence-manifest-sha256" content="f58e9124fc7a474787cf56826cf34e778b6349ee62dbb7d23ff41ab940c0b604" /><script>window.__MIGAQ_RELEASE__=Object.freeze({"candidateId":"R115-227eb041e1701057-dcc47d5db20b0df1","channel":"production","evidenceCommitSha":"0f3229d188c60aa14dcf2f52b23fd278d72deb7f","evidenceManifestSha256":"f58e9124fc7a474787cf56826cf34e778b6349ee62dbb7d23ff41ab940c0b604","gatewayOrigin":"https://ai-design-lab-gateway.t-omori-lab.workers.dev","gatewayVersion":"840cb5a3-eab9-4164-9f02-d5199a81452b","productManifestSha256":"5fc86818fa8264cb05b83f122f224eacb1d3f66086ebe2d5e219d80d81a580f0","productSourceSha":"227eb041e1701057f104d0e5e29c5f68b73cb1b9","release":"R115","releaseId":"r115-production-227eb041e170-dcc47d5db20b","serviceStatus":"enabled","sourceSha":"0f3229d188c60aa14dcf2f52b23fd278d72deb7f"});document.documentElement.dataset.migaqRelease="production";</script>
     <meta name="description" content="MIGAQは、メモや途中のアイデアを仮の企画書に整理し、AIの提案を自分で選びながら、次の講評や制作へ進める公開試作版です。" />
     <link rel="preload" href="./assets/migaq-logotype.png" as="image" type="image/png" />
@@ -85,6 +85,12 @@
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
       }
+      .migaq-boot-q-accent-gap {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-width: 22;
+      }
       [data-migaq-intro="first"] .migaq-boot-m { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 180ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-i { animation: migaq-boot-draw 180ms linear 540ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-g-ring { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 680ms 1 forwards; }
@@ -145,6 +151,7 @@
       <div class="migaq-boot-brand">
         <svg class="migaq-boot-drawing" viewBox="0 0 566 130" aria-hidden="true">
           <defs>
+            <path id="migaq-boot-q-accent-path" pathLength="1" d="M513 88 L548 108" />
             <mask id="migaq-boot-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="566" height="130">
               <rect width="566" height="130" fill="#000" />
               <path class="migaq-boot-stroke migaq-boot-m" pathLength="1" d="M24 107 L24 24 L66 72 L109 24 L109 107" />
@@ -153,13 +160,13 @@
               <path class="migaq-boot-stroke migaq-boot-g-bar" pathLength="1" d="M304 67 L266 67" />
               <path class="migaq-boot-stroke migaq-boot-a" pathLength="1" d="M342 107 L384 23 L427 107" />
               <path class="migaq-boot-stroke migaq-boot-q-ring" pathLength="1" d="M509 107 C483 110 464 94 462 68 C459 39 476 19 503 22 C531 25 547 58 539 88 C532 100 522 106 509 107" />
-              <path class="migaq-boot-accent-cutout" d="M520 74 L557 95 L542 122 L504 101 Z" fill="#000" />
+              <use class="migaq-boot-q-accent-gap" href="#migaq-boot-q-accent-path" />
             </mask>
             <clipPath id="migaq-boot-accent-clip">
               <rect x="506" y="82" width="47" height="31" />
             </clipPath>
             <mask id="migaq-boot-accent-reveal" maskUnits="userSpaceOnUse" x="490" y="72" width="76" height="58">
-              <path class="migaq-boot-q-accent-stroke" pathLength="1" d="M513 88 L548 108" />
+              <use class="migaq-boot-q-accent-stroke" href="#migaq-boot-q-accent-path" />
             </mask>
             <radialGradient id="migaq-boot-halo-gradient">
               <stop offset="0" stop-color="#8f61ff" stop-opacity="0.95" />
