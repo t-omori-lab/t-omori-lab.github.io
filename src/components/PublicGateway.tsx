@@ -19,7 +19,6 @@ type Destination = {
   group: string;
   title: string;
   titleTail?: string;
-  moduleName?: string;
   definition?: string;
   description: string;
   role?: string;
@@ -57,7 +56,6 @@ const destinations: readonly Destination[] = [
   {
     group: "CURRENT PRACTICE / PLAYABLE PROTOTYPE · R10 · SINCE 2026.08",
     title: "廃都渡りのフラム",
-    moduleName: "F.R.A.M.",
     definition: "言葉で構想し、AIエージェントと開発する世界記憶型・放浪RPG",
     description:
       "自然に侵食された現代都市を放浪し、回収した遺物と旅の結果が次の遠征に残る、世界記憶型のRPG。ゲーム本体と、世界・人物・遺物を共通のルールから組み立てる仕組みを、言葉で設計し、AIエージェントによる実装と人の試遊・採否を繰り返しながら開発している。",
@@ -247,9 +245,6 @@ export function PublicGateway() {
                           {" "}
                           <span className={styles.titleTail}>{destination.titleTail}</span>
                         </>
-                      ) : null}
-                      {destination.moduleName ? (
-                        <span className={styles.moduleName}>{destination.moduleName}</span>
                       ) : null}
                     </h2>
                     {destination.definition ? (

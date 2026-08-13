@@ -304,19 +304,6 @@
   white-space: nowrap;
 }
 
-.moduleName {
-  display: inline-block;
-  margin-left: 0.9em;
-  color: var(--gateway-muted);
-  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  font-size: 0.42em;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  vertical-align: 0.18em;
-  white-space: nowrap;
-}
-
 .projectDefinition {
   margin: 7px 0 0;
   color: var(--gateway-accent);
