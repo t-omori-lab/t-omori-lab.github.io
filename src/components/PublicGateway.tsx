@@ -15,6 +15,19 @@ type SinglePreview = {
   variant: "slides" | "migaq" | "game" | "poster" | "zine" | "paper";
 };
 
+type SequencePreview = {
+  kind: "sequence";
+  variant: "game";
+  images: readonly {
+    src: string;
+    label: string;
+    width: number;
+    height: number;
+  }[];
+};
+
+type DestinationPreviewData = SinglePreview | SequencePreview;
+
 type Destination = {
   group: string;
   title: string;
@@ -25,7 +38,18 @@ type Destination = {
   design?: string;
   action: string;
   href: string;
-  preview: SinglePreview;
+  preview: DestinationPreviewData;
+  history?: {
+    label: string;
+    text: string;
+  };
+  developmentCase?: {
+    label: string;
+    title: string;
+    status: string;
+    note: string;
+    href: string;
+  };
   related?: {
     label: string;
     href: string;
@@ -62,13 +86,47 @@ const destinations: readonly Destination[] = [
     role: "企画・ゲームデザイン・アートディレクション・AIエージェント開発",
     design: "世界設定・ゲームシステム・生成工程・開発アーキテクチャ",
     action: "PLAY / EXPLORE",
-    href: "https://t-omori-lab.github.io/game/r10/",
+    href: "https://t-omori-lab.github.io/game/",
     preview: {
-      kind: "single",
-      src: "/index-previews/fram-r10.jpg",
-      width: 720,
-      height: 405,
+      kind: "sequence",
       variant: "game",
+      images: [
+        {
+          src: "https://t-omori-lab.github.io/game/catalog/r00.jpg",
+          label: "R00",
+          width: 720,
+          height: 405,
+        },
+        {
+          src: "https://t-omori-lab.github.io/game/catalog/r01.jpg",
+          label: "R01",
+          width: 720,
+          height: 405,
+        },
+        {
+          src: "https://t-omori-lab.github.io/game/catalog/r02.jpg",
+          label: "R02",
+          width: 720,
+          height: 405,
+        },
+        {
+          src: "https://t-omori-lab.github.io/game/catalog/r03.jpg",
+          label: "R03",
+          width: 720,
+          height: 405,
+        },
+      ],
+    },
+    history: {
+      label: "HISTORY / R00",
+      text: "R01以前の固定アリーナ／自動射撃型プロトタイプ。R00〜R03の実画面で、開発の変化を示す。",
+    },
+    developmentCase: {
+      label: "AI DEVELOPMENT EXPERIMENT / 遊べるAI開発実験",
+      title: "WAF-01 — マップ／建築生成パイプライン",
+      status: "PIPELINE CASE / NOT PLAYABLE",
+      note: "採択済み実画面の記録。ランタイムは未統合・未公開。",
+      href: "https://t-omori-lab.github.io/game/experiments/waf-01/",
     },
   },
   {
@@ -169,6 +227,29 @@ function DestinationPreview({
     paper: styles.previewPaper,
   }[preview.variant];
 
+  if (preview.kind === "sequence") {
+    return (
+      <span
+        className={`${styles.indexPreview} ${variantClass} ${styles.sequencePreview}`}
+        aria-hidden="true"
+      >
+        {preview.images.map((image) => (
+          <span className={styles.sequenceFrame} key={image.label}>
+            <img
+              src={image.src}
+              alt=""
+              width={image.width}
+              height={image.height}
+              loading={priority ? "eager" : "lazy"}
+              decoding="async"
+            />
+            <span className={styles.sequenceLabel}>{image.label}</span>
+          </span>
+        ))}
+      </span>
+    );
+  }
+
   return (
     <span className={`${styles.indexPreview} ${variantClass}`} aria-hidden="true">
       <img
@@ -248,6 +329,12 @@ export function PublicGateway() {
                       <p className={styles.projectDefinition}>{destination.definition}</p>
                     ) : null}
                     <p className={styles.indexDescription}>{destination.description}</p>
+                    {destination.history ? (
+                      <p className={styles.projectHistory}>
+                        <span>{destination.history.label}</span>
+                        {destination.history.text}
+                      </p>
+                    ) : null}
                     {destination.role || destination.design ? (
                       <div className={styles.projectMeta}>
                         {destination.role ? (
@@ -280,6 +367,27 @@ export function PublicGateway() {
                   >
                     <span>RELATED / {destination.related.label}</span>
                     <ExternalIcon />
+                    <span className={styles.srOnly}>（新しいタブで開く）</span>
+                  </a>
+                ) : null}
+                {destination.developmentCase ? (
+                  <a
+                    className={styles.developmentCase}
+                    href={destination.developmentCase.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span className={styles.developmentCaseLabel}>
+                      {destination.developmentCase.label}
+                    </span>
+                    <span className={styles.developmentCaseCopy}>
+                      <strong>{destination.developmentCase.title}</strong>
+                      <span>{destination.developmentCase.note}</span>
+                    </span>
+                    <span className={styles.developmentCaseAction}>
+                      <span>{destination.developmentCase.status}</span>
+                      <ExternalIcon />
+                    </span>
                     <span className={styles.srOnly}>（新しいタブで開く）</span>
                   </a>
                 ) : null}
