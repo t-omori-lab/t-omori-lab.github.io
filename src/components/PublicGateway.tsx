@@ -54,7 +54,7 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "CURRENT PRACTICE / PLAYABLE PROTOTYPE · R10 · SINCE 2026.08",
+    group: "CURRENT PRACTICE / PLAYABLE PROTOTYPE · SINCE 2026.08",
     title: "廃都渡りのフラム",
     definition: "言葉で構想し、AIエージェントと開発する世界記憶型・放浪RPG",
     description:
@@ -216,9 +216,6 @@ export function PublicGateway() {
             <div className={styles.positioningStatement}>
               <p>
                 デザイン実務と教育を背景に、AIエージェントによるアプリ・ゲーム開発と、生成AIによる作品・教材制作に取り組んでいます。
-              </p>
-              <p>
-                実際につくり、使い、教えながら、AIに何を任せ、人が何を選び、どう判断するのかを研究しています。
               </p>
             </div>
           </div>
