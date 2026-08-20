@@ -78,7 +78,7 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "CURRENT PRACTICE / PLAYABLE PROTOTYPE · SINCE 2026.08",
+    group: "CURRENT PRACTICE / PLAYABLE MVP · R11 · 2026.08",
     title: "廃都渡りのフラム",
     definition: "言葉で構想し、AIエージェントと開発する世界記憶型・放浪RPG",
     description:
@@ -86,46 +86,23 @@ const destinations: readonly Destination[] = [
     role: "企画・ゲームデザイン・アートディレクション・AIエージェント開発",
     design: "世界設定・ゲームシステム・生成工程・開発アーキテクチャ",
     action: "PLAY / EXPLORE",
-    href: "https://t-omori-lab.github.io/game/",
+    href: "https://t-omori-lab.github.io/game/r11/",
     preview: {
-      kind: "sequence",
+      kind: "single",
+      src: "/index-previews/fram-r11.jpg",
+      width: 1280,
+      height: 720,
       variant: "game",
-      images: [
-        {
-          src: "https://t-omori-lab.github.io/game/catalog/r00.jpg",
-          label: "R00",
-          width: 720,
-          height: 405,
-        },
-        {
-          src: "https://t-omori-lab.github.io/game/catalog/r01.jpg",
-          label: "R01",
-          width: 720,
-          height: 405,
-        },
-        {
-          src: "https://t-omori-lab.github.io/game/catalog/r02.jpg",
-          label: "R02",
-          width: 720,
-          height: 405,
-        },
-        {
-          src: "https://t-omori-lab.github.io/game/catalog/r03.jpg",
-          label: "R03",
-          width: 720,
-          height: 405,
-        },
-      ],
     },
     history: {
-      label: "HISTORY / R00",
-      text: "R01以前の固定アリーナ／自動射撃型プロトタイプ。R00〜R03の実画面で、開発の変化を示す。",
+      label: "LATEST / R11",
+      text: "採択した雨水管制塔、自然侵食された廃都、水辺、役割の異なる敵、防御と大技を一つの試遊ステージへ統合。旧版はゲーム内の履歴から確認できる。",
     },
     developmentCase: {
       label: "AI DEVELOPMENT EXPERIMENT / 遊べるAI開発実験",
       title: "WAF-01 — マップ／建築生成パイプライン",
       status: "PIPELINE CASE / NOT PLAYABLE",
-      note: "採択済み実画面の記録。ランタイムは未統合・未公開。",
+      note: "採択済み生成工程の記録。R11はその成果の一部を実プレイへ統合。",
       href: "https://t-omori-lab.github.io/game/experiments/waf-01/",
     },
   },

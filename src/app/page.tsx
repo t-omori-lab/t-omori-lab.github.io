@@ -30,7 +30,7 @@ const structuredData = {
     {
       "@type": "VideoGame",
       name: "廃都渡りのフラム",
-      url: "https://t-omori-lab.github.io/game/",
+      url: "https://t-omori-lab.github.io/game/r11/",
       gamePlatform: "Web browser",
       genre: "Role-playing game",
       author: { "@id": "https://t-omori-lab.github.io/#person" },
