@@ -1,12 +1,12 @@
 {
-  "candidateId": "R115-SR-6e2e631e8c52eed7-production-q-spacing-v2",
+  "candidateId": "R115-SR-72d8c549483f18af-production-health-identity-v3",
   "channel": "production",
   "gatewayOrigin": "https://ai-design-lab-gateway.t-omori-lab.workers.dev",
   "indexing": "index",
-  "productPayloadFingerprint": "64079799e694b2ac016eb6a5bb6a896b89ea37cfbdf2992680edfb2ef073a548",
-  "productSourceSha": "6e2e631e8c52eed701e122c78dfb11fe4c08c721",
+  "productPayloadFingerprint": "0e7d60f953479337a34f2774d1c2044d9c342cc90cbab8ff1fdf8692eb6dc989",
+  "productSourceSha": "72d8c549483f18afec80102459c4eb2772c3bb65",
   "release": "R115",
-  "releaseId": "r115-send-reliability-production-6e2e631e8c52-64079799e694",
+  "releaseId": "r115-send-reliability-production-72d8c549483f-0e7d60f95347",
   "schemaVersion": 1,
   "serviceStatus": "enabled",
   "turnstileMode": "managed"
