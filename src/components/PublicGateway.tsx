@@ -78,7 +78,7 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "CURRENT PRACTICE / PLAYABLE MVP · R11 · 2026.08",
+    group: "CURRENT PRACTICE / PLAYABLE MVP · R12 · 2026.08",
     title: "廃都渡りのフラム",
     definition: "言葉で構想し、AIエージェントと開発する世界記憶型・放浪RPG",
     description:
@@ -89,20 +89,20 @@ const destinations: readonly Destination[] = [
     href: "https://t-omori-lab.github.io/game/",
     preview: {
       kind: "single",
-      src: "/index-previews/fram-r11.jpg",
-      width: 1280,
-      height: 720,
+      src: "https://t-omori-lab.github.io/game/catalog/r12.jpg",
+      width: 720,
+      height: 405,
       variant: "game",
     },
     history: {
-      label: "LATEST / R11",
-      text: "採択した雨水管制塔、自然侵食された廃都、水辺、役割の異なる敵、防御と大技を一つの試遊ステージへ統合。旧版はゲーム内の履歴から確認できる。",
+      label: "LATEST / R12",
+      text: "旧鉄道から雨水管制塔、海側廃区への遠征を構築するR12の実プレイ画面。旧版はゲーム内の履歴から確認できる。",
     },
     developmentCase: {
       label: "AI DEVELOPMENT EXPERIMENT / 遊べるAI開発実験",
       title: "WAF-01 — マップ／建築生成パイプライン",
       status: "PIPELINE CASE / NOT PLAYABLE",
-      note: "採択済み生成工程の記録。R11はその成果の一部を実プレイへ統合。",
+      note: "採択済み生成工程の記録。R12はその成果の一部を実プレイへ統合。",
       href: "https://t-omori-lab.github.io/game/experiments/waf-01/",
     },
   },
