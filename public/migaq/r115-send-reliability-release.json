@@ -1,12 +1,12 @@
 {
-  "candidateId": "R115-SR-6e2e631e8c52eed7-production-q-spacing-v1",
+  "candidateId": "R115-SR-6e2e631e8c52eed7-production-q-spacing-v2",
   "channel": "production",
   "gatewayOrigin": "https://ai-design-lab-gateway.t-omori-lab.workers.dev",
   "indexing": "index",
-  "productPayloadFingerprint": "accc4b5dfc491c28b27b15dbb3dec7db45fe36a210b657b0f0b3eb6b3ddde0a3",
+  "productPayloadFingerprint": "64079799e694b2ac016eb6a5bb6a896b89ea37cfbdf2992680edfb2ef073a548",
   "productSourceSha": "6e2e631e8c52eed701e122c78dfb11fe4c08c721",
   "release": "R115",
-  "releaseId": "r115-send-reliability-production-6e2e631e8c52-accc4b5dfc49",
+  "releaseId": "r115-send-reliability-production-6e2e631e8c52-64079799e694",
   "schemaVersion": 1,
   "serviceStatus": "enabled",
   "turnstileMode": "managed"
