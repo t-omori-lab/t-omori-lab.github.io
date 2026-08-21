@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#020308" />
     <meta name="color-scheme" content="dark" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'sha256-MjZitPDsWxxpB+YnK8QrA5aRVKlc9mRshxdLDqbU9O4=' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'sha256-vZG7oeO4RESTqR12JRuJDPtvbiHCbr6uaq5Gsq1rY/s='; style-src-attr 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://*.workers.dev; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; upgrade-insecure-requests" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'sha256-MjZitPDsWxxpB+YnK8QrA5aRVKlc9mRshxdLDqbU9O4=' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'self' 'sha256-2LSgMLgN4h+KAIS+47eJMcCHgVHB7+3E4NpqFavaMIk='; style-src-attr 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://*.workers.dev; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; upgrade-insecure-requests" />
     
     <meta name="description" content="MIGAQは、メモや途中のアイデアを仮の企画書に整理し、AIの提案を自分で選びながら、次の講評や制作へ進める公開試作版です。" />
     <link rel="preload" href="./assets/migaq-logotype.png" as="image" type="image/png" />
@@ -85,12 +85,6 @@
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
       }
-      .migaq-boot-q-accent-gap {
-        fill: none;
-        stroke: #000;
-        stroke-linecap: round;
-        stroke-width: 22;
-      }
       [data-migaq-intro="first"] .migaq-boot-m { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 180ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-i { animation: migaq-boot-draw 180ms linear 540ms 1 forwards; }
       [data-migaq-intro="first"] .migaq-boot-g-ring { animation: migaq-boot-draw 420ms cubic-bezier(0.45, 0, 0.3, 1) 680ms 1 forwards; }
@@ -110,30 +104,6 @@
       [data-migaq-intro="return"] .migaq-boot-final-logo {
         animation: migaq-boot-return 240ms ease 20ms 1 forwards;
       }
-      .migaq-runtime-channel-marker {
-        position: fixed;
-        z-index: 2147483646;
-        top: max(8px, env(safe-area-inset-top));
-        right: max(8px, env(safe-area-inset-right));
-        max-width: calc(100vw - 16px);
-        color: #f7f8ff;
-        font: 600 11px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
-        letter-spacing: 0.06em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        pointer-events: none;
-      }
-      .migaq-runtime-failure {
-        display: grid;
-        gap: 10px;
-        width: min(420px, calc(100vw - 48px));
-        color: #f7f8ff;
-        font: 500 14px/1.65 system-ui, sans-serif;
-        text-align: center;
-      }
-      .migaq-runtime-failure strong { font-size: 17px; }
-      .migaq-runtime-failure span { color: rgba(247, 248, 255, 0.66); }
       @keyframes migaq-boot-draw {
         from { opacity: 1; visibility: visible; stroke-dashoffset: 1; }
         to { opacity: 1; visibility: visible; stroke-dashoffset: 0; }
@@ -164,10 +134,10 @@
         .migaq-boot-final-logo { opacity: 1; visibility: visible; }
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-DLlfvFdb.js"></script>
+    <script type="module" crossorigin src="./assets/index-MAd53_GT.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/react-runtime-DF-nCXXw.js">
-    <link rel="modulepreload" crossorigin href="./assets/migaq-runtime-loader-DeQvF6BW.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-BTkLqYQG.css">
+    <link rel="modulepreload" crossorigin href="./assets/migaq-runtime-loader-CRcGTHti.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-MoQTUAEN.css">
   </head>
   <body>
     
@@ -175,7 +145,6 @@
       <div class="migaq-boot-brand">
         <svg class="migaq-boot-drawing" viewBox="0 0 566 130" aria-hidden="true">
           <defs>
-            <path id="migaq-boot-q-accent-path" pathLength="1" d="M513 88 L548 108" />
             <mask id="migaq-boot-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="566" height="130">
               <rect width="566" height="130" fill="#000" />
               <path class="migaq-boot-stroke migaq-boot-m" pathLength="1" d="M24 107 L24 24 L66 72 L109 24 L109 107" />
@@ -184,13 +153,13 @@
               <path class="migaq-boot-stroke migaq-boot-g-bar" pathLength="1" d="M304 67 L266 67" />
               <path class="migaq-boot-stroke migaq-boot-a" pathLength="1" d="M342 107 L384 23 L427 107" />
               <path class="migaq-boot-stroke migaq-boot-q-ring" pathLength="1" d="M509 107 C483 110 464 94 462 68 C459 39 476 19 503 22 C531 25 547 58 539 88 C532 100 522 106 509 107" />
-              <use class="migaq-boot-q-accent-gap" href="#migaq-boot-q-accent-path" />
+              <path class="migaq-boot-accent-cutout" d="M520 74 L557 95 L542 122 L504 101 Z" fill="#000" />
             </mask>
             <clipPath id="migaq-boot-accent-clip">
               <rect x="506" y="82" width="47" height="31" />
             </clipPath>
             <mask id="migaq-boot-accent-reveal" maskUnits="userSpaceOnUse" x="490" y="72" width="76" height="58">
-              <use class="migaq-boot-q-accent-stroke" href="#migaq-boot-q-accent-path" />
+              <path class="migaq-boot-q-accent-stroke" pathLength="1" d="M513 88 L548 108" />
             </mask>
             <radialGradient id="migaq-boot-halo-gradient">
               <stop offset="0" stop-color="#8f61ff" stop-opacity="0.95" />
