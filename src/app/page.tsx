@@ -29,7 +29,7 @@ const structuredData = {
     },
     {
       "@type": "VideoGame",
-      name: "廃都渡りのフラム",
+      name: "F.R.A.M.",
       url: "https://t-omori-lab.github.io/game/",
       gamePlatform: "Web browser",
       genre: "Role-playing game",
