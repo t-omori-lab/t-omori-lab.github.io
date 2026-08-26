@@ -35,7 +35,7 @@ const structuredData = {
       genre: "Role-playing game",
       author: { "@id": "https://t-omori-lab.github.io/#person" },
       description:
-        "自然に侵食された現代都市を放浪し、回収した遺物と旅の結果が次の遠征に残る、世界記憶型のRPG。",
+        "自然に侵食された旧世界を探索し、敵と戦い、遺物を持ち帰るアクションRPG。遠征で得た装備と選択が次の旅に残る。",
     },
     {
       "@type": "CreativeWork",
