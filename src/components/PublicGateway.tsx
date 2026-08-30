@@ -76,6 +76,14 @@ const destinations: readonly Destination[] = [
       height: 810,
       variant: "migaq",
     },
+    developmentCase: {
+      label: "PRODUCT DEVELOPMENT EXPERIMENT / 固定比較プレビュー",
+      title: "MIGAQ2 — Preview 01",
+      status: "RESEARCH PREVIEW / FIXED EVIDENCE",
+      note:
+        "通常チャットとMIGAQ2を同じ着想で比較した6件の固定作例。本人の判断が企画書の差分・理由・履歴として残る構造を確認できる。",
+      href: "/migaq2/",
+    },
   },
   {
     group: "CURRENT PRACTICE / PLAYABLE MVP · R14 · 2026.08",
