@@ -86,7 +86,7 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "CURRENT PRACTICE / PLAYABLE MVP · R15 · 2026.09",
+    group: "CURRENT PRACTICE / PLAYABLE MVP · R15 · PUBLISHED 2026-09-02",
     title: "F.R.A.M.",
     definition: "AIエージェントと開発する、探索と戦闘のアクションRPG",
     description:
