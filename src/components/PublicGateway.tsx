@@ -86,7 +86,7 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "CURRENT PRACTICE / PLAYABLE MVP · R14 · 2026.08",
+    group: "CURRENT PRACTICE / PLAYABLE MVP · R15 · 2026.09",
     title: "F.R.A.M.",
     definition: "AIエージェントと開発する、探索と戦闘のアクションRPG",
     description:
@@ -94,17 +94,17 @@ const destinations: readonly Destination[] = [
     role: "企画・ゲームデザイン・アートディレクション・AIエージェント開発",
     design: "世界設定・ゲームシステム・生成工程・開発アーキテクチャ",
     action: "PLAY / EXPLORE",
-    href: "https://t-omori-lab.github.io/game/",
+    href: "https://t-omori-lab.github.io/game/r15/",
     preview: {
       kind: "single",
-      src: "https://t-omori-lab.github.io/game/catalog/r14.jpg",
-      width: 720,
-      height: 405,
+      src: "/index-previews/fram-r15.png",
+      width: 1280,
+      height: 720,
       variant: "game",
     },
     history: {
-      label: "LATEST / R14",
-      text: "R14の実プレイ画面。旧版はゲーム内の履歴から確認できる。",
+      label: "LATEST / R15",
+      text: "R15の実プレイ画面。旧版はゲーム内の履歴から確認できる。",
     },
     developmentCase: {
       label: "AI DEVELOPMENT EXPERIMENT / 遊べるAI開発実験",
