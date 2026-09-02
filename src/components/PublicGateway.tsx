@@ -94,7 +94,7 @@ const destinations: readonly Destination[] = [
     role: "企画・ゲームデザイン・アートディレクション・AIエージェント開発",
     design: "世界設定・ゲームシステム・生成工程・開発アーキテクチャ",
     action: "PLAY / EXPLORE",
-    href: "https://t-omori-lab.github.io/game/r15/",
+    href: "https://t-omori-lab.github.io/game/",
     preview: {
       kind: "single",
       src: "/index-previews/fram-r15.png",
