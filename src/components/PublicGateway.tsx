@@ -115,6 +115,15 @@ const destinations: readonly Destination[] = [
     },
   },
   {
+    group: "PLAY / BROWSER GAMES · NEW 2026.09",
+    title: "GAME CENTER",
+    definition: "短い時間で、もう一度遊びたくなるブラウザゲーム集",
+    description: "操作の気持ちよさ、映像と音の反応、リトライしたくなるテンポを追求するミニゲーム。第1作は、左右操作だけで走る60秒のネオンドリフト・アーケード『NEON DRIFT』。",
+    action: "PLAY GAMES",
+    href: "/game-center/",
+    preview: {kind: "single", src: "/game-center/neon-drift-cover.svg", width: 1280, height: 720, variant: "game"},
+  },
+  {
     group: "EXPERIENCE / OVERVIEW · UPDATED 2026.07",
     title: "PORTFOLIO SLIDES",
     description: "デザイン実務、教育、研究にまたがるプロジェクトと成果をまとめたポートフォリオ。",
