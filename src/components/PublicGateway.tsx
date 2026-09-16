@@ -118,7 +118,7 @@ const destinations: readonly Destination[] = [
     group: "PLAY / BROWSER GAMES · NEW 2026.09",
     title: "GAME CENTER",
     definition: "短い時間で、もう一度遊びたくなるブラウザゲーム集",
-    description: "操作の気持ちよさ、映像と音の反応、リトライしたくなるテンポを追求するミニゲーム。第1作は、左右操作だけで走る60秒のネオンドリフト・アーケード『NEON DRIFT』。",
+    description: "操作の気持ちよさ、映像と音の反応、リトライしたくなるテンポを追求するミニゲーム。第1作は、左右操作だけで7.48kmを駆け抜けるネオンドリフト・アーケード『NEON DRIFT』。",
     action: "PLAY GAMES",
     href: "/game-center/",
     preview: {kind: "single", src: "/game-center/neon-drift/art/neon-drift-title.png?v=17", width: 1280, height: 720, variant: "arcade"},
