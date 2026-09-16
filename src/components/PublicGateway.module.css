@@ -883,3 +883,7 @@
     transition: none;
   }
 }
+
+/* NEON DRIFT artwork has alpha; its presentation is deliberately black. */
+.previewArcade { background: #02040a; border-color: #14232e; }
+.previewArcade > img { object-fit: contain; object-position: center; }

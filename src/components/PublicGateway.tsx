@@ -12,7 +12,7 @@ type SinglePreview = {
   srcSet?: string;
   width: number;
   height: number;
-  variant: "slides" | "migaq" | "game" | "poster" | "zine" | "paper";
+  variant: "slides" | "migaq" | "game" | "arcade" | "poster" | "zine" | "paper";
 };
 
 type SequencePreview = {
@@ -121,7 +121,7 @@ const destinations: readonly Destination[] = [
     description: "操作の気持ちよさ、映像と音の反応、リトライしたくなるテンポを追求するミニゲーム。第1作は、左右操作だけで走る60秒のネオンドリフト・アーケード『NEON DRIFT』。",
     action: "PLAY GAMES",
     href: "/game-center/",
-    preview: {kind: "single", src: "/game-center/neon-drift/art/neon-drift-title.png?v=11", width: 1280, height: 720, variant: "game"},
+    preview: {kind: "single", src: "/game-center/neon-drift/art/neon-drift-title.png?v=12", width: 1280, height: 720, variant: "arcade"},
   },
   {
     group: "EXPERIENCE / OVERVIEW · UPDATED 2026.07",
@@ -216,6 +216,7 @@ function DestinationPreview({
     slides: styles.previewSlides,
     migaq: styles.previewMigaq,
     game: styles.previewGame,
+    arcade: styles.previewArcade,
     poster: styles.previewPoster,
     zine: styles.previewZine,
     paper: styles.previewPaper,
