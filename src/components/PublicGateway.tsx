@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import styles from "./PublicGateway.module.css";
+import neonDriftRelease from "../../public/game-center/neon-drift/release.json";
 
 const CONTACT_ADDRESS = ["t-omori", "kusa.ac.jp"].join("@");
 
@@ -115,7 +116,7 @@ const destinations: readonly Destination[] = [
     },
   },
   {
-    group: "PLAY / BROWSER GAMES · NEW 2026.09",
+    group: `PLAY / BROWSER GAMES · NEON DRIFT ${neonDriftRelease.label}`,
     title: "GAME CENTER",
     definition: "短い時間で、もう一度遊びたくなるブラウザゲーム集",
     description: "操作の気持ちよさ、映像と音の反応、リトライしたくなるテンポを追求するミニゲーム。第1作は、左右操作だけで6.8kmを駆け抜けるネオンドリフト・アーケード『NEON DRIFT』。",
