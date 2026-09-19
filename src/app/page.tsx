@@ -18,14 +18,22 @@ const structuredData = {
       knowsAbout: ["デザイン", "創作教育", "生成AI", "AIプロダクト開発"],
     },
     {
-      "@type": "SoftwareApplication",
-      name: "MIGAQ",
-      url: "https://t-omori-lab.github.io/migaq/",
-      applicationCategory: "DesignApplication",
-      operatingSystem: "Web browser",
+      "@type": "VideoGame",
+      name: "NEON DRIFT",
+      url: "https://t-omori-lab.github.io/game-center/neon-drift/",
+      gamePlatform: "Web browser",
+      genre: "Arcade racing game",
       author: { "@id": "https://t-omori-lab.github.io/#person" },
       description:
-        "AIがメモや途中案を仮の企画書に整理し、利用者が提案を採用・修正・棄却・保留しながら、判断理由とともに版を更新するデザイン支援アプリ。",
+        "左右操作だけで6.8kmを駆け抜けるネオンドリフト・アーケード。",
+    },
+    {
+      "@type": "CreativeWork",
+      name: "SELECTED WORKS",
+      url: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/preview",
+      author: { "@id": "https://t-omori-lab.github.io/#person" },
+      description:
+        "広告、編集、Web、UI、教育・研究の仕事から、役割と成果がわかる事例をまとめたポートフォリオ。",
     },
     {
       "@type": "VideoGame",
@@ -35,13 +43,17 @@ const structuredData = {
       genre: "Role-playing game",
       author: { "@id": "https://t-omori-lab.github.io/#person" },
       description:
-        "自然に侵食された旧世界を探索し、敵と戦い、遺物を持ち帰るアクションRPG。遠征で得た装備と選択が次の旅に残る。",
+        "AIエージェントと継続開発している探索アクションRPG。",
     },
     {
-      "@type": "CreativeWork",
-      name: "PORTFOLIO SLIDES",
-      url: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/preview",
+      "@type": "SoftwareApplication",
+      name: "MIGAQ",
+      url: "https://t-omori-lab.github.io/migaq/",
+      applicationCategory: "DesignApplication",
+      operatingSystem: "Web browser",
       author: { "@id": "https://t-omori-lab.github.io/#person" },
+      description:
+        "メモや途中案を企画書に整理し、人の採用・修正・棄却と、その理由を残すデザイン支援アプリ。",
     },
     {
       "@type": "CreativeWork",

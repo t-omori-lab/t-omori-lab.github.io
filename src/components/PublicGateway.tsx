@@ -59,13 +59,58 @@ type Destination = {
 
 const destinations: readonly Destination[] = [
   {
+    group: `PLAYABLE BROWSER GAME · ${neonDriftRelease.label}`,
+    title: "NEON DRIFT",
+    definition: "左右操作だけで6.8kmを駆け抜けるネオンドリフト・アーケード",
+    description: "音楽、速度、ドリフトの気持ちよさを追求しています。",
+    action: "PLAY NEON DRIFT",
+    href: "/game-center/neon-drift/",
+    preview: {
+      kind: "single",
+      src: "/game-center/neon-drift/art/neon-drift-title.png?v=17",
+      width: 1280,
+      height: 720,
+      variant: "arcade",
+    },
+  },
+  {
+    group: "SELECTED WORKS / PORTFOLIO · UPDATED 2026.07",
+    title: "SELECTED WORKS",
+    description:
+      "広告、編集、Web、UI、教育・研究。約20年の仕事から、役割と成果がわかる事例をまとめています。",
+    action: "VIEW SELECTED WORKS",
+    href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/preview",
+    preview: {
+      kind: "single",
+      src: "/index-previews/portfolio-slides.webp",
+      srcSet:
+        "/index-previews/portfolio-slides-960.webp 960w, /index-previews/portfolio-slides.webp 1600w",
+      width: 1600,
+      height: 900,
+      variant: "slides",
+    },
+  },
+  {
+    group: "CURRENT PRACTICE / PLAYABLE MVP · R15 · PUBLISHED 2026-09-02",
+    title: "F.R.A.M.",
+    definition: "AIエージェントと継続開発している探索アクションRPG",
+    description:
+      "実際に遊び、判断し、修正しながら世界と仕組みをつくっています。",
+    action: "PLAY / EXPLORE",
+    href: "https://t-omori-lab.github.io/game/",
+    preview: {
+      kind: "single",
+      src: "/index-previews/fram-r15.png",
+      width: 1280,
+      height: 720,
+      variant: "game",
+    },
+  },
+  {
     group: "CURRENT PRACTICE / PUBLIC BETA · SINCE 2026.07",
     title: "MIGAQ",
-    definition: "人が判断し、AIと企画書を更新するデザイン支援アプリ",
     description:
-      "AIがメモや途中案を仮の企画書に整理し、利用者は提案を採用・修正・棄却・保留しながら、判断理由とともに版を更新する。デザイン実務と教育で用いてきた判断基準をモデル化し、実際に制作した結果や、人に見せて得た反応も次の版へ引き継ぐ。",
-    role: "企画・プロダクトデザイン・研究設計・AIエージェント開発",
-    design: "判断モデル・企画プロセス・UX・システムアーキテクチャ",
+      "メモや途中案を企画書に整理し、人の採用・修正・棄却と、その理由を残すデザイン支援アプリです。",
     action: "TRY MIGAQ",
     href: "https://t-omori-lab.github.io/migaq/",
     preview: {
@@ -76,68 +121,6 @@ const destinations: readonly Destination[] = [
       width: 1440,
       height: 810,
       variant: "migaq",
-    },
-    developmentCase: {
-      label: "PRODUCT DEVELOPMENT EXPERIMENT / 固定比較プレビュー",
-      title: "MIGAQ2 — Preview 01",
-      status: "RESEARCH PREVIEW / FIXED EVIDENCE",
-      note:
-        "通常チャットとMIGAQ2を同じ着想で比較した6件の固定作例。本人の判断が企画書の差分・理由・履歴として残る構造を確認できる。",
-      href: "/migaq2/",
-    },
-  },
-  {
-    group: "CURRENT PRACTICE / PLAYABLE MVP · R15 · PUBLISHED 2026-09-02",
-    title: "F.R.A.M.",
-    definition: "AIエージェントと開発する、探索と戦闘のアクションRPG",
-    description:
-      "自然に侵食された旧世界を探索し、敵と戦い、遺物を持ち帰る。遠征で得た装備と選択が次の旅に残る。世界・人物・遊びの仕組みを言葉で設計し、AIエージェントによる実装候補を実際に遊び、修正しながら開発している。",
-    role: "企画・ゲームデザイン・アートディレクション・AIエージェント開発",
-    design: "世界設定・ゲームシステム・生成工程・開発アーキテクチャ",
-    action: "PLAY / EXPLORE",
-    href: "https://t-omori-lab.github.io/game/",
-    preview: {
-      kind: "single",
-      src: "/index-previews/fram-r15.png",
-      width: 1280,
-      height: 720,
-      variant: "game",
-    },
-    history: {
-      label: "LATEST / R15",
-      text: "R15の実プレイ画面。旧版はゲーム内の履歴から確認できる。",
-    },
-    developmentCase: {
-      label: "AI DEVELOPMENT EXPERIMENT / 遊べるAI開発実験",
-      title: "WAF-01 — マップ／建築生成パイプライン",
-      status: "PIPELINE CASE / NOT PLAYABLE",
-      note: "採択済み生成工程の記録。R13はその成果の一部を実プレイへ統合。",
-      href: "https://t-omori-lab.github.io/game/experiments/waf-01/",
-    },
-  },
-  {
-    group: `PLAY / BROWSER GAMES · NEON DRIFT ${neonDriftRelease.label}`,
-    title: "GAME CENTER",
-    definition: "短い時間で、もう一度遊びたくなるブラウザゲーム集",
-    description: "操作の気持ちよさ、映像と音の反応、リトライしたくなるテンポを追求するミニゲーム。第1作は、左右操作だけで6.8kmを駆け抜けるネオンドリフト・アーケード『NEON DRIFT』。",
-    action: "PLAY GAMES",
-    href: "/game-center/",
-    preview: {kind: "single", src: "/game-center/neon-drift/art/neon-drift-title.png?v=17", width: 1280, height: 720, variant: "arcade"},
-  },
-  {
-    group: "EXPERIENCE / OVERVIEW · UPDATED 2026.07",
-    title: "PORTFOLIO SLIDES",
-    description: "デザイン実務、教育、研究にまたがるプロジェクトと成果をまとめたポートフォリオ。",
-    action: "VIEW SLIDES",
-    href: "https://docs.google.com/presentation/d/1SXcmq0TLn-0rCmH4BNuQ-8cNRfPwRXGV6HiFo5NgcZk/preview",
-    preview: {
-      kind: "single",
-      src: "/index-previews/portfolio-slides.webp",
-      srcSet:
-        "/index-previews/portfolio-slides-960.webp 960w, /index-previews/portfolio-slides.webp 1600w",
-      width: 1600,
-      height: 900,
-      variant: "slides",
     },
   },
   {
@@ -289,10 +272,10 @@ export function PublicGateway() {
               TAKASHI OMORI
             </h1>
             <p className={styles.identityNameJa}>大森 隆</p>
-            <p className={styles.role}>大学教員／デザインディレクター／AIプロダクト開発</p>
+            <p className={styles.role}>デザインディレクター／大学教員／AIプロダクト開発</p>
             <div className={styles.positioningStatement}>
               <p>
-                デザイン実務と教育を背景に、AIエージェントによるアプリ・ゲーム開発と、生成AIによる作品・教材制作に取り組んでいます。
+                20年のデザイン実務と教育を土台に、ゲーム、デザイン支援ツール、創作教育の研究に取り組んでいます。
               </p>
             </div>
           </div>
