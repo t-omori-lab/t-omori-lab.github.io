@@ -1,0 +1,112 @@
+{
+  "license": "CC0-1.0",
+  "source": "https://muted.io/performance-cars/",
+  "archive_sha256": "bde1241416274464c170d59dde84327d53868210a7af7d73e63fc35576593d10",
+  "processing": "mono 44.1kHz, 58Hz high pass / 7.2kHz low pass, stationary grain selection, slow-envelope normalization, periodic overlap and level trim; RPM is a game calibration, not a source measurement",
+  "samples": [
+    {
+      "file": "low-on.wav",
+      "source": "033-performance-cars-mutedio.wav",
+      "source_sha256": "010d3d0df20eb0da606c5faf3c3c9febf9e2267475f7b7b1264405a840411729",
+      "start_seconds": 3.89,
+      "excerpt_seconds": 0.34,
+      "calibrated_rpm": 1550,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.33,
+      "sha256": "82dd0f2a963b801794f9b1f0a7b40b2764a1ae1bb88e5fd1a7605c23fc7bdb42",
+      "rms": 0.22,
+      "peak": 0.633818812710849
+    },
+    {
+      "file": "low-off.wav",
+      "source": "033-performance-cars-mutedio.wav",
+      "source_sha256": "010d3d0df20eb0da606c5faf3c3c9febf9e2267475f7b7b1264405a840411729",
+      "start_seconds": 9.18,
+      "excerpt_seconds": 0.34,
+      "calibrated_rpm": 1650,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.33,
+      "sha256": "e5ebe9df53dea993a893125a51e3274528127e129e89fbe5c6956d044ad841f9",
+      "rms": 0.22,
+      "peak": 0.5958165181011871
+    },
+    {
+      "file": "lower-on.wav",
+      "source": "033-performance-cars-mutedio.wav",
+      "source_sha256": "010d3d0df20eb0da606c5faf3c3c9febf9e2267475f7b7b1264405a840411729",
+      "start_seconds": 14.82,
+      "excerpt_seconds": 0.24,
+      "calibrated_rpm": 3000,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.23,
+      "sha256": "0a20cb4cb791bd63322f0dab853f6a95e6cdca9e49290e235144a82614d8d122",
+      "rms": 0.22000000000000006,
+      "peak": 0.8327934275040665
+    },
+    {
+      "file": "lower-off.wav",
+      "source": "033-performance-cars-mutedio.wav",
+      "source_sha256": "010d3d0df20eb0da606c5faf3c3c9febf9e2267475f7b7b1264405a840411729",
+      "start_seconds": 14.49,
+      "excerpt_seconds": 0.24,
+      "calibrated_rpm": 3650,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.23,
+      "sha256": "e698e4663b2458625ce3e59b8d34ec2ef069cd9eed636e97cc28872db357d4a5",
+      "rms": 0.22,
+      "peak": 0.8422724192032727
+    },
+    {
+      "file": "mid-on.wav",
+      "source": "029-performance-cars-mutedio.wav",
+      "source_sha256": "0f0a80a3f5f11e0353f6c847d71c2db877f95de7591a3424d8d4df24398a2331",
+      "start_seconds": 7.010000000000001,
+      "excerpt_seconds": 0.18,
+      "calibrated_rpm": 4800,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.17,
+      "sha256": "d1e400ce37afa857a443eb7f5c3ea93f0f0eb62e7a9601b57c200d9a2c8e144c",
+      "rms": 0.22000000000000006,
+      "peak": 0.5746393029060718
+    },
+    {
+      "file": "mid-off.wav",
+      "source": "029-performance-cars-mutedio.wav",
+      "source_sha256": "0f0a80a3f5f11e0353f6c847d71c2db877f95de7591a3424d8d4df24398a2331",
+      "start_seconds": 18.83,
+      "excerpt_seconds": 0.18,
+      "calibrated_rpm": 4950,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.17,
+      "sha256": "3121c84ae22cca78eb45e4db43e93ed1334201c11fdf62fee06fd48c57d903d9",
+      "rms": 0.22,
+      "peak": 0.7496008994579144
+    },
+    {
+      "file": "high-on.wav",
+      "source": "038-performance-cars-mutedio.wav",
+      "source_sha256": "0b96440e1ed2ccc75d5d7d65723e86e08160762b11d9d8ed785edfc8f695c76b",
+      "start_seconds": 11.47,
+      "excerpt_seconds": 0.18,
+      "calibrated_rpm": 6750,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.17,
+      "sha256": "6dc88aa59da547a63af30f317a6309fba5aaabb8408a380e409910f931710c9a",
+      "rms": 0.21999999999999997,
+      "peak": 0.5681002195411182
+    },
+    {
+      "file": "high-off.wav",
+      "source": "038-performance-cars-mutedio.wav",
+      "source_sha256": "0b96440e1ed2ccc75d5d7d65723e86e08160762b11d9d8ed785edfc8f695c76b",
+      "start_seconds": 3.44,
+      "excerpt_seconds": 0.18,
+      "calibrated_rpm": 6750,
+      "rpm_is_measured": false,
+      "pcm_seconds": 0.17,
+      "sha256": "2ba0a9447258d4fd1e8a9fe5370618b6205ea24b45ab4fbdd975ee15a6d7397e",
+      "rms": 0.22,
+      "peak": 0.6425021992292278
+    }
+  ]
+}

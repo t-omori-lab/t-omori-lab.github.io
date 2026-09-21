@@ -19,13 +19,13 @@ const structuredData = {
     },
     {
       "@type": "VideoGame",
-      name: "NEON DRIFT",
-      url: "https://t-omori-lab.github.io/game-center/neon-drift/",
+      name: "ILLUMI LINE",
+      url: "https://t-omori-lab.github.io/illumi-line/",
       gamePlatform: "Web browser",
       genre: "Arcade racing game",
       author: { "@id": "https://t-omori-lab.github.io/#person" },
       description:
-        "左右操作だけで6.8kmを駆け抜けるネオンドリフト・アーケード。",
+        "左右だけで、最速ラインを描け。ドリフトで加速し、6.8kmの最速タイムを競うアーケードレーシング。",
     },
     {
       "@type": "CreativeWork",

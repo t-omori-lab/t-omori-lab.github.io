@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import styles from "./PublicGateway.module.css";
-import neonDriftRelease from "../../public/game-center/neon-drift/release.json";
+import illumiLineRelease from "../../public/illumi-line/release.json";
 
 const CONTACT_ADDRESS = ["t-omori", "kusa.ac.jp"].join("@");
 
@@ -59,17 +59,17 @@ type Destination = {
 
 const destinations: readonly Destination[] = [
   {
-    group: `PLAYABLE BROWSER GAME · ${neonDriftRelease.label}`,
-    title: "NEON DRIFT",
-    definition: "左右操作だけで6.8kmを駆け抜けるネオンドリフト・アーケード",
-    description: "音楽、速度、ドリフトの気持ちよさを追求しています。",
-    action: "PLAY NEON DRIFT",
-    href: "/game-center/neon-drift/",
+    group: `PLAYABLE BROWSER GAME · ${illumiLineRelease.label}`,
+    title: "ILLUMI LINE",
+    definition: "左右だけで、最速ラインを描け。",
+    description: "ドリフトで加速し、6.8kmの最速タイムを競うアーケードレーシング。",
+    action: "PLAY ILLUMI LINE",
+    href: "/illumi-line/",
     preview: {
       kind: "single",
-      src: "/game-center/neon-drift/art/neon-drift-title.png?v=17",
-      width: 1280,
-      height: 720,
+      src: "/illumi-line/art/illumi-line-title.png",
+      width: 1600,
+      height: 532,
       variant: "arcade",
     },
   },
