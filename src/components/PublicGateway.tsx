@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import styles from "./PublicGateway.module.css";
-import illumiLineRelease from "../../public/illumi-line/release.json";
+import illumiDriveRelease from "../../public/illumi-drive/release.json";
 
 const CONTACT_ADDRESS = ["t-omori", "kusa.ac.jp"].join("@");
 
@@ -59,17 +59,17 @@ type Destination = {
 
 const destinations: readonly Destination[] = [
   {
-    group: `PLAYABLE BROWSER GAME · ${illumiLineRelease.label}`,
-    title: "ILLUMI LINE",
+    group: `PLAYABLE BROWSER GAME · ${illumiDriveRelease.label}`,
+    title: "ILLUMI DRIVE",
     definition: "左右だけで、最速ラインを描け。",
     description: "ドリフトで加速し、6.8kmの最速タイムを競うアーケードレーシング。",
-    action: "PLAY ILLUMI LINE",
-    href: "/illumi-line/",
+    action: "PLAY ILLUMI DRIVE",
+    href: "/illumi-drive/",
     preview: {
       kind: "single",
-      src: "/illumi-line/art/illumi-line-title.png",
+      src: "/index-previews/illumi-drive.png",
       width: 1600,
-      height: 532,
+      height: 900,
       variant: "arcade",
     },
   },

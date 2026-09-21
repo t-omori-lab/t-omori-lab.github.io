@@ -19,8 +19,8 @@ const structuredData = {
     },
     {
       "@type": "VideoGame",
-      name: "ILLUMI LINE",
-      url: "https://t-omori-lab.github.io/illumi-line/",
+      name: "ILLUMI DRIVE",
+      url: "https://t-omori-lab.github.io/illumi-drive/",
       gamePlatform: "Web browser",
       genre: "Arcade racing game",
       author: { "@id": "https://t-omori-lab.github.io/#person" },

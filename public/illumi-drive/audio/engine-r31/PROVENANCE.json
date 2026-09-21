@@ -1,0 +1,78 @@
+{
+  "status": "LFA V10 selected by owner; E Digital UFO direction selected for differentiated normal/super boost candidates",
+  "license": "https://sonniss.com/gdc-bundle-license/",
+  "use": "modified recordings incorporated into ILLUMI DRIVE; no standalone redistribution or AI training",
+  "sources": [
+    {
+      "file": "Lexus LFA 06 - ONB - Designed - 2k RPM loop mono.wav",
+      "url": "https://ftpmirror.your.org/pub/misc/sonniss2020/individual/Soundholder%20-%20Lexus%20LFA%204.8%20V10/Lexus%20LFA%2006%20-%20ONB%20-%20Designed%20-%202k%20RPM%20loop%20mono.wav",
+      "bytes": 1441052,
+      "sha256": "a888519bef92f08f7b0efe6be18c949e8ff4247d31e3479f89822268f9a2b778",
+      "license": "https://sonniss.com/gdc-bundle-license/",
+      "bundle": "Sonniss GDC 2020",
+      "seconds": 5.0,
+      "rate": 96000,
+      "channels": 1,
+      "sample_width": 3
+    },
+    {
+      "file": "Lexus LFA 12 - INT - Designed - 8k RPM loop stereo XY.wav",
+      "url": "https://ftpmirror.your.org/pub/misc/sonniss2020/individual/Soundholder%20-%20Lexus%20LFA%204.8%20V10/Lexus%20LFA%2012%20-%20INT%20-%20Designed%20-%208k%20RPM%20loop%20stereo%20XY.wav",
+      "bytes": 1171052,
+      "sha256": "b79d2250b87de658a924b5a29e7af2220c2769a3a2228155dba14845443e465f",
+      "license": "https://sonniss.com/gdc-bundle-license/",
+      "bundle": "Sonniss GDC 2020",
+      "seconds": 2.03125,
+      "rate": 96000,
+      "channels": 2,
+      "sample_width": 3
+    },
+    {
+      "file": "Digital_UFO_Accelerate_02.wav",
+      "url": "https://ftpmirror.your.org/pub/misc/sonniss2020/individual/Sound%20Spark%20LLC%20-%20Hyperdrive-%20Futuristic%20Vehicle%20Elements/Digital_UFO_Accelerate_02.wav",
+      "bytes": 10525716,
+      "sha256": "c756e1dcc2fc3ae623663a5b19f92d968c641e04aac6a91e1d9f14abc8dd67dc",
+      "license": "https://sonniss.com/gdc-bundle-license/",
+      "bundle": "Sonniss GDC 2020",
+      "seconds": 9.086666666666666,
+      "rate": 192000,
+      "channels": 2,
+      "sample_width": 3
+    }
+  ],
+  "processing": "48kHz mono PCM16; steady RPM engine banks unchanged; continuous speed/load pitch without virtual gears. Digital UFO opening retained; normal boost shortened with a brighter pitch, super boost extended with a pitch-lowered pressure layer and controlled tail; click-free boundaries and headroom.",
+  "derivatives": [
+    {
+      "file": "v10-low.wav",
+      "seconds": 4.92,
+      "rms": 0.14999951197277583,
+      "peak": 0.6208091036198532,
+      "seamJump": 0.0,
+      "sha256": "8b5b2d4bb75fc524a4eb18d272f7a646a43aa3ae77f5242ae7deca41b8e9ad7e"
+    },
+    {
+      "file": "v10-high.wav",
+      "seconds": 1.99625,
+      "rms": 0.1399994480212979,
+      "peak": 0.4853799819452418,
+      "seamJump": 0.0,
+      "sha256": "6726a5fcbe5adf6c2f2021f8c8c8e471fce8ae53b0e3b9cb975efe8dec2f1cf8"
+    },
+    {
+      "file": "boost-ufo.wav",
+      "seconds": 1.48275,
+      "rms": 0.13624661440209282,
+      "peak": 0.8799999999004774,
+      "seamJump": null,
+      "sha256": "6c315282bde003903793454620b9ed61b23e7344ef90da81b281277b1d6e379e"
+    },
+    {
+      "file": "super-boost-ufo.wav",
+      "seconds": 2.3711041666666666,
+      "rms": 0.12705452619116248,
+      "peak": 0.8799999999022965,
+      "seamJump": null,
+      "sha256": "6501b75a9c4fb014d096cf0ed6b1ffab179eb8e2ee0775bda20795319b81aac5"
+    }
+  ]
+}
