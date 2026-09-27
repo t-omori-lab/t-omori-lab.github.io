@@ -1,0 +1,19 @@
+{
+  "title": "MIDNIGHT EXIT",
+  "take": "A",
+  "songId": "b1809312-37a8-44b4-876d-e66cad89a574",
+  "sourceUrl": "https://suno.com/song/b1809312-37a8-44b4-876d-e66cad89a574",
+  "provider": "Suno",
+  "model": "V6",
+  "ownerSelectionDate": "2026-09-27",
+  "generationPlanEvidence": "Pro plan observed in original generation ledger on2026-09-21",
+  "downloadPlan": "Pro, selected song unlocked2026-09-27; no generation or plan change",
+  "sourceFormat": "WAV PCM16 stereo48000Hz",
+  "sourceSha256": "1458c0d517e9343fbfd3d5722b3ed7a9c2a4b98da64d524ea93343646a9090ab",
+  "deliveryFormat": "AAC LC stereo48000Hz constrained VBR target320kbps",
+  "deliverySha256": "4dfb3b5bfcf2dcf29e6df960f4980d4f922f005d62b8f2bf940159cdca130c1d",
+  "durationSeconds": 147.6,
+  "bpmIntent": 154,
+  "runtimeGain": 0.797,
+  "note": "Full source preserved locally. Gain matched by active-window RMS to existing accepted track, not a claim of auditory or legal certification."
+}
