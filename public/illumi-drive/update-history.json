@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "currentRevisionId": "R49.0",
+  "currentNoticeIds": ["ranking-v51-20260929"],
+  "weeklySchedule": {
+    "label": "週間ランキング",
+    "schedule": "毎週月曜 00:00 JSTに新しい週へ切り替わります。全期間ランキングと保存済み記録は消えません。"
+  },
+  "notices": [
+    {
+      "id": "ranking-v51-20260929",
+      "kind": "ranking",
+      "title": "タイムランキングとゴーストをリセットしました",
+      "shortLabel": "ランキングをリセットしました",
+      "happenedAt": "2026-09-29",
+      "summary": "操作音とコース案内の調整に伴い、週間・全期間のタイムランキングとゴーストをリセットしました。以前の記録は現在のランキングには表示されません。",
+      "details": [
+        "2026年9月29日に、週間・全期間のタイムランキングと、走行中に表示されるゴーストをリセットしました。",
+        "操作音とコース案内を調整したため、同じ走行条件で順位を比べられるようにしました。",
+        "切り替え前のタイム・ゴースト・走行記録は運営側で保管しています。現在のランキングや走行中には表示されません。"
+      ],
+      "important": true,
+      "ruleset": "v51",
+      "decision": "new-ranking-archive-old"
+    },
+    {
+      "id": "ranking-v50-20260928",
+      "kind": "ranking",
+      "title": "タイムランキングとゴーストをリセットしました",
+      "shortLabel": "ランキングをリセットしました",
+      "happenedAt": "2026-09-28T08:06:18Z",
+      "summary": "カウンターステアで加速する条件の変更に伴い、週間・全期間のタイムランキングとゴーストをリセットしました。以前の記録は現在のランキングには表示されません。",
+      "details": [
+        "2026年9月28日に、週間・全期間のタイムランキングと、走行中に表示されるゴーストをリセットしました。",
+        "カウンターステアで加速する条件を見直し、同じ条件で順位を比べられるようにしました。",
+        "切り替え前のタイム・スコア・ゴーストは運営側で保管しています。現在のランキングや走行中には表示されません。"
+      ],
+      "important": true,
+      "ruleset": "v50",
+      "decision": "new-ranking-archive-old"
+    },
+    {
+      "id": "manual-time-reset-v46-20260926",
+      "kind": "manual-reset",
+      "title": "タイムランキングをリセットしました",
+      "shortLabel": "タイムランキングをリセットしました",
+      "happenedAt": "2026-09-26",
+      "summary": "2026年9月26日に、週間・全期間のタイムランキングをリセットしました。以前のタイムは現在のランキングには表示されません。",
+      "details": [
+        "対象は週間・全期間のタイムランキングです。スコアと走行中に表示されるゴーストは変わりません。",
+        "この日より前のタイムは現在のランキングには表示されません。以前のタイムは運営側で保管しています。"
+      ],
+      "important": true,
+      "ruleset": "v46"
+    },
+    {
+      "id": "manual-time-reset-v46-20260923",
+      "kind": "manual-reset",
+      "title": "タイムランキングをリセットしました",
+      "shortLabel": "タイムランキングをリセットしました",
+      "happenedAt": "2026-09-23",
+      "summary": "2026年9月23日に、週間・全期間のタイムランキングをリセットしました。以前のタイムは現在のランキングには表示されません。",
+      "details": [
+        "対象は週間・全期間のタイムランキングです。スコアと走行中に表示されるゴーストは変わりません。",
+        "この日より前のタイムは現在のランキングには表示されません。以前のタイムは運営側で保管しています。"
+      ],
+      "important": true,
+      "ruleset": "v46"
+    }
+  ],
+  "entries": [
+    {
+      "label": "R49",
+      "revisionId": "R49.0",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-09-30T05:20:21Z",
+      "title": "ゴーストと画面表示を改善しました",
+      "shortSummary": "ゴーストと画面表示を改善しました",
+      "highlights": [
+        "自分のペースに近いゴーストが表示されるようになりました",
+        "スタートと再開時の画面表示を整えました",
+        "端末に合わせた画質と操作の安定性を改善しました"
+      ],
+      "details": [
+        "自分のペースに近いゴーストを追いかけ、追い抜くと次の相手に挑戦できるようになりました。",
+        "タイトル画面から、これまでの更新内容を確認できるようになりました。",
+        "スタート、読み込み、再開の画面表示を整理し、縦持ち中に意図せず停止しにくくしました。",
+        "端末の状態に合わせた画質の調整と、可動する後部ウィングの光の受け方を整えました。"
+      ]
+    },
+    {
+      "label": "R48",
+      "revisionId": "R48.0",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-09-28T08:06:18Z",
+      "title": "ドリフト演出と画質を改善しました",
+      "shortSummary": "ドリフト演出と画質を改善しました",
+      "highlights": [
+        "ドリフトに合わせた光を見やすくしました",
+        "端末に合わせて画質を整えました",
+        "読み込みと音楽の準備を改善しました"
+      ],
+      "details": [
+        "ドリフトやカウンターステアに合わせて光が変化するようにし、通常時の道路と背景を見やすくしました。",
+        "端末の状態に合わせて、画質の細かさと動きやすさのバランスを整えました。",
+        "読み込みの進み方と、音楽を再生するための準備を改善しました。",
+        "スタート前の車体、路面の反射、確認音を整えました。"
+      ],
+      "noticeIds": ["ranking-v51-20260929", "ranking-v50-20260928"]
+    },
+    {
+      "label": "R47",
+      "revisionId": "R47.0",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-09-27T01:15:10.989205Z",
+      "title": "景観・操作演出・音楽構成を更新しました",
+      "shortSummary": "景観と操作演出、音楽を更新しました",
+      "details": [
+        "コースの立体感、遠景、路面の見通しと光の階層を更新しました。",
+        "操作に連動するドリフト／カウンター表示と開始操作の見やすさを改善しました。",
+        "10曲の選曲順と再生処理を更新し、旧記録を保持したまま新しい走行条件へ切り替えました。"
+      ]
+    },
+    {
+      "label": "R46",
+      "revisionId": "R46.0",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-09-21T08:29:56.526207Z",
+      "title": "名称をILLUMI DRIVEへ更新しました",
+      "shortSummary": "名称と公開入口を更新しました",
+      "details": [
+        "タイトルをILLUMI DRIVEへ更新し、ゲームを開くための入口を追加しました。",
+        "FINISHの文字を明るく見せ、ほかの文字は背景を邪魔しない見え方に整えました。",
+        "高速時の白いベールを抑え、R45までの操作・記録・ゴーストを保持しました。"
+      ]
+    },
+    {
+      "label": "R45",
+      "revisionId": "R45.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-21T07:15:54.007755Z",
+      "title": "イベント文字とトンネル復帰を改善しました",
+      "shortSummary": "文字表示とトンネル復帰を改善しました",
+      "details": [
+        "開始・イベント・FINISHの文字を、より見やすい明るさに整えました。",
+        "トンネル退出時の画面復帰とゴースト選択、GO時刻の整合を改善しました。",
+        "競技条件と既存記録は変更していません。"
+      ]
+    },
+    {
+      "label": "R44",
+      "revisionId": "R44.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-20T16:58:41.086166Z",
+      "title": "デモ操作・影・自動画質を仕上げました",
+      "shortSummary": "デモ操作と自動画質を仕上げました",
+      "details": [
+        "タイトルデモで左右入力を受け付け、実走と同じ道路・車体表現を使うようにしました。",
+        "車体の接地影、曲送り、画質の自動調整と復帰を改善しました。",
+        "走行条件を更新し、以前の記録は旧ランキングとして保存しました。"
+      ]
+    },
+    {
+      "label": "R43",
+      "revisionId": "R43.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-20T02:35:22Z",
+      "title": "近距離の明瞭さと光の動きを改善しました",
+      "shortSummary": "近距離の光と速度感を改善しました",
+      "details": [
+        "車体付近の道路と光跡を読みやすくしました。",
+        "速度に応じた光の流れと画質復帰の安定性を改善しました。"
+      ]
+    },
+    {
+      "label": "R42",
+      "revisionId": "R42.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-20T01:34:46Z",
+      "title": "明るさの表現と車体ライトを改善しました",
+      "shortSummary": "明るさの表現と車体ライトを改善しました",
+      "details": [
+        "色と明るさを保ちながら、画面が滑らかに動くようにしました。",
+        "車体ライトと高速時の見え方を調整しました。"
+      ]
+    },
+    {
+      "label": "R41",
+      "revisionId": "R41.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T19:41:45Z",
+      "title": "画面表示と音楽開始を安定させました",
+      "shortSummary": "画面表示と音楽開始を安定させました",
+      "details": [
+        "明るい画面表示の開始と復帰を安定させました。",
+        "音楽読込とレース開始の同期を改善しました。"
+      ]
+    },
+    {
+      "label": "R40",
+      "revisionId": "R40.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T18:53:07Z",
+      "title": "光の明るさと走行感を安定させました",
+      "shortSummary": "光の明るさと走行モーションを安定させました",
+      "details": [
+        "光が強くなりすぎる場面と色の乱れを抑えました。",
+        "高速走行時の車体とカメラの動きを整えました。"
+      ]
+    },
+    {
+      "label": "R39",
+      "revisionId": "R39.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T17:50:27Z",
+      "title": "光の残像と車体反応を改善しました",
+      "shortSummary": "残像と車体ライトを改善しました",
+      "details": [
+        "連続するライトの露光を蓄積し、最後の一枚だけが残る見え方を抑えました。",
+        "粒子の開口表現を整理し、車体への光の反応を安定させました。"
+      ]
+    },
+    {
+      "label": "R38",
+      "revisionId": "R38.1",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T16:57:07Z",
+      "title": "視覚と操作を仕上げました",
+      "shortSummary": "視覚と操作を仕上げました",
+      "details": [
+        "高速時の光跡、粒子、トンネル退出後の残像を整理しました。",
+        "操作表示と画質切替の安定性を改善しました。",
+        "同じR38の公開後に、光の見え方を追加で調整しました。"
+      ]
+    },
+    {
+      "label": "R37",
+      "revisionId": "R37.1",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T15:26:04Z",
+      "title": "トンネル・反射・選曲を安定させました",
+      "shortSummary": "トンネルと反射、選曲を改善しました",
+      "details": [
+        "トンネル内の回転区間と近距離の光の流れを安定させました。",
+        "道路反射とメニュー音楽の同期を修正しました。",
+        "同じR37内で公開後の修正を追記しました。"
+      ]
+    },
+    {
+      "label": "R36",
+      "revisionId": "R36.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T14:15:45Z",
+      "title": "ドリフト進行とフィナーレを改善しました",
+      "shortSummary": "ドリフトとフィナーレを改善しました",
+      "details": [
+        "ドリフトの進行、復帰、接地感を調整しました。",
+        "メニュー音声とフィニッシュ演出を整えました。"
+      ]
+    },
+    {
+      "label": "R35",
+      "revisionId": "R35.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T12:54:00Z",
+      "title": "ドリフト復帰と空間照明を統合しました",
+      "shortSummary": "ドリフト復帰と照明を改善しました",
+      "details": [
+        "ドリフトから直進へ戻る応答を改善しました。",
+        "道路・車体・背景の照明タイミングを揃えました。"
+      ]
+    },
+    {
+      "label": "R34",
+      "revisionId": "R34.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T11:33:59Z",
+      "title": "タイトル・選曲・出口残像を更新しました",
+      "shortSummary": "開始画面と音、残像を更新しました",
+      "details": [
+        "タイトル到着演出とレース開始音を調整しました。",
+        "15曲の選択と再生を整えました。",
+        "テール光跡とトンネル出口の残像を改善しました。"
+      ]
+    },
+    {
+      "label": "R33",
+      "revisionId": "R33.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T09:05:20Z",
+      "title": "LFAを参考に挙動と4K品質を改善しました",
+      "shortSummary": "挙動・コース・4K品質を更新しました",
+      "details": [
+        "荷重とエンジン反応を調整し、LFA参考の走行感へ近づけました。",
+        "連続ヘアピンと360度の上り下り区間を追加しました。",
+        "4K表示と実景反射の品質を改善しました。"
+      ]
+    },
+    {
+      "label": "R32",
+      "revisionId": "R32.2",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-19T05:51:45Z",
+      "title": "車体フィードバックと楽曲を統合しました",
+      "shortSummary": "車体・音・反射を統合しました",
+      "details": [
+        "荷重、タイヤ、エンジン音の反応を共有し、車体の動きを読みやすくしました。",
+        "路面反射、段階照明、開始演出と細い光跡を改善しました。",
+        "採用曲を11曲へ更新し、同じR32内で道路と選曲の修正を追記しました。"
+      ]
+    },
+    {
+      "label": "R31",
+      "revisionId": "R31.preview",
+      "identity": "NEON DRIFT",
+      "status": "development-only",
+      "publishedAt": null,
+      "title": "公開版として確認できていない調整候補です",
+      "shortSummary": "公開版として確認できていない調整候補です",
+      "details": [
+        "車体の動きと光の見え方を確かめるための候補として作られました。",
+        "公開版としての確認は取れていません。現在のゲームに含まれる内容としては案内しません。"
+      ]
+    },
+    {
+      "label": "R30",
+      "revisionId": "R30.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-18T13:20:57Z",
+      "title": "音楽表示・最終区間・結果画面を改善しました",
+      "shortSummary": "音楽表示と結果画面を改善しました",
+      "details": [
+        "細い光跡、最下部の曲表示と波形、最終ジャンプを追加しました。",
+        "クロームUIと結果画面の安定性を改善しました。",
+        "一時停止と再開の配置を修正し、記録はリセットしていません。"
+      ]
+    },
+    {
+      "label": "R29",
+      "revisionId": "R29.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-18T09:25:10Z",
+      "title": "400km/h走行と連続ヘアピンに対応しました",
+      "shortSummary": "400km/h走行と連続ヘアピンに対応しました",
+      "details": [
+        "400km/h域の走行と連続ヘアピンへ対応しました。",
+        "細い空間光跡、音楽連動、走行別ランキングを追加しました。",
+        "運転者の視線に合う近距離の流れへ修正しました。"
+      ]
+    },
+    {
+      "label": "R28",
+      "revisionId": "R28.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-18",
+      "title": "排気音・ライト・道路連続性を改善しました",
+      "shortSummary": "カメラ・音・道路連続性を改善しました",
+      "details": [
+        "連続する排気音と車体ライトを改善しました。",
+        "ループ区間のカメラ、道路、照明の連続性を整えました。",
+        "走行履歴の扱いを改善しました。"
+      ]
+    },
+    {
+      "label": "R27",
+      "revisionId": "R27.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-18",
+      "title": "走行・照明・スマホUIを大幅に更新しました",
+      "shortSummary": "走行・照明・スマホUIを更新しました",
+      "details": [
+        "発進、排気音、照明、ループとカメラの見え方を更新しました。",
+        "スマートフォン向けの画面配置を改善しました。",
+        "新しい楽曲4曲を追加しました。"
+      ]
+    },
+    {
+      "label": "R26",
+      "revisionId": "R26.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17",
+      "title": "メーター・エンジン音・高低差コースを追加しました",
+      "shortSummary": "メーターと高低差コースを追加しました",
+      "details": [
+        "速度メーターと収録エンジン音を追加しました。",
+        "上り下りを含むコースと車体表示を改善しました。",
+        "タイム／スコア記録を保持したまま公開しました。"
+      ]
+    },
+    {
+      "label": "R25",
+      "revisionId": "R25.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17T11:12:55.117925Z",
+      "title": "タイムアタックと連続スパイラルを追加しました",
+      "shortSummary": "タイムアタックとスパイラルを追加しました",
+      "details": [
+        "実時間を競うタイムアタックへ切り替えました。",
+        "3本の連続スパイラルと技術区間、最終スプリントを追加しました。",
+        "週間／全期間のタイム記録とゴーストを新しい競技条件へ分離しました。"
+      ]
+    },
+    {
+      "label": "R24",
+      "revisionId": "R24.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17",
+      "title": "加速パネルを中心に速度演出を更新しました",
+      "shortSummary": "加速パネルと速度演出を更新しました",
+      "details": [
+        "通常200km/h、パネル250／300km/hの速度段階を整えました。",
+        "パネルの光、エンジン、カメラ、粒子を同じ加速状態へ連動しました。",
+        "カウントダウンとGOの同期、約5.9kmの新コースを追加しました。"
+      ]
+    },
+    {
+      "label": "R23",
+      "revisionId": "R23.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17T08:05:47.489371Z",
+      "title": "カウントダウンとコース演出を連動しました",
+      "shortSummary": "カウントダウンと光を連動しました",
+      "details": [
+        "音声時計に同期した3–2–1–GOを追加しました。",
+        "道路、空間照明、操作イベントをコース位置に連動しました。",
+        "最大3台のゴーストと立体ミニマップを追加しました。"
+      ]
+    },
+    {
+      "label": "R22",
+      "revisionId": "R22.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17T06:31:52.712848Z",
+      "title": "結果画面の表示を修正しました",
+      "shortSummary": "結果画面の表示を修正しました",
+      "details": [
+        "結果画面の曲名とシャッフル表示が崩れる問題を修正しました。",
+        "物理、コース、記録、音楽データは変更していません。"
+      ]
+    },
+    {
+      "label": "R21",
+      "revisionId": "R21.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17T05:53:39.968704Z",
+      "title": "選曲・リトライ・親指を避けるHUDを改善しました",
+      "shortSummary": "選曲とHUD配置を改善しました",
+      "details": [
+        "タイトル、ポーズ、結果画面から曲を選びやすくしました。",
+        "HUDを上側へ整理し、左右の親指が触れる領域を空けました。",
+        "長い原曲の再生と曲送りを改善しました。"
+      ]
+    },
+    {
+      "label": "R20",
+      "revisionId": "R20.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17T02:24:59.542198Z",
+      "title": "長尺BGM・ミニマップ・車体反射を追加しました",
+      "shortSummary": "BGMとミニマップを追加しました",
+      "details": [
+        "長尺BGMを選択できるようにし、曲の切替と繰り返しを改善しました。",
+        "コース全体のミニマップを追加しました。",
+        "車体のハイライト、道路の光、音のバランスを改善しました。"
+      ]
+    },
+    {
+      "label": "R19",
+      "revisionId": "R19.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16T18:22:26.596570Z",
+      "title": "距離制コースと押す長さに応じた操作へ更新しました",
+      "shortSummary": "固定コースと操作感を更新しました",
+      "details": [
+        "約7.5kmの固定コースとゴール後の走行区間を追加しました。",
+        "短いタップはライン調整、長押しは深いドリフトになる操作へ調整しました。",
+        "加速、ジャンプ、タイムと技術点の結果表示を改善しました。"
+      ]
+    },
+    {
+      "label": "R18",
+      "revisionId": "R18.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16T17:04:09.413Z",
+      "title": "車体・カメラ・記録画面を改善しました",
+      "shortSummary": "車体と記録画面を改善しました",
+      "details": [
+        "高精細な車体表示と後方カメラの見通しを改善しました。",
+        "ループとトンネルを含むコース構成を整理しました。",
+        "タイム、ランキング、名前入力、リトライを一つの結果画面へまとめました。"
+      ]
+    },
+    {
+      "label": "R17",
+      "revisionId": "R17.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-17",
+      "title": "ループ・ツイスト・車体表現を仕上げました",
+      "shortSummary": "ループと車体表現を仕上げました",
+      "details": [
+        "2本の360度ループ、720度と1080度のツイストを追加しました。",
+        "車体ガラス、後部ライト、道路継ぎ目、ドリフト光跡を改善しました。",
+        "既存記録を保持したまま走行条件を更新しました。"
+      ]
+    },
+    {
+      "label": "R16",
+      "revisionId": "R16.audit",
+      "identity": "NEON DRIFT",
+      "status": "unresolved",
+      "publishedAt": null,
+      "title": "公開版を確認できませんでした",
+      "shortSummary": "公開状況と内容を確認できていません",
+      "details": [
+        "保存された公開記録ではR15の次がR17で、R16の公開を確認できませんでした。",
+        "欠番を公開版として補わず、追加資料が見つかるまで未確認として残します。"
+      ]
+    },
+    {
+      "label": "R15",
+      "revisionId": "R15.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "title": "週間ランキングと3Dコースを拡張しました",
+      "shortSummary": "週間ランキングと3D走行を拡張しました",
+      "details": [
+        "週間／全期間ランキングとゴースト再生を追加しました。",
+        "垂直ループ、壁面走行、ジャンプと立体的なコースを拡張しました。",
+        "2件の確認用記録のみを削除し、既存プレイヤー記録は保持しました。"
+      ]
+    },
+    {
+      "label": "R14",
+      "revisionId": "R14.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "title": "高低差・ゴースト・走行音を改善しました",
+      "shortSummary": "高低差とゴーストを追加しました",
+      "details": [
+        "ヘアピン、トンネル、スパイラルと複数のジャンプを追加しました。",
+        "走行入力を検証したゴーストを保存・再生できるようにしました。",
+        "音楽とエンジン、タイヤ、車体材質のバランスを改善しました。"
+      ]
+    },
+    {
+      "label": "R13",
+      "revisionId": "R13.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "title": "車体ガラス・ライト・最高速を更新しました",
+      "shortSummary": "車体と最高速を更新しました",
+      "details": [
+        "車体ガラス、テールライト、塗装反射を改善しました。",
+        "最高速330km/hとジャンプ、着地の手応えを調整しました。",
+        "走行条件を更新し、古い記録は旧ランキングとして保持しました。"
+      ]
+    },
+    {
+      "label": "R12",
+      "revisionId": "R12.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "title": "開始・画質・車体材質を改善しました",
+      "shortSummary": "開始同期と画質を改善しました",
+      "details": [
+        "最初のタップで音声とレース時計を同時に開始するようにしました。",
+        "画面負荷に応じた画質調整と車体材質を改善しました。",
+        "物理とランキングの走行条件は変更していません。"
+      ]
+    },
+    {
+      "label": "R11",
+      "revisionId": "R11.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "title": "コース・カウンター・結果表示を改善しました",
+      "shortSummary": "コースとカウンターを改善しました",
+      "details": [
+        "ジャンプ、連続コーナー、カウンターステア成功報酬を追加しました。",
+        "描画負荷を抑えながら空間表現とフィニッシュを改善しました。",
+        "結果画面と公開フォントの表示を修正しました。"
+      ]
+    },
+    {
+      "label": "R10",
+      "revisionId": "R10.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "title": "300km/h走行・ジャンプ・世界ランキングを追加しました",
+      "shortSummary": "300km/h走行とランキングを追加しました",
+      "details": [
+        "最高300km/hの走行、ジャンプと着地を追加しました。",
+        "3文字イニシャルの世界ランキングと入力再生による記録検証を追加しました。",
+        "タイトル、カメラ、音、スマートフォン画面を改善しました。"
+      ]
+    },
+    {
+      "label": "R9",
+      "revisionId": "R9.preview",
+      "identity": "NEON DRIFT",
+      "status": "development-only",
+      "publishedAt": null,
+      "title": "公開版として確認できていない立体コース候補です",
+      "shortSummary": "公開版として確認できていない立体コース候補です",
+      "details": [
+        "バンク、高低差、トンネル、スパイラルと4曲構成の候補として作られました。",
+        "確認記録ではローカル環境の候補として扱われ、公開R8を置き換えるものではありません。"
+      ]
+    },
+    {
+      "label": "R8",
+      "revisionId": "R8.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": null,
+      "title": "高速アーケード版の公開を確認しています",
+      "shortSummary": "公開内容を確認しましたが、日時は未確認です",
+      "details": [
+        "後続の検証記録から公開版として存在したことを確認しています。",
+        "公開日時と完全な変更内容を裏付ける最終公開記録は見つかっていません。"
+      ]
+    },
+    {
+      "label": "R7",
+      "revisionId": "R7.audit",
+      "identity": "NEON DRIFT",
+      "status": "unresolved",
+      "publishedAt": null,
+      "title": "公開状況を確認できませんでした",
+      "shortSummary": "公開状況と内容を確認できていません",
+      "details": [
+        "走行フィードバックと記録機能の開発形跡はありますが、公開完了を示す記録を確認できませんでした。"
+      ]
+    },
+    {
+      "label": "R6",
+      "revisionId": "R6.audit",
+      "identity": "NEON DRIFT",
+      "status": "unresolved",
+      "publishedAt": null,
+      "title": "公開状況を確認できませんでした",
+      "shortSummary": "公開状況と内容を確認できていません",
+      "details": [
+        "デジタルステージ、3D車体、サンプル音源の開発形跡はありますが、公開完了を示す記録を確認できませんでした。"
+      ]
+    },
+    {
+      "label": "R5",
+      "revisionId": "R5.preview",
+      "identity": "NEON DRIFT",
+      "status": "development-only",
+      "publishedAt": null,
+      "title": "デジタルステージの開発候補です",
+      "shortSummary": "公開版として確認できていない候補です",
+      "details": [
+        "3D車体、カウンターステア、光る道路と音楽を統合した候補です。",
+        "確認記録では、既存の公開R3を変更しない候補として扱われています。公開版ではありません。"
+      ]
+    },
+    {
+      "label": "R4",
+      "revisionId": "R4.audit",
+      "identity": "NEON DRIFT",
+      "status": "unresolved",
+      "publishedAt": null,
+      "title": "公開状況を確認できませんでした",
+      "shortSummary": "公開状況と内容を確認できていません",
+      "details": [
+        "操作報酬とリプレイの開発形跡はありますが、公開完了を示す記録を確認できませんでした。"
+      ]
+    },
+    {
+      "label": "R3",
+      "revisionId": "R3.0",
+      "identity": "NEON DRIFT",
+      "status": "published",
+      "publishedAt": null,
+      "title": "初期アーケード版の公開を確認しています",
+      "shortSummary": "公開内容を確認しましたが、日時は未確認です",
+      "details": [
+        "後続の検証記録から公開版として存在したことを確認しています。",
+        "公開日時と完全な変更内容を裏付ける最終公開記録は見つかっていません。"
+      ]
+    },
+    {
+      "label": "R2",
+      "revisionId": "R2.audit",
+      "identity": "NEON DRIFT",
+      "status": "unresolved",
+      "publishedAt": null,
+      "title": "公開完了を確定できませんでした",
+      "shortSummary": "公開日時と最終状態を確認できていません",
+      "details": [
+        "版2としての開発記録はありますが、公開物の最終照合記録が見つかっていません。"
+      ]
+    },
+    {
+      "label": "R1",
+      "revisionId": "R1.private",
+      "identity": "NEON DRIFT",
+      "status": "private",
+      "publishedAt": null,
+      "title": "最初の非公開アーケード版です",
+      "shortSummary": "所有者限定の初期版です",
+      "details": [
+        "75秒の自動加速レース、左右操作、ドリフト、衝突、得点、即時リトライを実装しました。",
+        "所有者のみが利用できる非公開版で、一般公開版ではありません。"
+      ]
+    }
+  ]
+}
