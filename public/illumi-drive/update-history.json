@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "currentRevisionId": "R51.0",
+  "currentRevisionId": "R52.0",
   "currentNoticeIds": [],
   "weeklySchedule": {
     "label": "週間ランキング",
@@ -69,6 +69,25 @@
     }
   ],
   "entries": [
+    {
+      "label": "R52",
+      "revisionId": "R52.0",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-10-01T16:50:54Z",
+      "title": "新曲を6曲追加し、ゴースト表示を改善しました",
+      "shortSummary": "新曲を6曲追加し、ゴースト表示を改善しました",
+      "highlights": [
+        "レース中に選べる新曲を6曲追加しました。",
+        "結果画面と一時停止画面の音楽案内を見やすくしました。",
+        "スタート付近でゴーストが車体と重なりにくいようにしました。"
+      ],
+      "details": [
+        "既存の9曲に続けて、レース中に選べる曲を6曲追加しました。",
+        "結果画面と一時停止画面では曲の準備状況を中央に表示し、横持ちのスタート画面ではBGM案内とスタートボタンの位置を少し上げました。",
+        "同じ位置から走り出すゴーストが車体に重なりにくいように表示を調整しました。走行ルールや記録の扱いは変えていません。"
+      ]
+    },
     {
       "label": "R51",
       "revisionId": "R51.0",
