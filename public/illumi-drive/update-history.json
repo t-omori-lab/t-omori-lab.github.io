@@ -73,8 +73,8 @@
       "label": "R53",
       "revisionId": "R53.0",
       "identity": "ILLUMI DRIVE",
-      "status": "local-preview",
-      "publishedAt": null,
+      "status": "published",
+      "publishedAt": "2026-10-03T09:45:28Z",
       "title": "ゴースト表示と音声、メーターの動きを調整しました",
       "shortSummary": "車体の影・画質・画面表示・効果音を改善しました。",
       "highlights": [
