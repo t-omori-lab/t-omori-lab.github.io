@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "currentRevisionId": "R54.0",
+  "currentRevisionId": "R54.1",
   "currentNoticeIds": [],
   "weeklySchedule": {
     "label": "週間ランキング",
@@ -69,6 +69,19 @@
     }
   ],
   "entries": [
+    {
+      "label": "R54.1",
+      "revisionId": "R54.1",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-10-05T01:15:24Z",
+      "title": "走行開始前の準備処理を高速化しました",
+      "shortSummary": "走行開始前の準備処理を高速化しました。",
+      "details": [
+        "背景配置の判定結果を変えず、走行開始前の探索処理を軽くしました。",
+        "コースの形状・画質・音源・操作と、保存済み記録・ゴーストは変わりません。"
+      ]
+    },
     {
       "label": "R54",
       "revisionId": "R54.0",
