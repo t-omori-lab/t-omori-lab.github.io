@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "currentRevisionId": "R54.1",
+  "currentRevisionId": "R54.2",
   "currentNoticeIds": [],
   "weeklySchedule": {
     "label": "週間ランキング",
@@ -69,6 +69,24 @@
     }
   ],
   "entries": [
+    {
+      "label": "R54.2",
+      "revisionId": "R54.2",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-10-05T04:43:00Z",
+      "title": "起動処理と車体への照明反映を改善しました",
+      "shortSummary": "起動処理と車体への照明反映を改善しました。",
+      "highlights": [
+        "起動処理を軽くしました",
+        "車体への照明反映を調整しました"
+      ],
+      "details": [
+        "車体の形状や画質を変えず、走行開始前の準備処理を軽くしました。",
+        "車体に映るゲートの光が急に切り替わりにくくし、スタート画面の光もゲートの色と左右の配置に合わせました。",
+        "画像の画質・音源・操作と、保存済み記録・ゴーストは変わりません。"
+      ]
+    },
     {
       "label": "R54.1",
       "revisionId": "R54.1",
