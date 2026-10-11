@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Design Lab — Site Fit Study</title>
+  <link rel="icon" href="./context/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --black:#020309;
+      --panel:rgba(6,7,11,.95);
+      --white:#f8f8f4;
+      --cobalt:#2555ff;
+      --acid:#e9ff5b;
+      --muted:#888c98;
+      --line:rgba(255,255,255,.15);
+    }
+    * { box-sizing:border-box; }
+    html,body { width:100%; height:100%; margin:0; overflow:hidden; background:#000; color:var(--white); font-family:"Helvetica Neue",Helvetica,sans-serif; }
+    button { font:inherit; }
+    .stage { position:fixed; inset:0; background:#000; }
+    .mock { width:100%; height:100%; border:0; pointer-events:none; }
+    .veil { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,rgba(0,0,0,.08),transparent 30%); }
+    .logo-mask { position:absolute; z-index:2; left:0; top:0; width:238px; height:76px; background:#020309; pointer-events:none; }
+    .live-logo {
+      position:absolute;
+      z-index:3;
+      left:28px;
+      top:23px;
+      width:160px;
+      height:auto;
+      overflow:visible;
+      filter:drop-shadow(0 1px 7px rgba(0,0,0,.72));
+      transition:width .2s cubic-bezier(.2,.8,.2,1),opacity .12s ease;
+    }
+    .meta { position:absolute; z-index:4; top:78px; right:28px; text-align:right; pointer-events:none; }
+    .meta b { display:block; font:600 10px/1.2 "SFMono-Regular",Consolas,monospace; letter-spacing:.14em; }
+    .meta span { display:block; margin-top:6px; color:var(--muted); font:500 9px/1.2 "SFMono-Regular",Consolas,monospace; letter-spacing:.12em; }
+
+    .panel {
+      position:fixed;
+      z-index:10;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      max-height:62vh;
+      overflow:hidden;
+      background:var(--panel);
+      border:1px solid var(--line);
+      box-shadow:0 28px 90px rgba(0,0,0,.62);
+      backdrop-filter:blur(24px);
+      transition:transform .3s cubic-bezier(.2,.8,.2,1);
+    }
+    .panel.is-hidden { transform:translateY(calc(100% + 24px)); }
+    .panel-head { min-height:52px; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:10px 14px 10px 16px; border-bottom:1px solid var(--line); }
+    .title { min-width:0; display:flex; align-items:baseline; gap:14px; }
+    .title strong { white-space:nowrap; font-size:12px; letter-spacing:.06em; }
+    .title span { color:var(--muted); font:500 9px/1.2 "SFMono-Regular",Consolas,monospace; letter-spacing:.12em; }
+    .tools { display:flex; flex:none; gap:6px; }
+    .size-controls { display:flex; flex:none; }
+    .tool,.open-panel,.candidate-nav {
+      border:1px solid var(--line);
+      color:inherit;
+      background:transparent;
+      padding:8px 10px;
+      cursor:pointer;
+      font:600 9px/1 "SFMono-Regular",Consolas,monospace;
+      letter-spacing:.08em;
+    }
+    .tool:hover,.tool[aria-pressed="true"],.candidate-nav:hover { border-color:var(--white); background:var(--white); color:var(--black); }
+    .size-control { min-width:34px; height:32px; padding:0 9px; }
+    .size-control + .size-control { border-left:0; }
+    .size-value { min-width:52px; color:var(--acid); }
+    .size-value:hover { color:var(--black); }
+    .tool:disabled { color:#555a66; cursor:not-allowed; }
+    .tool:disabled:hover { border-color:var(--line); background:transparent; color:#555a66; }
+
+    .locked {
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      padding:8px 16px;
+      border-bottom:1px solid var(--line);
+      color:#a7abb5;
+      font:500 9px/1.25 "SFMono-Regular",Consolas,monospace;
+      letter-spacing:.1em;
+    }
+    .locked b { color:var(--acid); font-weight:600; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); max-height:calc(62vh - 85px); overflow:auto; }
+    .card {
+      min-width:0;
+      min-height:178px;
+      padding:14px 14px 12px;
+      border:0;
+      border-right:1px solid var(--line);
+      color:inherit;
+      background:transparent;
+      text-align:left;
+      cursor:pointer;
+    }
+    .card:last-child { border-right:0; }
+    .card:hover { background:rgba(255,255,255,.035); }
+    .card[aria-pressed="true"] { background:rgba(37,85,255,.12); box-shadow:inset 0 0 0 1px #4d70ff; }
+    .card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
+    .card-code { color:var(--cobalt); font:700 10px/1.2 "SFMono-Regular",Consolas,monospace; letter-spacing:.12em; }
+    .card-name { display:block; margin-top:4px; font-size:12px; font-weight:700; letter-spacing:.025em; }
+    .card-note { max-width:145px; color:var(--muted); font-size:9px; line-height:1.45; text-align:right; }
+    .master { height:76px; margin-top:8px; display:flex; align-items:center; justify-content:center; background:var(--black); overflow:hidden; }
+    .master svg { width:min(94%,360px); height:66px; overflow:visible; }
+    .samples { display:flex; align-items:flex-end; gap:18px; margin-top:10px; min-height:34px; overflow:hidden; }
+    .sample { min-width:0; }
+    .sample span { display:block; margin-bottom:5px; color:#777b87; font:500 8px/1 "SFMono-Regular",Consolas,monospace; letter-spacing:.08em; }
+    .sample svg { display:block; height:auto; overflow:visible; }
+    .sample.desktop svg,.sample.mobile svg { max-height:40px; }
+    .study-dock {
+      position:fixed;
+      z-index:9;
+      left:16px;
+      bottom:16px;
+      display:none;
+      align-items:stretch;
+      background:rgba(6,7,11,.96);
+      border:1px solid var(--line);
+      box-shadow:0 16px 50px rgba(0,0,0,.48);
+      backdrop-filter:blur(20px);
+    }
+    .panel.is-hidden + .study-dock { display:flex; }
+    .open-panel { position:static; display:block; border:0; background:var(--white); color:var(--black); }
+    .candidate-nav { width:34px; min-height:32px; padding:0; border-width:0 0 0 1px; font-size:15px; line-height:1; }
+    .dock-status {
+      display:flex;
+      align-items:center;
+      min-width:82px;
+      padding:0 10px;
+      border-left:1px solid var(--line);
+      color:#a7abb5;
+      font:600 8px/1 "SFMono-Regular",Consolas,monospace;
+      letter-spacing:.1em;
+      white-space:nowrap;
+    }
+
+    @media (max-width:760px) {
+      .logo-mask { width:218px; height:74px; }
+      .live-logo { left:24px; top:23px; width:132px; }
+      .meta { display:none; }
+      .panel { left:8px; right:8px; bottom:8px; max-height:59vh; overflow:hidden; }
+      .study-dock { left:8px; bottom:8px; }
+      .panel-head { align-items:center; gap:8px; padding-right:8px; }
+      .title { display:block; }
+      .title strong { font-size:10px; }
+      .title span { display:none; }
+      .tools { gap:4px; }
+      .size-control { min-width:30px; height:30px; padding:0 6px; }
+      .size-value { min-width:44px; }
+      .locked { display:none; }
+      .grid { grid-template-columns:1fr; max-height:calc(59vh - 53px); overflow:auto; }
+      .card { min-height:158px; border-right:0; border-bottom:1px solid var(--line); }
+      .card:last-child { border-bottom:0; }
+      .master { height:66px; }
+      .master svg { height:58px; }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .live-logo,.panel { transition:none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <iframe class="mock" src="./context/" title="AI Design Lab mockup"></iframe>
+    <div class="logo-mask"></div>
+    <div class="veil"></div>
+    <div id="live"></div>
+    <div class="meta"><b id="meta-code">S01 / PURE WORDMARK</b><span id="meta-scale">ACTUAL HEADER WIDTH · 160 PX</span></div>
+  </main>
+
+  <section class="panel" id="panel" aria-label="サイト適合ロゴ比較">
+    <div class="panel-head">
+      <div class="title">
+        <strong>AI DESIGN LAB — SITE FIT STUDY</strong>
+        <span>56 CANDIDATES / SIZE-ADJUSTED CONTEXT</span>
+      </div>
+      <div class="tools">
+        <div class="size-controls" role="group" aria-label="ロゴ表示サイズ">
+          <button class="tool size-control" id="size-down" type="button" aria-label="ロゴを10%縮小" title="10%縮小">−</button>
+          <button class="tool size-control size-value" id="size-reset" type="button" aria-label="表示サイズ100%。100%に戻す" title="100%に戻す">100%</button>
+          <button class="tool size-control" id="size-up" type="button" aria-label="ロゴを10%拡大" title="10%拡大">＋</button>
+        </div>
+        <button class="tool" id="hide" type="button">HIDE</button>
+      </div>
+    </div>
+    <div class="locked">
+      <span><b>LOCKED</b> HEADER CONTEXT / DARK BACKGROUND / VISUAL HEIGHT</span>
+      <span><b>VARIABLE</b> PER-CANDIDATE WIDTH / LOCKUP</span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+  <div class="study-dock" aria-label="ロゴ比較ナビゲーション">
+    <button class="open-panel" id="show" type="button">SHOW STUDY</button>
+    <button class="candidate-nav" id="previous" type="button" aria-label="前のロゴ案" title="前のロゴ案">↑</button>
+    <button class="candidate-nav" id="next" type="button" aria-label="次のロゴ案" title="次のロゴ案">↓</button>
+    <span class="dock-status" id="dock-status" aria-live="polite">S01&nbsp;&nbsp;01/56</span>
+  </div>
+
+  <script>
+    const candidates = [
+      { code:'S01', name:'PURE WORDMARK', note:'無加工ワードマーク', treatment:'pure', headerWidth:160, mobileWidth:132 },
+      { code:'S05', name:'IMAGE2 / 01', note:'オープンA＋青いI＋3段組み', asset:'./assets/ai-design-lab-image2-01-dark.png', width:310, height:139, headerWidth:84, mobileWidth:71 },
+      { code:'S11', name:'CAPTURE 23:15:48 / 02', note:'グラデーションA＋スパーク', asset:'./assets/selected-logo-03.png', width:623, height:226, headerWidth:102, mobileWidth:86 },
+      { code:'S14', name:'CAPTURE 23:18:29 / 04', note:'コンデンス縦組み＋対角線', asset:'./assets/selected-logo-06.png', width:437, height:427, headerWidth:38, mobileWidth:32 },
+      { code:'S19', name:'CAPTURE 23:21:05 / 04', note:'オープンフレーム＋上昇線', asset:'./assets/selected-logo-11.png', width:547, height:346, headerWidth:58, mobileWidth:49 },
+      { code:'S28', name:'CAPTURE 23:23:51 / 02', note:'テック書体＋紫ドット', asset:'./assets/selected-logo-20.png', width:421, height:364, headerWidth:42, mobileWidth:36 },
+      { code:'S29', name:'CAPTURE 23:24:19 / 03', note:'A＋閉じ括弧＋青点', asset:'./assets/selected-logo-21.png', width:398, height:354, headerWidth:41, mobileWidth:35 },
+      { code:'S30', name:'CAPTURE 23:24:19 / 04', note:'斜めカットAIマーク', asset:'./assets/selected-logo-22.png', width:395, height:356, headerWidth:41, mobileWidth:35 },
+      { code:'S33', name:'CAPTURE 23:42:12 / 01', note:'モノスペース3段＋青角', asset:'./assets/selected-logo-25.png', width:615, height:388, headerWidth:58, mobileWidth:49 },
+      { code:'S37', name:'CAPTURE 23:42:12 / 05', note:'ADLモノグラム＋青角', asset:'./assets/selected-logo-29.png', width:623, height:285, headerWidth:82, mobileWidth:70 },
+      { code:'S39', name:'CAPTURE 23:42:29 / 01', note:'大型コンデンスブロック', asset:'./assets/selected-logo-31.png', width:678, height:499, headerWidth:50, mobileWidth:43 },
+      { code:'S40', name:'CAPTURE 23:42:29 / 03', note:'混合コンデンスタイプ', asset:'./assets/selected-logo-32.png', width:1102, height:351, headerWidth:116, mobileWidth:99 },
+      { code:'S43', name:'CAPTURE 23:43:17 / 01', note:'グリッチ分割横組み', asset:'./assets/selected-logo-35.png', width:1073, height:206, headerWidth:160, mobileWidth:136 },
+      { code:'S44', name:'LOCKED A / A1', note:'太めサンセリフ＋拡張間隔', lockedMark:true, variant:'a1', center:'star', width:680, height:226, headerWidth:108, mobileWidth:90 },
+      { code:'S45', name:'LOCKED A / A2', note:'中太サンセリフ＋広い間隔', lockedMark:true, variant:'a2', center:'star', width:680, height:226, headerWidth:108, mobileWidth:90 },
+      { code:'S46', name:'LOCKED A / A3', note:'レギュラーサンセリフ', lockedMark:true, variant:'a3', center:'star', width:660, height:226, headerWidth:105, mobileWidth:88 },
+      { code:'S47', name:'LOCKED A / A4', note:'エディトリアルセリフ', lockedMark:true, variant:'a4', center:'star', width:680, height:226, headerWidth:108, mobileWidth:90 },
+      { code:'S48', name:'LOCKED A / B1', note:'中央記号なし', lockedMark:true, variant:'b', center:'none', width:680, height:226, headerWidth:108, mobileWidth:90 },
+      { code:'S49', name:'LOCKED A / B2', note:'中央に白丸', lockedMark:true, variant:'b', center:'white-dot', width:680, height:226, headerWidth:108, mobileWidth:90 },
+      { code:'S50', name:'LOCKED A / B3', note:'中央に黄緑丸', lockedMark:true, variant:'b', center:'lime-dot', width:680, height:226, headerWidth:108, mobileWidth:90 },
+      { code:'S51', name:'LOCKED A / B4', note:'中央に白リング', lockedMark:true, variant:'b', center:'white-ring', width:680, height:226, headerWidth:108, mobileWidth:90 },
+      { code:'S52', name:'LOCKED A / C1', note:'コンパクト横組み', lockedMark:true, variant:'c1', center:'star', width:665, height:226, headerWidth:106, mobileWidth:88 },
+      { code:'S53', name:'LOCKED A / C2', note:'二段サンセリフ', lockedMark:true, variant:'c2', center:'star', width:590, height:226, headerWidth:94, mobileWidth:78 },
+      { code:'S54', name:'LOCKED A / C3', note:'ワイドトラッキング二段組み', lockedMark:true, variant:'c3', center:'star', width:610, height:226, headerWidth:97, mobileWidth:81 },
+      { code:'S55', name:'LOCKED A / C4', note:'コンデンス二段組み', lockedMark:true, variant:'c4', center:'star', width:540, height:226, headerWidth:86, mobileWidth:72 },
+      { code:'S56', name:'STAR A + S01 WORDMARK', note:'星ありA＋太字AI Design／細字Lab', lockedMark:true, variant:'lead-s01', center:'star', width:1020, height:226, headerWidth:160, mobileWidth:136 },
+      { code:'S57', name:'CONVERGENCE BOARD / 01', note:'複数線が一点へ収束', asset:'./assets/selected-logo-57.png', width:495, height:328, headerWidth:57, mobileWidth:48 },
+      { code:'S58', name:'CONVERGENCE BOARD / 02', note:'点群が一本へ圧縮', asset:'./assets/selected-logo-58.png', width:483, height:323, headerWidth:57, mobileWidth:48 },
+      { code:'S59', name:'CONVERGENCE BOARD / 03', note:'揺らぎのある線を選択', asset:'./assets/selected-logo-59.png', width:496, height:339, headerWidth:56, mobileWidth:48 },
+      { code:'S60', name:'CONVERGENCE BOARD / 04', note:'太い帯が一線へ収束', asset:'./assets/selected-logo-60.png', width:482, height:335, headerWidth:55, mobileWidth:47 },
+      { code:'S61', name:'TYPE-ONLY BOARD / 01', note:'高コントラスト独自セリフ', asset:'./assets/selected-logo-61.png', width:664, height:240, headerWidth:105, mobileWidth:89 },
+      { code:'S62', name:'TYPE-ONLY BOARD / 02', note:'極細コンデンス横組み', asset:'./assets/selected-logo-62.png', width:661, height:244, headerWidth:103, mobileWidth:88 },
+      { code:'S63', name:'TYPE-ONLY BOARD / 03', note:'太字モジュラー二段組み', asset:'./assets/selected-logo-63.png', width:684, height:248, headerWidth:105, mobileWidth:89 },
+      { code:'S64', name:'TYPE-ONLY BOARD / 04', note:'線形カスタムロゴタイプ', asset:'./assets/selected-logo-64.png', width:676, height:117, headerWidth:160, mobileWidth:136 },
+      { code:'S65', name:'INTERFERENCE BOARD / 01', note:'線密度で現れる括れ', asset:'./assets/selected-logo-65.png', width:399, height:421, headerWidth:36, mobileWidth:31 },
+      { code:'S66', name:'INTERFERENCE BOARD / 02', note:'水平線と暖色の干渉', asset:'./assets/selected-logo-66.png', width:408, height:402, headerWidth:39, mobileWidth:33 },
+      { code:'S67', name:'INTERFERENCE BOARD / 03', note:'網点密度による発現', asset:'./assets/selected-logo-67.png', width:407, height:420, headerWidth:37, mobileWidth:31 },
+      { code:'S68', name:'INTERFERENCE BOARD / 04', note:'二つの線面と黄の交差', asset:'./assets/selected-logo-68.png', width:488, height:414, headerWidth:45, mobileWidth:38 },
+      { code:'S69', name:'CAPTURE 18:19:12 / 01', note:'ネットワークA＋I', asset:'./assets/selected-logo-69.png', width:631, height:392, headerWidth:61, mobileWidth:52 },
+      { code:'S70', name:'CAPTURE 18:19:12 / 02', note:'選択経路グリッド', asset:'./assets/selected-logo-70.png', width:609, height:363, headerWidth:64, mobileWidth:54 },
+      { code:'S71', name:'CAPTURE 18:19:12 / 04', note:'放射ドットネットワーク', asset:'./assets/selected-logo-71.png', width:647, height:361, headerWidth:68, mobileWidth:58 },
+      { code:'S72', name:'CAPTURE 18:19:12 / 05', note:'分岐線＋AI縦組み', asset:'./assets/selected-logo-72.png', width:613, height:326, headerWidth:71, mobileWidth:60 },
+      { code:'S73', name:'CAPTURE 18:20:48 / 01', note:'セリフai＋斜線＋I', asset:'./assets/selected-logo-73.png', width:492, height:437, headerWidth:43, mobileWidth:37 },
+      { code:'S74', name:'CAPTURE 18:26:26 / 01', note:'コンデンス混合ロゴタイプ', asset:'./assets/selected-logo-74.png', width:993, height:355, headerWidth:106, mobileWidth:90 },
+      { code:'S75', name:'CAPTURE 18:30:12 / 05', note:'セリフ中心の非対称文字組み', asset:'./assets/selected-logo-75.png', width:435, height:356, headerWidth:46, mobileWidth:39 },
+      { code:'S76', name:'CAPTURE 18:30:39 / 01', note:'開いた円環＋AI', asset:'./assets/selected-logo-76.png', width:617, height:340, headerWidth:69, mobileWidth:59 },
+      { code:'S77', name:'CAPTURE 18:30:39 / 02', note:'同心軌道＋三段組み', asset:'./assets/selected-logo-77.png', width:581, height:336, headerWidth:66, mobileWidth:56 },
+      { code:'S78', name:'CAPTURE 18:31:14 / 04', note:'セリフ横組み＋紫スラッシュ', asset:'./assets/selected-logo-78.png', width:620, height:200, headerWidth:118, mobileWidth:100 },
+      { code:'S79', name:'CAPTURE 18:31:57 / 01', note:'開いたA＋I＋三段組み', asset:'./assets/selected-logo-79.png', width:588, height:212, headerWidth:105, mobileWidth:89 },
+      { code:'S80', name:'CAPTURE 18:31:57 / 02', note:'3×3ドットシステム', asset:'./assets/selected-logo-80.png', width:419, height:360, headerWidth:44, mobileWidth:37 },
+      { code:'S81', name:'CAPTURE 18:31:57 / 03', note:'コーナーフレーム＋青点', asset:'./assets/selected-logo-81.png', width:400, height:404, headerWidth:38, mobileWidth:32 },
+      { code:'S82', name:'CAPTURE 18:32:13 / 06', note:'太枠モジュール＋青区画', asset:'./assets/selected-logo-82.png', width:555, height:332, headerWidth:64, mobileWidth:54 },
+      { code:'S83', name:'CAPTURE 18:32:31 / 01', note:'開いたA＋I＋細字三段組み', asset:'./assets/selected-logo-83.png', width:676, height:256, headerWidth:100, mobileWidth:85 },
+      { code:'S84', name:'CAPTURE 18:32:54 / 03', note:'ADLモノグラム＋青いI', asset:'./assets/selected-logo-84.png', width:565, height:275, headerWidth:78, mobileWidth:66 },
+      { code:'S85', name:'CAPTURE 18:32:58 / 05', note:'太枠オフセット区画', asset:'./assets/selected-logo-85.png', width:525, height:293, headerWidth:68, mobileWidth:58 },
+      { code:'S86', name:'CAPTURE 18:32:58 / 06', note:'分解AIモノグラム', asset:'./assets/selected-logo-86.png', width:517, height:268, headerWidth:73, mobileWidth:62 },
+    ];
+
+    function logoText(fill,extra='') {
+      return `<text x="4" y="52" fill="${fill}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="47" letter-spacing="-2.4" ${extra}><tspan font-weight="750">AI Design</tspan><tspan font-weight="400"> Lab</tspan></text>`;
+    }
+
+    function lockedMarkType(variant) {
+      const common = 'fill="#f8f8f4"';
+      if (variant === 'lead-s01') return `<text x="285" y="160" ${common} font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="110" letter-spacing="-5.6"><tspan font-weight="750">AI Design</tspan><tspan font-weight="400"> Lab</tspan></text>`;
+      if (variant === 'a1') return `<text x="301" y="149" ${common} font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="57" font-weight="650" letter-spacing="-2.1">AI Design Lab</text>`;
+      if (variant === 'a2') return `<text x="312" y="148" ${common} font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="54" font-weight="500" letter-spacing="-1.1">AI Design Lab</text>`;
+      if (variant === 'a3') return `<text x="306" y="148" ${common} font-family="Arial, Helvetica, sans-serif" font-size="53" font-weight="400" letter-spacing="-1.35">AI Design Lab</text>`;
+      if (variant === 'a4') return `<text x="310" y="151" ${common} font-family="Georgia, Times New Roman, serif" font-size="58" font-weight="400" letter-spacing="-2.4">AI Design Lab</text>`;
+      if (variant === 'c1') return `<text x="287" y="149" ${common} font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="58" font-weight="620" letter-spacing="-2">AI Design Lab</text>`;
+      if (variant === 'c2') return `<text x="309" y="128" ${common} font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="54" font-weight="540" letter-spacing="-1.8"><tspan x="309" y="128">AI Design</tspan><tspan x="309" y="178">Lab</tspan></text>`;
+      if (variant === 'c3') return `<text x="300" y="132" ${common} font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="520" letter-spacing="7"><tspan x="300" y="132">AI DESIGN</tspan><tspan x="300" y="178">LAB</tspan></text>`;
+      if (variant === 'c4') return `<g transform="translate(300 0) scale(.72 1)"><text x="0" y="130" ${common} font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-size="51" font-weight="700" letter-spacing=".4"><tspan x="0" y="130">AI DESIGN</tspan><tspan x="0" y="178">LAB</tspan></text></g>`;
+      return `<text x="305" y="149" ${common} font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="55" font-weight="600" letter-spacing="-1.8">AI Design Lab</text>`;
+    }
+
+    function lockedMarkSvg(candidate,prefix,klass='',style='') {
+      const styleAttribute = style ? ` style="${style}"` : '';
+      const clipId = `${prefix}-locked-mark`;
+      const markAsset = candidate.center === 'star'
+        ? './assets/selected-logo-03.png'
+        : './assets/selected-logo-03-starless.png';
+      const centerSymbol = candidate.center === 'white-dot'
+        ? '<circle cx="126" cy="149" r="13.5" fill="#fff"/>'
+        : candidate.center === 'lime-dot'
+          ? '<circle cx="126" cy="149" r="13.5" fill="#d8ff00"/>'
+          : candidate.center === 'white-ring'
+            ? '<circle cx="126" cy="149" r="13.5" fill="none" stroke="#fff" stroke-width="3"/>'
+            : '';
+      return `<svg class="${klass}"${styleAttribute} viewBox="0 0 ${candidate.width} ${candidate.height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Design Lab — ${candidate.name}"><defs><clipPath id="${clipId}"><rect x="0" y="0" width="231" height="226"/></clipPath></defs><image href="${markAsset}" x="0" y="0" width="623" height="226" clip-path="url(#${clipId})"/>${centerSymbol}${lockedMarkType(candidate.variant)}</svg>`;
+    }
+
+    function logoSvg(candidate,prefix,klass='',style='') {
+      if (candidate.lockedMark) return lockedMarkSvg(candidate,prefix,klass,style);
+      const styleAttribute = style ? ` style="${style}"` : '';
+      if (candidate.asset) {
+        return `<svg class="${klass}"${styleAttribute} viewBox="0 0 ${candidate.width} ${candidate.height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Design Lab — ${candidate.name}"><image href="${candidate.asset}" x="0" y="0" width="${candidate.width}" height="${candidate.height}" preserveAspectRatio="xMidYMid meet"/></svg>`;
+      }
+      const spectrumId = `${prefix}-spectrum`;
+      const seamId = `${prefix}-seam`;
+      const edgeId = `${prefix}-edge`;
+      const softId = `${prefix}-soft`;
+      const defs = `<defs>
+        <linearGradient id="${spectrumId}" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#25d8ff"/>
+          <stop offset=".46" stop-color="#f8f7f2"/>
+          <stop offset=".73" stop-color="#8266ff"/>
+          <stop offset="1" stop-color="#ff168f"/>
+        </linearGradient>
+        <clipPath id="${seamId}"><rect x="0" y="39" width="330" height="2.4"/></clipPath>
+        <clipPath id="${edgeId}"><rect x="0" y="47" width="330" height="8"/></clipPath>
+        <filter id="${softId}" x="-8%" y="-30%" width="116%" height="170%"><feGaussianBlur stdDeviation=".65"/></filter>
+      </defs>`;
+      const seam = candidate.treatment === 'seam'
+        ? logoText(`url(#${spectrumId})`,`clip-path="url(#${seamId})"`)
+        : '';
+      const refraction = candidate.treatment === 'refract'
+        ? `${logoText(`url(#${spectrumId})`,`transform="translate(0 1.5)" opacity=".72" filter="url(#${softId})" clip-path="url(#${edgeId})"`)}${logoText(`url(#${spectrumId})`,`clip-path="url(#${seamId})" opacity=".74"`)}`
+        : '';
+      return `<svg class="${klass}"${styleAttribute} viewBox="0 0 330 70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Design Lab — ${candidate.name}">${defs}${refraction}${logoText('#f8f7f2')}${seam}</svg>`;
+    }
+
+    const live = document.querySelector('#live');
+    const grid = document.querySelector('#grid');
+    const metaCode = document.querySelector('#meta-code');
+    const metaScale = document.querySelector('#meta-scale');
+    const panel = document.querySelector('#panel');
+    const dockStatus = document.querySelector('#dock-status');
+    const sizeDown = document.querySelector('#size-down');
+    const sizeReset = document.querySelector('#size-reset');
+    const sizeUp = document.querySelector('#size-up');
+    const minScale = .5;
+    const maxScale = 2;
+    const scaleStep = .1;
+    let selected = 0;
+    let scale = 1;
+
+    function setScale(nextScale) {
+      scale = Math.min(maxScale,Math.max(minScale,Math.round(nextScale * 10) / 10));
+      choose(selected);
+    }
+
+    function choose(index) {
+      selected = index;
+      const candidate = candidates[index];
+      live.innerHTML = logoSvg(candidate,`live-${candidate.code}`,'live-logo');
+      const mobile = window.matchMedia('(max-width:760px)').matches;
+      const baseWidth = mobile ? candidate.mobileWidth : candidate.headerWidth;
+      const renderedWidth = Math.round(baseWidth * scale * 10) / 10;
+      const scalePercent = Math.round(scale * 100);
+      live.querySelector('svg').style.width = `${renderedWidth}px`;
+      metaCode.textContent = `${candidate.code} / ${candidate.name}`;
+      metaScale.textContent = scale === 1
+        ? `ACTUAL HEADER WIDTH · ${baseWidth} PX`
+        : `INSPECTION WIDTH · ${renderedWidth} PX · ${scalePercent}%`;
+      sizeReset.textContent = `${scalePercent}%`;
+      sizeReset.setAttribute('aria-label',`表示サイズ${scalePercent}%。100%に戻す`);
+      sizeDown.disabled = scale <= minScale;
+      sizeUp.disabled = scale >= maxScale;
+      dockStatus.textContent = `${candidate.code}  ${String(index + 1).padStart(2,'0')}/${candidates.length}`;
+      document.querySelectorAll('.card').forEach((card,i) => card.setAttribute('aria-pressed',String(i === index)));
+    }
+
+    function stepCandidate(direction) {
+      choose((selected + direction + candidates.length) % candidates.length);
+    }
+
+    candidates.forEach((candidate,index) => {
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'card';
+      card.setAttribute('aria-pressed','false');
+      card.setAttribute('aria-label',`${candidate.code} ${candidate.name}を実寸表示`);
+      card.innerHTML = `
+        <span class="card-head">
+          <span><span class="card-code">${candidate.code}</span><strong class="card-name">${candidate.name}</strong></span>
+          <span class="card-note">${candidate.note}</span>
+        </span>
+        <span class="master">${logoSvg(candidate,`master-${candidate.code}`)}</span>
+        <span class="samples">
+          <span class="sample desktop"><span>DESKTOP ${candidate.headerWidth} PX</span>${logoSvg(candidate,`desk-${candidate.code}`,'',`width:${candidate.headerWidth}px`)}</span>
+          <span class="sample mobile"><span>MOBILE ${candidate.mobileWidth} PX</span>${logoSvg(candidate,`mobile-${candidate.code}`,'',`width:${candidate.mobileWidth}px`)}</span>
+        </span>`;
+      card.addEventListener('click',() => choose(index));
+      grid.appendChild(card);
+    });
+
+    document.querySelector('.mock').addEventListener('load',event => {
+      try {
+        const style = event.target.contentDocument.createElement('style');
+        style.textContent = '.lab-home-logotype{opacity:0!important}';
+        event.target.contentDocument.head.appendChild(style);
+      } catch (_) {}
+    });
+
+    sizeDown.addEventListener('click',() => setScale(scale - scaleStep));
+    sizeReset.addEventListener('click',() => setScale(1));
+    sizeUp.addEventListener('click',() => setScale(scale + scaleStep));
+    document.querySelector('#hide').addEventListener('click',() => panel.classList.add('is-hidden'));
+    document.querySelector('#show').addEventListener('click',() => {
+      panel.classList.remove('is-hidden');
+      requestAnimationFrame(() => grid.children[selected]?.scrollIntoView({ block:'nearest' }));
+    });
+    document.querySelector('#previous').addEventListener('click',() => stepCandidate(-1));
+    document.querySelector('#next').addEventListener('click',() => stepCandidate(1));
+    window.addEventListener('resize',() => choose(selected));
+    choose(0);
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* R115 production visual hotfix: keep a readable pause before the composer. */
+@media (min-width: 1181px) {
+  .lab-home-action-zone {
+    top: calc(var(--lab-fv-group-top) + 255px);
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1180px) {
+  .lab-home-action-zone {
+    top: calc(var(--lab-fv-group-top) + 240px);
+  }
+}

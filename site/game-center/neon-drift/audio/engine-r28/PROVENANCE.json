@@ -1,0 +1,19 @@
+{
+  "source": "https://muted.io/performance-cars/",
+  "license": "CC0-1.0",
+  "source_file": "029-performance-cars-mutedio.wav",
+  "source_sha256": "0f0a80a3f5f11e0353f6c847d71c2db877f95de7591a3424d8d4df24398a2331",
+  "excerpt_start": 7.1,
+  "excerpt_seconds": 7.6,
+  "output_seconds": 5.999274376417233,
+  "calibrated_rpm": 4800,
+  "rpm_is_measured": false,
+  "method": "Single six-second real exhaust bed; smooth source firing-frequency warp, slow envelope leveling, phase-aligned seam. One continuous playback voice. No short-grain RPM-bank crossfades.",
+  "pitch_range_hz": [
+    313.153117646722,
+    326.6906636772858
+  ],
+  "rms": 0.20999999999999996,
+  "peak": 0.6630919951237384,
+  "sha256": "904fa3299ad97728fa54d03e17e1a881fb3328dadab05f332a342b26f8a51ce4"
+}
