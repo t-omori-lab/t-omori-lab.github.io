@@ -1,11 +1,11 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "8e5fac5d171aad2f90093d6d4a8b00a2fa864ca3",
-  "preparedGamePayload": "a27ba687659377e52e908ba7f467488d0ef703114d9269687ef25f35c5f62a19",
-  "metadataParent": "a604159ab6556ea7596b3f2553faa68fc478ca2e5031daf996b9281f4fde5c48",
-  "baselineCommit": "0717601b660f7076e1da03ea7604697d4bffba8a",
+  "preparedGameSource": "b3bdd1856bd006f858840b3d6f4a7e1e4f8df1b1",
+  "preparedGamePayload": "2c37cf5a02d8701315369d2e35c3f2d6267dda4a7a6adcd88ee74c81faec377d",
+  "metadataParent": "39bdd1bf7cf4331036c134b31f3a9ef7cf9c20091ea1087fa6d8df50e2faa7d0",
+  "baselineCommit": "d6e3fe41a513797d45b6c118d825c2f76c25cfcb",
   "publication": true,
-  "metadataPublishedAt": "2026-10-11T17:47:34Z",
+  "metadataPublishedAt": "2026-10-13T18:27:31.395507+00:00",
   "files": [
     {
       "path": "__next.__PAGE__.txt",
@@ -1323,6 +1323,26 @@
       "sha256": "6bc4d6c88ea9451f93ecd8117da4cf80890a2da6d3b99c89b1ccabe45bac408e"
     },
     {
+      "path": "illumi-drive/assets/pages-CZLLYk93.js",
+      "bytes": 50,
+      "sha256": "646042a9ea3487cc8320d8d6ae3b9cf7ff5f610526cc0fd7afbf8fefaa44baeb"
+    },
+    {
+      "path": "illumi-drive/assets/pages-DsFRWx-i.css",
+      "bytes": 462237,
+      "sha256": "bf4eefe6178a2339522aef8cb133f63289bb5c7a408752e8af27e394e9518a2e"
+    },
+    {
+      "path": "illumi-drive/assets/pages-meta-233eaba8b4978bc4.js",
+      "bytes": 586197,
+      "sha256": "233eaba8b4978bc41a8864b0fa329405563f0b07fd69d9b3939c289db2f127ec"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-BUigE4D0.js",
+      "bytes": 1459823,
+      "sha256": "a89ba7807720c0032ad6bb39ebba596dbe1de4c13b423c71be11a7f11ac4cc3a"
+    },
+    {
       "path": "illumi-drive/assets/renderer-COVgYhDC.js",
       "bytes": 1453685,
       "sha256": "f9f4993413ee377682d69ac106a1bc9bdb5fe74beba409ddb2408438727d334f"
@@ -1489,8 +1509,8 @@
     },
     {
       "path": "illumi-drive/credits.html",
-      "bytes": 4456,
-      "sha256": "84a927bbe27d82e1ece41157702e9c93e727636d38b2b1608d3a4d292fe9aa6b"
+      "bytes": 4039,
+      "sha256": "2e9186762db08a389770543e7164dedb226e9a8a2f33e9534690990492b0669b"
     },
     {
       "path": "illumi-drive/favicon.svg",
@@ -1534,8 +1554,8 @@
     },
     {
       "path": "illumi-drive/index.html",
-      "bytes": 1653,
-      "sha256": "8a805ae5947cd5b3f355a9dad4277d3e91187d7b4e799626f19ba97c819127bf"
+      "bytes": 1652,
+      "sha256": "e05f2e073a1569a5659c048db356ee9ea152d764b1d68463854756f094a4a4e7"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -1584,13 +1604,13 @@
     },
     {
       "path": "illumi-drive/pages.html",
-      "bytes": 1653,
-      "sha256": "8a805ae5947cd5b3f355a9dad4277d3e91187d7b4e799626f19ba97c819127bf"
+      "bytes": 1652,
+      "sha256": "e05f2e073a1569a5659c048db356ee9ea152d764b1d68463854756f094a4a4e7"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 131,
-      "sha256": "67ec9318e4d29ef952c8d4856ebad662d5a2d516c0c9c146ca67734f325666f9"
+      "bytes": 143,
+      "sha256": "97d1a6644eec9610aa8699cfdc1f4fbd1a66b2363d5c0297780f3f60ee8cdb55"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -1604,8 +1624,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 49909,
-      "sha256": "1a08b7e3e518a6a258d28c17a766ddb2488551697df9784c649ae78fddb8b5a1"
+      "bytes": 52187,
+      "sha256": "62a629eb9de01f79a6f5aa5ea36ae3acfc6f37ff30cc51b442acdda40ae2ee88"
     },
     {
       "path": "illumi-line/art/illumi-line-title.png",
@@ -2761,13 +2781,11 @@
   "aliases": [
     {
       "path": "illumi-drive/index.html",
-      "sha256": "8a805ae5947cd5b3f355a9dad4277d3e91187d7b4e799626f19ba97c819127bf"
+      "sha256": "e05f2e073a1569a5659c048db356ee9ea152d764b1d68463854756f094a4a4e7"
     }
   ],
   "totals": {
-    "raw": 86128558,
-    "gzip": 75884180,
-    "brotli": 72972203
+    "raw": 405665364
   },
   "retainedNonGameFiles": 486,
   "deliveryFileCount": 550,
@@ -2782,5 +2800,31 @@
       "_next/static/chunks/3jc-a0bfobbwb-r57-08703cf689e4.js"
     ],
     "sourceStrategy": "Exact approved public artifact limited patch"
-  }
+  },
+  "preparationOnly": false,
+  "metadataUnchangedFromCandidate": false,
+  "compiledCodeSource": "4f3abb616e51bc3f0b280ad9d45d5bcac300cf4a",
+  "cacheCompatibility": [
+    {
+      "path": "assets/pages-BMC15FSK.js",
+      "bytes": 575613,
+      "sha256": "912f2f328af3f27210344a143a9df12d597afeca86cf9d22a297dfe203d0b14c",
+      "reason": "Immediate previous public R57 hash required by a cached HTML/open module graph; current R58 entry does not fetch it",
+      "baseCommit": "d6e3fe41a513797d45b6c118d825c2f76c25cfcb"
+    },
+    {
+      "path": "assets/pages-boost-gap-6bc4d6c88ea9.css",
+      "bytes": 459523,
+      "sha256": "6bc4d6c88ea9451f93ecd8117da4cf80890a2da6d3b99c89b1ccabe45bac408e",
+      "reason": "Immediate previous public R57 hash required by a cached HTML/open module graph; current R58 entry does not fetch it",
+      "baseCommit": "d6e3fe41a513797d45b6c118d825c2f76c25cfcb"
+    },
+    {
+      "path": "assets/renderer-COVgYhDC.js",
+      "bytes": 1453685,
+      "sha256": "f9f4993413ee377682d69ac106a1bc9bdb5fe74beba409ddb2408438727d334f",
+      "reason": "Immediate previous public R57 hash required by a cached HTML/open module graph; current R58 entry does not fetch it",
+      "baseCommit": "d6e3fe41a513797d45b6c118d825c2f76c25cfcb"
+    }
+  ]
 }
