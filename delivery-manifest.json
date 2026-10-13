@@ -1,11 +1,11 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "c0b371b66bb9899499e3a0e47435779105bccfff",
-  "preparedGamePayload": "9f9a9317e88322d6b75c87bfb5541580da53d1c387d6edd05d6deb09ef5c7c86",
+  "preparedGameSource": "b3bdd1856bd006f858840b3d6f4a7e1e4f8df1b1",
+  "preparedGamePayload": "b94f36003e8cb37bc95b0e3b1427ba9caf81b7f232b1cfe968ba705e1655cec7",
   "metadataParent": "39bdd1bf7cf4331036c134b31f3a9ef7cf9c20091ea1087fa6d8df50e2faa7d0",
   "baselineCommit": "d6e3fe41a513797d45b6c118d825c2f76c25cfcb",
   "publication": true,
-  "metadataPublishedAt": "2026-10-13T18:21:45.310Z",
+  "metadataPublishedAt": "2026-10-13T18:27:31.395507+00:00",
   "files": [
     {
       "path": "404/index.html",
@@ -1318,9 +1318,9 @@
       "sha256": "8761225adf16f98266c6224a3718266f699b96abc389251aac07f34725b0516e"
     },
     {
-      "path": "illumi-drive/assets/pages-meta-08c8ee7d6b3b3f92.js",
-      "bytes": 586198,
-      "sha256": "08c8ee7d6b3b3f9273e64c541c20c5356530ecca0c7cd2ae5cd5eca7c8e223bd"
+      "path": "illumi-drive/assets/pages-meta-233eaba8b4978bc4.js",
+      "bytes": 586197,
+      "sha256": "233eaba8b4978bc41a8864b0fa329405563f0b07fd69d9b3939c289db2f127ec"
     },
     {
       "path": "illumi-drive/assets/pages-DsFRWx-i.css",
@@ -1540,7 +1540,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 1652,
-      "sha256": "ccca2321b45fd6c875f02aca0e5fddbcbe0e98f36a0d10e26f50800c7977b94a"
+      "sha256": "e05f2e073a1569a5659c048db356ee9ea152d764b1d68463854756f094a4a4e7"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -1590,12 +1590,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 1652,
-      "sha256": "ccca2321b45fd6c875f02aca0e5fddbcbe0e98f36a0d10e26f50800c7977b94a"
+      "sha256": "e05f2e073a1569a5659c048db356ee9ea152d764b1d68463854756f094a4a4e7"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 135,
-      "sha256": "fdbd38699d94483df74184cbd7010b810f128e17e449f8015efeb017b0d133b9"
+      "bytes": 143,
+      "sha256": "97d1a6644eec9610aa8699cfdc1f4fbd1a66b2363d5c0297780f3f60ee8cdb55"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -1604,8 +1604,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 52179,
-      "sha256": "6b8a1c5597998919b33b44dc6ad2c1f96553d9d8e7edfa3f81130d0634dedd12"
+      "bytes": 52187,
+      "sha256": "62a629eb9de01f79a6f5aa5ea36ae3acfc6f37ff30cc51b442acdda40ae2ee88"
     },
     {
       "path": "illumi-line/THIRD_PARTY_NOTICES.txt",
@@ -2761,11 +2761,11 @@
   "aliases": [
     {
       "path": "illumi-drive/index.html",
-      "sha256": "ccca2321b45fd6c875f02aca0e5fddbcbe0e98f36a0d10e26f50800c7977b94a"
+      "sha256": "e05f2e073a1569a5659c048db356ee9ea152d764b1d68463854756f094a4a4e7"
     }
   ],
   "totals": {
-    "raw": 403176478
+    "raw": 403176493
   },
   "retainedNonGameFiles": 486,
   "deliveryFileCount": 550,
