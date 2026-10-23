@@ -1,10 +1,10 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "9a185625ea7943036587adbaa25fced83ca4dd6f",
-  "preparedGamePayload": "918c289bbafcc05b860abee35f6fd826837d0d257d01134b4c93972c38416762",
-  "baselineCommit": "b6bed46b8ff846f15fb436223cdae1ecc805c4b0",
+  "preparedGameSource": "adde2b5498be94c2c88fe0d82cb24ddbbcc411ed",
+  "preparedGamePayload": "7311fd336c109bc44f7866c32c89de9f4a4635af254a279b429176886ff1ea1b",
+  "baselineCommit": "021c39175f840c9af66109468148e6f11505925c",
   "publication": false,
-  "metadataPublishedAt": "2026-10-22T23:08:10.427Z",
+  "metadataPublishedAt": "2026-10-23T00:03:57.863Z",
   "releaseLabel": "R59",
   "oldCachedCompatibility": [
     {
@@ -13,8 +13,18 @@
       "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
     },
     {
+      "path": "illumi-drive/assets/pages-boost-gap-6bc4d6c88ea9.css",
+      "sha256": "6bc4d6c88ea9451f93ecd8117da4cf80890a2da6d3b99c89b1ccabe45bac408e",
+      "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
+    },
+    {
       "path": "illumi-drive/assets/pages-Bws0pwon.js",
       "sha256": "d147844c2e94d003643c7abf997958e5e77c42a9775aad0fb15530f280a8ae38",
+      "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
+    },
+    {
+      "path": "illumi-drive/assets/pages-CF_KBbvG.js",
+      "sha256": "c38becc1b1aa6fce434f84ed3d4f007c38fefbb1f214c2d5ae9445f9aae95c80",
       "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
     },
     {
@@ -28,11 +38,6 @@
       "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
     },
     {
-      "path": "illumi-drive/assets/pages-boost-gap-6bc4d6c88ea9.css",
-      "sha256": "6bc4d6c88ea9451f93ecd8117da4cf80890a2da6d3b99c89b1ccabe45bac408e",
-      "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
-    },
-    {
       "path": "illumi-drive/assets/pages-meta-233eaba8b4978bc4.js",
       "sha256": "233eaba8b4978bc41a8864b0fa329405563f0b07fd69d9b3939c289db2f127ec",
       "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
@@ -40,6 +45,16 @@
     {
       "path": "illumi-drive/assets/pages-release-30915a4eb1f388f31e10.js",
       "sha256": "d90e8e6fcfc3e58d01e9c11d281ef95af28d446249e60ca44ea7a4d713b4e7c3",
+      "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
+    },
+    {
+      "path": "illumi-drive/assets/pages-release-897ae1f11e4ba8406f97.js",
+      "sha256": "27c9e3aba8404709f15b973eacfb01eba1edbd1cf19c4606929e2c2a096d2355",
+      "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-BpSnrD-l.js",
+      "sha256": "5469c28bbd28957dc5c5bf319f4e1e8e0552f9df97c17639e349452fccef1510",
       "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
     },
     {
@@ -60,6 +75,11 @@
     {
       "path": "illumi-drive/assets/renderer-release-30915a4eb1f388f31e10.js",
       "sha256": "a2f5f00a73b39c555111bf13360f9199b4d058969c793c484df786d8bb213aa3",
+      "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-release-897ae1f11e4ba8406f97.js",
+      "sha256": "d3edb878f81ef88d8c13f71f898eebf79c53325e05ca74ed8264907ede3e8fe0",
       "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
     },
     {
@@ -87,7 +107,7 @@
     {
       "path": "__next._full.txt",
       "bytes": 8382,
-      "sha256": "c2bf1d34d1fcf9de1461bd2a657dc53c6802628754f6b52f189b9a37a03c4ff3"
+      "sha256": "f135eab108077f41772c591a39f1fc39b7be1ceebdbfc3fe4e7ba76e7b9cf83a"
     },
     {
       "path": "__next._head.txt",
@@ -153,6 +173,11 @@
       "path": "_next/static/chunks/gateway-release-4710497dbe38d4c6.js",
       "bytes": 15512,
       "sha256": "4710497dbe38d4c6371506b7f81ba66384c506c88fa31cb09a93306a0bf055fe"
+    },
+    {
+      "path": "_next/static/chunks/gateway-release-51fd98c1f7de070e.js",
+      "bytes": 15530,
+      "sha256": "51fd98c1f7de070ebfad4b8ad1847de3a431f94bfde7074d05fdcfb4bc7854c2"
     },
     {
       "path": "_next/static/chunks/gateway-release-985745b232baec3b.js",
@@ -1400,6 +1425,11 @@
       "sha256": "8761225adf16f98266c6224a3718266f699b96abc389251aac07f34725b0516e"
     },
     {
+      "path": "illumi-drive/assets/pages-BF8t0OVM.js",
+      "bytes": 646001,
+      "sha256": "cd6218ce5f91336c01421e969f734bab8d9c6f2e77ed3930ae2d7075b57eeb56"
+    },
+    {
       "path": "illumi-drive/assets/pages-BMC15FSK.js",
       "bytes": 575613,
       "sha256": "912f2f328af3f27210344a143a9df12d597afeca86cf9d22a297dfe203d0b14c"
@@ -1445,6 +1475,11 @@
       "sha256": "d90e8e6fcfc3e58d01e9c11d281ef95af28d446249e60ca44ea7a4d713b4e7c3"
     },
     {
+      "path": "illumi-drive/assets/pages-release-47b0bbf3db5e38944e0d.js",
+      "bytes": 646077,
+      "sha256": "9e561d9ea35a5eae782b24b340b196f96255d9df9a1bdaddd43db84cb3e313ff"
+    },
+    {
       "path": "illumi-drive/assets/pages-release-897ae1f11e4ba8406f97.js",
       "bytes": 646038,
       "sha256": "27c9e3aba8404709f15b973eacfb01eba1edbd1cf19c4606929e2c2a096d2355"
@@ -1475,9 +1510,19 @@
       "sha256": "500f967ea2b914e7e51d0370d2325336118b4fe06d0c28a89eb4d75daee33bd2"
     },
     {
+      "path": "illumi-drive/assets/renderer-D4vUetaq.js",
+      "bytes": 1045701,
+      "sha256": "ab6da06d8e3ae439dd12e037c1161872c7d12ba28220d49e9dce6db0f68bf4cc"
+    },
+    {
       "path": "illumi-drive/assets/renderer-release-30915a4eb1f388f31e10.js",
       "bytes": 1039646,
       "sha256": "a2f5f00a73b39c555111bf13360f9199b4d058969c793c484df786d8bb213aa3"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-release-47b0bbf3db5e38944e0d.js",
+      "bytes": 1045721,
+      "sha256": "e0b5e1f49b650d93a4e6952199966d1e6a81ce21df73ac2653bf8ad4942f1c0d"
     },
     {
       "path": "illumi-drive/assets/renderer-release-897ae1f11e4ba8406f97.js",
@@ -1712,7 +1757,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 1659,
-      "sha256": "98224dcac7ba1c51c89e2e2f5ac12fa69200e9e8ea5d095877a3a7adf3c6cb60"
+      "sha256": "4a389f3f9dbcca64efabb6e3a58c7c048fc4151ddbfb8f39eb16048d178ee4b4"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -1762,12 +1807,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 1659,
-      "sha256": "98224dcac7ba1c51c89e2e2f5ac12fa69200e9e8ea5d095877a3a7adf3c6cb60"
+      "sha256": "4a389f3f9dbcca64efabb6e3a58c7c048fc4151ddbfb8f39eb16048d178ee4b4"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 131,
-      "sha256": "4e719450a1396a9ca1a231f74a3c24cb2f66b990333a1fade517d0c05972a35e"
+      "sha256": "3dc615be62fbd73ca701f4bbbdee79c2c02d79feb88a68c3b01a7a2a7e6870c8"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -1782,7 +1827,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 54039,
-      "sha256": "9ce549fe6936a6121d8077b4e0790190c3d96ff3ccf6241fb4248937fe69a438"
+      "sha256": "5bff5d580f201d1fd47f1ea4863b7415ca86ae2dbdefd5e8ce61265f2fe8af2f"
     },
     {
       "path": "illumi-line/art/illumi-line-title.png",
@@ -2232,12 +2277,12 @@
     {
       "path": "index.html",
       "bytes": 30546,
-      "sha256": "0f740e1cba05ea5d32b8750c2901fffc2c6f0090767002ed2d52c6ea07a41c30"
+      "sha256": "d53345348adab4da9ab5ec7334aa42de44e973ec1c3809ca625b39f17d300432"
     },
     {
       "path": "index.txt",
       "bytes": 8382,
-      "sha256": "c2bf1d34d1fcf9de1461bd2a657dc53c6802628754f6b52f189b9a37a03c4ff3"
+      "sha256": "f135eab108077f41772c591a39f1fc39b7be1ceebdbfc3fe4e7ba76e7b9cf83a"
     },
     {
       "path": "migaq-r80-smoke/assets/ai-design-lab-logotype.svg",
@@ -2935,7 +2980,7 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "parentGamePayload": "8d8eff290d64f42c43cbcd7437f1b831ed04db8a49e5d75b06c1a8fa7164691b",
+  "parentGamePayload": "af4deb11336a17e90cc57ef5a220aa6ec5bacbcab2e4c5591acb84bc8fbb23cf",
   "syntheticFixture": false,
   "metadataOnlyChild": true
 }
