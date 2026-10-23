@@ -1,8 +1,8 @@
 {
   "schema": "public-game-delivery/1",
   "preparedGameSource": "16ed067bd8066eb2db166db3eb1045d3bfd75fe5",
-  "preparedGamePayload": "e097a066ec1a39ff1ee2969fb3243891a7e99ec5d9cdfeef48665e863f94e7bb",
-  "baselineCommit": "e1778edd0ddb25a48775da93c82e31df81eeeb4e",
+  "preparedGamePayload": "0e46e58cf8f34848129e89e4814bca1862768d0ba8228b40b6e7233862dce652",
+  "baselineCommit": "c0503b664ccc51bb0a4605c9382541958ef8a0c3",
   "publication": false,
   "metadataPublishedAt": "2026-10-23T17:08:31.958Z",
   "releaseLabel": "R60",
@@ -1827,7 +1827,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 1659,
-      "sha256": "bcd7134c6eb7197d4ab458f521722c6f04a6d299ab8a10b756ed4310d07c479c"
+      "sha256": "aff18af815aed86c529c4d21c0dc743ae49d18dcf186eb7e5aa86eb90b66f75c"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -1877,7 +1877,7 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 1659,
-      "sha256": "bcd7134c6eb7197d4ab458f521722c6f04a6d299ab8a10b756ed4310d07c479c"
+      "sha256": "aff18af815aed86c529c4d21c0dc743ae49d18dcf186eb7e5aa86eb90b66f75c"
     },
     {
       "path": "illumi-drive/release.json",
@@ -3050,7 +3050,7 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "parentGamePayload": "d7ab2d2cf17a06535d0fb453d3305653e8b38bb872413564a0b5a40c23270b42",
+  "parentGamePayload": "e097a066ec1a39ff1ee2969fb3243891a7e99ec5d9cdfeef48665e863f94e7bb",
   "syntheticFixture": false,
   "metadataOnlyChild": true,
   "historyCorrection": {
@@ -3058,5 +3058,10 @@
     "approvedNotesSha256": "d0be96a2782ec3c97e9673141d2f68fc60407da6f391d40208df19a80d14f3a4",
     "details": 57,
     "runtimeUnchanged": true
+  },
+  "shellLabelCorrection": {
+    "label": "R60",
+    "runtimeUnchanged": true,
+    "packetSHA256": "38a43b8a75786d07c0b29bc083d958aa91e019ee37c133cde6c6c689f647e0b9"
   }
 }
