@@ -1,8 +1,8 @@
 {
   "schema": "public-game-delivery/1",
   "preparedGameSource": "16ed067bd8066eb2db166db3eb1045d3bfd75fe5",
-  "preparedGamePayload": "0e46e58cf8f34848129e89e4814bca1862768d0ba8228b40b6e7233862dce652",
-  "baselineCommit": "c0503b664ccc51bb0a4605c9382541958ef8a0c3",
+  "preparedGamePayload": "60d3e474a6799a4c973c89556c8f03fb1eb49e64679ec392e5fe92c33cd7536f",
+  "baselineCommit": "66d4ec015a818841b38dc045bd2b98989387e3af",
   "publication": false,
   "metadataPublishedAt": "2026-10-23T17:08:31.958Z",
   "releaseLabel": "R60",
@@ -1505,6 +1505,11 @@
       "sha256": "bf4eefe6178a2339522aef8cb133f63289bb5c7a408752e8af27e394e9518a2e"
     },
     {
+      "path": "illumi-drive/assets/pages-history-706cf9fb2b301e8cf419.js",
+      "bytes": 665184,
+      "sha256": "351ce0dc59da2fafc40360d1bc72a8b88e3958e2627c9382a76f919a4c002f4a"
+    },
+    {
       "path": "illumi-drive/assets/pages-history-cc84cf38d35413466704.js",
       "bytes": 658988,
       "sha256": "2c36598d793b8f03f52b4e149466ca7fd064ca7d5b340c88586f12a2aca4926d"
@@ -1583,6 +1588,11 @@
       "path": "illumi-drive/assets/renderer-D4vUetaq.js",
       "bytes": 1045701,
       "sha256": "ab6da06d8e3ae439dd12e037c1161872c7d12ba28220d49e9dce6db0f68bf4cc"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-history-706cf9fb2b301e8cf419.js",
+      "bytes": 1047625,
+      "sha256": "0877f97935add1d79f99d690ffcf5dec7b4cd6ab85aada6422019a8402b62535"
     },
     {
       "path": "illumi-drive/assets/renderer-history-cc84cf38d35413466704.js",
@@ -1847,7 +1857,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 1659,
-      "sha256": "aff18af815aed86c529c4d21c0dc743ae49d18dcf186eb7e5aa86eb90b66f75c"
+      "sha256": "0e8992fbb1041068de06c3906df7d78f543d2e6f67c8ba6ac9d258b90d89ecea"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -1897,7 +1907,7 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 1659,
-      "sha256": "aff18af815aed86c529c4d21c0dc743ae49d18dcf186eb7e5aa86eb90b66f75c"
+      "sha256": "0e8992fbb1041068de06c3906df7d78f543d2e6f67c8ba6ac9d258b90d89ecea"
     },
     {
       "path": "illumi-drive/release.json",
@@ -1916,8 +1926,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 66310,
-      "sha256": "cc84cf38d3541346670464a50d7e91eed43bf39675e75d8fc23bac7ae978de69"
+      "bytes": 72929,
+      "sha256": "706cf9fb2b301e8cf419300caf1918e1522b94b9d18b105f714c145489854e77"
     },
     {
       "path": "illumi-line/art/illumi-line-title.png",
@@ -3070,13 +3080,14 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "parentGamePayload": "e097a066ec1a39ff1ee2969fb3243891a7e99ec5d9cdfeef48665e863f94e7bb",
+  "parentGamePayload": "0e46e58cf8f34848129e89e4814bca1862768d0ba8228b40b6e7233862dce652",
   "syntheticFixture": false,
   "metadataOnlyChild": true,
   "historyCorrection": {
-    "revision": "R59",
-    "approvedNotesSha256": "d0be96a2782ec3c97e9673141d2f68fc60407da6f391d40208df19a80d14f3a4",
-    "details": 57,
+    "allEntries": 64,
+    "details": 308,
+    "r59Details": 57,
+    "proposalSHA256": "706cf9fb2b301e8cf419300caf1918e1522b94b9d18b105f714c145489854e77",
     "runtimeUnchanged": true
   },
   "shellLabelCorrection": {
