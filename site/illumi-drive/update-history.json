@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "currentRevisionId": "R59",
+  "currentRevisionId": "R60",
   "currentNoticeIds": [],
   "weeklySchedule": {
     "label": "週間ランキング",
@@ -69,6 +69,25 @@
     }
   ],
   "entries": [
+    {
+      "label": "R60",
+      "revisionId": "R60",
+      "identity": "ILLUMI DRIVE",
+      "status": "published",
+      "publishedAt": "2026-10-23T17:08:31.958Z",
+      "recordedAt": "2026-10-23T17:08:31.958Z",
+      "title": "HDR表示が成立しなかった場合の画面復旧を修正しました",
+      "shortSummary": "HDRの初回表示に失敗した後、ゲーム画面が黒いまま残る問題を修正しました。",
+      "highlights": [
+        "HDRの初回表示に失敗した場合も、新しく描いた通常表示へ復旧します。",
+        "正常なHDR表示と、走行条件・保存済み記録は維持します。"
+      ],
+      "details": [
+        "HDRの初期表示に失敗した後、復旧表示が出てもゲーム画面が黒いままになる問題を修正しました。",
+        "正常なHDR表示を変更するものではありません。起動時間やフレームレートの改善を保証する更新ではありません。",
+        "コース、操作、タイム、ランキング、ゴースト、音声、品質改善への協力の選択は変更しません。"
+      ]
+    },
     {
       "label": "R59",
       "revisionId": "R59",
