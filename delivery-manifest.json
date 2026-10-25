@@ -1,10 +1,10 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "6738f9fe4ea66f21f6b1dae780a4a71537f8bcf8",
-  "preparedGamePayload": "e0e651c10200a86f16a00e46ec31da32f363810a7f4ca85572b823a444399c35",
-  "baselineCommit": "d3cbba754a337023e2f5eadeb0f586a06dae0f54",
+  "preparedGameSource": "661a8ea8621f3c8661e90ad828bb8bacac7390e8",
+  "preparedGamePayload": "a4ba948c3ec4660c3491a151aa0c23a0b5e97edfdccde8691f79e5c64b346684",
+  "baselineCommit": "cbcd4d48339d8d4131c422f2d7903298cc6562a0",
   "publication": false,
-  "metadataPublishedAt": "2026-10-24T14:46:00.000Z",
+  "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R61",
   "oldCachedCompatibility": [
     {
@@ -116,16 +116,6 @@
       "path": "illumi-drive/audio/slipstream-theory-r34.m4a",
       "sha256": "e86848a0e0513677df40f0ab4c8cf913f3d9e123a4af8ef83e8af48a32a7d789",
       "reason": "Retain existing public bytes for cached older entry and rollback; not current initial-request requirement"
-    },
-    {
-      "path": "illumi-drive/assets/pages-metadata-5fda68f6c9c0e85f.js",
-      "sha256": "ab98861334c3df84829fa46b5d328f35fc5641ce8b417a03a8fe26402d7367bc",
-      "reason": "Retain immutable metadata-child module for cached entry during normal rollback; not active parent runtime"
-    },
-    {
-      "path": "illumi-drive/assets/renderer-metadata-5fda68f6c9c0e85f.js",
-      "sha256": "bde12bd14b0dc74af15ffe264370e8d1a6ea725c2b77d4abec7ed63c02a7bc71",
-      "reason": "Retain immutable metadata-child module for cached entry during normal rollback; not active parent runtime"
     }
   ],
   "files": [
@@ -146,8 +136,8 @@
     },
     {
       "path": "__next._full.txt",
-      "bytes": 8382,
-      "sha256": "56c602cc42fa8a28a22c39ac3006176df8953444eecb6e6ae703ba14817ce439"
+      "bytes": 8472,
+      "sha256": "98dcf35b916b73667dc0d5803917ac755ede555cb99c4e288c643ce1e8c179f0"
     },
     {
       "path": "__next._head.txt",
@@ -1931,8 +1921,8 @@
     },
     {
       "path": "illumi-drive/index.html",
-      "bytes": 1639,
-      "sha256": "0c6e21a8301c67c3c8c13f7d2515c3c33ce1e4ce29f6a1fab35493dabe988cf4"
+      "bytes": 1656,
+      "sha256": "bc588b6d07699acc3ab1e6ef6ac1fb2426fbabf70d9a6654b3b638154e3a0d28"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -1986,13 +1976,13 @@
     },
     {
       "path": "illumi-drive/pages.html",
-      "bytes": 1639,
-      "sha256": "0c6e21a8301c67c3c8c13f7d2515c3c33ce1e4ce29f6a1fab35493dabe988cf4"
+      "bytes": 1656,
+      "sha256": "bc588b6d07699acc3ab1e6ef6ac1fb2426fbabf70d9a6654b3b638154e3a0d28"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 135,
-      "sha256": "0ae8dff6a78a1ad90260330f4b21d6760897847400dd31bf6a014da968899ea7"
+      "sha256": "db5fa0e0484e05f3c43a1c9de6ab207486c1979c635b69b498e35916c267d30c"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2001,8 +1991,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 75392,
-      "sha256": "d88d100ca792aac689c21b3622184d0f94b75583a78aec9919e067b0d81d3078"
+      "bytes": 75920,
+      "sha256": "c22065efcc15d9ae0453154a6c9a1eb4cf987eac0761a22b3cd0105cbf7ffa6d"
     },
     {
       "path": "illumi-line/THIRD_PARTY_NOTICES.txt",
@@ -2451,13 +2441,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 30546,
-      "sha256": "fc7da2a53447620b8c038bca46e7afdb3eeb7232cc1a3bd0266d2eab05de3c8f"
+      "bytes": 30816,
+      "sha256": "364bb688bceecfd7379e613c41990ebec39f8a7ad6d2a210941672c707efa588"
     },
     {
       "path": "index.txt",
-      "bytes": 8382,
-      "sha256": "56c602cc42fa8a28a22c39ac3006176df8953444eecb6e6ae703ba14817ce439"
+      "bytes": 8472,
+      "sha256": "98dcf35b916b73667dc0d5803917ac755ede555cb99c4e288c643ce1e8c179f0"
     },
     {
       "path": "migaq/_headers",
@@ -3155,15 +3145,14 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "parentGamePayload": "3d546140a1324770fab5868cd38fc2792dfb1b21066293cd6ed20c543d3ea5e0",
+  "parentGamePayload": "e0e651c10200a86f16a00e46ec31da32f363810a7f4ca85572b823a444399c35",
   "syntheticFixture": false,
   "metadataOnlyChild": true,
   "historyCorrection": {
     "allEntries": 65,
-    "details": 318,
-    "r59Details": 57,
-    "priorDetailsPreserved": 311,
-    "runtimeUnchanged": false
+    "details": 321,
+    "priorDetailsPreserved": 318,
+    "runtimeUnchanged": true
   },
   "shellLabelCorrection": {
     "label": "R61",
@@ -3171,7 +3160,7 @@
     "packetSHA256": "4957607736cd10886002afd19bb56818e40de90b4f375d68008c291422934153"
   },
   "deliveryFileCount": 605,
-  "deliveryRawBytes": 455468694,
+  "deliveryRawBytes": 455469706,
   "rollback": {
     "from": "32a669515b9807b42a3d5e5713962c0669038578",
     "toRuntimeSource": "b5641c2059a40bc2b24bb03e65cf86020d879acf",
@@ -3179,5 +3168,31 @@
     "retainNewImmutableAssets": true
   },
   "previousManifestBlob": "3f254658079b5dd288f50cedc97b01e41201e7c9",
-  "rollbackOf": "d3cbba754a337023e2f5eadeb0f586a06dae0f54"
+  "runtimeParentSource": "6738f9fe4ea66f21f6b1dae780a4a71537f8bcf8",
+  "semanticPublication": {
+    "pass": true,
+    "label": "R61",
+    "publishedAt": "2026-10-25T00:44:21.000Z",
+    "recordedAt": "2026-10-24T14:46:00.000Z",
+    "originalDeployRun": 40147801277,
+    "oldEntriesPreserved": 64,
+    "oldDetailsPreserved": 318,
+    "coverage": [
+      {
+        "id": "automatic-aa-existing-attachments",
+        "detailSHA256": "32fdd7655363f013274c5b7886882cca335df4b90b41b2d4dac3976b92cc39f4"
+      },
+      {
+        "id": "title-reentry-live-ghost-reference",
+        "detailSHA256": "a7e1bd2d4e36d099f7cd47a95361a918abf67feccbc560fd3ae5ac4d8ded22cb"
+      },
+      {
+        "id": "prepared-model-and-shadow-reuse",
+        "detailSHA256": "32f5e15d367422b245b6fd74d6f8b918ccd3e4d7a9b1e272b142410f41a04155"
+      }
+    ],
+    "notPerformanceGuarantee": true
+  },
+  "flightTextFrameLengthsVerified": true,
+  "failedMetadataDelivery": "d3cbba754a337023e2f5eadeb0f586a06dae0f54"
 }
