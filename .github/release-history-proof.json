@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "sourceVerified": true,
-  "source": "661a8ea8621f3c8661e90ad828bb8bacac7390e8",
-  "baseSource": "6738f9fe4ea66f21f6b1dae780a4a71537f8bcf8",
-  "coverageSHA256": "f84f60b0a218ade0f49df4568cbfafff9e19a0fcf749e72689d835d1ea057de2",
-  "historySHA256": "c22065efcc15d9ae0453154a6c9a1eb4cf987eac0761a22b3cd0105cbf7ffa6d",
-  "notesInputSHA256": "c22065efcc15d9ae0453154a6c9a1eb4cf987eac0761a22b3cd0105cbf7ffa6d",
-  "releaseSHA256": "db5fa0e0484e05f3c43a1c9de6ab207486c1979c635b69b498e35916c267d30c",
+  "source": "6738f9fe4ea66f21f6b1dae780a4a71537f8bcf8",
+  "baseSource": "b5641c2059a40bc2b24bb03e65cf86020d879acf",
+  "coverageSHA256": "73456d0587f2f2e83136bc5000387aafd89c570a8ec5eb6b32f4cfe2d7a0fda6",
+  "historySHA256": "d88d100ca792aac689c21b3622184d0f94b75583a78aec9919e067b0d81d3078",
+  "notesInputSHA256": "d88d100ca792aac689c21b3622184d0f94b75583a78aec9919e067b0d81d3078",
+  "releaseSHA256": "0ae8dff6a78a1ad90260330f4b21d6760897847400dd31bf6a014da968899ea7",
   "releaseLabel": "R61",
   "expectedReleaseLabel": "R61",
-  "baselineReleaseLabel": "R61",
-  "allowReleaseIncrement": false,
-  "releaseLabelApprovalSHA256": "4a447c4e6c54f5fab4a40e543c19dbfe2c743983bccede7267fb52092de72f12",
+  "baselineReleaseLabel": "R60",
+  "allowReleaseIncrement": true,
+  "releaseLabelApprovalSHA256": "9584cbcb3e4d6f19cdd3329c325224129df1f986c5d43acdaef74d91df65152d",
   "files": [
     {
       "path": "THIRD_PARTY_NOTICES.txt",
@@ -490,8 +490,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 1656,
-      "sha256": "bc588b6d07699acc3ab1e6ef6ac1fb2426fbabf70d9a6654b3b638154e3a0d28"
+      "bytes": 1639,
+      "sha256": "0c6e21a8301c67c3c8c13f7d2515c3c33ce1e4ce29f6a1fab35493dabe988cf4"
     },
     {
       "path": "licenses/astronomy-engine.txt",
@@ -545,13 +545,13 @@
     },
     {
       "path": "pages.html",
-      "bytes": 1656,
-      "sha256": "bc588b6d07699acc3ab1e6ef6ac1fb2426fbabf70d9a6654b3b638154e3a0d28"
+      "bytes": 1639,
+      "sha256": "0c6e21a8301c67c3c8c13f7d2515c3c33ce1e4ce29f6a1fab35493dabe988cf4"
     },
     {
       "path": "release.json",
       "bytes": 135,
-      "sha256": "db5fa0e0484e05f3c43a1c9de6ab207486c1979c635b69b498e35916c267d30c"
+      "sha256": "0ae8dff6a78a1ad90260330f4b21d6760897847400dd31bf6a014da968899ea7"
     },
     {
       "path": "textures/glass/arch-local-reflection.png",
@@ -560,11 +560,11 @@
     },
     {
       "path": "update-history.json",
-      "bytes": 75920,
-      "sha256": "c22065efcc15d9ae0453154a6c9a1eb4cf987eac0761a22b3cd0105cbf7ffa6d"
+      "bytes": 75392,
+      "sha256": "d88d100ca792aac689c21b3622184d0f94b75583a78aec9919e067b0d81d3078"
     }
   ],
-  "payloadSHA256": "695a3ae977baed5f0cfe9cdcfe7c338401ddd056a812fdd36621b3908750053b",
+  "payloadSHA256": "0f203667f8991e5181139dce60b3de374eaff4fd5e67b74a9fa66c73d70eb19e",
   "semanticReviewRequired": true,
   "machineSemanticProof": false
 }
