@@ -131,28 +131,28 @@
     },
     {
       "path": "__next.__PAGE__.txt",
-      "bytes": 3392,
-      "sha256": "2e6a5dbaf2221c48edc5ef4678b067f3ae94a6d16429f78f703229259ce36f02"
+      "bytes": 4115,
+      "sha256": "183b092e7e62125b11729662db8927145fe3d092fe2438f502ed756ea662113e"
     },
     {
       "path": "__next._full.txt",
-      "bytes": 8472,
-      "sha256": "98dcf35b916b73667dc0d5803917ac755ede555cb99c4e288c643ce1e8c179f0"
+      "bytes": 9120,
+      "sha256": "e80319c31377853f7245032000945ca13934b0146a7b3d972e099c218845d046"
     },
     {
       "path": "__next._head.txt",
-      "bytes": 2630,
-      "sha256": "4620a8c2b44409df502a29a12e8f4b266a30bb8d326dbe44a868c0349b4f1d65"
+      "bytes": 2649,
+      "sha256": "6615d2e42037e6ad87cd6884f54fc43f02b96ee1dac6683424a593bdb68ec1a2"
     },
     {
       "path": "__next._index.txt",
       "bytes": 1771,
-      "sha256": "fbd40c027b6453f08ffe1777366404658ee396b6a7599b5e35c1c23f1c885b70"
+      "sha256": "a029e2d1a563c4783185a342c03a6f399f0d36922b56b50ebd71722677479504"
     },
     {
       "path": "__next._tree.txt",
       "bytes": 298,
-      "sha256": "010d2c34f8d01d83710e85ad30f5d65dd55462a2077c1f915f89f4b55959c068"
+      "sha256": "9ab15ebbd935a331a0f0c229072b802bcf8a46140e54b3d8f453c54e151f087d"
     },
     {
       "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
@@ -2441,13 +2441,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 30816,
-      "sha256": "364bb688bceecfd7379e613c41990ebec39f8a7ad6d2a210941672c707efa588"
+      "bytes": 31130,
+      "sha256": "4725a7ab820aa7d131ec34ca404b3cd54766ea5ff4522574ec03e82c13cf8c40"
     },
     {
       "path": "index.txt",
-      "bytes": 8472,
-      "sha256": "98dcf35b916b73667dc0d5803917ac755ede555cb99c4e288c643ce1e8c179f0"
+      "bytes": 9120,
+      "sha256": "e80319c31377853f7245032000945ca13934b0146a7b3d972e099c218845d046"
     },
     {
       "path": "migaq/_headers",
@@ -3143,6 +3143,16 @@
       "path": "visual-comparison/study-data.js",
       "bytes": 1376,
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
+    },
+    {
+      "path": "_next/static/chunks/2af4ul5p8vcgt.css",
+      "bytes": 19627,
+      "sha256": "6e30df5c97630766e5ab84f89ec1abb78797fa30b9cbecb6c1b794d13e8eb278"
+    },
+    {
+      "path": "_next/static/chunks/3rp98s778j3rp.js",
+      "bytes": 14781,
+      "sha256": "7f3f48a9209cd697ad9f4c3066453d4e417885d4f065c0a5b4b6880e0ed57b50"
     }
   ],
   "parentGamePayload": "e0e651c10200a86f16a00e46ec31da32f363810a7f4ca85572b823a444399c35",
