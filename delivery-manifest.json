@@ -1,11 +1,11 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "661a8ea8621f3c8661e90ad828bb8bacac7390e8",
-  "preparedGamePayload": "a4ba948c3ec4660c3491a151aa0c23a0b5e97edfdccde8691f79e5c64b346684",
-  "baselineCommit": "cbcd4d48339d8d4131c422f2d7903298cc6562a0",
+  "preparedGameSource": "ef7b4ac2b216f7a2fbe44ee8514311157f058f5f",
+  "preparedGamePayload": "40423981b26d446c5d86b307de69af885764ea20e87adc677414e51f275b595f",
+  "baselineCommit": "2fa8517bfd099bf66b6a33562e3632f933192a93",
   "publication": false,
-  "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
-  "releaseLabel": "R61",
+  "metadataPublishedAt": "2026-10-29T00:31:33.021Z",
+  "releaseLabel": "R62",
   "oldCachedCompatibility": [
     {
       "path": "illumi-drive/assets/pages-BF8t0OVM.js",
@@ -136,8 +136,8 @@
     },
     {
       "path": "__next._full.txt",
-      "bytes": 9120,
-      "sha256": "e80319c31377853f7245032000945ca13934b0146a7b3d972e099c218845d046"
+      "bytes": 9158,
+      "sha256": "5c6b2f5f5fa742c73bbdd88d75ff687bfb5bd604f3a47a20e06aa872d03328d1"
     },
     {
       "path": "__next._head.txt",
@@ -170,6 +170,11 @@
       "sha256": "08cc2df31be443547e7b52ed2240d98626febb0ba7391fa78e95fd2f7327d58a"
     },
     {
+      "path": "_next/static/chunks/2af4ul5p8vcgt.css",
+      "bytes": 19627,
+      "sha256": "6e30df5c97630766e5ab84f89ec1abb78797fa30b9cbecb6c1b794d13e8eb278"
+    },
+    {
       "path": "_next/static/chunks/2iqhn35jo4obu.js",
       "bytes": 227522,
       "sha256": "53adf5910dda45c8ed243aa06d9197ee44887d535cd9cd394d3731f6d825a2a5"
@@ -198,6 +203,11 @@
       "path": "_next/static/chunks/3jc-a0bfobbwb.js",
       "bytes": 15483,
       "sha256": "9d03e144da36b568cac26048776ca30c51aa2cbdf30dbe1e60b3a361231d6d3b"
+    },
+    {
+      "path": "_next/static/chunks/3rp98s778j3rp.js",
+      "bytes": 14781,
+      "sha256": "7f3f48a9209cd697ad9f4c3066453d4e417885d4f065c0a5b4b6880e0ed57b50"
     },
     {
       "path": "_next/static/chunks/gateway-release-0bfeae7a4176459f.js",
@@ -233,6 +243,11 @@
       "path": "_next/static/chunks/gateway-release-a5f32abc93edf76e.js",
       "bytes": 15530,
       "sha256": "a5f32abc93edf76ec64e50037d5fe427bdfc4f458cde0ce6c1d034026a454c66"
+    },
+    {
+      "path": "_next/static/chunks/gateway-release-ac35f078d273aff1.js",
+      "bytes": 14789,
+      "sha256": "ac35f078d273aff1d4f07b149c08ad70e593de7f30d57937652b05554c2f1319"
     },
     {
       "path": "_next/static/chunks/gateway-release-e94217b90e5d81ca.js",
@@ -1470,9 +1485,34 @@
       "sha256": "56bd6299a8643dc81b945c90ace9711f914466b6b46030b1327d424d36bf43db"
     },
     {
+      "path": "illumi-drive/assets/ambient-air-atlas.rgba16f-CMDLxV0C.bin",
+      "bytes": 372384,
+      "sha256": "c25013b925a8dc05ea00389d028522a2f9db2ed9cc76bd8151f0bdca4d095081"
+    },
+    {
+      "path": "illumi-drive/assets/ambient-local-air.rgba16f-DgkrGHdP.bin",
+      "bytes": 589824,
+      "sha256": "93a1458fc6a51933ddf85f640dc59d2c65c58df03ea05c79f97f9ec27f1bdb14"
+    },
+    {
+      "path": "illumi-drive/assets/durable-transport-CXUHZARg.js",
+      "bytes": 70,
+      "sha256": "ec38175c99c3952a5548f31286a922780ae0d59fdb1e4e70583ed60d615a098a"
+    },
+    {
+      "path": "illumi-drive/assets/hud-layout-De1ypetF.js",
+      "bytes": 80931,
+      "sha256": "50dbd5abd51d9c335b4c779e6fc492f5af7c2c1eefb21f7c976c46f2770ff247"
+    },
+    {
       "path": "illumi-drive/assets/letter-light-ribbon-ChRcjoxl.webp",
       "bytes": 8504,
       "sha256": "8761225adf16f98266c6224a3718266f699b96abc389251aac07f34725b0516e"
+    },
+    {
+      "path": "illumi-drive/assets/moon-lroc-2k-BtmufvQt.jpg",
+      "bytes": 549787,
+      "sha256": "ec98386c3b39ad2dab5970db5b5aecb8946db3f450aee4d78ce7382e0060bf87"
     },
     {
       "path": "illumi-drive/assets/pages-7i25VduI.js",
@@ -1520,6 +1560,11 @@
       "sha256": "7a8efcd85926c5ce3e7d9eb810dee94a94aff7ba7d7107ccb98402a5ae054672"
     },
     {
+      "path": "illumi-drive/assets/pages-D7jKzZQX.js",
+      "bytes": 3491,
+      "sha256": "d46a61fa527e7d11cc0255d839a4aeb562f004652cde09513e53d22858c1c287"
+    },
+    {
       "path": "illumi-drive/assets/pages-D82XhaNB.js",
       "bytes": 646089,
       "sha256": "f7fbdb2c698e99457251c0edbae1dcc92c80d82f21390dfe0ed4cc180caf9f54"
@@ -1533,6 +1578,16 @@
       "path": "illumi-drive/assets/pages-DsFRWx-i.css",
       "bytes": 462237,
       "sha256": "bf4eefe6178a2339522aef8cb133f63289bb5c7a408752e8af27e394e9518a2e"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-BJ1BSUPm.js",
+      "bytes": 649853,
+      "sha256": "c8b1af6b93910593f0b37cf0a01f39c5304d026427f933cf31b34070152558a5"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-BgwL5CEP.css",
+      "bytes": 503237,
+      "sha256": "7e5adce2e02fb11ef3737ed4fad51d29286314ed52d80f37d246fd54d27d21e9"
     },
     {
       "path": "illumi-drive/assets/pages-boost-gap-6bc4d6c88ea9.css",
@@ -1595,6 +1650,11 @@
       "sha256": "27c9e3aba8404709f15b973eacfb01eba1edbd1cf19c4606929e2c2a096d2355"
     },
     {
+      "path": "illumi-drive/assets/private-render-comparison-BsRz312d.js",
+      "bytes": 566270,
+      "sha256": "0544a5a08e9339ab13fd5b82405e90110fdaf519b3a2b4a5ec5e8c9fdd172051"
+    },
+    {
       "path": "illumi-drive/assets/private-render-comparison-CVb7wj_n.js",
       "bytes": 564919,
       "sha256": "b95b4627764dec6d18109a08d65b15f239adf11b4cc669f3ad61b17d8639df2b"
@@ -1613,6 +1673,11 @@
       "path": "illumi-drive/assets/renderer-BpSnrD-l.js",
       "bytes": 1044654,
       "sha256": "5469c28bbd28957dc5c5bf319f4e1e8e0552f9df97c17639e349452fccef1510"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-CBKM-hHu.js",
+      "bytes": 1744289,
+      "sha256": "e379452c5a2f6f080b92295c74f8784d69d179a9e2039019f19e04ffcd6e42c5"
     },
     {
       "path": "illumi-drive/assets/renderer-COVgYhDC.js",
@@ -1688,6 +1753,11 @@
       "path": "illumi-drive/assets/renderer-release-897ae1f11e4ba8406f97.js",
       "bytes": 1044674,
       "sha256": "d3edb878f81ef88d8c13f71f898eebf79c53325e05ca74ed8264907ede3e8fe0"
+    },
+    {
+      "path": "illumi-drive/assets/vehicle-play-geometry-Cm3d-Eas.js",
+      "bytes": 29643,
+      "sha256": "f9c40d8047d94eae583bd33bd6405b62452f6f55d8ea41eb06bea9869d8285ae"
     },
     {
       "path": "illumi-drive/assets/vehicle-play-geometry-DlAUpnR2.js",
@@ -1921,8 +1991,8 @@
     },
     {
       "path": "illumi-drive/index.html",
-      "bytes": 1656,
-      "sha256": "bc588b6d07699acc3ab1e6ef6ac1fb2426fbabf70d9a6654b3b638154e3a0d28"
+      "bytes": 1930,
+      "sha256": "e3680556602de337302a0fd86f0c8c9667837de5407811d9ac6e3db44fc35f78"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -1976,13 +2046,13 @@
     },
     {
       "path": "illumi-drive/pages.html",
-      "bytes": 1656,
-      "sha256": "bc588b6d07699acc3ab1e6ef6ac1fb2426fbabf70d9a6654b3b638154e3a0d28"
+      "bytes": 1930,
+      "sha256": "e3680556602de337302a0fd86f0c8c9667837de5407811d9ac6e3db44fc35f78"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 135,
-      "sha256": "db5fa0e0484e05f3c43a1c9de6ab207486c1979c635b69b498e35916c267d30c"
+      "sha256": "f5dd82d3e3e8ed016db99b5e25d845b201aca94808273842e0336bbe89dc0073"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -1991,8 +2061,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 75920,
-      "sha256": "c22065efcc15d9ae0453154a6c9a1eb4cf987eac0761a22b3cd0105cbf7ffa6d"
+      "bytes": 81217,
+      "sha256": "daf4a9ecae8257903232bb11f8cf7581a2f96aea4ab2b6eaee9b74c1f76ac908"
     },
     {
       "path": "illumi-line/THIRD_PARTY_NOTICES.txt",
@@ -2441,13 +2511,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 31130,
-      "sha256": "4725a7ab820aa7d131ec34ca404b3cd54766ea5ff4522574ec03e82c13cf8c40"
+      "bytes": 31187,
+      "sha256": "607589a670b822ee4f52b0000ba7cf6c15e5d0a3cf469ab935ca483717cb9a46"
     },
     {
       "path": "index.txt",
-      "bytes": 9120,
-      "sha256": "e80319c31377853f7245032000945ca13934b0146a7b3d972e099c218845d046"
+      "bytes": 9158,
+      "sha256": "5c6b2f5f5fa742c73bbdd88d75ff687bfb5bd604f3a47a20e06aa872d03328d1"
     },
     {
       "path": "migaq/_headers",
@@ -3143,16 +3213,6 @@
       "path": "visual-comparison/study-data.js",
       "bytes": 1376,
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
-    },
-    {
-      "path": "_next/static/chunks/2af4ul5p8vcgt.css",
-      "bytes": 19627,
-      "sha256": "6e30df5c97630766e5ab84f89ec1abb78797fa30b9cbecb6c1b794d13e8eb278"
-    },
-    {
-      "path": "_next/static/chunks/3rp98s778j3rp.js",
-      "bytes": 14781,
-      "sha256": "7f3f48a9209cd697ad9f4c3066453d4e417885d4f065c0a5b4b6880e0ed57b50"
     }
   ],
   "parentGamePayload": "e0e651c10200a86f16a00e46ec31da32f363810a7f4ca85572b823a444399c35",
@@ -3169,8 +3229,8 @@
     "runtimeUnchanged": false,
     "packetSHA256": "4957607736cd10886002afd19bb56818e40de90b4f375d68008c291422934153"
   },
-  "deliveryFileCount": 605,
-  "deliveryRawBytes": 455469706,
+  "deliveryFileCount": 619,
+  "deliveryRawBytes": 460617012,
   "rollback": {
     "from": "32a669515b9807b42a3d5e5713962c0669038578",
     "toRuntimeSource": "b5641c2059a40bc2b24bb03e65cf86020d879acf",
@@ -3204,5 +3264,7 @@
     "notPerformanceGuarantee": true
   },
   "flightTextFrameLengthsVerified": true,
-  "failedMetadataDelivery": "d3cbba754a337023e2f5eadeb0f586a06dae0f54"
+  "failedMetadataDelivery": "d3cbba754a337023e2f5eadeb0f586a06dae0f54",
+  "preparationOnly": true,
+  "deliveryGamePayload": "96cc0e4e24eb5b4a29b53f6f5c642ea65c77bf88946c3fef08d21606f3e4e50b"
 }
