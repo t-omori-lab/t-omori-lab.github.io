@@ -1,8 +1,8 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "6f965b1c4f454eee5729628003457556adf7fd29",
-  "preparedGamePayload": "4ce7092a03f0435770dcdb0dfeef8234bc4dcaed8099094438d11337770a75de",
-  "baselineCommit": "b1794ab0cdae74350c980cf9afdc8b30e129ab0e",
+  "preparedGameSource": "1f51aeb3d9572eb9f905712b1c6200f2df1c9675",
+  "preparedGamePayload": "67ab2ed26cad663742a12923669f561400a08ef9436786f021ef735057f420bd",
+  "baselineCommit": "fd5a5719905a47627b0871d5621a8a6d838e84ca",
   "publication": false,
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R61",
@@ -1540,6 +1540,11 @@
       "sha256": "ec38175c99c3952a5548f31286a922780ae0d59fdb1e4e70583ed60d615a098a"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-DiRPEpzH.js",
+      "bytes": 70,
+      "sha256": "de4ec0f5bd404b5e69696533f47193b6cd81b8e6accb34106dc5767fc97fb6ec"
+    },
+    {
       "path": "illumi-drive/assets/hud-layout-De1ypetF.js",
       "bytes": 80931,
       "sha256": "50dbd5abd51d9c335b4c779e6fc492f5af7c2c1eefb21f7c976c46f2770ff247"
@@ -1625,6 +1630,11 @@
       "sha256": "bf4eefe6178a2339522aef8cb133f63289bb5c7a408752e8af27e394e9518a2e"
     },
     {
+      "path": "illumi-drive/assets/pages-UB0-mXuO.js",
+      "bytes": 3662,
+      "sha256": "06d96574c7f4444cebad800a7c06d8f46b7f4a33ef823a59caa6a1dc2e5bd483"
+    },
+    {
       "path": "illumi-drive/assets/pages-app-BJ1BSUPm.js",
       "bytes": 649853,
       "sha256": "c8b1af6b93910593f0b37cf0a01f39c5304d026427f933cf31b34070152558a5"
@@ -1643,6 +1653,11 @@
       "path": "illumi-drive/assets/pages-app-Cdbh7q_V.js",
       "bytes": 653827,
       "sha256": "fc08b1c8d4b89bffe0ac01082a23ade33b922a11fb82b533707d43a231e73027"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-DENkyssh.js",
+      "bytes": 655444,
+      "sha256": "209fafc2e1a993ac584319948a0164f0ef42e498b50598ba6da388da1bd9aa81"
     },
     {
       "path": "illumi-drive/assets/pages-boost-gap-6bc4d6c88ea9.css",
@@ -1745,6 +1760,11 @@
       "sha256": "e379452c5a2f6f080b92295c74f8784d69d179a9e2039019f19e04ffcd6e42c5"
     },
     {
+      "path": "illumi-drive/assets/renderer-CNWzMzg9.js",
+      "bytes": 4859891,
+      "sha256": "1d950dec895ae0bd588a7e739e00646df29c74dd44fe97e73ef29e0396d1934c"
+    },
+    {
       "path": "illumi-drive/assets/renderer-COVgYhDC.js",
       "bytes": 1453685,
       "sha256": "f9f4993413ee377682d69ac106a1bc9bdb5fe74beba409ddb2408438727d334f"
@@ -1818,6 +1838,11 @@
       "path": "illumi-drive/assets/renderer-release-897ae1f11e4ba8406f97.js",
       "bytes": 1044674,
       "sha256": "d3edb878f81ef88d8c13f71f898eebf79c53325e05ca74ed8264907ede3e8fe0"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-DC45_4Yz.js",
+      "bytes": 82010,
+      "sha256": "dba430d64d4cbff8bef658a1ecfa8c728fd8c935bbe9f4d416f66e035c05f31a"
     },
     {
       "path": "illumi-drive/assets/startup-progress-D_kqNNq3.js",
@@ -2067,7 +2092,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 2012,
-      "sha256": "e2e10399e5d5d1e4c7c8c61a0d9d4524690db94f86dd7d3f2fb49edc80920da9"
+      "sha256": "f438adf96cacb0cd72f01f5a089d1f1b828020854b9b395b05761c21f6db4173"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2127,7 +2152,7 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 2012,
-      "sha256": "e2e10399e5d5d1e4c7c8c61a0d9d4524690db94f86dd7d3f2fb49edc80920da9"
+      "sha256": "f438adf96cacb0cd72f01f5a089d1f1b828020854b9b395b05761c21f6db4173"
     },
     {
       "path": "illumi-drive/release.json",
@@ -2141,8 +2166,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 77031,
-      "sha256": "23a2c9b605885b7e186c18dacd583aef0f1cbd0f6a4308f73a0f083dbe408765"
+      "bytes": 77436,
+      "sha256": "a984260ea8afd14507ad6ea14a1d100d98d282f51051ab5e4321a587621afef5"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3325,7 +3350,7 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "parentGamePayload": "a4ba948c3ec4660c3491a151aa0c23a0b5e97edfdccde8691f79e5c64b346684",
+  "parentGamePayload": "4ce7092a03f0435770dcdb0dfeef8234bc4dcaed8099094438d11337770a75de",
   "syntheticFixture": false,
   "metadataOnlyChild": false,
   "historyCorrection": {
@@ -3339,15 +3364,15 @@
     "runtimeUnchanged": false,
     "packetSHA256": "4957607736cd10886002afd19bb56818e40de90b4f375d68008c291422934153"
   },
-  "deliveryFileCount": 641,
-  "deliveryRawBytes": 476457851,
+  "deliveryFileCount": 646,
+  "deliveryRawBytes": 482059333,
   "rollback": {
-    "from": "32a669515b9807b42a3d5e5713962c0669038578",
-    "toRuntimeSource": "b5641c2059a40bc2b24bb03e65cf86020d879acf",
-    "normalInverse": true,
-    "retainNewImmutableAssets": true
+    "baselineCommit": "fd5a5719905a47627b0871d5621a8a6d838e84ca",
+    "source": "6f965b1c4f454eee5729628003457556adf7fd29",
+    "product": "4ce7092a03f0435770dcdb0dfeef8234bc4dcaed8099094438d11337770a75de",
+    "method": "normal inverse child restores active pointers/history/manifest/proof; retains all immutable assets"
   },
-  "previousManifestBlob": "3f254658079b5dd288f50cedc97b01e41201e7c9",
+  "previousManifestBlob": "896d81f143a0b6a31b5aa5324ac5d72e8410ec96",
   "runtimeParentSource": "6738f9fe4ea66f21f6b1dae780a4a71537f8bcf8",
   "semanticPublication": {
     "pass": true,
@@ -3378,13 +3403,13 @@
   "preparationOnly": true,
   "rollbackPreparationOnly": true,
   "forwardImmutableCacheRetained": true,
-  "deliveryGamePayload": "71d05730f1983a7524d2bbcf0ac69323b3c3b0651be117f875e2aa14e2fb21b0",
+  "deliveryGamePayload": "1e5d97ac8f7ecf888b2373cb66a1da788cbb12fdf6c1728506034dcb387c49e0",
   "gatewayEarlyArchive": {
     "sourceTSX": "af08d378b8aa2baaa6771e24c6ee24d2fd2ef6b2256d2a25fac0411c98a3103e",
     "staticChild": "c39ff108dc7176977e5d22416afa873ee30699f6e1a38ae21ddca154224cdd93",
     "formalBuild": true
   },
   "reviewedParentGamePayload": "34e80f854fc2749f72eb0428bdbac8fdf62bf2bcf804d6d8a678298d2d582a39",
-  "sourceMetadataOnlyChild": true,
-  "sourceSelection": "Notes-only successor of reviewed34,532 executable source files unchanged; approval pending"
+  "sourceMetadataOnlyChild": false,
+  "sourceSelection": "Owner named READY touch feedback and vertical camera withdrawal only;400 physics/meter/API unchanged"
 }

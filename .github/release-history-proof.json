@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "sourceVerified": true,
-  "source": "6f965b1c4f454eee5729628003457556adf7fd29",
-  "baseSource": "661a8ea8621f3c8661e90ad828bb8bacac7390e8",
-  "coverageSHA256": "ed968d9d2cbed4eeb1c35ce1e382405467f3fcaf0e15ffece5bff0e66089dd6e",
-  "historySHA256": "23a2c9b605885b7e186c18dacd583aef0f1cbd0f6a4308f73a0f083dbe408765",
-  "notesInputSHA256": "23a2c9b605885b7e186c18dacd583aef0f1cbd0f6a4308f73a0f083dbe408765",
+  "source": "1f51aeb3d9572eb9f905712b1c6200f2df1c9675",
+  "baseSource": "6f965b1c4f454eee5729628003457556adf7fd29",
+  "coverageSHA256": "07e4879104c14895636262c6d65042b2726c6a175970a27d91bc8ed59566c5c0",
+  "historySHA256": "a984260ea8afd14507ad6ea14a1d100d98d282f51051ab5e4321a587621afef5",
+  "notesInputSHA256": "a984260ea8afd14507ad6ea14a1d100d98d282f51051ab5e4321a587621afef5",
   "releaseSHA256": "db5fa0e0484e05f3c43a1c9de6ab207486c1979c635b69b498e35916c267d30c",
   "releaseLabel": "R61",
   "expectedReleaseLabel": "R61",
   "baselineReleaseLabel": "R61",
   "allowReleaseIncrement": false,
-  "releaseLabelApprovalSHA256": "bf8156e9955659f21027936b32c11e93bb52f044caaaefeda6340b7113b1cd91",
+  "releaseLabelApprovalSHA256": "7fe7fd7ba62e118e096b0054be28af92d36f133b096bbfda9fde55cff694213a",
   "files": [
     {
       "path": "THIRD_PARTY_NOTICES.txt",
@@ -57,6 +57,11 @@
       "path": "assets/durable-transport-CXUHZARg.js",
       "bytes": 70,
       "sha256": "ec38175c99c3952a5548f31286a922780ae0d59fdb1e4e70583ed60d615a098a"
+    },
+    {
+      "path": "assets/durable-transport-DiRPEpzH.js",
+      "bytes": 70,
+      "sha256": "de4ec0f5bd404b5e69696533f47193b6cd81b8e6accb34106dc5767fc97fb6ec"
     },
     {
       "path": "assets/hud-layout-De1ypetF.js",
@@ -144,6 +149,11 @@
       "sha256": "bf4eefe6178a2339522aef8cb133f63289bb5c7a408752e8af27e394e9518a2e"
     },
     {
+      "path": "assets/pages-UB0-mXuO.js",
+      "bytes": 3662,
+      "sha256": "06d96574c7f4444cebad800a7c06d8f46b7f4a33ef823a59caa6a1dc2e5bd483"
+    },
+    {
       "path": "assets/pages-app-BJ1BSUPm.js",
       "bytes": 649853,
       "sha256": "c8b1af6b93910593f0b37cf0a01f39c5304d026427f933cf31b34070152558a5"
@@ -162,6 +172,11 @@
       "path": "assets/pages-app-Cdbh7q_V.js",
       "bytes": 653827,
       "sha256": "fc08b1c8d4b89bffe0ac01082a23ade33b922a11fb82b533707d43a231e73027"
+    },
+    {
+      "path": "assets/pages-app-DENkyssh.js",
+      "bytes": 655444,
+      "sha256": "209fafc2e1a993ac584319948a0164f0ef42e498b50598ba6da388da1bd9aa81"
     },
     {
       "path": "assets/pages-boost-gap-6bc4d6c88ea9.css",
@@ -264,6 +279,11 @@
       "sha256": "e379452c5a2f6f080b92295c74f8784d69d179a9e2039019f19e04ffcd6e42c5"
     },
     {
+      "path": "assets/renderer-CNWzMzg9.js",
+      "bytes": 4859891,
+      "sha256": "1d950dec895ae0bd588a7e739e00646df29c74dd44fe97e73ef29e0396d1934c"
+    },
+    {
       "path": "assets/renderer-COVgYhDC.js",
       "bytes": 1453685,
       "sha256": "f9f4993413ee377682d69ac106a1bc9bdb5fe74beba409ddb2408438727d334f"
@@ -337,6 +357,11 @@
       "path": "assets/renderer-release-897ae1f11e4ba8406f97.js",
       "bytes": 1044674,
       "sha256": "d3edb878f81ef88d8c13f71f898eebf79c53325e05ca74ed8264907ede3e8fe0"
+    },
+    {
+      "path": "assets/startup-progress-DC45_4Yz.js",
+      "bytes": 82010,
+      "sha256": "dba430d64d4cbff8bef658a1ecfa8c728fd8c935bbe9f4d416f66e035c05f31a"
     },
     {
       "path": "assets/startup-progress-D_kqNNq3.js",
@@ -586,7 +611,7 @@
     {
       "path": "index.html",
       "bytes": 2012,
-      "sha256": "e2e10399e5d5d1e4c7c8c61a0d9d4524690db94f86dd7d3f2fb49edc80920da9"
+      "sha256": "f438adf96cacb0cd72f01f5a089d1f1b828020854b9b395b05761c21f6db4173"
     },
     {
       "path": "licenses/astronomy-engine.txt",
@@ -646,7 +671,7 @@
     {
       "path": "pages.html",
       "bytes": 2012,
-      "sha256": "e2e10399e5d5d1e4c7c8c61a0d9d4524690db94f86dd7d3f2fb49edc80920da9"
+      "sha256": "f438adf96cacb0cd72f01f5a089d1f1b828020854b9b395b05761c21f6db4173"
     },
     {
       "path": "release.json",
@@ -660,11 +685,11 @@
     },
     {
       "path": "update-history.json",
-      "bytes": 77031,
-      "sha256": "23a2c9b605885b7e186c18dacd583aef0f1cbd0f6a4308f73a0f083dbe408765"
+      "bytes": 77436,
+      "sha256": "a984260ea8afd14507ad6ea14a1d100d98d282f51051ab5e4321a587621afef5"
     }
   ],
-  "payloadSHA256": "71d05730f1983a7524d2bbcf0ac69323b3c3b0651be117f875e2aa14e2fb21b0",
+  "payloadSHA256": "1e5d97ac8f7ecf888b2373cb66a1da788cbb12fdf6c1728506034dcb387c49e0",
   "semanticReviewRequired": true,
   "machineSemanticProof": false
 }
