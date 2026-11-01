@@ -1,9 +1,9 @@
 {
-  "label": "R61",
+  "label": "R62",
   "recordedAt": "2026-10-24T14:46:00.000Z",
   "publishedAt": "2026-10-25T00:44:21.000Z",
   "status": "published",
-  "updatedAt": "2026-10-31T14:11:11.000Z",
-  "revision": "R61-20261031T141111Z",
-  "updateSummary": "フォグ・自動画質・読み込み表示を調整。READY中のタッチ反応とカメラ上下補正を修正。"
+  "updatedAt": "2026-11-01T14:36:27.741Z",
+  "revision": "R62-20261101T143627Z",
+  "updateSummary": "連続成功で最高480km/hへ。発進時の文字と余韻、車体下の影、道路沿いの案内光を調整しました。"
 }
