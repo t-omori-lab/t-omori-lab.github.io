@@ -2,6 +2,34 @@ import hashlib,json,subprocess,re,copy
 from datetime import datetime,timezone
 from pathlib import Path
 
+"""Validate player-facing update metadata against a successful publication receipt."""
+import re
+from datetime import datetime
+
+def verify_update_meaning(release, history, receipt):
+    assert receipt['schema'] == 1
+    assert receipt['state'] == 'success' and receipt['environment'] == 'github-pages'
+    assert re.fullmatch('[0-9a-f]{40}', receipt['featureCommit'])
+    assert isinstance(receipt['deploymentId'], int) and receipt['deploymentId'] > 0
+    assert isinstance(receipt['statusId'], int) and receipt['statusId'] > 0
+    stamp = datetime.fromisoformat(receipt['deployedAt'].replace('Z', '+00:00'))
+    assert stamp.tzinfo is not None
+    actual = datetime.fromisoformat(release['updatedAt'].replace('Z', '+00:00'))
+    assert actual == stamp, 'Update time differs from actual feature publication'
+    assert release['revision'] == release['label'] + '-' + stamp.strftime('%Y%m%dT%H%M%SZ')
+    summary = release['updateSummary']
+    assert isinstance(summary, str) and 1 <= len(summary) <= 80, 'Update summary must be concise'
+    assert summary == summary.strip() and '\n' not in summary
+    assert summary == receipt['approvedSummary'], 'Not the reviewed current change summary'
+    entry = history['entries'][0]
+    assert entry['revisionId'] == release['label'] == history['currentRevisionId']
+    assert entry['updatedAt'] == release['updatedAt'] and entry['revision'] == release['revision']
+    assert entry['shortSummary'] == entry['summary'] == summary, 'Game/Gateway current notes differ'
+    assert entry['title'] == receipt['approvedTitle'], 'Old current-history heading remains'
+    assert entry['highlights'] == receipt['approvedHighlights'], 'Old overview highlights remain'
+    assert len(entry['title']) <= 40
+    return True
+
 def validate_release_revision(manifest,release):
  assert release.get('status')=='published','Published release metadata required'
  def stamp(value):
@@ -35,6 +63,7 @@ def _release_revision_self_test():
 def verify(root=Path('.')):
  _release_revision_self_test()
  manifest=json.loads((root/'delivery-manifest.json').read_text());release=json.loads((root/'site/illumi-drive/release.json').read_text());validate_release_revision(manifest,release)
+ verify_update_meaning(release,json.loads((root/'site/illumi-drive/update-history.json').read_text()),manifest['latestUpdateDeployment'])
  expected={x['path']:x for x in manifest['files']};actual={str(p.relative_to(root/'site')):p for p in (root/'site').rglob('*') if p.is_file()}
  assert set(actual)==set(expected),'Delivery file set differs';assert not any(p.is_symlink() for p in (root/'site').rglob('*')),'Symlink rejected'
  for name,p in actual.items():
