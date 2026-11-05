@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-05T17:22:09Z",
-      "revision": "R62-20261105T172209Z",
+      "updatedAt": "2026-11-05T17:33:53Z",
+      "revision": "R62-20261105T173353Z",
       "title": "自動画質調整とゴーストタグの改善",
       "shortSummary": "自動画質調整とゴーストタグを改善しました。",
       "highlights": [
@@ -1267,5 +1267,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-05T17:22:09Z"
+  "updatedAt": "2026-11-05T17:33:53Z"
 }
