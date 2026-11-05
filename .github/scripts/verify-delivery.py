@@ -6,7 +6,84 @@ from pathlib import Path
 import re
 from datetime import datetime
 
-def verify_update_meaning(release, history, receipt):
+"""Bound a feature deployment whose successful completion time is not yet known.
+
+The terminal release gate still requires the successful provider receipt. This
+short-lived state is only the first half of the paired publication transaction.
+"""
+import re
+from datetime import datetime, timezone, timedelta
+
+
+def verify_publication_intent(release, history, receipt, manifest, now=None):
+    now = now or datetime.now(timezone.utc)
+    stamp = lambda value: datetime.fromisoformat(value.replace('Z', '+00:00'))
+    hex40 = lambda value: isinstance(value, str) and re.fullmatch('[0-9a-f]{40}', value)
+    hex64 = lambda value: isinstance(value, str) and re.fullmatch('[0-9a-f]{64}', value)
+    assert receipt['schema'] == 1 and receipt['state'] == 'awaiting-feature-success'
+    assert receipt['environment'] == 'github-pages'
+    assert receipt.get('deploymentId') is None and receipt.get('statusId') is None
+    transaction = manifest['publicationTransaction']
+    assert transaction['schema'] == 1
+    assert transaction['mode'] == 'feature-with-required-receipt-finalization'
+    assert transaction['finalizationRequired'] is True
+    assert transaction['repository'] == 't-omori-lab/t-omori-lab.github.io'
+    assert transaction['ref'] == 'refs/heads/main'
+    assert manifest['metadataOnlyChild'] is False
+    assert manifest['publicationAuthorized'] is True
+    assert hex40(transaction['baseCommit']) and transaction['baseCommit'] == manifest['baselineCommit']
+    assert hex40(transaction['rollbackTree'])
+    assert transaction['rollbackMode'] == 'normal-child-restoring-exact-preimage-tree'
+    assert hex40(receipt['runtimeSource']) and receipt['runtimeSource'] == manifest['runtimeSource']
+    assert hex64(receipt['enginePayload']) and receipt['enginePayload'] == manifest['nativeAcceptance']['enginePayload']
+    assert hex64(manifest['nativeAcceptance']['receiptSHA256'])
+    assert hex64(manifest['approvedOwnerPacket']['sha256'])
+    planned, expires = stamp(receipt['plannedAt']), stamp(transaction['expiresAt'])
+    assert planned.tzinfo is not None and expires.tzinfo is not None
+    assert planned <= now + timedelta(seconds=60)
+    assert planned < expires <= planned + timedelta(minutes=15)
+    assert now <= expires, 'Unfinalized publication intent expired'
+    assert release['updatedAt'] == receipt['plannedAt']
+    assert release['revision'] == release['label'] + '-' + planned.strftime('%Y%m%dT%H%M%SZ')
+    assert release['updateSummary'] == receipt['approvedSummary']
+    assert 1 <= len(release['updateSummary']) <= 80 and '\n' not in release['updateSummary']
+    entry = history['entries'][0]
+    assert entry['revisionId'] == release['label'] == history['currentRevisionId']
+    assert entry['updatedAt'] == release['updatedAt'] and entry['revision'] == release['revision']
+    assert entry['summary'] == entry['shortSummary'] == release['updateSummary']
+    assert entry['title'] == receipt['approvedTitle'] and len(entry['title']) <= 40
+    assert entry['highlights'] == receipt['approvedHighlights']
+    assert transaction['previousSuccessfulReceipt']['state'] == 'success'
+    assert transaction['previousSuccessfulReceipt']['deployedAt'] == manifest['previousGameRelease']['updatedAt']
+    return True
+
+
+def publication_intent_self_test():
+    import copy
+    now = datetime(2026, 11, 6, 0, 0, tzinfo=timezone.utc)
+    release = {'label': 'R62', 'updatedAt': '2026-11-06T00:00:00Z', 'revision': 'R62-20261106T000000Z', 'updateSummary': 'Auto and tag update'}
+    entry = {'revisionId': 'R62', 'updatedAt': release['updatedAt'], 'revision': release['revision'], 'summary': release['updateSummary'], 'shortSummary': release['updateSummary'], 'title': 'Auto and tags', 'highlights': ['Auto', 'Tags']}
+    history = {'currentRevisionId': 'R62', 'entries': [entry]}
+    receipt = {'schema': 1, 'state': 'awaiting-feature-success', 'environment': 'github-pages', 'deploymentId': None, 'statusId': None, 'runtimeSource': 'a'*40, 'enginePayload': 'b'*64, 'plannedAt': release['updatedAt'], 'approvedSummary': release['updateSummary'], 'approvedTitle': entry['title'], 'approvedHighlights': entry['highlights']}
+    transaction = {'schema': 1, 'mode': 'feature-with-required-receipt-finalization', 'finalizationRequired': True, 'repository': 't-omori-lab/t-omori-lab.github.io', 'ref': 'refs/heads/main', 'baseCommit': 'c'*40, 'rollbackTree': 'd'*40, 'rollbackMode': 'normal-child-restoring-exact-preimage-tree', 'expiresAt': '2026-11-06T00:15:00Z', 'previousSuccessfulReceipt': {'state': 'success', 'deployedAt': '2026-11-04T15:36:54Z'}}
+    manifest = {'publicationTransaction': transaction, 'metadataOnlyChild': False, 'publicationAuthorized': True, 'baselineCommit': 'c'*40, 'runtimeSource': 'a'*40, 'nativeAcceptance': {'enginePayload': 'b'*64, 'receiptSHA256': 'e'*64}, 'approvedOwnerPacket': {'sha256': 'f'*64}, 'previousGameRelease': {'updatedAt': transaction['previousSuccessfulReceipt']['deployedAt']}}
+    assert verify_publication_intent(release, history, receipt, manifest, now)
+    mutations = [lambda m: m.update(publicationAuthorized=False), lambda m: m.update(metadataOnlyChild=True), lambda m: m['publicationTransaction'].update(finalizationRequired=False), lambda m: m['publicationTransaction'].update(expiresAt='2026-11-05T23:59:59Z'), lambda m: m['publicationTransaction'].update(expiresAt='2026-11-06T00:16:00Z'), lambda m: m.update(runtimeSource='0'*40), lambda m: m['nativeAcceptance'].update(enginePayload='0'*64), lambda m: m.update(baselineCommit='0'*40), lambda m: m['previousGameRelease'].update(updatedAt='2026-01-01T00:00:00Z')]
+    for mutate in mutations:
+        candidate = copy.deepcopy(manifest)
+        mutate(candidate)
+        try:
+            verify_publication_intent(release, history, receipt, candidate, now)
+        except (AssertionError, ValueError, KeyError):
+            continue
+        raise AssertionError('Invalid publication intent accepted')
+    return len(mutations)
+
+
+def verify_update_meaning(release, history, receipt, manifest=None):
+    if receipt.get('state') == 'awaiting-feature-success':
+        return verify_publication_intent(release, history, receipt, manifest)
+
     assert receipt['schema'] == 1
     assert receipt['state'] == 'success' and receipt['environment'] == 'github-pages'
     assert re.fullmatch('[0-9a-f]{40}', receipt['featureCommit'])
@@ -62,8 +139,9 @@ def _release_revision_self_test():
 
 def verify(root=Path('.')):
  _release_revision_self_test()
+ publication_intent_self_test()
  manifest=json.loads((root/'delivery-manifest.json').read_text());release=json.loads((root/'site/illumi-drive/release.json').read_text());validate_release_revision(manifest,release)
- verify_update_meaning(release,json.loads((root/'site/illumi-drive/update-history.json').read_text()),manifest['latestUpdateDeployment'])
+ verify_update_meaning(release,json.loads((root/'site/illumi-drive/update-history.json').read_text()),manifest['latestUpdateDeployment'],manifest)
  expected={x['path']:x for x in manifest['files']};actual={str(p.relative_to(root/'site')):p for p in (root/'site').rglob('*') if p.is_file()}
  assert set(actual)==set(expected),'Delivery file set differs';assert not any(p.is_symlink() for p in (root/'site').rglob('*')),'Symlink rejected'
  for name,p in actual.items():

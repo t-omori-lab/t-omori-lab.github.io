@@ -1,8 +1,8 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "b4d7d022ae463349025c926d1aa573139415f75e",
-  "preparedGamePayload": "7fa485a2a884ffea12230db7a6b84383dfb9b3af5857a8f2956e82d38febc78b",
-  "baselineCommit": "b39e2b5b2752b774d5a61166aaf60691bbb80ec2",
+  "preparedGameSource": "43d159a8d35d459bc29a366cecfee4f7ffa1bd2b",
+  "preparedGamePayload": "958b55aabfea80c72196a36e412d2709c49684c129fe385ce60a44f92e866d44",
+  "baselineCommit": "6386cf83c32abd9b45bb3f6a7be513a9d3ef13bf",
   "publication": false,
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
@@ -131,13 +131,13 @@
     },
     {
       "path": "__next.__PAGE__.txt",
-      "bytes": 4154,
-      "sha256": "bc2502b27ad2822cba2fdb5fe1c0f730ec532b524e1a2955b233e4067618a426"
+      "bytes": 4160,
+      "sha256": "2b4125b3987723755ac166c772c3c818ead1d6ecb8420344e43762671fdf42df"
     },
     {
       "path": "__next._full.txt",
-      "bytes": 9159,
-      "sha256": "0fe78239a4b181132627c1b8b9e541686a40d0f9e63602728426ff80685cfb02"
+      "bytes": 9165,
+      "sha256": "97610880269c5af10692db7f87be33066f32bbae3bc20ce4f68b4e4ed150e7eb"
     },
     {
       "path": "__next._head.txt",
@@ -363,6 +363,11 @@
       "path": "_next/static/chunks/gateway-release-eade60f200233c49.js",
       "bytes": 15530,
       "sha256": "eade60f200233c494a0fa9c94c0729e798b6b58650eba71ca11569b05fbf459f"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-7c8f1f2aa410a15c.js",
+      "bytes": 17080,
+      "sha256": "7c8f1f2aa410a15c3f920478e862d8e266aa9ac3e619d75094e0b684cc97e7a0"
     },
     {
       "path": "_next/static/chunks/gateway-update-ace45387f6ef664b.js",
@@ -1680,6 +1685,11 @@
       "sha256": "ec38175c99c3952a5548f31286a922780ae0d59fdb1e4e70583ed60d615a098a"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-DT-EpwpR-release-0c794aae8533.js",
+      "bytes": 91,
+      "sha256": "0ddc07bab3d65e46744cf5c29be7d80e18fe6b6e4aa68185ae9ce3d6ca3ef354"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-DiRPEpzH.js",
       "bytes": 70,
       "sha256": "de4ec0f5bd404b5e69696533f47193b6cd81b8e6accb34106dc5767fc97fb6ec"
@@ -1748,6 +1758,11 @@
       "path": "illumi-drive/assets/pages-CF_KBbvG.js",
       "bytes": 645962,
       "sha256": "c38becc1b1aa6fce434f84ed3d4f007c38fefbb1f214c2d5ae9445f9aae95c80"
+    },
+    {
+      "path": "illumi-drive/assets/pages-CTGhy0Et-release-0c794aae8533.js",
+      "bytes": 5119,
+      "sha256": "7ddc010f9f076bc7961724cc09af5de829dea4a256dd82f46e56208bbfd9117a"
     },
     {
       "path": "illumi-drive/assets/pages-CV5reQS4.js",
@@ -1853,6 +1868,11 @@
       "path": "illumi-drive/assets/pages-app-CpkjAjoQ.js",
       "bytes": 677760,
       "sha256": "dc2dede3b289664f8cbf688bf6a2d93bbd713cbcff61bf2f92cfae91b5a9ca1d"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-D7JXdb6R-release-0c794aae8533.js",
+      "bytes": 688433,
+      "sha256": "035761e321dbf9ad1eb1b0997e21865499183f91bcec4f1da373010814b18667"
     },
     {
       "path": "illumi-drive/assets/pages-app-DENkyssh.js",
@@ -2025,6 +2045,11 @@
       "sha256": "19b2c1fcf6975ac58ec7d12b9c003514e673e5f5da251a59a0a6a7a2c62704b6"
     },
     {
+      "path": "illumi-drive/assets/renderer-CrydM2MO-release-0c794aae8533.js",
+      "bytes": 4957184,
+      "sha256": "5078bd24dccea3dcb19c7ea595f58e94df3646947b527fc0cc4f94276e9cec43"
+    },
+    {
       "path": "illumi-drive/assets/renderer-Cu0hn3p2.js",
       "bytes": 1039626,
       "sha256": "500f967ea2b914e7e51d0370d2325336118b4fe06d0c28a89eb4d75daee33bd2"
@@ -2118,6 +2143,11 @@
       "path": "illumi-drive/assets/startup-progress-D_kqNNq3.js",
       "bytes": 82010,
       "sha256": "3455d8516d02e253fcd35ea74e23dcdece2c8189796080012de4b235ff6d63a9"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-DjAcoP4L-release-0c794aae8533.js",
+      "bytes": 89905,
+      "sha256": "873eec634b1c29e7c8b78071b766de41708234f7fe880bc1ea9bbfb81cf3fb4b"
     },
     {
       "path": "illumi-drive/assets/startup-progress-DpWBB3VF.js",
@@ -2386,8 +2416,8 @@
     },
     {
       "path": "illumi-drive/index.html",
-      "bytes": 16566,
-      "sha256": "c703f4476a1e87782386e1cfad22686a03fd6bcda992f524957f405bc5394c2f"
+      "bytes": 16567,
+      "sha256": "9b70e4b29bade172075633e83554768df458648fd20951bd5aa76ef8863cc5ac"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2451,13 +2481,13 @@
     },
     {
       "path": "illumi-drive/pages.html",
-      "bytes": 16566,
-      "sha256": "c703f4476a1e87782386e1cfad22686a03fd6bcda992f524957f405bc5394c2f"
+      "bytes": 16567,
+      "sha256": "9b70e4b29bade172075633e83554768df458648fd20951bd5aa76ef8863cc5ac"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 292,
-      "sha256": "e08d8ae0b94f9853407c4ed2d5292655c82a095558ad26e9e6f54e5b7d811527"
+      "bytes": 298,
+      "sha256": "114280f70dd0cfb20ad40b79ff39416bc91b8f91267c215b6330d06ed7ccba1c"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2466,8 +2496,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 85134,
-      "sha256": "a63c9bd02f995a1f201f84855fc50c9c1b07c8e3343fa66692910f0da1aab7db"
+      "bytes": 85506,
+      "sha256": "170ae9394d597002d364aa8ae2a73f4f562b91bb7261018d11bde68c0cf0581e"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -2946,13 +2976,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 32164,
-      "sha256": "9a6aec8f62af997a7e5b433d1ce65ad64f8fe4d51b232c704d3956b7e9e1565b"
+      "bytes": 32182,
+      "sha256": "c0779d85f4b9e68ffa6aea34b0a72e784e149aa5b023a6e602a3dcc53555996b"
     },
     {
       "path": "index.txt",
-      "bytes": 9159,
-      "sha256": "0fe78239a4b181132627c1b8b9e541686a40d0f9e63602728426ff80685cfb02"
+      "bytes": 9165,
+      "sha256": "97610880269c5af10692db7f87be33066f32bbae3bc20ce4f68b4e4ed150e7eb"
     },
     {
       "path": "migaq/_headers",
@@ -3650,9 +3680,9 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "parentGamePayload": "5ba2cc8c6f256445c7d099e4dd57950985a7f223cc00ff886ecb661708727b32",
+  "parentGamePayload": "76f958816b1f6ccaf81d7c031785de73816ba5f9b46b14576cbd2870a9bc4d54",
   "syntheticFixture": false,
-  "metadataOnlyChild": true,
+  "metadataOnlyChild": false,
   "historyCorrection": {
     "allEntries": 65,
     "details": 321,
@@ -3664,8 +3694,8 @@
     "runtimeUnchanged": false,
     "packetSHA256": "4957607736cd10886002afd19bb56818e40de90b4f375d68008c291422934153"
   },
-  "deliveryFileCount": 706,
-  "deliveryRawBytes": 526464122,
+  "deliveryFileCount": 712,
+  "deliveryRawBytes": 532222350,
   "rollback": {
     "method": "Retain versioned API/readers and all records; forward-only compatible400 child, no SQL or deletions"
   },
@@ -3709,35 +3739,68 @@
   "reviewedParentGamePayload": "34e80f854fc2749f72eb0428bdbac8fdf62bf2bcf804d6d8a678298d2d582a39",
   "sourceMetadataOnlyChild": false,
   "sourceSelection": "Keep published R62 fd843099 runtime, repair adopted02 rank-missing fallback and prefetch all registered ghost ranks with bounded retries. No API83/DB/selection/Auto/HDR/records changes; new exact publication gate pending.",
-  "previousPreparedGamePayload": "5ba2cc8c6f256445c7d099e4dd57950985a7f223cc00ff886ecb661708727b32",
+  "previousPreparedGamePayload": "7fa485a2a884ffea12230db7a6b84383dfb9b3af5857a8f2956e82d38febc78b",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-04T14:23:30.526Z",
-    "revision": "R62-20261104T142330Z",
-    "updateSummary": "ゴースト名札と案内光・側溝の調整を引き継ぎ、市松照明とカウントダウン、発進姿勢、照明に沿う車影を調整しました。起動時の待機と処理ごとの再試行も見直しました。 Autoは継続する負荷を確認して段階的に調整するよう見直しました。 走行中のフレーム予約の順序も見直しました。 Autoの比較が中断した場合の軽量設定の扱いと、HDR走行で効果のない画質低下が続く挙動を見直しました。 登録済みゴーストの実順位を先行取得し、名札の枠を統一しました。"
+    "updatedAt": "2026-11-04T15:36:54Z",
+    "revision": "R62-20261104T153654Z",
+    "updateSummary": "ゴーストタグと順位表示を改善しました。"
   },
   "approvedOwnerPacket": {
-    "path": "work/release-copy-correction-20261105-v1/START_RECEIPT.json",
-    "sha256": "87e62d4a9e96fe2bf57504a86f9fa49b518ed3fe29f1e43d14d9383dbc2a7472"
+    "path": "work/auto-release-ready-20261106-v1/PUBLICATION_AUTHORITY.json",
+    "sha256": "21f902d0bc0747a9d7bc5fca09d4eb8e416add3b9186a8e178085e4e65ad5f58"
   },
   "latestUpdateDeployment": {
     "schema": 1,
-    "scope": "correction-of-already-published-feature",
-    "featureCommit": "b39e2b5b2752b774d5a61166aaf60691bbb80ec2",
-    "deploymentId": 7550384416,
-    "statusId": 21353651104,
+    "state": "awaiting-feature-success",
     "environment": "github-pages",
-    "state": "success",
-    "deployedAt": "2026-11-04T15:36:54Z",
-    "approvedSummary": "ゴーストタグと順位表示を改善しました。",
-    "approvedTitle": "ゴーストタグと順位表示を改善",
-    "providerEvidence": "https://api.github.com/repos/t-omori-lab/t-omori-lab.github.io/deployments/7550384416/statuses",
+    "deploymentId": null,
+    "statusId": null,
+    "runtimeSource": "255c169757b08aef4b78517c29393384fc6b9bbe",
+    "enginePayload": "76f958816b1f6ccaf81d7c031785de73816ba5f9b46b14576cbd2870a9bc4d54",
+    "plannedAt": "2026-11-05T17:22:09Z",
+    "approvedSummary": "自動画質調整とゴーストタグを改善しました。",
+    "approvedTitle": "自動画質調整とゴーストタグの改善",
     "approvedHighlights": [
-      "ゴーストタグの枠を統一しました。",
-      "登録済みゴーストの順位をあらかじめ取得するようにしました。"
+      "端末の負荷に合わせた自動画質調整を見直しました。",
+      "ゴーストタグを少し大きくし、見やすくしました。"
     ]
+  },
+  "runtimeSource": "255c169757b08aef4b78517c29393384fc6b9bbe",
+  "publicationAuthorized": true,
+  "nativeAcceptance": {
+    "enginePayload": "76f958816b1f6ccaf81d7c031785de73816ba5f9b46b14576cbd2870a9bc4d54",
+    "receiptSHA256": "f2f1e10d2cfaba1a26e0416c6fc597ccba7f03c536c7c3998f3560c625744c95"
+  },
+  "publicationTransaction": {
+    "schema": 1,
+    "mode": "feature-with-required-receipt-finalization",
+    "finalizationRequired": true,
+    "repository": "t-omori-lab/t-omori-lab.github.io",
+    "ref": "refs/heads/main",
+    "baseCommit": "6386cf83c32abd9b45bb3f6a7be513a9d3ef13bf",
+    "rollbackTree": "b795951a9c6a5c0e167427f5d152ef3ef42714eb",
+    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
+    "expiresAt": "2026-11-05T17:37:09Z",
+    "previousSuccessfulReceipt": {
+      "schema": 1,
+      "scope": "correction-of-already-published-feature",
+      "featureCommit": "b39e2b5b2752b774d5a61166aaf60691bbb80ec2",
+      "deploymentId": 7550384416,
+      "statusId": 21353651104,
+      "environment": "github-pages",
+      "state": "success",
+      "deployedAt": "2026-11-04T15:36:54Z",
+      "approvedSummary": "ゴーストタグと順位表示を改善しました。",
+      "approvedTitle": "ゴーストタグと順位表示を改善",
+      "providerEvidence": "https://api.github.com/repos/t-omori-lab/t-omori-lab.github.io/deployments/7550384416/statuses",
+      "approvedHighlights": [
+        "ゴーストタグの枠を統一しました。",
+        "登録済みゴーストの順位をあらかじめ取得するようにしました。"
+      ]
+    }
   }
 }
