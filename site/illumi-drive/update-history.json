@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-06T13:30:17Z",
-      "revision": "R62-20261106T133017Z",
+      "updatedAt": "2026-11-06T13:40:17Z",
+      "revision": "R62-20261106T134017Z",
       "title": "描画の軽量化と画質自動調整を改善",
       "shortSummary": "描画処理を軽量化し、極端に動作が重いときの画質自動調整を改善しました。",
       "highlights": [
@@ -1268,5 +1268,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-06T13:30:17Z"
+  "updatedAt": "2026-11-06T13:40:17Z"
 }
