@@ -1,8 +1,8 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "26248d2723ab8444bc6f03c2b43687c891b7ace7",
-  "preparedGamePayload": "8544792029060963b16309095cf5dc0f1728b75171c0d4980f2097c54a706159",
-  "baselineCommit": "6f171090c89e76627d9607dfdeecebb82fc51b6b",
+  "preparedGameSource": "96ea295b9aad8639483e3e2cf5cf40a8d2e20d3c",
+  "preparedGamePayload": "55cc7c825001c2f434e49a88cbe752fe1cfbefd70f3d5816b2c1a418c45a496f",
+  "baselineCommit": "41328db8a3d424343beb0d23c41a21f13080af1e",
   "publication": false,
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
@@ -131,13 +131,13 @@
     },
     {
       "path": "__next.__PAGE__.txt",
-      "bytes": 4160,
-      "sha256": "582e0dcbdfebd344c8026b070ab542322e0b52c125edbc9a61597a9331771d1f"
+      "bytes": 4181,
+      "sha256": "3cae4535f88030fd60c218007bb5a149e4b4486e14a021f120e08869602ef1de"
     },
     {
       "path": "__next._full.txt",
-      "bytes": 9165,
-      "sha256": "af5719fa6e100e16e5158b400b6a9b00e28431e4a6922c454326053457db47bd"
+      "bytes": 9186,
+      "sha256": "084c33c66091613a82c29f27a3ed0037e990b0bbb4964ca7ed91901fd945d1a9"
     },
     {
       "path": "__next._head.txt",
@@ -363,6 +363,11 @@
       "path": "_next/static/chunks/gateway-release-eade60f200233c49.js",
       "bytes": 15530,
       "sha256": "eade60f200233c494a0fa9c94c0729e798b6b58650eba71ca11569b05fbf459f"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-4abfc1446c39b069.js",
+      "bytes": 17101,
+      "sha256": "4abfc1446c39b06915628894c7be5a5848a251bb37648944232792c8e18a8197"
     },
     {
       "path": "_next/static/chunks/gateway-update-7c8f1f2aa410a15c.js",
@@ -1680,6 +1685,11 @@
       "sha256": "40a33989fab2c61005cab3c68c14ad1f8e1869b262cde4d72ff039bf551052bb"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-BQVFdr34-release-5ac02a82670c.js",
+      "bytes": 91,
+      "sha256": "57a2300355b2bbfa47c3ff50c9e47c444c9579e0f9f88eae67f901c3b84a5bb6"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-BY5BKqlX.js",
       "bytes": 70,
       "sha256": "983ffd19d6d6af20c4414def0b6f22471dc92e0dcca07f1b26d6c2078265da6b"
@@ -1758,6 +1768,11 @@
       "path": "illumi-drive/assets/pages-BVpyXoAE.css",
       "bytes": 470821,
       "sha256": "9caef83d0b2b868810bd6bfc027fa87e89d4f62a248475048ca2f511f2ee738c"
+    },
+    {
+      "path": "illumi-drive/assets/pages-BrdrOV8j-release-5ac02a82670c.js",
+      "bytes": 5119,
+      "sha256": "7b2e8435910ad7c97dc38ba72818c6a811db05e4d2e5aa83fafd6466ac797409"
     },
     {
       "path": "illumi-drive/assets/pages-Bws0pwon.js",
@@ -1878,6 +1893,11 @@
       "path": "illumi-drive/assets/pages-app-Cdbh7q_V.js",
       "bytes": 653827,
       "sha256": "fc08b1c8d4b89bffe0ac01082a23ade33b922a11fb82b533707d43a231e73027"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-Cp9H1Nft-release-5ac02a82670c.js",
+      "bytes": 688622,
+      "sha256": "6ab26b2c9d858a3f98f342aac43423dd8e795fea900f68e582e518ddcf213eed"
     },
     {
       "path": "illumi-drive/assets/pages-app-CpkjAjoQ.js",
@@ -2105,6 +2125,11 @@
       "sha256": "8017b52d986941d3498dd7a6ccfb554d2f2c1c83aa92b2ad7666fac1444d0c85"
     },
     {
+      "path": "illumi-drive/assets/renderer-bdugvWKn-release-5ac02a82670c.js",
+      "bytes": 4962224,
+      "sha256": "2726aa7383bced91f93a6c60132198ededa28cb131f67ee4b25f9b602716159b"
+    },
+    {
       "path": "illumi-drive/assets/renderer-history-706cf9fb2b301e8cf419.js",
       "bytes": 1047625,
       "sha256": "0877f97935add1d79f99d690ffcf5dec7b4cd6ab85aada6422019a8402b62535"
@@ -2188,6 +2213,11 @@
       "path": "illumi-drive/assets/startup-progress-GU0N1n8Z.js",
       "bytes": 82010,
       "sha256": "a568f4bba0590800fb95b7d14bc8e46e3dd6b19c47dcc423f1bb22c8a1478c91"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-LdU5gswk-release-5ac02a82670c.js",
+      "bytes": 89905,
+      "sha256": "608449eb7b2f731f0a0f22e3fb07d1e1d31c3f185e55c695ee53bf0003c079b8"
     },
     {
       "path": "illumi-drive/assets/startup-progress-d607RaoL.js",
@@ -2447,7 +2477,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "30f203376a0b0d013b51a426b4f07658d2461b3798700ff8be10d7c1d19e62a1"
+      "sha256": "d3fa73e45d11009b053fa8ba192aa8d83c2108088028e9f2811725be7ded8d68"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2512,12 +2542,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "30f203376a0b0d013b51a426b4f07658d2461b3798700ff8be10d7c1d19e62a1"
+      "sha256": "d3fa73e45d11009b053fa8ba192aa8d83c2108088028e9f2811725be7ded8d68"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 298,
-      "sha256": "6db1cea6441afe46039889fcd7d93dd5d49d85e803658c3b50cffaef35f051a4"
+      "bytes": 319,
+      "sha256": "a136c9ad4d9b1b8dabf34cf9d68f21576e176aa876dd4fc9df397e5644dc480b"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2526,8 +2556,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 85506,
-      "sha256": "f89697929825d330493b605e1231ba59e9d3a36119087e79f999e94c8988e78d"
+      "bytes": 85674,
+      "sha256": "5abc5d23eacec0e3e60435bba279460e7e677599fd95363749b098fe7dae6f35"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3006,13 +3036,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 32182,
-      "sha256": "4346575b1e195c3b8b011cfb56f1763303e92f6b80e9438236daa5bc9732eb6f"
+      "bytes": 32245,
+      "sha256": "6b8a635cf7619f0be2975a58da7eb2d3bdb8124a56c4f490bdf0371bcdf74d6a"
     },
     {
       "path": "index.txt",
-      "bytes": 9165,
-      "sha256": "af5719fa6e100e16e5158b400b6a9b00e28431e4a6922c454326053457db47bd"
+      "bytes": 9186,
+      "sha256": "084c33c66091613a82c29f27a3ed0037e990b0bbb4964ca7ed91901fd945d1a9"
     },
     {
       "path": "migaq/_headers",
@@ -3710,9 +3740,9 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "parentGamePayload": "958b55aabfea80c72196a36e412d2709c49684c129fe385ce60a44f92e866d44",
+  "parentGamePayload": "eecbdc45b0fb3dd4983c5b88d134bdf133d68e0377729cff26f1ab907673b066",
   "syntheticFixture": false,
-  "metadataOnlyChild": true,
+  "metadataOnlyChild": false,
   "historyCorrection": {
     "allEntries": 65,
     "details": 321,
@@ -3724,8 +3754,8 @@
     "runtimeUnchanged": false,
     "packetSHA256": "4957607736cd10886002afd19bb56818e40de90b4f375d68008c291422934153"
   },
-  "deliveryFileCount": 718,
-  "deliveryRawBytes": 537980162,
+  "deliveryFileCount": 724,
+  "deliveryRawBytes": 543743539,
   "rollback": {
     "method": "Retain versioned API/readers and all records; forward-only compatible400 child, no SQL or deletions"
   },
@@ -3769,45 +3799,73 @@
   "reviewedParentGamePayload": "34e80f854fc2749f72eb0428bdbac8fdf62bf2bcf804d6d8a678298d2d582a39",
   "sourceMetadataOnlyChild": false,
   "sourceSelection": "Keep published R62 fd843099 runtime, repair adopted02 rank-missing fallback and prefetch all registered ghost ranks with bounded retries. No API83/DB/selection/Auto/HDR/records changes; new exact publication gate pending.",
-  "previousPreparedGamePayload": "958b55aabfea80c72196a36e412d2709c49684c129fe385ce60a44f92e866d44",
+  "previousPreparedGamePayload": "8544792029060963b16309095cf5dc0f1728b75171c0d4980f2097c54a706159",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-05T17:22:09Z",
-    "revision": "R62-20261105T172209Z",
+    "updatedAt": "2026-11-05T17:33:53Z",
+    "revision": "R62-20261105T173353Z",
     "updateSummary": "自動画質調整とゴーストタグを改善しました。"
   },
   "approvedOwnerPacket": {
-    "path": "work/auto-release-ready-20261106-v1/PUBLICATION_AUTHORITY.json",
-    "sha256": "21f902d0bc0747a9d7bc5fca09d4eb8e416add3b9186a8e178085e4e65ad5f58"
+    "path": "work/car-light-release-20261106-v1/PUBLICATION_AUTHORITY.json",
+    "sha256": "4223245435cd82348382167bdf8c795f2e667513710af687bd66cf73a21ef97f"
   },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "success",
+    "state": "awaiting-feature-success",
     "environment": "github-pages",
-    "featureCommit": "6f171090c89e76627d9607dfdeecebb82fc51b6b",
-    "deploymentId": 7580661094,
-    "statusId": 21492011766,
-    "deployedAt": "2026-11-05T17:33:53Z",
-    "approvedSummary": "自動画質調整とゴーストタグを改善しました。",
-    "approvedTitle": "自動画質調整とゴーストタグの改善",
+    "deploymentId": null,
+    "statusId": null,
+    "runtimeSource": "ec3afe08353cd96dc9920056b76e5b1c895cf903",
+    "enginePayload": "eecbdc45b0fb3dd4983c5b88d134bdf133d68e0377729cff26f1ab907673b066",
+    "plannedAt": "2026-11-06T02:30:49Z",
+    "approvedSummary": "スタート直後の車体照明・反射の切り替わりを修正しました。",
+    "approvedTitle": "スタート直後の車体照明・反射を修正",
     "approvedHighlights": [
-      "端末の負荷に合わせた自動画質調整を見直しました。",
-      "ゴーストタグを少し大きくし、見やすくしました。"
-    ],
-    "run": {
-      "id": 42075587101,
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "actualProviderEvidenceSHA256": "8258232bc1e091e67a97ca609d3c61ffaf0b889469067f0c5aa949cd971b6e56"
+      "最初のゲートから次のゲートまで、車体の照明・反射が急に切り替わる問題を修正しました。"
+    ]
   },
-  "runtimeSource": "255c169757b08aef4b78517c29393384fc6b9bbe",
+  "runtimeSource": "ec3afe08353cd96dc9920056b76e5b1c895cf903",
   "publicationAuthorized": true,
   "nativeAcceptance": {
-    "enginePayload": "76f958816b1f6ccaf81d7c031785de73816ba5f9b46b14576cbd2870a9bc4d54",
-    "receiptSHA256": "f2f1e10d2cfaba1a26e0416c6fc597ccba7f03c536c7c3998f3560c625744c95"
+    "enginePayload": "eecbdc45b0fb3dd4983c5b88d134bdf133d68e0377729cff26f1ab907673b066",
+    "receiptSHA256": "7d25f0c10dab44f3648bce8b58023edad44e0db2df01981850934520e26d2ba9",
+    "kind": "owner-visual-acceptance-not-instrumented-native-HDR-or-FPS",
+    "newDeviceTests": false
+  },
+  "publicationTransaction": {
+    "schema": 1,
+    "mode": "feature-with-required-receipt-finalization",
+    "finalizationRequired": true,
+    "repository": "t-omori-lab/t-omori-lab.github.io",
+    "ref": "refs/heads/main",
+    "baseCommit": "41328db8a3d424343beb0d23c41a21f13080af1e",
+    "rollbackTree": "0e07586315e1f628574f290bf1d721033635da44",
+    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
+    "expiresAt": "2026-11-06T02:45:49Z",
+    "previousSuccessfulReceipt": {
+      "schema": 1,
+      "state": "success",
+      "environment": "github-pages",
+      "featureCommit": "6f171090c89e76627d9607dfdeecebb82fc51b6b",
+      "deploymentId": 7580661094,
+      "statusId": 21492011766,
+      "deployedAt": "2026-11-05T17:33:53Z",
+      "approvedSummary": "自動画質調整とゴーストタグを改善しました。",
+      "approvedTitle": "自動画質調整とゴーストタグの改善",
+      "approvedHighlights": [
+        "端末の負荷に合わせた自動画質調整を見直しました。",
+        "ゴーストタグを少し大きくし、見やすくしました。"
+      ],
+      "run": {
+        "id": 42075587101,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      "actualProviderEvidenceSHA256": "8258232bc1e091e67a97ca609d3c61ffaf0b889469067f0c5aa949cd971b6e56"
+    }
   }
 }
