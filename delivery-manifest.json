@@ -2,7 +2,7 @@
   "schema": "public-game-delivery/1",
   "preparedGameSource": "bca81de1f8a3ade072b6419d1551f23232c530a4",
   "preparedGamePayload": "a1017fe924f3d24e2468534d967526128ceba5b6da1b909b874afc656eb75079",
-  "baselineCommit": "4b1e8996a95c63352127bf46d4db3288f0f3cc95",
+  "baselineCommit": "9866a26b99065bedf086bc3792cd8b290acbdfbf",
   "publication": false,
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
@@ -363,6 +363,11 @@
       "path": "_next/static/chunks/gateway-release-eade60f200233c49.js",
       "bytes": 15530,
       "sha256": "eade60f200233c494a0fa9c94c0729e798b6b58650eba71ca11569b05fbf459f"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-4abfc1446c39b069.js",
+      "bytes": 17101,
+      "sha256": "4abfc1446c39b06915628894c7be5a5848a251bb37648944232792c8e18a8197"
     },
     {
       "path": "_next/static/chunks/gateway-update-7c8f1f2aa410a15c.js",
@@ -1685,6 +1690,11 @@
       "sha256": "40a33989fab2c61005cab3c68c14ad1f8e1869b262cde4d72ff039bf551052bb"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-BQVFdr34-release-5ac02a82670c.js",
+      "bytes": 91,
+      "sha256": "57a2300355b2bbfa47c3ff50c9e47c444c9579e0f9f88eae67f901c3b84a5bb6"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-BQVFdr34-release-7206af80e2cf.js",
       "bytes": 91,
       "sha256": "aaa33a08a48570974ccb2d98f43b5298e433009e4cfd9225b013bf4cac713fbd"
@@ -1768,6 +1778,11 @@
       "path": "illumi-drive/assets/pages-BVpyXoAE.css",
       "bytes": 470821,
       "sha256": "9caef83d0b2b868810bd6bfc027fa87e89d4f62a248475048ca2f511f2ee738c"
+    },
+    {
+      "path": "illumi-drive/assets/pages-BrdrOV8j-release-5ac02a82670c.js",
+      "bytes": 5119,
+      "sha256": "7b2e8435910ad7c97dc38ba72818c6a811db05e4d2e5aa83fafd6466ac797409"
     },
     {
       "path": "illumi-drive/assets/pages-BrdrOV8j-release-7206af80e2cf.js",
@@ -1893,6 +1908,11 @@
       "path": "illumi-drive/assets/pages-app-Cdbh7q_V.js",
       "bytes": 653827,
       "sha256": "fc08b1c8d4b89bffe0ac01082a23ade33b922a11fb82b533707d43a231e73027"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-Cp9H1Nft-release-5ac02a82670c.js",
+      "bytes": 688622,
+      "sha256": "6ab26b2c9d858a3f98f342aac43423dd8e795fea900f68e582e518ddcf213eed"
     },
     {
       "path": "illumi-drive/assets/pages-app-Cp9H1Nft-release-7206af80e2cf.js",
@@ -2125,6 +2145,11 @@
       "sha256": "8017b52d986941d3498dd7a6ccfb554d2f2c1c83aa92b2ad7666fac1444d0c85"
     },
     {
+      "path": "illumi-drive/assets/renderer-bdugvWKn-release-5ac02a82670c.js",
+      "bytes": 4962224,
+      "sha256": "2726aa7383bced91f93a6c60132198ededa28cb131f67ee4b25f9b602716159b"
+    },
+    {
       "path": "illumi-drive/assets/renderer-bdugvWKn-release-7206af80e2cf.js",
       "bytes": 4962224,
       "sha256": "1a7b99fd104285150e2ad376e0019e4b707536a0f547ad3a27487e46f4e1021a"
@@ -2213,6 +2238,11 @@
       "path": "illumi-drive/assets/startup-progress-GU0N1n8Z.js",
       "bytes": 82010,
       "sha256": "a568f4bba0590800fb95b7d14bc8e46e3dd6b19c47dcc423f1bb22c8a1478c91"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-LdU5gswk-release-5ac02a82670c.js",
+      "bytes": 89905,
+      "sha256": "608449eb7b2f731f0a0f22e3fb07d1e1d31c3f185e55c695ee53bf0003c079b8"
     },
     {
       "path": "illumi-drive/assets/startup-progress-LdU5gswk-release-7206af80e2cf.js",
@@ -3754,8 +3784,8 @@
     "runtimeUnchanged": false,
     "packetSHA256": "4957607736cd10886002afd19bb56818e40de90b4f375d68008c291422934153"
   },
-  "deliveryFileCount": 724,
-  "deliveryRawBytes": 543743539,
+  "deliveryFileCount": 730,
+  "deliveryRawBytes": 549506601,
   "rollback": {
     "method": "Retain versioned API/readers and all records; forward-only compatible400 child, no SQL or deletions"
   },
