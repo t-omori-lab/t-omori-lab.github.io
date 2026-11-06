@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-06T02:30:49Z",
-      "revision": "R62-20261106T023049Z",
+      "updatedAt": "2026-11-06T02:40:22Z",
+      "revision": "R62-20261106T024022Z",
       "title": "スタート直後の車体照明・反射を修正",
       "shortSummary": "スタート直後の車体照明・反射の切り替わりを修正しました。",
       "highlights": [
@@ -1267,5 +1267,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-06T02:30:49Z"
+  "updatedAt": "2026-11-06T02:40:22Z"
 }
