@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-09T16:40:13Z",
-      "revision": "R62-20261109T164013Z",
+      "updatedAt": "2026-11-09T16:45:34Z",
+      "revision": "R62-20261109T164534Z",
       "title": "クレジット・お問い合わせと下部の配置を改善",
       "shortSummary": "クレジット・お問い合わせをまとめ、コピーライトを縦横とも下部中央に配置しました。",
       "highlights": [
@@ -1273,5 +1273,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-09T16:40:13Z"
+  "updatedAt": "2026-11-09T16:45:34Z"
 }
