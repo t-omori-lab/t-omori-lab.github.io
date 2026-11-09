@@ -3,7 +3,7 @@
   "recordedAt": "2026-10-24T14:46:00.000Z",
   "publishedAt": "2026-10-25T00:44:21.000Z",
   "status": "published",
-  "updatedAt": "2026-11-09T05:13:59Z",
-  "revision": "R62-20261109T051359Z",
-  "updateSummary": "歌詞表示とランキングの開閉、BOOST音の途切れを修正しました。"
+  "updatedAt": "2026-11-09T07:29:11Z",
+  "revision": "R62-20261109T072911Z",
+  "updateSummary": "歌詞表示とランキングの開閉、BOOST音の途切れを修正し、更新内容を見やすくしました。"
 }

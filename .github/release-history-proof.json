@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "sourceVerified": true,
-  "source": "d3913d24861af98b236d658747fd2d52e24d2496",
-  "baseSource": "69eaf7cc4a1d01cc87b70fb6f3775340e7458008",
-  "coverageSHA256": "fe271f8c5fc3f2f3eb6d4c3b140454eb51e4a83c4b1b99d55126e462bc489087",
-  "historySHA256": "57d51385b20ab5ec13faaf5b91047f62c83886128732875d258741963f6029b9",
-  "notesInputSHA256": "57d51385b20ab5ec13faaf5b91047f62c83886128732875d258741963f6029b9",
-  "releaseSHA256": "ffcde4bbd9d2d84f54539245f52866d8747909595c541de1ee246f9d4d7fee57",
+  "source": "68ffbf61cb5fb6ce4aa3437f0faa27ced7486b5f",
+  "baseSource": "d3913d24861af98b236d658747fd2d52e24d2496",
+  "coverageSHA256": "559d354afb1b6ddea2514186be186d852950d522097edff00a2585e28d56ac95",
+  "historySHA256": "22b0de4cbda90297c2981b7a91ca16ac0023b2f9d9e12c2286e93d23a7711b30",
+  "notesInputSHA256": "22b0de4cbda90297c2981b7a91ca16ac0023b2f9d9e12c2286e93d23a7711b30",
+  "releaseSHA256": "1e996955ae263378219b61a4b11c68a81346561de3741d5cd4e8d1cdc4d2b9cd",
   "releaseLabel": "R62",
   "expectedReleaseLabel": "R62",
   "baselineReleaseLabel": "R62",
   "allowReleaseIncrement": false,
-  "releaseLabelApprovalSHA256": "9932e7dba464153a5db1653191bf0d926d5fb81610b4fac77bf9b251ea5f30cd",
+  "releaseLabelApprovalSHA256": "58673046d8f1fc1654ebdc38a8b4b922e7f71ab488a79cceb2a3859dba3e4968",
   "files": [
     {
       "path": "THIRD_PARTY_NOTICES.txt",
@@ -129,6 +129,11 @@
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
     },
     {
+      "path": "assets/durable-transport-sCpdmg6h-release-7f4b3fc6f052.js",
+      "bytes": 91,
+      "sha256": "cfbf293bd83f79091d33664708d191c185689ae5ede628017200458e7289b4ec"
+    },
+    {
       "path": "assets/durable-transport-xwu2QT5o.js",
       "bytes": 70,
       "sha256": "c3c4f928ef82a0d010c9b70cc9e5b38c00fe388c336a3b695f655c38a3e22719"
@@ -147,6 +152,11 @@
       "path": "assets/moon-lroc-2k-BtmufvQt.jpg",
       "bytes": 549787,
       "sha256": "ec98386c3b39ad2dab5970db5b5aecb8946db3f450aee4d78ce7382e0060bf87"
+    },
+    {
+      "path": "assets/pages-6gEYAIbE-release-7f4b3fc6f052.js",
+      "bytes": 5119,
+      "sha256": "b5a8b42d9ad016ff953569754999286995877653ce2293d59952a08e90017967"
     },
     {
       "path": "assets/pages-7i25VduI.js",
@@ -374,6 +384,11 @@
       "sha256": "c772f0bd2aeffd1371fb7ae104f108ce3fe8b0f24a11ca151beb886f55f0e48d"
     },
     {
+      "path": "assets/pages-app-Dz7tIkZR-release-7f4b3fc6f052.js",
+      "bytes": 696439,
+      "sha256": "aca9363b92953031268cbe69fd2354b15a6f26839ae7198a4b9caf73915eba4b"
+    },
+    {
       "path": "assets/pages-app-RClTV6PB-release-a0462c6b22b1.js",
       "bytes": 695548,
       "sha256": "4269e54ca782e21aa0a6661cd06c82a3f8b1c634847268b5c985a428091f2793"
@@ -574,6 +589,11 @@
       "sha256": "46a7f9269fee4c97a2ba5261775965e003a91f9440157c95e6f19d83b9b78f17"
     },
     {
+      "path": "assets/renderer-DRCvRhkP-release-7f4b3fc6f052.js",
+      "bytes": 4966435,
+      "sha256": "96cd9d43378d4439b32542dc9b40c9778c019d0c6bfd0369966d2332ce00ed2a"
+    },
+    {
       "path": "assets/renderer-DwBytAyC-release-10b4bbc154b6.js",
       "bytes": 4966435,
       "sha256": "c9cce6bd9010a9391dad1bc305f0b357978c30bb07bc723cfa74ee1ad43a897d"
@@ -727,6 +747,11 @@
       "path": "assets/startup-progress-LdU5gswk-release-7206af80e2cf.js",
       "bytes": 89905,
       "sha256": "01a71dd693ce2263f29e8d8457b773055f28a12af1ad0125a44f25030e1256e1"
+    },
+    {
+      "path": "assets/startup-progress-O6Ga-ASa-release-7f4b3fc6f052.js",
+      "bytes": 90765,
+      "sha256": "0196537e3cd64ae952ad145e5918ffd544f12c7f2ae1a7ebdaa961f8824dac2f"
     },
     {
       "path": "assets/startup-progress-d607RaoL.js",
@@ -986,7 +1011,7 @@
     {
       "path": "index.html",
       "bytes": 16567,
-      "sha256": "5d01c5f37f7ee0d29bce416fdf91cd6764db8d2e53b2bfb7dea55f0b71f116ee"
+      "sha256": "a71b016a6c1957b273f38ffd14061900eb1af8b1295528af6f7869d8cfe33bfe"
     },
     {
       "path": "licenses/astronomy-engine.txt",
@@ -1051,12 +1076,12 @@
     {
       "path": "pages.html",
       "bytes": 16567,
-      "sha256": "5d01c5f37f7ee0d29bce416fdf91cd6764db8d2e53b2bfb7dea55f0b71f116ee"
+      "sha256": "a71b016a6c1957b273f38ffd14061900eb1af8b1295528af6f7869d8cfe33bfe"
     },
     {
       "path": "release.json",
-      "bytes": 321,
-      "sha256": "ffcde4bbd9d2d84f54539245f52866d8747909595c541de1ee246f9d4d7fee57"
+      "bytes": 354,
+      "sha256": "1e996955ae263378219b61a4b11c68a81346561de3741d5cd4e8d1cdc4d2b9cd"
     },
     {
       "path": "textures/glass/arch-local-reflection.png",
@@ -1065,11 +1090,11 @@
     },
     {
       "path": "update-history.json",
-      "bytes": 86133,
-      "sha256": "57d51385b20ab5ec13faaf5b91047f62c83886128732875d258741963f6029b9"
+      "bytes": 86469,
+      "sha256": "22b0de4cbda90297c2981b7a91ca16ac0023b2f9d9e12c2286e93d23a7711b30"
     }
   ],
-  "payloadSHA256": "0b81301de6ac9d217409a831135907b5bf16300c9d0d30345490ebb051139be0",
+  "payloadSHA256": "ebd69ae18a7dece3fd8cbbd684619b967d2d152c285dc0e7d5b809aa60c82d5b",
   "semanticReviewRequired": true,
   "machineSemanticProof": false
 }
