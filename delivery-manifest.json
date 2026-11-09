@@ -1,8 +1,8 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "9122ce9ce62d3714d5fb3ba9b087b9bc5b4dd61f",
+  "preparedGameSource": "604818522683226b70c93921a8af8392f635ad4d",
   "runtimeSource": "001df672316fae97db7c540e7933ba9993dd5f45",
-  "preparedGamePayload": "aee00d6ba79b171d454a180832e8700f67fb0988e5556ddd65416dd8d5b887de",
+  "preparedGamePayload": "74affdca5690b81f485fbfb1347c43d0f1197d7331429e3ec4e16a2fc82ff911",
   "previousPreparedGamePayload": "e97c4f362e57397914d5177bd5faa7d2759e6c6b96344517d69bd4b3c6a3b138",
   "previousGameRelease": {
     "label": "R62",
@@ -16,7 +16,7 @@
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "22b3d9255f80807a111396983d2e7d4a44fd0000d02ec6a9bb76f2306b01a549",
-  "baselineCommit": "a1a68e5974c9e9d199ff52bd5da50664ea0779d3",
+  "baselineCommit": "e49b32a85222f5e4a1833f4d59e03a51979a4a00",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
@@ -43,10 +43,10 @@
     "finalizationRequired": true,
     "repository": "t-omori-lab/t-omori-lab.github.io",
     "ref": "refs/heads/main",
-    "baseCommit": "a1a68e5974c9e9d199ff52bd5da50664ea0779d3",
+    "baseCommit": "e49b32a85222f5e4a1833f4d59e03a51979a4a00",
     "rollbackTree": "8aa20df54f4c0441e6103c0389e07479c9fd8ad6",
     "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-09T16:39:49Z",
+    "expiresAt": "2026-11-09T16:55:13Z",
     "previousSuccessfulReceipt": {
       "schema": 1,
       "state": "success",
@@ -79,7 +79,7 @@
     "statusId": null,
     "runtimeSource": "001df672316fae97db7c540e7933ba9993dd5f45",
     "enginePayload": "22b3d9255f80807a111396983d2e7d4a44fd0000d02ec6a9bb76f2306b01a549",
-    "plannedAt": "2026-11-09T16:24:49Z",
+    "plannedAt": "2026-11-09T16:40:13Z",
     "approvedSummary": "クレジット・お問い合わせをまとめ、コピーライトを縦横とも下部中央に配置しました。",
     "approvedTitle": "クレジット・お問い合わせと下部の配置を改善",
     "approvedHighlights": [
@@ -102,12 +102,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4217,
-      "sha256": "c047612fec6087501f518e35debc7aee5eb892b0b2a2dcdbb155aa3b93cee315"
+      "sha256": "67fbf44848d85ed2a7ded58ef898c24c56270b4f100ea1c9c6e602f0e1e62d27"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9222,
-      "sha256": "fc208102bf06dbc83035bb0a5d210573470f957a5d467c96b9b767e5854e926e"
+      "sha256": "b52e585fcd18148f418c691de14042c3fa02859e93753f95857ae67951d93893"
     },
     {
       "path": "__next._head.txt",
@@ -363,6 +363,11 @@
       "path": "_next/static/chunks/gateway-update-522cac4fc69de648.js",
       "bytes": 17136,
       "sha256": "522cac4fc69de6486691157ef40c5e4afb2ae699a70e12054723bb0a7e18da03"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-7b9d6fccee172b3a.js",
+      "bytes": 17137,
+      "sha256": "7b9d6fccee172b3a84fd9497fcccdb1aa696512338c8e3b4985a2d2dda80d5be"
     },
     {
       "path": "_next/static/chunks/gateway-update-7c8f1f2aa410a15c.js",
@@ -1770,6 +1775,11 @@
       "sha256": "cfbf293bd83f79091d33664708d191c185689ae5ede628017200458e7289b4ec"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-t_KNJiQ1-release-6bc357a1dca6.js",
+      "bytes": 91,
+      "sha256": "d881d460749af4ff66b41a16dcf779ba556b2dc7468aa372ec5c3d1a95036618"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-t_KNJiQ1-release-d84fe8c6a403.js",
       "bytes": 91,
       "sha256": "c0eed874938f6c011c4c8def53c040041e8b67231969b399bd2dadaefe6fc0b6"
@@ -1920,6 +1930,11 @@
       "sha256": "bf4eefe6178a2339522aef8cb133f63289bb5c7a408752e8af27e394e9518a2e"
     },
     {
+      "path": "illumi-drive/assets/pages-Qq3BBJPU-release-6bc357a1dca6.js",
+      "bytes": 5119,
+      "sha256": "7dd501ab8fe4daf71c9f3743c7928cd3d371ae159064d1e72f6716bc3f75d437"
+    },
+    {
       "path": "illumi-drive/assets/pages-Qq3BBJPU-release-d84fe8c6a403.js",
       "bytes": 5119,
       "sha256": "5950b77f97ff2cbadf81d73097ab76d30385014886370e15aff2dbde78594ce3"
@@ -2028,6 +2043,11 @@
       "path": "illumi-drive/assets/pages-app-DENkyssh.js",
       "bytes": 655444,
       "sha256": "209fafc2e1a993ac584319948a0164f0ef42e498b50598ba6da388da1bd9aa81"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-Dbzr9r9H-release-6bc357a1dca6.js",
+      "bytes": 697627,
+      "sha256": "3f5f6fbeb8178eb94360ae4e035586b18639f46d590c324cc90cb1dbf6fd873a"
     },
     {
       "path": "illumi-drive/assets/pages-app-Dbzr9r9H-release-d84fe8c6a403.js",
@@ -2265,6 +2285,11 @@
       "sha256": "96cd9d43378d4439b32542dc9b40c9778c019d0c6bfd0369966d2332ce00ed2a"
     },
     {
+      "path": "illumi-drive/assets/renderer-DlOAMcek-release-6bc357a1dca6.js",
+      "bytes": 4966435,
+      "sha256": "dff371f163a23781b38196698030d81e5d0a9c6d1d368bff7b4bd6176b4678e5"
+    },
+    {
       "path": "illumi-drive/assets/renderer-DlOAMcek-release-d84fe8c6a403.js",
       "bytes": 4966435,
       "sha256": "5ae7a5324df3b6aa2da862baa9c030a48914a129eaf1bdbae0e70615b3e290e4"
@@ -2438,6 +2463,11 @@
       "path": "illumi-drive/assets/startup-progress-d607RaoL.js",
       "bytes": 84055,
       "sha256": "ca34700f06bafeffe7e8f00922ec459e098b746bdf3cdd9810284aa7ea74df7e"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-oxuJcmBz-release-6bc357a1dca6.js",
+      "bytes": 90765,
+      "sha256": "0d9e5f3f280f0146a36fe0663a765ba420050e605acf1f4d6c03315b7b60eb60"
     },
     {
       "path": "illumi-drive/assets/startup-progress-oxuJcmBz-release-d84fe8c6a403.js",
@@ -2697,7 +2727,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "a217176f6a7fd9feadfb5aebd7f54c349a7e0d5e86400b9c9e5c983a9ce2d4b3"
+      "sha256": "2aa431586f10c96afca80f4f50a6a2bcae0e8c51ff8e682f944a3f605b59b036"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2762,12 +2792,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "a217176f6a7fd9feadfb5aebd7f54c349a7e0d5e86400b9c9e5c983a9ce2d4b3"
+      "sha256": "2aa431586f10c96afca80f4f50a6a2bcae0e8c51ff8e682f944a3f605b59b036"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 355,
-      "sha256": "98eb26bbb508630abb396643407e53d6ca2e90cae19ecb5c8244994e5113bb26"
+      "sha256": "3f124acda35c6dcca522991053537c7447854a952a35e00b8c6a5bb23b738522"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2777,7 +2807,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 86715,
-      "sha256": "f30aee72c1c67dd3958c3cb4b438c89934b20bded35cbc484f8265efe58dd50b"
+      "sha256": "3a09eea6f41d162cd51a36790939d3d4f9496a1bb3698ed18d800721add29558"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3257,12 +3287,12 @@
     {
       "path": "index.html",
       "bytes": 32353,
-      "sha256": "13cf6b9133497239e994b87477b3085ef7d829b8451dd00d83d34cafa0f63b8f"
+      "sha256": "42bbeb816ecc5ef8fc5ca090d73de2d7a071783b87245aa3ac4121f3dff15083"
     },
     {
       "path": "index.txt",
       "bytes": 9222,
-      "sha256": "fc208102bf06dbc83035bb0a5d210573470f957a5d467c96b9b767e5854e926e"
+      "sha256": "b52e585fcd18148f418c691de14042c3fa02859e93753f95857ae67951d93893"
     },
     {
       "path": "migaq/_headers",
@@ -3960,6 +3990,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 774,
-  "deliveryRawBytes": 590942820
+  "deliveryFileCount": 780,
+  "deliveryRawBytes": 596719994
 }
