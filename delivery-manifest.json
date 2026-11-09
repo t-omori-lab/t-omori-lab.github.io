@@ -1,29 +1,29 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "68ffbf61cb5fb6ce4aa3437f0faa27ced7486b5f",
+  "preparedGameSource": "95f5dcb89d92e934017a07979473c64fcce2fb7a",
   "runtimeSource": "f5b977114fbc23bb72764e51a51a88723fc7689c",
-  "preparedGamePayload": "6cc17b22c0a7ba2685a1e6d0fa2ebf18738edab88c4e371d734ecf6fc96e665d",
-  "previousPreparedGamePayload": "ec43ed7e01959c3eb86b9238ba0011921ee1213729781a7a2df4d081e6d8b926",
+  "preparedGamePayload": "e97c4f362e57397914d5177bd5faa7d2759e6c6b96344517d69bd4b3c6a3b138",
+  "previousPreparedGamePayload": "6cc17b22c0a7ba2685a1e6d0fa2ebf18738edab88c4e371d734ecf6fc96e665d",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-09T05:13:59Z",
-    "revision": "R62-20261109T051359Z",
-    "updateSummary": "歌詞表示とランキングの開閉、BOOST音の途切れを修正しました。"
+    "updatedAt": "2026-11-09T07:29:11Z",
+    "revision": "R62-20261109T072911Z",
+    "updateSummary": "歌詞表示とランキングの開閉、BOOST音の途切れを修正し、更新内容を見やすくしました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "ed53a1e52f30954ff04a960382d7203ffde346e0d6f9a81cf4fc45fe2925c3be",
-  "baselineCommit": "383c4db633b6650ee541820406c43243335890f2",
+  "baselineCommit": "0a2f132d644d4dc5113f13e6b72f1ffc315d5e31",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/lyrics-ranking-update-highlights-20261109-v1/START_RECEIPT.json",
     "sha256": "26bf9703e8e34c458ac5ade1871ad19b6f568f43ce695017cc6a2e612cc159a2"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "ed53a1e52f30954ff04a960382d7203ffde346e0d6f9a81cf4fc45fe2925c3be",
     "receiptSHA256": "26bf9703e8e34c458ac5ade1871ad19b6f568f43ce695017cc6a2e612cc159a2",
@@ -37,48 +37,14 @@
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
   "sourceSelection": "Only accepted BOOST continuity, authentic local-MP3 English cue data and safe-area ranking dismissal; preserve public69 art/HDR/Auto/physics/ghost/API/DB/consent/analytics.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "383c4db633b6650ee541820406c43243335890f2",
-    "rollbackTree": "eb497438127a3e160d8a995b72c288ebf4840e58",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-09T07:44:11Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "96d7c642cd1ac5dbd0e16ca3f604b10477fce106",
-      "deploymentId": 7647552907,
-      "statusId": 21738989603,
-      "deployedAt": "2026-11-09T05:13:59Z",
-      "approvedSummary": "歌詞表示とランキングの開閉、BOOST音の途切れを修正しました。",
-      "approvedTitle": "歌詞表示とランキング・BOOST音を修正",
-      "approvedHighlights": [
-        "未表示だった2曲の歌詞を音源に合わせて表示します。",
-        "ホーム画面から起動した場合もランキングを閉じやすくしました。",
-        "BOOSTパネルの効果音が途切れる処理を修正しました。"
-      ],
-      "run": {
-        "id": 42566012891,
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "actualProviderEvidenceSHA256": "a136c3b980c86fec81b9c9ca1cbf4c2508795edb53b260ba95ef713d264aee84"
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "f5b977114fbc23bb72764e51a51a88723fc7689c",
-    "enginePayload": "ed53a1e52f30954ff04a960382d7203ffde346e0d6f9a81cf4fc45fe2925c3be",
-    "plannedAt": "2026-11-09T07:29:11Z",
+    "featureCommit": "0a2f132d644d4dc5113f13e6b72f1ffc315d5e31",
+    "deploymentId": 7649365977,
+    "statusId": 21745306012,
+    "deployedAt": "2026-11-09T07:33:33Z",
     "approvedSummary": "歌詞表示とランキングの開閉、BOOST音の途切れを修正し、更新内容を見やすくしました。",
     "approvedTitle": "歌詞・ランキング・BOOST音と更新表示を修正",
     "approvedHighlights": [
@@ -86,7 +52,13 @@
       "ホーム画面から起動した場合もランキングを閉じやすくしました。",
       "BOOSTパネルの効果音が途切れる処理を修正しました。",
       "今回の主要項目を先に表示し、以前の詳細も折りたたんで読めます。"
-    ]
+    ],
+    "run": {
+      "id": 42579992949,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "8c409bc19a9610885341b2f08104a3c488039d00bff42bc7ee6c0b3888ae3210"
   },
   "files": [
     {
@@ -102,12 +74,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4216,
-      "sha256": "75f273205fb5bf8d9f00aeadf9696111725ec5c3784960e5dad19f14f1bd591b"
+      "sha256": "2fe02b871d51f066cc936d60ebc858cc539b4fed9c3f0907ebe6fae4a4a5e4cc"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9221,
-      "sha256": "51d83eccef3cce702364d2e78ce058736f17b616b3ef8be91ef95181371cf989"
+      "sha256": "1986ec6c14efd8c724b585e35864da089c24cf574239ea1626730fb66cee2448"
     },
     {
       "path": "__next._head.txt",
@@ -373,6 +345,11 @@
       "path": "_next/static/chunks/gateway-update-ace45387f6ef664b.js",
       "bytes": 17074,
       "sha256": "ace45387f6ef664b85137ebe912253067779a78855c756ce3d66263889d66cde"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-c563aed7000e688b.js",
+      "bytes": 17136,
+      "sha256": "c563aed7000e688b7be0ea338119780846bc99faca99f189f1e812709c5e4d5b"
     },
     {
       "path": "_next/static/chunks/gateway-update-cbb5627119fce36e.js",
@@ -1750,6 +1727,11 @@
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-sCpdmg6h-release-428bb92c3cc9.js",
+      "bytes": 91,
+      "sha256": "7e6b9efc15b5b5feacb75c6a57126a6614709ee4ffed4f7b3a010e9c47a942bd"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-sCpdmg6h-release-7f4b3fc6f052.js",
       "bytes": 91,
       "sha256": "cfbf293bd83f79091d33664708d191c185689ae5ede628017200458e7289b4ec"
@@ -1773,6 +1755,11 @@
       "path": "illumi-drive/assets/moon-lroc-2k-BtmufvQt.jpg",
       "bytes": 549787,
       "sha256": "ec98386c3b39ad2dab5970db5b5aecb8946db3f450aee4d78ce7382e0060bf87"
+    },
+    {
+      "path": "illumi-drive/assets/pages-6gEYAIbE-release-428bb92c3cc9.js",
+      "bytes": 5119,
+      "sha256": "f07f73fd2daf49825cbc6056846441dd6ef2b49db1ee416c753f08adef439e3e"
     },
     {
       "path": "illumi-drive/assets/pages-6gEYAIbE-release-7f4b3fc6f052.js",
@@ -2005,6 +1992,11 @@
       "sha256": "c772f0bd2aeffd1371fb7ae104f108ce3fe8b0f24a11ca151beb886f55f0e48d"
     },
     {
+      "path": "illumi-drive/assets/pages-app-Dz7tIkZR-release-428bb92c3cc9.js",
+      "bytes": 696439,
+      "sha256": "430b78cc4453ce678cfdac8cf852d40a394c1f796ae17253a31e9184ce282fa5"
+    },
+    {
       "path": "illumi-drive/assets/pages-app-Dz7tIkZR-release-7f4b3fc6f052.js",
       "bytes": 696439,
       "sha256": "aca9363b92953031268cbe69fd2354b15a6f26839ae7198a4b9caf73915eba4b"
@@ -2210,6 +2202,11 @@
       "sha256": "46a7f9269fee4c97a2ba5261775965e003a91f9440157c95e6f19d83b9b78f17"
     },
     {
+      "path": "illumi-drive/assets/renderer-DRCvRhkP-release-428bb92c3cc9.js",
+      "bytes": 4966435,
+      "sha256": "56584f49b83502c735e85fa0f0f70ffc83ea91e37be0f63a825d9e63b7839ed6"
+    },
+    {
       "path": "illumi-drive/assets/renderer-DRCvRhkP-release-7f4b3fc6f052.js",
       "bytes": 4966435,
       "sha256": "96cd9d43378d4439b32542dc9b40c9778c019d0c6bfd0369966d2332ce00ed2a"
@@ -2368,6 +2365,11 @@
       "path": "illumi-drive/assets/startup-progress-LdU5gswk-release-7206af80e2cf.js",
       "bytes": 89905,
       "sha256": "01a71dd693ce2263f29e8d8457b773055f28a12af1ad0125a44f25030e1256e1"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-O6Ga-ASa-release-428bb92c3cc9.js",
+      "bytes": 90765,
+      "sha256": "526f477ec6c35f9a108be97abb4dc81ad65ceaa67dfc3524065e888c1507aa7b"
     },
     {
       "path": "illumi-drive/assets/startup-progress-O6Ga-ASa-release-7f4b3fc6f052.js",
@@ -2632,7 +2634,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "a71b016a6c1957b273f38ffd14061900eb1af8b1295528af6f7869d8cfe33bfe"
+      "sha256": "0585bb29844e040f3977736c2425d6c8e43d7b938b35239b72ee4cac8bff27bd"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2697,12 +2699,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "a71b016a6c1957b273f38ffd14061900eb1af8b1295528af6f7869d8cfe33bfe"
+      "sha256": "0585bb29844e040f3977736c2425d6c8e43d7b938b35239b72ee4cac8bff27bd"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 354,
-      "sha256": "1e996955ae263378219b61a4b11c68a81346561de3741d5cd4e8d1cdc4d2b9cd"
+      "sha256": "b47d2a2b1fd8b98f86d28019dcee282482c0c008c3b7951965ceb98ff9b3711a"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2712,7 +2714,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 86469,
-      "sha256": "22b0de4cbda90297c2981b7a91ca16ac0023b2f9d9e12c2286e93d23a7711b30"
+      "sha256": "306ae2f9bff9ff855c7c45702c5aecb3f692d52a2ef6e6d3b9d96edc6c9159c9"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3192,12 +3194,12 @@
     {
       "path": "index.html",
       "bytes": 32350,
-      "sha256": "cbeae2cff9ffc6063a72a5381699fea87dc7f8ab0a60c69ced1b9ace14074c28"
+      "sha256": "8da3e547d99dcdbf43b3e2df39432135786610cc899ea8a5fe56cedc355e2a66"
     },
     {
       "path": "index.txt",
       "bytes": 9221,
-      "sha256": "51d83eccef3cce702364d2e78ce058736f17b616b3ef8be91ef95181371cf989"
+      "sha256": "1986ec6c14efd8c724b585e35864da089c24cf574239ea1626730fb66cee2448"
     },
     {
       "path": "migaq/_headers",
@@ -3895,6 +3897,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 761,
-  "deliveryRawBytes": 578879065
+  "deliveryFileCount": 767,
+  "deliveryRawBytes": 584655050
 }

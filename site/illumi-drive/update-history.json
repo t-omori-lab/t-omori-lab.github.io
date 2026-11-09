@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-09T07:29:11Z",
-      "revision": "R62-20261109T072911Z",
+      "updatedAt": "2026-11-09T07:33:33Z",
+      "revision": "R62-20261109T073333Z",
       "title": "歌詞・ランキング・BOOST音と更新表示を修正",
       "shortSummary": "歌詞表示とランキングの開閉、BOOST音の途切れを修正し、更新内容を見やすくしました。",
       "highlights": [
@@ -1273,5 +1273,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-09T07:29:11Z"
+  "updatedAt": "2026-11-09T07:33:33Z"
 }
