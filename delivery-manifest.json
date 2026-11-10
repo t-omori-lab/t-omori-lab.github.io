@@ -1,29 +1,29 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "6441d78eccea36d34a1833ee9eea81075e6c9dd5",
+  "preparedGameSource": "da04c16aba5f769de8377222dcc9a6ad1dc7d1ed",
   "runtimeSource": "1f204edc5381c3844a83fe229d6805000c15a8e6",
-  "preparedGamePayload": "066614145c9fd0707f4cf0be6a26af18daee7e1a39e4ba7aab2ded6c8b176772",
-  "previousPreparedGamePayload": "954e9cf24e4dbd64f8d925e965e64761696e37c89771d435d33302622a39d2a0",
+  "preparedGamePayload": "38378c862c0d0dafbd18b6bc8042d917799e14c649f5794b889b7088847f7564",
+  "previousPreparedGamePayload": "066614145c9fd0707f4cf0be6a26af18daee7e1a39e4ba7aab2ded6c8b176772",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-09T16:45:34Z",
-    "revision": "R62-20261109T164534Z",
-    "updateSummary": "クレジット・お問い合わせをまとめ、コピーライトを縦横とも下部中央に配置しました。"
+    "updatedAt": "2026-11-10T02:19:25Z",
+    "revision": "R62-20261110T021925Z",
+    "updateSummary": "コピーライトを、開始画面の他の要素の最後にフェード表示するよう修正しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "dedb80fa03451324ec9ae18adba81f05ef00d8e8350669633a7c83a0876d9247",
-  "baselineCommit": "854729be598d858e62049ce18d8d02b0ee4a9b8f",
+  "baselineCommit": "228b8f297e1bf3e70b32dce7923ae46f268539a0",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/copyright-fade-publish-20261110-v1/START_RECEIPT.json",
     "sha256": "7b8aac8eb62f82c9c6078de9b727ca31a6ce4a91985e782f94d3543d0a2d12ea"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "dedb80fa03451324ec9ae18adba81f05ef00d8e8350669633a7c83a0876d9247",
     "receiptSHA256": "7b8aac8eb62f82c9c6078de9b727ca31a6ce4a91985e782f94d3543d0a2d12ea",
@@ -37,54 +37,26 @@
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
   "sourceSelection": "Only approved copyright last-fade repair; preserve centered layout, START timings, credits, site footer, art/HDR/Auto/gameplay/API/DB/consent/analytics.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "854729be598d858e62049ce18d8d02b0ee4a9b8f",
-    "rollbackTree": "00accce11fc9624421fabd560a8c692ed050ff01",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-10T02:34:25Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "b8b0cf4517c026b7e9a105cb0d7539e617e2467e",
-      "deploymentId": 7660550606,
-      "statusId": 21781634158,
-      "deployedAt": "2026-11-09T16:45:34Z",
-      "approvedSummary": "クレジット・お問い合わせをまとめ、コピーライトを縦横とも下部中央に配置しました。",
-      "approvedTitle": "クレジット・お問い合わせと下部の配置を改善",
-      "approvedHighlights": [
-        "スタート画面のコピーライトから、クレジット・お問い合わせを開けます。",
-        "コピーライトは縦横とも下部中央に置き、文字を拡大しても操作と重なりにくくしました。",
-        "結果画面からも同じ案内を開け、制作者のWebサイトへ移動できます。"
-      ],
-      "run": {
-        "id": 42657795393,
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "actualProviderEvidenceSHA256": "e9c2aaf7ad39c323c96665326b07b69edd269bf7a3eef3ccfb9837c576898a17"
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "1f204edc5381c3844a83fe229d6805000c15a8e6",
-    "enginePayload": "dedb80fa03451324ec9ae18adba81f05ef00d8e8350669633a7c83a0876d9247",
-    "plannedAt": "2026-11-10T02:19:25Z",
+    "featureCommit": "228b8f297e1bf3e70b32dce7923ae46f268539a0",
+    "deploymentId": 7671739561,
+    "statusId": 21816798444,
+    "deployedAt": "2026-11-10T02:24:38Z",
     "approvedSummary": "コピーライトを、開始画面の他の要素の最後にフェード表示するよう修正しました。",
     "approvedTitle": "コピーライトの表示順を修正",
     "approvedHighlights": [
       "コピーライトを、開始画面の他の要素が出そろった最後に表示します。",
       "非表示中の誤操作を防ぎ、下部中央の配置と文字拡大への対応を保ちました。"
-    ]
+    ],
+    "run": {
+      "id": 42742341626,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "339f4ce1a0baec6d2d404b437b4352cc89a7bc6913fc29481dea374a2a754edd"
   },
   "files": [
     {
@@ -100,12 +72,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4211,
-      "sha256": "2671e0331b7d8f6d1c16641b782a4e3f02c008e4bc5de2d3f3edd82ced05940f"
+      "sha256": "657ef38f41dfdd5d6800cee8046bb254f6136ed2df1cc08509205ed80034744c"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9216,
-      "sha256": "ebdda64b8c1c0693f8b335c6e4e638efd4ce96dca9d6528741c4587745a4508b"
+      "sha256": "dc3d41ecbdbf0239d6c6741d4313e10474f61a3e0665f7ea3f5ddce3c521f022"
     },
     {
       "path": "__next._head.txt",
@@ -336,6 +308,11 @@
       "path": "_next/static/chunks/gateway-update-095d960ddb362292.js",
       "bytes": 17131,
       "sha256": "095d960ddb362292fabb8d63d681998a7deab079ac51bef6e643d8db6ba336e8"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-0da5b57b52def758.js",
+      "bytes": 17131,
+      "sha256": "0da5b57b52def7584cf81ddcbd6c2f041a149dba937719bb9b4fbf7941324482"
     },
     {
       "path": "_next/static/chunks/gateway-update-16f7abad357b5ccf.js",
@@ -1773,6 +1750,11 @@
       "sha256": "c84f12b621578fef664413fd98e6b8332819f2cdc9d78d951489e6f086f64d83"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-RaMSV1_Q-release-c85d385100d0.js",
+      "bytes": 91,
+      "sha256": "8aaba8e664265e11297ade739e7fde7daedd867538edd831d066077fad710cad"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-b5Bda-Fh.js",
       "bytes": 70,
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
@@ -2008,6 +1990,11 @@
       "sha256": "caec4a408379236dffd6c6a0992f654e6ffe0da603daf795e8f61ce888443a64"
     },
     {
+      "path": "illumi-drive/assets/pages-app-BIyUKlEN-release-c85d385100d0.js",
+      "bytes": 698192,
+      "sha256": "4aea936b166e04d2e0ae7d8359436081ede3ae2441d9ba6902df60acd90e19d9"
+    },
+    {
       "path": "illumi-drive/assets/pages-app-BJ1BSUPm.js",
       "bytes": 649853,
       "sha256": "c8b1af6b93910593f0b37cf0a01f39c5304d026427f933cf31b34070152558a5"
@@ -2201,6 +2188,11 @@
       "path": "illumi-drive/assets/pages-wnHQDptV-release-4a9e66033909.js",
       "bytes": 5119,
       "sha256": "b813aecb8171ca1fabd34cba71876b312f4d693cc914ea03f40fa8f40fb8f59a"
+    },
+    {
+      "path": "illumi-drive/assets/pages-wnHQDptV-release-c85d385100d0.js",
+      "bytes": 5119,
+      "sha256": "da67182554691b4e602bdadb2654048f78b189caf1f85e330521707baa352c9d"
     },
     {
       "path": "illumi-drive/assets/pages-xertGb3a.js",
@@ -2433,9 +2425,19 @@
       "sha256": "6d5858d996f01eaefe32731245fe30bf628e0ed9b142342f80c6c74910a70849"
     },
     {
+      "path": "illumi-drive/assets/renderer-sf-Zqkt9-release-c85d385100d0.js",
+      "bytes": 4966435,
+      "sha256": "fa0106f5fc8943b94e9d25bc85da31980dbb66df9efcbe90ea5dc06d344bef79"
+    },
+    {
       "path": "illumi-drive/assets/startup-progress-C06ReD8I-release-4a9e66033909.js",
       "bytes": 90765,
       "sha256": "3db020452383df2b7e9aa8dc23b5ed736a104f3e90c34bb0927118bf03f9e2ab"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-C06ReD8I-release-c85d385100d0.js",
+      "bytes": 90765,
+      "sha256": "9a27d430714cb8675e08b2b0eff334fb4f9aaba1ac0b5a49aa28c5d79b6ee735"
     },
     {
       "path": "illumi-drive/assets/startup-progress-CL09POF3-release-10b4bbc154b6.js",
@@ -2790,7 +2792,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "56b1cd96690a1542bf71d3217ade260913446ec19bd2082a037174dc336300d9"
+      "sha256": "04960156237933892a58bccdfb9f34d00d2becc72a297412d8d3fc06449c31e0"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2855,12 +2857,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "56b1cd96690a1542bf71d3217ade260913446ec19bd2082a037174dc336300d9"
+      "sha256": "04960156237933892a58bccdfb9f34d00d2becc72a297412d8d3fc06449c31e0"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 349,
-      "sha256": "09f933697430f7758ca65082b4eff281244ebc4b23369e3be596424d7dc74e38"
+      "sha256": "65d04d517c800dab4f753474ea98e2e069a5fa4368c61d2d44d61a47010faad4"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2870,7 +2872,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 86867,
-      "sha256": "1e9810e3bac5143849be812a723fa9ab0a90ca128e5d392ff469591577e05206"
+      "sha256": "f5f99dd8e79e2c107d94bdd9cbfd20af5ab900a822ed4d5fe4b4cb1fec98bba5"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3350,12 +3352,12 @@
     {
       "path": "index.html",
       "bytes": 32335,
-      "sha256": "6355e9a32ce59dc0159ce01807d7d61d8f7bb39ccf6112da1f76b3436eeb8461"
+      "sha256": "b5ff0f343013dcda7eaec5447fad2d3ee72ed4caccdc06a3de66accb3c950069"
     },
     {
       "path": "index.txt",
       "bytes": 9216,
-      "sha256": "ebdda64b8c1c0693f8b335c6e4e638efd4ce96dca9d6528741c4587745a4508b"
+      "sha256": "dc3d41ecbdbf0239d6c6741d4313e10474f61a3e0665f7ea3f5ddce3c521f022"
     },
     {
       "path": "migaq/_headers",
@@ -4053,6 +4055,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 793,
-  "deliveryRawBytes": 608785817
+  "deliveryFileCount": 799,
+  "deliveryRawBytes": 614563550
 }

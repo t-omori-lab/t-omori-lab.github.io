@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-10T02:19:25Z",
-      "revision": "R62-20261110T021925Z",
+      "updatedAt": "2026-11-10T02:24:38Z",
+      "revision": "R62-20261110T022438Z",
       "title": "コピーライトの表示順を修正",
       "shortSummary": "コピーライトを、開始画面の他の要素の最後にフェード表示するよう修正しました。",
       "highlights": [
@@ -1273,5 +1273,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-10T02:19:25Z"
+  "updatedAt": "2026-11-10T02:24:38Z"
 }
