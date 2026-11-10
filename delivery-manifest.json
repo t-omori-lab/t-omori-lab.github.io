@@ -1,33 +1,33 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "e970a5714f2bb39113f18f25bcaf8515e4c42bea",
+  "preparedGameSource": "a1bf708f57be13dba2fef5b3c3bcae3645e3f0d5",
   "runtimeSource": "ff4ddbd3ab8a11e68dccd0433040b290f2b847aa",
-  "preparedGamePayload": "879e642d742048afd14ea0756031bbd7c2067642e44c27de58d484d05f0a9951",
-  "previousPreparedGamePayload": "38378c862c0d0dafbd18b6bc8042d917799e14c649f5794b889b7088847f7564",
+  "preparedGamePayload": "8d90d155f42cd5a160ad2c24dac0174c6f83712ec8e3f13e77d596c567ee3bb2",
+  "previousPreparedGamePayload": "879e642d742048afd14ea0756031bbd7c2067642e44c27de58d484d05f0a9951",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-10T02:24:38Z",
-    "revision": "R62-20261110T022438Z",
-    "updateSummary": "コピーライトを、開始画面の他の要素の最後にフェード表示するよう修正しました。"
+    "updatedAt": "2026-11-10T17:33:09Z",
+    "revision": "R62-20261110T173309Z",
+    "updateSummary": "点灯からREADY、カウントダウンへつながるスタート演出を改善しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "6ce1a25b433eec152ac8793f0f30c70007c628bc5fbd075519909080bd76f0c7",
-  "baselineCommit": "dcbec2fd1efbbfdf828e30703d7332c94b865f70",
+  "baselineCommit": "3e3d492b1a30a4d35158d1fcc1c6f4ae14bc9e30",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/start-c-publish-20261111-v1/START_RECEIPT.json",
     "sha256": "76e430dac39587127e05dd41e004fd251406746ee36d305d3b96fd392d835578"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "6ce1a25b433eec152ac8793f0f30c70007c628bc5fbd075519909080bd76f0c7",
     "receiptSHA256": "76e430dac39587127e05dd41e004fd251406746ee36d305d3b96fd392d835578",
-    "kind": "no-new-native-test-in-this-scoped-UI-release",
+    "kind": "owner-native-verification-after-publication",
     "newDeviceTests": false,
     "actualNativeAccepted": false,
     "nativeLimits": "Adopted-C schedules and source checks reused; owner will verify native HDR/performance after publication."
@@ -35,55 +35,28 @@
   "syntheticFixture": false,
   "forwardImmutableCacheRetained": true,
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
-  "sourceSelection": "Only approved adopted-C startup integration; preserve centered layout, START timings, credits, site footer, art/HDR/Auto/gameplay/API/DB/consent/analytics.",
+  "sourceSelection": "Only approved C startup presentation; preserve copyright layout and actual GO clock, credits, site footer, art/HDR/Auto/gameplay/API/DB/consent/analytics.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "dcbec2fd1efbbfdf828e30703d7332c94b865f70",
-    "rollbackTree": "7477fadf6467e5910e0a8773b8207270dcbf1d21",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-10T17:48:09Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "228b8f297e1bf3e70b32dce7923ae46f268539a0",
-      "deploymentId": 7671739561,
-      "statusId": 21816798444,
-      "deployedAt": "2026-11-10T02:24:38Z",
-      "approvedSummary": "コピーライトを、開始画面の他の要素の最後にフェード表示するよう修正しました。",
-      "approvedTitle": "コピーライトの表示順を修正",
-      "approvedHighlights": [
-        "コピーライトを、開始画面の他の要素が出そろった最後に表示します。",
-        "非表示中の誤操作を防ぎ、下部中央の配置と文字拡大への対応を保ちました。"
-      ],
-      "run": {
-        "id": 42742341626,
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "actualProviderEvidenceSHA256": "339f4ce1a0baec6d2d404b437b4352cc89a7bc6913fc29481dea374a2a754edd"
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "ff4ddbd3ab8a11e68dccd0433040b290f2b847aa",
-    "enginePayload": "6ce1a25b433eec152ac8793f0f30c70007c628bc5fbd075519909080bd76f0c7",
-    "plannedAt": "2026-11-10T17:33:09Z",
+    "featureCommit": "3e3d492b1a30a4d35158d1fcc1c6f4ae14bc9e30",
+    "deploymentId": 7689535701,
+    "statusId": 21878455907,
+    "deployedAt": "2026-11-10T17:40:14Z",
     "approvedSummary": "点灯からREADY、カウントダウンへつながるスタート演出を改善しました。",
     "approvedTitle": "スタート演出を改善",
     "approvedHighlights": [
       "照明に合わせて車体・計器・地図が点灯します。",
       "BGMと効果音をつなぎ、READYからカウントダウンへの切り替わりを整えました。"
-    ]
+    ],
+    "run": {
+      "id": 42867152743,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "704368f4bb965e4f1c9dc6c1d251f631c0058a45900c9e2b436ab31bb179b317"
   },
   "files": [
     {
@@ -99,12 +72,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4195,
-      "sha256": "3d6e71b5f78994c85863070a1e14184a11d1adb84d9a84879ada07c72e5ac7a5"
+      "sha256": "f284b890ee3ae15bb8ba19fd1c45f9130d925a914ee28eeb2eed84b5c57bbc70"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9200,
-      "sha256": "df7786191a021fcc7d28d1d3482329ebd35bc992745ab2dc363ccda88ab7d92b"
+      "sha256": "a29a3a4156c8ba45f636bbd09c91770c649204571e53b3b7f20d46c42472208a"
     },
     {
       "path": "__next._head.txt",
@@ -375,6 +348,11 @@
       "path": "_next/static/chunks/gateway-update-522cac4fc69de648.js",
       "bytes": 17136,
       "sha256": "522cac4fc69de6486691157ef40c5e4afb2ae699a70e12054723bb0a7e18da03"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-75b935f7a6a73f0d.js",
+      "bytes": 17115,
+      "sha256": "75b935f7a6a73f0d6b5bcf562249df3c17b40ebb89c11dde59e5c79ce20ec010"
     },
     {
       "path": "_next/static/chunks/gateway-update-7b9d6fccee172b3a.js",
@@ -1792,6 +1770,11 @@
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-hC6xkS1S-release-a1b6a58b143b.js",
+      "bytes": 91,
+      "sha256": "0c19c7f6259d7f64fd98b0c7300336be3093558fa370130a7c67c61a8a43c36b"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-hC6xkS1S-release-e7c2ec2da929.js",
       "bytes": 91,
       "sha256": "ef36820ff8bdb3f8c260a1b0949f24a65a66cbb019eb30ccd4e24448da10e8fa"
@@ -1917,6 +1900,11 @@
       "sha256": "646042a9ea3487cc8320d8d6ae3b9cf7ff5f610526cc0fd7afbf8fefaa44baeb"
     },
     {
+      "path": "illumi-drive/assets/pages-CbZIOEF2-release-a1b6a58b143b.js",
+      "bytes": 5119,
+      "sha256": "b8776bf14870f56fa64f721a9ec94e28bd1fa7628439fe800b964d9b03365818"
+    },
+    {
       "path": "illumi-drive/assets/pages-CbZIOEF2-release-e7c2ec2da929.js",
       "bytes": 5119,
       "sha256": "a645ac9caf698138b6d17c4df826fcc637428d234edee748d21e0183b3d148e4"
@@ -2010,6 +1998,11 @@
       "path": "illumi-drive/assets/pages-aC-PipqR-release-f45464a03b35.js",
       "bytes": 5119,
       "sha256": "c733263f30d19444a237b320607d8b20dcd1b66da92c8c0e0c0d5443e4d3bea0"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-B-Zq9MSB-release-a1b6a58b143b.js",
+      "bytes": 711464,
+      "sha256": "2c91be70540567f547a75fa8f965f8c8f43f68446ee13bf93bbefb3e8efd9903"
     },
     {
       "path": "illumi-drive/assets/pages-app-B-Zq9MSB-release-e7c2ec2da929.js",
@@ -2412,6 +2405,11 @@
       "sha256": "5c32d00bec2ff492758c804386c11da2173860ff01fb082688c8a6f51746e21d"
     },
     {
+      "path": "illumi-drive/assets/renderer-OH8DTviG-release-a1b6a58b143b.js",
+      "bytes": 4974157,
+      "sha256": "bf609aef6f022a04f008b5e8a95e37a4d56672dc8f714ca1e79bca411bbb1840"
+    },
+    {
       "path": "illumi-drive/assets/renderer-OH8DTviG-release-e7c2ec2da929.js",
       "bytes": 4974157,
       "sha256": "bd30f61ca91eab1a032119634f7946598ece0da1b8d06184e6454130e2235628"
@@ -2520,6 +2518,11 @@
       "path": "illumi-drive/assets/startup-progress-DC45_4Yz.js",
       "bytes": 82010,
       "sha256": "dba430d64d4cbff8bef658a1ecfa8c728fd8c935bbe9f4d416f66e035c05f31a"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-DTKPuBlQ-release-a1b6a58b143b.js",
+      "bytes": 93598,
+      "sha256": "5be79c9a8b7b13c50670ee39b828256feb70a1be6d5125f4922560cefd855126"
     },
     {
       "path": "illumi-drive/assets/startup-progress-DTKPuBlQ-release-e7c2ec2da929.js",
@@ -2854,7 +2857,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "b311b3c8cb08e601016b93a30518387f205e154d15b504f64f70601bc5b46d34"
+      "sha256": "4d48e1f8bddeaf00a92bea7c2f66d042a51dc1174e45c5d40b155c0dcf893b70"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2919,12 +2922,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "b311b3c8cb08e601016b93a30518387f205e154d15b504f64f70601bc5b46d34"
+      "sha256": "4d48e1f8bddeaf00a92bea7c2f66d042a51dc1174e45c5d40b155c0dcf893b70"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 333,
-      "sha256": "583630794380428c8970a1540d70125e7d84d37fc3b8595a238e74279f1a8906"
+      "sha256": "930202c75074a178cf120a7093a2cc5d59fd67bc980cfc4f4cbfc1a2efb430ee"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2934,7 +2937,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 87153,
-      "sha256": "fa2169aaf7ad38a0c84c9dc5cc40c9938742b4f5f7b419774f91ff354f09c2fa"
+      "sha256": "83ec795d660cc814a63a6c2f5253559e82e17ae676067cb396798a1c57bc41eb"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3414,12 +3417,12 @@
     {
       "path": "index.html",
       "bytes": 32287,
-      "sha256": "019ccdfd666bca29d94446146a5e1e8c0d0ad50a077df1e7c39075427c47b9bb"
+      "sha256": "307adad3af48982b2025d13249401c8df0686f1583e53bf7da3507f3ef86cf89"
     },
     {
       "path": "index.txt",
       "bytes": 9200,
-      "sha256": "df7786191a021fcc7d28d1d3482329ebd35bc992745ab2dc363ccda88ab7d92b"
+      "sha256": "a29a3a4156c8ba45f636bbd09c91770c649204571e53b3b7f20d46c42472208a"
     },
     {
       "path": "migaq/_headers",
@@ -4117,6 +4120,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 806,
-  "deliveryRawBytes": 620876736
+  "deliveryFileCount": 812,
+  "deliveryRawBytes": 626678280
 }

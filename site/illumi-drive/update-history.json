@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-10T17:33:09Z",
-      "revision": "R62-20261110T173309Z",
+      "updatedAt": "2026-11-10T17:40:14Z",
+      "revision": "R62-20261110T174014Z",
       "title": "スタート演出を改善",
       "shortSummary": "点灯からREADY、カウントダウンへつながるスタート演出を改善しました。",
       "highlights": [
@@ -1274,5 +1274,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-10T17:33:09Z"
+  "updatedAt": "2026-11-10T17:40:14Z"
 }
