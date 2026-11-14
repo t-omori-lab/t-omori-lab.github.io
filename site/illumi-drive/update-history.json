@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-14T13:33:15Z",
-      "revision": "R62-20261114T133315Z",
+      "updatedAt": "2026-11-14T13:40:46Z",
+      "revision": "R62-20261114T134046Z",
       "title": "BGMとスタートを修正",
       "shortSummary": "BGMの再生とスタート時の切り替わりを修正しました。",
       "highlights": [
@@ -1275,5 +1275,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-14T13:33:15Z"
+  "updatedAt": "2026-11-14T13:40:46Z"
 }
