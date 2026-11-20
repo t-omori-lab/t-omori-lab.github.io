@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>ILLUMI DRIVE 対戦テスト</title>
+<style>
+:root{color-scheme:dark}
+body{margin:0;min-height:100svh;display:grid;place-items:center;background:#071019;color:#f0fbff;font:1rem/1.65 system-ui,sans-serif}
+main{width:min(32rem,calc(100% - 3rem));padding:2rem 0}
+h1{line-height:1.2;letter-spacing:.07em}
+p{color:#b8ccd7}
+</style>
+</head>
+<body>
+<main>
+<h1>ILLUMI DRIVE</h1>
+<p id="status">ネット対戦テスト。ホスト用リンクか、相手から届いた招待URLを開いてください。</p>
+</main>
+<script>
+const end = 1795154943436;
+const route = location.hash.match(/^#(owner|invite)=([a-f0-9]{64})$/);
+const statusLine = document.getElementById('status');
+if (Date.now() >= end) {
+  statusLine.textContent = 'この対戦テストは終了しました。';
+} else if (route) {
+  statusLine.textContent = '対戦テストを開いています。';
+  const path = route[1] === 'owner' ? '/entry/' : '/invite/';
+  location.replace("https://earnings-thereby-mouth-consensus.trycloudflare.com" + path + route[2]);
+}
+</script>
+</body>
+</html>
