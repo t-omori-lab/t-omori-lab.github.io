@@ -776,8 +776,8 @@
     },
     {
       "path": "duel-playtest/index.html",
-      "bytes": 1286,
-      "sha256": "695fedd7faf7f2c076c19e24d57e600933b9ae81322b01e077e6d3cdd77f8375"
+      "bytes": 1292,
+      "sha256": "d63e327387fc43fe2d713b3d8e6f408993d26bb055ec2b8a0c5ac86662652d22"
     },
     {
       "path": "game-center/index.html",
@@ -4186,5 +4186,5 @@
     }
   ],
   "deliveryFileCount": 825,
-  "deliveryRawBytes": 638281139
+  "deliveryRawBytes": 638281145
 }
