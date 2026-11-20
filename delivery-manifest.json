@@ -1,42 +1,14 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "5f80ffe3d548cc4e32c5494c34d95740c8f0b6de",
-  "runtimeSource": "84515765ba008ec3020c489231770e1c445e20fc",
+  "releaseLabel": "R62",
   "preparedGamePayload": "4aec0cab46c6af8c48d720d6ad7553738b39b0d3a9639c51586785c442ef1ebe",
   "previousPreparedGamePayload": "75d04a7a56a40ba837af164c34b9e68998ccde941c73ceec15bc8299bf7c8ea1",
   "previousGameRelease": {
     "label": "R62",
-    "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
-    "status": "published",
     "updatedAt": "2026-11-14T13:33:15Z",
-    "revision": "R62-20261114T133315Z",
-    "updateSummary": "BGMの再生とスタート時の切り替わりを修正しました。"
+    "revision": "R62-20261114T133315Z"
   },
-  "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
-  "releaseLabel": "R62",
-  "parentGamePayload": "1863b38db1fbea993b0931ea79d306f75b934ecda7f15f7eeadfa9dfcad776b5",
-  "baselineCommit": "eeb998f143b0a4da98d9885eb28fcfdf780535c2",
-  "publication": true,
-  "publicationAuthorized": true,
-  "approvedOwnerPacket": {
-    "path": "work/public-start-audio-ready-fix-20261114-v1/START_RECEIPT.json",
-    "sha256": "f6987cadea58b6fa058260b6ed419e068418c99b310b9439f860b8e6cd7a3805"
-  },
-  "metadataOnlyChild": true,
-  "nativeAcceptance": {
-    "enginePayload": "1863b38db1fbea993b0931ea79d306f75b934ecda7f15f7eeadfa9dfcad776b5",
-    "receiptSHA256": "f6987cadea58b6fa058260b6ed419e068418c99b310b9439f860b8e6cd7a3805",
-    "kind": "owner-native-verification-after-publication",
-    "newDeviceTests": false,
-    "actualNativeAccepted": false,
-    "nativeLimits": "Physical device audio and visual acceptance pending; scope is BGM, start preparation and READY cancel UI."
-  },
-  "syntheticFixture": false,
-  "forwardImmutableCacheRetained": true,
-  "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
-  "sourceSelection": "Only the approved BGM, cover waiting and READY repair; preserve copyright layout and actual GO clock, credits, site footer, art/HDR/Auto/gameplay/API/DB/consent/analytics.",
-  "flightTextFrameLengthsVerified": true,
   "latestUpdateDeployment": {
     "schema": 1,
     "state": "success",
@@ -50,13 +22,7 @@
     "approvedHighlights": [
       "同意や選曲からBGMを準備し、読み込み中でも走行を始められます。",
       "READY中に表示されていた「中止」ボタンを取り除きました。"
-    ],
-    "run": {
-      "id": 43600897864,
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "actualProviderEvidenceSHA256": "4f96bd670f6ba8ef1fbfa19d87e1902a1e98ad755bceac4dbdd66ea5daf57a90"
+    ]
   },
   "files": [
     {
@@ -776,8 +742,8 @@
     },
     {
       "path": "duel-playtest/index.html",
-      "bytes": 1292,
-      "sha256": "d63e327387fc43fe2d713b3d8e6f408993d26bb055ec2b8a0c5ac86662652d22"
+      "bytes": 1285,
+      "sha256": "09688d733ea9f12e303e02cf34058ad7aac52118d494367349bea3b7e9f3b45d"
     },
     {
       "path": "game-center/index.html",
@@ -4186,5 +4152,5 @@
     }
   ],
   "deliveryFileCount": 825,
-  "deliveryRawBytes": 638281145
+  "deliveryRawBytes": 638281138
 }
