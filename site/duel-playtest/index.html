@@ -17,18 +17,14 @@ p{color:#b8ccd7}
 <body>
 <main>
 <h1>ILLUMI DRIVE</h1>
-<p id="status">ネット対戦テスト。ホスト用リンクか、相手から届いた招待URLを開いてください。</p>
+<p id="status">ホスト用リンクか、相手から届いたQRコード・招待URLを開いてください。</p>
 </main>
 <script>
-const end = 1795178361307;
-const route = location.hash.match(/^#(owner|invite)=([a-f0-9]{64})$/);
-const statusLine = document.getElementById('status');
-if (Date.now() >= end) {
-  statusLine.textContent = 'この対戦テストは終了しました。';
-} else if (route) {
-  statusLine.textContent = '対戦テストを開いています。';
-  const path = route[1] === 'owner' ? '/entry/' : '/invite/';
-  location.replace("https://showtimes-ranked-never-opportunity.trycloudflare.com" + path + route[2]);
+const route=location.hash.match(/^#(owner|invite)=([a-f0-9]{64})$/);
+if(route){
+  document.getElementById('status').textContent='対戦テストを開いています。';
+  const path=route[1]==='owner'?'/entry/':'/invite/';
+  location.replace('https://illumi-drive-duel-playtest.t-omori-lab.workers.dev'+path+route[2]);
 }
 </script>
 </body>
