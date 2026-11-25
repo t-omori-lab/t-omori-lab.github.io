@@ -3,7 +3,7 @@
   "recordedAt": "2026-10-24T14:46:00.000Z",
   "publishedAt": "2026-10-25T00:44:21.000Z",
   "status": "published",
-  "updatedAt": "2026-11-25T17:24:07Z",
-  "revision": "R62-20261125T172407Z",
+  "updatedAt": "2026-11-25T17:26:16Z",
+  "revision": "R62-20261125T172616Z",
   "updateSummary": "再訪時の最初のタップでBGMが始まり、選曲を戻しても曲が重ならないようにしました。"
 }

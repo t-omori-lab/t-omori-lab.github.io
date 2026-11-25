@@ -1,29 +1,29 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "bf6b14111e627ed354d41ba9ed1516552752a4e3",
+  "preparedGameSource": "9656666b148b869eb5a83ffb94cfe1933abd5f3f",
   "runtimeSource": "7643ca0641a727a4ccde284729a413992e515d3c",
-  "preparedGamePayload": "a03d719f0647f7f29da50cad1c29e8864ba96182b27fc3a07bf6f9c155cda19d",
-  "previousPreparedGamePayload": "ef86f4c32c74064748efb1702dfd99d4dcc0e52e4817641f8e1481c3ecd0917e",
+  "preparedGamePayload": "f906d27e636e5659c63377aafeb6cd83d92ccfbd97d2c2d04459d2f382581354",
+  "previousPreparedGamePayload": "a03d719f0647f7f29da50cad1c29e8864ba96182b27fc3a07bf6f9c155cda19d",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T16:50:56Z",
-    "revision": "R62-20261125T165056Z",
-    "updateSummary": "市松模様の最初の点灯でBGMが一度だけ始まるよう修正しました。"
+    "updatedAt": "2026-11-25T17:24:07Z",
+    "revision": "R62-20261125T172407Z",
+    "updateSummary": "再訪時の最初のタップでBGMが始まり、選曲を戻しても曲が重ならないようにしました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "d7f1392f01925569b703cf44a1d612bece1e6ab1bf7a126bfb437fadba9497fb",
-  "baselineCommit": "0491b99f5f049c80f86152183396bb0e0ffc22e8",
+  "baselineCommit": "de06f2cfae48dde37d77bd8d142804358e8a459e",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/frontdesk-requests/r62-title-opening-gesture-20261126/deploy-solo/START_RECEIPT.json",
     "sha256": "7a1778cc1fcb3e813b08cc51bf13642206d9bbef6f1c4bfc8747c9ed4b04cb7a"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "d7f1392f01925569b703cf44a1d612bece1e6ab1bf7a126bfb437fadba9497fb",
     "receiptSHA256": "7a1778cc1fcb3e813b08cc51bf13642206d9bbef6f1c4bfc8747c9ed4b04cb7a",
@@ -37,53 +37,26 @@
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
   "sourceSelection": "Start title music on the first gesture and avoid overlapping previews and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "0491b99f5f049c80f86152183396bb0e0ffc22e8",
-    "rollbackTree": "c75f8f7eeae2a2b191e25c1fc39c0066034ed0c3",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-25T17:39:07Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "1519c8e01fc9a6712b779fcfee39af8f423ae8ff",
-      "deploymentId": 8063682295,
-      "statusId": 23150206981,
-      "deployedAt": "2026-11-25T16:50:56Z",
-      "approvedSummary": "市松模様の最初の点灯でBGMが一度だけ始まるよう修正しました。",
-      "approvedTitle": "市松模様の点灯にBGMを同期",
-      "approvedHighlights": [
-        "暗転から薄明かりに変わる間はBGMを止めます。",
-        "カウントダウンでは再生位置を引き継ぎます。"
-      ],
-      "run": {
-        "id": 45658092471,
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "actualProviderEvidenceSHA256": "a63ec31688dd4325d15d3a39ef227affbbcfdf3ecaf3df84818eb548247ae6c9"
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "7643ca0641a727a4ccde284729a413992e515d3c",
-    "enginePayload": "d7f1392f01925569b703cf44a1d612bece1e6ab1bf7a126bfb437fadba9497fb",
-    "plannedAt": "2026-11-25T17:24:07Z",
+    "featureCommit": "de06f2cfae48dde37d77bd8d142804358e8a459e",
+    "deploymentId": 8064564047,
+    "statusId": 23153176548,
+    "deployedAt": "2026-11-25T17:26:16Z",
     "approvedSummary": "再訪時の最初のタップでBGMが始まり、選曲を戻しても曲が重ならないようにしました。",
     "approvedTitle": "タイトルBGMの再生を修正",
     "approvedHighlights": [
       "同意済みの再訪では、タイトルの最初のタップで曲が始まります。",
       "曲を切り替えると、それまでの曲を停止します。"
-    ]
+    ],
+    "run": {
+      "id": 45664528610,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "cf9d96810293f0c40480e05aa03854cb7a99eb880cd93380a039675733d9732c"
   },
   "files": [
     {
@@ -99,12 +72,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4214,
-      "sha256": "56ec8c6fcdf4482b4af50210d9f50567e88be69fc44ca76e11e91fe7c3ea8371"
+      "sha256": "ee9adef4aeb75550058f669823b867116a6b8835e55c8354b2431721b693d548"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9219,
-      "sha256": "2628c5efafadbb2ec758fd6175cbd41f6f6e41dcaecbe48662171148b4039ec9"
+      "sha256": "d24e58aff10e13a13509d7a904464735b424367b1b7543d6c5f88af083cb2710"
     },
     {
       "path": "__next._head.txt",
@@ -485,6 +458,11 @@
       "path": "_next/static/chunks/gateway-update-a02e5e4fc9985313.js",
       "bytes": 17904,
       "sha256": "a02e5e4fc99853133dc36bd558fb2d2f4a5e9aa57c5fed339840a0ad8c789a78"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-a7622d82aec46f8c.js",
+      "bytes": 17931,
+      "sha256": "a7622d82aec46f8cd6bfc4d5da86bad9a59616bbf676ef20fca7e9045dad66ac"
     },
     {
       "path": "_next/static/chunks/gateway-update-ace45387f6ef664b.js",
@@ -1902,6 +1880,11 @@
       "sha256": "a1ca4196c80a6ab90a8129a5157d3c2622480eec96667efa4f3416b5079fb0c0"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-Bzr1d0gk-release-2f2d1e274d59.js",
+      "bytes": 91,
+      "sha256": "7da24245b8c3b5a915c208f2c0134695aa67d48538676722cb0156928d59f4b4"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-Bzr1d0gk-release-e8f4cbafcb4b.js",
       "bytes": 91,
       "sha256": "c04ddf332c8dee9b22bd6dbb71278e76bc39ef7e0e527b0c3c97ab3c4b280004"
@@ -2272,6 +2255,11 @@
       "sha256": "0bd40a0d92f19d4fa8dd63430f81785bb9d35e916aaff47258fb7e1e6a0e7486"
     },
     {
+      "path": "illumi-drive/assets/pages-Cy0fxONJ-release-2f2d1e274d59.js",
+      "bytes": 5119,
+      "sha256": "27cc6307081523bcae9dc81f682e9abac195103c3a6308601fcf66df1b222f83"
+    },
+    {
       "path": "illumi-drive/assets/pages-Cy0fxONJ-release-e8f4cbafcb4b.js",
       "bytes": 5119,
       "sha256": "47a2133c237ed1da7a52636de1634f11394c1cb8c60aafb9839b43a25d54100d"
@@ -2627,6 +2615,11 @@
       "sha256": "d0c3ded29ab52028ece34fe160158c18954657315b81c2d1c312a9cf4eb80268"
     },
     {
+      "path": "illumi-drive/assets/pages-app-gZUtgmIE-release-2f2d1e274d59.js",
+      "bytes": 730979,
+      "sha256": "2a2709025aaff6ee32a09861f1db223a1cb8a6d5705b14eba2771c00b0151603"
+    },
+    {
       "path": "illumi-drive/assets/pages-app-gZUtgmIE-release-e8f4cbafcb4b.js",
       "bytes": 730979,
       "sha256": "ad1a5124d5edbf65fc3ead9a49aba670d196ef2a2fd445270229a1b3b167435a"
@@ -2755,6 +2748,11 @@
       "path": "illumi-drive/assets/private-render-comparison-eHkvKxfj.js",
       "bytes": 564928,
       "sha256": "f9d67c9a6d9d218c5c7e4e345fb14b7ad495b0b4fbcb00c5087aa12ef2431faf"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-BILq4bkb-release-2f2d1e274d59.js",
+      "bytes": 4983798,
+      "sha256": "c9eb2ceff4c39598a42feb2838aa2f42ea041e9cc4b5a511fbfb8520a64e4b70"
     },
     {
       "path": "illumi-drive/assets/renderer-BILq4bkb-release-e8f4cbafcb4b.js",
@@ -3212,6 +3210,11 @@
       "sha256": "eccbc1b3e65ea378c352e7ba27df348f71e4fbd52e8a9a01fda7db415a3aae88"
     },
     {
+      "path": "illumi-drive/assets/startup-progress-Dy03jIw0-release-2f2d1e274d59.js",
+      "bytes": 93128,
+      "sha256": "2fe9640dcad833d1cf9fb100e46f20d83af7f7cfaf33e0602fb77ce6c4813660"
+    },
+    {
       "path": "illumi-drive/assets/startup-progress-Dy03jIw0-release-e8f4cbafcb4b.js",
       "bytes": 93128,
       "sha256": "8be1f12eed079371b74ed2b6d63e5f4f6189ad6f037360b99198ffa706ad9531"
@@ -3554,7 +3557,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16563,
-      "sha256": "0dd44e4f99d7f0266ad566c0484b098d6d0707c10272640b8ddf20e3bf5d5149"
+      "sha256": "a209e0bcafbf23883247b23e09f487cc4ed430be3465342d331b4b5b92f0b1bb"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3629,12 +3632,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16563,
-      "sha256": "0dd44e4f99d7f0266ad566c0484b098d6d0707c10272640b8ddf20e3bf5d5149"
+      "sha256": "a209e0bcafbf23883247b23e09f487cc4ed430be3465342d331b4b5b92f0b1bb"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 352,
-      "sha256": "28184c0f46eca6ecbd38fe03d184cf378844dfed0bf06bd442160908ffc80779"
+      "sha256": "d65558f52d718a85e42ee59234d76f2142f06cfb1881373c11eef2a262458940"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3644,7 +3647,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 89670,
-      "sha256": "26628695e7d087dd45c431ed3a0df66e4be4384928cb970273c599dde2534056"
+      "sha256": "c4ab4d1be278beebee1b7678d944421edfd913f2432342c9d09d2295b21b5dc1"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -4129,12 +4132,12 @@
     {
       "path": "index.html",
       "bytes": 33251,
-      "sha256": "34c732ff276085f2f150a6185085a6b923c136b189e8e66834be844a4c774385"
+      "sha256": "9599816b35d0179453b0604f92ab5bd61a383c8e94a3c70866b6e78312dea2d1"
     },
     {
       "path": "index.txt",
       "bytes": 9219,
-      "sha256": "2628c5efafadbb2ec758fd6175cbd41f6f6e41dcaecbe48662171148b4039ec9"
+      "sha256": "d24e58aff10e13a13509d7a904464735b424367b1b7543d6c5f88af083cb2710"
     },
     {
       "path": "migaq/_headers",
@@ -4832,6 +4835,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 949,
-  "deliveryRawBytes": 749991707
+  "deliveryFileCount": 955,
+  "deliveryRawBytes": 755822753
 }
