@@ -3,7 +3,7 @@
   "recordedAt": "2026-10-24T14:46:00.000Z",
   "publishedAt": "2026-10-25T00:44:21.000Z",
   "status": "published",
-  "updatedAt": "2026-11-25T13:00:05Z",
-  "revision": "R62-20261125T130005Z",
-  "updateSummary": "BGMの先読みと、曲に合わせて始まるスタート演出を改善しました。"
+  "updatedAt": "2026-11-25T13:18:04Z",
+  "revision": "R62-20261125T131804Z",
+  "updateSummary": "ゲームを更新しても、音源が同じ曲はキャッシュを使うようにしました。"
 }
