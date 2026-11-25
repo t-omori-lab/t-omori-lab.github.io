@@ -3,7 +3,7 @@
   "recordedAt": "2026-10-24T14:46:00.000Z",
   "publishedAt": "2026-10-25T00:44:21.000Z",
   "status": "published",
-  "updatedAt": "2026-11-25T05:59:27Z",
-  "revision": "R62-20261125T055927Z",
-  "updateSummary": "高速域でのスピードメーターの針の動きを調整しました。"
+  "updatedAt": "2026-11-25T10:08:07Z",
+  "revision": "R62-20261125T100807Z",
+  "updateSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。"
 }

@@ -1,32 +1,32 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "982340de6e70459fe16a658a060f1e064c2da933",
-  "runtimeSource": "3cf65a62a743fd59f3772dd0c0b0fc9bcb2393e2",
-  "preparedGamePayload": "0280594ca75377af60f07974096f2135bcb0a998fbda149d84b116b221eb6dc5",
-  "previousPreparedGamePayload": "663ce9d0ca66ab415ed632024bae7adcf036aac2974f68ab6c031394806a6b75",
+  "preparedGameSource": "6279300c0a045e82924008d3e08c5332b8cf649c",
+  "runtimeSource": "69786d42ce7cdaa035d77ccae7a5234cb21d81f8",
+  "preparedGamePayload": "d78bfd2c19b0fe59a087ff13280e0a5b56b932d39e94a7b349071e71d1cca1ae",
+  "previousPreparedGamePayload": "0280594ca75377af60f07974096f2135bcb0a998fbda149d84b116b221eb6dc5",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T05:53:06Z",
-    "revision": "R62-20261125T055306Z",
+    "updatedAt": "2026-11-25T05:59:27Z",
+    "revision": "R62-20261125T055927Z",
     "updateSummary": "高速域でのスピードメーターの針の動きを調整しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
-  "parentGamePayload": "87afb5581b66de9595c2dfef2353e465a207a9463647a0df74c185a9a20df886",
-  "baselineCommit": "c6b4ffcda447e5dafaa67ab3480b8ce601a8037e",
+  "parentGamePayload": "2d6772b8b9208cbd10c4231292c2e5162940de28729930de72f435dfa6393bf0",
+  "baselineCommit": "6b3f445e5c2701a1a73dfa8cde53e33376811f6e",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
-    "path": "work/frontdesk-requests/r62-needle-fast-vibration-20261125/deploy-solo/SOLE_START_RECEIPT.json",
-    "sha256": "719501a216eb52af7c435d86a21f3c7f7ef1730253ff0307d89480903ce4edb5"
+    "path": "work/frontdesk-requests/r62-loading-exhaust-release-20261125/deploy/SOLE_START_RECEIPT.json",
+    "sha256": "e401a4885659d8101c07886be4691a04e32de17036a720a872a5b37e2cd08d6d"
   },
-  "metadataOnlyChild": true,
+  "metadataOnlyChild": false,
   "nativeAcceptance": {
-    "enginePayload": "87afb5581b66de9595c2dfef2353e465a207a9463647a0df74c185a9a20df886",
-    "receiptSHA256": "719501a216eb52af7c435d86a21f3c7f7ef1730253ff0307d89480903ce4edb5",
+    "enginePayload": "2d6772b8b9208cbd10c4231292c2e5162940de28729930de72f435dfa6393bf0",
+    "receiptSHA256": "e401a4885659d8101c07886be4691a04e32de17036a720a872a5b37e2cd08d6d",
     "kind": "owner-native-verification-after-publication",
     "newDeviceTests": false,
     "actualNativeAccepted": false,
@@ -35,27 +35,54 @@
   "syntheticFixture": false,
   "forwardImmutableCacheRetained": true,
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
-  "sourceSelection": "Approved high-speed needle flutter only and corresponding Gateway updates.",
+  "sourceSelection": "Loading feedback and desktop first-BOOST exhaust preparation and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
+  "publicationTransaction": {
+    "schema": 1,
+    "mode": "feature-with-required-receipt-finalization",
+    "finalizationRequired": true,
+    "repository": "t-omori-lab/t-omori-lab.github.io",
+    "ref": "refs/heads/main",
+    "baseCommit": "6b3f445e5c2701a1a73dfa8cde53e33376811f6e",
+    "rollbackTree": "acf18518e1ec79b1b9fa99a964d2ca2ac71a6b35",
+    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
+    "expiresAt": "2026-11-25T10:23:07Z",
+    "previousSuccessfulReceipt": {
+      "schema": 1,
+      "state": "success",
+      "environment": "github-pages",
+      "featureCommit": "c6b4ffcda447e5dafaa67ab3480b8ce601a8037e",
+      "deploymentId": 8049698672,
+      "statusId": 23101840720,
+      "deployedAt": "2026-11-25T05:59:27Z",
+      "approvedSummary": "高速域でのスピードメーターの針の動きを調整しました。",
+      "approvedTitle": "高速域のメーター針を調整",
+      "approvedHighlights": [
+        "480 km/h付近で、針がより速く不規則に揺れるようにしました。"
+      ],
+      "run": {
+        "id": 45557231085,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      "actualProviderEvidenceSHA256": "41c517039378034a8eec8a9c43ee25d7ce73e2f18c18e6c94bfe462e4f79125a"
+    }
+  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "success",
+    "state": "awaiting-feature-success",
     "environment": "github-pages",
-    "featureCommit": "c6b4ffcda447e5dafaa67ab3480b8ce601a8037e",
-    "deploymentId": 8049698672,
-    "statusId": 23101840720,
-    "deployedAt": "2026-11-25T05:59:27Z",
-    "approvedSummary": "高速域でのスピードメーターの針の動きを調整しました。",
-    "approvedTitle": "高速域のメーター針を調整",
+    "deploymentId": null,
+    "statusId": null,
+    "runtimeSource": "69786d42ce7cdaa035d77ccae7a5234cb21d81f8",
+    "enginePayload": "2d6772b8b9208cbd10c4231292c2e5162940de28729930de72f435dfa6393bf0",
+    "plannedAt": "2026-11-25T10:08:07Z",
+    "approvedSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。",
+    "approvedTitle": "ローディングの進捗表示を改善",
     "approvedHighlights": [
-      "480 km/h付近で、針がより速く不規則に揺れるようにしました。"
-    ],
-    "run": {
-      "id": 45557231085,
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "actualProviderEvidenceSHA256": "41c517039378034a8eec8a9c43ee25d7ce73e2f18c18e6c94bfe462e4f79125a"
+      "読み込みと組み立ての進み具合を、バーと数字に反映します。",
+      "PCでは初回BOOSTの排気発光を走行前に準備します。"
+    ]
   },
   "files": [
     {
@@ -70,13 +97,13 @@
     },
     {
       "path": "__next.__PAGE__.txt",
-      "bytes": 4175,
-      "sha256": "f56811a707af72c29df9346af442fe9c56a3d806b417f09f04bae6888c77c18e"
+      "bytes": 4185,
+      "sha256": "d211e7795300f95a9b3d1c3b6c889fd6cccafab3e8894b39d25ca27de2e06db2"
     },
     {
       "path": "__next._full.txt",
-      "bytes": 9180,
-      "sha256": "b3f3b2238c5efe0b535c4e582c6aa30d35186183346399314e34aabc5ab0903d"
+      "bytes": 9190,
+      "sha256": "e32aab7c6c7ef2eaa41f2dcbf2a09c1bb375b9b49b43f9b5070e9d5da8c6f068"
     },
     {
       "path": "__next._head.txt",
@@ -302,6 +329,11 @@
       "path": "_next/static/chunks/gateway-release-eade60f200233c49.js",
       "bytes": 15530,
       "sha256": "eade60f200233c494a0fa9c94c0729e798b6b58650eba71ca11569b05fbf459f"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-0925b87ccc347721.js",
+      "bytes": 17105,
+      "sha256": "0925b87ccc347721ba9034be0ac973d7b05b1e951711c76a76b243cb99949713"
     },
     {
       "path": "_next/static/chunks/gateway-update-095d960ddb362292.js",
@@ -1809,6 +1841,11 @@
       "sha256": "9b569c54026405336ac71fd15d44f2b6b545e765dcedbf79f24b46e5a63b1d99"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-Pg9cONDN-release-166338de74db.js",
+      "bytes": 91,
+      "sha256": "b3160fcd0e675252c7bec26be0d5827da305a576436ff34d8d52e62980e8ca14"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-RaMSV1_Q-release-4a9e66033909.js",
       "bytes": 91,
       "sha256": "c84f12b621578fef664413fd98e6b8332819f2cdc9d78d951489e6f086f64d83"
@@ -1957,6 +1994,11 @@
       "path": "illumi-drive/assets/pages-Bws0pwon.js",
       "bytes": 641041,
       "sha256": "d147844c2e94d003643c7abf997958e5e77c42a9775aad0fb15530f280a8ae38"
+    },
+    {
+      "path": "illumi-drive/assets/pages-C2P4viqx-release-166338de74db.js",
+      "bytes": 5119,
+      "sha256": "b6c7022cd52c9ea5bc8b775bed841508b76b0a52443ea88158324823c80a1fc7"
     },
     {
       "path": "illumi-drive/assets/pages-CF_KBbvG.js",
@@ -2219,6 +2261,11 @@
       "sha256": "209fafc2e1a993ac584319948a0164f0ef42e498b50598ba6da388da1bd9aa81"
     },
     {
+      "path": "illumi-drive/assets/pages-app-DRVjV3j--release-166338de74db.js",
+      "bytes": 714519,
+      "sha256": "17dd0e0342baf054366d48dfaebc6bcfd405014c9660128264ce1957488ea062"
+    },
+    {
       "path": "illumi-drive/assets/pages-app-DaRwWkCY.css",
       "bytes": 511468,
       "sha256": "bacc444238075341df40b51e33e92129fe2bff351b9da4299ed4bdcc57338e11"
@@ -2282,6 +2329,11 @@
       "path": "illumi-drive/assets/pages-app-fx-JXAN0.js",
       "bytes": 689557,
       "sha256": "d0c3ded29ab52028ece34fe160158c18954657315b81c2d1c312a9cf4eb80268"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-i6BpL9pD.css",
+      "bytes": 511447,
+      "sha256": "f78811301647702d7992ee7bf27d4aa74a3c0f06020a7e521d470eaee6af0afe"
     },
     {
       "path": "illumi-drive/assets/pages-app-zQG-6MC4-release-2b345f045508.js",
@@ -2427,6 +2479,11 @@
       "path": "illumi-drive/assets/renderer-CBKM-hHu.js",
       "bytes": 1744289,
       "sha256": "e379452c5a2f6f080b92295c74f8784d69d179a9e2039019f19e04ffcd6e42c5"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-CHrUqOCo-release-166338de74db.js",
+      "bytes": 4983798,
+      "sha256": "6eede93a43a546aa88345e2a4a2224141d61f650f78560eef0d6b16deaa46875"
     },
     {
       "path": "illumi-drive/assets/renderer-CNWzMzg9.js",
@@ -2667,6 +2724,11 @@
       "path": "illumi-drive/assets/startup-progress-CPbpYXPI.js",
       "bytes": 89968,
       "sha256": "3838569c6a7e1579de0cab891f78d0b7636aff5af59452b7e893d15ad8865d96"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-CWPcnmcw-release-166338de74db.js",
+      "bytes": 93128,
+      "sha256": "68a2cdaaf01f4b2bda42385deae619851a29ae646dcda75b16569b524400df5c"
     },
     {
       "path": "illumi-drive/assets/startup-progress-DC45_4Yz.js",
@@ -3040,8 +3102,8 @@
     },
     {
       "path": "illumi-drive/index.html",
-      "bytes": 16567,
-      "sha256": "616337ca2cc42e042efa284f3b692ca6eb6761c80aa00d729bc32cda2afd222e"
+      "bytes": 16563,
+      "sha256": "2f24ed7f981503aea3b1957d9c44019ed29e06d1f9d78e2ecab46a86cba38fef"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3105,13 +3167,13 @@
     },
     {
       "path": "illumi-drive/pages.html",
-      "bytes": 16567,
-      "sha256": "616337ca2cc42e042efa284f3b692ca6eb6761c80aa00d729bc32cda2afd222e"
+      "bytes": 16563,
+      "sha256": "2f24ed7f981503aea3b1957d9c44019ed29e06d1f9d78e2ecab46a86cba38fef"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 313,
-      "sha256": "0d8e4b29d8b716d85eebd72d6c48f861528fb6ddff73670fe085ec9411f81ae7"
+      "bytes": 323,
+      "sha256": "964a796441f9fe8255547b48a6d082342e4ebcd3d0a99436b770554349516f43"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3120,8 +3182,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 87793,
-      "sha256": "8dbc187dd30df086f62db4eb6167005e1946b9a4cd3be912e77d86c7a80a2bcf"
+      "bytes": 88137,
+      "sha256": "c916f858220e9d58ec4235b43b6b5ea73444a142f647c11c5a480775b365f762"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3600,13 +3662,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 32227,
-      "sha256": "cfa9379f628eb11aefe7eb8e38faa60a643595b451c8abdf304f6d58b01a3975"
+      "bytes": 32257,
+      "sha256": "adbe943c73667dd1818624ff9e5f93a2e0548060287e9dc86760bad1e2b512f7"
     },
     {
       "path": "index.txt",
-      "bytes": 9180,
-      "sha256": "b3f3b2238c5efe0b535c4e582c6aa30d35186183346399314e34aabc5ab0903d"
+      "bytes": 9190,
+      "sha256": "e32aab7c6c7ef2eaa41f2dcbf2a09c1bb375b9b49b43f9b5070e9d5da8c6f068"
     },
     {
       "path": "migaq/_headers",
@@ -4304,6 +4366,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 849,
-  "deliveryRawBytes": 661521532
+  "deliveryFileCount": 856,
+  "deliveryRawBytes": 667847145
 }
