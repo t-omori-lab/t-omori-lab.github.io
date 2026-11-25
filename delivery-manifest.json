@@ -1,32 +1,32 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "b5d76254ffe7c2dae48c7d6b7ce676bd1f69364d",
-  "runtimeSource": "69786d42ce7cdaa035d77ccae7a5234cb21d81f8",
-  "preparedGamePayload": "5b2c43d1ae652b66d1f74b4b5021d37e128ef65f32df94d87f9ef2287799997c",
-  "previousPreparedGamePayload": "d78bfd2c19b0fe59a087ff13280e0a5b56b932d39e94a7b349071e71d1cca1ae",
+  "preparedGameSource": "ad9cc02c237c70092c48afb7101b165cbc2c467a",
+  "runtimeSource": "bc8c532a70699d3a6915ee67e5ee76767f2b9e24",
+  "preparedGamePayload": "af5742dd91bdb8bea21294d42a08069b59931b2dcfbff33d0718b12abd1cf1da",
+  "previousPreparedGamePayload": "5b2c43d1ae652b66d1f74b4b5021d37e128ef65f32df94d87f9ef2287799997c",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T10:08:07Z",
-    "revision": "R62-20261125T100807Z",
+    "updatedAt": "2026-11-25T10:10:56Z",
+    "revision": "R62-20261125T101056Z",
     "updateSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
-  "parentGamePayload": "2d6772b8b9208cbd10c4231292c2e5162940de28729930de72f435dfa6393bf0",
-  "baselineCommit": "1de9c4dc15e381bb9954e1b87b8dd361fcce3a00",
+  "parentGamePayload": "7445370336b4eba67f1ec7ffc0b24740cc89975be8cb2d5fec627dc42ef5e578",
+  "baselineCommit": "c08967921c05bc92b8fd129c627a8c148b98be6a",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
-    "path": "work/frontdesk-requests/r62-loading-exhaust-release-20261125/deploy/SOLE_START_RECEIPT.json",
-    "sha256": "e401a4885659d8101c07886be4691a04e32de17036a720a872a5b37e2cd08d6d"
+    "path": "work/frontdesk-requests/r62-title-music-black-transition-20261125/deploy-solo/START_RECEIPT.json",
+    "sha256": "246c65e899f6d6fdb660f0c352d4906762469125bc02a3018d1c7e0c7401e36d"
   },
-  "metadataOnlyChild": true,
+  "metadataOnlyChild": false,
   "nativeAcceptance": {
-    "enginePayload": "2d6772b8b9208cbd10c4231292c2e5162940de28729930de72f435dfa6393bf0",
-    "receiptSHA256": "e401a4885659d8101c07886be4691a04e32de17036a720a872a5b37e2cd08d6d",
+    "enginePayload": "7445370336b4eba67f1ec7ffc0b24740cc89975be8cb2d5fec627dc42ef5e578",
+    "receiptSHA256": "246c65e899f6d6fdb660f0c352d4906762469125bc02a3018d1c7e0c7401e36d",
     "kind": "owner-native-verification-after-publication",
     "newDeviceTests": false,
     "actualNativeAccepted": false,
@@ -35,79 +35,106 @@
   "syntheticFixture": false,
   "forwardImmutableCacheRetained": true,
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
-  "sourceSelection": "Loading feedback and desktop first-BOOST exhaust preparation and corresponding Gateway updates.",
+  "sourceSelection": "Title music prefetch and audio-synchronized checker transition and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
+  "publicationTransaction": {
+    "schema": 1,
+    "mode": "feature-with-required-receipt-finalization",
+    "finalizationRequired": true,
+    "repository": "t-omori-lab/t-omori-lab.github.io",
+    "ref": "refs/heads/main",
+    "baseCommit": "c08967921c05bc92b8fd129c627a8c148b98be6a",
+    "rollbackTree": "3e882c5163c37966a98d6a1b0a766bfc156b384a",
+    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
+    "expiresAt": "2026-11-25T13:12:55Z",
+    "previousSuccessfulReceipt": {
+      "schema": 1,
+      "state": "success",
+      "environment": "github-pages",
+      "featureCommit": "1de9c4dc15e381bb9954e1b87b8dd361fcce3a00",
+      "deploymentId": 8054385803,
+      "statusId": 23118394542,
+      "deployedAt": "2026-11-25T10:10:56Z",
+      "approvedSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。",
+      "approvedTitle": "ローディングの進捗表示を改善",
+      "approvedHighlights": [
+        "読み込みと組み立ての進み具合を、バーと数字に反映します。",
+        "PCでは初回BOOSTの排気発光を走行前に準備します。"
+      ],
+      "run": {
+        "id": 45592319566,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      "actualProviderEvidenceSHA256": "ce6b54e7616db1efed0947a221efad3231395b585497f6afe4f0f5f51cf78c8b"
+    }
+  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "success",
+    "state": "awaiting-feature-success",
     "environment": "github-pages",
-    "featureCommit": "1de9c4dc15e381bb9954e1b87b8dd361fcce3a00",
-    "deploymentId": 8054385803,
-    "statusId": 23118394542,
-    "deployedAt": "2026-11-25T10:10:56Z",
-    "approvedSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。",
-    "approvedTitle": "ローディングの進捗表示を改善",
+    "deploymentId": null,
+    "statusId": null,
+    "runtimeSource": "bc8c532a70699d3a6915ee67e5ee76767f2b9e24",
+    "enginePayload": "7445370336b4eba67f1ec7ffc0b24740cc89975be8cb2d5fec627dc42ef5e578",
+    "plannedAt": "2026-11-25T12:57:55Z",
+    "approvedSummary": "BGMの先読みと、曲に合わせて始まるスタート演出を改善しました。",
+    "approvedTitle": "BGMの先読みとスタート演出を改善",
     "approvedHighlights": [
-      "読み込みと組み立ての進み具合を、バーと数字に反映します。",
-      "PCでは初回BOOSTの排気発光を走行前に準備します。"
-    ],
-    "run": {
-      "id": 45592319566,
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "actualProviderEvidenceSHA256": "ce6b54e7616db1efed0947a221efad3231395b585497f6afe4f0f5f51cf78c8b"
+      "タイトルで全12曲の読み込みを順次始めます。",
+      "選んだ曲が鳴ってから暗転が開き、照明の点灯演出が始まります。"
+    ]
   },
   "files": [
-    {
-      "path": "404.html",
-      "bytes": 11342,
-      "sha256": "c577df0d1388256e119a682bdc0140ab33f4fe46ac2d86511b6f0f2dd76cc592"
-    },
     {
       "path": "404/index.html",
       "bytes": 11342,
       "sha256": "c577df0d1388256e119a682bdc0140ab33f4fe46ac2d86511b6f0f2dd76cc592"
     },
     {
+      "path": "404.html",
+      "bytes": 11342,
+      "sha256": "c577df0d1388256e119a682bdc0140ab33f4fe46ac2d86511b6f0f2dd76cc592"
+    },
+    {
       "path": "__next.__PAGE__.txt",
-      "sha256": "52aaee47789ec063882c3989d474a7ffe43d73e079e6c1c1efcec7a12addbf15",
-      "bytes": 4149
+      "bytes": 4187,
+      "sha256": "791d166d8f8f778e009cfede8995e3057977223874032325a841bb0506aca6ba"
     },
     {
       "path": "__next._full.txt",
-      "sha256": "d699cfde5bc0e2ffcd585a61bddb8e103609e1ef0c82c5d144b1044f6b2ce13e",
-      "bytes": 9154
+      "bytes": 9192,
+      "sha256": "e95215aac4ba61e41e3139ed5641783eb46d6e93f6209a5cd7215f0534b99a75"
     },
     {
       "path": "__next._head.txt",
-      "sha256": "f7e9657ff581ccd8044742881ff86ac0ef2d4e8e1eb7a5975ff6b9fe87500004",
-      "bytes": 2649
+      "bytes": 2649,
+      "sha256": "f7e9657ff581ccd8044742881ff86ac0ef2d4e8e1eb7a5975ff6b9fe87500004"
     },
     {
       "path": "__next._index.txt",
-      "sha256": "3ed2fbe940d900e1761a8614b91fd7b4156ebc7b0f52ccf146cbe5043dbf94f8",
-      "bytes": 1771
+      "bytes": 1771,
+      "sha256": "3ed2fbe940d900e1761a8614b91fd7b4156ebc7b0f52ccf146cbe5043dbf94f8"
     },
     {
       "path": "__next._tree.txt",
-      "sha256": "ebdfbfc69eb46ae1d42af557b82122fd76eccea77e5817e2373846870f7dcd36",
-      "bytes": 298
+      "bytes": 298,
+      "sha256": "ebdfbfc69eb46ae1d42af557b82122fd76eccea77e5817e2373846870f7dcd36"
     },
     {
       "path": "_next/static/8uPn4YLe2IiTj4zOBx8e4/_buildManifest.js",
-      "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea",
-      "bytes": 219
+      "bytes": 219,
+      "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea"
     },
     {
       "path": "_next/static/8uPn4YLe2IiTj4zOBx8e4/_clientMiddlewareManifest.js",
-      "sha256": "5483e3295dc35dfe29ea932efc85341c916f10ff78ff5b0e965e003710893a4a",
-      "bytes": 96
+      "bytes": 96,
+      "sha256": "5483e3295dc35dfe29ea932efc85341c916f10ff78ff5b0e965e003710893a4a"
     },
     {
       "path": "_next/static/8uPn4YLe2IiTj4zOBx8e4/_ssgManifest.js",
-      "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00",
-      "bytes": 80
+      "bytes": 80,
+      "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00"
     },
     {
       "path": "_next/static/FPB2IeBRIM4yE_7dcFxgS/_buildManifest.js",
@@ -141,8 +168,8 @@
     },
     {
       "path": "_next/static/chunks/00h0e0lpesloi.js",
-      "sha256": "ee7b38368cb1e803f8f437c7ef8cbfa48baa8dad6108b8143f0abb6f496a6d2c",
-      "bytes": 17888
+      "bytes": 17888,
+      "sha256": "ee7b38368cb1e803f8f437c7ef8cbfa48baa8dad6108b8143f0abb6f496a6d2c"
     },
     {
       "path": "_next/static/chunks/00km7smorytlp.js",
@@ -156,13 +183,13 @@
     },
     {
       "path": "_next/static/chunks/0c6wy_hjxbx-r.js",
-      "sha256": "308f8d726334ec0fdb65a1fbcc28c835a775626c80bd8b3526001effc2029cfc",
-      "bytes": 57900
+      "bytes": 57900,
+      "sha256": "308f8d726334ec0fdb65a1fbcc28c835a775626c80bd8b3526001effc2029cfc"
     },
     {
       "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
-      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
-      "bytes": 112594
+      "bytes": 112594,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
     },
     {
       "path": "_next/static/chunks/0daxmv_3okvh8.js",
@@ -176,8 +203,8 @@
     },
     {
       "path": "_next/static/chunks/0z8gl8rfgpw1c.js",
-      "sha256": "72b8f9610a64ce31caede981ba81d628a2d6f6d7697479394c7c865c8fc1eb7d",
-      "bytes": 17589
+      "bytes": 17589,
+      "sha256": "72b8f9610a64ce31caede981ba81d628a2d6f6d7697479394c7c865c8fc1eb7d"
     },
     {
       "path": "_next/static/chunks/10ajtrsu8zawv.css",
@@ -186,8 +213,8 @@
     },
     {
       "path": "_next/static/chunks/1_ts2hac38wa2.css",
-      "sha256": "e604cc466bb683bf80e16de09ae12fb020f5c562e1ed5e871855a9ddf292c4e1",
-      "bytes": 21742
+      "bytes": 21742,
+      "sha256": "e604cc466bb683bf80e16de09ae12fb020f5c562e1ed5e871855a9ddf292c4e1"
     },
     {
       "path": "_next/static/chunks/1b7_wgb0tfe3t.js",
@@ -196,8 +223,8 @@
     },
     {
       "path": "_next/static/chunks/1xf4u47tf3gzk.js",
-      "sha256": "79c3cb7894157e71f321314df0dfc295354f8eda53835fab109b08a3b0e04341",
-      "bytes": 227529
+      "bytes": 227529,
+      "sha256": "79c3cb7894157e71f321314df0dfc295354f8eda53835fab109b08a3b0e04341"
     },
     {
       "path": "_next/static/chunks/29qsgk5k1iak_.js",
@@ -241,8 +268,8 @@
     },
     {
       "path": "_next/static/chunks/2roa1__a3gbsk.js",
-      "sha256": "8655538bb96e5315b6074877cb8d9b57bc7c33b36c51fe4424331aef245df4de",
-      "bytes": 200392
+      "bytes": 200392,
+      "sha256": "8655538bb96e5315b6074877cb8d9b57bc7c33b36c51fe4424331aef245df4de"
     },
     {
       "path": "_next/static/chunks/32o7f-8vxnxmc.js",
@@ -251,8 +278,8 @@
     },
     {
       "path": "_next/static/chunks/33fh607af_jrj.css",
-      "sha256": "1eaf1a372c0178ba727314bd417bd00c6966e04fd642f870bcb79822d56642b0",
-      "bytes": 687
+      "bytes": 687,
+      "sha256": "1eaf1a372c0178ba727314bd417bd00c6966e04fd642f870bcb79822d56642b0"
     },
     {
       "path": "_next/static/chunks/354z62rgj-1_o.css",
@@ -358,6 +385,11 @@
       "path": "_next/static/chunks/gateway-update-251f296c1b83da0c.js",
       "bytes": 17104,
       "sha256": "251f296c1b83da0c80953a2ad9f26514650ecf635e9d2c7eb62075eb92533a11"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-2645e3d8f16adc8b.js",
+      "bytes": 17904,
+      "sha256": "2645e3d8f16adc8befa9eb1cb90dec06353cb2725281d1f118fdb5d4a3849407"
     },
     {
       "path": "_next/static/chunks/gateway-update-29574b75b193a34c.js",
@@ -466,8 +498,8 @@
     },
     {
       "path": "_next/static/chunks/turbopack-3bwh8053k_pxq.js",
-      "sha256": "62387415635481a91b9b43e397d3b1c95334dec37c1ccaa9fb8c897b877af948",
-      "bytes": 10547
+      "bytes": 10547,
+      "sha256": "62387415635481a91b9b43e397d3b1c95334dec37c1ccaa9fb8c897b877af948"
     },
     {
       "path": "_next/static/ha2CPEnq4QbEMaBiyQHvi/_buildManifest.js",
@@ -531,8 +563,8 @@
     },
     {
       "path": "_next/static/media/icon.1goarheeus650.svg",
-      "sha256": "fdf248a55e8f823cf07232741d8fb1a517fca069ea07efc76d3414d8795e45b4",
-      "bytes": 257
+      "bytes": 257,
+      "sha256": "fdf248a55e8f823cf07232741d8fb1a517fca069ea07efc76d3414d8795e45b4"
     },
     {
       "path": "_not-found/__next._full.txt",
@@ -573,6 +605,11 @@
       "path": "_not-found/index.txt",
       "bytes": 6745,
       "sha256": "36f7730a46969de2cd9caa19eda6d580b412a097734d22d867abd0081dc54a91"
+    },
+    {
+      "path": "ai-lab/index.html",
+      "bytes": 525,
+      "sha256": "0310c33afeb3a56ae66164367e9bc1dc9b47c6ab12908d3f17f2487784e50eb6"
     },
     {
       "path": "ai-lab-logo-study/assets/ai-design-lab-image2-01-dark.png",
@@ -820,11 +857,6 @@
       "sha256": "c157087042a0d5bfcd9fe9e88e6e27d27d1f5def5fb4cb663de9c5316b46aff7"
     },
     {
-      "path": "ai-lab/index.html",
-      "bytes": 525,
-      "sha256": "0310c33afeb3a56ae66164367e9bc1dc9b47c6ab12908d3f17f2487784e50eb6"
-    },
-    {
       "path": "ai-studio/index.html",
       "bytes": 525,
       "sha256": "0310c33afeb3a56ae66164367e9bc1dc9b47c6ab12908d3f17f2487784e50eb6"
@@ -838,16 +870,6 @@
       "path": "game-center/index.html",
       "bytes": 3037,
       "sha256": "12583d2d6a3071b49d2ac986e1f503d5cbd1fc491d04ef35689d77205b530497"
-    },
-    {
-      "path": "game-center/neon-drift-cover.svg",
-      "bytes": 54795,
-      "sha256": "4d1a9a29a5006a8c80afab307a8eb5709f9cae3e65e0f812dab30c534ecb561e"
-    },
-    {
-      "path": "game-center/neon-drift-play.png",
-      "bytes": 40333,
-      "sha256": "b01a5594c69ce1eaabf3e07e7ba818791b4a3ea73b90cfc510ccbf2bb1d4e5b2"
     },
     {
       "path": "game-center/neon-drift/THIRD_PARTY_NOTICES.txt",
@@ -1710,39 +1732,19 @@
       "sha256": "7ae335e135dc94e15d62e282e845282deb38ede7cae2ab495e4ed8cc71fd690d"
     },
     {
+      "path": "game-center/neon-drift-cover.svg",
+      "bytes": 54795,
+      "sha256": "4d1a9a29a5006a8c80afab307a8eb5709f9cae3e65e0f812dab30c534ecb561e"
+    },
+    {
+      "path": "game-center/neon-drift-play.png",
+      "bytes": 40333,
+      "sha256": "b01a5594c69ce1eaabf3e07e7ba818791b4a3ea73b90cfc510ccbf2bb1d4e5b2"
+    },
+    {
       "path": "icon.svg",
       "bytes": 257,
       "sha256": "fdf248a55e8f823cf07232741d8fb1a517fca069ea07efc76d3414d8795e45b4"
-    },
-    {
-      "path": "illumi-drive-early-20260915/archive-preview.jpg",
-      "bytes": 22360,
-      "sha256": "5f50403b43f1bfce91a40b565476ee11806191845cb1336e73f149aa41d0efd2"
-    },
-    {
-      "path": "illumi-drive-early-20260915/assets/game-BLgPNkYq.js",
-      "bytes": 215021,
-      "sha256": "56a0a992507d0f2612031dfe48f6cf9be28be4b99c796d67ce05f5c8efb4fd6f"
-    },
-    {
-      "path": "illumi-drive-early-20260915/assets/game-C0BCR4i_.css",
-      "bytes": 11693,
-      "sha256": "d7e78c00383779837f5fd5114432ebe6e44363557dd28a9f1c899867f73a141b"
-    },
-    {
-      "path": "illumi-drive-early-20260915/favicon.svg",
-      "bytes": 194,
-      "sha256": "da52f935672d72c0759bf8226c88fe6bd6c2b9023c02fd88636f0f0be26e3ac8"
-    },
-    {
-      "path": "illumi-drive-early-20260915/game.html",
-      "bytes": 454,
-      "sha256": "b1a6853ed27b305f177c93bfc49ee0a6abfc8e33f555dec1062662ebcb335a30"
-    },
-    {
-      "path": "illumi-drive-early-20260915/index.html",
-      "bytes": 1329,
-      "sha256": "021a468fcacb81c6ba8877cdd5907d929c6f1b779025d7fb89d7591f374d3931"
     },
     {
       "path": "illumi-drive/THIRD_PARTY_NOTICES.txt",
@@ -1818,6 +1820,11 @@
       "path": "illumi-drive/assets/durable-transport-BY5BKqlX.js",
       "bytes": 70,
       "sha256": "983ffd19d6d6af20c4414def0b6f22471dc92e0dcca07f1b26d6c2078265da6b"
+    },
+    {
+      "path": "illumi-drive/assets/durable-transport-C8HZxJlz-release-842e93bd316c.js",
+      "bytes": 91,
+      "sha256": "4c79d1c33c7caa215639f84b00cd384dfd078a2c94123fb30f9879f7b2b07e1e"
     },
     {
       "path": "illumi-drive/assets/durable-transport-CVhIdGoE-release-10b4bbc154b6.js",
@@ -2085,6 +2092,11 @@
       "sha256": "7a8efcd85926c5ce3e7d9eb810dee94a94aff7ba7d7107ccb98402a5ae054672"
     },
     {
+      "path": "illumi-drive/assets/pages-CrZIo8sg-release-842e93bd316c.js",
+      "bytes": 5119,
+      "sha256": "49755de04a4707aa241ef43b95ae52e2c6a95285cb325bca1d016da04ee31f9a"
+    },
+    {
       "path": "illumi-drive/assets/pages-CxLzSCFu-release-2b345f045508.js",
       "bytes": 5119,
       "sha256": "f1f5e5ea2b82d16565874d86b985e3f05c50874561fdcda4dd4fa02ddd5795cb"
@@ -2230,6 +2242,11 @@
       "sha256": "c8b1af6b93910593f0b37cf0a01f39c5304d026427f933cf31b34070152558a5"
     },
     {
+      "path": "illumi-drive/assets/pages-app-BUSb405P-release-842e93bd316c.js",
+      "bytes": 716921,
+      "sha256": "463fdc8377f59767cabe55cc4f5f5f0bbd33bd0ecb3717c4a01d735cf2770503"
+    },
+    {
       "path": "illumi-drive/assets/pages-app-BV26vwSL.css",
       "bytes": 510806,
       "sha256": "d3ab7e3a37eed77593852eb7f837077a05b39de5fc351cb9c71dcda81cf17985"
@@ -2303,6 +2320,11 @@
       "path": "illumi-drive/assets/pages-app-DENkyssh.js",
       "bytes": 655444,
       "sha256": "209fafc2e1a993ac584319948a0164f0ef42e498b50598ba6da388da1bd9aa81"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-DRUci7UE.css",
+      "bytes": 511763,
+      "sha256": "5f395811158fccd4aaafc6e9ed779447eb9d4c610b5105253ed250a9d3bc9e62"
     },
     {
       "path": "illumi-drive/assets/pages-app-DRVjV3j--release-166338de74db.js",
@@ -2578,6 +2600,11 @@
       "path": "illumi-drive/assets/renderer-ChvbeXWd.js",
       "bytes": 1047012,
       "sha256": "19b2c1fcf6975ac58ec7d12b9c003514e673e5f5da251a59a0a6a7a2c62704b6"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-CioiKjR2-release-842e93bd316c.js",
+      "bytes": 4983798,
+      "sha256": "76bd4cc0b0222b35cba79e5791be53409b9d82d0c393863eed54f6b71904a469"
     },
     {
       "path": "illumi-drive/assets/renderer-CrydM2MO-release-0c794aae8533.js",
@@ -2880,6 +2907,11 @@
       "sha256": "0196537e3cd64ae952ad145e5918ffd544f12c7f2ae1a7ebdaa961f8824dac2f"
     },
     {
+      "path": "illumi-drive/assets/startup-progress-ZWZn-07c-release-842e93bd316c.js",
+      "bytes": 93128,
+      "sha256": "a592bd58258fc0864b1103a25c4922f4bb07a62d8ce4f7660f881d205e950eae"
+    },
+    {
       "path": "illumi-drive/assets/startup-progress-d607RaoL.js",
       "bytes": 84055,
       "sha256": "ca34700f06bafeffe7e8f00922ec459e098b746bdf3cdd9810284aa7ea74df7e"
@@ -3162,7 +3194,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16563,
-      "sha256": "05ce776371f8d15ed7e8d21d5de9d7b31d1d3b12d76d121a853115217bcdd60b"
+      "sha256": "6444fe3fe03ef10dc048b04abe55676929ab9a448cb23dc5f38282f2b1657279"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3227,12 +3259,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16563,
-      "sha256": "05ce776371f8d15ed7e8d21d5de9d7b31d1d3b12d76d121a853115217bcdd60b"
+      "sha256": "6444fe3fe03ef10dc048b04abe55676929ab9a448cb23dc5f38282f2b1657279"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 323,
-      "sha256": "a8cf2afd1c439a295b7e0ec41dc23a8f79ffe522b2ab524d9fa8266e6532f057"
+      "bytes": 325,
+      "sha256": "0229b97c81ba2fd6fd0d824300b5dde5f385760370062e3e6ffe6740b8ede5da"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3241,8 +3273,38 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 88137,
-      "sha256": "5d90da98d76a20021cbc31dbf02b2f4b31404274697dee838497736ae90b5945"
+      "bytes": 88434,
+      "sha256": "e417f6c427fbbbe8c9c62e7c1782d877398f12a64e541df8e99c17df6a7ee5db"
+    },
+    {
+      "path": "illumi-drive-early-20260915/archive-preview.jpg",
+      "bytes": 22360,
+      "sha256": "5f50403b43f1bfce91a40b565476ee11806191845cb1336e73f149aa41d0efd2"
+    },
+    {
+      "path": "illumi-drive-early-20260915/assets/game-BLgPNkYq.js",
+      "bytes": 215021,
+      "sha256": "56a0a992507d0f2612031dfe48f6cf9be28be4b99c796d67ce05f5c8efb4fd6f"
+    },
+    {
+      "path": "illumi-drive-early-20260915/assets/game-C0BCR4i_.css",
+      "bytes": 11693,
+      "sha256": "d7e78c00383779837f5fd5114432ebe6e44363557dd28a9f1c899867f73a141b"
+    },
+    {
+      "path": "illumi-drive-early-20260915/favicon.svg",
+      "bytes": 194,
+      "sha256": "da52f935672d72c0759bf8226c88fe6bd6c2b9023c02fd88636f0f0be26e3ac8"
+    },
+    {
+      "path": "illumi-drive-early-20260915/game.html",
+      "bytes": 454,
+      "sha256": "b1a6853ed27b305f177c93bfc49ee0a6abfc8e33f555dec1062662ebcb335a30"
+    },
+    {
+      "path": "illumi-drive-early-20260915/index.html",
+      "bytes": 1329,
+      "sha256": "021a468fcacb81c6ba8877cdd5907d929c6f1b779025d7fb89d7591f374d3931"
     },
     {
       "path": "illumi-line/THIRD_PARTY_NOTICES.txt",
@@ -3636,8 +3698,8 @@
     },
     {
       "path": "index-previews/illumi-drive-duel-qr.png",
-      "sha256": "007406e38bbae8d129823eb64220541547aa58c5d6dd81ed48fcaca99c347feb",
-      "bytes": 4143
+      "bytes": 4143,
+      "sha256": "007406e38bbae8d129823eb64220541547aa58c5d6dd81ed48fcaca99c347feb"
     },
     {
       "path": "index-previews/illumi-drive.png",
@@ -3696,63 +3758,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "8b08a18f89dbc44344a0e2d19f1ae54c7ca371196bd12f4fd6e783135b7476c2",
-      "bytes": 33110
+      "bytes": 33170,
+      "sha256": "3a0bf7d25281d8bfaa985d28a36d9af77b96c5e22ea07f5c7aa2f82a10024956"
     },
     {
       "path": "index.txt",
-      "sha256": "d699cfde5bc0e2ffcd585a61bddb8e103609e1ef0c82c5d144b1044f6b2ce13e",
-      "bytes": 9154
-    },
-    {
-      "path": "migaq-r80-smoke/assets/ai-design-lab-logotype.svg",
-      "bytes": 1242,
-      "sha256": "d91c19a3b6ab8ab8c51a8181d595a7a27a0e08db2ce217308b4cb3bfaa4d6bc0"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/index-4MAZz8vH.js",
-      "bytes": 389666,
-      "sha256": "0d365894aebd66cdfe1ab4b43c61e4db062f732bf3ace12fc4870a5ba586f136"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/index-Cavgptm8.css",
-      "bytes": 344651,
-      "sha256": "6be4cfbc97ad5d66aa69842bb3714a0b345932021c11c8dfc541a6f216b36b7c"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/interface-icons-CVWWYxkC.js",
-      "bytes": 91326,
-      "sha256": "5b03ab9286d2a43c297537ff601eda85f95449f2cef3688562b19db3338537dc"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/migaq-icon.png",
-      "bytes": 29025,
-      "sha256": "e8229cdee74d7f9a98167220fd57ed39e07918dc1b4d78e83df7c78412d38581"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/migaq-logotype.png",
-      "bytes": 28983,
-      "sha256": "6e626c08bbdcf7a40f86b9086267152e137c6d7bb164146fc53437b83cded5dd"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/react-runtime-IsLpfBRF.js",
-      "bytes": 193814,
-      "sha256": "c2cb0ceafefcebcb1ad3177cbc87a9ef816206a08b29ca38c15e2ff715eaf155"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/selected-logo-74.png",
-      "bytes": 94406,
-      "sha256": "fa74c56eded3921f9e41a3df9cf70c4175fc5b334184cf7820c2acc408378a3f"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/selected-logo-86.png",
-      "bytes": 25310,
-      "sha256": "80c3ac6cfb21902c56d389757e1f9d1f975ac2b312d0ac3942cbe867edc8dafa"
-    },
-    {
-      "path": "migaq-r80-smoke/index.html",
-      "bytes": 8783,
-      "sha256": "f511408c51faa8507bed503daebdfc84e38c162c6800d7e6c1c49985bd29e19f"
+      "bytes": 9192,
+      "sha256": "e95215aac4ba61e41e3139ed5641783eb46d6e93f6209a5cd7215f0534b99a75"
     },
     {
       "path": "migaq/_headers",
@@ -4300,6 +4312,56 @@
       "sha256": "88ae7cd3c7fbbd8ca59dab42269f2ee8ac543890274534b445e5b02a38e5d914"
     },
     {
+      "path": "migaq-r80-smoke/assets/ai-design-lab-logotype.svg",
+      "bytes": 1242,
+      "sha256": "d91c19a3b6ab8ab8c51a8181d595a7a27a0e08db2ce217308b4cb3bfaa4d6bc0"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/index-4MAZz8vH.js",
+      "bytes": 389666,
+      "sha256": "0d365894aebd66cdfe1ab4b43c61e4db062f732bf3ace12fc4870a5ba586f136"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/index-Cavgptm8.css",
+      "bytes": 344651,
+      "sha256": "6be4cfbc97ad5d66aa69842bb3714a0b345932021c11c8dfc541a6f216b36b7c"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/interface-icons-CVWWYxkC.js",
+      "bytes": 91326,
+      "sha256": "5b03ab9286d2a43c297537ff601eda85f95449f2cef3688562b19db3338537dc"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/migaq-icon.png",
+      "bytes": 29025,
+      "sha256": "e8229cdee74d7f9a98167220fd57ed39e07918dc1b4d78e83df7c78412d38581"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/migaq-logotype.png",
+      "bytes": 28983,
+      "sha256": "6e626c08bbdcf7a40f86b9086267152e137c6d7bb164146fc53437b83cded5dd"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/react-runtime-IsLpfBRF.js",
+      "bytes": 193814,
+      "sha256": "c2cb0ceafefcebcb1ad3177cbc87a9ef816206a08b29ca38c15e2ff715eaf155"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/selected-logo-74.png",
+      "bytes": 94406,
+      "sha256": "fa74c56eded3921f9e41a3df9cf70c4175fc5b334184cf7820c2acc408378a3f"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/selected-logo-86.png",
+      "bytes": 25310,
+      "sha256": "80c3ac6cfb21902c56d389757e1f9d1f975ac2b312d0ac3942cbe867edc8dafa"
+    },
+    {
+      "path": "migaq-r80-smoke/index.html",
+      "bytes": 8783,
+      "sha256": "f511408c51faa8507bed503daebdfc84e38c162c6800d7e6c1c49985bd29e19f"
+    },
+    {
       "path": "migaq2/app.js",
       "bytes": 8433,
       "sha256": "763dcbe195a5bd09d156929df826e885fc666b49c2d18cd1cb195b7fd60bf451"
@@ -4400,6 +4462,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 868,
-  "deliveryRawBytes": 673705818
+  "deliveryFileCount": 875,
+  "deliveryRawBytes": 680035015
 }
