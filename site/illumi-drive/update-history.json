@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-25T12:57:55Z",
-      "revision": "R62-20261125T125755Z",
+      "updatedAt": "2026-11-25T13:00:05Z",
+      "revision": "R62-20261125T130005Z",
       "title": "BGMの先読みとスタート演出を改善",
       "shortSummary": "BGMの先読みと、曲に合わせて始まるスタート演出を改善しました。",
       "highlights": [
@@ -1279,5 +1279,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-25T12:57:55Z"
+  "updatedAt": "2026-11-25T13:00:05Z"
 }

@@ -1,29 +1,29 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "ad9cc02c237c70092c48afb7101b165cbc2c467a",
+  "preparedGameSource": "c82d65eb01cf95ad8ee4ba40b2c6b13f8300721f",
   "runtimeSource": "bc8c532a70699d3a6915ee67e5ee76767f2b9e24",
-  "preparedGamePayload": "af5742dd91bdb8bea21294d42a08069b59931b2dcfbff33d0718b12abd1cf1da",
-  "previousPreparedGamePayload": "5b2c43d1ae652b66d1f74b4b5021d37e128ef65f32df94d87f9ef2287799997c",
+  "preparedGamePayload": "1d9964f7f218b2e99eab2ce8161ad3e24cbfc403a627932b58c06c5771c20b83",
+  "previousPreparedGamePayload": "af5742dd91bdb8bea21294d42a08069b59931b2dcfbff33d0718b12abd1cf1da",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T10:10:56Z",
-    "revision": "R62-20261125T101056Z",
-    "updateSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。"
+    "updatedAt": "2026-11-25T12:57:55Z",
+    "revision": "R62-20261125T125755Z",
+    "updateSummary": "BGMの先読みと、曲に合わせて始まるスタート演出を改善しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "7445370336b4eba67f1ec7ffc0b24740cc89975be8cb2d5fec627dc42ef5e578",
-  "baselineCommit": "c08967921c05bc92b8fd129c627a8c148b98be6a",
+  "baselineCommit": "68216e3a3f6561ae1b6421f8fec30c79f04bf3b2",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/frontdesk-requests/r62-title-music-black-transition-20261125/deploy-solo/START_RECEIPT.json",
     "sha256": "246c65e899f6d6fdb660f0c352d4906762469125bc02a3018d1c7e0c7401e36d"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "7445370336b4eba67f1ec7ffc0b24740cc89975be8cb2d5fec627dc42ef5e578",
     "receiptSHA256": "246c65e899f6d6fdb660f0c352d4906762469125bc02a3018d1c7e0c7401e36d",
@@ -37,53 +37,26 @@
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
   "sourceSelection": "Title music prefetch and audio-synchronized checker transition and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "c08967921c05bc92b8fd129c627a8c148b98be6a",
-    "rollbackTree": "3e882c5163c37966a98d6a1b0a766bfc156b384a",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-25T13:12:55Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "1de9c4dc15e381bb9954e1b87b8dd361fcce3a00",
-      "deploymentId": 8054385803,
-      "statusId": 23118394542,
-      "deployedAt": "2026-11-25T10:10:56Z",
-      "approvedSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。",
-      "approvedTitle": "ローディングの進捗表示を改善",
-      "approvedHighlights": [
-        "読み込みと組み立ての進み具合を、バーと数字に反映します。",
-        "PCでは初回BOOSTの排気発光を走行前に準備します。"
-      ],
-      "run": {
-        "id": 45592319566,
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "actualProviderEvidenceSHA256": "ce6b54e7616db1efed0947a221efad3231395b585497f6afe4f0f5f51cf78c8b"
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "bc8c532a70699d3a6915ee67e5ee76767f2b9e24",
-    "enginePayload": "7445370336b4eba67f1ec7ffc0b24740cc89975be8cb2d5fec627dc42ef5e578",
-    "plannedAt": "2026-11-25T12:57:55Z",
+    "featureCommit": "68216e3a3f6561ae1b6421f8fec30c79f04bf3b2",
+    "deploymentId": 8058149009,
+    "statusId": 23131294086,
+    "deployedAt": "2026-11-25T13:00:05Z",
     "approvedSummary": "BGMの先読みと、曲に合わせて始まるスタート演出を改善しました。",
     "approvedTitle": "BGMの先読みとスタート演出を改善",
     "approvedHighlights": [
       "タイトルで全12曲の読み込みを順次始めます。",
       "選んだ曲が鳴ってから暗転が開き、照明の点灯演出が始まります。"
-    ]
+    ],
+    "run": {
+      "id": 45618947274,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "d27136953355a79f20a182fd40226ba71cf31dcf7a0fee2e9997779ed32b04aa"
   },
   "files": [
     {
@@ -99,12 +72,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4187,
-      "sha256": "791d166d8f8f778e009cfede8995e3057977223874032325a841bb0506aca6ba"
+      "sha256": "a34303bb4d1102777d4703fbbe82d7fc953a4af69651bf4283e1339fd55651d0"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9192,
-      "sha256": "e95215aac4ba61e41e3139ed5641783eb46d6e93f6209a5cd7215f0534b99a75"
+      "sha256": "156e6e2905ccaaef00fde023d74de5ca43c602f9ceb0b4029ee65d0f777caee3"
     },
     {
       "path": "__next._head.txt",
@@ -450,6 +423,11 @@
       "path": "_next/static/chunks/gateway-update-9b83ef1b078ecc2c.js",
       "bytes": 17095,
       "sha256": "9b83ef1b078ecc2c850eb5e390ad4fa2313c36115f7904e970fd4251198aec01"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-a02e5e4fc9985313.js",
+      "bytes": 17904,
+      "sha256": "a02e5e4fc99853133dc36bd558fb2d2f4a5e9aa57c5fed339840a0ad8c789a78"
     },
     {
       "path": "_next/static/chunks/gateway-update-ace45387f6ef664b.js",
@@ -1822,6 +1800,11 @@
       "sha256": "983ffd19d6d6af20c4414def0b6f22471dc92e0dcca07f1b26d6c2078265da6b"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-C8HZxJlz-release-6ccb9e21ac17.js",
+      "bytes": 91,
+      "sha256": "f6c6c06438575b274c24ac0ce1be869c31cca2cf4905a7efe57820eb1fbfe912"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-C8HZxJlz-release-842e93bd316c.js",
       "bytes": 91,
       "sha256": "4c79d1c33c7caa215639f84b00cd384dfd078a2c94123fb30f9879f7b2b07e1e"
@@ -2092,6 +2075,11 @@
       "sha256": "7a8efcd85926c5ce3e7d9eb810dee94a94aff7ba7d7107ccb98402a5ae054672"
     },
     {
+      "path": "illumi-drive/assets/pages-CrZIo8sg-release-6ccb9e21ac17.js",
+      "bytes": 5119,
+      "sha256": "4c9daefa6a5b1113718417bc2ecc8f6aadfab9bc57993c5d5b103daa2aa1a2f7"
+    },
+    {
       "path": "illumi-drive/assets/pages-CrZIo8sg-release-842e93bd316c.js",
       "bytes": 5119,
       "sha256": "49755de04a4707aa241ef43b95ae52e2c6a95285cb325bca1d016da04ee31f9a"
@@ -2240,6 +2228,11 @@
       "path": "illumi-drive/assets/pages-app-BJ1BSUPm.js",
       "bytes": 649853,
       "sha256": "c8b1af6b93910593f0b37cf0a01f39c5304d026427f933cf31b34070152558a5"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-BUSb405P-release-6ccb9e21ac17.js",
+      "bytes": 716921,
+      "sha256": "9dd11c553d692d28dfe12d1ca21ca59a9ad099f34d36bee16c1ed3a106ae60b3"
     },
     {
       "path": "illumi-drive/assets/pages-app-BUSb405P-release-842e93bd316c.js",
@@ -2602,6 +2595,11 @@
       "sha256": "19b2c1fcf6975ac58ec7d12b9c003514e673e5f5da251a59a0a6a7a2c62704b6"
     },
     {
+      "path": "illumi-drive/assets/renderer-CioiKjR2-release-6ccb9e21ac17.js",
+      "bytes": 4983798,
+      "sha256": "ef793e279f978a303e805d101db70d17b17984a8cb7bbdb5f385fbbb71f9bb24"
+    },
+    {
       "path": "illumi-drive/assets/renderer-CioiKjR2-release-842e93bd316c.js",
       "bytes": 4983798,
       "sha256": "76bd4cc0b0222b35cba79e5791be53409b9d82d0c393863eed54f6b71904a469"
@@ -2907,6 +2905,11 @@
       "sha256": "0196537e3cd64ae952ad145e5918ffd544f12c7f2ae1a7ebdaa961f8824dac2f"
     },
     {
+      "path": "illumi-drive/assets/startup-progress-ZWZn-07c-release-6ccb9e21ac17.js",
+      "bytes": 93128,
+      "sha256": "f20c6910780161be4dc1dba090a8cbb8c4d95f4082ae1313003e60ed1c67e7af"
+    },
+    {
       "path": "illumi-drive/assets/startup-progress-ZWZn-07c-release-842e93bd316c.js",
       "bytes": 93128,
       "sha256": "a592bd58258fc0864b1103a25c4922f4bb07a62d8ce4f7660f881d205e950eae"
@@ -3194,7 +3197,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16563,
-      "sha256": "6444fe3fe03ef10dc048b04abe55676929ab9a448cb23dc5f38282f2b1657279"
+      "sha256": "6908164c6186eea832f724305bdb49259fc19f6cf6f0f6f4399fea01d1fdeb0d"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3259,12 +3262,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16563,
-      "sha256": "6444fe3fe03ef10dc048b04abe55676929ab9a448cb23dc5f38282f2b1657279"
+      "sha256": "6908164c6186eea832f724305bdb49259fc19f6cf6f0f6f4399fea01d1fdeb0d"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 325,
-      "sha256": "0229b97c81ba2fd6fd0d824300b5dde5f385760370062e3e6ffe6740b8ede5da"
+      "sha256": "a5916d91afa26ff32ddba1ea59d4757ab0e23785cb717ea943c0eb7d4ea55d38"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3274,7 +3277,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 88434,
-      "sha256": "e417f6c427fbbbe8c9c62e7c1782d877398f12a64e541df8e99c17df6a7ee5db"
+      "sha256": "6815a399549c64e60a6954e471b62445a362049f20da4e6f7a14ed941c25d248"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3759,12 +3762,12 @@
     {
       "path": "index.html",
       "bytes": 33170,
-      "sha256": "3a0bf7d25281d8bfaa985d28a36d9af77b96c5e22ea07f5c7aa2f82a10024956"
+      "sha256": "94428264efb0e18dfc8c52f03743d8b5231a4dc98547cf5bd61217fee860cad4"
     },
     {
       "path": "index.txt",
       "bytes": 9192,
-      "sha256": "e95215aac4ba61e41e3139ed5641783eb46d6e93f6209a5cd7215f0534b99a75"
+      "sha256": "156e6e2905ccaaef00fde023d74de5ca43c602f9ceb0b4029ee65d0f777caee3"
     },
     {
       "path": "migaq/_headers",
@@ -4462,6 +4465,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 875,
-  "deliveryRawBytes": 680035015
+  "deliveryFileCount": 881,
+  "deliveryRawBytes": 685851976
 }
