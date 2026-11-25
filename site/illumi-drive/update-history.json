@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-25T16:12:53Z",
-      "revision": "R62-20261125T161253Z",
+      "updatedAt": "2026-11-25T16:21:40Z",
+      "revision": "R62-20261125T162140Z",
       "title": "スタート演出とBGMを同期",
       "shortSummary": "START RUNでBGMをフェードアウトし、照明演出の開始に曲の頭を合わせました。",
       "highlights": [
@@ -1283,5 +1283,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-25T16:12:53Z"
+  "updatedAt": "2026-11-25T16:21:40Z"
 }
