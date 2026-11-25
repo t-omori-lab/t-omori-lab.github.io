@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-25T05:30:01Z",
-      "revision": "R62-20261125T053001Z",
+      "updatedAt": "2026-11-25T05:33:34Z",
+      "revision": "R62-20261125T053334Z",
       "title": "自動画質と描画準備を調整",
       "shortSummary": "iPhone向けの自動画質と、スタート時の描画準備を調整しました。",
       "highlights": [
@@ -1276,5 +1276,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-25T05:30:01Z"
+  "updatedAt": "2026-11-25T05:33:34Z"
 }

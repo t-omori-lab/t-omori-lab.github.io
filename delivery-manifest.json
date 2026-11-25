@@ -1,29 +1,29 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "c2e2f159d0dcb8b8b56f1817ed6e9a494a3f93ed",
+  "preparedGameSource": "5de9f806248d8f844c8eb4ba15093bad32770d8d",
   "runtimeSource": "637a4dc05ffa4259f243120eda70b4a007508eba",
-  "preparedGamePayload": "fb2a34294b5c943f54e6ea05e80a4e7d9503594f88b9ff105af2c98dcf028d39",
-  "previousPreparedGamePayload": "4aec0cab46c6af8c48d720d6ad7553738b39b0d3a9639c51586785c442ef1ebe",
+  "preparedGamePayload": "158b761bc2e6ec4777459a2ac39e1982afeaa68b0b3278995d841a8ae32cffeb",
+  "previousPreparedGamePayload": "fb2a34294b5c943f54e6ea05e80a4e7d9503594f88b9ff105af2c98dcf028d39",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-14T13:40:46Z",
-    "revision": "R62-20261114T134046Z",
-    "updateSummary": "BGMの再生とスタート時の切り替わりを修正しました。"
+    "updatedAt": "2026-11-25T05:30:01Z",
+    "revision": "R62-20261125T053001Z",
+    "updateSummary": "iPhone向けの自動画質と、スタート時の描画準備を調整しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "91e42ace62a7348164210c36b8d7fd2874126654befc4fb7760dc1769e55821e",
-  "baselineCommit": "c8563211d654c2674b5f2df7087ea4422716b44b",
+  "baselineCommit": "f100187c23793e0be44b5c246f7efca4be9da984",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/frontdesk-requests/r62-16pro-boost-title50-20261125/deploy-8005/SOLE_START_RECEIPT.json",
     "sha256": "8f3ead794bd5107d8f8b152fa3f09bbdb08ac639b33f5939713cb6254c2921ef"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "91e42ace62a7348164210c36b8d7fd2874126654befc4fb7760dc1769e55821e",
     "receiptSHA256": "8f3ead794bd5107d8f8b152fa3f09bbdb08ac639b33f5939713cb6254c2921ef",
@@ -37,47 +37,26 @@
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
   "sourceSelection": "Only the approved 8005 solo payload and matching Gateway metadata. Preserve duel and backend.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "c8563211d654c2674b5f2df7087ea4422716b44b",
-    "rollbackTree": "fa2bebb578cd6d3c72181c689835ace3ac8f4222",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-25T05:45:01Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "eeb998f143b0a4da98d9885eb28fcfdf780535c2",
-      "deploymentId": 7788342583,
-      "statusId": 22195684988,
-      "deployedAt": "2026-11-14T13:40:46Z",
-      "approvedSummary": "BGMの再生とスタート時の切り替わりを修正しました。",
-      "approvedTitle": "BGMとスタートを修正",
-      "approvedHighlights": [
-        "同意や選曲からBGMを準備し、読み込み中でも走行を始められます。",
-        "READY中に表示されていた「中止」ボタンを取り除きました。"
-      ]
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "637a4dc05ffa4259f243120eda70b4a007508eba",
-    "enginePayload": "91e42ace62a7348164210c36b8d7fd2874126654befc4fb7760dc1769e55821e",
-    "plannedAt": "2026-11-25T05:30:01Z",
+    "featureCommit": "f100187c23793e0be44b5c246f7efca4be9da984",
+    "deploymentId": 8049329028,
+    "statusId": 23100491123,
+    "deployedAt": "2026-11-25T05:33:34Z",
     "approvedSummary": "iPhone向けの自動画質と、スタート時の描画準備を調整しました。",
     "approvedTitle": "自動画質と描画準備を調整",
     "approvedHighlights": [
       "対応iPhoneの自動画質を50 fps目標にし、走行中の負荷が続くと早めに調整します。",
       "スタート前にBOOSTの描画を準備し、高速域のメーター演出を追加しました。"
-    ]
+    ],
+    "run": {
+      "id": 45554289092,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "6d4de7ee0d8ad44619d4c245e9a041da9eb3dad7d0a5d0a02b9d5d3c31260654"
   },
   "files": [
     {
@@ -93,12 +72,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4184,
-      "sha256": "14873b4c607ef92a961fa1bf7a0e6954dabcbbfb8f8ecea570ca69bc104c3ad7"
+      "sha256": "eae27d8cc6f23e86b844c31f8d3860c3d328304796599695a44029587c74c401"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9189,
-      "sha256": "f3eda714e9365df5967f9d2df23693df880351b97f413e5ef3641f98c586e2f2"
+      "sha256": "ad3e2b013ca0d9a057b8b75b8e4ab1795c4e1ce08e19ec9073e61c587ccdbc02"
     },
     {
       "path": "__next._head.txt",
@@ -344,6 +323,11 @@
       "path": "_next/static/chunks/gateway-update-1ec58a1d3d1d78ba.js",
       "bytes": 17103,
       "sha256": "1ec58a1d3d1d78ba044a4826075c7216373832359793094868124ad4d10201a2"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-251f296c1b83da0c.js",
+      "bytes": 17104,
+      "sha256": "251f296c1b83da0c80953a2ad9f26514650ecf635e9d2c7eb62075eb92533a11"
     },
     {
       "path": "_next/static/chunks/gateway-update-29574b75b193a34c.js",
@@ -1821,6 +1805,11 @@
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-fx-y7eym-release-2b345f045508.js",
+      "bytes": 91,
+      "sha256": "4c03e3819fc68391148b7d46acc5a89f8da94c2fd79730bbc1569ae19441523d"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-fx-y7eym-release-a66264742f80.js",
       "bytes": 91,
       "sha256": "83d5196908a6b447b9999b6446c55e751f86ef025554804deb8b6d28e62de1bd"
@@ -1979,6 +1968,11 @@
       "path": "illumi-drive/assets/pages-Cjih8I-7.css",
       "bytes": 471290,
       "sha256": "7a8efcd85926c5ce3e7d9eb810dee94a94aff7ba7d7107ccb98402a5ae054672"
+    },
+    {
+      "path": "illumi-drive/assets/pages-CxLzSCFu-release-2b345f045508.js",
+      "bytes": 5119,
+      "sha256": "f1f5e5ea2b82d16565874d86b985e3f05c50874561fdcda4dd4fa02ddd5795cb"
     },
     {
       "path": "illumi-drive/assets/pages-CxLzSCFu-release-a66264742f80.js",
@@ -2251,6 +2245,11 @@
       "sha256": "d0c3ded29ab52028ece34fe160158c18954657315b81c2d1c312a9cf4eb80268"
     },
     {
+      "path": "illumi-drive/assets/pages-app-zQG-6MC4-release-2b345f045508.js",
+      "bytes": 711369,
+      "sha256": "bc4f14d17cdb96a0ae73572d3bf264a1343b67a11c77e7e96211c6394a696380"
+    },
+    {
       "path": "illumi-drive/assets/pages-app-zQG-6MC4-release-a66264742f80.js",
       "bytes": 711369,
       "sha256": "ff51826338ea65d198dbcdb15e2177a0353263578b5dc204e818b2f54ef014b0"
@@ -2409,6 +2408,11 @@
       "path": "illumi-drive/assets/renderer-CTM8h-xt-release-7500164142e6.js",
       "bytes": 4974157,
       "sha256": "390f4b2c613b87eb1f7b4b5ef60a06605eae7ce63ed1d3083b8486be144a8b85"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-CXR3rxfx-release-2b345f045508.js",
+      "bytes": 4982455,
+      "sha256": "6c183d9d687fdd6de464c35eef271b336e7ca3181ee5cd6aa7a776613a1cfeba"
     },
     {
       "path": "illumi-drive/assets/renderer-CXR3rxfx-release-a66264742f80.js",
@@ -2659,6 +2663,11 @@
       "path": "illumi-drive/assets/startup-progress-DpjZDnOp-release-7500164142e6.js",
       "bytes": 93598,
       "sha256": "9c01bcfe65397956e98e716ef6e0c27ddd9f4b7c4ba69cb3a2a31c514b9feb71"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-DwnRGUsk-release-2b345f045508.js",
+      "bytes": 93841,
+      "sha256": "1113a500048f8ebf8bb86c7bed1ea87d8ac805d66b0a3cc3993f73ed7e7e16f6"
     },
     {
       "path": "illumi-drive/assets/startup-progress-DwnRGUsk-release-a66264742f80.js",
@@ -2973,7 +2982,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "3379c936272e0dc0689e9c3af3df3eb72e436fafa4d849873176985173ddb0b7"
+      "sha256": "15b1662b30a092ab8e232569cf4ef8c886c510f0ea5c6cc27526f694097f2b24"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3038,12 +3047,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "3379c936272e0dc0689e9c3af3df3eb72e436fafa4d849873176985173ddb0b7"
+      "sha256": "15b1662b30a092ab8e232569cf4ef8c886c510f0ea5c6cc27526f694097f2b24"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 322,
-      "sha256": "aa3e65cdfebb543ac9587d3b00285154dc9b6b76d39a7e12466534a941649e50"
+      "sha256": "edb93aa49e5b583cb1fd6f389f32dd66d6833fbf761815622207efe0ed99bd73"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3053,7 +3062,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 87751,
-      "sha256": "f30987c178809862f071d1a5c7bfc3cc43058991a2a032be21c746c681750992"
+      "sha256": "111c10e3cb045924813d953bb6a755a45aecbedf0297d39c5698e184d038db9f"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3533,12 +3542,12 @@
     {
       "path": "index.html",
       "bytes": 32254,
-      "sha256": "3c7d83d634761fb1f1b659890acb40402bf968b2caf5e4debd61dca6e86f4037"
+      "sha256": "249df2fe6d779c54cc41c1d30cd35da1b158fb9861256fb88a8c214555a657a5"
     },
     {
       "path": "index.txt",
       "bytes": 9189,
-      "sha256": "f3eda714e9365df5967f9d2df23693df880351b97f413e5ef3641f98c586e2f2"
+      "sha256": "ad3e2b013ca0d9a057b8b75b8e4ab1795c4e1ce08e19ec9073e61c587ccdbc02"
     },
     {
       "path": "migaq/_headers",
@@ -4236,6 +4245,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 831,
-  "deliveryRawBytes": 644091420
+  "deliveryFileCount": 837,
+  "deliveryRawBytes": 649901399
 }
