@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "sourceVerified": true,
-  "source": "76e1963f2dc370fdf7687ffeb5242bf5b1f27408",
-  "baseSource": "c82d65eb01cf95ad8ee4ba40b2c6b13f8300721f",
-  "coverageSHA256": "291d658583207a972332b8eff759c1d7b6316e1b34c1d76122972aa4d1eedad9",
-  "historySHA256": "05f69c0654d38f27170ff0ac8b18764fedba02cc70fbd1df9175a2145374ae0b",
-  "notesInputSHA256": "05f69c0654d38f27170ff0ac8b18764fedba02cc70fbd1df9175a2145374ae0b",
-  "releaseSHA256": "6baed483671f9e808fc6a829f389054f1c47ce526e29ee1f2d9bb94cf5c1d32d",
+  "source": "d06ae9102dadbb8cca24f38fe8093a265f9adbc0",
+  "baseSource": "76e1963f2dc370fdf7687ffeb5242bf5b1f27408",
+  "coverageSHA256": "872e1205ad9063e9767aa495c2d60160a7cb677065aa71e07e4e7a3c89cf1a43",
+  "historySHA256": "f27a06defb54eeeb6443bc30e41507473a8a1045a0c2b68279fe9d3ce70a017a",
+  "notesInputSHA256": "f27a06defb54eeeb6443bc30e41507473a8a1045a0c2b68279fe9d3ce70a017a",
+  "releaseSHA256": "9e9247f94b4dee143e4b094599cf9d0fb7ffee7e2d273bc88ff1e6153c735d43",
   "releaseLabel": "R62",
   "expectedReleaseLabel": "R62",
   "baselineReleaseLabel": "R62",
   "allowReleaseIncrement": false,
-  "releaseLabelApprovalSHA256": "ddd4f67eab0d816ce5fed5169bfbd2392a4f192fc92301f3e31cca5385fbf75d",
+  "releaseLabelApprovalSHA256": "a93e13ebd57c1af0814292d8c575c7c1b5010659503d63a1a6dbae42b139eba3",
   "files": [
     {
       "path": "THIRD_PARTY_NOTICES.txt",
@@ -184,6 +184,11 @@
       "sha256": "8aaba8e664265e11297ade739e7fde7daedd867538edd831d066077fad710cad"
     },
     {
+      "path": "assets/durable-transport-U-1fN09w-release-b5ba27e712e3.js",
+      "bytes": 91,
+      "sha256": "1ada6e0f9e9202146daa796dda5043c2118980e294d1ecacb6c92173075d4c6f"
+    },
+    {
       "path": "assets/durable-transport-b5Bda-Fh.js",
       "bytes": 70,
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
@@ -322,6 +327,11 @@
       "path": "assets/pages-Bws0pwon.js",
       "bytes": 641041,
       "sha256": "d147844c2e94d003643c7abf997958e5e77c42a9775aad0fb15530f280a8ae38"
+    },
+    {
+      "path": "assets/pages-C-iXJ2mE-release-b5ba27e712e3.js",
+      "bytes": 5119,
+      "sha256": "77db4662a5bca7e2042640c9d2e801f392abc8f1e31e50a368eda81e415b3865"
     },
     {
       "path": "assets/pages-C2P4viqx-release-166338de74db.js",
@@ -582,6 +592,11 @@
       "path": "assets/pages-app-Bih16q1d-release-f45464a03b35.js",
       "bytes": 688802,
       "sha256": "055044ca7f773caad7e47145384512f398b4e0161064cf4774c024d03f7b9868"
+    },
+    {
+      "path": "assets/pages-app-C2L6BbxJ-release-b5ba27e712e3.js",
+      "bytes": 726502,
+      "sha256": "6ac7dd8498f3cb26a3a38a0b3c16695529ccb468ceaf62c8962bda1cc9ef06f7"
     },
     {
       "path": "assets/pages-app-CR-A7EFG.css",
@@ -979,6 +994,11 @@
       "sha256": "5ae7a5324df3b6aa2da862baa9c030a48914a129eaf1bdbae0e70615b3e290e4"
     },
     {
+      "path": "assets/renderer-DpkK_i2I-release-b5ba27e712e3.js",
+      "bytes": 4983798,
+      "sha256": "95362366d89ae66f52d269726966e9fa3478232b4e32f687c5ef46ff8aea7688"
+    },
+    {
       "path": "assets/renderer-DwBytAyC-release-10b4bbc154b6.js",
       "bytes": 4966435,
       "sha256": "c9cce6bd9010a9391dad1bc305f0b357978c30bb07bc723cfa74ee1ad43a897d"
@@ -1217,6 +1237,11 @@
       "path": "assets/startup-progress-E7RnDgHo-release-c197c27bf2bf.js",
       "bytes": 90765,
       "sha256": "8a27b3f6d2351933c5a424fa5c28f6e3d42889dd3cad8d84cf2ab7974e6bab73"
+    },
+    {
+      "path": "assets/startup-progress-FUjjqpG6-release-b5ba27e712e3.js",
+      "bytes": 93128,
+      "sha256": "e80333b5a5eda39bc6ea9a4a5ef13e0ef5c315fdeb4a16d6fe29445386d67b49"
     },
     {
       "path": "assets/startup-progress-GU0N1n8Z.js",
@@ -1536,7 +1561,7 @@
     {
       "path": "index.html",
       "bytes": 16563,
-      "sha256": "98533721c53d55962e347f14da2e04dcd4f4973d573f2a21aa444f502f5862b9"
+      "sha256": "290e5c7841bb48eccda995e1464a11818920e22490dd7365e13c302720b580fc"
     },
     {
       "path": "licenses/astronomy-engine.txt",
@@ -1599,14 +1624,24 @@
       "sha256": "7873a513d8a1e16b4f5aebfaef8ad277d97319d76a968bbbc88b5c5bbbf7f8bd"
     },
     {
+      "path": "music-stream-catalog.json",
+      "bytes": 29475,
+      "sha256": "959bbc89c434a195b5c2b9c9c36a796e072d9267709cc9dcefe9ab07140aeb7d"
+    },
+    {
+      "path": "music-stream-worker.js",
+      "bytes": 5278,
+      "sha256": "9a8afd2120f05253482875372a0332e2abd7240bdccd15f8808c9eff3aa0ec5a"
+    },
+    {
       "path": "pages.html",
       "bytes": 16563,
-      "sha256": "98533721c53d55962e347f14da2e04dcd4f4973d573f2a21aa444f502f5862b9"
+      "sha256": "290e5c7841bb48eccda995e1464a11818920e22490dd7365e13c302720b580fc"
     },
     {
       "path": "release.json",
-      "bytes": 334,
-      "sha256": "6baed483671f9e808fc6a829f389054f1c47ce526e29ee1f2d9bb94cf5c1d32d"
+      "bytes": 343,
+      "sha256": "9e9247f94b4dee143e4b094599cf9d0fb7ffee7e2d273bc88ff1e6153c735d43"
     },
     {
       "path": "textures/glass/arch-local-reflection.png",
@@ -1615,11 +1650,11 @@
     },
     {
       "path": "update-history.json",
-      "bytes": 88645,
-      "sha256": "05f69c0654d38f27170ff0ac8b18764fedba02cc70fbd1df9175a2145374ae0b"
+      "bytes": 88813,
+      "sha256": "f27a06defb54eeeb6443bc30e41507473a8a1045a0c2b68279fe9d3ce70a017a"
     }
   ],
-  "payloadSHA256": "57e06326b36571a009065f69f2d53e5cbd226472b1b44172fd26bc10d8b0c0bb",
+  "payloadSHA256": "8ade3378e6e4a34ad97d71f891a6fbea1889a834795ddfa9478039fc9157762b",
   "semanticReviewRequired": true,
   "machineSemanticProof": false
 }

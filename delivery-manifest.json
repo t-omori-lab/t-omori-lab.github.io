@@ -1,32 +1,32 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "76e1963f2dc370fdf7687ffeb5242bf5b1f27408",
-  "runtimeSource": "eda947658f7e9cabc76c2f63bf71af533b67b924",
-  "preparedGamePayload": "7e85da473ca95fce48b58dffceb59601693ba7028fed5f459b54e4853089c262",
-  "previousPreparedGamePayload": "e4d619c89fc943adea6f4ec8812d16cfbbe3ca3b7fa06321110a6b2a9e5a4490",
+  "preparedGameSource": "d06ae9102dadbb8cca24f38fe8093a265f9adbc0",
+  "runtimeSource": "b76d6480f3e735f57061991aa9ae80c7dc5df4ad",
+  "preparedGamePayload": "a0f6c1b8e52be28c95ddc45eea235a2151342723008de6bd67a6aff4c52e1fa5",
+  "previousPreparedGamePayload": "7e85da473ca95fce48b58dffceb59601693ba7028fed5f459b54e4853089c262",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T13:18:04Z",
-    "revision": "R62-20261125T131804Z",
+    "updatedAt": "2026-11-25T13:20:35Z",
+    "revision": "R62-20261125T132035Z",
     "updateSummary": "ゲームを更新しても、音源が同じ曲はキャッシュを使うようにしました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
-  "parentGamePayload": "a912658369121aae8ea6e40a8592e055d2382df3949cb0cc585efa591008d7c4",
-  "baselineCommit": "48733f41b8f596aa3e45fe7711bb2dbfb7fa98cc",
+  "parentGamePayload": "c3b599a170c4b3a67e50106253d3ef988a3dfbbce9fe0801a9df06338bdf6715",
+  "baselineCommit": "1341f66234af48b4c2405479af8c833aa76e769c",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
-    "path": "work/frontdesk-requests/r62-title-music-black-transition-20261125/cache-deploy/START_RECEIPT.json",
-    "sha256": "11f5f978079ebd11558f9c8ffdddbeb20ba078f880fd5c682f1e20455e43ecaf"
+    "path": "work/frontdesk-requests/r62-selected-bgm-stream-start-20261125/deploy-solo/START_RECEIPT.json",
+    "sha256": "fdbb97e4a63f0d14997667248ea83b0ff8f666d4027c2bf88929b55300cc3f31"
   },
-  "metadataOnlyChild": true,
+  "metadataOnlyChild": false,
   "nativeAcceptance": {
-    "enginePayload": "a912658369121aae8ea6e40a8592e055d2382df3949cb0cc585efa591008d7c4",
-    "receiptSHA256": "11f5f978079ebd11558f9c8ffdddbeb20ba078f880fd5c682f1e20455e43ecaf",
+    "enginePayload": "c3b599a170c4b3a67e50106253d3ef988a3dfbbce9fe0801a9df06338bdf6715",
+    "receiptSHA256": "fdbb97e4a63f0d14997667248ea83b0ff8f666d4027c2bf88929b55300cc3f31",
     "kind": "owner-native-verification-after-publication",
     "newDeviceTests": false,
     "actualNativeAccepted": false,
@@ -35,28 +35,55 @@
   "syntheticFixture": false,
   "forwardImmutableCacheRetained": true,
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
-  "sourceSelection": "Content-based music cache reuse and corresponding Gateway updates.",
+  "sourceSelection": "Selected-track streaming and cache reuse and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
+  "publicationTransaction": {
+    "schema": 1,
+    "mode": "feature-with-required-receipt-finalization",
+    "finalizationRequired": true,
+    "repository": "t-omori-lab/t-omori-lab.github.io",
+    "ref": "refs/heads/main",
+    "baseCommit": "1341f66234af48b4c2405479af8c833aa76e769c",
+    "rollbackTree": "97f55c59e131e2c2037121d419162813e181f85b",
+    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
+    "expiresAt": "2026-11-25T14:42:22Z",
+    "previousSuccessfulReceipt": {
+      "schema": 1,
+      "state": "success",
+      "environment": "github-pages",
+      "featureCommit": "48733f41b8f596aa3e45fe7711bb2dbfb7fa98cc",
+      "deploymentId": 8058633553,
+      "statusId": 23132944095,
+      "deployedAt": "2026-11-25T13:20:35Z",
+      "approvedSummary": "ゲームを更新しても、音源が同じ曲はキャッシュを使うようにしました。",
+      "approvedTitle": "BGMの再ダウンロードを防止",
+      "approvedHighlights": [
+        "再訪時は、先読み済みの曲をキャッシュから使います。",
+        "音源が変更された曲だけを取り直します。"
+      ],
+      "run": {
+        "id": 45622346669,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      "actualProviderEvidenceSHA256": "bba3424d6cf9351434a2db7383ca2fd39d6c1ff02b4b33e02c9302f982ae0077"
+    }
+  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "success",
+    "state": "awaiting-feature-success",
     "environment": "github-pages",
-    "featureCommit": "48733f41b8f596aa3e45fe7711bb2dbfb7fa98cc",
-    "deploymentId": 8058633553,
-    "statusId": 23132944095,
-    "deployedAt": "2026-11-25T13:20:35Z",
-    "approvedSummary": "ゲームを更新しても、音源が同じ曲はキャッシュを使うようにしました。",
-    "approvedTitle": "BGMの再ダウンロードを防止",
+    "deploymentId": null,
+    "statusId": null,
+    "runtimeSource": "b76d6480f3e735f57061991aa9ae80c7dc5df4ad",
+    "enginePayload": "c3b599a170c4b3a67e50106253d3ef988a3dfbbce9fe0801a9df06338bdf6715",
+    "plannedAt": "2026-11-25T14:27:22Z",
+    "approvedSummary": "選んだ曲を冒頭からすばやく再生。聴かない曲の一括読み込みをなくしました。",
+    "approvedTitle": "選んだBGMをすばやく再生",
     "approvedHighlights": [
-      "再訪時は、先読み済みの曲をキャッシュから使います。",
+      "曲の全体を待たず、冒頭から再生します。",
       "音源が変更された曲だけを取り直します。"
-    ],
-    "run": {
-      "id": 45622346669,
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "actualProviderEvidenceSHA256": "bba3424d6cf9351434a2db7383ca2fd39d6c1ff02b4b33e02c9302f982ae0077"
+    ]
   },
   "files": [
     {
@@ -71,13 +98,13 @@
     },
     {
       "path": "__next.__PAGE__.txt",
-      "bytes": 4196,
-      "sha256": "65d06c8fdbf70897ad404386a7ac5a3367bbe6e8e118b8aa23e527eba338772a"
+      "bytes": 4205,
+      "sha256": "9d7ed1d36dcd5e97c2f5e4493fae8340e8cbe2d1d794d62e96d43c94c9049af9"
     },
     {
       "path": "__next._full.txt",
-      "bytes": 9201,
-      "sha256": "e87d556190859fc0fdea79806402c5e700e084e358fcc1688e4e8dc2fe839100"
+      "bytes": 9210,
+      "sha256": "04ea4cd0f3e0dcd506e7edcde56957e49d8c4d0994b18fac34baf88864a523e9"
     },
     {
       "path": "__next._head.txt",
@@ -463,6 +490,11 @@
       "path": "_next/static/chunks/gateway-update-cbb5627119fce36e.js",
       "bytes": 17101,
       "sha256": "cbb5627119fce36e08e450e2b277725830341b5ed5c373044f3233d827342427"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-d6924b0036919186.js",
+      "bytes": 17922,
+      "sha256": "d6924b0036919186a22ead9a6b34370a35d7244aa50636d2a34564646bbcd44a"
     },
     {
       "path": "_next/static/chunks/gateway-update-d767bb0dfd789f5c.js",
@@ -1905,6 +1937,11 @@
       "sha256": "8aaba8e664265e11297ade739e7fde7daedd867538edd831d066077fad710cad"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-U-1fN09w-release-b5ba27e712e3.js",
+      "bytes": 91,
+      "sha256": "1ada6e0f9e9202146daa796dda5043c2118980e294d1ecacb6c92173075d4c6f"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-b5Bda-Fh.js",
       "bytes": 70,
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
@@ -2043,6 +2080,11 @@
       "path": "illumi-drive/assets/pages-Bws0pwon.js",
       "bytes": 641041,
       "sha256": "d147844c2e94d003643c7abf997958e5e77c42a9775aad0fb15530f280a8ae38"
+    },
+    {
+      "path": "illumi-drive/assets/pages-C-iXJ2mE-release-b5ba27e712e3.js",
+      "bytes": 5119,
+      "sha256": "77db4662a5bca7e2042640c9d2e801f392abc8f1e31e50a368eda81e415b3865"
     },
     {
       "path": "illumi-drive/assets/pages-C2P4viqx-release-166338de74db.js",
@@ -2303,6 +2345,11 @@
       "path": "illumi-drive/assets/pages-app-Bih16q1d-release-f45464a03b35.js",
       "bytes": 688802,
       "sha256": "055044ca7f773caad7e47145384512f398b4e0161064cf4774c024d03f7b9868"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-C2L6BbxJ-release-b5ba27e712e3.js",
+      "bytes": 726502,
+      "sha256": "6ac7dd8498f3cb26a3a38a0b3c16695529ccb468ceaf62c8962bda1cc9ef06f7"
     },
     {
       "path": "illumi-drive/assets/pages-app-CR-A7EFG.css",
@@ -2700,6 +2747,11 @@
       "sha256": "5ae7a5324df3b6aa2da862baa9c030a48914a129eaf1bdbae0e70615b3e290e4"
     },
     {
+      "path": "illumi-drive/assets/renderer-DpkK_i2I-release-b5ba27e712e3.js",
+      "bytes": 4983798,
+      "sha256": "95362366d89ae66f52d269726966e9fa3478232b4e32f687c5ef46ff8aea7688"
+    },
+    {
       "path": "illumi-drive/assets/renderer-DwBytAyC-release-10b4bbc154b6.js",
       "bytes": 4966435,
       "sha256": "c9cce6bd9010a9391dad1bc305f0b357978c30bb07bc723cfa74ee1ad43a897d"
@@ -2938,6 +2990,11 @@
       "path": "illumi-drive/assets/startup-progress-E7RnDgHo-release-c197c27bf2bf.js",
       "bytes": 90765,
       "sha256": "8a27b3f6d2351933c5a424fa5c28f6e3d42889dd3cad8d84cf2ab7974e6bab73"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-FUjjqpG6-release-b5ba27e712e3.js",
+      "bytes": 93128,
+      "sha256": "e80333b5a5eda39bc6ea9a4a5ef13e0ef5c315fdeb4a16d6fe29445386d67b49"
     },
     {
       "path": "illumi-drive/assets/startup-progress-GU0N1n8Z.js",
@@ -3257,7 +3314,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16563,
-      "sha256": "98533721c53d55962e347f14da2e04dcd4f4973d573f2a21aa444f502f5862b9"
+      "sha256": "290e5c7841bb48eccda995e1464a11818920e22490dd7365e13c302720b580fc"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3320,14 +3377,24 @@
       "sha256": "7873a513d8a1e16b4f5aebfaef8ad277d97319d76a968bbbc88b5c5bbbf7f8bd"
     },
     {
+      "path": "illumi-drive/music-stream-catalog.json",
+      "bytes": 29475,
+      "sha256": "959bbc89c434a195b5c2b9c9c36a796e072d9267709cc9dcefe9ab07140aeb7d"
+    },
+    {
+      "path": "illumi-drive/music-stream-worker.js",
+      "bytes": 5278,
+      "sha256": "9a8afd2120f05253482875372a0332e2abd7240bdccd15f8808c9eff3aa0ec5a"
+    },
+    {
       "path": "illumi-drive/pages.html",
       "bytes": 16563,
-      "sha256": "98533721c53d55962e347f14da2e04dcd4f4973d573f2a21aa444f502f5862b9"
+      "sha256": "290e5c7841bb48eccda995e1464a11818920e22490dd7365e13c302720b580fc"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 334,
-      "sha256": "6baed483671f9e808fc6a829f389054f1c47ce526e29ee1f2d9bb94cf5c1d32d"
+      "bytes": 343,
+      "sha256": "9e9247f94b4dee143e4b094599cf9d0fb7ffee7e2d273bc88ff1e6153c735d43"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3336,8 +3403,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 88645,
-      "sha256": "05f69c0654d38f27170ff0ac8b18764fedba02cc70fbd1df9175a2145374ae0b"
+      "bytes": 88813,
+      "sha256": "f27a06defb54eeeb6443bc30e41507473a8a1045a0c2b68279fe9d3ce70a017a"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3821,13 +3888,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 33197,
-      "sha256": "bcfccf4f37b447342c91b9d79875d871864e7f27598da8c2820733dd33a0cb91"
+      "bytes": 33224,
+      "sha256": "6aaf1ea234c6b8cf173acc3b3b1c1e17c28cc9749a5ba66c5f33303a1ff284e0"
     },
     {
       "path": "index.txt",
-      "bytes": 9201,
-      "sha256": "e87d556190859fc0fdea79806402c5e700e084e358fcc1688e4e8dc2fe839100"
+      "bytes": 9210,
+      "sha256": "04ea4cd0f3e0dcd506e7edcde56957e49d8c4d0994b18fac34baf88864a523e9"
     },
     {
       "path": "migaq/_headers",
@@ -4525,6 +4592,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 893,
-  "deliveryRawBytes": 697490540
+  "deliveryFileCount": 901,
+  "deliveryRawBytes": 703352084
 }
