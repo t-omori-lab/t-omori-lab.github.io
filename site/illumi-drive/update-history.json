@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-25T14:27:22Z",
-      "revision": "R62-20261125T142722Z",
+      "updatedAt": "2026-11-25T14:29:59Z",
+      "revision": "R62-20261125T142959Z",
       "title": "選んだBGMをすばやく再生",
       "shortSummary": "選んだ曲を冒頭からすばやく再生。聴かない曲の一括読み込みをなくしました。",
       "highlights": [
@@ -1281,5 +1281,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-25T14:27:22Z"
+  "updatedAt": "2026-11-25T14:29:59Z"
 }
