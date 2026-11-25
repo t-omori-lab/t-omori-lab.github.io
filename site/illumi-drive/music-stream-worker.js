@@ -11,7 +11,7 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET' || url.origin !== scope.origin) return;
   const match = /^__music_stream\/([a-f\d]{64})\/([\w.-]+\.(?:mp3|m4a))$/.exec(url.pathname.slice(scope.pathname.length));
   if (!url.pathname.startsWith(scope.pathname) || !match) return;
-  event.respondWith(serve(request, match[1], match[2]).catch(() => new Response(null, {status: 502})));
+  event.respondWith(serve(request, match[1], match[2], event.clientId).catch(() => new Response(null, {status: 502})));
 });
 function readCatalog(){
   if (!catalog) catalog = fetch(new URL('music-stream-catalog.json', scope), {cache: 'no-cache'})
@@ -29,7 +29,7 @@ function rangeOf(header, size) {
   const end = match[1] && match[2] ? Math.min(size - 1, Number(match[2])) : size - 1;
   return Number.isSafeInteger(start) && start <= end ? [start, end] : null;
 }
-async function serve(request, digest, file) {
+async function serve(request, digest, file, clientId) {
   let track = (await readCatalog())[file];
   if (track?.digest !== digest) {
     catalog = undefined;
@@ -59,6 +59,8 @@ async function serve(request, digest, file) {
 
   let blocks;
   try {blocks = await caches.open('illumi-drive-music-ranges-v1');} catch {}
+  const listeners = clientId ? [await self.clients.get(clientId)].filter(Boolean) :
+    (await self.clients.matchAll({type: 'window'})).filter(client => client.url.startsWith(scope.href));
   let offset = start;
   let cancelled = false;
   const body = new ReadableStream({
@@ -70,6 +72,7 @@ async function serve(request, digest, file) {
       const bytes = data.subarray(from, from + end - offset + 1);
       offset += bytes.length;
       controller.enqueue(bytes);
+      for (const client of listeners)client.postMessage({kind: 'illumi-music-range-ready', url: key.href});
       if (offset > end) controller.close();
     },
     cancel() {cancelled = true;},
