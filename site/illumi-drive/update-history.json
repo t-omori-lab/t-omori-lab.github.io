@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-25T10:08:07Z",
-      "revision": "R62-20261125T100807Z",
+      "updatedAt": "2026-11-25T10:10:56Z",
+      "revision": "R62-20261125T101056Z",
       "title": "ローディングの進捗表示を改善",
       "shortSummary": "ローディング表示と、PCでの初回BOOSTの描画準備を改善しました。",
       "highlights": [
@@ -1278,5 +1278,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-25T10:08:07Z"
+  "updatedAt": "2026-11-25T10:10:56Z"
 }
