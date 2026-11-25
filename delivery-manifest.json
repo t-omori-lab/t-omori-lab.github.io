@@ -1,49 +1,104 @@
 {
   "schema": "public-game-delivery/1",
-  "releaseLabel": "R62",
-  "preparedGamePayload": "4aec0cab46c6af8c48d720d6ad7553738b39b0d3a9639c51586785c442ef1ebe",
-  "previousPreparedGamePayload": "75d04a7a56a40ba837af164c34b9e68998ccde941c73ceec15bc8299bf7c8ea1",
+  "preparedGameSource": "c2e2f159d0dcb8b8b56f1817ed6e9a494a3f93ed",
+  "runtimeSource": "637a4dc05ffa4259f243120eda70b4a007508eba",
+  "preparedGamePayload": "fb2a34294b5c943f54e6ea05e80a4e7d9503594f88b9ff105af2c98dcf028d39",
+  "previousPreparedGamePayload": "4aec0cab46c6af8c48d720d6ad7553738b39b0d3a9639c51586785c442ef1ebe",
   "previousGameRelease": {
     "label": "R62",
+    "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
-    "updatedAt": "2026-11-14T13:33:15Z",
-    "revision": "R62-20261114T133315Z"
+    "status": "published",
+    "updatedAt": "2026-11-14T13:40:46Z",
+    "revision": "R62-20261114T134046Z",
+    "updateSummary": "BGMの再生とスタート時の切り替わりを修正しました。"
+  },
+  "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
+  "releaseLabel": "R62",
+  "parentGamePayload": "91e42ace62a7348164210c36b8d7fd2874126654befc4fb7760dc1769e55821e",
+  "baselineCommit": "c8563211d654c2674b5f2df7087ea4422716b44b",
+  "publication": true,
+  "publicationAuthorized": true,
+  "approvedOwnerPacket": {
+    "path": "work/frontdesk-requests/r62-16pro-boost-title50-20261125/deploy-8005/SOLE_START_RECEIPT.json",
+    "sha256": "8f3ead794bd5107d8f8b152fa3f09bbdb08ac639b33f5939713cb6254c2921ef"
+  },
+  "metadataOnlyChild": false,
+  "nativeAcceptance": {
+    "enginePayload": "91e42ace62a7348164210c36b8d7fd2874126654befc4fb7760dc1769e55821e",
+    "receiptSHA256": "8f3ead794bd5107d8f8b152fa3f09bbdb08ac639b33f5939713cb6254c2921ef",
+    "kind": "owner-native-verification-after-publication",
+    "newDeviceTests": false,
+    "actualNativeAccepted": false,
+    "nativeLimits": "Physical iPhone 16 Pro fps, appearance and HDR remain unverified."
+  },
+  "syntheticFixture": false,
+  "forwardImmutableCacheRetained": true,
+  "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
+  "sourceSelection": "Only the approved 8005 solo payload and matching Gateway metadata. Preserve duel and backend.",
+  "flightTextFrameLengthsVerified": true,
+  "publicationTransaction": {
+    "schema": 1,
+    "mode": "feature-with-required-receipt-finalization",
+    "finalizationRequired": true,
+    "repository": "t-omori-lab/t-omori-lab.github.io",
+    "ref": "refs/heads/main",
+    "baseCommit": "c8563211d654c2674b5f2df7087ea4422716b44b",
+    "rollbackTree": "fa2bebb578cd6d3c72181c689835ace3ac8f4222",
+    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
+    "expiresAt": "2026-11-25T05:45:01Z",
+    "previousSuccessfulReceipt": {
+      "schema": 1,
+      "state": "success",
+      "environment": "github-pages",
+      "featureCommit": "eeb998f143b0a4da98d9885eb28fcfdf780535c2",
+      "deploymentId": 7788342583,
+      "statusId": 22195684988,
+      "deployedAt": "2026-11-14T13:40:46Z",
+      "approvedSummary": "BGMの再生とスタート時の切り替わりを修正しました。",
+      "approvedTitle": "BGMとスタートを修正",
+      "approvedHighlights": [
+        "同意や選曲からBGMを準備し、読み込み中でも走行を始められます。",
+        "READY中に表示されていた「中止」ボタンを取り除きました。"
+      ]
+    }
   },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "success",
+    "state": "awaiting-feature-success",
     "environment": "github-pages",
-    "featureCommit": "eeb998f143b0a4da98d9885eb28fcfdf780535c2",
-    "deploymentId": 7788342583,
-    "statusId": 22195684988,
-    "deployedAt": "2026-11-14T13:40:46Z",
-    "approvedSummary": "BGMの再生とスタート時の切り替わりを修正しました。",
-    "approvedTitle": "BGMとスタートを修正",
+    "deploymentId": null,
+    "statusId": null,
+    "runtimeSource": "637a4dc05ffa4259f243120eda70b4a007508eba",
+    "enginePayload": "91e42ace62a7348164210c36b8d7fd2874126654befc4fb7760dc1769e55821e",
+    "plannedAt": "2026-11-25T05:30:01Z",
+    "approvedSummary": "iPhone向けの自動画質と、スタート時の描画準備を調整しました。",
+    "approvedTitle": "自動画質と描画準備を調整",
     "approvedHighlights": [
-      "同意や選曲からBGMを準備し、読み込み中でも走行を始められます。",
-      "READY中に表示されていた「中止」ボタンを取り除きました。"
+      "対応iPhoneの自動画質を50 fps目標にし、走行中の負荷が続くと早めに調整します。",
+      "スタート前にBOOSTの描画を準備し、高速域のメーター演出を追加しました。"
     ]
   },
   "files": [
-    {
-      "path": "404.html",
-      "bytes": 11342,
-      "sha256": "c577df0d1388256e119a682bdc0140ab33f4fe46ac2d86511b6f0f2dd76cc592"
-    },
     {
       "path": "404/index.html",
       "bytes": 11342,
       "sha256": "c577df0d1388256e119a682bdc0140ab33f4fe46ac2d86511b6f0f2dd76cc592"
     },
     {
+      "path": "404.html",
+      "bytes": 11342,
+      "sha256": "c577df0d1388256e119a682bdc0140ab33f4fe46ac2d86511b6f0f2dd76cc592"
+    },
+    {
       "path": "__next.__PAGE__.txt",
-      "bytes": 4169,
-      "sha256": "f0c01027c9c52a9137f69833936bf49f195bbce7ea764d9e9f19e2808f65e55d"
+      "bytes": 4184,
+      "sha256": "14873b4c607ef92a961fa1bf7a0e6954dabcbbfb8f8ecea570ca69bc104c3ad7"
     },
     {
       "path": "__next._full.txt",
-      "bytes": 9174,
-      "sha256": "268548acbcbe556533deb8c90e0fda8d57e0a3e6e6a2c5ea367e694631399864"
+      "bytes": 9189,
+      "sha256": "f3eda714e9365df5967f9d2df23693df880351b97f413e5ef3641f98c586e2f2"
     },
     {
       "path": "__next._head.txt",
@@ -351,6 +406,11 @@
       "sha256": "bbb041191f569fcaac4ad22c8eb4b35bfecc0c8800fe4dff3c78595b0e091de6"
     },
     {
+      "path": "_next/static/chunks/gateway-update-bf5156929ddd0bdf.js",
+      "bytes": 17104,
+      "sha256": "bf5156929ddd0bdf8190edb37e008efebfb2402cae91b7f21ac8d5b53b5f3cef"
+    },
+    {
       "path": "_next/static/chunks/gateway-update-c563aed7000e688b.js",
       "bytes": 17136,
       "sha256": "c563aed7000e688b7be0ea338119780846bc99faca99f189f1e812709c5e4d5b"
@@ -484,6 +544,11 @@
       "path": "_not-found/index.txt",
       "bytes": 6745,
       "sha256": "36f7730a46969de2cd9caa19eda6d580b412a097734d22d867abd0081dc54a91"
+    },
+    {
+      "path": "ai-lab/index.html",
+      "bytes": 525,
+      "sha256": "0310c33afeb3a56ae66164367e9bc1dc9b47c6ab12908d3f17f2487784e50eb6"
     },
     {
       "path": "ai-lab-logo-study/assets/ai-design-lab-image2-01-dark.png",
@@ -731,11 +796,6 @@
       "sha256": "c157087042a0d5bfcd9fe9e88e6e27d27d1f5def5fb4cb663de9c5316b46aff7"
     },
     {
-      "path": "ai-lab/index.html",
-      "bytes": 525,
-      "sha256": "0310c33afeb3a56ae66164367e9bc1dc9b47c6ab12908d3f17f2487784e50eb6"
-    },
-    {
       "path": "ai-studio/index.html",
       "bytes": 525,
       "sha256": "0310c33afeb3a56ae66164367e9bc1dc9b47c6ab12908d3f17f2487784e50eb6"
@@ -749,16 +809,6 @@
       "path": "game-center/index.html",
       "bytes": 3037,
       "sha256": "12583d2d6a3071b49d2ac986e1f503d5cbd1fc491d04ef35689d77205b530497"
-    },
-    {
-      "path": "game-center/neon-drift-cover.svg",
-      "bytes": 54795,
-      "sha256": "4d1a9a29a5006a8c80afab307a8eb5709f9cae3e65e0f812dab30c534ecb561e"
-    },
-    {
-      "path": "game-center/neon-drift-play.png",
-      "bytes": 40333,
-      "sha256": "b01a5594c69ce1eaabf3e07e7ba818791b4a3ea73b90cfc510ccbf2bb1d4e5b2"
     },
     {
       "path": "game-center/neon-drift/THIRD_PARTY_NOTICES.txt",
@@ -1621,39 +1671,19 @@
       "sha256": "7ae335e135dc94e15d62e282e845282deb38ede7cae2ab495e4ed8cc71fd690d"
     },
     {
+      "path": "game-center/neon-drift-cover.svg",
+      "bytes": 54795,
+      "sha256": "4d1a9a29a5006a8c80afab307a8eb5709f9cae3e65e0f812dab30c534ecb561e"
+    },
+    {
+      "path": "game-center/neon-drift-play.png",
+      "bytes": 40333,
+      "sha256": "b01a5594c69ce1eaabf3e07e7ba818791b4a3ea73b90cfc510ccbf2bb1d4e5b2"
+    },
+    {
       "path": "icon.svg",
       "bytes": 257,
       "sha256": "fdf248a55e8f823cf07232741d8fb1a517fca069ea07efc76d3414d8795e45b4"
-    },
-    {
-      "path": "illumi-drive-early-20260915/archive-preview.jpg",
-      "bytes": 22360,
-      "sha256": "5f50403b43f1bfce91a40b565476ee11806191845cb1336e73f149aa41d0efd2"
-    },
-    {
-      "path": "illumi-drive-early-20260915/assets/game-BLgPNkYq.js",
-      "bytes": 215021,
-      "sha256": "56a0a992507d0f2612031dfe48f6cf9be28be4b99c796d67ce05f5c8efb4fd6f"
-    },
-    {
-      "path": "illumi-drive-early-20260915/assets/game-C0BCR4i_.css",
-      "bytes": 11693,
-      "sha256": "d7e78c00383779837f5fd5114432ebe6e44363557dd28a9f1c899867f73a141b"
-    },
-    {
-      "path": "illumi-drive-early-20260915/favicon.svg",
-      "bytes": 194,
-      "sha256": "da52f935672d72c0759bf8226c88fe6bd6c2b9023c02fd88636f0f0be26e3ac8"
-    },
-    {
-      "path": "illumi-drive-early-20260915/game.html",
-      "bytes": 454,
-      "sha256": "b1a6853ed27b305f177c93bfc49ee0a6abfc8e33f555dec1062662ebcb335a30"
-    },
-    {
-      "path": "illumi-drive-early-20260915/index.html",
-      "bytes": 1329,
-      "sha256": "021a468fcacb81c6ba8877cdd5907d929c6f1b779025d7fb89d7591f374d3931"
     },
     {
       "path": "illumi-drive/THIRD_PARTY_NOTICES.txt",
@@ -1789,6 +1819,11 @@
       "path": "illumi-drive/assets/durable-transport-b5Bda-Fh.js",
       "bytes": 70,
       "sha256": "3e97563b42d006cd5a2a79c0cee2e2cfa4f8c0eaf55af3739b089b62f7e0c3dc"
+    },
+    {
+      "path": "illumi-drive/assets/durable-transport-fx-y7eym-release-a66264742f80.js",
+      "bytes": 91,
+      "sha256": "83d5196908a6b447b9999b6446c55e751f86ef025554804deb8b6d28e62de1bd"
     },
     {
       "path": "illumi-drive/assets/durable-transport-hC6xkS1S-release-a1b6a58b143b.js",
@@ -1944,6 +1979,11 @@
       "path": "illumi-drive/assets/pages-Cjih8I-7.css",
       "bytes": 471290,
       "sha256": "7a8efcd85926c5ce3e7d9eb810dee94a94aff7ba7d7107ccb98402a5ae054672"
+    },
+    {
+      "path": "illumi-drive/assets/pages-CxLzSCFu-release-a66264742f80.js",
+      "bytes": 5119,
+      "sha256": "0bd40a0d92f19d4fa8dd63430f81785bb9d35e916aaff47258fb7e1e6a0e7486"
     },
     {
       "path": "illumi-drive/assets/pages-CzTwVLCp.js",
@@ -2211,6 +2251,11 @@
       "sha256": "d0c3ded29ab52028ece34fe160158c18954657315b81c2d1c312a9cf4eb80268"
     },
     {
+      "path": "illumi-drive/assets/pages-app-zQG-6MC4-release-a66264742f80.js",
+      "bytes": 711369,
+      "sha256": "ff51826338ea65d198dbcdb15e2177a0353263578b5dc204e818b2f54ef014b0"
+    },
+    {
       "path": "illumi-drive/assets/pages-boost-gap-6bc4d6c88ea9.css",
       "bytes": 459523,
       "sha256": "6bc4d6c88ea9451f93ecd8117da4cf80890a2da6d3b99c89b1ccabe45bac408e"
@@ -2364,6 +2409,11 @@
       "path": "illumi-drive/assets/renderer-CTM8h-xt-release-7500164142e6.js",
       "bytes": 4974157,
       "sha256": "390f4b2c613b87eb1f7b4b5ef60a06605eae7ce63ed1d3083b8486be144a8b85"
+    },
+    {
+      "path": "illumi-drive/assets/renderer-CXR3rxfx-release-a66264742f80.js",
+      "bytes": 4982455,
+      "sha256": "4e796d39a48375204f2aaa217a3f31428e43272466d205c9d80688f13cbb56d6"
     },
     {
       "path": "illumi-drive/assets/renderer-CeKWmJU8.js",
@@ -2609,6 +2659,11 @@
       "path": "illumi-drive/assets/startup-progress-DpjZDnOp-release-7500164142e6.js",
       "bytes": 93598,
       "sha256": "9c01bcfe65397956e98e716ef6e0c27ddd9f4b7c4ba69cb3a2a31c514b9feb71"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-DwnRGUsk-release-a66264742f80.js",
+      "bytes": 93841,
+      "sha256": "eccbc1b3e65ea378c352e7ba27df348f71e4fbd52e8a9a01fda7db415a3aae88"
     },
     {
       "path": "illumi-drive/assets/startup-progress-E7RnDgHo-release-a0462c6b22b1.js",
@@ -2918,7 +2973,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "6bdf297102214b74c9b1894b407719e2435c37cf43e13a2aa1160bac0e23fccc"
+      "sha256": "3379c936272e0dc0689e9c3af3df3eb72e436fafa4d849873176985173ddb0b7"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -2983,12 +3038,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "6bdf297102214b74c9b1894b407719e2435c37cf43e13a2aa1160bac0e23fccc"
+      "sha256": "3379c936272e0dc0689e9c3af3df3eb72e436fafa4d849873176985173ddb0b7"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 307,
-      "sha256": "afd25de740103e8a1fe42aa0a1ed74c7bca3bd3d4931a1f3865b7e31a9f66110"
+      "bytes": 322,
+      "sha256": "aa3e65cdfebb543ac9587d3b00285154dc9b6b76d39a7e12466534a941649e50"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -2997,8 +3052,38 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 87354,
-      "sha256": "95e50d5f1fded3b38d29e8c7f6d740f67d730e70ef605834b3f406ae0bf1a924"
+      "bytes": 87751,
+      "sha256": "f30987c178809862f071d1a5c7bfc3cc43058991a2a032be21c746c681750992"
+    },
+    {
+      "path": "illumi-drive-early-20260915/archive-preview.jpg",
+      "bytes": 22360,
+      "sha256": "5f50403b43f1bfce91a40b565476ee11806191845cb1336e73f149aa41d0efd2"
+    },
+    {
+      "path": "illumi-drive-early-20260915/assets/game-BLgPNkYq.js",
+      "bytes": 215021,
+      "sha256": "56a0a992507d0f2612031dfe48f6cf9be28be4b99c796d67ce05f5c8efb4fd6f"
+    },
+    {
+      "path": "illumi-drive-early-20260915/assets/game-C0BCR4i_.css",
+      "bytes": 11693,
+      "sha256": "d7e78c00383779837f5fd5114432ebe6e44363557dd28a9f1c899867f73a141b"
+    },
+    {
+      "path": "illumi-drive-early-20260915/favicon.svg",
+      "bytes": 194,
+      "sha256": "da52f935672d72c0759bf8226c88fe6bd6c2b9023c02fd88636f0f0be26e3ac8"
+    },
+    {
+      "path": "illumi-drive-early-20260915/game.html",
+      "bytes": 454,
+      "sha256": "b1a6853ed27b305f177c93bfc49ee0a6abfc8e33f555dec1062662ebcb335a30"
+    },
+    {
+      "path": "illumi-drive-early-20260915/index.html",
+      "bytes": 1329,
+      "sha256": "021a468fcacb81c6ba8877cdd5907d929c6f1b779025d7fb89d7591f374d3931"
     },
     {
       "path": "illumi-line/THIRD_PARTY_NOTICES.txt",
@@ -3447,63 +3532,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 32209,
-      "sha256": "6c698661e8ee5936fe9377ee134482bb308b9ce610a7937f67a177bd6a65e41a"
+      "bytes": 32254,
+      "sha256": "3c7d83d634761fb1f1b659890acb40402bf968b2caf5e4debd61dca6e86f4037"
     },
     {
       "path": "index.txt",
-      "bytes": 9174,
-      "sha256": "268548acbcbe556533deb8c90e0fda8d57e0a3e6e6a2c5ea367e694631399864"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/ai-design-lab-logotype.svg",
-      "bytes": 1242,
-      "sha256": "d91c19a3b6ab8ab8c51a8181d595a7a27a0e08db2ce217308b4cb3bfaa4d6bc0"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/index-4MAZz8vH.js",
-      "bytes": 389666,
-      "sha256": "0d365894aebd66cdfe1ab4b43c61e4db062f732bf3ace12fc4870a5ba586f136"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/index-Cavgptm8.css",
-      "bytes": 344651,
-      "sha256": "6be4cfbc97ad5d66aa69842bb3714a0b345932021c11c8dfc541a6f216b36b7c"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/interface-icons-CVWWYxkC.js",
-      "bytes": 91326,
-      "sha256": "5b03ab9286d2a43c297537ff601eda85f95449f2cef3688562b19db3338537dc"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/migaq-icon.png",
-      "bytes": 29025,
-      "sha256": "e8229cdee74d7f9a98167220fd57ed39e07918dc1b4d78e83df7c78412d38581"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/migaq-logotype.png",
-      "bytes": 28983,
-      "sha256": "6e626c08bbdcf7a40f86b9086267152e137c6d7bb164146fc53437b83cded5dd"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/react-runtime-IsLpfBRF.js",
-      "bytes": 193814,
-      "sha256": "c2cb0ceafefcebcb1ad3177cbc87a9ef816206a08b29ca38c15e2ff715eaf155"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/selected-logo-74.png",
-      "bytes": 94406,
-      "sha256": "fa74c56eded3921f9e41a3df9cf70c4175fc5b334184cf7820c2acc408378a3f"
-    },
-    {
-      "path": "migaq-r80-smoke/assets/selected-logo-86.png",
-      "bytes": 25310,
-      "sha256": "80c3ac6cfb21902c56d389757e1f9d1f975ac2b312d0ac3942cbe867edc8dafa"
-    },
-    {
-      "path": "migaq-r80-smoke/index.html",
-      "bytes": 8783,
-      "sha256": "f511408c51faa8507bed503daebdfc84e38c162c6800d7e6c1c49985bd29e19f"
+      "bytes": 9189,
+      "sha256": "f3eda714e9365df5967f9d2df23693df880351b97f413e5ef3641f98c586e2f2"
     },
     {
       "path": "migaq/_headers",
@@ -4051,6 +4086,56 @@
       "sha256": "88ae7cd3c7fbbd8ca59dab42269f2ee8ac543890274534b445e5b02a38e5d914"
     },
     {
+      "path": "migaq-r80-smoke/assets/ai-design-lab-logotype.svg",
+      "bytes": 1242,
+      "sha256": "d91c19a3b6ab8ab8c51a8181d595a7a27a0e08db2ce217308b4cb3bfaa4d6bc0"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/index-4MAZz8vH.js",
+      "bytes": 389666,
+      "sha256": "0d365894aebd66cdfe1ab4b43c61e4db062f732bf3ace12fc4870a5ba586f136"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/index-Cavgptm8.css",
+      "bytes": 344651,
+      "sha256": "6be4cfbc97ad5d66aa69842bb3714a0b345932021c11c8dfc541a6f216b36b7c"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/interface-icons-CVWWYxkC.js",
+      "bytes": 91326,
+      "sha256": "5b03ab9286d2a43c297537ff601eda85f95449f2cef3688562b19db3338537dc"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/migaq-icon.png",
+      "bytes": 29025,
+      "sha256": "e8229cdee74d7f9a98167220fd57ed39e07918dc1b4d78e83df7c78412d38581"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/migaq-logotype.png",
+      "bytes": 28983,
+      "sha256": "6e626c08bbdcf7a40f86b9086267152e137c6d7bb164146fc53437b83cded5dd"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/react-runtime-IsLpfBRF.js",
+      "bytes": 193814,
+      "sha256": "c2cb0ceafefcebcb1ad3177cbc87a9ef816206a08b29ca38c15e2ff715eaf155"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/selected-logo-74.png",
+      "bytes": 94406,
+      "sha256": "fa74c56eded3921f9e41a3df9cf70c4175fc5b334184cf7820c2acc408378a3f"
+    },
+    {
+      "path": "migaq-r80-smoke/assets/selected-logo-86.png",
+      "bytes": 25310,
+      "sha256": "80c3ac6cfb21902c56d389757e1f9d1f975ac2b312d0ac3942cbe867edc8dafa"
+    },
+    {
+      "path": "migaq-r80-smoke/index.html",
+      "bytes": 8783,
+      "sha256": "f511408c51faa8507bed503daebdfc84e38c162c6800d7e6c1c49985bd29e19f"
+    },
+    {
       "path": "migaq2/app.js",
       "bytes": 8433,
       "sha256": "763dcbe195a5bd09d156929df826e885fc666b49c2d18cd1cb195b7fd60bf451"
@@ -4151,6 +4236,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 825,
-  "deliveryRawBytes": 638280939
+  "deliveryFileCount": 831,
+  "deliveryRawBytes": 644091420
 }
