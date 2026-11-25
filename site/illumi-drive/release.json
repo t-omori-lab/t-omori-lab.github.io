@@ -3,7 +3,7 @@
   "recordedAt": "2026-10-24T14:46:00.000Z",
   "publishedAt": "2026-10-25T00:44:21.000Z",
   "status": "published",
-  "updatedAt": "2026-11-25T16:21:40Z",
-  "revision": "R62-20261125T162140Z",
-  "updateSummary": "START RUNでBGMをフェードアウトし、照明演出の開始に曲の頭を合わせました。"
+  "updatedAt": "2026-11-25T16:47:46Z",
+  "revision": "R62-20261125T164746Z",
+  "updateSummary": "市松模様の最初の点灯でBGMが一度だけ始まるよう修正しました。"
 }

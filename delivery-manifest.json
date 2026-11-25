@@ -1,32 +1,32 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "68054a7cedfc1b4411c44db758f21855bbb846b1",
-  "runtimeSource": "c5f03600b3401f776ddd696f19e89083671aba6a",
-  "preparedGamePayload": "99f4958d85e2860d6e053ba3255dca37b0d6263aca8db9ed62fa8653016ddcb6",
-  "previousPreparedGamePayload": "43ba03279ac5e3f1b3370e71ea8ec1b66db61dc8b98c75e83dae5e16d7251f01",
+  "preparedGameSource": "4462989ee070251253a24526bb3c6a593003b4f6",
+  "runtimeSource": "97d6bcf411cbfd7a31994f024c30e80e4d632b7d",
+  "preparedGamePayload": "79fca8f48d47ecbd734474fabcc3d4d98119baf8cc41db19b716c06efb0110e5",
+  "previousPreparedGamePayload": "99f4958d85e2860d6e053ba3255dca37b0d6263aca8db9ed62fa8653016ddcb6",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T16:12:53Z",
-    "revision": "R62-20261125T161253Z",
+    "updatedAt": "2026-11-25T16:21:40Z",
+    "revision": "R62-20261125T162140Z",
     "updateSummary": "START RUNでBGMをフェードアウトし、照明演出の開始に曲の頭を合わせました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
-  "parentGamePayload": "1e3caf39164e349c8108b43fe5e26a2de2cfcf95d6c8608976e2ee3c0a40fe50",
-  "baselineCommit": "c59ecc15fa799b9e34aad71e6062f18c1df64b76",
+  "parentGamePayload": "e0d4c2defe17c7a28c094eabb15bebad08fe76b27139c9a2c45bc3a84961cffa",
+  "baselineCommit": "336ea8f2455bd114995f423c20b6bad88efbc33c",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
-    "path": "work/frontdesk-requests/r62-start-bgm-checker-sync-20261126/deploy-solo/START_RECEIPT.json",
-    "sha256": "2b245ff67e39128a8026db17d5caf1b84b415527115a6c77e85aafaa551d966b"
+    "path": "work/frontdesk-requests/r62-checker-first-lit-bgm-20261126/deploy-solo/START_RECEIPT.json",
+    "sha256": "edd0ae682d995d91face5e5742ccb6d34093e7a6cbe9611bd2d9db4991034607"
   },
-  "metadataOnlyChild": true,
+  "metadataOnlyChild": false,
   "nativeAcceptance": {
-    "enginePayload": "1e3caf39164e349c8108b43fe5e26a2de2cfcf95d6c8608976e2ee3c0a40fe50",
-    "receiptSHA256": "2b245ff67e39128a8026db17d5caf1b84b415527115a6c77e85aafaa551d966b",
+    "enginePayload": "e0d4c2defe17c7a28c094eabb15bebad08fe76b27139c9a2c45bc3a84961cffa",
+    "receiptSHA256": "edd0ae682d995d91face5e5742ccb6d34093e7a6cbe9611bd2d9db4991034607",
     "kind": "owner-native-verification-after-publication",
     "newDeviceTests": false,
     "actualNativeAccepted": false,
@@ -35,28 +35,55 @@
   "syntheticFixture": false,
   "forwardImmutableCacheRetained": true,
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
-  "sourceSelection": "Fade title music and synchronize the selected song with the lighting reveal and corresponding Gateway updates.",
+  "sourceSelection": "Start music once on the first illuminated checker frame and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
+  "publicationTransaction": {
+    "schema": 1,
+    "mode": "feature-with-required-receipt-finalization",
+    "finalizationRequired": true,
+    "repository": "t-omori-lab/t-omori-lab.github.io",
+    "ref": "refs/heads/main",
+    "baseCommit": "336ea8f2455bd114995f423c20b6bad88efbc33c",
+    "rollbackTree": "79cbc8b41e2fd18299cdea77e7a64aaf6761e77b",
+    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
+    "expiresAt": "2026-11-25T17:02:46Z",
+    "previousSuccessfulReceipt": {
+      "schema": 1,
+      "state": "success",
+      "environment": "github-pages",
+      "featureCommit": "c59ecc15fa799b9e34aad71e6062f18c1df64b76",
+      "deploymentId": 8062932223,
+      "statusId": 23147617301,
+      "deployedAt": "2026-11-25T16:21:40Z",
+      "approvedSummary": "START RUNでBGMをフェードアウトし、照明演出の開始に曲の頭を合わせました。",
+      "approvedTitle": "スタート演出とBGMを同期",
+      "approvedHighlights": [
+        "暗転中はBGMを止め、描画を準備します。",
+        "再走時も曲の頭を演出に合わせます。"
+      ],
+      "run": {
+        "id": 45652698307,
+        "status": "completed",
+        "conclusion": "success"
+      },
+      "actualProviderEvidenceSHA256": "b77e64b86eb6351db63b31cffda7565496550f352f64a25bed233b2bbbed4061"
+    }
+  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "success",
+    "state": "awaiting-feature-success",
     "environment": "github-pages",
-    "featureCommit": "c59ecc15fa799b9e34aad71e6062f18c1df64b76",
-    "deploymentId": 8062932223,
-    "statusId": 23147617301,
-    "deployedAt": "2026-11-25T16:21:40Z",
-    "approvedSummary": "START RUNでBGMをフェードアウトし、照明演出の開始に曲の頭を合わせました。",
-    "approvedTitle": "スタート演出とBGMを同期",
+    "deploymentId": null,
+    "statusId": null,
+    "runtimeSource": "97d6bcf411cbfd7a31994f024c30e80e4d632b7d",
+    "enginePayload": "e0d4c2defe17c7a28c094eabb15bebad08fe76b27139c9a2c45bc3a84961cffa",
+    "plannedAt": "2026-11-25T16:47:46Z",
+    "approvedSummary": "市松模様の最初の点灯でBGMが一度だけ始まるよう修正しました。",
+    "approvedTitle": "市松模様の点灯にBGMを同期",
     "approvedHighlights": [
-      "暗転中はBGMを止め、描画を準備します。",
-      "再走時も曲の頭を演出に合わせます。"
-    ],
-    "run": {
-      "id": 45652698307,
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "actualProviderEvidenceSHA256": "b77e64b86eb6351db63b31cffda7565496550f352f64a25bed233b2bbbed4061"
+      "暗転から薄明かりに変わる間はBGMを止めます。",
+      "カウントダウンでは再生位置を引き継ぎます。"
+    ]
   },
   "files": [
     {
@@ -71,13 +98,13 @@
     },
     {
       "path": "__next.__PAGE__.txt",
-      "bytes": 4199,
-      "sha256": "e25f7f65d6f3cdfc55df05c43e4098a20547edd85d026e1a8cc1f7d6e7f17de6"
+      "bytes": 4184,
+      "sha256": "8ad050df7370deb335f6d00bc9c0d2e2add5daa4c170513af815937435e8c819"
     },
     {
       "path": "__next._full.txt",
-      "bytes": 9204,
-      "sha256": "a58a5e39016b34e7b09d26a210103a3c4c335b49c6ce053590fbd61d5063bbc4"
+      "bytes": 9189,
+      "sha256": "a41bccfc7fb9d608d9e1e39237ca3ad55b080a85a8ced0475839a39fa6782967"
     },
     {
       "path": "__next._head.txt",
@@ -463,6 +490,11 @@
       "path": "_next/static/chunks/gateway-update-ace45387f6ef664b.js",
       "bytes": 17074,
       "sha256": "ace45387f6ef664b85137ebe912253067779a78855c756ce3d66263889d66cde"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-af31de576a0f0f7b.js",
+      "bytes": 17901,
+      "sha256": "af31de576a0f0f7b0c3f98a3139a4a98a99ccf10e44f62d35ab13feccf64639d"
     },
     {
       "path": "_next/static/chunks/gateway-update-bbb041191f569fca.js",
@@ -1920,6 +1952,11 @@
       "sha256": "de4ec0f5bd404b5e69696533f47193b6cd81b8e6accb34106dc5767fc97fb6ec"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-Dlq3kpw--release-a8ec5491c4a6.js",
+      "bytes": 91,
+      "sha256": "6a69dd85056ff75d2ff9549995213d2a9ad11e4c1f21a37cccb2d95c90675452"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-Dmpz54cw-release-5a09b40a7e34.js",
       "bytes": 91,
       "sha256": "afa0e9a6205df18cd3877f7b6a76f994649fc95b174fc2f212dd11e5e40e7f76"
@@ -2108,6 +2145,11 @@
       "path": "illumi-drive/assets/pages-BcAFetir-release-b8b542f5db2a.js",
       "bytes": 5119,
       "sha256": "828c58d37f0564bdfc6981ad527924f5def03db4ab27bf910e725a28f4018822"
+    },
+    {
+      "path": "illumi-drive/assets/pages-BnBj2Ka2-release-a8ec5491c4a6.js",
+      "bytes": 5119,
+      "sha256": "2e83d5c1bae2bd6df866a9c88c22b2868727b9512135eed0512909f2757035e0"
     },
     {
       "path": "illumi-drive/assets/pages-BrdrOV8j-release-5ac02a82670c.js",
@@ -2453,6 +2495,11 @@
       "path": "illumi-drive/assets/pages-app-DENkyssh.js",
       "bytes": 655444,
       "sha256": "209fafc2e1a993ac584319948a0164f0ef42e498b50598ba6da388da1bd9aa81"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-DKwI52NA-release-a8ec5491c4a6.js",
+      "bytes": 730648,
+      "sha256": "b44790741beac016f5f6018ef442c70d221d51e98273950f210ee33fc02002a6"
     },
     {
       "path": "illumi-drive/assets/pages-app-DRUci7UE.css",
@@ -2830,6 +2877,11 @@
       "sha256": "5ae7a5324df3b6aa2da862baa9c030a48914a129eaf1bdbae0e70615b3e290e4"
     },
     {
+      "path": "illumi-drive/assets/renderer-DmVvtxBF-release-a8ec5491c4a6.js",
+      "bytes": 4983798,
+      "sha256": "817bbf4a534a2b7db19405aedf9d4056036c9cc7d4336900780e0d8204800722"
+    },
+    {
       "path": "illumi-drive/assets/renderer-DpkK_i2I-release-b5ba27e712e3.js",
       "bytes": 4983798,
       "sha256": "95362366d89ae66f52d269726966e9fa3478232b4e32f687c5ef46ff8aea7688"
@@ -2993,6 +3045,11 @@
       "path": "illumi-drive/assets/startup-progress-BPnB0fFi-release-b8b542f5db2a.js",
       "bytes": 93128,
       "sha256": "cea51b642aea3bd5facbd430a7dbc3ce780c94bd3e8abdcd7c9d8c7b1a68061b"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-BhNorhXz-release-a8ec5491c4a6.js",
+      "bytes": 93128,
+      "sha256": "7d3485dcf56637bf977bae0c69367cb1fe0afa2f6162ae72656012f43a189626"
     },
     {
       "path": "illumi-drive/assets/startup-progress-C06ReD8I-release-4a9e66033909.js",
@@ -3437,7 +3494,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16563,
-      "sha256": "67988240b588462f49654e8ccc22532770a265bca7fcc4068e01921ff19f49cd"
+      "sha256": "4db13cea057834c9eafe1ed49d88adbba3227210ba336184ac978c40e14300f9"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3512,12 +3569,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16563,
-      "sha256": "67988240b588462f49654e8ccc22532770a265bca7fcc4068e01921ff19f49cd"
+      "sha256": "4db13cea057834c9eafe1ed49d88adbba3227210ba336184ac978c40e14300f9"
     },
     {
       "path": "illumi-drive/release.json",
-      "bytes": 337,
-      "sha256": "ba06aa344ddbe635b5ae6d3d46015f52edbe80ba4fd3eb7754081a7934dfc72c"
+      "bytes": 322,
+      "sha256": "6614078b17e2beb2314a7ce85f9875c6171500915151dab9588bd28af9298dd7"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3526,8 +3583,8 @@
     },
     {
       "path": "illumi-drive/update-history.json",
-      "bytes": 89233,
-      "sha256": "2b2956fe406e071b0367c87ea0e057a7491fbb5af8a199f415c1d6b6abe971f3"
+      "bytes": 89415,
+      "sha256": "971d364ec1d25126f26b7d93b2bedfacbaa7d533e22094121c300f45ca4e671b"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -4011,13 +4068,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 33206,
-      "sha256": "9618cc8139fb7e3e04bd469435e71425bf25eb4d49e48acdb34d538f34dc39ee"
+      "bytes": 33161,
+      "sha256": "f709df4785a701366841c56e158d95c2028729f1dc23c3f547e9def5d3d353a3"
     },
     {
       "path": "index.txt",
-      "bytes": 9204,
-      "sha256": "a58a5e39016b34e7b09d26a210103a3c4c335b49c6ce053590fbd61d5063bbc4"
+      "bytes": 9189,
+      "sha256": "a41bccfc7fb9d608d9e1e39237ca3ad55b080a85a8ced0475839a39fa6782967"
     },
     {
       "path": "migaq/_headers",
@@ -4715,6 +4772,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 931,
-  "deliveryRawBytes": 732498749
+  "deliveryFileCount": 937,
+  "deliveryRawBytes": 738329511
 }
