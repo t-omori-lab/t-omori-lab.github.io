@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-25T05:53:06Z",
-      "revision": "R62-20261125T055306Z",
+      "updatedAt": "2026-11-25T05:59:27Z",
+      "revision": "R62-20261125T055927Z",
       "title": "高速域のメーター針を調整",
       "shortSummary": "高速域でのスピードメーターの針の動きを調整しました。",
       "highlights": [
@@ -1276,5 +1276,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-25T05:53:06Z"
+  "updatedAt": "2026-11-25T05:59:27Z"
 }

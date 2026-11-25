@@ -1,29 +1,29 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "3a224470fc078c42fe660382bf0c85313a2eea00",
+  "preparedGameSource": "982340de6e70459fe16a658a060f1e064c2da933",
   "runtimeSource": "3cf65a62a743fd59f3772dd0c0b0fc9bcb2393e2",
-  "preparedGamePayload": "663ce9d0ca66ab415ed632024bae7adcf036aac2974f68ab6c031394806a6b75",
-  "previousPreparedGamePayload": "158b761bc2e6ec4777459a2ac39e1982afeaa68b0b3278995d841a8ae32cffeb",
+  "preparedGamePayload": "0280594ca75377af60f07974096f2135bcb0a998fbda149d84b116b221eb6dc5",
+  "previousPreparedGamePayload": "663ce9d0ca66ab415ed632024bae7adcf036aac2974f68ab6c031394806a6b75",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T05:33:34Z",
-    "revision": "R62-20261125T053334Z",
-    "updateSummary": "iPhone向けの自動画質と、スタート時の描画準備を調整しました。"
+    "updatedAt": "2026-11-25T05:53:06Z",
+    "revision": "R62-20261125T055306Z",
+    "updateSummary": "高速域でのスピードメーターの針の動きを調整しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "87afb5581b66de9595c2dfef2353e465a207a9463647a0df74c185a9a20df886",
-  "baselineCommit": "18a53521ad2eb2a033f1ae5ec0ea55858d391889",
+  "baselineCommit": "c6b4ffcda447e5dafaa67ab3480b8ce601a8037e",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/frontdesk-requests/r62-needle-fast-vibration-20261125/deploy-solo/SOLE_START_RECEIPT.json",
     "sha256": "719501a216eb52af7c435d86a21f3c7f7ef1730253ff0307d89480903ce4edb5"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "87afb5581b66de9595c2dfef2353e465a207a9463647a0df74c185a9a20df886",
     "receiptSHA256": "719501a216eb52af7c435d86a21f3c7f7ef1730253ff0307d89480903ce4edb5",
@@ -37,52 +37,25 @@
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
   "sourceSelection": "Approved high-speed needle flutter only and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "18a53521ad2eb2a033f1ae5ec0ea55858d391889",
-    "rollbackTree": "d17f4f9763f06b9d3efb019efed227fb566ac5ae",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-25T06:08:06Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "f100187c23793e0be44b5c246f7efca4be9da984",
-      "deploymentId": 8049329028,
-      "statusId": 23100491123,
-      "deployedAt": "2026-11-25T05:33:34Z",
-      "approvedSummary": "iPhone向けの自動画質と、スタート時の描画準備を調整しました。",
-      "approvedTitle": "自動画質と描画準備を調整",
-      "approvedHighlights": [
-        "対応iPhoneの自動画質を50 fps目標にし、走行中の負荷が続くと早めに調整します。",
-        "スタート前にBOOSTの描画を準備し、高速域のメーター演出を追加しました。"
-      ],
-      "run": {
-        "id": 45554289092,
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "actualProviderEvidenceSHA256": "6d4de7ee0d8ad44619d4c245e9a041da9eb3dad7d0a5d0a02b9d5d3c31260654"
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "3cf65a62a743fd59f3772dd0c0b0fc9bcb2393e2",
-    "enginePayload": "87afb5581b66de9595c2dfef2353e465a207a9463647a0df74c185a9a20df886",
-    "plannedAt": "2026-11-25T05:53:06Z",
+    "featureCommit": "c6b4ffcda447e5dafaa67ab3480b8ce601a8037e",
+    "deploymentId": 8049698672,
+    "statusId": 23101840720,
+    "deployedAt": "2026-11-25T05:59:27Z",
     "approvedSummary": "高速域でのスピードメーターの針の動きを調整しました。",
     "approvedTitle": "高速域のメーター針を調整",
     "approvedHighlights": [
       "480 km/h付近で、針がより速く不規則に揺れるようにしました。"
-    ]
+    ],
+    "run": {
+      "id": 45557231085,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "41c517039378034a8eec8a9c43ee25d7ce73e2f18c18e6c94bfe462e4f79125a"
   },
   "files": [
     {
@@ -98,12 +71,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4175,
-      "sha256": "bce071759b3a131bf41d4ff693c088e855ceaf299b5c7b6e8427c11cc10e1647"
+      "sha256": "f56811a707af72c29df9346af442fe9c56a3d806b417f09f04bae6888c77c18e"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9180,
-      "sha256": "4d93d14b3a26acb123e2d1db30aafb9aa11105d0c19a18b1c129af8c7cda9f72"
+      "sha256": "b3f3b2238c5efe0b535c4e582c6aa30d35186183346399314e34aabc5ab0903d"
     },
     {
       "path": "__next._head.txt",
@@ -404,6 +377,11 @@
       "path": "_next/static/chunks/gateway-update-8a3e99f0f485f256.js",
       "bytes": 17089,
       "sha256": "8a3e99f0f485f256c46cdb4b98c75743a39db2da752893344cc6efa99edd2aba"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-9b83ef1b078ecc2c.js",
+      "bytes": 17095,
+      "sha256": "9b83ef1b078ecc2c850eb5e390ad4fa2313c36115f7904e970fd4251198aec01"
     },
     {
       "path": "_next/static/chunks/gateway-update-ace45387f6ef664b.js",
@@ -1821,6 +1799,11 @@
       "sha256": "afa0e9a6205df18cd3877f7b6a76f994649fc95b174fc2f212dd11e5e40e7f76"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-Dmpz54cw-release-91298997d10a.js",
+      "bytes": 91,
+      "sha256": "b09e4a00298ca2b363405e82f5a80ac15e58f5b8cdea7f0ac24553b797133946"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-I-Oq2Twh.js",
       "bytes": 70,
       "sha256": "9b569c54026405336ac71fd15d44f2b6b545e765dcedbf79f24b46e5a63b1d99"
@@ -1949,6 +1932,11 @@
       "path": "illumi-drive/assets/pages-BSuZF2mY-release-5a09b40a7e34.js",
       "bytes": 5119,
       "sha256": "6367a7a8bb1d07b0796230de30db931ebc196a6a8218567cbd7133877cd8c7bb"
+    },
+    {
+      "path": "illumi-drive/assets/pages-BSuZF2mY-release-91298997d10a.js",
+      "bytes": 5119,
+      "sha256": "20498e65d05265a60aad7bf1267282c649ae156f78c35b2e1ce258a0f74b5637"
     },
     {
       "path": "illumi-drive/assets/pages-BVpyXoAE.css",
@@ -2169,6 +2157,11 @@
       "path": "illumi-drive/assets/pages-app-BafHlET8-release-5a09b40a7e34.js",
       "bytes": 711476,
       "sha256": "660ecebdac381bedf9e73cd4d789168f936b71d70e2870777953e910d6329e56"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-BafHlET8-release-91298997d10a.js",
+      "bytes": 711476,
+      "sha256": "15790836835ae4b832e82e11ebd4cec56035123c3e065ed5b560bda6f71a26a7"
     },
     {
       "path": "illumi-drive/assets/pages-app-BgwL5CEP.css",
@@ -2586,6 +2579,11 @@
       "sha256": "98325e875426964b7a8d7043f53864f33bf4fb241c40ed4c21f4337e6e41df03"
     },
     {
+      "path": "illumi-drive/assets/renderer-dM6gUCPi-release-91298997d10a.js",
+      "bytes": 4982455,
+      "sha256": "cfe90d4ddafd95eaa443bb713a731187429f40b05d9b711520b4553e8935cf50"
+    },
+    {
       "path": "illumi-drive/assets/renderer-history-706cf9fb2b301e8cf419.js",
       "bytes": 1047625,
       "sha256": "0877f97935add1d79f99d690ffcf5dec7b4cd6ab85aada6422019a8402b62535"
@@ -2769,6 +2767,11 @@
       "path": "illumi-drive/assets/startup-progress-lDb0_Rp3-release-5a09b40a7e34.js",
       "bytes": 93841,
       "sha256": "71396e474860fbdbead288befd43447c27a2a67ddd3098deec9e170d7e755147"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-lDb0_Rp3-release-91298997d10a.js",
+      "bytes": 93841,
+      "sha256": "1f31174d6c327f99f3ffe81810d533e088cfd85a2a806caf47cc345cc8ea2ffe"
     },
     {
       "path": "illumi-drive/assets/startup-progress-oxuJcmBz-release-6bc357a1dca6.js",
@@ -3038,7 +3041,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16567,
-      "sha256": "cbf200c78edf4f51d8db2e7876134bb77ec2d750480158b3a62186db853cde5a"
+      "sha256": "616337ca2cc42e042efa284f3b692ca6eb6761c80aa00d729bc32cda2afd222e"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3103,12 +3106,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16567,
-      "sha256": "cbf200c78edf4f51d8db2e7876134bb77ec2d750480158b3a62186db853cde5a"
+      "sha256": "616337ca2cc42e042efa284f3b692ca6eb6761c80aa00d729bc32cda2afd222e"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 313,
-      "sha256": "4c9449a33c644320a12e6f2762c877a5da8b7b62884719f2fef2cdfd2b48ea94"
+      "sha256": "0d8e4b29d8b716d85eebd72d6c48f861528fb6ddff73670fe085ec9411f81ae7"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3118,7 +3121,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 87793,
-      "sha256": "7712df040dc8824e7c731777c17589bea476520e5ed7c34614339fca6388f283"
+      "sha256": "8dbc187dd30df086f62db4eb6167005e1946b9a4cd3be912e77d86c7a80a2bcf"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -3598,12 +3601,12 @@
     {
       "path": "index.html",
       "bytes": 32227,
-      "sha256": "f6a0af2d3e9fd53c53829bceeb1f09af442a414e827807a35d2e68e14554cfb4"
+      "sha256": "cfa9379f628eb11aefe7eb8e38faa60a643595b451c8abdf304f6d58b01a3975"
     },
     {
       "path": "index.txt",
       "bytes": 9180,
-      "sha256": "4d93d14b3a26acb123e2d1db30aafb9aa11105d0c19a18b1c129af8c7cda9f72"
+      "sha256": "b3f3b2238c5efe0b535c4e582c6aa30d35186183346399314e34aabc5ab0903d"
     },
     {
       "path": "migaq/_headers",
@@ -4301,6 +4304,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 843,
-  "deliveryRawBytes": 655711455
+  "deliveryFileCount": 849,
+  "deliveryRawBytes": 661521532
 }
