@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-25T15:33:44Z",
-      "revision": "R62-20261125T153344Z",
+      "updatedAt": "2026-11-25T15:36:14Z",
+      "revision": "R62-20261125T153614Z",
       "title": "BGMの読み込みと再生を改善",
       "shortSummary": "起動中からBGMを先読みし、再生できない場合は自動で別の再生方法に切り替えます。",
       "highlights": [
@@ -1282,5 +1282,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-25T15:33:44Z"
+  "updatedAt": "2026-11-25T15:36:14Z"
 }
