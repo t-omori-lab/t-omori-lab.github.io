@@ -1,29 +1,29 @@
 {
   "schema": "public-game-delivery/1",
-  "preparedGameSource": "ee751bc59c3ed50f1ebfe61e295bcadebf9b1e26",
+  "preparedGameSource": "5adc95adcef2a98ddad3c94f423ca7267ebfe85b",
   "runtimeSource": "224c295c4ed72870d85545a5b55258c7d8e0a21b",
-  "preparedGamePayload": "c24314bb15641204cf25e60195b762b0dd13a3b0d48beca5041acf4cc5b2615a",
-  "previousPreparedGamePayload": "f906d27e636e5659c63377aafeb6cd83d92ccfbd97d2c2d04459d2f382581354",
+  "preparedGamePayload": "8f15b917c1bddcf256bdfb5a3b3fb1bd40657480d2b06d00424e08b351c2eeb7",
+  "previousPreparedGamePayload": "c24314bb15641204cf25e60195b762b0dd13a3b0d48beca5041acf4cc5b2615a",
   "previousGameRelease": {
     "label": "R62",
     "recordedAt": "2026-10-24T14:46:00.000Z",
     "publishedAt": "2026-10-25T00:44:21.000Z",
     "status": "published",
-    "updatedAt": "2026-11-25T17:26:16Z",
-    "revision": "R62-20261125T172616Z",
-    "updateSummary": "再訪時の最初のタップでBGMが始まり、選曲を戻しても曲が重ならないようにしました。"
+    "updatedAt": "2026-11-26T12:03:22Z",
+    "revision": "R62-20261126T120322Z",
+    "updateSummary": "スタート演出中に表示されていた不要な「点灯を中止」ボタンを削除しました。"
   },
   "metadataPublishedAt": "2026-10-25T00:44:21.000Z",
   "releaseLabel": "R62",
   "parentGamePayload": "c3d0567ab9e4822d255b01796260c4f5e9d777ad529b7d3fb71c7c337b95c45a",
-  "baselineCommit": "c2b628b0ebe14e3e36e7a24b7d598a7f6adfb89b",
+  "baselineCommit": "6386632591f7b82a5ca3427a8961440fcbf6d3ae",
   "publication": true,
   "publicationAuthorized": true,
   "approvedOwnerPacket": {
     "path": "work/frontdesk-requests/r62-hide-checker-cancel-20261126/deploy-solo/START_RECEIPT.json",
     "sha256": "ab864a23c07e3bc6be7475f033fd1a6099fcd86d92b40bbd3efff8d1db66a7e6"
   },
-  "metadataOnlyChild": false,
+  "metadataOnlyChild": true,
   "nativeAcceptance": {
     "enginePayload": "c3d0567ab9e4822d255b01796260c4f5e9d777ad529b7d3fb71c7c337b95c45a",
     "receiptSHA256": "ab864a23c07e3bc6be7475f033fd1a6099fcd86d92b40bbd3efff8d1db66a7e6",
@@ -37,53 +37,26 @@
   "compatibilityReason": "Retain existing immutable hashed files for clients already loading earlier Pages builds; no extra active asset or model download is introduced.",
   "sourceSelection": "Remove the unnecessary stop-lighting control from the launch presentation and corresponding Gateway updates.",
   "flightTextFrameLengthsVerified": true,
-  "publicationTransaction": {
-    "schema": 1,
-    "mode": "feature-with-required-receipt-finalization",
-    "finalizationRequired": true,
-    "repository": "t-omori-lab/t-omori-lab.github.io",
-    "ref": "refs/heads/main",
-    "baseCommit": "c2b628b0ebe14e3e36e7a24b7d598a7f6adfb89b",
-    "rollbackTree": "6b62059c49947455a6e6b1d05ad7ea33d1255036",
-    "rollbackMode": "normal-child-restoring-exact-preimage-tree",
-    "expiresAt": "2026-11-26T12:18:22Z",
-    "previousSuccessfulReceipt": {
-      "schema": 1,
-      "state": "success",
-      "environment": "github-pages",
-      "featureCommit": "de06f2cfae48dde37d77bd8d142804358e8a459e",
-      "deploymentId": 8064564047,
-      "statusId": 23153176548,
-      "deployedAt": "2026-11-25T17:26:16Z",
-      "approvedSummary": "再訪時の最初のタップでBGMが始まり、選曲を戻しても曲が重ならないようにしました。",
-      "approvedTitle": "タイトルBGMの再生を修正",
-      "approvedHighlights": [
-        "同意済みの再訪では、タイトルの最初のタップで曲が始まります。",
-        "曲を切り替えると、それまでの曲を停止します。"
-      ],
-      "run": {
-        "id": 45664528610,
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "actualProviderEvidenceSHA256": "cf9d96810293f0c40480e05aa03854cb7a99eb880cd93380a039675733d9732c"
-    }
-  },
   "latestUpdateDeployment": {
     "schema": 1,
-    "state": "awaiting-feature-success",
+    "state": "success",
     "environment": "github-pages",
-    "deploymentId": null,
-    "statusId": null,
-    "runtimeSource": "224c295c4ed72870d85545a5b55258c7d8e0a21b",
-    "enginePayload": "c3d0567ab9e4822d255b01796260c4f5e9d777ad529b7d3fb71c7c337b95c45a",
-    "plannedAt": "2026-11-26T12:03:22Z",
+    "featureCommit": "6386632591f7b82a5ca3427a8961440fcbf6d3ae",
+    "deploymentId": 8084675845,
+    "statusId": 23222373627,
+    "deployedAt": "2026-11-26T12:06:46Z",
     "approvedSummary": "スタート演出中に表示されていた不要な「点灯を中止」ボタンを削除しました。",
     "approvedTitle": "市松演出中の不要なボタンを削除",
     "approvedHighlights": [
       "市松の点灯と同じタイミングで曲が始まります。",
       "スタートと再走の両方で、点灯中止ボタンが出なくなりました。"
-    ]
+    ],
+    "run": {
+      "id": 45816315090,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "actualProviderEvidenceSHA256": "92abac8374821227e8b49f10cba99eaeea100289ad05d92f100df4f390a6ca13"
   },
   "files": [
     {
@@ -99,12 +72,12 @@
     {
       "path": "__next.__PAGE__.txt",
       "bytes": 4205,
-      "sha256": "881dbda64f50a7598e2bbd3bc6bffac8e419c6f2fac1c05d27fc097f7fde38b5"
+      "sha256": "d298a3d6c7c91c671613498530f9766644e1579d24bb8b0e2a44c1ac0fc82323"
     },
     {
       "path": "__next._full.txt",
       "bytes": 9210,
-      "sha256": "74d71182a219df80ce2fa7225450d359b87a73fb9937594c9758504468b36cb9"
+      "sha256": "6fc4ee1f732a513d15445163baedfb6ae5185ea23623c31073a93818701f0078"
     },
     {
       "path": "__next._head.txt",
@@ -555,6 +528,11 @@
       "path": "_next/static/chunks/gateway-update-f0421f25a2e73c6a.js",
       "bytes": 17913,
       "sha256": "f0421f25a2e73c6ac1ad77f67afe5a075dcf4feeb66e94c7a410549da074cf3e"
+    },
+    {
+      "path": "_next/static/chunks/gateway-update-f1424f5f2627da70.js",
+      "bytes": 17922,
+      "sha256": "f1424f5f2627da70762fb261d6fc567ec784dd330e64f1902e6801aed73d6a9b"
     },
     {
       "path": "_next/static/chunks/gateway-update-f196b51ebc2c5b56.js",
@@ -2062,6 +2040,11 @@
       "sha256": "ef36820ff8bdb3f8c260a1b0949f24a65a66cbb019eb30ccd4e24448da10e8fa"
     },
     {
+      "path": "illumi-drive/assets/durable-transport-hy45_H_I-release-55b796dc370b.js",
+      "bytes": 91,
+      "sha256": "4e4a904c1839293b3e1b7104378194548b6ba9ce3b802c5f7cea782b2d22b07f"
+    },
+    {
       "path": "illumi-drive/assets/durable-transport-hy45_H_I-release-7528d1ec8122.js",
       "bytes": 91,
       "sha256": "d1e980c6f5f884ec04a2c23d74bb3ca3fb70480df0f1618f452c0b59a028c856"
@@ -2265,6 +2248,11 @@
       "path": "illumi-drive/assets/pages-CbZIOEF2-release-e7c2ec2da929.js",
       "bytes": 5119,
       "sha256": "a645ac9caf698138b6d17c4df826fcc637428d234edee748d21e0183b3d148e4"
+    },
+    {
+      "path": "illumi-drive/assets/pages-CdoDTZkc-release-55b796dc370b.js",
+      "bytes": 5119,
+      "sha256": "c3315c3978eb99190893a11164e34e3db0a84db6babb563ec65639f555b0afe0"
     },
     {
       "path": "illumi-drive/assets/pages-CdoDTZkc-release-7528d1ec8122.js",
@@ -2525,6 +2513,11 @@
       "path": "illumi-drive/assets/pages-app-Cdbh7q_V.js",
       "bytes": 653827,
       "sha256": "fc08b1c8d4b89bffe0ac01082a23ade33b922a11fb82b533707d43a231e73027"
+    },
+    {
+      "path": "illumi-drive/assets/pages-app-CggwL9I9-release-55b796dc370b.js",
+      "bytes": 730631,
+      "sha256": "95da1d4dc946acf2e65f2764e9312d7b18bb92fc71955323d1f6937d0fab8a70"
     },
     {
       "path": "illumi-drive/assets/pages-app-CggwL9I9-release-7528d1ec8122.js",
@@ -2977,6 +2970,11 @@
       "sha256": "8cef804490f0db77fa590eb9a84bab202170ba006ea93ff829ea88ccaa5a8bc1"
     },
     {
+      "path": "illumi-drive/assets/renderer-Dn9kQxzN-release-55b796dc370b.js",
+      "bytes": 4983798,
+      "sha256": "3554b00917ccca98e5e6912a98606252d01d39a287215283e91e930db9eb2e68"
+    },
+    {
       "path": "illumi-drive/assets/renderer-Dn9kQxzN-release-7528d1ec8122.js",
       "bytes": 4983798,
       "sha256": "57edd16b73e1fd294853b9fbd654349b19cbabf2f5eab756fd2cc522c4b61083"
@@ -3185,6 +3183,11 @@
       "path": "illumi-drive/assets/startup-progress-CPbpYXPI.js",
       "bytes": 89968,
       "sha256": "3838569c6a7e1579de0cab891f78d0b7636aff5af59452b7e893d15ad8865d96"
+    },
+    {
+      "path": "illumi-drive/assets/startup-progress-CT8jIqaD-release-55b796dc370b.js",
+      "bytes": 93128,
+      "sha256": "4f9d5870ff55bdbfd2ba9f289ae9a4ca36a49627f7326da7a0e1d893ed8f9255"
     },
     {
       "path": "illumi-drive/assets/startup-progress-CT8jIqaD-release-7528d1ec8122.js",
@@ -3614,7 +3617,7 @@
     {
       "path": "illumi-drive/index.html",
       "bytes": 16563,
-      "sha256": "9dc9698c9fefd68dea779735b78ee9cb9b7378157c859422b89b999f049105e0"
+      "sha256": "2adfea3e3b88d414772a04762045f31997c67aec3caff2163553076614e9b3b3"
     },
     {
       "path": "illumi-drive/licenses/astronomy-engine.txt",
@@ -3689,12 +3692,12 @@
     {
       "path": "illumi-drive/pages.html",
       "bytes": 16563,
-      "sha256": "9dc9698c9fefd68dea779735b78ee9cb9b7378157c859422b89b999f049105e0"
+      "sha256": "2adfea3e3b88d414772a04762045f31997c67aec3caff2163553076614e9b3b3"
     },
     {
       "path": "illumi-drive/release.json",
       "bytes": 343,
-      "sha256": "3bc36c186564352d1e8cb934efb3827d47a78b3aa0391a3dffcdd7b1febbd310"
+      "sha256": "cb9c4b98164076d2cbe7e8e7e397461d77e9bb5c9e847413c96aa756f767309e"
     },
     {
       "path": "illumi-drive/textures/glass/arch-local-reflection.png",
@@ -3704,7 +3707,7 @@
     {
       "path": "illumi-drive/update-history.json",
       "bytes": 89766,
-      "sha256": "912d80a138b7022a855e1d6002d012b04fc115c0a2f7b981bfead32f8a1bdc38"
+      "sha256": "8837a20e610e4ab1e82d8eff418b83ca73c94febc11d6ecd7e8d01d34cc5152c"
     },
     {
       "path": "illumi-drive-early-20260915/archive-preview.jpg",
@@ -4189,12 +4192,12 @@
     {
       "path": "index.html",
       "bytes": 33224,
-      "sha256": "fb5ffcb64c812ba8f7b54ae554545f805eccba1c14308792ff90a0d2a21545f9"
+      "sha256": "cd67d10f84d0f8e209299fbc6703cd8d970cae486345edeeaeb8a546b537a2f4"
     },
     {
       "path": "index.txt",
       "bytes": 9210,
-      "sha256": "74d71182a219df80ce2fa7225450d359b87a73fb9937594c9758504468b36cb9"
+      "sha256": "6fc4ee1f732a513d15445163baedfb6ae5185ea23623c31073a93818701f0078"
     },
     {
       "path": "migaq/_headers",
@@ -4892,6 +4895,6 @@
       "sha256": "9fc5e2b3c7f5669ad2d24071cffcf60f993416a48b6d5c9bd6e4219474acf52c"
     }
   ],
-  "deliveryFileCount": 961,
-  "deliveryRawBytes": 761653475
+  "deliveryFileCount": 967,
+  "deliveryRawBytes": 767484164
 }

@@ -76,8 +76,8 @@
       "status": "published",
       "publishedAt": null,
       "recordedAt": "2026-11-01T01:58:16.000Z",
-      "updatedAt": "2026-11-26T12:03:22Z",
-      "revision": "R62-20261126T120322Z",
+      "updatedAt": "2026-11-26T12:06:46Z",
+      "revision": "R62-20261126T120646Z",
       "title": "市松演出中の不要なボタンを削除",
       "shortSummary": "スタート演出中に表示されていた不要な「点灯を中止」ボタンを削除しました。",
       "highlights": [
@@ -1286,5 +1286,5 @@
       "recordedAt": "2026-09-15"
     }
   ],
-  "updatedAt": "2026-11-26T12:03:22Z"
+  "updatedAt": "2026-11-26T12:06:46Z"
 }
